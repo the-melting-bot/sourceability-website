@@ -667,6 +667,139 @@
   line-height: 1.7;
 }
 
+/* --- APPROACH SECTION (home — split layout, no card boxes) --- */
+.approach-section {
+  position: relative;
+}
+
+.approach-layout {
+  display: grid;
+  gap: var(--space-12);
+}
+
+@media (min-width: 900px) {
+  .approach-layout {
+    grid-template-columns: minmax(220px, 300px) minmax(0, 1fr);
+    gap: var(--space-12) clamp(var(--space-12), 7vw, var(--space-24));
+    align-items: start;
+  }
+
+  .approach-layout__intro {
+    position: sticky;
+    top: 5.5rem;
+  }
+}
+
+.approach-layout__title {
+  margin-top: var(--space-3);
+}
+
+.approach-layout__lede {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  margin-top: var(--space-5);
+  max-width: 38ch;
+}
+
+.approach-list {
+  position: relative;
+  min-width: 0;
+}
+
+@media (min-width: 900px) {
+  .approach-list::before {
+    content: '';
+    position: absolute;
+    left: 1.625rem;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(185, 52, 46, 0.2) 12%,
+      rgba(0, 0, 0, 0.06) 50%,
+      rgba(185, 52, 46, 0.2) 88%,
+      transparent 100%
+    );
+    pointer-events: none;
+  }
+}
+
+.approach-item {
+  display: grid;
+  grid-template-columns: 3.25rem minmax(0, 1fr);
+  gap: var(--space-6);
+  align-items: start;
+  padding: var(--space-8) var(--space-3);
+  margin-inline: calc(var(--space-3) * -1);
+  border-bottom: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: background 0.25s var(--ease-out);
+}
+
+.approach-item:first-child {
+  padding-top: 0;
+}
+
+.approach-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.approach-item:hover {
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.approach-item__rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  width: 3.25rem;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+.approach-item__index {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+}
+
+.approach-item__icon {
+  width: 22px;
+  height: 22px;
+  color: var(--color-navy);
+  opacity: 0.38;
+  stroke-width: 1.5;
+}
+
+.approach-item:hover .approach-item__icon {
+  opacity: 0.55;
+}
+
+.approach-item__title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-style: italic;
+  color: var(--color-navy);
+  margin: 0 0 var(--space-3);
+  line-height: 1.25;
+}
+
+.approach-item__text {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin: 0;
+  max-width: 52ch;
+}
+
 /* --- SPECIALTIES --- */
 .specialties-grid {
   display: grid;
