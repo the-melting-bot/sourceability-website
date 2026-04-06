@@ -523,15 +523,68 @@
   overflow: hidden;
 }
 
+/* Background image layer */
+.page-hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  opacity: 0.35;
+  filter: saturate(0.7);
+}
+
+/* Dark cinematic overlay */
+.page-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 26, 46, 0.6) 0%,
+    rgba(15, 26, 46, 0.75) 50%,
+    rgba(15, 26, 46, 0.9) 100%
+  );
+  pointer-events: none;
+}
+
+/* Subtle accent glow (top-right) */
 .page-hero::after {
   content: '';
   position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 40%;
-  height: 100%;
-  background: linear-gradient(135deg, transparent 40%, rgba(185, 52, 46, 0.06) 100%);
+  top: -20%;
+  right: -10%;
+  width: 50%;
+  height: 140%;
+  background: radial-gradient(ellipse at center, rgba(185, 52, 46, 0.06) 0%, transparent 65%);
   pointer-events: none;
+  z-index: 2;
+}
+
+/* Ensure text content sits above the overlay */
+.page-hero > .container {
+  position: relative;
+  z-index: 3;
+}
+
+/* Per-page focal point overrides */
+.page-hero--employers .page-hero__bg  { object-position: center 25%; }
+.page-hero--candidates .page-hero__bg { object-position: center 35%; }
+.page-hero--specialties .page-hero__bg { object-position: center 40%; }
+.page-hero--jobs .page-hero__bg       { object-position: center 30%; }
+.page-hero--about .page-hero__bg      { object-position: center 30%; }
+.page-hero--insights .page-hero__bg   { object-position: center 25%; }
+.page-hero--contact .page-hero__bg    { object-position: center 40%; }
+
+/* Mobile: slightly more image opacity for visual interest on small screens */
+@media (max-width: 767px) {
+  .page-hero__bg {
+    opacity: 0.28;
+    object-position: center center;
+  }
+  .page-hero {
+    padding: 8rem 0 4rem;
+  }
 }
 
 .page-hero__title {
