@@ -991,6 +991,16 @@
   color: #fff;
 }
 
+.social-links a svg {
+  display: block;
+  flex-shrink: 0;
+}
+
+.contact-info__icon svg {
+  display: block;
+  flex-shrink: 0;
+}
+
 .footer-bottom {
   padding: var(--space-6) 0;
   display: flex;
