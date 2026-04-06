@@ -1424,33 +1424,41 @@
   flex-wrap: wrap;
 }
 
-/* --- FEATURED JOBS (home) — bold navy band + elevated tiles --- */
+/* --- FEATURED JOBS (home) — photo + navy overlay + elevated tiles --- */
 .featured-jobs-section {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(
-    165deg,
-    var(--color-navy) 0%,
-    #152238 42%,
-    var(--color-navy-mid) 100%
-  );
+  background: var(--color-navy);
 }
 
 .featured-jobs-section::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    ellipse 85% 55% at 100% 0%,
-    rgba(185, 52, 46, 0.14) 0%,
-    transparent 58%
+  background: url('../images/featured-jobs-bg.jpg') center center / cover no-repeat;
+  z-index: 0;
+}
+
+.featured-jobs-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    165deg,
+    rgba(15, 26, 46, 0.88) 0%,
+    rgba(15, 26, 46, 0.76) 45%,
+    rgba(15, 26, 46, 0.92) 100%
   );
-  pointer-events: none;
+  z-index: 1;
 }
 
 .featured-jobs-section .container {
   position: relative;
-  z-index: 1;
+  z-index: 2;
+}
+
+.featured-jobs-section .section-heading__title--light {
+  text-shadow: 0 2px 28px rgba(0, 0, 0, 0.35);
 }
 
 .featured-jobs-head-row {
