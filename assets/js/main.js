@@ -294,6 +294,8 @@
     return text;
   }
 
+  const CRELATE_NS = 'https://jobs.crelate.com/portal/sourceabilityinc';
+
   function parseRssItems(xmlText) {
     const parser = new DOMParser();
     const xml = parser.parseFromString(xmlText, 'text/xml');
@@ -304,16 +306,36 @@
       const link = item.querySelector('link')?.textContent?.trim() || '#';
       const pubDate = item.querySelector('pubDate')?.textContent || '';
       const description = item.querySelector('description')?.textContent || '';
-      const locationMatch = description.match(/Location:\s*([^<\n]+)/i);
-      const location = locationMatch ? locationMatch[1].trim() : '';
-      return { title, link, pubDate, location };
+
+      let location = '';
+      const locEls = item.getElementsByTagNameNS(CRELATE_NS, 'location');
+      if (locEls.length) {
+        location = locEls[0].textContent.trim();
+      } else {
+        const locationMatch = description.match(/Location:\s*([^<\n]+)/i);
+        location = locationMatch ? locationMatch[1].trim() : '';
+      }
+
+      let jobNumber = '';
+      const numEls = item.getElementsByTagNameNS(CRELATE_NS, 'jobNumber');
+      if (numEls.length) jobNumber = numEls[0].textContent.trim();
+
+      return { title, link, pubDate, location, jobNumber };
     });
   }
 
+  /**
+   * Crelate emits pubDate like "Mon, 23 Mar 2026 23:52:11 Z" — trailing " Z" is not
+   * reliably parsed by Date(); normalize to GMT and validate before formatting.
+   */
   function formatJobDate(pubDate) {
-    if (!pubDate) return '';
+    const raw = String(pubDate || '').trim();
+    if (!raw) return '';
+    const normalized = raw.replace(/\s+Z$/i, ' GMT');
+    const d = new Date(normalized);
+    if (Number.isNaN(d.getTime())) return '';
     try {
-      return new Date(pubDate).toLocaleDateString('en-US', {
+      return d.toLocaleDateString('en-US', {
         month: 'short',
         day: 'numeric',
         year: 'numeric'
@@ -386,12 +408,21 @@
         const dateStr = formatJobDate(job.pubDate);
         const title = escapeHtml(job.title);
         const link = escapeHtml(job.link);
+
+        const sub = [];
+        if (dateStr) sub.push(`<span class="job-card__date">Posted ${dateStr}</span>`);
+        if (job.location) sub.push(`<span class="job-card__location">${escapeHtml(job.location)}</span>`);
+        if (sub.length === 0 && job.jobNumber) {
+          sub.push(`<span class="job-card__date">Job #${escapeHtml(job.jobNumber)}</span>`);
+        }
+        if (sub.length === 0) {
+          sub.push('<span class="job-card__location">Open position · view details</span>');
+        }
+
         html += `
           <a href="${link}" target="_blank" rel="noopener noreferrer" class="job-card job-card--tile reveal visible">
             <span class="job-card__title">${title}</span>
-            <span class="job-card__meta job-card__meta--tile">
-              ${dateStr ? `<span class="job-card__date">${dateStr}</span>` : ''}
-            </span>
+            <span class="job-card__meta job-card__meta--tile">${sub.join('')}</span>
           </a>
         `;
       }
