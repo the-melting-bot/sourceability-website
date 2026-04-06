@@ -275,7 +275,54 @@
     });
   }
 
-  // --- RSS FEED PARSER (for Jobs page) ---
+  // --- CRELATE RSS (Vercel /api/crelate-rss — server-side, no browser CORS) ---
+  function escapeHtml(s) {
+    if (s == null) return '';
+    return String(s)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  async function fetchCrelateRssXml() {
+    const res = await fetch('/api/crelate-rss', { credentials: 'same-origin' });
+    if (!res.ok) throw new Error('Feed HTTP error');
+    const text = await res.text();
+    const t = text.trim();
+    if (t.startsWith('{') && t.includes('"error"')) throw new Error('Feed proxy error');
+    return text;
+  }
+
+  function parseRssItems(xmlText) {
+    const parser = new DOMParser();
+    const xml = parser.parseFromString(xmlText, 'text/xml');
+    if (xml.querySelector('parsererror')) throw new Error('Invalid XML');
+    const items = xml.querySelectorAll('item');
+    return Array.from(items).map((item) => {
+      const title = item.querySelector('title')?.textContent?.trim() || 'Untitled Position';
+      const link = item.querySelector('link')?.textContent?.trim() || '#';
+      const pubDate = item.querySelector('pubDate')?.textContent || '';
+      const description = item.querySelector('description')?.textContent || '';
+      const locationMatch = description.match(/Location:\s*([^<\n]+)/i);
+      const location = locationMatch ? locationMatch[1].trim() : '';
+      return { title, link, pubDate, location };
+    });
+  }
+
+  function formatJobDate(pubDate) {
+    if (!pubDate) return '';
+    try {
+      return new Date(pubDate).toLocaleDateString('en-US', {
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric'
+      });
+    } catch (e) {
+      return '';
+    }
+  }
+
   async function loadJobs() {
     const jobsList = document.getElementById('jobs-list');
     const jobsLoading = document.getElementById('jobs-loading');
@@ -284,46 +331,26 @@
     if (!jobsList) return;
 
     try {
-      // Use a CORS proxy approach or try directly
-      const rssUrl = 'https://jobs.crelate.com/portal/sourceabilityinc/rss';
-      const proxyUrl = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(rssUrl);
-
-      const response = await fetch(proxyUrl);
-
-      if (!response.ok) throw new Error('Feed unavailable');
-
-      const text = await response.text();
-      const parser = new DOMParser();
-      const xml = parser.parseFromString(text, 'text/xml');
-      const items = xml.querySelectorAll('item');
+      const xmlText = await fetchCrelateRssXml();
+      const items = parseRssItems(xmlText);
 
       if (items.length === 0) throw new Error('No jobs found');
 
       if (jobsLoading) jobsLoading.style.display = 'none';
 
       let html = '';
-      items.forEach((item) => {
-        const title = item.querySelector('title')?.textContent || 'Untitled Position';
-        const link = item.querySelector('link')?.textContent || '#';
-        const pubDate = item.querySelector('pubDate')?.textContent;
-        const description = item.querySelector('description')?.textContent || '';
-
-        // Extract location from description if available
-        const locationMatch = description.match(/Location:\s*([^<\n]+)/i);
-        const location = locationMatch ? locationMatch[1].trim() : '';
-
-        const dateStr = pubDate ? new Date(pubDate).toLocaleDateString('en-US', {
-          month: 'short',
-          day: 'numeric',
-          year: 'numeric'
-        }) : '';
+      items.forEach((job) => {
+        const dateStr = formatJobDate(job.pubDate);
+        const title = escapeHtml(job.title);
+        const link = escapeHtml(job.link);
+        const loc = escapeHtml(job.location);
 
         html += `
           <div class="job-card reveal visible">
             <div class="job-card__info">
               <div class="job-card__title">${title}</div>
               <div class="job-card__meta">
-                ${location ? `<span>${location}</span>` : ''}
+                ${loc ? `<span>${loc}</span>` : ''}
                 ${dateStr ? `<span>Posted ${dateStr}</span>` : ''}
               </div>
             </div>
@@ -333,17 +360,55 @@
       });
 
       jobsList.innerHTML = html;
-
     } catch (err) {
-      console.log('RSS feed unavailable, showing fallback.');
+      console.log('RSS feed unavailable, showing fallback.', err);
       if (jobsLoading) jobsLoading.style.display = 'none';
       if (jobsFallback) jobsFallback.style.display = 'block';
     }
   }
 
-  // Init jobs on page load if the element exists
+  async function loadHomeJobs() {
+    const listEl = document.getElementById('jobs-home-list');
+    const fallbackEl = document.getElementById('jobs-home-fallback');
+
+    if (!listEl) return;
+
+    try {
+      const xmlText = await fetchCrelateRssXml();
+      const items = parseRssItems(xmlText);
+
+      if (items.length === 0) throw new Error('No jobs');
+
+      const max = Math.min(items.length, 3);
+      let html = '';
+      for (let i = 0; i < max; i++) {
+        const job = items[i];
+        const dateStr = formatJobDate(job.pubDate);
+        const title = escapeHtml(job.title);
+        const link = escapeHtml(job.link);
+        html += `
+          <a href="${link}" target="_blank" rel="noopener noreferrer" class="job-card job-card--tile reveal visible">
+            <span class="job-card__title">${title}</span>
+            <span class="job-card__meta job-card__meta--tile">
+              ${dateStr ? `<span class="job-card__date">${dateStr}</span>` : ''}
+            </span>
+          </a>
+        `;
+      }
+      listEl.innerHTML = html;
+    } catch (err) {
+      console.log('Home jobs feed unavailable', err);
+      listEl.innerHTML = '';
+      if (fallbackEl) fallbackEl.style.display = 'block';
+    }
+  }
+
   if (document.getElementById('jobs-list')) {
     loadJobs();
+  }
+
+  if (document.getElementById('jobs-home-list')) {
+    loadHomeJobs();
   }
 
   // --- ACTIVE NAV LINK ---

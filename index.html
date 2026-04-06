@@ -362,27 +362,28 @@
     <!-- ==========================================
          FEATURED JOBS SECTION
     ========================================== -->
-    <section class="section-padding bg-surface" aria-labelledby="jobs-heading">
-      <div class="container container--narrow">
+    <section class="section-padding featured-jobs-section" aria-labelledby="jobs-heading">
+      <div class="container">
 
-        <header class="section-heading reveal">
-          <p class="overline">Current Opportunities</p>
-          <h2 class="section-heading__title" id="jobs-heading">Featured Positions</h2>
-        </header>
+        <div class="featured-jobs-head-row">
+          <header class="section-heading section-heading--compact reveal">
+            <p class="overline">Current Opportunities</p>
+            <h2 class="section-heading__title" id="jobs-heading">Featured Positions</h2>
+          </header>
+          <aside class="featured-jobs-aside reveal" aria-label="Search all openings">
+            <p class="overline">Search all</p>
+            <a href="https://jobs.crelate.com/portal/sourceabilityinc" class="btn btn--primary btn--lg featured-jobs-aside__btn" target="_blank" rel="noopener noreferrer">View all jobs</a>
+          </aside>
+        </div>
 
-        <div id="jobs-home-list" class="jobs-list" aria-live="polite" aria-label="Featured job listings">
-          <!-- Jobs loaded dynamically -->
-          <div id="jobs-home-loading" style="text-align:center;padding:var(--space-8) 0;color:var(--color-text-muted);">
+        <div id="jobs-home-list" class="featured-jobs-grid" aria-live="polite" aria-label="Featured job listings">
+          <div id="jobs-home-loading" class="featured-jobs-loading">
             <p>Loading current openings&hellip;</p>
           </div>
         </div>
 
-        <div id="jobs-home-fallback" style="display:none;text-align:center;padding:var(--space-6) 0;">
-          <p style="color:var(--color-text-muted);margin-bottom:var(--space-4);">View all open positions on our <a href="https://jobs.crelate.com/portal/sourceabilityinc" target="_blank" rel="noopener noreferrer" style="color:var(--color-accent);">job portal</a>.</p>
-        </div>
-
-        <div style="text-align:center;margin-top:var(--space-10);" class="reveal">
-          <a href="jobs.html" class="btn btn--outline-dark btn--lg">View All Openings</a>
+        <div id="jobs-home-fallback" class="featured-jobs-fallback" style="display:none;" role="status">
+          <p>View all open positions on our <a href="https://jobs.crelate.com/portal/sourceabilityinc" target="_blank" rel="noopener noreferrer" class="featured-jobs-fallback__link">job portal</a>.</p>
         </div>
 
       </div>
@@ -536,70 +537,6 @@
        SCRIPTS
   ============================================ -->
   <script src="./assets/js/main.js" defer></script>
-
-  <!-- Home page: load first 4 jobs from RSS feed into #jobs-home-list -->
-  <script>
-  (function () {
-    var listEl = document.getElementById('jobs-home-list');
-    var loadingEl = document.getElementById('jobs-home-loading');
-    var fallbackEl = document.getElementById('jobs-home-fallback');
-    if (!listEl) return;
-
-    var rssUrl = 'https://jobs.crelate.com/portal/sourceabilityinc/rss';
-    var proxyUrl = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(rssUrl);
-
-    fetch(proxyUrl)
-      .then(function (res) {
-        if (!res.ok) throw new Error('Feed error');
-        return res.text();
-      })
-      .then(function (text) {
-        var parser = new DOMParser();
-        var xml = parser.parseFromString(text, 'text/xml');
-        var items = xml.querySelectorAll('item');
-        if (!items || items.length === 0) throw new Error('No items');
-
-        if (loadingEl) loadingEl.style.display = 'none';
-
-        var html = '';
-        var max = Math.min(items.length, 4);
-        for (var i = 0; i < max; i++) {
-          var item = items[i];
-          var title = (item.querySelector('title') || {}).textContent || 'Untitled Position';
-          var link = (item.querySelector('link') || {}).textContent || '#';
-          var pubDate = (item.querySelector('pubDate') || {}).textContent || '';
-          var description = (item.querySelector('description') || {}).textContent || '';
-
-          var locationMatch = description.match(/Location:\s*([^<\n]+)/i);
-          var location = locationMatch ? locationMatch[1].trim() : '';
-
-          var dateStr = '';
-          if (pubDate) {
-            try {
-              dateStr = new Date(pubDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-            } catch (e) {}
-          }
-
-          html += '<div class="job-card reveal visible">'
-            + '<div class="job-card__info">'
-            + '<div class="job-card__title">' + title + '</div>'
-            + '<div class="job-card__meta">'
-            + (location ? '<span>' + location + '</span>' : '')
-            + (dateStr ? '<span>Posted ' + dateStr + '</span>' : '')
-            + '</div>'
-            + '</div>'
-            + '<a href="' + link + '" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--primary">Apply Now</a>'
-            + '</div>';
-        }
-
-        listEl.innerHTML = html;
-      })
-      .catch(function () {
-        if (loadingEl) loadingEl.style.display = 'none';
-        if (fallbackEl) fallbackEl.style.display = 'block';
-      });
-  })();
-  </script>
 
   <!-- Initialize Lucide icons -->
   <script>lucide.createIcons();</script>
