@@ -296,18 +296,65 @@
     </section>
 
     <!-- ==========================================
-         TESTIMONIAL SECTION
+         TESTIMONIALS (carousel)
     ========================================== -->
-    <section class="testimonial-section section-padding" aria-label="Client testimonial">
-      <div class="container">
-        <div class="testimonial-card reveal">
-          <blockquote>
-            <p class="testimonial-card__quote">SourceAbility was friendly, professional, and genuinely concerned that both employer and candidate succeed. Their deep understanding of the analytics landscape made the entire process seamless.</p>
-            <footer>
-              <p class="testimonial-card__author">Director of Global Technology</p>
-              <p class="testimonial-card__role">Fortune 500 Financial Services</p>
-            </footer>
-          </blockquote>
+    <section class="testimonial-section testimonial-section--compact" aria-label="Client testimonials">
+      <div class="container container--narrow">
+        <div
+          class="testimonial-carousel reveal"
+          data-testimonial-carousel
+          data-interval="6000"
+          aria-roledescription="carousel"
+        >
+          <div class="testimonial-carousel__viewport">
+            <blockquote class="testimonial-carousel__slide is-active" data-slide="0" aria-hidden="false">
+              <p class="testimonial-carousel__quote">SourceAbility was friendly, professional, and genuinely concerned that both employer and candidate succeed. Their deep understanding of the analytics landscape made the entire process seamless.</p>
+              <footer class="testimonial-carousel__footer">
+                <p class="testimonial-carousel__author">Director of Global Technology</p>
+                <p class="testimonial-carousel__role">Fortune 500 Financial Services</p>
+              </footer>
+            </blockquote>
+
+            <blockquote class="testimonial-carousel__slide" data-slide="1" aria-hidden="true">
+              <p class="testimonial-carousel__quote">They understood our data stack and culture before we ever started interviewing. The shortlist was on point and every conversation moved the process forward.</p>
+              <footer class="testimonial-carousel__footer">
+                <p class="testimonial-carousel__author">VP of Analytics</p>
+                <p class="testimonial-carousel__role">National Retail</p>
+              </footer>
+            </blockquote>
+
+            <blockquote class="testimonial-carousel__slide" data-slide="2" aria-hidden="true">
+              <p class="testimonial-carousel__quote">Responsive, transparent, and relentless about fit. We filled a hard-to-source machine learning role in weeks—not months.</p>
+              <footer class="testimonial-carousel__footer">
+                <p class="testimonial-carousel__author">Head of Data Science</p>
+                <p class="testimonial-carousel__role">Fintech</p>
+              </footer>
+            </blockquote>
+
+            <blockquote class="testimonial-carousel__slide" data-slide="3" aria-hidden="true">
+              <p class="testimonial-carousel__quote">Finally a partner who speaks both analytics and leadership. Our executive search felt collaborative, not transactional.</p>
+              <footer class="testimonial-carousel__footer">
+                <p class="testimonial-carousel__author">Chief Data Officer</p>
+                <p class="testimonial-carousel__role">Healthcare System</p>
+              </footer>
+            </blockquote>
+
+            <blockquote class="testimonial-carousel__slide" data-slide="4" aria-hidden="true">
+              <p class="testimonial-carousel__quote">SourceAbility&rsquo;s network runs deep. Every candidate we met was pre-vetted and aligned with our stage, stack, and expectations.</p>
+              <footer class="testimonial-carousel__footer">
+                <p class="testimonial-carousel__author">Director of Business Intelligence</p>
+                <p class="testimonial-carousel__role">Enterprise SaaS</p>
+              </footer>
+            </blockquote>
+          </div>
+
+          <div class="testimonial-carousel__nav" aria-label="Choose testimonial">
+            <button type="button" class="testimonial-carousel__dot is-active" aria-label="Testimonial 1 of 5" aria-current="true" data-slide-to="0"></button>
+            <button type="button" class="testimonial-carousel__dot" aria-label="Testimonial 2 of 5" data-slide-to="1"></button>
+            <button type="button" class="testimonial-carousel__dot" aria-label="Testimonial 3 of 5" data-slide-to="2"></button>
+            <button type="button" class="testimonial-carousel__dot" aria-label="Testimonial 4 of 5" data-slide-to="3"></button>
+            <button type="button" class="testimonial-carousel__dot" aria-label="Testimonial 5 of 5" data-slide-to="4"></button>
+          </div>
         </div>
       </div>
     </section>

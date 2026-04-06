@@ -161,6 +161,71 @@
     statNumbers.forEach(el => counterObserver.observe(el));
   }
 
+  // --- TESTIMONIAL CAROUSEL (home) ---
+  const testimonialCarousel = document.querySelector('[data-testimonial-carousel]');
+
+  if (testimonialCarousel) {
+    const slides = testimonialCarousel.querySelectorAll('.testimonial-carousel__slide');
+    const dots = testimonialCarousel.querySelectorAll('.testimonial-carousel__dot');
+    const intervalMs = parseInt(testimonialCarousel.dataset.interval || '6000', 10);
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let activeIndex = 0;
+    let timerId = null;
+
+    function goTo(i) {
+      const idx = ((i % slides.length) + slides.length) % slides.length;
+      slides.forEach((slide, j) => {
+        const on = j === idx;
+        slide.classList.toggle('is-active', on);
+        slide.setAttribute('aria-hidden', on ? 'false' : 'true');
+      });
+      dots.forEach((dot, j) => {
+        const on = j === idx;
+        dot.classList.toggle('is-active', on);
+        if (on) dot.setAttribute('aria-current', 'true');
+        else dot.removeAttribute('aria-current');
+      });
+      activeIndex = idx;
+      testimonialCarousel.setAttribute('aria-label', `Client testimonials, ${idx + 1} of ${slides.length}`);
+    }
+
+    function next() {
+      goTo(activeIndex + 1);
+    }
+
+    function startAuto() {
+      if (reduceMotion || slides.length < 2) return;
+      clearInterval(timerId);
+      timerId = setInterval(next, intervalMs);
+    }
+
+    function stopAuto() {
+      clearInterval(timerId);
+      timerId = null;
+    }
+
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        const i = parseInt(dot.dataset.slideTo, 10);
+        if (!Number.isNaN(i)) {
+          goTo(i);
+          stopAuto();
+          startAuto();
+        }
+      });
+    });
+
+    testimonialCarousel.addEventListener('mouseenter', stopAuto);
+    testimonialCarousel.addEventListener('mouseleave', startAuto);
+    testimonialCarousel.addEventListener('focusin', stopAuto);
+    testimonialCarousel.addEventListener('focusout', (e) => {
+      if (!testimonialCarousel.contains(e.relatedTarget)) startAuto();
+    });
+
+    goTo(0);
+    startAuto();
+  }
+
   // --- CONTACT FORM (Web3Forms) ---
   const contactForm = document.getElementById('contact-form');
 
