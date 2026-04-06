@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>SourceAbility, Inc. — The Leader in Data &amp; Analytical Recruitment</title>
+  <meta name="description" content="SourceAbility is a premier executive recruiting firm specializing in data science, analytics, AI, and business intelligence talent. Based in Charlotte, NC.">
+  <link rel="canonical" href="https://www.sourceabilityinc.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SourceAbility, Inc. — The Leader in Data &amp; Analytical Recruitment">
+  <meta property="og:description" content="SourceAbility is a premier executive recruiting firm specializing in data science, analytics, AI, and business intelligence talent. Based in Charlotte, NC.">
+  <meta property="og:url" content="https://www.sourceabilityinc.com/">
+  <meta property="og:site_name" content="SourceAbility, Inc.">
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "SourceAbility, Inc.",
+    "url": "https://www.sourceabilityinc.com",
+    "telephone": "866-412-9178",
+    "email": "info@sourceabilityinc.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Charlotte",
+      "addressRegion": "NC",
+      "addressCountry": "US"
+    },
+    "description": "Executive recruiting firm specializing in data science, analytics, AI, and business intelligence talent.",
+    "priceRange": "$$"
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300..700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- GSAP -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+
+  <!-- ============================================
+       MOBILE OVERLAY
+  ============================================ -->
+  <div class="mobile-overlay" aria-hidden="true"></div>
+
+  <!-- ============================================
+       HEADER
+  ============================================ -->
+  <header class="site-header" role="banner">
+
+    <!-- Top Bar -->
+    <div class="header-top">
+      <div class="header-top-inner">
+        <a href="tel:8664129178">
+          <i data-lucide="phone" style="width:14px;height:14px;"></i>
+          866-412-9178
+        </a>
+        <a href="mailto:info@sourceabilityinc.com">
+          <i data-lucide="mail" style="width:14px;height:14px;"></i>
+          info@sourceabilityinc.com
+        </a>
+      </div>
+    </div>
+
+    <!-- Main Nav -->
+    <div class="header-main">
+      <a href="index.html" class="logo-link" aria-label="SourceAbility, Inc. — Home">
+        <img src="./assets/images/sourceability-logo.png" alt="SourceAbility, Inc." height="32">
+      </a>
+
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="index.html" class="nav-link nav-link--active">Home</a>
+        <a href="employers.html" class="nav-link">For Employers</a>
+        <a href="candidates.html" class="nav-link">For Candidates</a>
+        <a href="specialties.html" class="nav-link">Specialties</a>
+        <a href="jobs.html" class="nav-link">Search Jobs</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="insights.html" class="nav-link">Insights</a>
+        <a href="contact.html" class="nav-link nav-link--cta">Contact</a>
+      </nav>
+
+      <button class="mobile-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+  </header>
+
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <button class="mobile-nav-close" aria-label="Close menu">
+      <i data-lucide="x" style="width:20px;height:20px;"></i>
+    </button>
+    <a href="index.html" class="mobile-nav-link">Home</a>
+    <a href="employers.html" class="mobile-nav-link">For Employers</a>
+    <a href="candidates.html" class="mobile-nav-link">For Candidates</a>
+    <a href="specialties.html" class="mobile-nav-link">Specialties</a>
+    <a href="jobs.html" class="mobile-nav-link">Search Jobs</a>
+    <a href="about.html" class="mobile-nav-link">About</a>
+    <a href="insights.html" class="mobile-nav-link">Insights</a>
+    <a href="contact.html" class="mobile-nav-cta btn btn--primary">Contact Us</a>
+  </nav>
+
+  <!-- ============================================
+       MAIN CONTENT
+  ============================================ -->
+  <main id="main-content">
+
+    <!-- ==========================================
+         HERO SECTION
+    ========================================== -->
+    <section class="hero" aria-label="Hero">
+      <video class="hero__video" autoplay muted loop playsinline poster="">
+        <source src="./assets/video/hero-bg.mp4" type="video/mp4">
+      </video>
+      <div class="hero__overlay"></div>
+
+      <div class="container">
+        <div class="hero__content">
+          <p class="overline overline--light reveal">Executive Recruiting</p>
+          <h1 class="hero__title reveal">The Leader in Data &amp; Analytical Recruitment</h1>
+          <p class="hero__subtitle reveal">Connecting organizations with exceptional talent across analytics, data science, AI, business intelligence, and emerging data disciplines.</p>
+          <div class="hero__actions reveal">
+            <a href="employers.html" class="btn btn--primary btn--lg">Hire With Us</a>
+            <a href="jobs.html" class="btn btn--outline btn--lg">Search Open Roles</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SERVICES SECTION
+    ========================================== -->
+    <section class="section-padding bg-warm" aria-labelledby="services-heading">
+      <div class="container container--narrow">
+
+        <header class="section-heading reveal">
+          <p class="overline">Our Approach</p>
+          <h2 class="section-heading__title" id="services-heading">Three Proven Search Models</h2>
+        </header>
+
+        <div class="services-grid">
+
+          <article class="service-card reveal">
+            <span class="service-card__number" aria-hidden="true">01</span>
+            <h3 class="service-card__title">Executive Search</h3>
+            <p class="service-card__text">Retained search for senior-level data and analytics leaders. We conduct thorough market mapping and targeted outreach to identify and deliver top-tier executive candidates.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-card__number" aria-hidden="true">02</span>
+            <h3 class="service-card__title">Contingency Search</h3>
+            <p class="service-card__text">Performance-based recruiting for mid to senior-level analytics professionals. You only pay when we deliver the right candidate for your team.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-card__number" aria-hidden="true">03</span>
+            <h3 class="service-card__title">Co-tainer Search</h3>
+            <p class="service-card__text">A hybrid model combining the dedication of retained search with the flexibility of contingency. Ideal for specialized or hard-to-fill data roles.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SPECIALTIES SECTION
+    ========================================== -->
+    <section class="section-padding bg-surface" aria-labelledby="specialties-heading">
+      <div class="container container--narrow">
+
+        <header class="section-heading reveal">
+          <p class="overline">Areas of Focus</p>
+          <h2 class="section-heading__title" id="specialties-heading">Deep Expertise in Data &amp; Analytics</h2>
+        </header>
+
+        <div class="specialties-grid">
+
+          <article class="specialty-card reveal">
+            <h3 class="specialty-card__title">Analytics &amp; Data Science</h3>
+            <p class="specialty-card__text">Machine learning engineers, data scientists, research analysts, and AI specialists.</p>
+          </article>
+
+          <article class="specialty-card reveal">
+            <h3 class="specialty-card__title">Business Intelligence &amp; Data Engineering</h3>
+            <p class="specialty-card__text">BI developers, data architects, ETL engineers, and analytics platform specialists.</p>
+          </article>
+
+          <article class="specialty-card reveal">
+            <h3 class="specialty-card__title">Consumer, Digital &amp; Web Analytics</h3>
+            <p class="specialty-card__text">Digital analytics managers, marketing scientists, attribution analysts, and web optimization leaders.</p>
+          </article>
+
+          <article class="specialty-card reveal">
+            <h3 class="specialty-card__title">Fraud &amp; Risk Analytics</h3>
+            <p class="specialty-card__text">Fraud detection analysts, risk modelers, compliance data scientists, and financial crime specialists.</p>
+          </article>
+
+          <article class="specialty-card reveal">
+            <h3 class="specialty-card__title">Healthcare Analytics</h3>
+            <p class="specialty-card__text">Clinical data scientists, health informatics leaders, population health analysts, and outcomes researchers.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         STATS SECTION
+    ========================================== -->
+    <section class="stats-section" aria-label="Key statistics">
+      <div class="container container--narrow">
+        <div class="stats-grid">
+
+          <div class="reveal">
+            <div class="stat__number" data-count="15" data-suffix="+">15+</div>
+            <p class="stat__label">Years of Specialized Recruiting</p>
+          </div>
+
+          <div class="reveal">
+            <div class="stat__number" data-count="2500" data-suffix="+">2,500+</div>
+            <p class="stat__label">Successful Placements</p>
+          </div>
+
+          <div class="reveal">
+            <div class="stat__number" data-count="500" data-suffix="+">500+</div>
+            <p class="stat__label">Client Partnerships</p>
+          </div>
+
+          <div class="reveal">
+            <div class="stat__number" data-count="95" data-suffix="%">95%</div>
+            <p class="stat__label">Client Retention Rate</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TESTIMONIAL SECTION
+    ========================================== -->
+    <section class="testimonial-section section-padding" aria-label="Client testimonial">
+      <div class="container">
+        <div class="testimonial-card reveal">
+          <blockquote>
+            <p class="testimonial-card__quote">SourceAbility was friendly, professional, and genuinely concerned that both employer and candidate succeed. Their deep understanding of the analytics landscape made the entire process seamless.</p>
+            <footer>
+              <p class="testimonial-card__author">Director of Global Technology</p>
+              <p class="testimonial-card__role">Fortune 500 Financial Services</p>
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         FEATURED JOBS SECTION
+    ========================================== -->
+    <section class="section-padding bg-surface" aria-labelledby="jobs-heading">
+      <div class="container container--narrow">
+
+        <header class="section-heading reveal">
+          <p class="overline">Current Opportunities</p>
+          <h2 class="section-heading__title" id="jobs-heading">Featured Positions</h2>
+        </header>
+
+        <div id="jobs-home-list" class="jobs-list" aria-live="polite" aria-label="Featured job listings">
+          <!-- Jobs loaded dynamically -->
+          <div id="jobs-home-loading" style="text-align:center;padding:var(--space-8) 0;color:var(--color-text-muted);">
+            <p>Loading current openings&hellip;</p>
+          </div>
+        </div>
+
+        <div id="jobs-home-fallback" style="display:none;text-align:center;padding:var(--space-6) 0;">
+          <p style="color:var(--color-text-muted);margin-bottom:var(--space-4);">View all open positions on our <a href="https://jobs.crelate.com/portal/sourceabilityinc" target="_blank" rel="noopener noreferrer" style="color:var(--color-accent);">job portal</a>.</p>
+        </div>
+
+        <div style="text-align:center;margin-top:var(--space-10);" class="reveal">
+          <a href="jobs.html" class="btn btn--outline-dark btn--lg">View All Openings</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         BLOG PREVIEW SECTION
+    ========================================== -->
+    <section class="section-padding bg-warm" aria-labelledby="blog-heading">
+      <div class="container container--narrow">
+
+        <header class="section-heading reveal">
+          <p class="overline">Insights</p>
+          <h2 class="section-heading__title" id="blog-heading">Perspectives on Talent &amp; Data</h2>
+        </header>
+
+        <div class="blog-grid">
+
+          <article class="blog-card reveal">
+            <div class="blog-card__image" style="background-color:#e8e4f0;" role="img" aria-label="Remote work policy illustration"></div>
+            <div class="blog-card__body">
+              <p class="blog-card__date">October 2024</p>
+              <h3 class="blog-card__title">Embracing the Future: Setting Work-From-Anywhere Policies for Your Company</h3>
+              <p class="blog-card__excerpt">How forward-thinking organizations are designing flexible location policies that attract top data talent without sacrificing team cohesion.</p>
+              <a href="insights.html" class="blog-card__link">Read More &rarr;</a>
+            </div>
+          </article>
+
+          <article class="blog-card reveal">
+            <div class="blog-card__image" style="background-color:#e4eef0;" role="img" aria-label="Exit interview illustration"></div>
+            <div class="blog-card__body">
+              <p class="blog-card__date">September 2024</p>
+              <h3 class="blog-card__title">Turning Departures Into Opportunities: Best Practices for Exit Interviews</h3>
+              <p class="blog-card__excerpt">Structured exit conversations can surface retention insights that analytics leaders and HR teams use to reduce future turnover.</p>
+              <a href="insights.html" class="blog-card__link">Read More &rarr;</a>
+            </div>
+          </article>
+
+          <article class="blog-card reveal">
+            <div class="blog-card__image" style="background-color:#f0e8e4;" role="img" aria-label="Niche recruiting illustration"></div>
+            <div class="blog-card__body">
+              <p class="blog-card__date">August 2024</p>
+              <h3 class="blog-card__title">What Value Does a Niche Recruiting Firm Really Bring?</h3>
+              <p class="blog-card__excerpt">Generalist agencies cast wide nets. Here's why specialization in data &amp; analytics recruiting consistently delivers better candidates and faster fills.</p>
+              <a href="insights.html" class="blog-card__link">Read More &rarr;</a>
+            </div>
+          </article>
+
+          <article class="blog-card reveal">
+            <div class="blog-card__image" style="background-color:#e4e8f0;" role="img" aria-label="AI talent wars illustration"></div>
+            <div class="blog-card__body">
+              <p class="blog-card__date">March 2025</p>
+              <h3 class="blog-card__title">AI Talent Wars: How Companies Are Competing for Machine Learning Engineers</h3>
+              <p class="blog-card__excerpt">The race to hire machine learning specialists is intensifying. We break down the strategies winning organizations are using to attract and retain ML talent.</p>
+              <a href="insights.html" class="blog-card__link">Read More &rarr;</a>
+            </div>
+          </article>
+
+          <article class="blog-card reveal">
+            <div class="blog-card__image" style="background-color:#eaf0e4;" role="img" aria-label="Career path illustration"></div>
+            <div class="blog-card__body">
+              <p class="blog-card__date">February 2025</p>
+              <h3 class="blog-card__title">From Data Analyst to Chief Data Officer: Mapping the Modern Career Path</h3>
+              <p class="blog-card__excerpt">A practical guide to the skills, experiences, and milestones that define the path from individual contributor to executive data leadership.</p>
+              <a href="insights.html" class="blog-card__link">Read More &rarr;</a>
+            </div>
+          </article>
+
+          <article class="blog-card reveal">
+            <div class="blog-card__image" style="background-color:#f0ede4;" role="img" aria-label="Remote hiring illustration"></div>
+            <div class="blog-card__body">
+              <p class="blog-card__date">January 2025</p>
+              <h3 class="blog-card__title">Remote-First Executive Hiring: What's Changed in 2025</h3>
+              <p class="blog-card__excerpt">Post-pandemic norms have permanently reshaped executive hiring expectations. Here's what data leaders and their employers need to know heading into 2025.</p>
+              <a href="insights.html" class="blog-card__link">Read More &rarr;</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         CTA BANNER
+    ========================================== -->
+    <section class="cta-banner section-padding" aria-label="Call to action">
+      <div class="container">
+        <div class="cta-banner__inner">
+          <div class="reveal">
+            <h2 class="cta-banner__title">Ready to Transform Your Data Team?</h2>
+            <p class="cta-banner__text">Whether you're hiring or exploring your next career move, we'd love to connect.</p>
+          </div>
+          <div style="display:flex;gap:var(--space-4);flex-wrap:wrap;" class="reveal">
+            <a href="contact.html" class="btn btn--primary btn--lg">Start a Search</a>
+            <a href="jobs.html" class="btn btn--outline btn--lg">Browse Opportunities</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================
+       FOOTER
+  ============================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <!-- Brand -->
+        <div class="footer-brand">
+          <img src="./assets/images/sourceability-logo.png" alt="SourceAbility, Inc.">
+          <p>The Leader in Data &amp; Analytical Recruitment. Connecting organizations with exceptional analytics talent since 2008.</p>
+          <div class="social-links">
+            <a href="https://www.facebook.com/SourceAbility-Inc-186078034755057" target="_blank" rel="noopener noreferrer" aria-label="SourceAbility on Facebook">
+              <i data-lucide="facebook" style="width:16px;height:16px;"></i>
+            </a>
+            <a href="https://twitter.com/SourceAbility" target="_blank" rel="noopener noreferrer" aria-label="SourceAbility on Twitter / X">
+              <i data-lucide="twitter" style="width:16px;height:16px;"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/216155" target="_blank" rel="noopener noreferrer" aria-label="SourceAbility on LinkedIn">
+              <i data-lucide="linkedin" style="width:16px;height:16px;"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h3 class="footer-heading">Company</h3>
+          <ul class="footer-links" role="list">
+            <li><a href="about.html">About</a></li>
+            <li><a href="insights.html">Insights</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h3 class="footer-heading">Services</h3>
+          <ul class="footer-links" role="list">
+            <li><a href="employers.html">For Employers</a></li>
+            <li><a href="candidates.html">For Candidates</a></li>
+            <li><a href="jobs.html">Search Jobs</a></li>
+          </ul>
+        </div>
+
+        <!-- Specialties -->
+        <div>
+          <h3 class="footer-heading">Specialties</h3>
+          <ul class="footer-links" role="list">
+            <li><a href="specialties.html">Analytics &amp; Data Science</a></li>
+            <li><a href="specialties.html">BI &amp; Data Engineering</a></li>
+            <li><a href="specialties.html">Digital Analytics</a></li>
+            <li><a href="specialties.html">Fraud &amp; Risk</a></li>
+            <li><a href="specialties.html">Healthcare Analytics</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>&copy; 2025 SourceAbility, Inc. All rights reserved. | Charlotte, NC</p>
+        <nav aria-label="Legal links">
+          <ul style="list-style:none;display:flex;gap:var(--space-6);" role="list">
+            <li><a href="privacy.html" style="font-size:var(--text-xs);color:rgba(255,255,255,0.35);text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Privacy Policy</a></li>
+            <li><a href="terms.html" style="font-size:var(--text-xs);color:rgba(255,255,255,0.35);text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Terms of Service</a></li>
+          </ul>
+        </nav>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ============================================
+       SCRIPTS
+  ============================================ -->
+  <script src="./assets/js/main.js" defer></script>
+
+  <!-- Home page: load first 4 jobs from RSS feed into #jobs-home-list -->
+  <script>
+  (function () {
+    var listEl = document.getElementById('jobs-home-list');
+    var loadingEl = document.getElementById('jobs-home-loading');
+    var fallbackEl = document.getElementById('jobs-home-fallback');
+    if (!listEl) return;
+
+    var rssUrl = 'https://jobs.crelate.com/portal/sourceabilityinc/rss';
+    var proxyUrl = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(rssUrl);
+
+    fetch(proxyUrl)
+      .then(function (res) {
+        if (!res.ok) throw new Error('Feed error');
+        return res.text();
+      })
+      .then(function (text) {
+        var parser = new DOMParser();
+        var xml = parser.parseFromString(text, 'text/xml');
+        var items = xml.querySelectorAll('item');
+        if (!items || items.length === 0) throw new Error('No items');
+
+        if (loadingEl) loadingEl.style.display = 'none';
+
+        var html = '';
+        var max = Math.min(items.length, 4);
+        for (var i = 0; i < max; i++) {
+          var item = items[i];
+          var title = (item.querySelector('title') || {}).textContent || 'Untitled Position';
+          var link = (item.querySelector('link') || {}).textContent || '#';
+          var pubDate = (item.querySelector('pubDate') || {}).textContent || '';
+          var description = (item.querySelector('description') || {}).textContent || '';
+
+          var locationMatch = description.match(/Location:\s*([^<\n]+)/i);
+          var location = locationMatch ? locationMatch[1].trim() : '';
+
+          var dateStr = '';
+          if (pubDate) {
+            try {
+              dateStr = new Date(pubDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+            } catch (e) {}
+          }
+
+          html += '<div class="job-card reveal visible">'
+            + '<div class="job-card__info">'
+            + '<div class="job-card__title">' + title + '</div>'
+            + '<div class="job-card__meta">'
+            + (location ? '<span>' + location + '</span>' : '')
+            + (dateStr ? '<span>Posted ' + dateStr + '</span>' : '')
+            + '</div>'
+            + '</div>'
+            + '<a href="' + link + '" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--primary">Apply Now</a>'
+            + '</div>';
+        }
+
+        listEl.innerHTML = html;
+      })
+      .catch(function () {
+        if (loadingEl) loadingEl.style.display = 'none';
+        if (fallbackEl) fallbackEl.style.display = 'block';
+      });
+  })();
+  </script>
+
+  <!-- Initialize Lucide icons -->
+  <script>lucide.createIcons();</script>
+
+</body>
+</html>

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>For Candidates — Data &amp; Analytics Careers | SourceAbility</title>
+  <meta name="description" content="Explore career opportunities in data science, analytics, AI, and business intelligence. SourceAbility connects top talent with leading organizations.">
+  <link rel="canonical" href="https://www.sourceabilityinc.com/candidates.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="For Candidates — Data &amp; Analytics Careers | SourceAbility">
+  <meta property="og:description" content="Explore career opportunities in data science, analytics, AI, and business intelligence. SourceAbility connects top talent with leading organizations.">
+  <meta property="og:url" content="https://www.sourceabilityinc.com/candidates.html">
+  <meta property="og:site_name" content="SourceAbility, Inc.">
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "SourceAbility, Inc.",
+    "url": "https://www.sourceabilityinc.com",
+    "telephone": "866-412-9178",
+    "email": "info@sourceabilityinc.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Charlotte",
+      "addressRegion": "NC",
+      "addressCountry": "US"
+    },
+    "description": "Executive recruiting firm specializing in data science, analytics, AI, and business intelligence talent.",
+    "priceRange": "$$"
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300..700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- GSAP -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <style>
+    /* ---- Candidates page-specific styles ---- */
+
+    /* Value prop split layout */
+    .cand-split {
+      display: grid;
+      gap: clamp(var(--space-10), 5vw, var(--space-20));
+      align-items: start;
+    }
+
+    @media (min-width: 900px) {
+      .cand-split {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+      }
+    }
+
+    /* Stats visual block */
+    .cand-stats-block {
+      background: var(--color-navy);
+      border-radius: var(--radius-xl);
+      padding: clamp(var(--space-10), 5vw, var(--space-16));
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-10);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cand-stats-block::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -15%;
+      width: 60%;
+      height: 120%;
+      background: radial-gradient(ellipse, rgba(185, 52, 46, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cand-stat {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cand-stat__number {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      color: #fff;
+      font-style: italic;
+      line-height: 1;
+      margin-bottom: var(--space-2);
+    }
+
+    .cand-stat__label {
+      font-size: var(--text-sm);
+      color: rgba(255, 255, 255, 0.55);
+      line-height: 1.5;
+    }
+
+    .cand-stat + .cand-stat {
+      padding-top: var(--space-10);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* Process steps — reuse existing .process-steps / .process-step */
+
+    /* Featured jobs CTA block */
+    .jobs-cta-block {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .jobs-cta-block p {
+      font-size: var(--text-base);
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin-bottom: var(--space-8);
+    }
+
+    .jobs-cta-block__actions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-4);
+    }
+
+    .jobs-cta-block__secondary {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+    }
+
+    .jobs-cta-block__secondary a {
+      color: var(--color-accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .jobs-cta-block__secondary a:hover {
+      text-decoration: underline;
+    }
+
+    /* Feature item icon size tweak for candidates */
+    .cand-feature .feature-item__icon {
+      width: 44px;
+      height: 44px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================
+       MOBILE OVERLAY
+  ============================================ -->
+  <div class="mobile-overlay" aria-hidden="true"></div>
+
+  <!-- ============================================
+       HEADER
+  ============================================ -->
+  <header class="site-header" role="banner">
+
+    <!-- Top Bar -->
+    <div class="header-top">
+      <div class="header-top-inner">
+        <a href="tel:8664129178">
+          <i data-lucide="phone" style="width:14px;height:14px;"></i>
+          866-412-9178
+        </a>
+        <a href="mailto:info@sourceabilityinc.com">
+          <i data-lucide="mail" style="width:14px;height:14px;"></i>
+          info@sourceabilityinc.com
+        </a>
+      </div>
+    </div>
+
+    <!-- Main Nav -->
+    <div class="header-main">
+      <a href="index.html" class="logo-link" aria-label="SourceAbility, Inc. — Home">
+        <img src="./assets/images/sourceability-logo.png" alt="SourceAbility, Inc." height="32">
+      </a>
+
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="employers.html" class="nav-link">For Employers</a>
+        <a href="candidates.html" class="nav-link nav-link--active">For Candidates</a>
+        <a href="specialties.html" class="nav-link">Specialties</a>
+        <a href="jobs.html" class="nav-link">Search Jobs</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="insights.html" class="nav-link">Insights</a>
+        <a href="contact.html" class="nav-link nav-link--cta">Contact</a>
+      </nav>
+
+      <button class="mobile-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+  </header>
+
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <button class="mobile-nav-close" aria-label="Close menu">
+      <i data-lucide="x" style="width:20px;height:20px;"></i>
+    </button>
+    <a href="index.html" class="mobile-nav-link">Home</a>
+    <a href="employers.html" class="mobile-nav-link">For Employers</a>
+    <a href="candidates.html" class="mobile-nav-link">For Candidates</a>
+    <a href="specialties.html" class="mobile-nav-link">Specialties</a>
+    <a href="jobs.html" class="mobile-nav-link">Search Jobs</a>
+    <a href="about.html" class="mobile-nav-link">About</a>
+    <a href="insights.html" class="mobile-nav-link">Insights</a>
+    <a href="contact.html" class="mobile-nav-cta btn btn--primary">Contact Us</a>
+  </nav>
+
+  <!-- ============================================
+       MAIN CONTENT
+  ============================================ -->
+  <main id="main-content">
+
+    <!-- ==========================================
+         PAGE HERO
+    ========================================== -->
+    <section class="page-hero" aria-label="For Candidates">
+      <div class="container container--narrow">
+        <p class="overline overline--light reveal">For Candidates</p>
+        <h1 class="page-hero__title reveal">Your Next Career Move in Data &amp; Analytics</h1>
+        <p class="page-hero__desc reveal">Whether you're a seasoned Chief Data Officer or an emerging data scientist, SourceAbility connects you with opportunities that match your expertise and ambitions.</p>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         VALUE PROPOSITION SECTION
+    ========================================== -->
+    <section class="section-padding bg-surface" aria-labelledby="value-prop-heading">
+      <div class="container container--narrow">
+
+        <header class="section-heading reveal">
+          <p class="overline">Why SourceAbility</p>
+          <h2 class="section-heading__title" id="value-prop-heading">A True Career Partner</h2>
+        </header>
+
+        <div class="cand-split">
+
+          <!-- Left: Feature list -->
+          <div class="feature-list cand-feature reveal">
+
+            <div class="feature-item">
+              <div class="feature-item__icon" aria-hidden="true">
+                <i data-lucide="lock" style="width:20px;height:20px;"></i>
+              </div>
+              <div>
+                <h3 class="feature-item__title">Access Exclusive Roles</h3>
+                <p class="feature-item__text">Many of our positions are confidential searches that never appear on job boards. Working with us gives you access to opportunities you won't find anywhere else.</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-item__icon" aria-hidden="true">
+                <i data-lucide="bar-chart-2" style="width:20px;height:20px;"></i>
+              </div>
+              <div>
+                <h3 class="feature-item__title">Industry Expertise</h3>
+                <p class="feature-item__text">Our recruiters specialize in data and analytics. We understand your skill set, your market value, and the career paths available to you.</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-item__icon" aria-hidden="true">
+                <i data-lucide="shield-check" style="width:20px;height:20px;"></i>
+              </div>
+              <div>
+                <h3 class="feature-item__title">Confidential &amp; Respectful</h3>
+                <p class="feature-item__text">Your job search stays private. We never share your information without explicit consent and always represent you professionally.</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-item__icon" aria-hidden="true">
+                <i data-lucide="handshake" style="width:20px;height:20px;"></i>
+              </div>
+              <div>
+                <h3 class="feature-item__title">Long-Term Relationship</h3>
+                <p class="feature-item__text">We don't just place you and disappear. SourceAbility maintains relationships with candidates throughout their careers, providing guidance and introductions at every stage.</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right: Stats visual block -->
+          <div class="cand-stats-block reveal">
+
+            <div class="cand-stat">
+              <div class="cand-stat__number">15+ Years</div>
+              <p class="cand-stat__label">Placing Data &amp; Analytics Talent</p>
+            </div>
+
+            <div class="cand-stat">
+              <div class="cand-stat__number">2,500+</div>
+              <p class="cand-stat__label">Successful Career Matches</p>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         WHAT TO EXPECT SECTION
+    ========================================== -->
+    <section class="section-padding bg-warm" aria-labelledby="process-heading">
+      <div class="container container--narrow">
+
+        <header class="section-heading reveal">
+          <p class="overline">The Process</p>
+          <h2 class="section-heading__title" id="process-heading">What to Expect When Working With Us</h2>
+        </header>
+
+        <div class="process-steps">
+
+          <article class="process-step reveal">
+            <div class="process-step__number" aria-hidden="true">1</div>
+            <h3 class="process-step__title">Initial Conversation</h3>
+            <p class="process-step__text">We learn about your career goals, technical skills, leadership experience, and what matters most in your next role.</p>
+          </article>
+
+          <article class="process-step reveal">
+            <div class="process-step__number" aria-hidden="true">2</div>
+            <h3 class="process-step__title">Opportunity Matching</h3>
+            <p class="process-step__text">We identify positions that align with your expertise, culture preferences, and growth aspirations — including roles you won't find publicly.</p>
+          </article>
+
+          <article class="process-step reveal">
+            <div class="process-step__number" aria-hidden="true">3</div>
+            <h3 class="process-step__title">Interview Preparation</h3>
+            <p class="process-step__text">We provide detailed insights into the company, team, and hiring manager to help you present your best self.</p>
+          </article>
+
+          <article class="process-step reveal">
+            <div class="process-step__number" aria-hidden="true">4</div>
+            <h3 class="process-step__title">Offer &amp; Transition</h3>
+            <p class="process-step__text">We help negotiate your compensation package and support a smooth transition into your new position.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         FEATURED JOBS SECTION
+    ========================================== -->
+    <section class="section-padding bg-surface" aria-labelledby="jobs-cta-heading">
+      <div class="container container--narrow">
+
+        <header class="section-heading reveal">
+          <p class="overline">Current Openings</p>
+          <h2 class="section-heading__title" id="jobs-cta-heading">Explore Opportunities</h2>
+        </header>
+
+        <div class="jobs-cta-block reveal">
+          <p>Browse our current open positions in data science, analytics, BI, and related fields.</p>
+          <div class="jobs-cta-block__actions">
+            <a href="jobs.html" class="btn btn--primary btn--lg">View All Open Positions</a>
+            <p class="jobs-cta-block__secondary">Or <a href="contact.html">send us your resume</a></p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         CTA BANNER
+    ========================================== -->
+    <section class="cta-banner section-padding" aria-label="Call to action">
+      <div class="container">
+        <div class="cta-banner__inner">
+          <div class="reveal">
+            <h2 class="cta-banner__title">Ready for Your Next Chapter?</h2>
+            <p class="cta-banner__text">Connect with our team to explore confidential opportunities in data and analytics.</p>
+          </div>
+          <div style="display:flex;gap:var(--space-4);flex-wrap:wrap;" class="reveal">
+            <a href="jobs.html" class="btn btn--primary btn--lg">Explore Opportunities</a>
+            <a href="contact.html" class="btn btn--outline btn--lg">Contact a Recruiter</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================
+       FOOTER
+  ============================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <!-- Brand -->
+        <div class="footer-brand">
+          <img src="./assets/images/sourceability-logo.png" alt="SourceAbility, Inc.">
+          <p>The Leader in Data &amp; Analytical Recruitment. Connecting organizations with exceptional analytics talent since 2008.</p>
+          <div class="social-links">
+            <a href="https://www.facebook.com/SourceAbility-Inc-186078034755057" target="_blank" rel="noopener noreferrer" aria-label="SourceAbility on Facebook">
+              <i data-lucide="facebook" style="width:16px;height:16px;"></i>
+            </a>
+            <a href="https://twitter.com/SourceAbility" target="_blank" rel="noopener noreferrer" aria-label="SourceAbility on Twitter / X">
+              <i data-lucide="twitter" style="width:16px;height:16px;"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/216155" target="_blank" rel="noopener noreferrer" aria-label="SourceAbility on LinkedIn">
+              <i data-lucide="linkedin" style="width:16px;height:16px;"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h3 class="footer-heading">Company</h3>
+          <ul class="footer-links" role="list">
+            <li><a href="about.html">About</a></li>
+            <li><a href="insights.html">Insights</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h3 class="footer-heading">Services</h3>
+          <ul class="footer-links" role="list">
+            <li><a href="employers.html">For Employers</a></li>
+            <li><a href="candidates.html">For Candidates</a></li>
+            <li><a href="jobs.html">Search Jobs</a></li>
+          </ul>
+        </div>
+
+        <!-- Specialties -->
+        <div>
+          <h3 class="footer-heading">Specialties</h3>
+          <ul class="footer-links" role="list">
+            <li><a href="specialties.html">Analytics &amp; Data Science</a></li>
+            <li><a href="specialties.html">BI &amp; Data Engineering</a></li>
+            <li><a href="specialties.html">Digital Analytics</a></li>
+            <li><a href="specialties.html">Fraud &amp; Risk</a></li>
+            <li><a href="specialties.html">Healthcare Analytics</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>&copy; 2025 SourceAbility, Inc. All rights reserved. | Charlotte, NC</p>
+        <nav aria-label="Legal links">
+          <ul style="list-style:none;display:flex;gap:var(--space-6);" role="list">
+            <li><a href="privacy.html" style="font-size:var(--text-xs);color:rgba(255,255,255,0.35);text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Privacy Policy</a></li>
+            <li><a href="terms.html" style="font-size:var(--text-xs);color:rgba(255,255,255,0.35);text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Terms of Service</a></li>
+          </ul>
+        </nav>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ============================================
+       SCRIPTS
+  ============================================ -->
+  <script src="./assets/js/main.js" defer></script>
+
+  <!-- Initialize Lucide icons -->
+  <script>lucide.createIcons();</script>
+
+</body>
+</html>

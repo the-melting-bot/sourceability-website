@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Specialties — Analytics, Data Science &amp; BI Recruiting | SourceAbility</title>
+  <meta name="description" content="Specialized recruiting across analytics, data science, business intelligence, digital analytics, fraud &amp; risk, and healthcare analytics.">
+  <link rel="canonical" href="https://www.sourceabilityinc.com/specialties.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Specialties — Analytics, Data Science &amp; BI Recruiting | SourceAbility">
+  <meta property="og:description" content="Specialized recruiting across analytics, data science, business intelligence, digital analytics, fraud &amp; risk, and healthcare analytics.">
+  <meta property="og:url" content="https://www.sourceabilityinc.com/specialties.html">
+  <meta property="og:site_name" content="SourceAbility, Inc.">
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "SourceAbility, Inc.",
+    "url": "https://www.sourceabilityinc.com",
+    "telephone": "866-412-9178",
+    "email": "info@sourceabilityinc.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Charlotte",
+      "addressRegion": "NC",
+      "addressCountry": "US"
+    },
+    "description": "Executive recruiting firm specializing in data science, analytics, AI, and business intelligence talent.",
+    "priceRange": "$$"
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300..700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- GSAP -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <!-- Specialties Page Styles -->
+  <style>
+    /* ---- Specialty Detail Blocks ---- */
+    .specialty-detail {
+      margin-bottom: 4rem;
+      padding-bottom: 4rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .specialty-detail:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    /* Overline number badge */
+    .specialty-number {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: var(--space-3);
+    }
+
+    /* Specialty title */
+    .specialty-title {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: var(--text-xl);
+      color: var(--color-navy);
+      margin-bottom: var(--space-5);
+      line-height: 1.2;
+    }
+
+    /* Description */
+    .specialty-desc {
+      font-size: var(--text-base);
+      color: var(--color-text-muted);
+      line-height: 1.75;
+      max-width: 520px;
+    }
+
+    /* Roles box */
+    .roles-box {
+      background: var(--color-surface-warm);
+      padding: var(--space-8);
+      border-radius: var(--radius-lg);
+      border-left: 4px solid var(--color-accent);
+      box-shadow: var(--shadow-md);
+    }
+
+    .roles-box__title {
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: var(--space-5);
+    }
+
+    .roles-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    .roles-list li {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      font-size: var(--text-sm);
+      color: var(--color-text);
+      font-weight: 450;
+    }
+
+    .roles-list li::before {
+      content: '';
+      display: block;
+      flex-shrink: 0;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--color-accent);
+    }
+
+    /* Ensure split__content aligns correctly */
+    .specialty-detail .split__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================
+       MOBILE OVERLAY
+  ============================================ -->
+  <div class="mobile-overlay" aria-hidden="true"></div>
+
+  <!-- ============================================
+       HEADER
+  ============================================ -->
+  <header class="site-header" role="banner">
+
+    <!-- Top Bar -->
+    <div class="header-top">
+      <div class="header-top-inner">
+        <a href="tel:8664129178">
+          <i data-lucide="phone" style="width:14px;height:14px;"></i>
+          866-412-9178
+        </a>
+        <a href="mailto:info@sourceabilityinc.com">
+          <i data-lucide="mail" style="width:14px;height:14px;"></i>
+          info@sourceabilityinc.com
+        </a>
+      </div>
+    </div>
+
+    <!-- Main Nav -->
+    <div class="header-main">
+      <a href="index.html" class="logo-link" aria-label="SourceAbility, Inc. — Home">
+        <img src="./assets/images/sourceability-logo.png" alt="SourceAbility, Inc." height="32">
+      </a>
+
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="employers.html" class="nav-link">For Employers</a>
+        <a href="candidates.html" class="nav-link">For Candidates</a>
+        <a href="specialties.html" class="nav-link nav-link--active">Specialties</a>
+        <a href="jobs.html" class="nav-link">Search Jobs</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="insights.html" class="nav-link">Insights</a>
+        <a href="contact.html" class="nav-link nav-link--cta">Contact</a>
+      </nav>
+
+      <button class="mobile-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+  </header>
+
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <button class="mobile-nav-close" aria-label="Close menu">
+      <i data-lucide="x" style="width:20px;height:20px;"></i>
+    </button>
+    <a href="index.html" class="mobile-nav-link">Home</a>
+    <a href="employers.html" class="mobile-nav-link">For Employers</a>
+    <a href="candidates.html" class="mobile-nav-link">For Candidates</a>
+    <a href="specialties.html" class="mobile-nav-link">Specialties</a>
+    <a href="jobs.html" class="mobile-nav-link">Search Jobs</a>
+    <a href="about.html" class="mobile-nav-link">About</a>
+    <a href="insights.html" class="mobile-nav-link">Insights</a>
+    <a href="contact.html" class="mobile-nav-cta btn btn--primary">Contact Us</a>
+  </nav>
+
+  <!-- ============================================
+       MAIN CONTENT
+  ============================================ -->
+  <main id="main-content">
+
+    <!-- ==========================================
+         PAGE HERO
+    ========================================== -->
+    <section class="page-hero" aria-label="Specialties hero">
+      <div class="container">
+        <p class="overline overline--light reveal">Our Specialties</p>
+        <h1 class="page-hero__title reveal">Deep Expertise Across the Data Landscape</h1>
+        <p class="page-hero__desc reveal">SourceAbility recruits exclusively in data and analytics. Our specialized focus means deeper networks, better candidates, and faster placements.</p>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SPECIALTIES DETAIL SECTION
+    ========================================== -->
+    <section class="section-padding bg-surface" aria-labelledby="specialties-detail-heading">
+      <div class="container container--narrow">
+
+        <h2 id="specialties-detail-heading" class="sr-only">Our Recruiting Specialties</h2>
+
+        <!-- 01 — Analytics & Data Science -->
+        <article class="specialty-detail reveal" aria-labelledby="specialty-01-title">
+          <div class="split">
+            <div class="split__content">
+              <span class="specialty-number" aria-hidden="true">01</span>
+              <h2 class="specialty-title" id="specialty-01-title">Analytics &amp; Data Science</h2>
+              <p class="specialty-desc">Data science and analytics roles are among the most competitive in the market. We recruit machine learning engineers, data scientists, statistical modelers, research analysts, and AI specialists across industries including fintech, healthcare, e-commerce, and technology.</p>
+            </div>
+            <div>
+              <div class="roles-box">
+                <p class="roles-box__title">Typical Roles We Place</p>
+                <ul class="roles-list" role="list">
+                  <li>Chief Data Officer</li>
+                  <li>VP of Data Science</li>
+                  <li>Director of Analytics</li>
+                  <li>Senior Data Scientist</li>
+                  <li>ML Engineer</li>
+                  <li>AI Research Lead</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 02 — Business Intelligence & Data Engineering -->
+        <article class="specialty-detail reveal" aria-labelledby="specialty-02-title">
+          <div class="split split--reverse">
+            <div class="split__content">
+              <span class="specialty-number" aria-hidden="true">02</span>
+              <h2 class="specialty-title" id="specialty-02-title">Business Intelligence &amp; Data Engineering</h2>
+              <p class="specialty-desc">Modern organizations depend on robust data infrastructure. We place BI developers, data architects, ETL engineers, analytics platform specialists, and data engineering leaders who design and maintain the systems that power business intelligence.</p>
+            </div>
+            <div>
+              <div class="roles-box">
+                <p class="roles-box__title">Typical Roles We Place</p>
+                <ul class="roles-list" role="list">
+                  <li>VP of Data Engineering</li>
+                  <li>Director of BI</li>
+                  <li>Data Architect</li>
+                  <li>Lead Data Engineer</li>
+                  <li>BI Developer</li>
+                  <li>Analytics Platform Manager</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 03 — Consumer, Digital & Web Analytics -->
+        <article class="specialty-detail reveal" aria-labelledby="specialty-03-title">
+          <div class="split">
+            <div class="split__content">
+              <span class="specialty-number" aria-hidden="true">03</span>
+              <h2 class="specialty-title" id="specialty-03-title">Consumer, Digital &amp; Web Analytics</h2>
+              <p class="specialty-desc">Digital-first companies need leaders who can turn user behavior into business strategy. We recruit digital analytics managers, marketing scientists, attribution analysts, web optimization leaders, and customer insights professionals.</p>
+            </div>
+            <div>
+              <div class="roles-box">
+                <p class="roles-box__title">Typical Roles We Place</p>
+                <ul class="roles-list" role="list">
+                  <li>VP of Digital Analytics</li>
+                  <li>Director of Marketing Science</li>
+                  <li>Head of Customer Insights</li>
+                  <li>Senior Attribution Analyst</li>
+                  <li>Web Analytics Manager</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 04 — Fraud & Risk Analytics -->
+        <article class="specialty-detail reveal" aria-labelledby="specialty-04-title">
+          <div class="split split--reverse">
+            <div class="split__content">
+              <span class="specialty-number" aria-hidden="true">04</span>
+              <h2 class="specialty-title" id="specialty-04-title">Fraud &amp; Risk Analytics</h2>
+              <p class="specialty-desc">Financial institutions and fintechs rely on sophisticated analytics to detect fraud and manage risk. We recruit fraud detection analysts, risk modelers, compliance data scientists, financial crime specialists, and AML analytics leaders.</p>
+            </div>
+            <div>
+              <div class="roles-box">
+                <p class="roles-box__title">Typical Roles We Place</p>
+                <ul class="roles-list" role="list">
+                  <li>Head of Fraud Analytics</li>
+                  <li>Director of Risk Modeling</li>
+                  <li>Senior Fraud Data Scientist</li>
+                  <li>AML Analytics Manager</li>
+                  <li>Credit Risk Analyst</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 05 — Healthcare Analytics -->
+        <article class="specialty-detail reveal" aria-labelledby="specialty-05-title">
+          <div class="split">
+            <div class="split__content">
+              <span class="specialty-number" aria-hidden="true">05</span>
+              <h2 class="specialty-title" id="specialty-05-title">Healthcare Analytics</h2>
+              <p class="specialty-desc">Healthcare organizations are transforming patient outcomes through data. We place clinical data scientists, health informatics leaders, population health analysts, outcomes researchers, and healthcare AI specialists.</p>
+            </div>
+            <div>
+              <div class="roles-box">
+                <p class="roles-box__title">Typical Roles We Place</p>
+                <ul class="roles-list" role="list">
+                  <li>Chief Analytics Officer (Healthcare)</li>
+                  <li>VP of Clinical Analytics</li>
+                  <li>Director of Health Informatics</li>
+                  <li>Population Health Data Scientist</li>
+                  <li>Outcomes Research Lead</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         CTA BANNER
+    ========================================== -->
+    <section class="cta-banner section-padding" aria-label="Call to action">
+      <div class="container">
+        <div class="cta-banner__inner">
+          <div class="reveal">
+            <h2 class="cta-banner__title">Need Talent in One of These Areas?</h2>
+            <p class="cta-banner__text">Our recruiters have deep networks across every analytics specialty. Let's discuss your hiring needs.</p>
+          </div>
+          <div style="display:flex;gap:var(--space-4);flex-wrap:wrap;" class="reveal">
+            <a href="contact.html" class="btn btn--primary btn--lg">Start a Search</a>
+            <a href="candidates.html" class="btn btn--outline btn--lg">For Candidates</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================
+       FOOTER
+  ============================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <!-- Brand -->
+        <div class="footer-brand">
+          <img src="./assets/images/sourceability-logo.png" alt="SourceAbility, Inc.">
+          <p>The Leader in Data &amp; Analytical Recruitment. Connecting organizations with exceptional analytics talent since 2008.</p>
+          <div class="social-links">
+            <a href="https://www.facebook.com/SourceAbility-Inc-186078034755057" target="_blank" rel="noopener noreferrer" aria-label="SourceAbility on Facebook">
+              <i data-lucide="facebook" style="width:16px;height:16px;"></i>
+            </a>
+            <a href="https://twitter.com/SourceAbility" target="_blank" rel="noopener noreferrer" aria-label="SourceAbility on Twitter / X">
+              <i data-lucide="twitter" style="width:16px;height:16px;"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/216155" target="_blank" rel="noopener noreferrer" aria-label="SourceAbility on LinkedIn">
+              <i data-lucide="linkedin" style="width:16px;height:16px;"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h3 class="footer-heading">Company</h3>
+          <ul class="footer-links" role="list">
+            <li><a href="about.html">About</a></li>
+            <li><a href="insights.html">Insights</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h3 class="footer-heading">Services</h3>
+          <ul class="footer-links" role="list">
+            <li><a href="employers.html">For Employers</a></li>
+            <li><a href="candidates.html">For Candidates</a></li>
+            <li><a href="jobs.html">Search Jobs</a></li>
+          </ul>
+        </div>
+
+        <!-- Specialties -->
+        <div>
+          <h3 class="footer-heading">Specialties</h3>
+          <ul class="footer-links" role="list">
+            <li><a href="specialties.html">Analytics &amp; Data Science</a></li>
+            <li><a href="specialties.html">BI &amp; Data Engineering</a></li>
+            <li><a href="specialties.html">Digital Analytics</a></li>
+            <li><a href="specialties.html">Fraud &amp; Risk</a></li>
+            <li><a href="specialties.html">Healthcare Analytics</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>&copy; 2025 SourceAbility, Inc. All rights reserved. | Charlotte, NC</p>
+        <nav aria-label="Legal links">
+          <ul style="list-style:none;display:flex;gap:var(--space-6);" role="list">
+            <li><a href="privacy.html" style="font-size:var(--text-xs);color:rgba(255,255,255,0.35);text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Privacy Policy</a></li>
+            <li><a href="terms.html" style="font-size:var(--text-xs);color:rgba(255,255,255,0.35);text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Terms of Service</a></li>
+          </ul>
+        </nav>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ============================================
+       SCRIPTS
+  ============================================ -->
+  <script src="./assets/js/main.js" defer></script>
+
+  <!-- Initialize Lucide icons -->
+  <script>lucide.createIcons();</script>
+
+</body>
+</html>

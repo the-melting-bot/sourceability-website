@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>About Us — SourceAbility | Data &amp; Analytics Recruiting</title>
+  <meta name="description" content="Learn about SourceAbility — Charlotte's premier data and analytics recruiting firm with 15+ years of specialized experience placing analytics leaders.">
+  <link rel="canonical" href="https://www.sourceabilityinc.com/about.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="About Us — SourceAbility | Data &amp; Analytics Recruiting">
+  <meta property="og:description" content="Learn about SourceAbility — Charlotte's premier data and analytics recruiting firm with 15+ years of specialized experience placing analytics leaders.">
+  <meta property="og:url" content="https://www.sourceabilityinc.com/about.html">
+  <meta property="og:site_name" content="SourceAbility, Inc.">
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "SourceAbility, Inc.",
+    "url": "https://www.sourceabilityinc.com",
+    "telephone": "866-412-9178",
+    "email": "info@sourceabilityinc.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Charlotte",
+      "addressRegion": "NC",
+      "addressCountry": "US"
+    },
+    "description": "Executive recruiting firm specializing in data science, analytics, AI, and business intelligence talent.",
+    "priceRange": "$$"
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300..700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- GSAP -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <style>
+    /* ── Page Hero ── */
+    .page-hero {
+      background-color: var(--color-navy, #0f1a2e);
+      padding: var(--space-20, 5rem) 0 var(--space-16, 4rem);
+      text-align: center;
+    }
+    .page-hero .overline {
+      color: rgba(255,255,255,0.55);
+      margin-bottom: var(--space-4, 1rem);
+    }
+    .page-hero__title {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: 400;
+      color: #fff;
+      margin: 0 auto var(--space-5, 1.25rem);
+      max-width: 700px;
+      line-height: 1.15;
+    }
+    .page-hero__desc {
+      font-size: var(--text-lg, 1.125rem);
+      color: rgba(255,255,255,0.7);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+
+    /* ── Mission Split ── */
+    .mission-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-16, 4rem);
+      align-items: start;
+    }
+    @media (max-width: 768px) {
+      .mission-split {
+        grid-template-columns: 1fr;
+        gap: var(--space-10, 2.5rem);
+      }
+    }
+    .mission-split__col-title {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 400;
+      color: var(--color-navy, #0f1a2e);
+      margin: 0 0 var(--space-5, 1.25rem);
+    }
+    .mission-split__text {
+      color: var(--color-text-muted, #5a6270);
+      line-height: 1.75;
+      margin-bottom: var(--space-5, 1.25rem);
+    }
+    .quote-box {
+      border-left: 4px solid #b9342e;
+      padding: var(--space-5, 1.25rem) var(--space-6, 1.5rem);
+      background: #f5f3ef;
+      margin-top: var(--space-6, 1.5rem);
+      border-radius: 0 4px 4px 0;
+    }
+    .quote-box p {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--color-navy, #0f1a2e);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ── Why Niche cards ── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-6, 1.5rem);
+      margin-top: var(--space-12, 3rem);
+    }
+    @media (max-width: 900px) {
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (min-width: 601px) and (max-width: 900px) {
+      .why-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .why-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: var(--space-8, 2rem);
+      border-top: 3px solid #b9342e;
+      box-shadow: 0 2px 12px rgba(15,26,46,0.07);
+    }
+    .why-card__number {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 2rem;
+      font-style: italic;
+      color: #b9342e;
+      opacity: 0.4;
+      display: block;
+      margin-bottom: var(--space-3, 0.75rem);
+      line-height: 1;
+    }
+    .why-card__title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--color-navy, #0f1a2e);
+      margin: 0 0 var(--space-3, 0.75rem);
+    }
+    .why-card__text {
+      font-size: var(--text-sm, 0.9rem);
+      color: var(--color-text-muted, #5a6270);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* ── Team ── */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-8, 2rem);
+      margin-top: var(--space-12, 3rem);
+    }
+    @media (max-width: 768px) {
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (min-width: 540px) and (max-width: 768px) {
+      .team-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .team-card {
+      text-align: center;
+      padding: var(--space-8, 2rem) var(--space-6, 1.5rem);
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(15,26,46,0.06);
+    }
+    .team-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: #f5f3ef;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto var(--space-5, 1.25rem);
+      color: #c4bdb4;
+    }
+    .team-name {
+      font-weight: 600;
+      color: var(--color-navy, #0f1a2e);
+      margin: 0 0 var(--space-1, 0.25rem);
+      font-size: 1rem;
+    }
+    .team-title {
+      font-size: var(--text-xs, 0.75rem);
+      color: #b9342e;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 600;
+      margin: 0 0 var(--space-4, 1rem);
+    }
+    .team-bio {
+      font-size: var(--text-sm, 0.875rem);
+      color: var(--color-text-muted, #5a6270);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    /* ── Join Section ── */
+    .join-section {
+      text-align: center;
+    }
+    .join-section__title {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      font-weight: 400;
+      color: var(--color-navy, #0f1a2e);
+      margin: 0 0 var(--space-5, 1.25rem);
+    }
+    .join-section__text {
+      color: var(--color-text-muted, #5a6270);
+      font-size: var(--text-lg, 1.1rem);
+      max-width: 560px;
+      margin: 0 auto var(--space-8, 2rem);
+      line-height: 1.65;
+    }
+
+    /* ── CTA Banner ── */
+    .about-cta-banner {
+      background-color: var(--color-navy, #0f1a2e);
+      padding: var(--space-16, 4rem) 0;
+    }
+    .about-cta-banner__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-10, 2.5rem);
+      flex-wrap: wrap;
+    }
+    .about-cta-banner__title {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      font-weight: 400;
+      color: #fff;
+      margin: 0 0 var(--space-3, 0.75rem);
+    }
+    .about-cta-banner__text {
+      color: rgba(255,255,255,0.65);
+      font-size: 1rem;
+      margin: 0;
+      line-height: 1.6;
+    }
+    .about-cta-banner__actions {
+      display: flex;
+      gap: var(--space-4, 1rem);
+      flex-wrap: wrap;
+      flex-shrink: 0;
+    }
+    @media (max-width: 700px) {
+      .about-cta-banner__inner {
+        flex-direction: column;
+        text-align: center;
+      }
+      .about-cta-banner__actions {
+        justify-content: center;
+      }
+    }
+
+    /* ── Section heading sub-text ── */
+    .section-intro {
+      color: var(--color-text-muted, #5a6270);
+      max-width: 560px;
+      margin: var(--space-4, 1rem) 0 0;
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================
+       MOBILE OVERLAY
+  ============================================ -->
+  <div class="mobile-overlay" aria-hidden="true"></div>
+
+  <!-- ============================================
+       HEADER
+  ============================================ -->
+  <header class="site-header" role="banner">
+
+    <!-- Top Bar -->
+    <div class="header-top">
+      <div class="header-top-inner">
+        <a href="tel:8664129178">
+          <i data-lucide="phone" style="width:14px;height:14px;"></i>
+          866-412-9178
+        </a>
+        <a href="mailto:info@sourceabilityinc.com">
+          <i data-lucide="mail" style="width:14px;height:14px;"></i>
+          info@sourceabilityinc.com
+        </a>
+      </div>
+    </div>
+
+    <!-- Main Nav -->
+    <div class="header-main">
+      <a href="index.html" class="logo-link" aria-label="SourceAbility, Inc. — Home">
+        <img src="./assets/images/sourceability-logo.png" alt="SourceAbility, Inc." height="32">
+      </a>
+
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="employers.html" class="nav-link">For Employers</a>
+        <a href="candidates.html" class="nav-link">For Candidates</a>
+        <a href="specialties.html" class="nav-link">Specialties</a>
+        <a href="jobs.html" class="nav-link">Search Jobs</a>
+        <a href="about.html" class="nav-link nav-link--active">About</a>
+        <a href="insights.html" class="nav-link">Insights</a>
+        <a href="contact.html" class="nav-link nav-link--cta">Contact</a>
+      </nav>
+
+      <button class="mobile-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+  </header>
+
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <button class="mobile-nav-close" aria-label="Close menu">
+      <i data-lucide="x" style="width:20px;height:20px;"></i>
+    </button>
+    <a href="index.html" class="mobile-nav-link">Home</a>
+    <a href="employers.html" class="mobile-nav-link">For Employers</a>
+    <a href="candidates.html" class="mobile-nav-link">For Candidates</a>
+    <a href="specialties.html" class="mobile-nav-link">Specialties</a>
+    <a href="jobs.html" class="mobile-nav-link">Search Jobs</a>
+    <a href="about.html" class="mobile-nav-link">About</a>
+    <a href="insights.html" class="mobile-nav-link">Insights</a>
+    <a href="contact.html" class="mobile-nav-cta btn btn--primary">Contact Us</a>
+  </nav>
+
+  <!-- ============================================
+       MAIN CONTENT
+  ============================================ -->
+  <main id="main-content">
+
+    <!-- ==========================================
+         PAGE HERO
+    ========================================== -->
+    <section class="page-hero" aria-label="About SourceAbility">
+      <div class="container">
+        <p class="overline overline--light reveal">Who We Are</p>
+        <h1 class="page-hero__title reveal">A Firm Built for Data &amp; Analytics</h1>
+        <p class="page-hero__desc reveal">Since 2008, SourceAbility has been the go-to recruiting partner for organizations building world-class data and analytics teams.</p>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         MISSION SECTION
+    ========================================== -->
+    <section class="section-padding" style="background:#fff;" aria-labelledby="story-heading">
+      <div class="container container--narrow">
+        <div class="mission-split">
+
+          <!-- Left: Our Story -->
+          <div class="reveal">
+            <h2 class="mission-split__col-title" id="story-heading">Our Story</h2>
+            <p class="mission-split__text">SourceAbility was founded on a simple insight: as organizations increasingly depend on data to drive decisions, they need a recruiting partner who understands the unique talent landscape of analytics, data science, and business intelligence.</p>
+            <p class="mission-split__text">Traditional recruiting firms treat data roles as just another category. We saw the gap — and built a firm that lives and breathes the analytics ecosystem. Our recruiters understand the technologies, the career paths, and the market dynamics that shape this space.</p>
+          </div>
+
+          <!-- Right: Our Mission -->
+          <div class="reveal">
+            <h2 class="mission-split__col-title">Our Mission</h2>
+            <p class="mission-split__text">To be the most trusted and effective recruiting partner in the data and analytics industry, connecting exceptional talent with organizations that value data-driven excellence.</p>
+            <div class="quote-box">
+              <p>"We don't just fill roles. We build the data teams that transform organizations."</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         WHY NICHE SECTION
+    ========================================== -->
+    <section class="section-padding bg-warm" aria-labelledby="why-heading">
+      <div class="container container--narrow">
+
+        <header class="section-heading reveal">
+          <p class="overline">Our Advantage</p>
+          <h2 class="section-heading__title" id="why-heading">Why Niche Recruiting Matters</h2>
+        </header>
+
+        <div class="why-grid">
+
+          <article class="why-card reveal">
+            <span class="why-card__number" aria-hidden="true">01</span>
+            <h3 class="why-card__title">Deeper Networks</h3>
+            <p class="why-card__text">We've spent over 15 years building relationships within the data and analytics community. Our candidates trust us because we speak their language and understand their careers.</p>
+          </article>
+
+          <article class="why-card reveal">
+            <span class="why-card__number" aria-hidden="true">02</span>
+            <h3 class="why-card__title">Faster Placements</h3>
+            <p class="why-card__text">Our specialized focus means we already know who the top candidates are before a search begins. This dramatically reduces time-to-fill for critical data roles.</p>
+          </article>
+
+          <article class="why-card reveal">
+            <span class="why-card__number" aria-hidden="true">03</span>
+            <h3 class="why-card__title">Better Retention</h3>
+            <p class="why-card__text">When a recruiter truly understands both the role and the candidate, the result is better cultural and technical fit — and placements that last.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TEAM SECTION
+    ========================================== -->
+    <section class="section-padding" style="background:#fff;" aria-labelledby="team-heading">
+      <div class="container container--narrow">
+
+        <header class="section-heading reveal">
+          <p class="overline">Our Team</p>
+          <h2 class="section-heading__title" id="team-heading">Led by Industry Specialists</h2>
+          <p class="section-intro">Our recruiters bring years of experience in analytics and technology hiring. Each team member is deeply embedded in the data and analytics community.</p>
+        </header>
+
+        <div class="team-grid">
+
+          <article class="team-card reveal">
+            <div class="team-avatar" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="18" cy="13" r="7" fill="currentColor" opacity="0.4"/>
+                <path d="M4 32c0-7.732 6.268-14 14-14s14 6.268 14 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.3"/>
+              </svg>
+            </div>
+            <p class="team-name">Team Member</p>
+            <p class="team-title">Managing Director</p>
+            <p class="team-bio">15+ years placing analytics leaders across Fortune 500 organizations. Deep expertise in executive search for data science and BI functions.</p>
+          </article>
+
+          <article class="team-card reveal">
+            <div class="team-avatar" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="18" cy="13" r="7" fill="currentColor" opacity="0.4"/>
+                <path d="M4 32c0-7.732 6.268-14 14-14s14 6.268 14 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.3"/>
+              </svg>
+            </div>
+            <p class="team-name">Team Member</p>
+            <p class="team-title">Senior Recruiter</p>
+            <p class="team-bio">Specializes in mid-to-senior data engineering and business intelligence placements, with a strong network across technology and financial services.</p>
+          </article>
+
+          <article class="team-card reveal">
+            <div class="team-avatar" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="18" cy="13" r="7" fill="currentColor" opacity="0.4"/>
+                <path d="M4 32c0-7.732 6.268-14 14-14s14 6.268 14 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.3"/>
+              </svg>
+            </div>
+            <p class="team-name">Team Member</p>
+            <p class="team-title">Research Director</p>
+            <p class="team-bio">Leads candidate sourcing and market intelligence, ensuring SourceAbility always has first access to the best data and analytics talent in the market.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         JOIN SECTION
+    ========================================== -->
+    <section class="section-padding bg-warm" aria-labelledby="join-heading">
+      <div class="container">
+        <div class="join-section reveal">
+          <h2 class="join-section__title" id="join-heading">Join Our Team</h2>
+          <p class="join-section__text">Interested in a career in executive recruiting? We're always looking for talented, driven individuals who are passionate about the data and analytics space.</p>
+          <a href="contact.html" class="btn btn--primary btn--lg">View Open Positions</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         CTA BANNER
+    ========================================== -->
+    <section class="about-cta-banner" aria-label="Partner with SourceAbility">
+      <div class="container">
+        <div class="about-cta-banner__inner">
+          <div class="reveal">
+            <h2 class="about-cta-banner__title">Partner With SourceAbility</h2>
+            <p class="about-cta-banner__text">Whether you're building a team or exploring your career, we'd love to hear from you.</p>
+          </div>
+          <div class="about-cta-banner__actions reveal">
+            <a href="employers.html" class="btn btn--primary btn--lg">For Employers</a>
+            <a href="candidates.html" class="btn btn--outline btn--lg">For Candidates</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================
+       FOOTER
+  ============================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <!-- Brand -->
+        <div class="footer-brand">
+          <img src="./assets/images/sourceability-logo.png" alt="SourceAbility, Inc.">
+          <p>The Leader in Data &amp; Analytical Recruitment. Connecting organizations with exceptional analytics talent since 2008.</p>
+          <div class="social-links">
+            <a href="https://www.facebook.com/SourceAbility-Inc-186078034755057" target="_blank" rel="noopener noreferrer" aria-label="SourceAbility on Facebook">
+              <i data-lucide="facebook" style="width:16px;height:16px;"></i>
+            </a>
+            <a href="https://twitter.com/SourceAbility" target="_blank" rel="noopener noreferrer" aria-label="SourceAbility on Twitter / X">
+              <i data-lucide="twitter" style="width:16px;height:16px;"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/216155" target="_blank" rel="noopener noreferrer" aria-label="SourceAbility on LinkedIn">
+              <i data-lucide="linkedin" style="width:16px;height:16px;"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h3 class="footer-heading">Company</h3>
+          <ul class="footer-links" role="list">
+            <li><a href="about.html">About</a></li>
+            <li><a href="insights.html">Insights</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h3 class="footer-heading">Services</h3>
+          <ul class="footer-links" role="list">
+            <li><a href="employers.html">For Employers</a></li>
+            <li><a href="candidates.html">For Candidates</a></li>
+            <li><a href="jobs.html">Search Jobs</a></li>
+          </ul>
+        </div>
+
+        <!-- Specialties -->
+        <div>
+          <h3 class="footer-heading">Specialties</h3>
+          <ul class="footer-links" role="list">
+            <li><a href="specialties.html">Analytics &amp; Data Science</a></li>
+            <li><a href="specialties.html">BI &amp; Data Engineering</a></li>
+            <li><a href="specialties.html">Digital Analytics</a></li>
+            <li><a href="specialties.html">Fraud &amp; Risk</a></li>
+            <li><a href="specialties.html">Healthcare Analytics</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>&copy; 2025 SourceAbility, Inc. All rights reserved. | Charlotte, NC</p>
+        <nav aria-label="Legal links">
+          <ul style="list-style:none;display:flex;gap:var(--space-6);" role="list">
+            <li><a href="privacy.html" style="font-size:var(--text-xs);color:rgba(255,255,255,0.35);text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Privacy Policy</a></li>
+            <li><a href="terms.html" style="font-size:var(--text-xs);color:rgba(255,255,255,0.35);text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Terms of Service</a></li>
+          </ul>
+        </nav>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ============================================
+       SCRIPTS
+  ============================================ -->
+  <script src="./assets/js/main.js" defer></script>
+
+  <!-- Initialize Lucide icons -->
+  <script>lucide.createIcons();</script>
+
+</body>
+</html>
