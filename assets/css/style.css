@@ -414,7 +414,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.35;
+  opacity: 0.55;
+  filter: brightness(1.18) contrast(1.05) saturate(1.04);
 }
 
 .hero__overlay {
@@ -422,9 +423,9 @@
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(15, 26, 46, 0.7) 0%,
-    rgba(15, 26, 46, 0.85) 60%,
-    rgba(15, 26, 46, 0.95) 100%
+    rgba(15, 26, 46, 0.45) 0%,
+    rgba(15, 26, 46, 0.58) 60%,
+    rgba(15, 26, 46, 0.72) 100%
   );
 }
 
@@ -586,6 +587,22 @@
   }
   .page-hero {
     padding: 8rem 0 4rem;
+  }
+}
+
+/* Mobile: homepage hero video — even brighter for small screens */
+@media (max-width: 767px) {
+  .hero__video {
+    opacity: 0.62;
+    filter: brightness(1.22) contrast(1.05) saturate(1.04);
+  }
+  .hero__overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(15, 26, 46, 0.38) 0%,
+      rgba(15, 26, 46, 0.50) 60%,
+      rgba(15, 26, 46, 0.65) 100%
+    );
   }
 }
 
