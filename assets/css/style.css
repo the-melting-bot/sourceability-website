@@ -1748,6 +1748,19 @@
   color: var(--color-navy);
 }
 
+/* Brand Video Section */
+.salary-video-section {
+  background: var(--color-navy);
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+.salary-video {
+  width: 100%;
+  max-width: 960px;
+  display: block;
+}
+
 /* Unified Salary Table */
 .salary-table-wrap {
   overflow-x: auto;
