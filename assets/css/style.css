@@ -1891,20 +1891,14 @@
   transform: translateX(-50%);
 }
 
-.salary-table-footer {
+p.salary-table-footer {
   text-align: left;
-  margin-top: var(--space-5);
-}
-.salary-table-footer p {
+  margin: var(--space-5) 0 0;
   font-size: var(--text-xs);
   color: var(--color-text-muted);
   line-height: 1.7;
-  margin: 0 0 var(--space-2);
 }
-.salary-table-footer p:last-child {
-  margin-bottom: 0;
-}
-.salary-table-footer a {
+p.salary-table-footer a {
   color: var(--color-accent);
   text-decoration: underline;
   text-underline-offset: 2px;
