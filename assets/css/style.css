@@ -1892,6 +1892,9 @@
 }
 
 p.salary-table-footer {
+  /* Full width under the table (base.css limits all p to max-width: 72ch) */
+  max-width: none;
+  width: 100%;
   text-align: left;
   margin: var(--space-5) 0 0;
   font-size: var(--text-xs);
