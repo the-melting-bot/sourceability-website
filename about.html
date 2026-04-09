@@ -167,56 +167,150 @@
       margin: 0;
     }
 
-    /* ── How we work (process — replaces placeholder team cards) ── */
-    .about-work-grid {
+    /* ── How we work: timeline + varied step panels (distinct from why-grid cards) ── */
+    .about-work-flow {
+      list-style: none;
+      margin: var(--space-12, 3rem) 0 0;
+      padding: 0;
+      max-width: 52rem;
+    }
+    .about-work-flow > li {
+      list-style: none;
+    }
+    .about-work-step {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-8, 2rem);
-      margin-top: var(--space-12, 3rem);
+      grid-template-columns: 3.5rem minmax(0, 1fr);
+      gap: var(--space-6, 1.5rem);
+      align-items: stretch;
     }
-    @media (max-width: 768px) {
-      .about-work-grid {
-        grid-template-columns: 1fr;
+    @media (min-width: 640px) {
+      .about-work-step {
+        grid-template-columns: 4.5rem minmax(0, 1fr);
+        gap: var(--space-8, 2rem);
       }
     }
-    @media (min-width: 540px) and (max-width: 768px) {
-      .about-work-grid {
-        grid-template-columns: 1fr 1fr;
-      }
+    .about-work-step + .about-work-step {
+      margin-top: var(--space-10, 2.5rem);
     }
-    .about-work-card {
-      background: #fff;
-      border-radius: 8px;
-      padding: var(--space-8, 2rem);
-      box-shadow: 0 2px 12px rgba(15,26,46,0.06);
-      border-top: 3px solid #b9342e;
+    .about-work-step__rail {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      min-height: 100%;
     }
-    .about-work-card__icon {
-      width: 48px;
-      height: 48px;
+    .about-work-step__rail::after {
+      content: '';
+      position: absolute;
+      top: 3.5rem;
+      bottom: 0;
+      left: 50%;
+      width: 2px;
+      transform: translateX(-50%);
+      background: linear-gradient(180deg, rgba(185, 52, 46, 0.5) 0%, rgba(15, 26, 46, 0.06) 95%);
+    }
+    /* Bridge the vertical gap between steps so the line reads as one path */
+    .about-work-step:not(:last-child) .about-work-step__rail::after {
+      bottom: calc(-1 * var(--space-10, 2.5rem));
+    }
+    .about-work-step:last-child .about-work-step__rail::after {
+      display: none;
+    }
+    .about-work-step__index {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(1.75rem, 4vw, 2.35rem);
+      font-style: italic;
+      font-weight: 400;
+      color: #b9342e;
+      line-height: 1;
+      z-index: 1;
+    }
+    .about-work-step__dot {
+      width: 12px;
+      height: 12px;
       border-radius: 50%;
-      background: #f5f3ef;
+      background: #fff;
+      border: 2px solid #b9342e;
+      margin-top: var(--space-3, 0.75rem);
+      z-index: 1;
+      flex-shrink: 0;
+    }
+    .about-work-step__body {
+      padding: var(--space-6, 1.5rem) var(--space-7, 1.75rem);
+      border-radius: 10px;
+    }
+    .about-work-step__head {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-4, 1rem);
+      margin-bottom: var(--space-3, 0.75rem);
+    }
+    .about-work-step__icon {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: #b9342e;
-      margin-bottom: var(--space-5, 1.25rem);
     }
-    .about-work-card__icon svg {
+    .about-work-step__icon svg {
       width: 22px;
       height: 22px;
     }
-    .about-work-card__title {
-      font-size: 1.05rem;
+    .about-work-step__title {
+      font-size: 1.1rem;
       font-weight: 600;
       color: var(--color-navy, #0f1a2e);
-      margin: 0 0 var(--space-3, 0.75rem);
+      margin: 0;
+      line-height: 1.3;
     }
-    .about-work-card__text {
+    .about-work-step__text {
       font-size: var(--text-sm, 0.9rem);
       color: var(--color-text-muted, #5a6270);
-      line-height: 1.7;
+      line-height: 1.75;
       margin: 0;
+    }
+    /* Step 1: elevated card */
+    .about-work-step--card .about-work-step__body {
+      background: #fff;
+      box-shadow: 0 4px 24px rgba(15, 26, 46, 0.08);
+      border: 1px solid rgba(15, 26, 46, 0.06);
+    }
+    .about-work-step--card .about-work-step__icon {
+      background: #f5f3ef;
+      border-radius: 10px;
+    }
+    /* Step 2: warm inset panel */
+    .about-work-step--panel .about-work-step__body {
+      background: #f5f3ef;
+      border: 1px dashed rgba(15, 26, 46, 0.12);
+    }
+    .about-work-step--panel .about-work-step__title {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(1.15rem, 2.2vw, 1.35rem);
+      font-weight: 400;
+      font-style: italic;
+    }
+    .about-work-step--panel .about-work-step__icon {
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 50%;
+    }
+    /* Step 3: minimal strip */
+    .about-work-step--strip .about-work-step__body {
+      background: transparent;
+      padding-left: var(--space-5, 1.25rem);
+      border-radius: 0;
+      border-left: 4px solid #b9342e;
+      box-shadow: none;
+    }
+    .about-work-step--strip .about-work-step__head {
+      margin-bottom: var(--space-2, 0.5rem);
+    }
+    .about-work-step--strip .about-work-step__icon {
+      background: transparent;
+      border-radius: 0;
+      opacity: 0.95;
     }
 
     /* ── Join Section ── */
@@ -450,33 +544,57 @@
           <p class="section-intro">Our recruiters live in the data and analytics community—but what matters on the page is how we run a search: clear expectations, honest market feedback, and support through a successful hire.</p>
         </header>
 
-        <div class="about-work-grid">
+        <ol class="about-work-flow">
 
-          <article class="about-work-card reveal">
-            <div class="about-work-card__icon" aria-hidden="true">
-              <i data-lucide="target"></i>
+          <li class="about-work-step about-work-step--card reveal">
+            <div class="about-work-step__rail">
+              <span class="about-work-step__index">01</span>
+              <span class="about-work-step__dot" aria-hidden="true"></span>
             </div>
-            <h3 class="about-work-card__title">Define the search</h3>
-            <p class="about-work-card__text">We start by aligning on the role, team dynamics, and what &ldquo;great&rdquo; looks like in your context—so we are not recycling generic job specs or chasing mismatched profiles.</p>
-          </article>
-
-          <article class="about-work-card reveal">
-            <div class="about-work-card__icon" aria-hidden="true">
-              <i data-lucide="network"></i>
+            <div class="about-work-step__body">
+              <div class="about-work-step__head">
+                <div class="about-work-step__icon" aria-hidden="true">
+                  <i data-lucide="target"></i>
+                </div>
+                <h3 class="about-work-step__title">Define the search</h3>
+              </div>
+              <p class="about-work-step__text">We start by aligning on the role, team dynamics, and what &ldquo;great&rdquo; looks like in your context—so we are not recycling generic job specs or chasing mismatched profiles.</p>
             </div>
-            <h3 class="about-work-card__title">Engage the market</h3>
-            <p class="about-work-card__text">We map the talent landscape and reach into our network with targeted outreach. You get a curated shortlist—not a firehose of résumés—from people who fit both the skills and the stage of the role.</p>
-          </article>
+          </li>
 
-          <article class="about-work-card reveal">
-            <div class="about-work-card__icon" aria-hidden="true">
-              <i data-lucide="handshake"></i>
+          <li class="about-work-step about-work-step--panel reveal">
+            <div class="about-work-step__rail">
+              <span class="about-work-step__index">02</span>
+              <span class="about-work-step__dot" aria-hidden="true"></span>
             </div>
-            <h3 class="about-work-card__title">Land the hire</h3>
-            <p class="about-work-card__text">We stay involved through interviews, feedback loops, and offer stage—helping manage expectations on both sides so the process moves efficiently and the hire sticks.</p>
-          </article>
+            <div class="about-work-step__body">
+              <div class="about-work-step__head">
+                <div class="about-work-step__icon" aria-hidden="true">
+                  <i data-lucide="network"></i>
+                </div>
+                <h3 class="about-work-step__title">Engage the market</h3>
+              </div>
+              <p class="about-work-step__text">We map the talent landscape and reach into our network with targeted outreach. You get a curated shortlist—not a firehose of résumés—from people who fit both the skills and the stage of the role.</p>
+            </div>
+          </li>
 
-        </div>
+          <li class="about-work-step about-work-step--strip reveal">
+            <div class="about-work-step__rail">
+              <span class="about-work-step__index">03</span>
+              <span class="about-work-step__dot" aria-hidden="true"></span>
+            </div>
+            <div class="about-work-step__body">
+              <div class="about-work-step__head">
+                <div class="about-work-step__icon" aria-hidden="true">
+                  <i data-lucide="handshake"></i>
+                </div>
+                <h3 class="about-work-step__title">Land the hire</h3>
+              </div>
+              <p class="about-work-step__text">We stay involved through interviews, feedback loops, and offer stage—helping manage expectations on both sides so the process moves efficiently and the hire sticks.</p>
+            </div>
+          </li>
+
+        </ol>
       </div>
     </section>
 
