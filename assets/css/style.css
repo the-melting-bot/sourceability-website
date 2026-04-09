@@ -2043,26 +2043,79 @@ p.salary-table-footer a {
   }
 }
 
-/* CTA Section */
+/* CTA Section — full-width panel, aligns with salary table; not a narrow centered column */
 .salary-cta-section {
   background: var(--color-surface);
-  text-align: center;
   border-top: 1px solid rgba(15, 26, 46, 0.08);
 }
-.salary-cta-section .section-heading {
-  text-align: center;
-}
-.salary-cta-section .section-heading__lede {
-  max-width: 520px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-.salary-cta-buttons {
+
+.salary-cta-panel {
   display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  padding: var(--space-8) var(--space-6);
+  background: #fff;
+  border: 1px solid rgba(15, 26, 46, 0.1);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 8px 32px rgba(15, 26, 46, 0.06);
+  text-align: left;
+}
+
+.salary-cta-panel__overline {
+  margin-bottom: var(--space-2);
+}
+
+.salary-cta-panel__title {
+  margin-top: 0;
+  margin-bottom: var(--space-4);
+}
+
+.salary-cta-panel__lede {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  margin: 0;
+  max-width: none;
+  width: 100%;
+}
+
+.salary-cta-panel__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+.salary-cta-panel__actions .btn {
+  width: 100%;
   justify-content: center;
-  gap: var(--space-4);
-  flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  .salary-cta-panel {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(var(--space-8), 4vw, var(--space-12));
+    padding: var(--space-10) var(--space-10);
+  }
+
+  .salary-cta-panel__copy {
+    flex: 1;
+    min-width: 0;
+    max-width: 42rem;
+  }
+
+  .salary-cta-panel__actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: auto;
+  }
+
+  .salary-cta-panel__actions .btn {
+    width: auto;
+    min-width: 11rem;
+  }
 }
 
 /* --- FOOTER --- */
