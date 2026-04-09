@@ -167,59 +167,55 @@
       margin: 0;
     }
 
-    /* ── Team ── */
-    .team-grid {
+    /* ── How we work (process — replaces placeholder team cards) ── */
+    .about-work-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: var(--space-8, 2rem);
       margin-top: var(--space-12, 3rem);
     }
     @media (max-width: 768px) {
-      .team-grid {
+      .about-work-grid {
         grid-template-columns: 1fr;
       }
     }
     @media (min-width: 540px) and (max-width: 768px) {
-      .team-grid {
+      .about-work-grid {
         grid-template-columns: 1fr 1fr;
       }
     }
-    .team-card {
-      text-align: center;
-      padding: var(--space-8, 2rem) var(--space-6, 1.5rem);
+    .about-work-card {
       background: #fff;
       border-radius: 8px;
+      padding: var(--space-8, 2rem);
       box-shadow: 0 2px 12px rgba(15,26,46,0.06);
+      border-top: 3px solid #b9342e;
     }
-    .team-avatar {
-      width: 80px;
-      height: 80px;
+    .about-work-card__icon {
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
       background: #f5f3ef;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto var(--space-5, 1.25rem);
-      color: #c4bdb4;
+      color: #b9342e;
+      margin-bottom: var(--space-5, 1.25rem);
     }
-    .team-name {
+    .about-work-card__icon svg {
+      width: 22px;
+      height: 22px;
+    }
+    .about-work-card__title {
+      font-size: 1.05rem;
       font-weight: 600;
       color: var(--color-navy, #0f1a2e);
-      margin: 0 0 var(--space-1, 0.25rem);
-      font-size: 1rem;
+      margin: 0 0 var(--space-3, 0.75rem);
     }
-    .team-title {
-      font-size: var(--text-xs, 0.75rem);
-      color: #b9342e;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      font-weight: 600;
-      margin: 0 0 var(--space-4, 1rem);
-    }
-    .team-bio {
-      font-size: var(--text-sm, 0.875rem);
+    .about-work-card__text {
+      font-size: var(--text-sm, 0.9rem);
       color: var(--color-text-muted, #5a6270);
-      line-height: 1.65;
+      line-height: 1.7;
       margin: 0;
     }
 
@@ -443,53 +439,41 @@
     </section>
 
     <!-- ==========================================
-         TEAM SECTION
+         HOW WE WORK (process — no placeholder bios)
     ========================================== -->
-    <section class="section-padding" style="background:#fff;" aria-labelledby="team-heading">
+    <section class="section-padding" style="background:#fff;" aria-labelledby="work-heading">
       <div class="container container--narrow">
 
         <header class="section-heading reveal">
-          <p class="overline">Our Team</p>
-          <h2 class="section-heading__title" id="team-heading">Led by Industry Specialists</h2>
-          <p class="section-intro">Our recruiters bring years of experience in analytics and technology hiring. Each team member is deeply embedded in the data and analytics community.</p>
+          <p class="overline">How We Work</p>
+          <h2 class="section-heading__title" id="work-heading">Partnership, Not Just Placement</h2>
+          <p class="section-intro">Our recruiters live in the data and analytics community—but what matters on the page is how we run a search: clear expectations, honest market feedback, and support through a successful hire.</p>
         </header>
 
-        <div class="team-grid">
+        <div class="about-work-grid">
 
-          <article class="team-card reveal">
-            <div class="team-avatar" aria-hidden="true">
-              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <circle cx="18" cy="13" r="7" fill="currentColor" opacity="0.4"/>
-                <path d="M4 32c0-7.732 6.268-14 14-14s14 6.268 14 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.3"/>
-              </svg>
+          <article class="about-work-card reveal">
+            <div class="about-work-card__icon" aria-hidden="true">
+              <i data-lucide="target"></i>
             </div>
-            <p class="team-name">Team Member</p>
-            <p class="team-title">Managing Director</p>
-            <p class="team-bio">15+ years placing analytics leaders across Fortune 500 organizations. Deep expertise in executive search for data science and BI functions.</p>
+            <h3 class="about-work-card__title">Define the search</h3>
+            <p class="about-work-card__text">We start by aligning on the role, team dynamics, and what &ldquo;great&rdquo; looks like in your context—so we are not recycling generic job specs or chasing mismatched profiles.</p>
           </article>
 
-          <article class="team-card reveal">
-            <div class="team-avatar" aria-hidden="true">
-              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <circle cx="18" cy="13" r="7" fill="currentColor" opacity="0.4"/>
-                <path d="M4 32c0-7.732 6.268-14 14-14s14 6.268 14 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.3"/>
-              </svg>
+          <article class="about-work-card reveal">
+            <div class="about-work-card__icon" aria-hidden="true">
+              <i data-lucide="network"></i>
             </div>
-            <p class="team-name">Team Member</p>
-            <p class="team-title">Senior Recruiter</p>
-            <p class="team-bio">Specializes in mid-to-senior data engineering and business intelligence placements, with a strong network across technology and financial services.</p>
+            <h3 class="about-work-card__title">Engage the market</h3>
+            <p class="about-work-card__text">We map the talent landscape and reach into our network with targeted outreach. You get a curated shortlist—not a firehose of résumés—from people who fit both the skills and the stage of the role.</p>
           </article>
 
-          <article class="team-card reveal">
-            <div class="team-avatar" aria-hidden="true">
-              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <circle cx="18" cy="13" r="7" fill="currentColor" opacity="0.4"/>
-                <path d="M4 32c0-7.732 6.268-14 14-14s14 6.268 14 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.3"/>
-              </svg>
+          <article class="about-work-card reveal">
+            <div class="about-work-card__icon" aria-hidden="true">
+              <i data-lucide="handshake"></i>
             </div>
-            <p class="team-name">Team Member</p>
-            <p class="team-title">Research Director</p>
-            <p class="team-bio">Leads candidate sourcing and market intelligence, ensuring SourceAbility always has first access to the best data and analytics talent in the market.</p>
+            <h3 class="about-work-card__title">Land the hire</h3>
+            <p class="about-work-card__text">We stay involved through interviews, feedback loops, and offer stage—helping manage expectations on both sides so the process moves efficiently and the hire sticks.</p>
           </article>
 
         </div>
