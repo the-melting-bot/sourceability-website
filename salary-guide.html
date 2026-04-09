@@ -116,10 +116,12 @@
   </nav>
 
   <!-- ==========================================
-       PAGE HERO
+       PAGE HERO — VIDEO
   ========================================== -->
   <section class="page-hero page-hero--salary" aria-label="Salary Guide">
-    <img src="./assets/images/salary-guide-hero.jpg" alt="Executive conference room with compensation analysis documents and analytics dashboard" class="page-hero__bg" loading="eager" fetchpriority="high">
+    <video class="page-hero__video" autoplay muted loop playsinline preload="auto" poster="./assets/images/salary-guide-hero.jpg">
+      <source src="./assets/videos/sourceability-brand-sting.mp4" type="video/mp4">
+    </video>
     <div class="page-hero__overlay" aria-hidden="true"></div>
     <div class="container">
       <p class="overline overline--light reveal">Compensation Reference</p>
@@ -145,356 +147,115 @@
   </section>
 
   <!-- ==========================================
-       SALARY DATA — DATA & ANALYTICS
+       SALARY TABLE — UNIFIED, RANKED BY MEDIAN PAY
   ========================================== -->
-  <section class="section-padding" aria-labelledby="cat-data-heading">
-    <div class="container container--narrow">
-      <header class="section-heading section-heading--compact reveal">
-        <p class="overline">Category</p>
-        <h2 class="section-heading__title" id="cat-data-heading">Data &amp; Analytics</h2>
+  <section class="section-padding" aria-labelledby="salary-table-heading">
+    <div class="container">
+      <header class="section-heading reveal">
+        <p class="overline">Compensation Overview</p>
+        <h2 class="section-heading__title" id="salary-table-heading">Salary Ranges by Role</h2>
+        <p class="section-heading__lede">Ranked by national median pay, highest to lowest.</p>
       </header>
 
-      <div class="salary-grid reveal">
-
-        <article class="salary-card">
-          <div class="salary-card__header">
-            <h3 class="salary-card__title">Data Scientist</h3>
-            <span class="salary-card__badge">SOC 15-2051</span>
-          </div>
-          <p class="salary-card__desc">Develop and apply statistical, machine learning, and analytical methods to extract insights from large datasets.</p>
-          <div class="salary-card__ranges">
-            <div class="salary-card__range">
-              <span class="salary-card__label">Early Career</span>
-              <span class="salary-card__value">$63,650</span>
-            </div>
-            <div class="salary-card__range salary-card__range--median">
-              <span class="salary-card__label">Median</span>
-              <span class="salary-card__value salary-card__value--highlight">$112,590</span>
-            </div>
-            <div class="salary-card__range">
-              <span class="salary-card__label">Experienced</span>
-              <span class="salary-card__value">$194,410</span>
-            </div>
-          </div>
-          <div class="salary-card__bar">
-            <div class="salary-card__bar-track">
-              <div class="salary-card__bar-fill" style="left: 0%; width: 100%;"></div>
-              <div class="salary-card__bar-median" style="left: 37.4%;"></div>
-            </div>
-          </div>
-          <p class="salary-card__source"><a href="https://www.bls.gov/ooh/math/data-scientists.htm" target="_blank" rel="noopener noreferrer">BLS Source</a></p>
-        </article>
-
-        <article class="salary-card">
-          <div class="salary-card__header">
-            <h3 class="salary-card__title">Data Engineer</h3>
-            <span class="salary-card__badge">SOC 15-1245</span>
-          </div>
-          <p class="salary-card__desc">Design, build, and maintain database systems and data infrastructure that store and secure critical data assets.</p>
-          <div class="salary-card__ranges">
-            <div class="salary-card__range">
-              <span class="salary-card__label">Early Career</span>
-              <span class="salary-card__value">$56,820</span>
-            </div>
-            <div class="salary-card__range salary-card__range--median">
-              <span class="salary-card__label">Median</span>
-              <span class="salary-card__value salary-card__value--highlight">$123,100</span>
-            </div>
-            <div class="salary-card__range">
-              <span class="salary-card__label">Experienced</span>
-              <span class="salary-card__value">$209,990</span>
-            </div>
-          </div>
-          <div class="salary-card__bar">
-            <div class="salary-card__bar-track">
-              <div class="salary-card__bar-fill" style="left: 0%; width: 100%;"></div>
-              <div class="salary-card__bar-median" style="left: 43.3%;"></div>
-            </div>
-          </div>
-          <p class="salary-card__source"><a href="https://www.bls.gov/ooh/computer-and-information-technology/database-administrators.htm" target="_blank" rel="noopener noreferrer">BLS Source</a></p>
-        </article>
-
-        <article class="salary-card">
-          <div class="salary-card__header">
-            <h3 class="salary-card__title">Business Intelligence Analyst</h3>
-            <span class="salary-card__badge">SOC 13-1111</span>
-          </div>
-          <p class="salary-card__desc">Evaluate operations, design information systems, and recommend improvements to help management operate efficiently.</p>
-          <div class="salary-card__ranges">
-            <div class="salary-card__range">
-              <span class="salary-card__label">Early Career</span>
-              <span class="salary-card__value">$59,720</span>
-            </div>
-            <div class="salary-card__range salary-card__range--median">
-              <span class="salary-card__label">Median</span>
-              <span class="salary-card__value salary-card__value--highlight">$101,190</span>
-            </div>
-            <div class="salary-card__range">
-              <span class="salary-card__label">Experienced</span>
-              <span class="salary-card__value">$174,140</span>
-            </div>
-          </div>
-          <div class="salary-card__bar">
-            <div class="salary-card__bar-track">
-              <div class="salary-card__bar-fill" style="left: 0%; width: 100%;"></div>
-              <div class="salary-card__bar-median" style="left: 36.2%;"></div>
-            </div>
-          </div>
-          <p class="salary-card__source"><a href="https://www.bls.gov/ooh/business-and-financial/management-analysts.htm" target="_blank" rel="noopener noreferrer">BLS Source</a></p>
-        </article>
-
-        <article class="salary-card">
-          <div class="salary-card__header">
-            <h3 class="salary-card__title">Analytics Manager</h3>
-            <span class="salary-card__badge">SOC 15-2031</span>
-          </div>
-          <p class="salary-card__desc">Apply mathematical and analytical methods to help organizations solve problems and optimize processes.</p>
-          <div class="salary-card__ranges">
-            <div class="salary-card__range">
-              <span class="salary-card__label">Early Career</span>
-              <span class="salary-card__value">$53,910</span>
-            </div>
-            <div class="salary-card__range salary-card__range--median">
-              <span class="salary-card__label">Median</span>
-              <span class="salary-card__value salary-card__value--highlight">$91,290</span>
-            </div>
-            <div class="salary-card__range">
-              <span class="salary-card__label">Experienced</span>
-              <span class="salary-card__value">$159,280</span>
-            </div>
-          </div>
-          <div class="salary-card__bar">
-            <div class="salary-card__bar-track">
-              <div class="salary-card__bar-fill" style="left: 0%; width: 100%;"></div>
-              <div class="salary-card__bar-median" style="left: 35.5%;"></div>
-            </div>
-          </div>
-          <p class="salary-card__source"><a href="https://www.bls.gov/ooh/math/operations-research-analysts.htm" target="_blank" rel="noopener noreferrer">BLS Source</a></p>
-        </article>
-
+      <!-- Desktop table -->
+      <div class="salary-table-wrap reveal">
+        <table class="salary-table" aria-label="Salary ranges for data, analytics, technology, healthcare, and finance roles">
+          <thead>
+            <tr>
+              <th class="salary-table__th salary-table__th--role">Role</th>
+              <th class="salary-table__th salary-table__th--cat">Category</th>
+              <th class="salary-table__th salary-table__th--num">Early Career</th>
+              <th class="salary-table__th salary-table__th--num salary-table__th--median">Median</th>
+              <th class="salary-table__th salary-table__th--num">Experienced</th>
+              <th class="salary-table__th salary-table__th--bar">Range</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="salary-table__role">Software Developer</td>
+              <td><span class="salary-tag salary-tag--tech">Technology</span></td>
+              <td class="salary-table__num">$79,850</td>
+              <td class="salary-table__num salary-table__median">$133,080</td>
+              <td class="salary-table__num">$211,450</td>
+              <td class="salary-table__bar-cell"><div class="salary-table__bar-track"><div class="salary-table__bar-fill"></div><div class="salary-table__bar-marker" style="left:40%;"></div></div></td>
+            </tr>
+            <tr>
+              <td class="salary-table__role">Information Security Analyst</td>
+              <td><span class="salary-tag salary-tag--tech">Technology</span></td>
+              <td class="salary-table__num">$69,660</td>
+              <td class="salary-table__num salary-table__median">$124,910</td>
+              <td class="salary-table__num">$186,420</td>
+              <td class="salary-table__bar-cell"><div class="salary-table__bar-track"><div class="salary-table__bar-fill"></div><div class="salary-table__bar-marker" style="left:47%;"></div></div></td>
+            </tr>
+            <tr>
+              <td class="salary-table__role">Data Engineer</td>
+              <td><span class="salary-tag salary-tag--data">Data &amp; Analytics</span></td>
+              <td class="salary-table__num">$56,820</td>
+              <td class="salary-table__num salary-table__median">$123,100</td>
+              <td class="salary-table__num">$209,990</td>
+              <td class="salary-table__bar-cell"><div class="salary-table__bar-track"><div class="salary-table__bar-fill"></div><div class="salary-table__bar-marker" style="left:43%;"></div></div></td>
+            </tr>
+            <tr>
+              <td class="salary-table__role">Healthcare Data Manager</td>
+              <td><span class="salary-tag salary-tag--health">Healthcare</span></td>
+              <td class="salary-table__num">$69,680</td>
+              <td class="salary-table__num salary-table__median">$117,960</td>
+              <td class="salary-table__num">$219,080</td>
+              <td class="salary-table__bar-cell"><div class="salary-table__bar-track"><div class="salary-table__bar-fill"></div><div class="salary-table__bar-marker" style="left:32%;"></div></div></td>
+            </tr>
+            <tr>
+              <td class="salary-table__role">Data Scientist</td>
+              <td><span class="salary-tag salary-tag--data">Data &amp; Analytics</span></td>
+              <td class="salary-table__num">$63,650</td>
+              <td class="salary-table__num salary-table__median">$112,590</td>
+              <td class="salary-table__num">$194,410</td>
+              <td class="salary-table__bar-cell"><div class="salary-table__bar-track"><div class="salary-table__bar-fill"></div><div class="salary-table__bar-marker" style="left:37%;"></div></div></td>
+            </tr>
+            <tr>
+              <td class="salary-table__role">Fraud &amp; Risk Analyst</td>
+              <td><span class="salary-tag salary-tag--risk">Fraud, Risk &amp; Finance</span></td>
+              <td class="salary-table__num">$60,390</td>
+              <td class="salary-table__num salary-table__median">$103,300</td>
+              <td class="salary-table__num">$170,700</td>
+              <td class="salary-table__bar-cell"><div class="salary-table__bar-track"><div class="salary-table__bar-fill"></div><div class="salary-table__bar-marker" style="left:39%;"></div></div></td>
+            </tr>
+            <tr>
+              <td class="salary-table__role">Financial Risk Specialist</td>
+              <td><span class="salary-tag salary-tag--risk">Fraud, Risk &amp; Finance</span></td>
+              <td class="salary-table__num">$62,410</td>
+              <td class="salary-table__num salary-table__median">$101,350</td>
+              <td class="salary-table__num">$180,550</td>
+              <td class="salary-table__bar-cell"><div class="salary-table__bar-track"><div class="salary-table__bar-fill"></div><div class="salary-table__bar-marker" style="left:33%;"></div></div></td>
+            </tr>
+            <tr>
+              <td class="salary-table__role">Business Intelligence Analyst</td>
+              <td><span class="salary-tag salary-tag--data">Data &amp; Analytics</span></td>
+              <td class="salary-table__num">$59,720</td>
+              <td class="salary-table__num salary-table__median">$101,190</td>
+              <td class="salary-table__num">$174,140</td>
+              <td class="salary-table__bar-cell"><div class="salary-table__bar-track"><div class="salary-table__bar-fill"></div><div class="salary-table__bar-marker" style="left:36%;"></div></div></td>
+            </tr>
+            <tr>
+              <td class="salary-table__role">Analytics Manager</td>
+              <td><span class="salary-tag salary-tag--data">Data &amp; Analytics</span></td>
+              <td class="salary-table__num">$53,910</td>
+              <td class="salary-table__num salary-table__median">$91,290</td>
+              <td class="salary-table__num">$159,280</td>
+              <td class="salary-table__bar-cell"><div class="salary-table__bar-track"><div class="salary-table__bar-fill"></div><div class="salary-table__bar-marker" style="left:35%;"></div></div></td>
+            </tr>
+            <tr>
+              <td class="salary-table__role">Healthcare Data Analyst</td>
+              <td><span class="salary-tag salary-tag--health">Healthcare</span></td>
+              <td class="salary-table__num">$39,120</td>
+              <td class="salary-table__num salary-table__median">$67,310</td>
+              <td class="salary-table__num">$112,130</td>
+              <td class="salary-table__bar-cell"><div class="salary-table__bar-track"><div class="salary-table__bar-fill"></div><div class="salary-table__bar-marker" style="left:39%;"></div></div></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-    </div>
-  </section>
 
-  <!-- ==========================================
-       SALARY DATA — TECHNOLOGY
-  ========================================== -->
-  <section class="section-padding bg-warm" aria-labelledby="cat-tech-heading">
-    <div class="container container--narrow">
-      <header class="section-heading section-heading--compact reveal">
-        <p class="overline">Category</p>
-        <h2 class="section-heading__title" id="cat-tech-heading">Technology</h2>
-      </header>
-
-      <div class="salary-grid reveal">
-
-        <article class="salary-card">
-          <div class="salary-card__header">
-            <h3 class="salary-card__title">Software Developer</h3>
-            <span class="salary-card__badge">SOC 15-1252</span>
-          </div>
-          <p class="salary-card__desc">Design, build, and test computer applications and systems software for consumer, enterprise, and infrastructure needs.</p>
-          <div class="salary-card__ranges">
-            <div class="salary-card__range">
-              <span class="salary-card__label">Early Career</span>
-              <span class="salary-card__value">$79,850</span>
-            </div>
-            <div class="salary-card__range salary-card__range--median">
-              <span class="salary-card__label">Median</span>
-              <span class="salary-card__value salary-card__value--highlight">$133,080</span>
-            </div>
-            <div class="salary-card__range">
-              <span class="salary-card__label">Experienced</span>
-              <span class="salary-card__value">$211,450</span>
-            </div>
-          </div>
-          <div class="salary-card__bar">
-            <div class="salary-card__bar-track">
-              <div class="salary-card__bar-fill" style="left: 0%; width: 100%;"></div>
-              <div class="salary-card__bar-median" style="left: 40.5%;"></div>
-            </div>
-          </div>
-          <p class="salary-card__source"><a href="https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm" target="_blank" rel="noopener noreferrer">BLS Source</a></p>
-        </article>
-
-        <article class="salary-card">
-          <div class="salary-card__header">
-            <h3 class="salary-card__title">Information Security Analyst</h3>
-            <span class="salary-card__badge">SOC 15-1212</span>
-          </div>
-          <p class="salary-card__desc">Plan and carry out security measures to protect computer networks, systems, and sensitive data from cyber threats.</p>
-          <div class="salary-card__ranges">
-            <div class="salary-card__range">
-              <span class="salary-card__label">Early Career</span>
-              <span class="salary-card__value">$69,660</span>
-            </div>
-            <div class="salary-card__range salary-card__range--median">
-              <span class="salary-card__label">Median</span>
-              <span class="salary-card__value salary-card__value--highlight">$124,910</span>
-            </div>
-            <div class="salary-card__range">
-              <span class="salary-card__label">Experienced</span>
-              <span class="salary-card__value">$186,420</span>
-            </div>
-          </div>
-          <div class="salary-card__bar">
-            <div class="salary-card__bar-track">
-              <div class="salary-card__bar-fill" style="left: 0%; width: 100%;"></div>
-              <div class="salary-card__bar-median" style="left: 47.3%;"></div>
-            </div>
-          </div>
-          <p class="salary-card__source"><a href="https://www.bls.gov/ooh/computer-and-information-technology/information-security-analysts.htm" target="_blank" rel="noopener noreferrer">BLS Source</a></p>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================
-       SALARY DATA — HEALTHCARE ANALYTICS
-  ========================================== -->
-  <section class="section-padding" aria-labelledby="cat-health-heading">
-    <div class="container container--narrow">
-      <header class="section-heading section-heading--compact reveal">
-        <p class="overline">Category</p>
-        <h2 class="section-heading__title" id="cat-health-heading">Healthcare Analytics</h2>
-      </header>
-
-      <div class="salary-grid reveal">
-
-        <article class="salary-card">
-          <div class="salary-card__header">
-            <h3 class="salary-card__title">Healthcare Data Manager</h3>
-            <span class="salary-card__badge">SOC 11-9111</span>
-          </div>
-          <p class="salary-card__desc">Plan, direct, and coordinate the business and clinical operations of hospitals, clinics, and other healthcare facilities.</p>
-          <div class="salary-card__ranges">
-            <div class="salary-card__range">
-              <span class="salary-card__label">Early Career</span>
-              <span class="salary-card__value">$69,680</span>
-            </div>
-            <div class="salary-card__range salary-card__range--median">
-              <span class="salary-card__label">Median</span>
-              <span class="salary-card__value salary-card__value--highlight">$117,960</span>
-            </div>
-            <div class="salary-card__range">
-              <span class="salary-card__label">Experienced</span>
-              <span class="salary-card__value">$219,080</span>
-            </div>
-          </div>
-          <div class="salary-card__bar">
-            <div class="salary-card__bar-track">
-              <div class="salary-card__bar-fill" style="left: 0%; width: 100%;"></div>
-              <div class="salary-card__bar-median" style="left: 32.3%;"></div>
-            </div>
-          </div>
-          <p class="salary-card__source"><a href="https://www.bls.gov/ooh/management/medical-and-health-services-managers.htm" target="_blank" rel="noopener noreferrer">BLS Source</a></p>
-        </article>
-
-        <article class="salary-card">
-          <div class="salary-card__header">
-            <h3 class="salary-card__title">Healthcare Data Analyst</h3>
-            <span class="salary-card__badge">SOC 29-9021</span>
-          </div>
-          <p class="salary-card__desc">Apply healthcare knowledge and information systems expertise to analyze and maintain electronic health records and clinical databases.</p>
-          <div class="salary-card__ranges">
-            <div class="salary-card__range">
-              <span class="salary-card__label">Early Career</span>
-              <span class="salary-card__value">$39,120</span>
-            </div>
-            <div class="salary-card__range salary-card__range--median">
-              <span class="salary-card__label">Median</span>
-              <span class="salary-card__value salary-card__value--highlight">$67,310</span>
-            </div>
-            <div class="salary-card__range">
-              <span class="salary-card__label">Experienced</span>
-              <span class="salary-card__value">$112,130</span>
-            </div>
-          </div>
-          <div class="salary-card__bar">
-            <div class="salary-card__bar-track">
-              <div class="salary-card__bar-fill" style="left: 0%; width: 100%;"></div>
-              <div class="salary-card__bar-median" style="left: 38.6%;"></div>
-            </div>
-          </div>
-          <p class="salary-card__source"><a href="https://www.bls.gov/ooh/healthcare/health-information-technologists-and-medical-registrars.htm" target="_blank" rel="noopener noreferrer">BLS Source</a></p>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================
-       SALARY DATA — FRAUD, RISK & FINANCE
-  ========================================== -->
-  <section class="section-padding bg-warm" aria-labelledby="cat-risk-heading">
-    <div class="container container--narrow">
-      <header class="section-heading section-heading--compact reveal">
-        <p class="overline">Category</p>
-        <h2 class="section-heading__title" id="cat-risk-heading">Fraud, Risk &amp; Finance</h2>
-      </header>
-
-      <div class="salary-grid reveal">
-
-        <article class="salary-card">
-          <div class="salary-card__header">
-            <h3 class="salary-card__title">Financial Risk Specialist</h3>
-            <span class="salary-card__badge">SOC 13-2051</span>
-          </div>
-          <p class="salary-card__desc">Assess the performance of investments to guide financial planning and risk management decisions for businesses and individuals.</p>
-          <div class="salary-card__ranges">
-            <div class="salary-card__range">
-              <span class="salary-card__label">Early Career</span>
-              <span class="salary-card__value">$62,410</span>
-            </div>
-            <div class="salary-card__range salary-card__range--median">
-              <span class="salary-card__label">Median</span>
-              <span class="salary-card__value salary-card__value--highlight">$101,350</span>
-            </div>
-            <div class="salary-card__range">
-              <span class="salary-card__label">Experienced</span>
-              <span class="salary-card__value">$180,550</span>
-            </div>
-          </div>
-          <div class="salary-card__bar">
-            <div class="salary-card__bar-track">
-              <div class="salary-card__bar-fill" style="left: 0%; width: 100%;"></div>
-              <div class="salary-card__bar-median" style="left: 33.0%;"></div>
-            </div>
-          </div>
-          <p class="salary-card__source"><a href="https://www.bls.gov/ooh/business-and-financial/financial-analysts.htm" target="_blank" rel="noopener noreferrer">BLS Source</a></p>
-        </article>
-
-        <article class="salary-card">
-          <div class="salary-card__header">
-            <h3 class="salary-card__title">Fraud &amp; Risk Analyst</h3>
-            <span class="salary-card__badge">SOC 15-2041</span>
-          </div>
-          <p class="salary-card__desc">Apply statistical methods to collect, analyze, and interpret quantitative data to identify patterns, trends, and risks.</p>
-          <div class="salary-card__ranges">
-            <div class="salary-card__range">
-              <span class="salary-card__label">Early Career</span>
-              <span class="salary-card__value">$60,390</span>
-            </div>
-            <div class="salary-card__range salary-card__range--median">
-              <span class="salary-card__label">Median</span>
-              <span class="salary-card__value salary-card__value--highlight">$103,300</span>
-            </div>
-            <div class="salary-card__range">
-              <span class="salary-card__label">Experienced</span>
-              <span class="salary-card__value">$170,700</span>
-            </div>
-          </div>
-          <div class="salary-card__bar">
-            <div class="salary-card__bar-track">
-              <div class="salary-card__bar-fill" style="left: 0%; width: 100%;"></div>
-              <div class="salary-card__bar-median" style="left: 38.9%;"></div>
-            </div>
-          </div>
-          <p class="salary-card__source"><a href="https://www.bls.gov/ooh/math/mathematicians-and-statisticians.htm" target="_blank" rel="noopener noreferrer">BLS Source</a></p>
-        </article>
-
-      </div>
+      <p class="salary-table-source reveal">Source: <a href="https://www.bls.gov/ooh/" target="_blank" rel="noopener noreferrer">U.S. Bureau of Labor Statistics</a>, Occupational Employment and Wage Statistics (May 2024)</p>
     </div>
   </section>
 
