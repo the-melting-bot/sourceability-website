@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Salary Guide &mdash; Data &amp; Analytics Compensation | SourceAbility</title>
+  <meta name="description" content="Explore U.S. salary ranges for data science, analytics, technology, healthcare, and risk management roles. Market-informed compensation data from the Bureau of Labor Statistics.">
+  <link rel="canonical" href="https://www.sourceabilityinc.com/salary-guide.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Salary Guide — Data &amp; Analytics Compensation | SourceAbility">
+  <meta property="og:description" content="Explore U.S. salary ranges for data science, analytics, technology, healthcare, and risk management roles. Market-informed compensation data from the Bureau of Labor Statistics.">
+  <meta property="og:url" content="https://www.sourceabilityinc.com/salary-guide.html">
+  <meta property="og:site_name" content="SourceAbility, Inc.">
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "SourceAbility, Inc.",
+    "url": "https://www.sourceabilityinc.com",
+    "telephone": "866-412-9178",
+    "email": "info@sourceabilityinc.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Charlotte",
+      "addressRegion": "NC",
+      "addressCountry": "US"
+    },
+    "description": "Executive recruiting firm specializing in data science, analytics, AI, and business intelligence talent.",
+    "priceRange": "$$"
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300..700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- GSAP -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+
+  <!-- ============================================
+       HEADER
+  ============================================ -->
+  <header class="site-header" role="banner">
+
+    <!-- Top Bar -->
+    <div class="header-top">
+      <div class="header-top-inner">
+        <a href="tel:8664129178">
+          <i data-lucide="phone" style="width:14px;height:14px;"></i>
+          866-412-9178
+        </a>
+        <a href="mailto:info@sourceabilityinc.com">
+          <i data-lucide="mail" style="width:14px;height:14px;"></i>
+          info@sourceabilityinc.com
+        </a>
+      </div>
+    </div>
+
+    <!-- Main Nav -->
+    <div class="header-main">
+      <a href="index.html" class="logo-link" aria-label="SourceAbility, Inc. — Home">
+        <img src="./assets/images/sourceability-logo.png" alt="SourceAbility, Inc." height="32">
+      </a>
+
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="employers.html" class="nav-link">For Employers</a>
+        <a href="candidates.html" class="nav-link">For Candidates</a>
+        <a href="specialties.html" class="nav-link">Specialties</a>
+        <a href="jobs.html" class="nav-link">Search Jobs</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="salary-guide.html" class="nav-link nav-link--active">Salary Guide</a>
+        <a href="insights.html" class="nav-link">Insights</a>
+        <a href="contact.html" class="nav-link nav-link--cta">Contact</a>
+      </nav>
+
+      <button class="mobile-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+  </header>
+
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <button class="mobile-nav-close" aria-label="Close menu">
+      <i data-lucide="x" style="width:20px;height:20px;"></i>
+    </button>
+    <a href="index.html" class="mobile-nav-link">Home</a>
+    <a href="employers.html" class="mobile-nav-link">For Employers</a>
+    <a href="candidates.html" class="mobile-nav-link">For Candidates</a>
+    <a href="specialties.html" class="mobile-nav-link">Specialties</a>
+    <a href="jobs.html" class="mobile-nav-link">Search Jobs</a>
+    <a href="about.html" class="mobile-nav-link">About</a>
+    <a href="salary-guide.html" class="mobile-nav-link">Salary Guide</a>
+    <a href="insights.html" class="mobile-nav-link">Insights</a>
+    <a href="contact.html" class="mobile-nav-cta btn btn--primary">Contact Us</a>
+  </nav>
+
+  <!-- ==========================================
+       PAGE HERO
+  ========================================== -->
+  <section class="page-hero page-hero--salary" aria-label="Salary Guide">
+    <img src="./assets/images/salary-guide-hero.jpg" alt="Executive conference room with compensation analysis documents and analytics dashboard" class="page-hero__bg" loading="eager" fetchpriority="high">
+    <div class="page-hero__overlay" aria-hidden="true"></div>
+    <div class="container">
+      <p class="overline overline--light reveal">Compensation Reference</p>
+      <h1 class="page-hero__title reveal">Salary Guide</h1>
+      <p class="page-hero__desc reveal">Market-informed U.S. salary ranges for the data, analytics, technology, and healthcare roles we recruit every day.</p>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       INTRO SECTION
+  ========================================== -->
+  <section class="section-padding bg-warm" aria-labelledby="intro-heading">
+    <div class="container container--narrow">
+      <header class="section-heading reveal">
+        <p class="overline">About This Guide</p>
+        <h2 class="section-heading__title" id="intro-heading">Understanding the Market</h2>
+      </header>
+      <div class="salary-intro reveal">
+        <p>Compensation in data and analytics varies widely by geography, industry, company size, and individual experience. This guide provides broad U.S. salary ranges to help employers benchmark open positions and candidates evaluate opportunities.</p>
+        <p>The figures below are drawn from the <a href="https://www.bls.gov/ooh/" target="_blank" rel="noopener noreferrer">U.S. Bureau of Labor Statistics</a> Occupational Employment and Wage Statistics program (May 2024 data). They reflect national medians and percentile ranges across all industries&nbsp;&mdash; actual offers for specialized analytics roles in competitive markets may differ significantly.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SALARY DATA — DATA & ANALYTICS
+  ========================================== -->
+  <section class="section-padding" aria-labelledby="cat-data-heading">
+    <div class="container container--narrow">
+      <header class="section-heading section-heading--compact reveal">
+        <p class="overline">Category</p>
+        <h2 class="section-heading__title" id="cat-data-heading">Data &amp; Analytics</h2>
+      </header>
+
+      <div class="salary-grid reveal">
+
+        <article class="salary-card">
+          <div class="salary-card__header">
+            <h3 class="salary-card__title">Data Scientist</h3>
+            <span class="salary-card__badge">SOC 15-2051</span>
+          </div>
+          <p class="salary-card__desc">Develop and apply statistical, machine learning, and analytical methods to extract insights from large datasets.</p>
+          <div class="salary-card__ranges">
+            <div class="salary-card__range">
+              <span class="salary-card__label">Early Career</span>
+              <span class="salary-card__value">$63,650</span>
+            </div>
+            <div class="salary-card__range salary-card__range--median">
+              <span class="salary-card__label">Median</span>
+              <span class="salary-card__value salary-card__value--highlight">$112,590</span>
+            </div>
+            <div class="salary-card__range">
+              <span class="salary-card__label">Experienced</span>
+              <span class="salary-card__value">$194,410</span>
+            </div>
+          </div>
+          <div class="salary-card__bar">
+            <div class="salary-card__bar-track">
+              <div class="salary-card__bar-fill" style="left: 0%; width: 100%;"></div>
+              <div class="salary-card__bar-median" style="left: 37.4%;"></div>
+            </div>
+          </div>
+          <p class="salary-card__source"><a href="https://www.bls.gov/ooh/math/data-scientists.htm" target="_blank" rel="noopener noreferrer">BLS Source</a></p>
+        </article>
+
+        <article class="salary-card">
+          <div class="salary-card__header">
+            <h3 class="salary-card__title">Data Engineer</h3>
+            <span class="salary-card__badge">SOC 15-1245</span>
+          </div>
+          <p class="salary-card__desc">Design, build, and maintain database systems and data infrastructure that store and secure critical data assets.</p>
+          <div class="salary-card__ranges">
+            <div class="salary-card__range">
+              <span class="salary-card__label">Early Career</span>
+              <span class="salary-card__value">$56,820</span>
+            </div>
+            <div class="salary-card__range salary-card__range--median">
+              <span class="salary-card__label">Median</span>
+              <span class="salary-card__value salary-card__value--highlight">$123,100</span>
+            </div>
+            <div class="salary-card__range">
+              <span class="salary-card__label">Experienced</span>
+              <span class="salary-card__value">$209,990</span>
+            </div>
+          </div>
+          <div class="salary-card__bar">
+            <div class="salary-card__bar-track">
+              <div class="salary-card__bar-fill" style="left: 0%; width: 100%;"></div>
+              <div class="salary-card__bar-median" style="left: 43.3%;"></div>
+            </div>
+          </div>
+          <p class="salary-card__source"><a href="https://www.bls.gov/ooh/computer-and-information-technology/database-administrators.htm" target="_blank" rel="noopener noreferrer">BLS Source</a></p>
+        </article>
+
+        <article class="salary-card">
+          <div class="salary-card__header">
+            <h3 class="salary-card__title">Business Intelligence Analyst</h3>
+            <span class="salary-card__badge">SOC 13-1111</span>
+          </div>
+          <p class="salary-card__desc">Evaluate operations, design information systems, and recommend improvements to help management operate efficiently.</p>
+          <div class="salary-card__ranges">
+            <div class="salary-card__range">
+              <span class="salary-card__label">Early Career</span>
+              <span class="salary-card__value">$59,720</span>
+            </div>
+            <div class="salary-card__range salary-card__range--median">
+              <span class="salary-card__label">Median</span>
+              <span class="salary-card__value salary-card__value--highlight">$101,190</span>
+            </div>
+            <div class="salary-card__range">
+              <span class="salary-card__label">Experienced</span>
+              <span class="salary-card__value">$174,140</span>
+            </div>
+          </div>
+          <div class="salary-card__bar">
+            <div class="salary-card__bar-track">
+              <div class="salary-card__bar-fill" style="left: 0%; width: 100%;"></div>
+              <div class="salary-card__bar-median" style="left: 36.2%;"></div>
+            </div>
+          </div>
+          <p class="salary-card__source"><a href="https://www.bls.gov/ooh/business-and-financial/management-analysts.htm" target="_blank" rel="noopener noreferrer">BLS Source</a></p>
+        </article>
+
+        <article class="salary-card">
+          <div class="salary-card__header">
+            <h3 class="salary-card__title">Analytics Manager</h3>
+            <span class="salary-card__badge">SOC 15-2031</span>
+          </div>
+          <p class="salary-card__desc">Apply mathematical and analytical methods to help organizations solve problems and optimize processes.</p>
+          <div class="salary-card__ranges">
+            <div class="salary-card__range">
+              <span class="salary-card__label">Early Career</span>
+              <span class="salary-card__value">$53,910</span>
+            </div>
+            <div class="salary-card__range salary-card__range--median">
+              <span class="salary-card__label">Median</span>
+              <span class="salary-card__value salary-card__value--highlight">$91,290</span>
+            </div>
+            <div class="salary-card__range">
+              <span class="salary-card__label">Experienced</span>
+              <span class="salary-card__value">$159,280</span>
+            </div>
+          </div>
+          <div class="salary-card__bar">
+            <div class="salary-card__bar-track">
+              <div class="salary-card__bar-fill" style="left: 0%; width: 100%;"></div>
+              <div class="salary-card__bar-median" style="left: 35.5%;"></div>
+            </div>
+          </div>
+          <p class="salary-card__source"><a href="https://www.bls.gov/ooh/math/operations-research-analysts.htm" target="_blank" rel="noopener noreferrer">BLS Source</a></p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SALARY DATA — TECHNOLOGY
+  ========================================== -->
+  <section class="section-padding bg-warm" aria-labelledby="cat-tech-heading">
+    <div class="container container--narrow">
+      <header class="section-heading section-heading--compact reveal">
+        <p class="overline">Category</p>
+        <h2 class="section-heading__title" id="cat-tech-heading">Technology</h2>
+      </header>
+
+      <div class="salary-grid reveal">
+
+        <article class="salary-card">
+          <div class="salary-card__header">
+            <h3 class="salary-card__title">Software Developer</h3>
+            <span class="salary-card__badge">SOC 15-1252</span>
+          </div>
+          <p class="salary-card__desc">Design, build, and test computer applications and systems software for consumer, enterprise, and infrastructure needs.</p>
+          <div class="salary-card__ranges">
+            <div class="salary-card__range">
+              <span class="salary-card__label">Early Career</span>
+              <span class="salary-card__value">$79,850</span>
+            </div>
+            <div class="salary-card__range salary-card__range--median">
+              <span class="salary-card__label">Median</span>
+              <span class="salary-card__value salary-card__value--highlight">$133,080</span>
+            </div>
+            <div class="salary-card__range">
+              <span class="salary-card__label">Experienced</span>
+              <span class="salary-card__value">$211,450</span>
+            </div>
+          </div>
+          <div class="salary-card__bar">
+            <div class="salary-card__bar-track">
+              <div class="salary-card__bar-fill" style="left: 0%; width: 100%;"></div>
+              <div class="salary-card__bar-median" style="left: 40.5%;"></div>
+            </div>
+          </div>
+          <p class="salary-card__source"><a href="https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm" target="_blank" rel="noopener noreferrer">BLS Source</a></p>
+        </article>
+
+        <article class="salary-card">
+          <div class="salary-card__header">
+            <h3 class="salary-card__title">Information Security Analyst</h3>
+            <span class="salary-card__badge">SOC 15-1212</span>
+          </div>
+          <p class="salary-card__desc">Plan and carry out security measures to protect computer networks, systems, and sensitive data from cyber threats.</p>
+          <div class="salary-card__ranges">
+            <div class="salary-card__range">
+              <span class="salary-card__label">Early Career</span>
+              <span class="salary-card__value">$69,660</span>
+            </div>
+            <div class="salary-card__range salary-card__range--median">
+              <span class="salary-card__label">Median</span>
+              <span class="salary-card__value salary-card__value--highlight">$124,910</span>
+            </div>
+            <div class="salary-card__range">
+              <span class="salary-card__label">Experienced</span>
+              <span class="salary-card__value">$186,420</span>
+            </div>
+          </div>
+          <div class="salary-card__bar">
+            <div class="salary-card__bar-track">
+              <div class="salary-card__bar-fill" style="left: 0%; width: 100%;"></div>
+              <div class="salary-card__bar-median" style="left: 47.3%;"></div>
+            </div>
+          </div>
+          <p class="salary-card__source"><a href="https://www.bls.gov/ooh/computer-and-information-technology/information-security-analysts.htm" target="_blank" rel="noopener noreferrer">BLS Source</a></p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SALARY DATA — HEALTHCARE ANALYTICS
+  ========================================== -->
+  <section class="section-padding" aria-labelledby="cat-health-heading">
+    <div class="container container--narrow">
+      <header class="section-heading section-heading--compact reveal">
+        <p class="overline">Category</p>
+        <h2 class="section-heading__title" id="cat-health-heading">Healthcare Analytics</h2>
+      </header>
+
+      <div class="salary-grid reveal">
+
+        <article class="salary-card">
+          <div class="salary-card__header">
+            <h3 class="salary-card__title">Healthcare Data Manager</h3>
+            <span class="salary-card__badge">SOC 11-9111</span>
+          </div>
+          <p class="salary-card__desc">Plan, direct, and coordinate the business and clinical operations of hospitals, clinics, and other healthcare facilities.</p>
+          <div class="salary-card__ranges">
+            <div class="salary-card__range">
+              <span class="salary-card__label">Early Career</span>
+              <span class="salary-card__value">$69,680</span>
+            </div>
+            <div class="salary-card__range salary-card__range--median">
+              <span class="salary-card__label">Median</span>
+              <span class="salary-card__value salary-card__value--highlight">$117,960</span>
+            </div>
+            <div class="salary-card__range">
+              <span class="salary-card__label">Experienced</span>
+              <span class="salary-card__value">$219,080</span>
+            </div>
+          </div>
+          <div class="salary-card__bar">
+            <div class="salary-card__bar-track">
+              <div class="salary-card__bar-fill" style="left: 0%; width: 100%;"></div>
+              <div class="salary-card__bar-median" style="left: 32.3%;"></div>
+            </div>
+          </div>
+          <p class="salary-card__source"><a href="https://www.bls.gov/ooh/management/medical-and-health-services-managers.htm" target="_blank" rel="noopener noreferrer">BLS Source</a></p>
+        </article>
+
+        <article class="salary-card">
+          <div class="salary-card__header">
+            <h3 class="salary-card__title">Healthcare Data Analyst</h3>
+            <span class="salary-card__badge">SOC 29-9021</span>
+          </div>
+          <p class="salary-card__desc">Apply healthcare knowledge and information systems expertise to analyze and maintain electronic health records and clinical databases.</p>
+          <div class="salary-card__ranges">
+            <div class="salary-card__range">
+              <span class="salary-card__label">Early Career</span>
+              <span class="salary-card__value">$39,120</span>
+            </div>
+            <div class="salary-card__range salary-card__range--median">
+              <span class="salary-card__label">Median</span>
+              <span class="salary-card__value salary-card__value--highlight">$67,310</span>
+            </div>
+            <div class="salary-card__range">
+              <span class="salary-card__label">Experienced</span>
+              <span class="salary-card__value">$112,130</span>
+            </div>
+          </div>
+          <div class="salary-card__bar">
+            <div class="salary-card__bar-track">
+              <div class="salary-card__bar-fill" style="left: 0%; width: 100%;"></div>
+              <div class="salary-card__bar-median" style="left: 38.6%;"></div>
+            </div>
+          </div>
+          <p class="salary-card__source"><a href="https://www.bls.gov/ooh/healthcare/health-information-technologists-and-medical-registrars.htm" target="_blank" rel="noopener noreferrer">BLS Source</a></p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SALARY DATA — FRAUD, RISK & FINANCE
+  ========================================== -->
+  <section class="section-padding bg-warm" aria-labelledby="cat-risk-heading">
+    <div class="container container--narrow">
+      <header class="section-heading section-heading--compact reveal">
+        <p class="overline">Category</p>
+        <h2 class="section-heading__title" id="cat-risk-heading">Fraud, Risk &amp; Finance</h2>
+      </header>
+
+      <div class="salary-grid reveal">
+
+        <article class="salary-card">
+          <div class="salary-card__header">
+            <h3 class="salary-card__title">Financial Risk Specialist</h3>
+            <span class="salary-card__badge">SOC 13-2051</span>
+          </div>
+          <p class="salary-card__desc">Assess the performance of investments to guide financial planning and risk management decisions for businesses and individuals.</p>
+          <div class="salary-card__ranges">
+            <div class="salary-card__range">
+              <span class="salary-card__label">Early Career</span>
+              <span class="salary-card__value">$62,410</span>
+            </div>
+            <div class="salary-card__range salary-card__range--median">
+              <span class="salary-card__label">Median</span>
+              <span class="salary-card__value salary-card__value--highlight">$101,350</span>
+            </div>
+            <div class="salary-card__range">
+              <span class="salary-card__label">Experienced</span>
+              <span class="salary-card__value">$180,550</span>
+            </div>
+          </div>
+          <div class="salary-card__bar">
+            <div class="salary-card__bar-track">
+              <div class="salary-card__bar-fill" style="left: 0%; width: 100%;"></div>
+              <div class="salary-card__bar-median" style="left: 33.0%;"></div>
+            </div>
+          </div>
+          <p class="salary-card__source"><a href="https://www.bls.gov/ooh/business-and-financial/financial-analysts.htm" target="_blank" rel="noopener noreferrer">BLS Source</a></p>
+        </article>
+
+        <article class="salary-card">
+          <div class="salary-card__header">
+            <h3 class="salary-card__title">Fraud &amp; Risk Analyst</h3>
+            <span class="salary-card__badge">SOC 15-2041</span>
+          </div>
+          <p class="salary-card__desc">Apply statistical methods to collect, analyze, and interpret quantitative data to identify patterns, trends, and risks.</p>
+          <div class="salary-card__ranges">
+            <div class="salary-card__range">
+              <span class="salary-card__label">Early Career</span>
+              <span class="salary-card__value">$60,390</span>
+            </div>
+            <div class="salary-card__range salary-card__range--median">
+              <span class="salary-card__label">Median</span>
+              <span class="salary-card__value salary-card__value--highlight">$103,300</span>
+            </div>
+            <div class="salary-card__range">
+              <span class="salary-card__label">Experienced</span>
+              <span class="salary-card__value">$170,700</span>
+            </div>
+          </div>
+          <div class="salary-card__bar">
+            <div class="salary-card__bar-track">
+              <div class="salary-card__bar-fill" style="left: 0%; width: 100%;"></div>
+              <div class="salary-card__bar-median" style="left: 38.9%;"></div>
+            </div>
+          </div>
+          <p class="salary-card__source"><a href="https://www.bls.gov/ooh/math/mathematicians-and-statisticians.htm" target="_blank" rel="noopener noreferrer">BLS Source</a></p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       DISCLAIMER / REFERENCE NOTE
+  ========================================== -->
+  <section class="section-padding" aria-labelledby="disclaimer-heading">
+    <div class="container container--narrow">
+      <div class="salary-disclaimer reveal">
+        <div class="salary-disclaimer__icon" aria-hidden="true">
+          <i data-lucide="info"></i>
+        </div>
+        <div>
+          <h3 class="salary-disclaimer__title" id="disclaimer-heading">A Note on These Figures</h3>
+          <p>Salary ranges reflect national U.S. data from the Bureau of Labor Statistics Occupational Employment and Wage Statistics program (May 2024 release). "Early Career" corresponds to the 10th percentile and "Experienced" to the 90th percentile. Actual compensation varies significantly based on geographic location, industry, company size, specialization, certifications, and years of experience. These figures are provided as a market reference and do not represent specific compensation for any current SourceAbility job listing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       CTA SECTION
+  ========================================== -->
+  <section class="section-padding salary-cta-section" aria-labelledby="cta-heading">
+    <div class="container container--narrow">
+      <header class="section-heading reveal">
+        <p class="overline overline--light">Next Steps</p>
+        <h2 class="section-heading__title section-heading__title--light" id="cta-heading">Ready to Explore Opportunities?</h2>
+        <p class="section-heading__lede" style="color: rgba(255,255,255,0.7);">Whether you are benchmarking a new role or evaluating your next career move, our team can provide personalized guidance.</p>
+      </header>
+      <div class="salary-cta-buttons reveal">
+        <a href="jobs.html" class="btn btn--primary btn--lg">Search Jobs</a>
+        <a href="contact.html" class="btn btn--outline-light btn--lg">Talk to a Recruiter</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FOOTER
+  ========================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <!-- Brand -->
+        <div class="footer-brand">
+          <img src="./assets/images/sourceability-logo.png" alt="SourceAbility, Inc.">
+          <p>The Leader in Data &amp; Analytical Recruitment. Connecting organizations with exceptional analytics talent since 2008.</p>
+          <div class="social-links">
+            <a href="https://www.facebook.com/SourceAbility-Inc-186078034755057" target="_blank" rel="noopener noreferrer" aria-label="SourceAbility on Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://twitter.com/SourceAbility" target="_blank" rel="noopener noreferrer" aria-label="SourceAbility on Twitter / X">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/company/216155" target="_blank" rel="noopener noreferrer" aria-label="SourceAbility on LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h3 class="footer-heading">Company</h3>
+          <ul class="footer-links" role="list">
+            <li><a href="about.html">About</a></li>
+            <li><a href="salary-guide.html">Salary Guide</a></li>
+            <li><a href="insights.html">Insights</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h3 class="footer-heading">Services</h3>
+          <ul class="footer-links" role="list">
+            <li><a href="employers.html">For Employers</a></li>
+            <li><a href="candidates.html">For Candidates</a></li>
+            <li><a href="jobs.html">Search Jobs</a></li>
+          </ul>
+        </div>
+
+        <!-- Specialties -->
+        <div>
+          <h3 class="footer-heading">Specialties</h3>
+          <ul class="footer-links" role="list">
+            <li><a href="specialties.html">Analytics &amp; Data Science</a></li>
+            <li><a href="specialties.html">BI &amp; Data Engineering</a></li>
+            <li><a href="specialties.html">Digital Analytics</a></li>
+            <li><a href="specialties.html">Fraud &amp; Risk</a></li>
+            <li><a href="specialties.html">Healthcare Analytics</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p class="footer-bottom__copy">&copy; 2026 SourceAbility, Inc. All rights reserved. | Charlotte, NC</p>
+        <div class="footer-bottom__credit">
+          <a href="https://themeltingbot.com" target="_blank" rel="noopener noreferrer" class="tmb-badge">
+            <svg width="18" height="18" viewBox="0 0 24 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <line x1="12" y1="3" x2="12" y2="0" stroke="#7B61FF" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="12" cy="0" r="1.5" fill="#7B61FF"/>
+              <rect x="1" y="3" width="22" height="16" rx="4" stroke="#00F0FF" stroke-width="1.8" fill="none"/>
+              <circle cx="8" cy="10" r="2.5" fill="#00F0FF"/>
+              <circle cx="16" cy="10" r="2.5" fill="#00F0FF"/>
+              <circle cx="8" cy="10" r="1" fill="#0D0D0D"/>
+              <circle cx="16" cy="10" r="1" fill="#0D0D0D"/>
+              <path d="M6 15 Q12 19 18 15" stroke="#00F0FF" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              <path d="M5 19 L5 24 Q5 26 7 26" stroke="#7B61FF" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.6"/>
+              <path d="M11 19 L11 27 Q11 29 13 29 Q15 29 15 27 L15 23" stroke="#7B61FF" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+              <path d="M19 19 L19 23 Q19 25 21 25" stroke="#7B61FF" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.6"/>
+            </svg>
+            <span>Built by The Melting Bot</span>
+          </a>
+        </div>
+        <nav class="footer-bottom__legal" aria-label="Legal links">
+          <ul style="list-style:none;display:flex;gap:var(--space-6);" role="list">
+            <li><a href="privacy.html" style="font-size:var(--text-xs);color:rgba(255,255,255,0.35);text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Privacy Policy</a></li>
+            <li><a href="terms.html" style="font-size:var(--text-xs);color:rgba(255,255,255,0.35);text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Terms of Service</a></li>
+          </ul>
+        </nav>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ============================================
+       SCRIPTS
+  ============================================ -->
+  <script src="./assets/js/main.js" defer></script>
+
+  <!-- Initialize Lucide icons -->
+  <script>lucide.createIcons();</script>
+
+</body>
+</html>
