@@ -1891,13 +1891,21 @@
   transform: translateX(-50%);
 }
 
-.salary-table-source {
+.salary-table-footer {
   text-align: center;
-  font-size: var(--text-sm);
-  color: var(--color-text-muted);
-  margin-top: var(--space-5);
+  max-width: 720px;
+  margin: var(--space-6) auto 0;
 }
-.salary-table-source a {
+.salary-table-footer p {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin: 0 0 var(--space-2);
+}
+.salary-table-footer p:last-child {
+  margin-bottom: 0;
+}
+.salary-table-footer a {
   color: var(--color-accent);
   text-decoration: underline;
   text-underline-offset: 2px;
@@ -2044,6 +2052,15 @@
   background: var(--color-surface);
   text-align: center;
   border-top: 1px solid rgba(15, 26, 46, 0.08);
+}
+.salary-cta-section .section-heading {
+  text-align: center;
+}
+.salary-cta-section .section-heading__lede {
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 .salary-cta-buttons {
   display: flex;
