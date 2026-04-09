@@ -1892,9 +1892,8 @@
 }
 
 .salary-table-footer {
-  text-align: center;
-  max-width: 720px;
-  margin: var(--space-6) auto 0;
+  text-align: left;
+  margin-top: var(--space-5);
 }
 .salary-table-footer p {
   font-size: var(--text-xs);
