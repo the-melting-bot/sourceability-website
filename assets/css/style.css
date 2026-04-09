@@ -1750,8 +1750,8 @@
 
 /* Brand Video Section */
 .salary-video-section {
-  background: var(--color-navy);
-  padding: 0;
+  background: var(--color-surface);
+  padding: clamp(var(--space-8), 4vw, var(--space-12)) 0;
   display: flex;
   justify-content: center;
 }
@@ -1759,6 +1759,8 @@
   width: 100%;
   max-width: 960px;
   display: block;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
 }
 
 /* Unified Salary Table */
@@ -2039,8 +2041,9 @@
 
 /* CTA Section */
 .salary-cta-section {
-  background: var(--color-navy);
+  background: var(--color-surface);
   text-align: center;
+  border-top: 1px solid rgba(15, 26, 46, 0.08);
 }
 .salary-cta-buttons {
   display: flex;
