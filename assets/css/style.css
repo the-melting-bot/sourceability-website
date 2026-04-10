@@ -1192,58 +1192,63 @@
   }
 }
 
-.stats-grid--seven {
+/* Home stats: two explicit rows (4 + 3) — avoids single-grid placement bugs */
+.stats-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(var(--space-8), 4vw, var(--space-12));
+  text-align: center;
+  width: 100%;
+}
+
+.stats-row {
+  display: grid;
+  width: 100%;
   gap: clamp(var(--space-6), 3vw, var(--space-10));
 }
 
-@media (min-width: 640px) {
-  .stats-grid.stats-grid--seven {
+.stats-row--quad {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 72rem;
+  margin-inline: auto;
+}
+
+@media (min-width: 768px) {
+  .stats-row--quad {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.stats-row--trio {
+  grid-template-columns: 1fr;
+  max-width: 100%;
+  margin-inline: auto;
+}
+
+@media (min-width: 480px) {
+  .stats-row--trio {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .stats-row--trio .reveal:last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    max-width: min(100%, 22rem);
+  }
 }
 
-@media (min-width: 900px) {
-  .stats-grid.stats-grid--seven {
+@media (min-width: 768px) {
+  .stats-row--trio {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 75%;
+    gap: clamp(var(--space-6), 2.5vw, var(--space-10));
   }
 
-  .stats-grid.stats-grid--seven > .reveal:last-child:nth-child(7) {
-    grid-column: 2;
-  }
-}
-
-@media (min-width: 1200px) {
-  /* 8 columns: row of 4 (each 2 cols), row of 3 (each 2 cols) centered with 1-col margins */
-  .stats-grid.stats-grid--seven {
-    grid-template-columns: repeat(8, minmax(0, 1fr));
-  }
-
-  .stats-grid.stats-grid--seven > .reveal:nth-child(1) {
-    grid-column: 1 / 3;
-  }
-
-  .stats-grid.stats-grid--seven > .reveal:nth-child(2) {
-    grid-column: 3 / 5;
-  }
-
-  .stats-grid.stats-grid--seven > .reveal:nth-child(3) {
-    grid-column: 5 / 7;
-  }
-
-  .stats-grid.stats-grid--seven > .reveal:nth-child(4) {
-    grid-column: 7 / 9;
-  }
-
-  .stats-grid.stats-grid--seven > .reveal:nth-child(5) {
-    grid-column: 2 / 4;
-  }
-
-  .stats-grid.stats-grid--seven > .reveal:nth-child(6) {
-    grid-column: 4 / 6;
-  }
-
-  .stats-grid.stats-grid--seven > .reveal:nth-child(7) {
-    grid-column: 6 / 8;
+  .stats-row--trio .reveal:last-child {
+    grid-column: auto;
+    justify-self: stretch;
+    max-width: none;
   }
 }
 
