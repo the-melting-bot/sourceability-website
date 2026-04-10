@@ -796,7 +796,7 @@
   color: var(--color-text-muted);
   line-height: 1.65;
   margin-top: var(--space-5);
-  max-width: 38ch;
+  max-width: min(52ch, 100%);
 }
 
 .approach-list {
@@ -895,6 +895,26 @@
   line-height: 1.7;
   margin: 0;
   max-width: 52ch;
+}
+
+.approach-item__best-label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-navy);
+  margin: var(--space-5) 0 var(--space-2);
+}
+
+.approach-item__bullets {
+  margin: 0;
+  padding-left: 1.2em;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  max-width: 52ch;
+}
+
+.approach-item__bullets li + li {
+  margin-top: var(--space-2);
 }
 
 /* --- SPECIALTIES --- */
