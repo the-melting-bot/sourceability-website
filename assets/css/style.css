@@ -57,12 +57,6 @@
   --color-accent-hover: #a02d28;
   --color-accent-light: rgba(185, 52, 46, 0.08);
 
-  /* Home: headline emphasis without italics (on-light / on-dark reds) */
-  --color-home-heading-red: #9b2e29;
-  --color-home-heading-red-mid: #b9342e;
-  --color-home-on-dark-rose: #ffd8d5;
-  --color-home-on-dark-rose-bright: #ff9a92;
-
   --color-border: rgba(0, 0, 0, 0.08);
   --color-border-dark: rgba(255, 255, 255, 0.1);
 
@@ -2602,12 +2596,12 @@ p.salary-table-footer a {
   }
 }
 
-/* --- HOME PAGE ONLY: no italics; red tones for emphasis --- */
+/* --- HOME PAGE ONLY: bold display headings, no italics; red stays accent-only --- */
 .page-home .section-heading__title {
   font-style: normal;
   font-weight: 600;
   letter-spacing: -0.02em;
-  color: var(--color-home-heading-red);
+  color: var(--color-navy);
 }
 
 .page-home .specialties-band .section-heading__title--light,
@@ -2615,33 +2609,40 @@ p.salary-table-footer a {
   font-style: normal;
   font-weight: 600;
   letter-spacing: -0.02em;
-  color: var(--color-home-on-dark-rose);
-  text-shadow:
-    0 2px 28px rgba(0, 0, 0, 0.45),
-    0 0 48px rgba(185, 52, 46, 0.22);
+  color: #fff;
+  text-shadow: 0 2px 28px rgba(0, 0, 0, 0.35);
+}
+
+.page-home .approach-section .overline {
+  color: var(--color-navy-mid);
+}
+
+.page-home .specialties-band .overline,
+.page-home .featured-jobs-section .overline {
+  color: rgba(232, 236, 242, 0.72);
 }
 
 .page-home .approach-item__title {
   font-style: normal;
   font-weight: 600;
-  color: var(--color-home-heading-red-mid);
+  color: var(--color-navy);
 }
 
 .page-home .stat__number {
   font-style: normal;
   font-weight: 600;
-  color: var(--color-home-on-dark-rose-bright);
+  color: #fff;
 }
 
 .page-home .testimonial-carousel__quote {
   font-style: normal;
   font-weight: 500;
-  color: var(--color-home-heading-red);
+  color: var(--color-navy);
 }
 
 .page-home .cta-banner__title {
   font-style: normal;
   font-weight: 600;
   letter-spacing: -0.02em;
-  color: var(--color-home-on-dark-rose);
+  color: #fff;
 }
