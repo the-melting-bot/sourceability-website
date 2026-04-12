@@ -178,6 +178,25 @@
   border-color: var(--color-navy);
 }
 
+/* Secondary CTA on light / warm backgrounds (pair with btn--primary) */
+.btn--secondary {
+  background: #fff;
+  color: var(--color-accent);
+  border: 2px solid var(--color-accent);
+}
+
+.btn--secondary:hover {
+  background: rgba(185, 52, 46, 0.09);
+  color: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(185, 52, 46, 0.15);
+}
+
+.btn--secondary:active {
+  transform: translateY(0);
+}
+
 .btn--sm {
   padding: 0.625rem 1.25rem;
   font-size: var(--text-xs);
@@ -1610,6 +1629,30 @@
   flex-wrap: wrap;
 }
 
+.cta-banner__inner--centered {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.cta-banner__inner--centered > div:first-child .cta-banner__title,
+.cta-banner__inner--centered > div:first-child .cta-banner__text {
+  margin-inline: auto;
+}
+
+.cta-banner__inner--centered > div:first-child {
+  max-width: 40rem;
+}
+
+.cta-banner__inner--centered > div:last-child {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  width: 100%;
+}
+
 .cta-banner__title {
   font-family: var(--font-display);
   font-size: var(--text-xl);
@@ -2803,10 +2846,16 @@ p.salary-table-footer a {
 /* --- JOBS PAGE: NO FIT SECTION --- */
 .no-fit-section {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: var(--space-10);
-  flex-wrap: wrap;
+  text-align: center;
+  gap: var(--space-8);
+  max-width: 40rem;
+  margin-inline: auto;
+}
+
+.no-fit-section__text {
+  width: 100%;
 }
 
 .no-fit-section__title {
@@ -2820,22 +2869,21 @@ p.salary-table-footer a {
 .no-fit-section__description {
   color: var(--color-text-muted);
   font-size: var(--text-base);
-  max-width: 520px;
+  max-width: 36rem;
+  margin-inline: auto;
+  line-height: 1.65;
 }
 
 .no-fit-section__actions {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: var(--space-4);
   flex-wrap: wrap;
-  flex-shrink: 0;
+  width: 100%;
 }
 
 @media (max-width: 768px) {
-  .no-fit-section {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
   .jobs-fallback-card__inner {
     padding: var(--space-8) var(--space-6);
   }
