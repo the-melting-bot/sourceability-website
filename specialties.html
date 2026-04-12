@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO -->
-  <title>Specialties — Analytics, Data Science &amp; BI Recruiting | SourceAbility</title>
-  <meta name="description" content="Specialized recruiting across analytics, data science, business intelligence, digital analytics, fraud &amp; risk, and healthcare analytics.">
+  <title>Expertise — Industries &amp; Roles | SourceAbility</title>
+  <meta name="description" content="SourceAbility recruits exclusively across Data, AI, Technology, and Financial Services — placing talent from individual contributors to the C-suite across five key industries.">
   <link rel="canonical" href="https://www.sourceabilityinc.com/specialties.html">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0f1a2e">
@@ -14,19 +14,19 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Specialties — Analytics, Data Science &amp; BI Recruiting | SourceAbility">
-  <meta property="og:description" content="Specialized recruiting across analytics, data science, business intelligence, digital analytics, fraud &amp; risk, and healthcare analytics.">
+  <meta property="og:title" content="Expertise — Industries &amp; Roles | SourceAbility">
+  <meta property="og:description" content="SourceAbility recruits exclusively across Data, AI, Technology, and Financial Services — placing talent from individual contributors to the C-suite.">
   <meta property="og:url" content="https://www.sourceabilityinc.com/specialties.html">
   <meta property="og:site_name" content="SourceAbility, Inc.">
   <meta property="og:locale" content="en_US">
   <meta property="og:image" content="https://www.sourceabilityinc.com/assets/images/hero-specialties.jpg">
-  <meta property="og:image:alt" content="SourceAbility recruiting specialties in data science, analytics, and business intelligence">
+  <meta property="og:image:alt" content="SourceAbility expertise across Data, AI, Technology, and Financial Services">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@SourceAbility">
-  <meta name="twitter:title" content="Specialties — Analytics, Data Science &amp; BI Recruiting | SourceAbility">
-  <meta name="twitter:description" content="Specialized recruiting across analytics, data science, business intelligence, digital analytics, fraud &amp; risk, and healthcare analytics.">
+  <meta name="twitter:title" content="Expertise — Industries &amp; Roles | SourceAbility">
+  <meta name="twitter:description" content="SourceAbility recruits exclusively across Data, AI, Technology, and Financial Services — placing talent from individual contributors to the C-suite.">
   <meta name="twitter:image" content="https://www.sourceabilityinc.com/assets/images/hero-specialties.jpg">
 
   <!-- Schema Markup -->
@@ -72,35 +72,20 @@
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 
-  <!-- Specialties Page Styles -->
+  <!-- Expertise Page Styles -->
   <style>
-    /* ---- Specialty Detail Blocks ---- */
-    .specialty-detail {
-      margin-bottom: 4rem;
-      padding-bottom: 4rem;
-      border-bottom: 1px solid var(--color-border);
+    /* ---- Section heading block ---- */
+    .expertise-section-head {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto var(--space-16);
     }
 
-    .specialty-detail:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-      padding-bottom: 0;
+    .expertise-section-head .overline {
+      margin-bottom: var(--space-4);
     }
 
-    /* Overline number badge */
-    .specialty-number {
-      display: inline-block;
-      font-family: var(--font-body);
-      font-size: var(--text-xs);
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--color-accent);
-      margin-bottom: var(--space-3);
-    }
-
-    /* Specialty title */
-    .specialty-title {
+    .expertise-section-head h2 {
       font-family: var(--font-display);
       font-style: italic;
       font-size: var(--text-xl);
@@ -109,66 +94,227 @@
       line-height: 1.2;
     }
 
-    /* Description */
-    .specialty-desc {
+    .expertise-section-head p {
       font-size: var(--text-base);
       color: var(--color-text-muted);
-      line-height: 1.75;
-      max-width: 520px;
+      line-height: 1.7;
     }
 
-    /* Roles box */
-    .roles-box {
-      background: var(--color-surface-warm);
-      padding: var(--space-8);
-      border-radius: var(--radius-lg);
-      border-left: 4px solid var(--color-accent);
-      box-shadow: var(--shadow-md);
+    /* ---- Industry Cards Grid ---- */
+    .industry-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-6);
     }
 
-    .roles-box__title {
-      font-family: var(--font-body);
-      font-size: var(--text-xs);
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--color-accent);
-      margin-bottom: var(--space-5);
+    @media (max-width: 960px) {
+      .industry-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
-    .roles-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+    @media (max-width: 580px) {
+      .industry-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Span the last card on an odd-count row to center it */
+    .industry-grid .industry-card:last-child:nth-child(3n+1) {
+      grid-column: 1 / -1;
+      max-width: 340px;
+      margin-inline: auto;
+      width: 100%;
+    }
+
+    .industry-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8) var(--space-8) var(--space-10);
       display: flex;
       flex-direction: column;
-      gap: var(--space-3);
+      gap: var(--space-5);
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow 260ms ease, transform 260ms ease, border-color 260ms ease;
     }
 
-    .roles-list li {
+    .industry-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-3px);
+      border-color: rgba(185, 52, 46, 0.2);
+    }
+
+    .industry-card__icon {
       display: flex;
       align-items: center;
-      gap: var(--space-3);
-      font-size: var(--text-sm);
-      color: var(--color-text);
-      font-weight: 450;
+      justify-content: center;
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-lg);
+      background: var(--color-accent-light);
+      color: var(--color-accent);
+      flex-shrink: 0;
     }
 
-    .roles-list li::before {
-      content: '';
-      display: block;
+    .industry-card__icon svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .industry-card__title {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: var(--text-lg);
+      color: var(--color-navy);
+      line-height: 1.25;
+      margin: 0;
+    }
+
+    .industry-card__desc {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin: 0;
+      flex: 1;
+    }
+
+    /* ---- Functional Roles Section ---- */
+    .roles-section {
+      background: var(--color-surface-warm);
+    }
+
+    .functional-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      background: var(--color-surface);
+    }
+
+    @media (max-width: 860px) {
+      .functional-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 520px) {
+      .functional-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .functional-role {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      padding: var(--space-6) var(--space-8);
+      border-bottom: 1px solid var(--color-border);
+      border-right: 1px solid var(--color-border);
+      transition: background 200ms ease;
+    }
+
+    .functional-role:hover {
+      background: var(--color-surface-warm);
+    }
+
+    /* Remove right border on last column */
+    .functional-role:nth-child(3n) {
+      border-right: none;
+    }
+
+    /* Remove bottom border on last row items */
+    .functional-role:nth-last-child(-n+3) {
+      border-bottom: none;
+    }
+
+    @media (max-width: 860px) {
+      .functional-role:nth-child(3n) {
+        border-right: 1px solid var(--color-border);
+      }
+      .functional-role:nth-child(2n) {
+        border-right: none;
+      }
+      .functional-role:nth-last-child(-n+3) {
+        border-bottom: 1px solid var(--color-border);
+      }
+      .functional-role:nth-last-child(-n+2) {
+        border-bottom: none;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .functional-role {
+        border-right: none !important;
+      }
+      .functional-role:last-child {
+        border-bottom: none !important;
+      }
+      .functional-role:nth-last-child(-n+2) {
+        border-bottom: 1px solid var(--color-border);
+      }
+    }
+
+    .functional-role__dot {
       flex-shrink: 0;
-      width: 6px;
-      height: 6px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
       background: var(--color-accent);
+      opacity: 0.7;
     }
 
-    /* Ensure split__content aligns correctly */
-    .specialty-detail .split__content {
+    .functional-role__name {
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      font-weight: 500;
+      color: var(--color-text);
+      line-height: 1.4;
+    }
+
+    /* ---- Expertise CTA ---- */
+    .expertise-cta {
+      background: var(--color-surface);
+    }
+
+    .expertise-cta__inner {
+      max-width: 640px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .expertise-cta__title {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: var(--text-xl);
+      color: var(--color-navy);
+      margin-bottom: var(--space-5);
+      line-height: 1.2;
+    }
+
+    .expertise-cta__desc {
+      font-size: var(--text-base);
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin-bottom: var(--space-10);
+    }
+
+    .expertise-cta__actions {
       display: flex;
-      flex-direction: column;
+      gap: var(--space-4);
       justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Divider line */
+    .section-divider {
+      width: 48px;
+      height: 3px;
+      background: var(--color-accent);
+      border-radius: 2px;
+      margin: var(--space-5) auto 0;
     }
   </style>
 </head>
@@ -206,9 +352,9 @@
 
       <nav class="main-nav" aria-label="Primary navigation">
         <a href="index.html" class="nav-link">Home</a>
-        <a href="employers.html" class="nav-link">For Employers</a>
-        <a href="candidates.html" class="nav-link">For Candidates</a>
-        <a href="specialties.html" class="nav-link nav-link--active">Specialties</a>
+        <a href="employers.html" class="nav-link">Hiring Solutions</a>
+        <a href="candidates.html" class="nav-link">Job Seeker</a>
+        <a href="specialties.html" class="nav-link nav-link--active">Expertise</a>
         <a href="jobs.html" class="nav-link">Search Jobs</a>
         <a href="about.html" class="nav-link">About</a>
         <a href="salary-guide.html" class="nav-link">Salary Guide</a>
@@ -231,9 +377,9 @@
       <i data-lucide="x" style="width:20px;height:20px;"></i>
     </button>
     <a href="index.html" class="mobile-nav-link">Home</a>
-    <a href="employers.html" class="mobile-nav-link">For Employers</a>
-    <a href="candidates.html" class="mobile-nav-link">For Candidates</a>
-    <a href="specialties.html" class="mobile-nav-link">Specialties</a>
+    <a href="employers.html" class="mobile-nav-link">Hiring Solutions</a>
+    <a href="candidates.html" class="mobile-nav-link">Job Seeker</a>
+    <a href="specialties.html" class="mobile-nav-link">Expertise</a>
     <a href="jobs.html" class="mobile-nav-link">Search Jobs</a>
     <a href="about.html" class="mobile-nav-link">About</a>
     <a href="salary-guide.html" class="mobile-nav-link">Salary Guide</a>
@@ -249,157 +395,158 @@
     <!-- ==========================================
          PAGE HERO
     ========================================== -->
-    <section class="page-hero page-hero--specialties" aria-label="Specialties hero">
+    <section class="page-hero page-hero--specialties" aria-label="Expertise hero">
       <img src="./assets/images/hero-specialties.jpg" alt="" class="page-hero__bg" loading="eager" fetchpriority="high">
       <div class="page-hero__overlay" aria-hidden="true"></div>
       <div class="container">
-        <p class="overline overline--light reveal">Our Specialties</p>
-        <h1 class="page-hero__title reveal">Deep Expertise Across the Data Landscape</h1>
-        <p class="page-hero__desc reveal">SourceAbility recruits exclusively in data and analytics. Our specialized focus means deeper networks, better candidates, and faster placements.</p>
+        <p class="overline overline--light reveal">Our Expertise</p>
+        <h1 class="page-hero__title reveal">Industries &amp; Roles We Know Best</h1>
+        <p class="page-hero__desc reveal">We recruit exclusively across Data, AI, Technology, and Financial Services — placing talent from individual contributors to the C-suite.</p>
       </div>
     </section>
 
     <!-- ==========================================
-         SPECIALTIES DETAIL SECTION
+         INDUSTRIES SECTION
     ========================================== -->
-    <section class="section-padding bg-surface" aria-labelledby="specialties-detail-heading">
-      <div class="container container--narrow">
-
-        <h2 id="specialties-detail-heading" class="sr-only">Our Recruiting Specialties</h2>
-
-        <!-- 01 — Analytics & Data Science -->
-        <article class="specialty-detail reveal" aria-labelledby="specialty-01-title">
-          <div class="split">
-            <div class="split__content">
-              <span class="specialty-number" aria-hidden="true">01</span>
-              <h2 class="specialty-title" id="specialty-01-title">Analytics &amp; Data Science</h2>
-              <p class="specialty-desc">Data science and analytics roles are among the most competitive in the market. We recruit machine learning engineers, data scientists, statistical modelers, research analysts, and AI specialists across industries including fintech, healthcare, e-commerce, and technology.</p>
-            </div>
-            <div>
-              <div class="roles-box">
-                <p class="roles-box__title">Typical Roles We Place</p>
-                <ul class="roles-list" role="list">
-                  <li>Chief Data Officer</li>
-                  <li>VP of Data Science</li>
-                  <li>Director of Analytics</li>
-                  <li>Senior Data Scientist</li>
-                  <li>ML Engineer</li>
-                  <li>AI Research Lead</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- 02 — Business Intelligence & Data Engineering -->
-        <article class="specialty-detail reveal" aria-labelledby="specialty-02-title">
-          <div class="split split--reverse">
-            <div class="split__content">
-              <span class="specialty-number" aria-hidden="true">02</span>
-              <h2 class="specialty-title" id="specialty-02-title">Business Intelligence &amp; Data Engineering</h2>
-              <p class="specialty-desc">Modern organizations depend on robust data infrastructure. We place BI developers, data architects, ETL engineers, analytics platform specialists, and data engineering leaders who design and maintain the systems that power business intelligence.</p>
-            </div>
-            <div>
-              <div class="roles-box">
-                <p class="roles-box__title">Typical Roles We Place</p>
-                <ul class="roles-list" role="list">
-                  <li>VP of Data Engineering</li>
-                  <li>Director of BI</li>
-                  <li>Data Architect</li>
-                  <li>Lead Data Engineer</li>
-                  <li>BI Developer</li>
-                  <li>Analytics Platform Manager</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- 03 — Consumer, Digital & Web Analytics -->
-        <article class="specialty-detail reveal" aria-labelledby="specialty-03-title">
-          <div class="split">
-            <div class="split__content">
-              <span class="specialty-number" aria-hidden="true">03</span>
-              <h2 class="specialty-title" id="specialty-03-title">Consumer, Digital &amp; Web Analytics</h2>
-              <p class="specialty-desc">Digital-first companies need leaders who can turn user behavior into business strategy. We recruit digital analytics managers, marketing scientists, attribution analysts, web optimization leaders, and customer insights professionals.</p>
-            </div>
-            <div>
-              <div class="roles-box">
-                <p class="roles-box__title">Typical Roles We Place</p>
-                <ul class="roles-list" role="list">
-                  <li>VP of Digital Analytics</li>
-                  <li>Director of Marketing Science</li>
-                  <li>Head of Customer Insights</li>
-                  <li>Senior Attribution Analyst</li>
-                  <li>Web Analytics Manager</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- 04 — Fraud & Risk Analytics -->
-        <article class="specialty-detail reveal" aria-labelledby="specialty-04-title">
-          <div class="split split--reverse">
-            <div class="split__content">
-              <span class="specialty-number" aria-hidden="true">04</span>
-              <h2 class="specialty-title" id="specialty-04-title">Fraud &amp; Risk Analytics</h2>
-              <p class="specialty-desc">Financial institutions and fintechs rely on sophisticated analytics to detect fraud and manage risk. We recruit fraud detection analysts, risk modelers, compliance data scientists, financial crime specialists, and AML analytics leaders.</p>
-            </div>
-            <div>
-              <div class="roles-box">
-                <p class="roles-box__title">Typical Roles We Place</p>
-                <ul class="roles-list" role="list">
-                  <li>Head of Fraud Analytics</li>
-                  <li>Director of Risk Modeling</li>
-                  <li>Senior Fraud Data Scientist</li>
-                  <li>AML Analytics Manager</li>
-                  <li>Credit Risk Analyst</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- 05 — Healthcare Analytics -->
-        <article class="specialty-detail reveal" aria-labelledby="specialty-05-title">
-          <div class="split">
-            <div class="split__content">
-              <span class="specialty-number" aria-hidden="true">05</span>
-              <h2 class="specialty-title" id="specialty-05-title">Healthcare Analytics</h2>
-              <p class="specialty-desc">Healthcare organizations are transforming patient outcomes through data. We place clinical data scientists, health informatics leaders, population health analysts, outcomes researchers, and healthcare AI specialists.</p>
-            </div>
-            <div>
-              <div class="roles-box">
-                <p class="roles-box__title">Typical Roles We Place</p>
-                <ul class="roles-list" role="list">
-                  <li>Chief Analytics Officer (Healthcare)</li>
-                  <li>VP of Clinical Analytics</li>
-                  <li>Director of Health Informatics</li>
-                  <li>Population Health Data Scientist</li>
-                  <li>Outcomes Research Lead</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- ==========================================
-         CTA BANNER
-    ========================================== -->
-    <section class="cta-banner section-padding" aria-label="Call to action">
+    <section class="section-padding bg-surface" aria-labelledby="industries-heading">
       <div class="container">
-        <div class="cta-banner__inner">
-          <div class="reveal">
-            <h2 class="cta-banner__title">Need Talent in One of These Areas?</h2>
-            <p class="cta-banner__text">Our recruiters have deep networks across every analytics specialty. Let's discuss your hiring needs.</p>
+
+        <div class="expertise-section-head reveal">
+          <p class="overline">Industries We Serve</p>
+          <h2 id="industries-heading">Where We Work</h2>
+          <p>We go deep in a small number of sectors — building lasting networks, genuine domain knowledge, and trusted relationships on both sides of every search.</p>
+          <div class="section-divider" aria-hidden="true"></div>
+        </div>
+
+        <div class="industry-grid">
+
+          <!-- Technology & Software -->
+          <div class="industry-card reveal" role="article" aria-labelledby="industry-tech">
+            <div class="industry-card__icon" aria-hidden="true">
+              <i data-lucide="building-2"></i>
+            </div>
+            <h3 class="industry-card__title" id="industry-tech">Technology &amp; Software</h3>
+            <p class="industry-card__desc">Enterprise software, SaaS, cloud infrastructure, and platform companies building the next generation of digital products.</p>
           </div>
-          <div style="display:flex;gap:var(--space-4);flex-wrap:wrap;" class="reveal">
+
+          <!-- Financial Services & Banking -->
+          <div class="industry-card reveal" role="article" aria-labelledby="industry-finance">
+            <div class="industry-card__icon" aria-hidden="true">
+              <i data-lucide="landmark"></i>
+            </div>
+            <h3 class="industry-card__title" id="industry-finance">Financial Services &amp; Banking</h3>
+            <p class="industry-card__desc">Investment firms, commercial banks, insurance, and fintech organizations navigating data-driven transformation.</p>
+          </div>
+
+          <!-- Healthcare & Life Sciences -->
+          <div class="industry-card reveal" role="article" aria-labelledby="industry-health">
+            <div class="industry-card__icon" aria-hidden="true">
+              <i data-lucide="heart-pulse"></i>
+            </div>
+            <h3 class="industry-card__title" id="industry-health">Healthcare &amp; Life Sciences</h3>
+            <p class="industry-card__desc">Health systems, pharma, biotech, and health-tech companies leveraging analytics to improve patient outcomes.</p>
+          </div>
+
+          <!-- Consumer & Retail -->
+          <div class="industry-card reveal" role="article" aria-labelledby="industry-consumer">
+            <div class="industry-card__icon" aria-hidden="true">
+              <i data-lucide="shopping-bag"></i>
+            </div>
+            <h3 class="industry-card__title" id="industry-consumer">Consumer &amp; Retail</h3>
+            <p class="industry-card__desc">E-commerce, CPG, and retail brands using digital analytics, personalization, and data to drive growth.</p>
+          </div>
+
+          <!-- Professional Services -->
+          <div class="industry-card reveal" role="article" aria-labelledby="industry-professional">
+            <div class="industry-card__icon" aria-hidden="true">
+              <i data-lucide="briefcase"></i>
+            </div>
+            <h3 class="industry-card__title" id="industry-professional">Professional Services</h3>
+            <p class="industry-card__desc">Consulting firms and managed service providers building analytics and technology practices.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         FUNCTIONAL AREAS SECTION
+    ========================================== -->
+    <section class="section-padding roles-section" aria-labelledby="roles-heading">
+      <div class="container">
+
+        <div class="expertise-section-head reveal">
+          <p class="overline">Functional Areas</p>
+          <h2 id="roles-heading">Roles We Place</h2>
+          <p>From hands-on practitioners to executive leaders, we cover the full spectrum of data and technology talent — at every level of seniority.</p>
+          <div class="section-divider" aria-hidden="true"></div>
+        </div>
+
+        <div class="functional-grid reveal" role="list" aria-label="Functional areas we recruit">
+
+          <div class="functional-role" role="listitem">
+            <span class="functional-role__dot" aria-hidden="true"></span>
+            <span class="functional-role__name">Data Science &amp; Machine Learning</span>
+          </div>
+
+          <div class="functional-role" role="listitem">
+            <span class="functional-role__dot" aria-hidden="true"></span>
+            <span class="functional-role__name">Analytics &amp; Business Intelligence</span>
+          </div>
+
+          <div class="functional-role" role="listitem">
+            <span class="functional-role__dot" aria-hidden="true"></span>
+            <span class="functional-role__name">Data Engineering &amp; Architecture</span>
+          </div>
+
+          <div class="functional-role" role="listitem">
+            <span class="functional-role__dot" aria-hidden="true"></span>
+            <span class="functional-role__name">AI &amp; Automation</span>
+          </div>
+
+          <div class="functional-role" role="listitem">
+            <span class="functional-role__dot" aria-hidden="true"></span>
+            <span class="functional-role__name">Information Security &amp; Risk</span>
+          </div>
+
+          <div class="functional-role" role="listitem">
+            <span class="functional-role__dot" aria-hidden="true"></span>
+            <span class="functional-role__name">Digital &amp; Web Analytics</span>
+          </div>
+
+          <div class="functional-role" role="listitem">
+            <span class="functional-role__dot" aria-hidden="true"></span>
+            <span class="functional-role__name">Technology Leadership (CTO, VP Eng, etc.)</span>
+          </div>
+
+          <div class="functional-role" role="listitem">
+            <span class="functional-role__dot" aria-hidden="true"></span>
+            <span class="functional-role__name">Financial Risk &amp; Compliance</span>
+          </div>
+
+          <div class="functional-role" role="listitem">
+            <span class="functional-role__dot" aria-hidden="true"></span>
+            <span class="functional-role__name">Healthcare Informatics</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         CTA SECTION
+    ========================================== -->
+    <section class="section-padding expertise-cta" aria-label="Contact call to action">
+      <div class="container">
+        <div class="expertise-cta__inner">
+          <div class="reveal">
+            <p class="overline" style="text-align:center;">Work With Us</p>
+            <h2 class="expertise-cta__title">Let's Find Your Next Hire</h2>
+            <p class="expertise-cta__desc">Whether you're building out a data team or landing your next role, our recruiters have the network and the expertise to move fast — and find the right fit.</p>
+          </div>
+          <div class="expertise-cta__actions reveal">
             <a href="contact.html" class="btn btn--primary btn--lg">Start a Search</a>
-            <a href="candidates.html" class="btn btn--outline btn--lg">For Candidates</a>
+            <a href="jobs.html" class="btn btn--outline btn--lg">Browse Open Roles</a>
           </div>
         </div>
       </div>
@@ -447,21 +594,21 @@
         <div>
           <h3 class="footer-heading">Services</h3>
           <ul class="footer-links" role="list">
-            <li><a href="employers.html">For Employers</a></li>
-            <li><a href="candidates.html">For Candidates</a></li>
+            <li><a href="employers.html">Hiring Solutions</a></li>
+            <li><a href="candidates.html">Job Seeker</a></li>
             <li><a href="jobs.html">Search Jobs</a></li>
           </ul>
         </div>
 
-        <!-- Specialties -->
+        <!-- Expertise -->
         <div>
-          <h3 class="footer-heading">Specialties</h3>
+          <h3 class="footer-heading">Expertise</h3>
           <ul class="footer-links" role="list">
-            <li><a href="specialties.html">Analytics &amp; Data Science</a></li>
-            <li><a href="specialties.html">BI &amp; Data Engineering</a></li>
-            <li><a href="specialties.html">Digital Analytics</a></li>
-            <li><a href="specialties.html">Fraud &amp; Risk</a></li>
-            <li><a href="specialties.html">Healthcare Analytics</a></li>
+            <li><a href="specialties.html">Technology &amp; Software</a></li>
+            <li><a href="specialties.html">Financial Services</a></li>
+            <li><a href="specialties.html">Healthcare &amp; Life Sciences</a></li>
+            <li><a href="specialties.html">Consumer &amp; Retail</a></li>
+            <li><a href="specialties.html">Professional Services</a></li>
           </ul>
         </div>
 

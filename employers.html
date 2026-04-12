@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO -->
-  <title>For Employers — Data &amp; Analytics Recruiting | SourceAbility</title>
-  <meta name="description" content="Partner with SourceAbility for executive, contingency, and co-tainer search services specializing in data science, analytics, and BI talent.">
+  <title>Hiring Solutions — Executive Search &amp; Talent Solutions | SourceAbility</title>
+  <meta name="description" content="SourceAbility delivers high-impact talent across Data, AI, Technology, and Financial Services — executive search, professional search, and project &amp; interim solutions.">
   <link rel="canonical" href="https://www.sourceabilityinc.com/employers.html">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0f1a2e">
@@ -14,8 +14,8 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="For Employers — Data &amp; Analytics Recruiting | SourceAbility">
-  <meta property="og:description" content="Partner with SourceAbility for executive, contingency, and co-tainer search services specializing in data science, analytics, and BI talent.">
+  <meta property="og:title" content="Hiring Solutions — Executive Search &amp; Talent Solutions | SourceAbility">
+  <meta property="og:description" content="SourceAbility delivers high-impact talent across Data, AI, Technology, and Financial Services — executive search, professional search, and project &amp; interim solutions.">
   <meta property="og:url" content="https://www.sourceabilityinc.com/employers.html">
   <meta property="og:site_name" content="SourceAbility, Inc.">
   <meta property="og:locale" content="en_US">
@@ -25,8 +25,8 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@SourceAbility">
-  <meta name="twitter:title" content="For Employers — Data &amp; Analytics Recruiting | SourceAbility">
-  <meta name="twitter:description" content="Partner with SourceAbility for executive, contingency, and co-tainer search services specializing in data science, analytics, and BI talent.">
+  <meta name="twitter:title" content="Hiring Solutions — Executive Search &amp; Talent Solutions | SourceAbility">
+  <meta name="twitter:description" content="SourceAbility delivers high-impact talent across Data, AI, Technology, and Financial Services — executive search, professional search, and project &amp; interim solutions.">
   <meta name="twitter:image" content="https://www.sourceabilityinc.com/assets/images/hero-employers.jpg">
 
   <!-- Schema Markup -->
@@ -71,6 +71,203 @@
 
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <style>
+    /* ── Search Solutions – stacked elegant layout ── */
+    .solutions-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .solution-item {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: var(--space-10);
+      align-items: start;
+      padding: var(--space-12) 0;
+      border-bottom: 1px solid var(--color-border, rgba(15,26,46,0.1));
+    }
+
+    .solution-item:last-child {
+      border-bottom: none;
+    }
+
+    .solution-item__label {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    .solution-item__number {
+      font-family: 'Instrument Serif', serif;
+      font-size: var(--text-4xl, 3rem);
+      color: var(--color-accent, #1a6b5c);
+      line-height: 1;
+      opacity: 0.35;
+      font-style: italic;
+    }
+
+    .solution-item__title {
+      font-family: 'Instrument Serif', serif;
+      font-size: var(--text-2xl, 1.75rem);
+      font-weight: 400;
+      color: var(--color-heading, #0f1a2e);
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .solution-item__body {
+      padding-top: var(--space-2);
+    }
+
+    .solution-item__desc {
+      font-size: var(--text-base, 1rem);
+      color: var(--color-text-muted, #5a6a82);
+      line-height: 1.75;
+      margin: 0 0 var(--space-4);
+    }
+
+    .solution-item__suited {
+      font-size: var(--text-sm, 0.875rem);
+      color: var(--color-text-muted, #5a6a82);
+      opacity: 0.75;
+      line-height: 1.6;
+      display: flex;
+      gap: var(--space-2);
+      align-items: baseline;
+    }
+
+    .solution-item__suited-label {
+      font-weight: 600;
+      color: var(--color-accent, #1a6b5c);
+      white-space: nowrap;
+      opacity: 1;
+      font-size: var(--text-xs, 0.8125rem);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    @media (max-width: 720px) {
+      .solution-item {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+        padding: var(--space-8) 0;
+      }
+    }
+
+    /* ── Process Steps – numbered timeline ── */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-8);
+      margin-top: var(--space-12);
+    }
+
+    .process-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: var(--space-8);
+      position: relative;
+      border: 1px solid var(--color-border, rgba(15,26,46,0.08));
+    }
+
+    .process-card__step {
+      font-family: 'Instrument Serif', serif;
+      font-size: var(--text-4xl, 3rem);
+      font-style: italic;
+      color: var(--color-accent, #1a6b5c);
+      opacity: 0.25;
+      line-height: 1;
+      margin-bottom: var(--space-4);
+    }
+
+    .process-card__title {
+      font-family: 'Instrument Serif', serif;
+      font-size: var(--text-xl, 1.375rem);
+      font-weight: 400;
+      color: var(--color-heading, #0f1a2e);
+      margin: 0 0 var(--space-3);
+      line-height: 1.25;
+    }
+
+    .process-card__text {
+      font-size: var(--text-sm, 0.9rem);
+      color: var(--color-text-muted, #5a6a82);
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    @media (max-width: 700px) {
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ── Why Clients – icon + text differentiators ── */
+    .differentiators-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-8);
+      margin-top: var(--space-12);
+    }
+
+    .differentiator {
+      display: flex;
+      gap: var(--space-6);
+      align-items: flex-start;
+    }
+
+    .differentiator__icon {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      background: var(--color-accent-subtle, rgba(26,107,92,0.08));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-accent, #1a6b5c);
+    }
+
+    .differentiator__icon i {
+      width: 22px;
+      height: 22px;
+    }
+
+    .differentiator__content {
+      flex: 1;
+    }
+
+    .differentiator__title {
+      font-family: 'Instrument Serif', serif;
+      font-size: var(--text-xl, 1.375rem);
+      font-weight: 400;
+      color: var(--color-heading, #0f1a2e);
+      margin: 0 0 var(--space-2);
+      line-height: 1.25;
+    }
+
+    .differentiator__text {
+      font-size: var(--text-base, 1rem);
+      color: var(--color-text-muted, #5a6a82);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .differentiator__divider {
+      border: none;
+      border-top: 1px solid var(--color-border, rgba(15,26,46,0.08));
+      margin: 0;
+    }
+
+    /* ── CTA Section ── */
+    .cta-duo {
+      display: flex;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+    }
+  </style>
 </head>
 <body>
 
@@ -106,9 +303,9 @@
 
       <nav class="main-nav" aria-label="Primary navigation">
         <a href="index.html" class="nav-link">Home</a>
-        <a href="employers.html" class="nav-link nav-link--active">For Employers</a>
-        <a href="candidates.html" class="nav-link">For Candidates</a>
-        <a href="specialties.html" class="nav-link">Specialties</a>
+        <a href="employers.html" class="nav-link nav-link--active">Hiring Solutions</a>
+        <a href="candidates.html" class="nav-link">Job Seeker</a>
+        <a href="specialties.html" class="nav-link">Expertise</a>
         <a href="jobs.html" class="nav-link">Search Jobs</a>
         <a href="about.html" class="nav-link">About</a>
         <a href="salary-guide.html" class="nav-link">Salary Guide</a>
@@ -131,9 +328,9 @@
       <i data-lucide="x" style="width:20px;height:20px;"></i>
     </button>
     <a href="index.html" class="mobile-nav-link">Home</a>
-    <a href="employers.html" class="mobile-nav-link">For Employers</a>
-    <a href="candidates.html" class="mobile-nav-link">For Candidates</a>
-    <a href="specialties.html" class="mobile-nav-link">Specialties</a>
+    <a href="employers.html" class="mobile-nav-link">Hiring Solutions</a>
+    <a href="candidates.html" class="mobile-nav-link">Job Seeker</a>
+    <a href="specialties.html" class="mobile-nav-link">Expertise</a>
     <a href="jobs.html" class="mobile-nav-link">Search Jobs</a>
     <a href="about.html" class="mobile-nav-link">About</a>
     <a href="salary-guide.html" class="mobile-nav-link">Salary Guide</a>
@@ -147,158 +344,113 @@
   <main id="main-content">
 
     <!-- ==========================================
-         PAGE HERO
+         1. PAGE HERO
     ========================================== -->
-    <section class="page-hero page-hero--employers" aria-label="For Employers">
+    <section class="page-hero page-hero--employers" aria-label="Hiring Solutions">
       <img src="./assets/images/hero-employers.jpg" alt="" class="page-hero__bg" loading="eager" fetchpriority="high">
       <div class="page-hero__overlay" aria-hidden="true"></div>
       <div class="container">
-        <p class="overline overline--light reveal">For Employers</p>
-        <h1 class="page-hero__title reveal">Build an Unstoppable Data &amp; Analytics Team</h1>
-        <p class="page-hero__desc reveal">Hiring data and analytics talent is one of the most difficult recruiting challenges companies face. SourceAbility focuses exclusively on solving that problem.</p>
+        <p class="overline overline--light reveal">SEARCH &amp; TALENT SOLUTIONS</p>
+        <h1 class="page-hero__title reveal">Hiring Solutions</h1>
+        <p class="page-hero__desc reveal">We deliver high-impact talent across Data, AI, Technology, and Financial Services — connecting organizations with professionals who drive measurable results.</p>
       </div>
     </section>
 
     <!-- ==========================================
-         PAIN POINT SECTION — The Talent Gap
+         2. SEARCH SOLUTIONS SECTION
     ========================================== -->
-    <section class="section-padding bg-surface" aria-labelledby="talent-gap-heading">
-      <div class="container container--narrow">
-        <div class="split">
-
-          <!-- Left: Content -->
-          <div class="split__content reveal">
-            <p class="overline">The Challenge</p>
-            <h2 class="section-heading__title" id="talent-gap-heading">The Talent Gap is Real</h2>
-            <p style="font-size:var(--text-base);color:var(--color-text-muted);line-height:1.75;margin-top:var(--space-6);">
-              Traditional recruiters lack the deep networks and domain knowledge to source top analytics talent. Generic job boards are overwhelmed with unqualified applicants. The best data professionals are rarely actively looking — they need to be found through targeted, relationship-driven outreach.
-            </p>
-            <p style="font-size:var(--text-base);color:var(--color-text-muted);line-height:1.75;margin-top:var(--space-4);">
-              That's why leading organizations trust SourceAbility. We operate exclusively in data and analytics, giving us the network depth, technical fluency, and market intelligence to deliver candidates that generalist firms simply cannot reach.
-            </p>
-          </div>
-
-          <!-- Right: Feature List -->
-          <div class="reveal">
-            <ul class="feature-list" role="list">
-
-              <li class="feature-item">
-                <div class="feature-item__icon" aria-hidden="true">
-                  <i data-lucide="target" style="width:20px;height:20px;"></i>
-                </div>
-                <div>
-                  <p class="feature-item__title">Niche Market Focus</p>
-                  <p class="feature-item__text">We recruit exclusively in data and analytics, giving us access to talent pools that generalist firms simply can't reach.</p>
-                </div>
-              </li>
-
-              <li class="feature-item">
-                <div class="feature-item__icon" aria-hidden="true">
-                  <i data-lucide="map" style="width:20px;height:20px;"></i>
-                </div>
-                <div>
-                  <p class="feature-item__title">Proactive Candidate Mapping</p>
-                  <p class="feature-item__text">We don't wait for applicants. Our team continuously maps the analytics talent landscape, identifying top performers before roles even open.</p>
-                </div>
-              </li>
-
-              <li class="feature-item">
-                <div class="feature-item__icon" aria-hidden="true">
-                  <i data-lucide="brain" style="width:20px;height:20px;"></i>
-                </div>
-                <div>
-                  <p class="feature-item__title">Technical Understanding</p>
-                  <p class="feature-item__text">Our recruiters understand the difference between a data engineer and a data scientist — and why it matters for your business.</p>
-                </div>
-              </li>
-
-              <li class="feature-item">
-                <div class="feature-item__icon" aria-hidden="true">
-                  <i data-lucide="megaphone" style="width:20px;height:20px;"></i>
-                </div>
-                <div>
-                  <p class="feature-item__title">Candidate Attraction Strategy</p>
-                  <p class="feature-item__text">We position your opportunity as compelling and competitive, ensuring the best candidates engage with your search.</p>
-                </div>
-              </li>
-
-            </ul>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-         THREE SEARCH MODELS SECTION
-    ========================================== -->
-    <section class="section-padding bg-warm" aria-labelledby="search-models-heading">
+    <section class="section-padding" style="background:#fff;" aria-labelledby="solutions-heading">
       <div class="container container--narrow">
 
         <header class="section-heading reveal">
-          <p class="overline">Search Models</p>
-          <h2 class="section-heading__title" id="search-models-heading">A Flexible Approach to Executive Recruiting</h2>
+          <h2 class="section-heading__title" id="solutions-heading">Our Search Solutions</h2>
         </header>
 
-        <div class="services-grid">
+        <div class="solutions-stack">
 
-          <article class="service-card reveal">
-            <span class="service-card__number" aria-hidden="true">01</span>
-            <h3 class="service-card__title">Executive Search</h3>
-            <p class="service-card__text">Our retained executive search is designed for senior-level data and analytics leaders — Chief Data Officers, VPs of Analytics, and Director-level appointments. We conduct thorough market mapping and personalized, confidential outreach to identify and deliver candidates of the highest caliber. You receive our full dedicated attention from kickoff to close.</p>
-          </article>
+          <!-- Executive Search -->
+          <div class="solution-item reveal">
+            <div class="solution-item__label">
+              <span class="solution-item__number" aria-hidden="true">01</span>
+              <h3 class="solution-item__title">Executive Search</h3>
+            </div>
+            <div class="solution-item__body">
+              <p class="solution-item__desc">C-suite, VP, and Director-level placements. Best suited for mission-critical leadership roles where cultural fit and strategic impact are paramount.</p>
+              <p class="solution-item__suited">
+                <span class="solution-item__suited-label">Best suited for</span>
+                mission-critical leadership roles where cultural fit and strategic impact are paramount.
+              </p>
+            </div>
+          </div>
 
-          <article class="service-card reveal">
-            <span class="service-card__number" aria-hidden="true">02</span>
-            <h3 class="service-card__title">Contingency Search</h3>
-            <p class="service-card__text">Performance-based recruiting for mid to senior-level analytics professionals — data scientists, BI developers, data engineers, and analytics managers. You only pay when we deliver the right candidate and they accept your offer. It's a low-risk way to access our specialized network without a retainer commitment.</p>
-          </article>
+          <!-- Professional Search -->
+          <div class="solution-item reveal">
+            <div class="solution-item__label">
+              <span class="solution-item__number" aria-hidden="true">02</span>
+              <h3 class="solution-item__title">Professional Search</h3>
+            </div>
+            <div class="solution-item__body">
+              <p class="solution-item__desc">Mid-to-senior individual contributors and technical specialists. High-demand analytics, engineering, and data science roles requiring deep domain expertise.</p>
+              <p class="solution-item__suited">
+                <span class="solution-item__suited-label">Best suited for</span>
+                high-demand analytics, engineering, and data science roles requiring deep domain expertise.
+              </p>
+            </div>
+          </div>
 
-          <article class="service-card reveal">
-            <span class="service-card__number" aria-hidden="true">03</span>
-            <h3 class="service-card__title">Co-tainer Search</h3>
-            <p class="service-card__text">A hybrid model that combines the dedication of retained search with the flexibility of contingency. An initial engagement fee ensures priority placement and deep focus on your role, while the balance is due only upon a successful hire. Ideal for specialized or hard-to-fill data roles where speed and commitment both matter.</p>
-          </article>
+          <!-- Project & Interim Search -->
+          <div class="solution-item reveal">
+            <div class="solution-item__label">
+              <span class="solution-item__number" aria-hidden="true">03</span>
+              <h3 class="solution-item__title">Project &amp; Interim Search</h3>
+            </div>
+            <div class="solution-item__body">
+              <p class="solution-item__desc">Contract, consulting, and interim talent for time-sensitive initiatives. Organizations scaling teams rapidly, managing project surges, or filling critical gaps.</p>
+              <p class="solution-item__suited">
+                <span class="solution-item__suited-label">Best suited for</span>
+                organizations scaling teams rapidly, managing project surges, or filling critical gaps.
+              </p>
+            </div>
+          </div>
 
         </div>
       </div>
     </section>
 
     <!-- ==========================================
-         PROCESS SECTION
+         3. OUR PROCESS SECTION
     ========================================== -->
-    <section class="section-padding bg-surface" aria-labelledby="process-heading">
+    <section class="section-padding bg-warm" aria-labelledby="process-heading">
       <div class="container container--narrow">
 
         <header class="section-heading reveal" style="text-align:center;">
-          <p class="overline">Our Process</p>
-          <h2 class="section-heading__title" id="process-heading">How Our Search Process Works</h2>
+          <h2 class="section-heading__title" id="process-heading">How We Work</h2>
         </header>
 
-        <div class="process-steps">
+        <div class="process-grid">
 
-          <div class="process-step reveal">
-            <div class="process-step__number" aria-hidden="true">1</div>
-            <h3 class="process-step__title">Discovery</h3>
-            <p class="process-step__text">We learn your business, culture, team dynamics, and the specific requirements of the role to build a targeted search strategy.</p>
+          <div class="process-card reveal">
+            <div class="process-card__step" aria-hidden="true">01</div>
+            <h3 class="process-card__title">Discovery &amp; Alignment</h3>
+            <p class="process-card__text">We invest time upfront to deeply understand your organization, culture, team dynamics, and the specific impact this hire needs to make.</p>
           </div>
 
-          <div class="process-step reveal">
-            <div class="process-step__number" aria-hidden="true">2</div>
-            <h3 class="process-step__title">Research &amp; Outreach</h3>
-            <p class="process-step__text">Our team maps the market, identifies top candidates, and conducts personalized outreach to engage passive talent.</p>
+          <div class="process-card reveal">
+            <div class="process-card__step" aria-hidden="true">02</div>
+            <h3 class="process-card__title">Market Mapping &amp; Candidate Attraction</h3>
+            <p class="process-card__text">Our team maps the relevant talent landscape, identifies passive and active candidates, and engages prospects through targeted, relationship-driven outreach.</p>
           </div>
 
-          <div class="process-step reveal">
-            <div class="process-step__number" aria-hidden="true">3</div>
-            <h3 class="process-step__title">Evaluate &amp; Present</h3>
-            <p class="process-step__text">We thoroughly vet candidates through technical and behavioral screening before presenting a curated shortlist.</p>
+          <div class="process-card reveal">
+            <div class="process-card__step" aria-hidden="true">03</div>
+            <h3 class="process-card__title">Evaluation &amp; Calibration</h3>
+            <p class="process-card__text">Candidates are assessed against both technical requirements and cultural alignment. We calibrate with your team at every stage to stay precisely on target.</p>
           </div>
 
-          <div class="process-step reveal">
-            <div class="process-step__number" aria-hidden="true">4</div>
-            <h3 class="process-step__title">Close &amp; Support</h3>
-            <p class="process-step__text">We manage the offer process, negotiate terms, and provide onboarding support to ensure a successful placement.</p>
+          <div class="process-card reveal">
+            <div class="process-card__step" aria-hidden="true">04</div>
+            <h3 class="process-card__title">Delivery &amp; Partnership</h3>
+            <p class="process-card__text">We manage the full process through offer, acceptance, and onboarding — then stay engaged to ensure long-term success.</p>
           </div>
 
         </div>
@@ -306,17 +458,66 @@
     </section>
 
     <!-- ==========================================
-         CTA BANNER
+         4. WHY CLIENTS PARTNER SECTION
     ========================================== -->
-    <section class="cta-banner section-padding" aria-label="Call to action">
-      <div class="container">
-        <div class="cta-banner__inner">
-          <div class="reveal">
-            <h2 class="cta-banner__title">Start Your Search Today</h2>
-            <p class="cta-banner__text">Let's discuss how SourceAbility can help you find the data and analytics talent your organization needs.</p>
+    <section class="section-padding" style="background:#fff;" aria-labelledby="why-heading">
+      <div class="container container--narrow">
+
+        <header class="section-heading reveal">
+          <h2 class="section-heading__title" id="why-heading">Why Clients Partner With Us</h2>
+        </header>
+
+        <div class="differentiators-list">
+
+          <div class="differentiator reveal">
+            <div class="differentiator__icon" aria-hidden="true">
+              <i data-lucide="crosshair"></i>
+            </div>
+            <div class="differentiator__content">
+              <h3 class="differentiator__title">Niche Market Expertise</h3>
+              <p class="differentiator__text">We specialize exclusively in Data, AI, Technology, and Financial Services — giving us network depth, technical fluency, and market intelligence that generalist firms cannot match.</p>
+            </div>
           </div>
-          <div class="reveal">
-            <a href="contact.html" class="btn btn--primary btn--lg">Contact Our Team</a>
+
+          <hr class="differentiator__divider" aria-hidden="true">
+
+          <div class="differentiator reveal">
+            <div class="differentiator__icon" aria-hidden="true">
+              <i data-lucide="handshake"></i>
+            </div>
+            <div class="differentiator__content">
+              <h3 class="differentiator__title">Relationship-Driven Approach</h3>
+              <p class="differentiator__text">We work as an extension of your team, not a transactional vendor. Every engagement is built on transparency, communication, and a genuine commitment to your long-term success.</p>
+            </div>
+          </div>
+
+          <hr class="differentiator__divider" aria-hidden="true">
+
+          <div class="differentiator reveal">
+            <div class="differentiator__icon" aria-hidden="true">
+              <i data-lucide="bar-chart-2"></i>
+            </div>
+            <div class="differentiator__content">
+              <h3 class="differentiator__title">Results That Matter</h3>
+              <p class="differentiator__text">93% client retention rate. 72% of clients hire 1 of the first 3 submitted candidates. Our track record speaks to the quality and precision of our search process.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         5. CTA SECTION
+    ========================================== -->
+    <section class="section-padding bg-warm" aria-label="Let's build your team">
+      <div class="container">
+        <div style="max-width:600px;margin:0 auto;text-align:center;">
+          <h2 class="section-heading__title reveal" style="margin-bottom:var(--space-4);">Let's Build Your Team</h2>
+          <p class="reveal" style="font-size:var(--text-base);color:var(--color-text-muted);line-height:1.75;margin-bottom:var(--space-8);">Ready to find your next high-impact hire? We're here to help you move quickly and confidently.</p>
+          <div class="cta-duo reveal" style="justify-content:center;">
+            <a href="contact.html" class="btn btn--primary btn--lg">Get Started</a>
+            <a href="jobs.html" class="btn btn--secondary btn--lg">Search Our Talent</a>
           </div>
         </div>
       </div>
@@ -364,15 +565,15 @@
         <div>
           <h3 class="footer-heading">Services</h3>
           <ul class="footer-links" role="list">
-            <li><a href="employers.html">For Employers</a></li>
-            <li><a href="candidates.html">For Candidates</a></li>
+            <li><a href="employers.html">Hiring Solutions</a></li>
+            <li><a href="candidates.html">Job Seeker</a></li>
             <li><a href="jobs.html">Search Jobs</a></li>
           </ul>
         </div>
 
         <!-- Specialties -->
         <div>
-          <h3 class="footer-heading">Specialties</h3>
+          <h3 class="footer-heading">Expertise</h3>
           <ul class="footer-links" role="list">
             <li><a href="specialties.html">Analytics &amp; Data Science</a></li>
             <li><a href="specialties.html">BI &amp; Data Engineering</a></li>

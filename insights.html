@@ -460,9 +460,9 @@
 
       <nav class="main-nav" aria-label="Primary navigation">
         <a href="index.html" class="nav-link">Home</a>
-        <a href="employers.html" class="nav-link">For Employers</a>
-        <a href="candidates.html" class="nav-link">For Candidates</a>
-        <a href="specialties.html" class="nav-link">Specialties</a>
+        <a href="employers.html" class="nav-link">Hiring Solutions</a>
+        <a href="candidates.html" class="nav-link">Job Seeker</a>
+        <a href="specialties.html" class="nav-link">Expertise</a>
         <a href="jobs.html" class="nav-link">Search Jobs</a>
         <a href="about.html" class="nav-link">About</a>
         <a href="salary-guide.html" class="nav-link">Salary Guide</a>
@@ -485,9 +485,9 @@
       <i data-lucide="x" style="width:20px;height:20px;"></i>
     </button>
     <a href="index.html" class="mobile-nav-link">Home</a>
-    <a href="employers.html" class="mobile-nav-link">For Employers</a>
-    <a href="candidates.html" class="mobile-nav-link">For Candidates</a>
-    <a href="specialties.html" class="mobile-nav-link">Specialties</a>
+    <a href="employers.html" class="mobile-nav-link">Hiring Solutions</a>
+    <a href="candidates.html" class="mobile-nav-link">Job Seeker</a>
+    <a href="specialties.html" class="mobile-nav-link">Expertise</a>
     <a href="jobs.html" class="mobile-nav-link">Search Jobs</a>
     <a href="about.html" class="mobile-nav-link">About</a>
     <a href="salary-guide.html" class="mobile-nav-link">Salary Guide</a>
@@ -558,20 +558,10 @@
 
         <h2 id="articles-heading" class="sr-only">All Articles</h2>
 
-        <!-- Category Filter Tabs -->
-        <div class="filter-bar reveal" role="tablist" aria-label="Filter articles by category">
-          <button class="filter-btn active" role="tab" aria-selected="true" data-filter="all">All</button>
-          <button class="filter-btn" role="tab" aria-selected="false" data-filter="hiring-advice">Hiring Advice</button>
-          <button class="filter-btn" role="tab" aria-selected="false" data-filter="career-advice">Career Advice</button>
-          <button class="filter-btn" role="tab" aria-selected="false" data-filter="market-insights">Market Insights</button>
-          <button class="filter-btn" role="tab" aria-selected="false" data-filter="executive-search">Executive Search</button>
-        </div>
-
-        <!-- Articles Grid -->
+        <!-- Blog Grid -->
         <div class="blog-grid" id="articles-grid">
 
-          <!-- New Article 1: Hiring Data Analytics Talent (also featured, appears in grid) -->
-          <article class="blog-card reveal" data-category="hiring-advice">
+          <article class="blog-card reveal">
             <div class="blog-card__image" style="background-image:url('./assets/images/article-hiring-talent.jpg');" role="img" aria-label="Team discussing data hiring strategy"></div>
             <div class="blog-card__body">
               <p class="blog-card__date">April 2, 2026</p>
@@ -582,8 +572,7 @@
             </div>
           </article>
 
-          <!-- New Article 2: Job Search Smart Moves -->
-          <article class="blog-card reveal" data-category="career-advice">
+          <article class="blog-card reveal">
             <div class="blog-card__image" style="background-image:url('./assets/images/article-job-search.jpg');" role="img" aria-label="Professional preparing for a job search"></div>
             <div class="blog-card__body">
               <p class="blog-card__date">March 18, 2026</p>
@@ -594,8 +583,7 @@
             </div>
           </article>
 
-          <!-- New Article 3: Benefits of Professional Recruiter -->
-          <article class="blog-card reveal" data-category="market-insights">
+          <article class="blog-card reveal">
             <div class="blog-card__image" style="background-image:url('./assets/images/article-recruiter-value.jpg');" role="img" aria-label="Recruiter advising a client in a professional setting"></div>
             <div class="blog-card__body">
               <p class="blog-card__date">March 5, 2026</p>
@@ -606,53 +594,39 @@
             </div>
           </article>
 
-        </div>
+          <article class="blog-card reveal">
+            <div class="blog-card__image" style="background-image:url('./assets/images/article-recruiter-value.jpg');" role="img" aria-label="Office workspace"></div>
+            <div class="blog-card__body">
+              <p class="blog-card__date">June 30, 2023</p>
+              <span class="blog-card__category">Workplace Strategy</span>
+              <h3 class="blog-card__title">Embracing the Future: Setting Work-From-Anywhere Policies</h3>
+              <p class="blog-card__excerpt">How forward-thinking organizations are designing flexible work policies that expand their reach to top data and analytics talent.</p>
+              <a href="insights/work-from-anywhere-policies.html" class="blog-card__link">Read Article &rarr;</a>
+            </div>
+          </article>
 
-        <!-- ==========================================
-             ARCHIVED ARTICLES — REWRITTEN & PUBLISHED
-        ========================================== -->
-        <div class="legacy-section reveal">
-          <div class="legacy-section__header">
-            <h3 class="legacy-section__title">From the Archive</h3>
-            <p class="legacy-section__desc">Foundational perspectives from the SourceAbility team on workplace strategy, talent management, and the value of specialized recruiting.</p>
-          </div>
+          <article class="blog-card reveal">
+            <div class="blog-card__image" style="background-image:url('./assets/images/article-job-search.jpg');" role="img" aria-label="Exit interview meeting"></div>
+            <div class="blog-card__body">
+              <p class="blog-card__date">April 15, 2023</p>
+              <span class="blog-card__category">Talent Management</span>
+              <h3 class="blog-card__title">Turning Departures Into Opportunities: Best Practices for Exit Interviews</h3>
+              <p class="blog-card__excerpt">When high-value analytics professionals leave, the exit interview is your best chance to uncover what went wrong and prevent future attrition.</p>
+              <a href="insights/exit-interview-best-practices.html" class="blog-card__link">Read Article &rarr;</a>
+            </div>
+          </article>
 
-          <div class="legacy-grid">
+          <article class="blog-card reveal">
+            <div class="blog-card__image" style="background-image:url('./assets/images/article-hiring-talent.jpg');" role="img" aria-label="Niche recruiting discussion"></div>
+            <div class="blog-card__body">
+              <p class="blog-card__date">January 22, 2023</p>
+              <span class="blog-card__category">Industry Insights</span>
+              <h3 class="blog-card__title">What Value Does a Niche Recruiting Firm Really Bring?</h3>
+              <p class="blog-card__excerpt">Job boards weren't designed for specialized data roles. Here's why a niche recruiting partner delivers better candidates and faster results.</p>
+              <a href="insights/niche-recruiting-firm-value.html" class="blog-card__link">Read Article &rarr;</a>
+            </div>
+          </article>
 
-            <!-- Archive 1: Work-From-Anywhere -->
-            <article class="legacy-card reveal" data-category="executive-search">
-              <div class="legacy-card__accent" aria-hidden="true"></div>
-              <div class="legacy-card__body">
-                <p class="legacy-card__category">Workplace Strategy</p>
-                <h4 class="legacy-card__title">Embracing the Future: Setting Work-From-Anywhere Policies for Your Company</h4>
-                <p class="legacy-card__excerpt">How forward-thinking organizations are designing flexible work policies that expand their reach to top data and analytics talent — and the key building blocks of an effective WFA program.</p>
-                <a href="insights/work-from-anywhere-policies.html" class="legacy-card__link">Read Article &rarr;</a>
-              </div>
-            </article>
-
-            <!-- Archive 2: Exit Interviews -->
-            <article class="legacy-card reveal" data-category="hiring-advice">
-              <div class="legacy-card__accent" aria-hidden="true"></div>
-              <div class="legacy-card__body">
-                <p class="legacy-card__category">Talent Management</p>
-                <h4 class="legacy-card__title">Turning Departures Into Opportunities: Best Practices for Exit Interviews</h4>
-                <p class="legacy-card__excerpt">When high-value analytics professionals leave, the exit interview is your best chance to uncover what went wrong — and how to fix it before your next best performer walks out the door.</p>
-                <a href="insights/exit-interview-best-practices.html" class="legacy-card__link">Read Article &rarr;</a>
-              </div>
-            </article>
-
-            <!-- Archive 3: Niche Recruiting Firm -->
-            <article class="legacy-card reveal" data-category="market-insights">
-              <div class="legacy-card__accent" aria-hidden="true"></div>
-              <div class="legacy-card__body">
-                <p class="legacy-card__category">Industry Insights</p>
-                <h4 class="legacy-card__title">What Value Does a Niche Recruiting Firm Really Bring?</h4>
-                <p class="legacy-card__excerpt">Job boards and ATS systems weren't designed for specialized data roles. Here's why a niche recruiting partner delivers better candidates, faster results, and measurably lower hiring risk.</p>
-                <a href="insights/niche-recruiting-firm-value.html" class="legacy-card__link">Read Article &rarr;</a>
-              </div>
-            </article>
-
-          </div>
         </div>
 
       </div>
@@ -717,15 +691,15 @@
         <div>
           <h3 class="footer-heading">Services</h3>
           <ul class="footer-links" role="list">
-            <li><a href="employers.html">For Employers</a></li>
-            <li><a href="candidates.html">For Candidates</a></li>
+            <li><a href="employers.html">Hiring Solutions</a></li>
+            <li><a href="candidates.html">Job Seeker</a></li>
             <li><a href="jobs.html">Search Jobs</a></li>
           </ul>
         </div>
 
         <!-- Specialties -->
         <div>
-          <h3 class="footer-heading">Specialties</h3>
+          <h3 class="footer-heading">Expertise</h3>
           <ul class="footer-links" role="list">
             <li><a href="specialties.html">Analytics &amp; Data Science</a></li>
             <li><a href="specialties.html">BI &amp; Data Engineering</a></li>

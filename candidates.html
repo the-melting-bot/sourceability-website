@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO -->
-  <title>For Candidates — Data &amp; Analytics Careers | SourceAbility</title>
-  <meta name="description" content="Explore career opportunities in data science, analytics, AI, and business intelligence. SourceAbility connects top talent with leading organizations.">
+  <title>Job Seeker — Advance Your Career | SourceAbility</title>
+  <meta name="description" content="Discover your next role in Data, AI, Technology, or Financial Services with SourceAbility — a recruiting partner who understands your skills and ambitions.">
   <link rel="canonical" href="https://www.sourceabilityinc.com/candidates.html">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0f1a2e">
@@ -14,8 +14,8 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="For Candidates — Data &amp; Analytics Careers | SourceAbility">
-  <meta property="og:description" content="Explore career opportunities in data science, analytics, AI, and business intelligence. SourceAbility connects top talent with leading organizations.">
+  <meta property="og:title" content="Job Seeker — Advance Your Career | SourceAbility">
+  <meta property="og:description" content="Discover your next role in Data, AI, Technology, or Financial Services with SourceAbility — a recruiting partner who understands your skills and ambitions.">
   <meta property="og:url" content="https://www.sourceabilityinc.com/candidates.html">
   <meta property="og:site_name" content="SourceAbility, Inc.">
   <meta property="og:locale" content="en_US">
@@ -25,8 +25,8 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@SourceAbility">
-  <meta name="twitter:title" content="For Candidates — Data &amp; Analytics Careers | SourceAbility">
-  <meta name="twitter:description" content="Explore career opportunities in data science, analytics, AI, and business intelligence. SourceAbility connects top talent with leading organizations.">
+  <meta name="twitter:title" content="Job Seeker — Advance Your Career | SourceAbility">
+  <meta name="twitter:description" content="Discover your next role in Data, AI, Technology, or Financial Services with SourceAbility — a recruiting partner who understands your skills and ambitions.">
   <meta name="twitter:image" content="https://www.sourceabilityinc.com/assets/images/hero-candidates.jpg">
 
   <!-- Schema Markup -->
@@ -73,112 +73,139 @@
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 
   <style>
-    /* ---- Candidates page-specific styles ---- */
+    /* ---- Job Seeker page-specific styles ---- */
 
-    /* Value prop split layout */
-    .cand-split {
+    /* 4-column value prop grid */
+    .offer-grid {
       display: grid;
-      gap: clamp(var(--space-10), 5vw, var(--space-20));
-      align-items: start;
+      gap: var(--space-6);
     }
 
-    @media (min-width: 900px) {
-      .cand-split {
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
+    @media (min-width: 640px) {
+      .offer-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    /* Stats visual block */
-    .cand-stats-block {
-      background: var(--color-navy);
-      border-radius: var(--radius-xl);
-      padding: clamp(var(--space-10), 5vw, var(--space-16));
+    @media (min-width: 1024px) {
+      .offer-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .offer-card {
+      padding: var(--space-8);
+      border-radius: var(--radius-lg);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
       display: flex;
       flex-direction: column;
-      gap: var(--space-10);
-      position: relative;
-      overflow: hidden;
+      gap: var(--space-4);
+      transition: box-shadow 0.3s var(--ease-out), transform 0.3s var(--ease-out);
     }
 
-    .cand-stats-block::before {
-      content: '';
-      position: absolute;
-      top: -30%;
-      right: -15%;
-      width: 60%;
-      height: 120%;
-      background: radial-gradient(ellipse, rgba(185, 52, 46, 0.12) 0%, transparent 70%);
-      pointer-events: none;
+    .offer-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-2px);
     }
 
-    .cand-stat {
-      position: relative;
-      z-index: 1;
+    .offer-card__icon {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      background: var(--color-accent-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-accent);
     }
 
-    .cand-stat__number {
+    .offer-card__title {
       font-family: var(--font-display);
-      font-size: var(--text-2xl);
-      color: #fff;
+      font-size: var(--text-base);
       font-style: italic;
-      line-height: 1;
+      font-weight: 600;
+      color: var(--color-navy);
+      margin: 0;
+    }
+
+    .offer-card__text {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* How It Works — 3-step row */
+    .hiw-steps {
+      display: grid;
+      gap: var(--space-8);
+    }
+
+    @media (min-width: 768px) {
+      .hiw-steps {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .hiw-step {
+      text-align: center;
+      position: relative;
+    }
+
+    .hiw-step__badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: #fff;
+      font-family: var(--font-display);
+      font-size: var(--text-base);
+      font-style: italic;
+      font-weight: 600;
+      margin: 0 auto var(--space-4);
+      letter-spacing: 0.01em;
+    }
+
+    .hiw-step__title {
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      font-style: italic;
+      color: var(--color-navy);
       margin-bottom: var(--space-2);
     }
 
-    .cand-stat__label {
+    .hiw-step__text {
       font-size: var(--text-sm);
-      color: rgba(255, 255, 255, 0.55);
-      line-height: 1.5;
-    }
-
-    .cand-stat + .cand-stat {
-      padding-top: var(--space-10);
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    /* Process steps — reuse existing .process-steps / .process-step */
-
-    /* Featured jobs CTA block */
-    .jobs-cta-block {
-      text-align: center;
-      max-width: 600px;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      max-width: 280px;
       margin: 0 auto;
     }
 
-    .jobs-cta-block p {
+    /* Open positions CTA block */
+    .positions-cta {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .positions-cta__lede {
       font-size: var(--text-base);
       color: var(--color-text-muted);
       line-height: 1.7;
       margin-bottom: var(--space-8);
     }
 
-    .jobs-cta-block__actions {
+    .positions-cta__actions {
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: var(--space-4);
-    }
-
-    .jobs-cta-block__secondary {
-      font-size: var(--text-sm);
-      color: var(--color-text-muted);
-    }
-
-    .jobs-cta-block__secondary a {
-      color: var(--color-accent);
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .jobs-cta-block__secondary a:hover {
-      text-decoration: underline;
-    }
-
-    /* Feature item icon size tweak for candidates */
-    .cand-feature .feature-item__icon {
-      width: 44px;
-      height: 44px;
     }
   </style>
 </head>
@@ -216,9 +243,9 @@
 
       <nav class="main-nav" aria-label="Primary navigation">
         <a href="index.html" class="nav-link">Home</a>
-        <a href="employers.html" class="nav-link">For Employers</a>
-        <a href="candidates.html" class="nav-link nav-link--active">For Candidates</a>
-        <a href="specialties.html" class="nav-link">Specialties</a>
+        <a href="employers.html" class="nav-link">Hiring Solutions</a>
+        <a href="candidates.html" class="nav-link nav-link--active">Job Seeker</a>
+        <a href="specialties.html" class="nav-link">Expertise</a>
         <a href="jobs.html" class="nav-link">Search Jobs</a>
         <a href="about.html" class="nav-link">About</a>
         <a href="salary-guide.html" class="nav-link">Salary Guide</a>
@@ -241,9 +268,9 @@
       <i data-lucide="x" style="width:20px;height:20px;"></i>
     </button>
     <a href="index.html" class="mobile-nav-link">Home</a>
-    <a href="employers.html" class="mobile-nav-link">For Employers</a>
-    <a href="candidates.html" class="mobile-nav-link">For Candidates</a>
-    <a href="specialties.html" class="mobile-nav-link">Specialties</a>
+    <a href="employers.html" class="mobile-nav-link">Hiring Solutions</a>
+    <a href="candidates.html" class="mobile-nav-link">Job Seeker</a>
+    <a href="specialties.html" class="mobile-nav-link">Expertise</a>
     <a href="jobs.html" class="mobile-nav-link">Search Jobs</a>
     <a href="about.html" class="mobile-nav-link">About</a>
     <a href="salary-guide.html" class="mobile-nav-link">Salary Guide</a>
@@ -259,128 +286,59 @@
     <!-- ==========================================
          PAGE HERO
     ========================================== -->
-    <section class="page-hero page-hero--candidates" aria-label="For Candidates">
+    <section class="page-hero page-hero--candidates" aria-label="Job Seeker Hero">
       <img src="./assets/images/hero-candidates.jpg" alt="" class="page-hero__bg" loading="eager" fetchpriority="high">
       <div class="page-hero__overlay" aria-hidden="true"></div>
       <div class="container container--narrow">
-        <p class="overline overline--light reveal">For Candidates</p>
-        <h1 class="page-hero__title reveal">Your Next Career Move in Data &amp; Analytics</h1>
-        <p class="page-hero__desc reveal">Whether you're a seasoned Chief Data Officer or an emerging data scientist, SourceAbility connects you with opportunities that match your expertise and ambitions.</p>
+        <p class="overline overline--light reveal">YOUR CAREER PARTNER</p>
+        <h1 class="page-hero__title reveal">Advance Your Career with Purpose</h1>
+        <p class="page-hero__desc reveal">Discover your next role in Data, AI, Technology, or Financial Services — with a recruiting partner who understands your skills and ambitions.</p>
       </div>
     </section>
 
     <!-- ==========================================
-         VALUE PROPOSITION SECTION
+         WHAT WE OFFER
     ========================================== -->
-    <section class="section-padding bg-surface" aria-labelledby="value-prop-heading">
+    <section class="section-padding" style="background:#fff;" aria-labelledby="offer-heading">
       <div class="container container--narrow">
 
-        <header class="section-heading reveal">
-          <p class="overline">Why SourceAbility</p>
-          <h2 class="section-heading__title" id="value-prop-heading">A True Career Partner</h2>
+        <header class="section-heading reveal" style="text-align:center;">
+          <p class="overline">What We Offer</p>
+          <h2 class="section-heading__title" id="offer-heading">Why Partner with SourceAbility</h2>
         </header>
 
-        <div class="cand-split">
+        <div class="offer-grid">
 
-          <!-- Left: Feature list -->
-          <div class="feature-list cand-feature reveal">
-
-            <div class="feature-item">
-              <div class="feature-item__icon" aria-hidden="true">
-                <i data-lucide="lock" style="width:20px;height:20px;"></i>
-              </div>
-              <div>
-                <h3 class="feature-item__title">Access Exclusive Roles</h3>
-                <p class="feature-item__text">Many of our positions are confidential searches that never appear on job boards. Working with us gives you access to opportunities you won't find anywhere else.</p>
-              </div>
+          <article class="offer-card reveal">
+            <div class="offer-card__icon" aria-hidden="true">
+              <i data-lucide="briefcase" style="width:20px;height:20px;"></i>
             </div>
-
-            <div class="feature-item">
-              <div class="feature-item__icon" aria-hidden="true">
-                <i data-lucide="bar-chart-2" style="width:20px;height:20px;"></i>
-              </div>
-              <div>
-                <h3 class="feature-item__title">Industry Expertise</h3>
-                <p class="feature-item__text">Our recruiters specialize in data and analytics. We understand your skill set, your market value, and the career paths available to you.</p>
-              </div>
-            </div>
-
-            <div class="feature-item">
-              <div class="feature-item__icon" aria-hidden="true">
-                <i data-lucide="shield-check" style="width:20px;height:20px;"></i>
-              </div>
-              <div>
-                <h3 class="feature-item__title">Confidential &amp; Respectful</h3>
-                <p class="feature-item__text">Your job search stays private. We never share your information without explicit consent and always represent you professionally.</p>
-              </div>
-            </div>
-
-            <div class="feature-item">
-              <div class="feature-item__icon" aria-hidden="true">
-                <i data-lucide="handshake" style="width:20px;height:20px;"></i>
-              </div>
-              <div>
-                <h3 class="feature-item__title">Long-Term Relationship</h3>
-                <p class="feature-item__text">We don't just place you and disappear. SourceAbility maintains relationships with candidates throughout their careers, providing guidance and introductions at every stage.</p>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Right: Stats visual block -->
-          <div class="cand-stats-block reveal">
-
-            <div class="cand-stat">
-              <div class="cand-stat__number">15+ Years</div>
-              <p class="cand-stat__label">Placing Data &amp; Analytics Talent</p>
-            </div>
-
-            <div class="cand-stat">
-              <div class="cand-stat__number">2,500+</div>
-              <p class="cand-stat__label">Successful Career Matches</p>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-         WHAT TO EXPECT SECTION
-    ========================================== -->
-    <section class="section-padding bg-warm" aria-labelledby="process-heading">
-      <div class="container container--narrow">
-
-        <header class="section-heading reveal">
-          <p class="overline">The Process</p>
-          <h2 class="section-heading__title" id="process-heading">What to Expect When Working With Us</h2>
-        </header>
-
-        <div class="process-steps">
-
-          <article class="process-step reveal">
-            <div class="process-step__number" aria-hidden="true">1</div>
-            <h3 class="process-step__title">Initial Conversation</h3>
-            <p class="process-step__text">We learn about your career goals, technical skills, leadership experience, and what matters most in your next role.</p>
+            <h3 class="offer-card__title">Discover Challenging Roles</h3>
+            <p class="offer-card__text">Access opportunities at organizations that value data-driven talent — roles you won't find on job boards.</p>
           </article>
 
-          <article class="process-step reveal">
-            <div class="process-step__number" aria-hidden="true">2</div>
-            <h3 class="process-step__title">Opportunity Matching</h3>
-            <p class="process-step__text">We identify positions that align with your expertise, culture preferences, and growth aspirations — including roles you won't find publicly.</p>
+          <article class="offer-card reveal">
+            <div class="offer-card__icon" aria-hidden="true">
+              <i data-lucide="shield" style="width:20px;height:20px;"></i>
+            </div>
+            <h3 class="offer-card__title">Search Confidentially</h3>
+            <p class="offer-card__text">Your job search stays private. We work discreetly to connect you with opportunities that match your goals.</p>
           </article>
 
-          <article class="process-step reveal">
-            <div class="process-step__number" aria-hidden="true">3</div>
-            <h3 class="process-step__title">Interview Preparation</h3>
-            <p class="process-step__text">We provide detailed insights into the company, team, and hiring manager to help you present your best self.</p>
+          <article class="offer-card reveal">
+            <div class="offer-card__icon" aria-hidden="true">
+              <i data-lucide="user-check" style="width:20px;height:20px;"></i>
+            </div>
+            <h3 class="offer-card__title">Engage a Talent Partner</h3>
+            <p class="offer-card__text">Work with a dedicated recruiter who understands your skillset, career trajectory, and what motivates you.</p>
           </article>
 
-          <article class="process-step reveal">
-            <div class="process-step__number" aria-hidden="true">4</div>
-            <h3 class="process-step__title">Offer &amp; Transition</h3>
-            <p class="process-step__text">We help negotiate your compensation package and support a smooth transition into your new position.</p>
+          <article class="offer-card reveal">
+            <div class="offer-card__icon" aria-hidden="true">
+              <i data-lucide="trending-up" style="width:20px;height:20px;"></i>
+            </div>
+            <h3 class="offer-card__title">Get Market Insight</h3>
+            <p class="offer-card__text">Understand your worth with real compensation data and guidance on the roles shaping your industry.</p>
           </article>
 
         </div>
@@ -388,21 +346,56 @@
     </section>
 
     <!-- ==========================================
-         FEATURED JOBS SECTION
+         HOW IT WORKS
     ========================================== -->
-    <section class="section-padding bg-surface" aria-labelledby="jobs-cta-heading">
+    <section class="section-padding bg-warm" aria-labelledby="hiw-heading">
       <div class="container container--narrow">
 
-        <header class="section-heading reveal">
+        <header class="section-heading reveal" style="text-align:center;">
+          <p class="overline">How It Works</p>
+          <h2 class="section-heading__title" id="hiw-heading">Your Path to the Right Role</h2>
+        </header>
+
+        <div class="hiw-steps">
+
+          <article class="hiw-step reveal">
+            <div class="hiw-step__badge" aria-hidden="true">01</div>
+            <h3 class="hiw-step__title">Connect</h3>
+            <p class="hiw-step__text">Reach out to our team or submit your resume. We'll learn about your experience, goals, and what matters most in your next role.</p>
+          </article>
+
+          <article class="hiw-step reveal">
+            <div class="hiw-step__badge" aria-hidden="true">02</div>
+            <h3 class="hiw-step__title">Match</h3>
+            <p class="hiw-step__text">We identify opportunities that align with your expertise and ambitions — then advocate on your behalf with hiring teams.</p>
+          </article>
+
+          <article class="hiw-step reveal">
+            <div class="hiw-step__badge" aria-hidden="true">03</div>
+            <h3 class="hiw-step__title">Advance</h3>
+            <p class="hiw-step__text">From interview prep to offer negotiation, we guide you through every step so you can make a confident career move.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         OPEN POSITIONS CTA
+    ========================================== -->
+    <section class="section-padding" style="background:#fff;" aria-labelledby="positions-heading">
+      <div class="container container--narrow">
+
+        <header class="section-heading reveal" style="text-align:center;">
           <p class="overline">Current Openings</p>
-          <h2 class="section-heading__title" id="jobs-cta-heading">Explore Opportunities</h2>
+          <h2 class="section-heading__title" id="positions-heading">Explore Current Opportunities</h2>
         </header>
 
-        <div class="jobs-cta-block reveal">
-          <p>Browse our current open positions in data science, analytics, BI, and related fields.</p>
-          <div class="jobs-cta-block__actions">
-            <a href="jobs.html" class="btn btn--primary btn--lg">View All Open Positions</a>
-            <p class="jobs-cta-block__secondary">Or <a href="contact.html">send us your resume</a></p>
+        <div class="positions-cta reveal">
+          <p class="positions-cta__lede">Browse active roles in Data Science, Analytics, AI, Technology, and Financial Services — and take the next step with a team that's in your corner.</p>
+          <div class="positions-cta__actions">
+            <a href="jobs.html" class="btn btn--primary btn--lg">Search Open Positions</a>
+            <a href="contact.html" class="btn btn--outline btn--lg">Submit Your Resume</a>
           </div>
         </div>
 
@@ -410,18 +403,18 @@
     </section>
 
     <!-- ==========================================
-         CTA BANNER
+         BOTTOM CTA
     ========================================== -->
     <section class="cta-banner section-padding" aria-label="Call to action">
       <div class="container">
         <div class="cta-banner__inner">
           <div class="reveal">
-            <h2 class="cta-banner__title">Ready for Your Next Chapter?</h2>
-            <p class="cta-banner__text">Connect with our team to explore confidential opportunities in data and analytics.</p>
+            <h2 class="cta-banner__title">Ready to Take the Next Step?</h2>
+            <p class="cta-banner__text">Connect with our team and let's find the role that moves your career forward.</p>
           </div>
           <div style="display:flex;gap:var(--space-4);flex-wrap:wrap;" class="reveal">
-            <a href="jobs.html" class="btn btn--primary btn--lg">Explore Opportunities</a>
-            <a href="contact.html" class="btn btn--outline btn--lg">Contact a Recruiter</a>
+            <a href="jobs.html" class="btn btn--primary btn--lg">View Open Roles</a>
+            <a href="contact.html" class="btn btn--outline btn--lg">Talk to a Recruiter</a>
           </div>
         </div>
       </div>
@@ -469,15 +462,15 @@
         <div>
           <h3 class="footer-heading">Services</h3>
           <ul class="footer-links" role="list">
-            <li><a href="employers.html">For Employers</a></li>
-            <li><a href="candidates.html">For Candidates</a></li>
+            <li><a href="employers.html">Hiring Solutions</a></li>
+            <li><a href="candidates.html">Job Seeker</a></li>
             <li><a href="jobs.html">Search Jobs</a></li>
           </ul>
         </div>
 
         <!-- Specialties -->
         <div>
-          <h3 class="footer-heading">Specialties</h3>
+          <h3 class="footer-heading">Expertise</h3>
           <ul class="footer-links" role="list">
             <li><a href="specialties.html">Analytics &amp; Data Science</a></li>
             <li><a href="specialties.html">BI &amp; Data Engineering</a></li>
