@@ -1887,7 +1887,7 @@
   display: block;
 }
 
-/* Mobile: featured jobs section — even brighter for small screens */
+/* Mobile: featured jobs section — even brighter for small screens + centered stack */
 @media (max-width: 767px) {
   .featured-jobs-section::before {
     filter: brightness(1.22) contrast(1.05) saturate(1.04);
@@ -1899,6 +1899,41 @@
       rgba(15, 26, 46, 0.44) 45%,
       rgba(15, 26, 46, 0.60) 100%
     );
+  }
+
+  .featured-jobs-head-row {
+    justify-items: center;
+  }
+
+  .featured-jobs-head-row .section-heading {
+    text-align: center;
+    width: 100%;
+    max-width: 26rem;
+    margin-inline: auto;
+  }
+
+  .featured-jobs-aside {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .featured-jobs-aside .overline {
+    width: 100%;
+    text-align: center;
+  }
+
+  .featured-jobs-aside__btn {
+    width: 100%;
+    max-width: 18rem;
+    justify-content: center;
+  }
+
+  .featured-jobs-grid {
+    width: 100%;
+    margin-inline: auto;
   }
 }
 
