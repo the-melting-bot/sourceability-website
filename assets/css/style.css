@@ -626,6 +626,8 @@
 .page-hero--specialties .page-hero__bg { object-position: center 40%; }
 .page-hero--jobs .page-hero__bg       { object-position: center 30%; }
 .page-hero--about .page-hero__bg      { object-position: center 30%; }
+.page-hero--privacy .page-hero__bg    { object-position: center 36%; }
+.page-hero--terms .page-hero__bg     { object-position: center 38%; }
 .page-hero--insights .page-hero__bg   { object-position: center 25%; }
 .page-hero--contact .page-hero__bg    { object-position: center 40%; }
 .page-hero--salary .page-hero__bg     { object-position: center 45%; }
