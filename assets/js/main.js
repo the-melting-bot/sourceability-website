@@ -245,9 +245,24 @@
 
       try {
         const formData = new FormData(contactForm);
+        const resumeInput = contactForm.querySelector('input[type="file"][name="attachment"]');
+        if (resumeInput && (!resumeInput.files || resumeInput.files.length === 0)) {
+          formData.delete('attachment');
+        } else if (resumeInput && resumeInput.files && resumeInput.files.length > 0) {
+          const maxBytes = 5 * 1024 * 1024;
+          if (resumeInput.files[0].size > maxBytes) {
+            if (errorEl) {
+              errorEl.textContent = 'Resume must be 5 MB or smaller. Please choose a smaller file or email us directly.';
+              errorEl.classList.add('show');
+            }
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Message';
+            return;
+          }
+        }
+
         const response = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
-          headers: { 'Accept': 'application/json' },
           body: formData
         });
 

@@ -188,7 +188,7 @@
               <h2 class="section-heading__title" id="contact-heading">How Can We Help?</h2>
             </header>
 
-            <form id="contact-form" method="POST" novalidate>
+            <form id="contact-form" method="POST" enctype="multipart/form-data" novalidate>
               <input type="hidden" name="access_key" value="6ce1053c-d0d4-401c-a09d-1a2b2353cd3e">
               <input type="hidden" name="subject" value="New Contact from SourceAbility Website">
               <input type="hidden" name="from_name" value="SourceAbility Website">
@@ -265,6 +265,18 @@
                   placeholder="Tell us about your hiring needs or career goals…"
                   required
                 ></textarea>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-resume">Resume <span class="form-label__optional">(optional)</span></label>
+                <input
+                  class="form-input form-input--file"
+                  type="file"
+                  id="contact-resume"
+                  name="attachment"
+                  accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                >
+                <p class="form-hint" id="contact-resume-hint">PDF or Word, up to 5&nbsp;MB. Job seekers may attach a resume here.</p>
               </div>
 
               <button type="submit" class="btn btn--primary btn--lg" style="width:100%;">Send Message</button>

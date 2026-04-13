@@ -2602,6 +2602,23 @@ p.salary-table-footer a {
   resize: vertical;
 }
 
+.form-label__optional {
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+.form-input--file {
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-sm);
+}
+
+.form-hint {
+  margin: var(--space-2) 0 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
 /* --- PROCESS STEPS --- */
 .process-steps {
   display: grid;
