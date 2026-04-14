@@ -6,7 +6,7 @@
 
   <!-- SEO -->
   <title>Expertise — Industries &amp; Roles | SourceAbility</title>
-  <meta name="description" content="SourceAbility recruits exclusively across Data, AI, Technology, and Financial Services — placing talent from individual contributors to the C-suite across five key industries.">
+  <meta name="description" content="SourceAbility focuses on Data &amp; AI, Technology, and Financial Services (including credit unions and lending). Explore representative industries and roles we support.">
   <link rel="canonical" href="https://www.sourceabilityinc.com/specialties.html">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0f1a2e">
@@ -15,7 +15,7 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Expertise — Industries &amp; Roles | SourceAbility">
-  <meta property="og:description" content="SourceAbility recruits exclusively across Data, AI, Technology, and Financial Services — placing talent from individual contributors to the C-suite.">
+  <meta property="og:description" content="SourceAbility focuses on Data &amp; AI, Technology, and Financial Services. Representative roles from executive leadership to critical individual contributors.">
   <meta property="og:url" content="https://www.sourceabilityinc.com/specialties.html">
   <meta property="og:site_name" content="SourceAbility, Inc.">
   <meta property="og:locale" content="en_US">
@@ -26,7 +26,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@SourceAbility">
   <meta name="twitter:title" content="Expertise — Industries &amp; Roles | SourceAbility">
-  <meta name="twitter:description" content="SourceAbility recruits exclusively across Data, AI, Technology, and Financial Services — placing talent from individual contributors to the C-suite.">
+  <meta name="twitter:description" content="SourceAbility focuses on Data &amp; AI, Technology, and Financial Services. Explore representative industries and roles.">
   <meta name="twitter:image" content="https://www.sourceabilityinc.com/assets/images/hero-specialties.jpg">
 
   <!-- Schema Markup -->
@@ -319,6 +319,47 @@
       border-radius: 2px;
       margin: var(--space-5) auto 0;
     }
+
+    /* Representative roles — three columns */
+    .expertise-roles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-10);
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .expertise-roles-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+      }
+    }
+
+    .expertise-roles-column h3 {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: var(--text-lg);
+      color: var(--color-navy);
+      margin: 0 0 var(--space-4);
+      line-height: 1.25;
+    }
+
+    .expertise-roles-column ul {
+      margin: 0;
+      padding-left: 1.15rem;
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: 1.75;
+    }
+
+    .expertise-roles-column li {
+      margin-bottom: var(--space-2);
+    }
+
+    .expertise-roles-column li:last-child {
+      margin-bottom: 0;
+    }
+
   </style>
 </head>
 <body>
@@ -403,8 +444,8 @@
       <div class="page-hero__overlay" aria-hidden="true"></div>
       <div class="container">
         <p class="overline overline--light reveal">Our Expertise</p>
-        <h1 class="page-hero__title reveal">Industries &amp; Roles We Know Best</h1>
-        <p class="page-hero__desc reveal">We recruit exclusively across Data, AI, Technology, and Financial Services — placing talent from individual contributors to the C-suite.</p>
+        <h1 class="page-hero__title reveal">Industries &amp; Roles</h1>
+        <p class="page-hero__desc reveal">We specialize in high-impact hiring across Data &amp; AI, Technology, and Financial Services (including credit unions and lending)&mdash;from executive leadership to critical individual contributors.</p>
       </div>
     </section>
 
@@ -415,57 +456,36 @@
       <div class="container">
 
         <div class="expertise-section-head reveal">
-          <p class="overline">Industries We Serve</p>
-          <h2 id="industries-heading">Where We Work</h2>
-          <p>We go deep in a small number of sectors — building lasting networks, genuine domain knowledge, and trusted relationships on both sides of every search.</p>
+          <p class="overline">Core Markets</p>
+          <h2 id="industries-heading">Where We Focus</h2>
+          <p>Our firm concentrates on three interconnected markets where specialized talent is in highest demand&mdash;and where deep relationships drive better outcomes.</p>
           <div class="section-divider" aria-hidden="true"></div>
         </div>
 
         <div class="industry-grid">
 
-          <!-- Technology & Software -->
-          <div class="industry-card reveal" role="article" aria-labelledby="industry-tech">
+          <div class="industry-card reveal" role="article" aria-labelledby="industry-data">
             <div class="industry-card__icon" aria-hidden="true">
-              <i data-lucide="building-2"></i>
+              <i data-lucide="database"></i>
             </div>
-            <h3 class="industry-card__title" id="industry-tech">Technology &amp; Software</h3>
-            <p class="industry-card__desc">Enterprise software, SaaS, cloud infrastructure, and platform companies building the next generation of digital products.</p>
+            <h3 class="industry-card__title" id="industry-data">Data &amp; AI</h3>
+            <p class="industry-card__desc">Organizations building analytics, machine learning, and intelligent products&mdash;from modern data platforms to applied AI in production.</p>
           </div>
 
-          <!-- Financial Services & Banking -->
-          <div class="industry-card reveal" role="article" aria-labelledby="industry-finance">
+          <div class="industry-card reveal" role="article" aria-labelledby="industry-technology">
+            <div class="industry-card__icon" aria-hidden="true">
+              <i data-lucide="cpu"></i>
+            </div>
+            <h3 class="industry-card__title" id="industry-technology">Technology</h3>
+            <p class="industry-card__desc">Software, cloud, platform, and infrastructure environments where engineering excellence and product leadership matter most.</p>
+          </div>
+
+          <div class="industry-card reveal" role="article" aria-labelledby="industry-fs">
             <div class="industry-card__icon" aria-hidden="true">
               <i data-lucide="landmark"></i>
             </div>
-            <h3 class="industry-card__title" id="industry-finance">Financial Services &amp; Banking</h3>
-            <p class="industry-card__desc">Investment firms, commercial banks, insurance, and fintech organizations navigating data-driven transformation.</p>
-          </div>
-
-          <!-- Healthcare & Life Sciences -->
-          <div class="industry-card reveal" role="article" aria-labelledby="industry-health">
-            <div class="industry-card__icon" aria-hidden="true">
-              <i data-lucide="heart-pulse"></i>
-            </div>
-            <h3 class="industry-card__title" id="industry-health">Healthcare &amp; Life Sciences</h3>
-            <p class="industry-card__desc">Health systems, pharma, biotech, and health-tech companies leveraging analytics to improve patient outcomes.</p>
-          </div>
-
-          <!-- Consumer & Retail -->
-          <div class="industry-card reveal" role="article" aria-labelledby="industry-consumer">
-            <div class="industry-card__icon" aria-hidden="true">
-              <i data-lucide="shopping-bag"></i>
-            </div>
-            <h3 class="industry-card__title" id="industry-consumer">Consumer &amp; Retail</h3>
-            <p class="industry-card__desc">E-commerce, CPG, and retail brands using digital analytics, personalization, and data to drive growth.</p>
-          </div>
-
-          <!-- Professional Services -->
-          <div class="industry-card reveal" role="article" aria-labelledby="industry-professional">
-            <div class="industry-card__icon" aria-hidden="true">
-              <i data-lucide="briefcase"></i>
-            </div>
-            <h3 class="industry-card__title" id="industry-professional">Professional Services</h3>
-            <p class="industry-card__desc">Consulting firms and managed service providers building analytics and technology practices.</p>
+            <h3 class="industry-card__title" id="industry-fs">Financial Services (Credit Unions &amp; Lending)</h3>
+            <p class="industry-card__desc">Credit unions, lending institutions, and financial organizations where commercial, credit, and technology leadership must align with member and business priorities.</p>
           </div>
 
         </div>
@@ -479,59 +499,44 @@
       <div class="container">
 
         <div class="expertise-section-head reveal">
-          <p class="overline">Functional Areas</p>
-          <h2 id="roles-heading">Roles We Place</h2>
-          <p>From hands-on practitioners to executive leaders, we cover the full spectrum of data and technology talent — at every level of seniority.</p>
+          <p class="overline">Roles We Support</p>
+          <h2 id="roles-heading">Representative Searches</h2>
+          <p>We partner with organizations to deliver specialized talent across a range of critical roles. Representative searches include, but are not limited to:</p>
           <div class="section-divider" aria-hidden="true"></div>
         </div>
 
-        <div class="functional-grid reveal" role="list" aria-label="Functional areas we recruit">
-
-          <div class="functional-role" role="listitem">
-            <span class="functional-role__dot" aria-hidden="true"></span>
-            <span class="functional-role__name">Data Science &amp; Machine Learning</span>
+        <div class="expertise-roles-grid reveal" aria-label="Representative roles by market">
+          <div class="expertise-roles-column">
+            <h3>Data &amp; AI</h3>
+            <ul>
+              <li>Data Engineer</li>
+              <li>Analytics Engineer</li>
+              <li>Data Analyst / BI Developer</li>
+              <li>Machine Learning Engineer</li>
+              <li>AI / Applied Scientist</li>
+            </ul>
           </div>
-
-          <div class="functional-role" role="listitem">
-            <span class="functional-role__dot" aria-hidden="true"></span>
-            <span class="functional-role__name">Analytics &amp; Business Intelligence</span>
+          <div class="expertise-roles-column">
+            <h3>Technology</h3>
+            <ul>
+              <li>Software Engineer / Developer</li>
+              <li>Cloud Engineer / Architect</li>
+              <li>DevOps / Platform Engineer</li>
+              <li>Product Manager</li>
+              <li>IT &amp; Infrastructure Leadership</li>
+            </ul>
           </div>
-
-          <div class="functional-role" role="listitem">
-            <span class="functional-role__dot" aria-hidden="true"></span>
-            <span class="functional-role__name">Data Engineering &amp; Architecture</span>
+          <div class="expertise-roles-column">
+            <h3>Financial Services (Credit Unions &amp; Lending)</h3>
+            <ul>
+              <li>Chief Lending Officer (CLO)</li>
+              <li>VP / SVP Commercial Lending</li>
+              <li>Commercial Relationship Manager</li>
+              <li>Credit Analyst / Underwriter</li>
+              <li>Treasury Management Officer</li>
+              <li>Business Banking Leader</li>
+            </ul>
           </div>
-
-          <div class="functional-role" role="listitem">
-            <span class="functional-role__dot" aria-hidden="true"></span>
-            <span class="functional-role__name">AI &amp; Automation</span>
-          </div>
-
-          <div class="functional-role" role="listitem">
-            <span class="functional-role__dot" aria-hidden="true"></span>
-            <span class="functional-role__name">Information Security &amp; Risk</span>
-          </div>
-
-          <div class="functional-role" role="listitem">
-            <span class="functional-role__dot" aria-hidden="true"></span>
-            <span class="functional-role__name">Digital &amp; Web Analytics</span>
-          </div>
-
-          <div class="functional-role" role="listitem">
-            <span class="functional-role__dot" aria-hidden="true"></span>
-            <span class="functional-role__name">Technology Leadership (CTO, VP Eng, etc.)</span>
-          </div>
-
-          <div class="functional-role" role="listitem">
-            <span class="functional-role__dot" aria-hidden="true"></span>
-            <span class="functional-role__name">Financial Risk &amp; Compliance</span>
-          </div>
-
-          <div class="functional-role" role="listitem">
-            <span class="functional-role__dot" aria-hidden="true"></span>
-            <span class="functional-role__name">Healthcare Informatics</span>
-          </div>
-
         </div>
       </div>
     </section>
@@ -544,12 +549,13 @@
         <div class="expertise-cta__inner">
           <div class="reveal">
             <p class="overline" style="text-align:center;">Work With Us</p>
-            <h2 class="expertise-cta__title">Let's Find Your Next Hire</h2>
-            <p class="expertise-cta__desc">Whether you're building out a data team or landing your next role, our recruiters have the network and the expertise to move fast — and find the right fit.</p>
+            <h2 class="expertise-cta__title">Let&rsquo;s Talk About Your Search</h2>
+            <p class="expertise-cta__desc">Whether you are hiring specialized talent or exploring your next move, we bring the network and market depth to help you move with confidence.</p>
           </div>
           <div class="expertise-cta__actions reveal">
-            <a href="contact.html" class="btn btn--primary btn--lg">Start a Search</a>
-            <a href="jobs.html" class="btn btn--secondary btn--lg">Browse Open Roles</a>
+            <a href="employers.html" class="btn btn--primary btn--lg">Strategic Hiring</a>
+            <a href="candidates.html" class="btn btn--secondary btn--lg">Job Seeker</a>
+            <a href="contact.html" class="btn btn--outline btn--lg">Contact</a>
           </div>
         </div>
       </div>
@@ -607,11 +613,9 @@
         <div>
           <h3 class="footer-heading">Expertise</h3>
           <ul class="footer-links" role="list">
-            <li><a href="specialties.html">Technology &amp; Software</a></li>
+            <li><a href="specialties.html">Data &amp; AI</a></li>
+            <li><a href="specialties.html">Technology</a></li>
             <li><a href="specialties.html">Financial Services</a></li>
-            <li><a href="specialties.html">Healthcare &amp; Life Sciences</a></li>
-            <li><a href="specialties.html">Consumer &amp; Retail</a></li>
-            <li><a href="specialties.html">Professional Services</a></li>
           </ul>
         </div>
 
