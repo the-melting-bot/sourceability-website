@@ -309,13 +309,22 @@
       max-width: 42rem;
     }
 
-    /* inline-flex + parent text-align:center reliably centers the button group */
-    .expertise-cta__actions {
-      display: inline-flex;
-      gap: var(--space-4);
+    /* Full-width row centers the shrink-wrapped button cluster (avoids text-align quirks) */
+    .expertise-cta__buttons-row {
+      display: flex;
       justify-content: center;
       align-items: center;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .expertise-cta__actions {
+      display: flex;
+      flex-direction: row;
       flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: var(--space-4);
       box-sizing: border-box;
       max-width: 100%;
     }
@@ -561,10 +570,12 @@
             <h2 class="expertise-cta__title">Let&rsquo;s Talk About Your Search</h2>
             <p class="expertise-cta__desc">Whether you are hiring specialized talent or exploring your next move, we bring the network and market depth to help you move with confidence.</p>
           </div>
-          <div class="expertise-cta__actions reveal">
-            <a href="employers.html" class="btn btn--primary btn--lg">Strategic Hiring</a>
-            <a href="candidates.html" class="btn btn--secondary btn--lg">Job Seeker</a>
-            <a href="contact.html" class="btn btn--outline btn--lg">Contact</a>
+          <div class="expertise-cta__buttons-row">
+            <div class="expertise-cta__actions reveal">
+              <a href="employers.html" class="btn btn--primary btn--lg">Strategic Hiring</a>
+              <a href="candidates.html" class="btn btn--secondary btn--lg">Job Seeker</a>
+              <a href="contact.html" class="btn btn--outline btn--lg">Contact</a>
+            </div>
           </div>
         </div>
       </div>
