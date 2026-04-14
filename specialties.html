@@ -281,11 +281,13 @@
 
     .expertise-cta__inner {
       max-width: 640px;
+      width: 100%;
       margin: 0 auto;
       text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
+    }
+
+    .expertise-cta__inner > .reveal:first-of-type {
+      width: 100%;
     }
 
     .expertise-cta__title {
@@ -307,14 +309,15 @@
       max-width: 42rem;
     }
 
+    /* inline-flex + parent text-align:center reliably centers the button group */
     .expertise-cta__actions {
-      display: flex;
+      display: inline-flex;
       gap: var(--space-4);
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
-      width: 100%;
       box-sizing: border-box;
+      max-width: 100%;
     }
 
     /* Divider line */
