@@ -3003,7 +3003,8 @@ p.salary-table-footer a {
 }
 
 .page-home .specialties-band .section-heading__title--light,
-.page-home .featured-jobs-section .section-heading__title--light {
+.page-home .featured-jobs-section .section-heading__title--light,
+.page-home .stats-section .section-heading__title--light {
   font-style: normal;
   font-weight: 600;
   letter-spacing: -0.02em;
