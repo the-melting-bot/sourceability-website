@@ -329,6 +329,16 @@
       max-width: 100%;
     }
 
+    /* Stronger outline on light background (global outline-dark uses very light border) */
+    .expertise-cta .expertise-cta__actions .btn--outline-dark {
+      border-width: 2px;
+      border-color: var(--color-navy-mid);
+    }
+
+    .expertise-cta .expertise-cta__actions .btn--outline-dark:hover {
+      border-color: var(--color-navy);
+    }
+
     /* Divider line */
     .section-divider {
       width: 48px;
