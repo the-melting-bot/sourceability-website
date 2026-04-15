@@ -1095,21 +1095,20 @@
   text-align: center;
 }
 
-/* Equalize title+body height so list labels and bullets line up across the row */
+/* Grow lead so labels + bullets start on the same row across equal-height cards */
 .approach-card__lead {
-  display: grid;
-  grid-template-rows: auto auto 1fr;
-  justify-items: stretch;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
   align-self: stretch;
   width: 100%;
-  min-height: clamp(7.75rem, 7rem + 2vw, 10rem);
+  min-height: 0;
   margin-bottom: var(--space-3);
   box-sizing: border-box;
 }
 
 .approach-card__title {
-  grid-row: 1;
-  justify-self: center;
   align-self: center;
   text-align: center;
   width: fit-content;
@@ -1125,14 +1124,14 @@
 }
 
 .approach-card__text {
-  grid-row: 2;
   text-align: left;
+  text-wrap: wrap;
   font-size: var(--text-sm);
   color: var(--color-text-muted);
   line-height: 1.65;
   margin: 0;
   width: 100%;
-  max-width: 100%;
+  max-width: none;
 }
 
 .approach-card__list-label {
@@ -1191,7 +1190,7 @@
 }
 
 .approach-card__cta {
-  margin-top: auto;
+  margin-top: var(--space-2);
   align-self: center;
   display: inline-flex;
   align-items: center;
