@@ -965,6 +965,7 @@
   display: grid;
   gap: var(--space-8);
   grid-template-columns: 1fr;
+  align-items: stretch;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -974,6 +975,7 @@
   .approach-cards {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--space-6);
+    align-items: stretch;
   }
 
   .approach-card:last-child {
@@ -1078,12 +1080,24 @@
   flex-direction: column;
   align-items: center;
   flex: 1;
-  padding: var(--space-10) var(--space-8) var(--space-12);
+  padding: var(--space-10) var(--space-10) var(--space-12);
   min-height: 0;
   text-align: center;
 }
 
+/* Equalize title+body height so list labels and bullets line up across the row */
+.approach-card__lead {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  justify-items: center;
+  width: 100%;
+  min-height: clamp(13rem, 11.5rem + 7vw, 17rem);
+  margin-bottom: var(--space-5);
+  box-sizing: border-box;
+}
+
 .approach-card__title {
+  grid-row: 1;
   font-family: var(--font-display);
   font-size: clamp(1.12rem, 1rem + 0.45vw, 1.35rem);
   font-weight: 700;
@@ -1096,11 +1110,11 @@
 }
 
 .approach-card__text {
+  grid-row: 2;
   font-size: var(--text-sm);
   color: var(--color-text-muted);
   line-height: 1.65;
-  margin: 0 0 var(--space-5);
-  flex-grow: 0;
+  margin: 0;
   max-width: 100%;
 }
 
@@ -1114,7 +1128,12 @@
   margin: 0 0 var(--space-4);
   line-height: 1.35;
   text-align: center;
+  text-wrap: balance;
   width: 100%;
+  min-height: 3lh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .approach-card__bullets {
@@ -1126,8 +1145,9 @@
   color: var(--color-text-muted);
   line-height: 1.55;
   text-align: left;
-  width: fit-content;
-  max-width: 100%;
+  width: 100%;
+  max-width: min(20rem, 100%);
+  box-sizing: border-box;
 }
 
 .approach-card__bullets li {
