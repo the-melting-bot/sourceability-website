@@ -1012,9 +1012,9 @@
     0 4px 6px -1px rgba(15, 26, 46, 0.06),
     0 12px 24px -8px rgba(15, 26, 46, 0.1);
   transition:
-    box-shadow 0.35s var(--ease-out),
-    transform 0.35s var(--ease-out),
-    border-color 0.35s var(--ease-out);
+    box-shadow 2s ease-in-out,
+    border-color 2s ease-in-out,
+    transform 0.4s var(--ease-out);
 }
 
 .approach-card:hover {
@@ -1080,7 +1080,7 @@
   flex-direction: column;
   align-items: center;
   flex: 1;
-  padding: var(--space-10) var(--space-10) var(--space-12);
+  padding: var(--space-8) var(--space-8) var(--space-10);
   min-height: 0;
   text-align: center;
 }
@@ -1089,32 +1089,37 @@
 .approach-card__lead {
   display: grid;
   grid-template-rows: auto auto 1fr;
-  justify-items: center;
+  justify-items: stretch;
   width: 100%;
-  min-height: clamp(13rem, 11.5rem + 7vw, 17rem);
-  margin-bottom: var(--space-5);
+  min-height: clamp(9.75rem, 8.75rem + 3vw, 12.5rem);
+  margin-bottom: var(--space-4);
   box-sizing: border-box;
 }
 
 .approach-card__title {
   grid-row: 1;
+  justify-self: center;
+  text-align: center;
+  width: fit-content;
+  max-width: 100%;
   font-family: var(--font-display);
   font-size: clamp(1.12rem, 1rem + 0.45vw, 1.35rem);
   font-weight: 700;
   font-style: normal;
   color: var(--color-navy);
-  margin: 0 0 var(--space-4);
+  margin: 0 0 var(--space-3);
   line-height: 1.25;
   letter-spacing: -0.02em;
-  max-width: 100%;
 }
 
 .approach-card__text {
   grid-row: 2;
+  text-align: left;
   font-size: var(--text-sm);
   color: var(--color-text-muted);
   line-height: 1.65;
   margin: 0;
+  width: 100%;
   max-width: 100%;
 }
 
@@ -1125,12 +1130,12 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--color-navy);
-  margin: 0 0 var(--space-4);
+  margin: 0 0 var(--space-3);
   line-height: 1.35;
   text-align: center;
   text-wrap: balance;
   width: 100%;
-  min-height: 3lh;
+  min-height: 2.65lh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1138,7 +1143,7 @@
 
 .approach-card__bullets {
   list-style: none;
-  margin: 0 auto var(--space-8);
+  margin: 0 auto var(--space-6);
   padding: 0;
   font-family: var(--font-body);
   font-size: var(--text-xs);
