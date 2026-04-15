@@ -939,9 +939,9 @@
 }
 
 .approach-cards__intro {
-  text-align: center;
+  text-align: left;
   max-width: min(48rem, 100%);
-  margin-inline: auto;
+  margin-inline: 0;
   margin-bottom: clamp(var(--space-10), 6vw, var(--space-16));
 }
 
@@ -954,6 +954,8 @@
   color: var(--color-text-muted);
   line-height: 1.65;
   margin: var(--space-5) 0 0;
+  text-align: left;
+  max-width: min(52ch, 100%);
 }
 
 .approach-cards {
