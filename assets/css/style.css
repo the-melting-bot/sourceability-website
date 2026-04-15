@@ -430,6 +430,13 @@
   background: var(--color-navy);
 }
 
+/* Full-width flex child so horizontal padding matches .header-main / .container (logo alignment) */
+.hero > .container {
+  flex: 1 1 auto;
+  width: 100%;
+  min-width: 0;
+}
+
 .hero__video {
   position: absolute;
   inset: 0;
