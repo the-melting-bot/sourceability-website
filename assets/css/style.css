@@ -459,8 +459,9 @@
 }
 
 .hero__content--banner {
-  max-width: 56rem;
-  margin-inline: 0 auto;
+  /* Narrow column aligned with header logo (same .container padding as .header-main) */
+  max-width: min(42rem, 100%);
+  margin-inline: 0;
   text-align: left;
   display: flex;
   flex-direction: column;
@@ -509,18 +510,19 @@
   line-height: 1.55;
 }
 
+/* Home hero: primary headline (statement style — readable at length, still prominent) */
 .hero__title--banner {
   font-family: var(--font-display);
   font-style: normal;
   font-weight: 600;
-  font-size: clamp(2rem, 1.45rem + 3.8vw, 4.5rem);
-  line-height: 1.03;
-  letter-spacing: -0.01em;
+  font-size: clamp(1.45rem, 1.05rem + 1.65vw, 2.35rem);
+  line-height: 1.18;
+  letter-spacing: -0.015em;
   text-transform: none;
   color: #fff;
-  margin-bottom: var(--space-6);
+  margin-bottom: var(--space-5);
   margin-inline: 0;
-  max-width: min(13.5em, 100%);
+  max-width: 100%;
   width: 100%;
   text-align: left;
   text-wrap: balance;
@@ -595,22 +597,21 @@
 
 @media (max-width: 767px) {
   .hero__content--banner {
-    margin-inline: auto;
-    text-align: center;
-    align-items: center;
+    margin-inline: 0;
+    text-align: left;
+    align-items: flex-start;
   }
 
   .hero__eyebrow,
-  .hero__lede,
   .hero__title--banner,
   .hero__specialization {
-    margin-inline: auto;
-    text-align: center;
+    margin-inline: 0;
+    text-align: left;
   }
 
   .hero__actions--banner {
-    justify-content: center;
-    align-self: center;
+    justify-content: flex-start;
+    align-self: flex-start;
   }
 
   .hero__banner-btn {
