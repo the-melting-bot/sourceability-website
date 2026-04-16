@@ -138,6 +138,7 @@
     }
 
     .solutions-stack {
+      --solutions-connector-y: 3rem;
       position: relative;
       margin-top: var(--space-10);
       display: grid;
@@ -151,7 +152,7 @@
       position: absolute;
       left: 8%;
       right: 8%;
-      top: 2.15rem;
+      top: var(--solutions-connector-y);
       height: 2px;
       background: linear-gradient(
         90deg,
@@ -168,14 +169,14 @@
     .solutions-stack::after {
       content: '';
       position: absolute;
-      left: 50%;
-      top: calc(2.15rem - 4px);
-      width: min(74%, 46rem);
+      left: 8%;
+      top: calc(var(--solutions-connector-y) - 5px);
+      width: calc(84% + 12px);
       height: 10px;
-      transform: translateX(-50%);
       background:
-        linear-gradient(135deg, transparent 45%, rgba(185, 52, 46, 0.66) 46% 54%, transparent 55%) 33% 50% / 9px 9px no-repeat,
-        linear-gradient(135deg, transparent 45%, rgba(185, 52, 46, 0.66) 46% 54%, transparent 55%) 66% 50% / 9px 9px no-repeat;
+        radial-gradient(circle, rgba(185, 52, 46, 0.74) 0 55%, transparent 60%) left center / 10px 10px no-repeat,
+        linear-gradient(90deg, transparent 0, transparent calc(100% - 12px), rgba(185, 52, 46, 0.7) calc(100% - 12px), rgba(185, 52, 46, 0.7) 100%),
+        linear-gradient(135deg, transparent 45%, rgba(185, 52, 46, 0.72) 46% 54%, transparent 55%) right center / 11px 11px no-repeat;
       z-index: 0;
       pointer-events: none;
     }
@@ -198,7 +199,7 @@
       position: absolute;
       left: 0;
       right: 0;
-      top: 2.15rem;
+      top: var(--solutions-connector-y);
       height: 2px;
       background: linear-gradient(
         90deg,
@@ -210,6 +211,35 @@
       opacity: 0.9;
       z-index: 0;
       pointer-events: none;
+    }
+
+    .solution-item:first-child::after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(185, 52, 46, 0.76);
+      left: -6px;
+      top: calc(var(--solutions-connector-y) - 4px);
+      z-index: 2;
+      pointer-events: none;
+      box-shadow: 0 0 0 3px rgba(185, 52, 46, 0.12);
+    }
+
+    .solution-item:last-child::after {
+      content: '';
+      position: absolute;
+      right: -11px;
+      top: calc(var(--solutions-connector-y) - 6px);
+      width: 0;
+      height: 0;
+      border-top: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+      border-left: 11px solid rgba(185, 52, 46, 0.82);
+      z-index: 2;
+      pointer-events: none;
+      filter: drop-shadow(0 0 1px rgba(185, 52, 46, 0.42));
     }
 
     .solution-item > * {
