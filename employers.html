@@ -152,35 +152,20 @@
       position: absolute;
       left: 8%;
       right: 8%;
-      top: var(--solutions-connector-y);
-      height: 2px;
-      background: linear-gradient(
-        90deg,
-        rgba(185, 52, 46, 0) 0%,
-        rgba(185, 52, 46, 0.46) 18%,
-        rgba(185, 52, 46, 0.62) 50%,
-        rgba(185, 52, 46, 0.46) 82%,
-        rgba(185, 52, 46, 0) 100%
-      );
+      top: calc(var(--solutions-connector-y) - 6px);
+      height: 12px;
+      background:
+        linear-gradient(90deg, rgba(185, 52, 46, 0.78) 0 100%) 12px center / calc(100% - 24px) 2px no-repeat,
+        linear-gradient(45deg, transparent 44%, rgba(185, 52, 46, 0.86) 45% 55%, transparent 56%) left center / 10px 10px no-repeat,
+        linear-gradient(315deg, transparent 44%, rgba(185, 52, 46, 0.86) 45% 55%, transparent 56%) left center / 10px 10px no-repeat,
+        linear-gradient(135deg, transparent 44%, rgba(185, 52, 46, 0.9) 45% 55%, transparent 56%) right center / 11px 11px no-repeat,
+        linear-gradient(225deg, transparent 44%, rgba(185, 52, 46, 0.9) 45% 55%, transparent 56%) right center / 11px 11px no-repeat;
       z-index: 0;
       pointer-events: none;
     }
 
     .solutions-stack::after {
-      content: '';
-      position: absolute;
-      left: 8%;
-      top: calc(var(--solutions-connector-y) - 6px);
-      width: calc(84% + 12px);
-      height: 12px;
-      background:
-        linear-gradient(90deg, rgba(185, 52, 46, 0.7) 0 100%) 14px center / calc(100% - 28px) 2px no-repeat,
-        linear-gradient(45deg, transparent 44%, rgba(185, 52, 46, 0.84) 45% 55%, transparent 56%) left center / 11px 11px no-repeat,
-        linear-gradient(315deg, transparent 44%, rgba(185, 52, 46, 0.84) 45% 55%, transparent 56%) left center / 11px 11px no-repeat,
-        linear-gradient(135deg, transparent 44%, rgba(185, 52, 46, 0.84) 45% 55%, transparent 56%) right center / 12px 12px no-repeat,
-        linear-gradient(225deg, transparent 44%, rgba(185, 52, 46, 0.84) 45% 55%, transparent 56%) right center / 12px 12px no-repeat;
-      z-index: 0;
-      pointer-events: none;
+      content: none;
     }
 
     .solution-item {
