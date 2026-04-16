@@ -200,6 +200,34 @@
       pointer-events: none;
     }
 
+    .solution-item:first-child::after {
+      content: '';
+      position: absolute;
+      top: calc(var(--solutions-connector-y) - 5px);
+      left: -14px;
+      width: 14px;
+      height: 12px;
+      background:
+        linear-gradient(45deg, transparent 44%, rgba(185, 52, 46, 0.92) 45% 55%, transparent 56%) center / 12px 12px no-repeat,
+        linear-gradient(315deg, transparent 44%, rgba(185, 52, 46, 0.92) 45% 55%, transparent 56%) center / 12px 12px no-repeat;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .solution-item:last-child::after {
+      content: '';
+      position: absolute;
+      top: calc(var(--solutions-connector-y) - 5px);
+      right: -14px;
+      width: 14px;
+      height: 12px;
+      background:
+        linear-gradient(135deg, transparent 44%, rgba(185, 52, 46, 0.95) 45% 55%, transparent 56%) center / 12px 12px no-repeat,
+        linear-gradient(225deg, transparent 44%, rgba(185, 52, 46, 0.95) 45% 55%, transparent 56%) center / 12px 12px no-repeat;
+      z-index: 2;
+      pointer-events: none;
+    }
+
     .solution-item > * {
       position: relative;
       z-index: 1;
