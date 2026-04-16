@@ -174,9 +174,11 @@
       width: calc(84% + 12px);
       height: 12px;
       background:
-        linear-gradient(90deg, rgba(185, 52, 46, 0.68) 0 100%) left center / calc(100% - 14px) 2px no-repeat,
-        linear-gradient(135deg, transparent 44%, rgba(185, 52, 46, 0.82) 45% 55%, transparent 56%) right center / 12px 12px no-repeat,
-        linear-gradient(225deg, transparent 44%, rgba(185, 52, 46, 0.82) 45% 55%, transparent 56%) right center / 12px 12px no-repeat;
+        linear-gradient(90deg, rgba(185, 52, 46, 0.7) 0 100%) 14px center / calc(100% - 28px) 2px no-repeat,
+        linear-gradient(45deg, transparent 44%, rgba(185, 52, 46, 0.84) 45% 55%, transparent 56%) left center / 11px 11px no-repeat,
+        linear-gradient(315deg, transparent 44%, rgba(185, 52, 46, 0.84) 45% 55%, transparent 56%) left center / 11px 11px no-repeat,
+        linear-gradient(135deg, transparent 44%, rgba(185, 52, 46, 0.84) 45% 55%, transparent 56%) right center / 12px 12px no-repeat,
+        linear-gradient(225deg, transparent 44%, rgba(185, 52, 46, 0.84) 45% 55%, transparent 56%) right center / 12px 12px no-repeat;
       z-index: 0;
       pointer-events: none;
     }
@@ -211,34 +213,6 @@
       opacity: 0.9;
       z-index: 0;
       pointer-events: none;
-    }
-
-    .solution-item:first-child::after {
-      content: '';
-      position: absolute;
-      width: 12px;
-      height: 2px;
-      background: rgba(185, 52, 46, 0.82);
-      left: -8px;
-      top: calc(var(--solutions-connector-y));
-      z-index: 2;
-      pointer-events: none;
-      box-shadow: 0 0 0 2px rgba(185, 52, 46, 0.1);
-    }
-
-    .solution-item:last-child::after {
-      content: '';
-      position: absolute;
-      right: -13px;
-      top: calc(var(--solutions-connector-y) - 5px);
-      width: 0;
-      height: 0;
-      border-top: 6px solid transparent;
-      border-bottom: 6px solid transparent;
-      border-left: 12px solid rgba(185, 52, 46, 0.86);
-      z-index: 2;
-      pointer-events: none;
-      filter: drop-shadow(0 0 1px rgba(185, 52, 46, 0.42));
     }
 
     .solution-item > * {
