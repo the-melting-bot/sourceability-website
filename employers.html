@@ -73,86 +73,176 @@
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 
   <style>
-    /* ── Search Solutions – stacked elegant layout ── */
+    /* ── Search Solutions – competitor-inspired phase cards ── */
+    .solutions-phase {
+      position: relative;
+      background:
+        linear-gradient(180deg, rgba(16, 32, 59, 0.95) 0%, rgba(12, 25, 46, 0.97) 100%),
+        url('./assets/images/hero-specialties.jpg') center / cover no-repeat;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .solutions-phase::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% -10%, rgba(72, 109, 200, 0.28) 0%, transparent 58%);
+      pointer-events: none;
+    }
+
+    .solutions-phase__inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .solutions-phase__head {
+      text-align: center;
+      max-width: 46rem;
+      margin: 0 auto;
+    }
+
+    .solutions-phase__eyebrow {
+      display: inline-flex;
+      margin: 0 0 var(--space-4);
+      padding: 0.4rem 0.95rem;
+      border-radius: 999px;
+      background: rgba(234, 164, 75, 0.18);
+      border: 1px solid rgba(234, 164, 75, 0.32);
+      color: #f4c879;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .solutions-phase__title {
+      margin: 0 0 var(--space-3);
+      color: #fff;
+      font-size: clamp(2rem, 1.7rem + 1.15vw, 2.85rem);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+    }
+
+    .solutions-phase__intro {
+      margin: 0;
+      color: rgba(232, 238, 255, 0.78);
+      font-size: clamp(1rem, 0.96rem + 0.12vw, 1.08rem);
+      line-height: 1.65;
+    }
+
     .solutions-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
+      margin-top: var(--space-10);
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--space-5);
+      align-items: stretch;
     }
 
     .solution-item {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: var(--space-10);
-      align-items: start;
-      padding: var(--space-12) 0;
-      border-bottom: 1px solid var(--color-border, rgba(15,26,46,0.1));
+      position: relative;
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(40, 58, 92, 0.9) 0%, rgba(29, 46, 78, 0.92) 100%);
+      border: 1px solid rgba(147, 176, 238, 0.16);
+      box-shadow: 0 22px 46px rgba(7, 15, 30, 0.34);
+      padding: var(--space-6) var(--space-5);
+      transition: transform 360ms var(--ease-out), border-color 420ms ease, box-shadow 420ms ease;
     }
 
-    .solution-item:last-child {
-      border-bottom: none;
+    .solution-item:hover {
+      transform: translateY(-5px);
+      border-color: rgba(234, 164, 75, 0.44);
+      box-shadow: 0 28px 54px rgba(7, 15, 30, 0.44);
     }
 
-    .solution-item__label {
+    .solution-item__meta {
       display: flex;
-      flex-direction: column;
+      align-items: center;
       gap: var(--space-3);
+      margin-bottom: var(--space-4);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
     }
 
-    .solution-item__number {
-      font-family: 'Instrument Serif', serif;
-      font-size: var(--text-4xl, 3rem);
-      color: var(--color-accent, #1a6b5c);
-      line-height: 1;
-      opacity: 0.35;
-      font-style: italic;
+    .solution-item__icon {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(234, 164, 75, 0.18);
+      color: #f4c879;
+      border: 1px solid rgba(234, 164, 75, 0.34);
+      flex-shrink: 0;
+    }
+
+    .solution-item__icon i {
+      width: 15px;
+      height: 15px;
+    }
+
+    .solution-item__phase {
+      color: #f6c37a;
+      text-transform: uppercase;
+    }
+
+    .solution-item__timing {
+      color: rgba(225, 233, 251, 0.72);
+      font-weight: 500;
     }
 
     .solution-item__title {
-      font-family: 'Instrument Serif', serif;
-      font-size: var(--text-2xl, 1.75rem);
-      font-weight: 400;
-      color: var(--color-heading, #0f1a2e);
-      line-height: 1.2;
-      margin: 0;
-    }
-
-    .solution-item__body {
-      padding-top: var(--space-2);
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 1.22rem + 0.32vw, 1.66rem);
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.14;
+      letter-spacing: -0.012em;
+      margin: 0 0 var(--space-4);
+      font-style: normal;
     }
 
     .solution-item__desc {
-      font-size: var(--text-base, 1rem);
-      color: var(--color-text-muted, #5a6a82);
-      line-height: 1.75;
       margin: 0 0 var(--space-4);
+      font-size: 1rem;
+      line-height: 1.66;
+      color: rgba(228, 236, 252, 0.86);
     }
 
     .solution-item__suited {
-      font-size: var(--text-sm, 0.875rem);
-      color: var(--color-text-muted, #5a6a82);
-      opacity: 0.75;
+      margin: 0;
+      padding-top: var(--space-4);
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      font-size: 0.92rem;
       line-height: 1.6;
-      display: flex;
-      gap: var(--space-2);
-      align-items: baseline;
+      color: rgba(227, 235, 252, 0.8);
     }
 
     .solution-item__suited-label {
-      font-weight: 600;
-      color: var(--color-accent, #1a6b5c);
-      white-space: nowrap;
-      opacity: 1;
-      font-size: var(--text-xs, 0.8125rem);
+      display: block;
+      margin-bottom: 0.2rem;
+      color: #f4c879;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      font-weight: 700;
     }
 
-    @media (max-width: 720px) {
-      .solution-item {
+    @media (max-width: 1100px) {
+      .solutions-stack {
         grid-template-columns: 1fr;
-        gap: var(--space-4);
-        padding: var(--space-8) 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .solution-item {
+        transition: none;
+      }
+
+      .solution-item:hover {
+        transform: none;
       }
     }
 
@@ -806,60 +896,56 @@
     <!-- ==========================================
          2. SEARCH SOLUTIONS SECTION
     ========================================== -->
-    <section class="section-padding" style="background:#fff;" aria-labelledby="solutions-heading">
-      <div class="container container--narrow">
-
-        <header class="section-heading reveal">
-          <h2 class="section-heading__title" id="solutions-heading">Search Solutions Designed Around Your Needs</h2>
+    <section class="section-padding solutions-phase" aria-labelledby="solutions-heading">
+      <div class="container solutions-phase__inner">
+        <header class="solutions-phase__head reveal">
+          <p class="solutions-phase__eyebrow">Our Approach</p>
+          <h2 class="section-heading__title solutions-phase__title" id="solutions-heading">Search Solutions Designed Around Your Needs</h2>
+          <p class="solutions-phase__intro">Three delivery models tailored to role complexity, urgency, and business impact so each search moves with precision and accountability.</p>
         </header>
 
         <div class="solutions-stack">
+          <article class="solution-item reveal">
+            <div class="solution-item__meta">
+              <span class="solution-item__icon" aria-hidden="true"><i data-lucide="target"></i></span>
+              <span class="solution-item__phase">Phase 1</span>
+              <span class="solution-item__timing">Discovery</span>
+            </div>
+            <h3 class="solution-item__title">Executive Search</h3>
+            <p class="solution-item__desc">For senior leadership and business-critical roles, we deliver a retained search approach focused on precision, depth, and discretion. Through market mapping, targeted outreach, and rigorous evaluation, we identify leaders who drive transformation and long-term growth.</p>
+            <p class="solution-item__suited">
+              <span class="solution-item__suited-label">Typical engagements include</span>
+              C-suite and VP-level roles, Data/AI/Technology leadership, and strategic hires with significant business impact.
+            </p>
+          </article>
 
-          <!-- Executive Search -->
-          <div class="solution-item reveal">
-            <div class="solution-item__label">
-              <span class="solution-item__number" aria-hidden="true">01</span>
-              <h3 class="solution-item__title">Executive Search</h3>
+          <article class="solution-item reveal">
+            <div class="solution-item__meta">
+              <span class="solution-item__icon" aria-hidden="true"><i data-lucide="briefcase-business"></i></span>
+              <span class="solution-item__phase">Phase 2</span>
+              <span class="solution-item__timing">Execution</span>
             </div>
-            <div class="solution-item__body">
-              <p class="solution-item__desc">For senior leadership and business-critical roles, we deliver a retained search approach focused on precision, depth, and discretion. Through market mapping, targeted outreach, and rigorous evaluation, we identify leaders who drive transformation and long-term growth.</p>
-              <p class="solution-item__suited">
-                <span class="solution-item__suited-label">Typical engagements include</span>
-                C-suite and VP-level roles, Data/AI/Technology leadership, and strategic hires with significant business impact.
-              </p>
-            </div>
-          </div>
+            <h3 class="solution-item__title">Professional Search</h3>
+            <p class="solution-item__desc">For high-impact individual contributors and mid-level leadership, we provide a flexible and efficient search approach tailored to your hiring needs. Whether success-based or hybrid, we focus on quality, speed, and alignment.</p>
+            <p class="solution-item__suited">
+              <span class="solution-item__suited-label">Typical roles include</span>
+              data, analytics, and engineering professionals; technology and IT roles; and commercial, lending, and functional leadership.
+            </p>
+          </article>
 
-          <!-- Professional Search -->
-          <div class="solution-item reveal">
-            <div class="solution-item__label">
-              <span class="solution-item__number" aria-hidden="true">02</span>
-              <h3 class="solution-item__title">Professional Search</h3>
+          <article class="solution-item reveal">
+            <div class="solution-item__meta">
+              <span class="solution-item__icon" aria-hidden="true"><i data-lucide="rocket"></i></span>
+              <span class="solution-item__phase">Phase 3</span>
+              <span class="solution-item__timing">Delivery</span>
             </div>
-            <div class="solution-item__body">
-              <p class="solution-item__desc">For high-impact individual contributors and mid-level leadership, we provide a flexible and efficient search approach tailored to your hiring needs. Whether success-based or hybrid, we focus on quality, speed, and alignment.</p>
-              <p class="solution-item__suited">
-                <span class="solution-item__suited-label">Typical roles include</span>
-                data, analytics, and engineering professionals; technology and IT roles; and commercial, lending, and functional leadership.
-              </p>
-            </div>
-          </div>
-
-          <!-- Project & Interim Search -->
-          <div class="solution-item reveal">
-            <div class="solution-item__label">
-              <span class="solution-item__number" aria-hidden="true">03</span>
-              <h3 class="solution-item__title">Project &amp; Interim Search</h3>
-            </div>
-            <div class="solution-item__body">
-              <p class="solution-item__desc">For niche, time-sensitive, or hard-to-fill roles, we offer a hybrid approach that combines dedicated search rigor with flexibility. This model is ideal when speed, specialization, or market scarcity requires a highly targeted strategy.</p>
-              <p class="solution-item__suited">
-                <span class="solution-item__suited-label">Best suited for</span>
-                specialized or emerging skill sets, urgent business-critical hires, and project-based staffing or interim needs.
-              </p>
-            </div>
-          </div>
-
+            <h3 class="solution-item__title">Project &amp; Interim Search</h3>
+            <p class="solution-item__desc">For niche, time-sensitive, or hard-to-fill roles, we offer a hybrid approach that combines dedicated search rigor with flexibility. This model is ideal when speed, specialization, or market scarcity requires a highly targeted strategy.</p>
+            <p class="solution-item__suited">
+              <span class="solution-item__suited-label">Best suited for</span>
+              specialized or emerging skill sets, urgent business-critical hires, and project-based staffing or interim needs.
+            </p>
+          </article>
         </div>
       </div>
     </section>
