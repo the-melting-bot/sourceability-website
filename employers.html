@@ -191,11 +191,11 @@
     }
 
     .process-section .process-card:hover {
-      transform: translateY(-2px);
+      transform: translateY(-4px) scale(1.012);
       border-color: rgba(185, 52, 46, 0.18);
       box-shadow:
-        0 4px 10px rgba(15, 26, 46, 0.05),
-        0 18px 44px rgba(15, 26, 46, 0.11),
+        0 6px 12px rgba(15, 26, 46, 0.06),
+        0 22px 48px rgba(15, 26, 46, 0.12),
         0 0 0 1px rgba(185, 52, 46, 0.08);
     }
 
@@ -220,13 +220,13 @@
     }
 
     .process-section .process-card__title {
-      font-family: var(--font-body);
-      font-size: clamp(1.35rem, 1.15rem + 0.45vw, 1.75rem);
-      font-weight: 700;
+      font-family: var(--font-display);
+      font-size: clamp(1.28rem, 1.15rem + 0.36vw, 1.55rem);
+      font-weight: 600;
       color: var(--color-navy);
       margin: 0 0 var(--space-4);
-      line-height: 1.2;
-      letter-spacing: -0.01em;
+      line-height: 1.16;
+      letter-spacing: -0.012em;
       text-align: center;
       text-wrap: balance;
     }
@@ -236,9 +236,9 @@
     }
 
     .process-section .process-card__text {
-      font-size: var(--text-base);
+      font-size: clamp(1rem, 0.96rem + 0.18vw, 1.08rem);
       color: var(--color-text-muted);
-      line-height: 1.7;
+      line-height: 1.66;
       margin: 0;
       max-width: none;
       text-align: left;
@@ -577,80 +577,79 @@
       color: #de5b54;
     }
 
-    .employers-split-note {
-      background: #fff;
-      border-top: 1px solid rgba(15, 26, 46, 0.08);
-      border-bottom: 1px solid rgba(15, 26, 46, 0.08);
-    }
-
-    .split-note {
-      display: grid;
-      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-      gap: clamp(var(--space-6), 4.5vw, var(--space-12));
-      align-items: center;
-    }
-
-    .split-note__media {
-      margin: 0;
+    .employers-story-band {
       position: relative;
-      border-radius: 18px 18px 3px 18px;
+      min-height: clamp(14rem, 23vw, 19rem);
       overflow: hidden;
-      border: 1px solid rgba(15, 26, 46, 0.1);
-      box-shadow:
-        0 4px 12px rgba(15, 26, 46, 0.08),
-        0 18px 40px rgba(15, 26, 46, 0.1);
+      background: var(--color-navy);
+      isolation: isolate;
     }
 
-    .split-note__media img {
+    .employers-story-band__bg {
+      position: absolute;
+      inset: 0;
       width: 100%;
-      height: clamp(15rem, 30vw, 23rem);
+      height: 100%;
       object-fit: cover;
-      object-position: center;
-      display: block;
+      object-position: center 45%;
+      filter: brightness(0.74) contrast(1.04);
+      transform: scale(1.02);
     }
 
-    .split-note__media::after {
+    .employers-story-band::after {
       content: '';
       position: absolute;
-      inset: auto 0 0 0;
-      height: 46%;
-      background: linear-gradient(180deg, transparent 0%, rgba(15, 26, 46, 0.32) 100%);
-      pointer-events: none;
+      inset: 0;
+      background: linear-gradient(
+        106deg,
+        rgba(15, 26, 46, 0.76) 8%,
+        rgba(15, 26, 46, 0.58) 52%,
+        rgba(15, 26, 46, 0.78) 100%
+      );
+      z-index: 1;
     }
 
-    .split-note__kicker {
-      margin: 0 0 var(--space-2);
-      color: var(--color-accent);
+    .employers-story-band__content {
+      position: relative;
+      z-index: 2;
+      min-height: clamp(14rem, 23vw, 19rem);
+      display: flex;
+      align-items: center;
+      max-width: 57rem;
+    }
+
+    .employers-story-band__kicker {
+      margin: 0 0 var(--space-3);
+      color: rgba(255, 255, 255, 0.75);
       text-transform: uppercase;
       letter-spacing: 0.14em;
       font-size: var(--text-xs);
       font-weight: 600;
     }
 
-    .split-note__title {
+    .employers-story-band__title {
       margin: 0 0 var(--space-4);
       font-family: var(--font-display);
-      font-size: clamp(1.75rem, 1.3rem + 1vw, 2.35rem);
-      line-height: 1.08;
-      letter-spacing: -0.015em;
-      color: var(--color-navy);
+      font-size: clamp(1.95rem, 1.4rem + 1.7vw, 2.9rem);
+      line-height: 1.06;
+      letter-spacing: -0.016em;
+      color: #fff;
       font-style: normal;
       font-weight: 600;
       text-wrap: balance;
+      max-width: 27ch;
     }
 
-    .split-note__text {
-      margin: 0 0 var(--space-6);
-      font-size: var(--text-base);
-      line-height: 1.72;
-      color: var(--color-text-muted);
-      max-width: 44ch;
+    .employers-story-band__title .text-accent {
+      color: #de5b54;
     }
 
-    @media (max-width: 1024px) {
-      .split-note {
-        grid-template-columns: 1fr;
-      }
+    .employers-story-band__text {
+      margin: 0;
+      font-size: clamp(1.04rem, 0.98rem + 0.2vw, 1.16rem);
+      line-height: 1.68;
+      color: rgba(255, 255, 255, 0.88);
+      max-width: 52ch;
     }
 
     /* ── CTA Section ── */
@@ -936,17 +935,14 @@
     <!-- ==========================================
          EDITORIAL SPLIT SECTION
     ========================================== -->
-    <section class="section-padding employers-split-note" aria-label="SourceAbility hiring partnership">
-      <div class="container container--narrow">
-        <div class="split-note">
-          <figure class="split-note__media reveal">
-            <img src="./assets/images/article-hiring-talent.jpg" alt="Hiring leaders collaborating in an office" loading="lazy" decoding="async">
-          </figure>
-          <div class="split-note__content reveal">
-            <p class="split-note__kicker">Built for retention</p>
-            <h2 class="split-note__title">Search delivery designed for long-term performance, not short-term placement.</h2>
-            <p class="split-note__text">From executive leadership through critical contributors, we align capability, culture, and business outcomes so every hire strengthens your team over time.</p>
-            <a href="contact.html" class="btn btn--primary">Talk with our team</a>
+    <section class="employers-story-band" aria-label="SourceAbility hiring partnership">
+      <img class="employers-story-band__bg" src="./assets/images/article-hiring-talent.jpg" alt="" loading="lazy" decoding="async">
+      <div class="container">
+        <div class="employers-story-band__content reveal">
+          <div>
+            <p class="employers-story-band__kicker">Built for retention</p>
+            <h2 class="employers-story-band__title">Search delivery designed for long-term performance, not short-term <span class="text-accent">placement</span>.</h2>
+            <p class="employers-story-band__text">From executive leadership through critical contributors, we align capability, culture, and business outcomes so every hire strengthens your team over time.</p>
           </div>
         </div>
       </div>
