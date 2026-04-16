@@ -216,34 +216,32 @@
     }
 
     .process-section .process-card__body {
-      padding: clamp(var(--space-5), 2vw, var(--space-7));
-    }
-
-    .process-section .process-card__step {
-      font-family: 'Instrument Serif', serif;
-      font-size: clamp(2.25rem, 1.75rem + 1.4vw, 3.2rem);
-      font-style: italic;
-      color: rgba(185, 52, 46, 0.22);
-      line-height: 1;
-      margin-bottom: var(--space-4);
+      padding: clamp(var(--space-5), 2vw, var(--space-7)) clamp(var(--space-5), 2.5vw, var(--space-8));
     }
 
     .process-section .process-card__title {
-      font-family: 'Instrument Serif', serif;
-      font-size: clamp(1.55rem, 1.25rem + 0.65vw, 2rem);
-      font-weight: 500;
+      font-family: var(--font-body);
+      font-size: clamp(1.35rem, 1.15rem + 0.45vw, 1.75rem);
+      font-weight: 700;
       color: var(--color-navy);
-      margin: 0 0 var(--space-3);
-      line-height: 1.15;
+      margin: 0 0 var(--space-4);
+      line-height: 1.2;
       letter-spacing: -0.01em;
+      text-align: center;
+      text-wrap: balance;
+    }
+
+    .process-section .process-card__title .text-accent {
+      color: var(--color-accent);
     }
 
     .process-section .process-card__text {
       font-size: var(--text-base);
       color: var(--color-text-muted);
-      line-height: 1.75;
+      line-height: 1.7;
       margin: 0;
       max-width: none;
+      text-align: left;
     }
 
     @media (max-width: 700px) {
@@ -843,8 +841,7 @@
               <img src="./assets/images/hero-about.jpg" alt="Leadership meeting in a modern office" loading="lazy" decoding="async">
             </figure>
             <div class="process-card__body">
-              <div class="process-card__step" aria-hidden="true">01</div>
-              <h3 class="process-card__title">Discovery &amp; Success Profile Development</h3>
+              <h3 class="process-card__title">Discovery &amp; Success Profile <span class="text-accent">Development</span></h3>
               <p class="process-card__text">We define what success looks like beyond a job description: business objectives, team structure, required expertise, leadership capabilities, cultural alignment, and motivators.</p>
             </div>
           </div>
@@ -854,8 +851,7 @@
               <img src="./assets/images/hero-candidates.jpg" alt="Candidate interview discussion" loading="lazy" decoding="async">
             </figure>
             <div class="process-card__body">
-              <div class="process-card__step" aria-hidden="true">02</div>
-              <h3 class="process-card__title">Market Mapping, Identification &amp; Engagement</h3>
+              <h3 class="process-card__title">Market Mapping, Identification &amp; <span class="text-accent">Engagement</span></h3>
               <p class="process-card__text">We map where the right talent exists, execute targeted outreach, and engage passive high-performing candidates through established networks in Data, Technology, and Financial Services.</p>
             </div>
           </div>
@@ -865,8 +861,7 @@
               <img src="./assets/images/hero-insights.jpg" alt="Business strategy conversation with data insights" loading="lazy" decoding="async">
             </figure>
             <div class="process-card__body">
-              <div class="process-card__step" aria-hidden="true">03</div>
-              <h3 class="process-card__title">Evaluation, Calibration &amp; Alignment</h3>
+              <h3 class="process-card__title">Evaluation, Calibration &amp; <span class="text-accent">Alignment</span></h3>
               <p class="process-card__text">We evaluate candidates on technical capability, leadership, communication, motivation, and long-term potential while continuously calibrating with your team based on feedback.</p>
             </div>
           </div>
@@ -876,8 +871,7 @@
               <img src="./assets/images/hero-jobs.jpg" alt="Hiring manager and recruiter reviewing final candidates" loading="lazy" decoding="async">
             </figure>
             <div class="process-card__body">
-              <div class="process-card__step" aria-hidden="true">04</div>
-              <h3 class="process-card__title">Delivery, Selection &amp; Ongoing Partnership</h3>
+              <h3 class="process-card__title">Delivery, Selection &amp; Ongoing <span class="text-accent">Partnership</span></h3>
               <p class="process-card__text">We present a curated slate and stay closely involved through interview coordination, offer strategy, acceptance, onboarding support, and post-placement follow-through.</p>
             </div>
           </div>
