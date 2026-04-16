@@ -658,6 +658,64 @@
       gap: var(--space-4);
       flex-wrap: wrap;
     }
+
+    .results-band {
+      position: relative;
+      background: #f5f3ee;
+      isolation: isolate;
+      overflow: hidden;
+      border-top: 1px solid rgba(15, 26, 46, 0.08);
+      border-bottom: 1px solid rgba(15, 26, 46, 0.08);
+      margin-block: clamp(var(--space-8), 5vw, var(--space-12));
+    }
+
+    .results-band__bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      opacity: 0.16;
+      filter: saturate(0.9) contrast(1.02);
+      transform: scale(1.02);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .results-band::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(245, 243, 238, 0.92) 0%,
+        rgba(245, 243, 238, 0.95) 52%,
+        rgba(245, 243, 238, 0.94) 100%
+      );
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .results-band__content {
+      position: relative;
+      z-index: 2;
+      max-width: 42rem;
+      margin: 0 auto;
+      text-align: center;
+      padding-block: clamp(var(--space-8), 6vw, var(--space-12));
+    }
+
+    .results-band__title {
+      margin: 0 0 var(--space-4);
+    }
+
+    .results-band__text {
+      font-size: clamp(1rem, 0.96rem + 0.14vw, 1.08rem);
+      color: var(--color-text-muted);
+      line-height: 1.76;
+      margin: 0 0 var(--space-8);
+    }
   </style>
 </head>
 <body>
@@ -1005,11 +1063,12 @@
     <!-- ==========================================
          7. CTA SECTION
     ========================================== -->
-    <section class="section-padding bg-warm" aria-label="Let's build your team">
+    <section class="results-band" aria-label="Let's build your team">
+      <img class="results-band__bg" src="./assets/images/article-recruiter-value.jpg" alt="" loading="lazy" decoding="async">
       <div class="container">
-        <div style="max-width:600px;margin:0 auto;text-align:center;">
-          <h2 class="section-heading__title reveal" style="margin-bottom:var(--space-4);">Results That Matter</h2>
-          <p class="reveal" style="font-size:var(--text-base);color:var(--color-text-muted);line-height:1.75;margin-bottom:var(--space-8);">20+ years of specialized recruiting experience, consistent delivery of highly qualified candidates in under 60 days, 93% client retention, and 87% candidate retention over 5+ years.</p>
+        <div class="results-band__content">
+          <h2 class="section-heading__title results-band__title reveal">Results That Matter</h2>
+          <p class="results-band__text reveal">20+ years of specialized recruiting experience, consistent delivery of highly qualified candidates in under 60 days, 93% client retention, and 87% candidate retention over 5+ years.</p>
           <div class="cta-duo reveal" style="justify-content:center;">
             <a href="contact.html" class="btn btn--primary btn--lg">Engage SourceAbility</a>
             <a href="contact.html" class="btn btn--secondary btn--lg">Schedule a Call</a>
