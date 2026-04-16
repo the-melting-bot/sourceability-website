@@ -156,109 +156,222 @@
       }
     }
 
-    /* ── Process Steps – numbered timeline ── */
-    .process-grid {
+    /* ── Process Steps – premium card grouping ── */
+    .process-section .section-heading {
+      text-align: center;
+    }
+
+    .process-section .section-intro {
+      max-width: 48rem;
+      margin-inline: auto;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+    }
+
+    .process-section .process-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: var(--space-8);
       margin-top: var(--space-12);
     }
 
-    .process-card {
+    .process-section .process-card {
       background: #fff;
       border-radius: 12px;
-      padding: var(--space-8);
+      padding: clamp(var(--space-6), 2.3vw, var(--space-8));
       position: relative;
-      border: 1px solid var(--color-border, rgba(15,26,46,0.08));
+      border: 1px solid rgba(15, 26, 46, 0.08);
+      box-shadow:
+        0 2px 8px rgba(15, 26, 46, 0.04),
+        0 14px 34px rgba(15, 26, 46, 0.08);
+      transition:
+        transform 420ms var(--ease-out),
+        box-shadow 650ms ease,
+        border-color 650ms ease;
     }
 
-    .process-card__step {
+    .process-section .process-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(185, 52, 46, 0.18);
+      box-shadow:
+        0 4px 10px rgba(15, 26, 46, 0.05),
+        0 18px 44px rgba(15, 26, 46, 0.11),
+        0 0 0 1px rgba(185, 52, 46, 0.08);
+    }
+
+    .process-section .process-card__step {
       font-family: 'Instrument Serif', serif;
-      font-size: var(--text-4xl, 3rem);
+      font-size: clamp(2.25rem, 1.75rem + 1.4vw, 3.2rem);
       font-style: italic;
-      color: var(--color-accent, #1a6b5c);
-      opacity: 0.25;
+      color: rgba(185, 52, 46, 0.22);
       line-height: 1;
       margin-bottom: var(--space-4);
     }
 
-    .process-card__title {
+    .process-section .process-card__title {
       font-family: 'Instrument Serif', serif;
-      font-size: var(--text-xl, 1.375rem);
-      font-weight: 400;
-      color: var(--color-heading, #0f1a2e);
+      font-size: clamp(1.55rem, 1.25rem + 0.65vw, 2rem);
+      font-weight: 500;
+      color: var(--color-navy);
       margin: 0 0 var(--space-3);
-      line-height: 1.25;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
     }
 
-    .process-card__text {
-      font-size: var(--text-sm, 0.9rem);
-      color: var(--color-text-muted, #5a6a82);
+    .process-section .process-card__text {
+      font-size: var(--text-base);
+      color: var(--color-text-muted);
       line-height: 1.75;
       margin: 0;
+      max-width: none;
     }
 
     @media (max-width: 700px) {
-      .process-grid {
+      .process-section .process-grid {
         grid-template-columns: 1fr;
       }
     }
 
-    /* ── Why Clients – icon + text differentiators ── */
-    .differentiators-list {
+    /* ── Roles We Support – competitor-inspired readable list ── */
+    .roles-support-head {
+      position: relative;
+      padding-left: clamp(0rem, 4.5vw, 5.5rem);
+    }
+
+    .roles-support__blot {
+      position: absolute;
+      left: 0;
+      top: 0.05rem;
+      width: clamp(3.9rem, 6vw, 5rem);
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      border: 1px solid rgba(15, 26, 46, 0.12);
+      opacity: 0.42;
+      background:
+        radial-gradient(circle at center, rgba(15, 26, 46, 0.03) 0%, rgba(15, 26, 46, 0.01) 62%, transparent 64%),
+        repeating-radial-gradient(circle at center, rgba(15, 26, 46, 0.18) 0 1px, transparent 1px 5px);
+      filter: blur(0.1px);
+      pointer-events: none;
+    }
+
+    .roles-support-section .differentiators-list {
       display: flex;
       flex-direction: column;
-      gap: var(--space-8);
-      margin-top: var(--space-12);
-    }
-
-    .differentiator {
-      display: flex;
       gap: var(--space-6);
-      align-items: flex-start;
+      margin-top: var(--space-10);
     }
 
-    .differentiator__icon {
+    .roles-support-section .differentiator {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: var(--space-5);
+      align-items: center;
+      padding: var(--space-3) 0;
+    }
+
+    .roles-support-section .differentiator__icon {
       flex-shrink: 0;
-      width: 48px;
-      height: 48px;
+      width: 44px;
+      height: 44px;
       border-radius: 10px;
-      background: var(--color-accent-subtle, rgba(26,107,92,0.08));
+      background: rgba(185, 52, 46, 0.09);
+      border: 1px solid rgba(185, 52, 46, 0.22);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--color-accent, #1a6b5c);
+      color: var(--color-accent);
     }
 
-    .differentiator__icon i {
-      width: 22px;
-      height: 22px;
+    .roles-support-section .differentiator__icon i {
+      width: 20px;
+      height: 20px;
     }
 
-    .differentiator__content {
-      flex: 1;
+    .roles-support-section .differentiator__content {
+      min-width: 0;
     }
 
-    .differentiator__title {
+    .roles-support-section .differentiator__title {
       font-family: 'Instrument Serif', serif;
-      font-size: var(--text-xl, 1.375rem);
-      font-weight: 400;
-      color: var(--color-heading, #0f1a2e);
+      font-size: clamp(1.6rem, 1.35rem + 0.65vw, 2rem);
+      font-weight: 500;
+      color: var(--color-navy);
       margin: 0 0 var(--space-2);
-      line-height: 1.25;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
     }
 
-    .differentiator__text {
-      font-size: var(--text-base, 1rem);
-      color: var(--color-text-muted, #5a6a82);
+    .roles-support-section .differentiator__text {
+      font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      color: var(--color-text-muted);
       line-height: 1.7;
       margin: 0;
+      max-width: none;
     }
 
-    .differentiator__divider {
+    .roles-support-section .differentiator__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      align-self: center;
+      white-space: nowrap;
+      font-size: var(--text-sm);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: var(--color-accent);
+      text-decoration: none;
+      position: relative;
+      transition: color 0.35s ease;
+    }
+
+    .roles-support-section .differentiator__link::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 100%;
+      height: 1px;
+      background: currentColor;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 480ms var(--ease-out);
+      opacity: 0.8;
+    }
+
+    .roles-support-section .differentiator__link:hover {
+      color: var(--color-accent-hover);
+    }
+
+    .roles-support-section .differentiator__link:hover::after {
+      transform: scaleX(1);
+    }
+
+    .roles-support-section .differentiator__divider {
       border: none;
-      border-top: 1px solid var(--color-border, rgba(15,26,46,0.08));
+      border-top: 1px solid rgba(15, 26, 46, 0.08);
       margin: 0;
+    }
+
+    @media (max-width: 940px) {
+      .roles-support-section .differentiator {
+        grid-template-columns: auto 1fr;
+        align-items: flex-start;
+      }
+
+      .roles-support-section .differentiator__link {
+        grid-column: 2;
+        margin-top: var(--space-2);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .roles-support-head {
+        padding-left: 0;
+      }
+
+      .roles-support__blot {
+        display: none;
+      }
     }
 
     /* ── CTA Section ── */
@@ -419,7 +532,7 @@
     <!-- ==========================================
          3. OUR PROCESS SECTION
     ========================================== -->
-    <section class="section-padding bg-warm" aria-labelledby="process-heading">
+    <section class="section-padding bg-warm process-section" aria-labelledby="process-heading">
       <div class="container container--narrow">
 
         <header class="section-heading reveal" style="text-align:center;">
@@ -460,10 +573,11 @@
     <!-- ==========================================
          4. WHY CLIENTS PARTNER SECTION
     ========================================== -->
-    <section class="section-padding" style="background:#fff;" aria-labelledby="why-heading">
+    <section class="section-padding roles-support-section" style="background:#fff;" aria-labelledby="why-heading">
       <div class="container container--narrow">
 
-        <header class="section-heading reveal">
+        <header class="section-heading reveal roles-support-head">
+          <div class="roles-support__blot" aria-hidden="true"></div>
           <p class="overline">Roles We Support</p>
           <h2 class="section-heading__title" id="why-heading">Representative Searches Across Core Markets</h2>
           <p class="section-intro">We partner with organizations to deliver specialized talent across Data, Technology, and Financial Services. Representative searches include, but are not limited to:</p>
@@ -479,6 +593,7 @@
               <h3 class="differentiator__title">Data &amp; AI</h3>
               <p class="differentiator__text">Data Engineer, Analytics Engineer, Data Analyst/BI Developer, Machine Learning Engineer, and AI/Applied Scientist roles.</p>
             </div>
+            <a class="differentiator__link" href="specialties.html">Learn More &rarr;</a>
           </div>
 
           <hr class="differentiator__divider" aria-hidden="true">
@@ -491,6 +606,7 @@
               <h3 class="differentiator__title">Technology</h3>
               <p class="differentiator__text">Software Engineer/Developer, Cloud Engineer/Architect, DevOps/Platform Engineer, Product Manager, and IT/Infrastructure leadership roles.</p>
             </div>
+            <a class="differentiator__link" href="specialties.html">Learn More &rarr;</a>
           </div>
 
           <hr class="differentiator__divider" aria-hidden="true">
@@ -503,6 +619,7 @@
               <h3 class="differentiator__title">Financial Services (Credit Unions &amp; Lending)</h3>
               <p class="differentiator__text">Chief Lending Officer, VP/SVP Commercial Lending, Commercial Relationship Manager, Credit Analyst/Underwriter, Treasury Management Officer, and Business Banking leadership.</p>
             </div>
+            <a class="differentiator__link" href="specialties.html">Learn More &rarr;</a>
           </div>
 
         </div>
