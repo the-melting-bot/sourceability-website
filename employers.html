@@ -241,7 +241,8 @@
     .roles-support__blot {
       position: absolute;
       left: 0;
-      top: -0.4rem;
+      top: 50%;
+      transform: translateY(-50%);
       width: clamp(5.5rem, 8vw, 7.6rem);
       aspect-ratio: 1 / 1;
       border-radius: 50%;
@@ -280,6 +281,7 @@
       align-items: center;
       justify-content: center;
       color: var(--color-accent);
+      animation: iconDrift 2.5s ease-in-out infinite;
     }
 
     .roles-support-section .differentiator__icon i {
@@ -299,6 +301,13 @@
       margin: 0 0 var(--space-2);
       line-height: 1.15;
       letter-spacing: -0.01em;
+    }
+
+    .roles-support-section .section-heading__title {
+      font-family: var(--font-body);
+      font-style: normal;
+      font-weight: 700;
+      letter-spacing: -0.02em;
     }
 
     .roles-support-section .differentiator__text {
@@ -342,7 +351,8 @@
     .partner-grid-section .partner-grid__blot {
       position: absolute;
       left: 0;
-      top: -0.4rem;
+      top: 50%;
+      transform: translateY(-50%);
       width: clamp(5.5rem, 8vw, 7.6rem);
       aspect-ratio: 1 / 1;
       border-radius: 50%;
@@ -357,6 +367,10 @@
 
     .partner-grid-section .section-heading__title {
       margin-top: 0;
+      font-family: var(--font-body);
+      font-style: normal;
+      font-weight: 700;
+      letter-spacing: -0.02em;
     }
 
     .partner-grid {
@@ -400,7 +414,7 @@
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      animation: tileFloat 3.8s ease-in-out infinite;
+      animation: iconDrift 2.5s ease-in-out infinite;
     }
 
     .partner-grid__icon i {
@@ -438,10 +452,16 @@
       max-width: none;
     }
 
-    @keyframes tileFloat {
+    @keyframes iconDrift {
       0%,
-      100% { transform: translateY(0); }
-      50% { transform: translateY(-2px); }
+      100% {
+        transform: translateY(0) scale(1);
+        box-shadow: 0 0 0 0 rgba(185, 52, 46, 0.2);
+      }
+      50% {
+        transform: translateY(-3px) scale(1.03);
+        box-shadow: 0 0 0 9px rgba(185, 52, 46, 0);
+      }
     }
 
     @media (max-width: 920px) {
@@ -671,7 +691,7 @@
         <header class="section-heading reveal roles-support-head">
           <div class="roles-support__blot" aria-hidden="true"></div>
           <p class="overline">Roles We Support</p>
-          <h2 class="section-heading__title" id="why-heading">Representative Searches Across Core Markets</h2>
+          <h2 class="section-heading__title" id="why-heading">Representative Searches Across <span class="text-accent">Core Markets</span></h2>
           <p class="section-intro">We partner with organizations to deliver specialized talent across Data, Technology, and Financial Services. Representative searches include, but are not limited to:</p>
         </header>
 
