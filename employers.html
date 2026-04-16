@@ -138,11 +138,48 @@
     }
 
     .solutions-stack {
+      position: relative;
       margin-top: var(--space-10);
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: var(--space-5);
       align-items: stretch;
+    }
+
+    .solutions-stack::before {
+      content: '';
+      position: absolute;
+      left: 8%;
+      right: 8%;
+      top: 2.15rem;
+      height: 2px;
+      background: linear-gradient(
+        90deg,
+        rgba(185, 52, 46, 0) 0%,
+        rgba(185, 52, 46, 0.3) 18%,
+        rgba(185, 52, 46, 0.42) 50%,
+        rgba(185, 52, 46, 0.3) 82%,
+        rgba(185, 52, 46, 0) 100%
+      );
+      filter: blur(1.2px);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .solutions-stack::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: calc(2.15rem - 4px);
+      width: min(74%, 46rem);
+      height: 10px;
+      transform: translateX(-50%);
+      background:
+        radial-gradient(circle at 33% 50%, rgba(185, 52, 46, 0.42) 0 2px, transparent 3px),
+        radial-gradient(circle at 66% 50%, rgba(185, 52, 46, 0.42) 0 2px, transparent 3px);
+      filter: blur(0.6px);
+      z-index: 0;
+      pointer-events: none;
     }
 
     .solution-item {
@@ -154,13 +191,13 @@
       border: 1px solid rgba(15, 26, 46, 0.1);
       box-shadow: 0 16px 34px rgba(15, 26, 46, 0.1);
       padding: var(--space-6) var(--space-5);
-      transition: transform 360ms var(--ease-out), border-color 420ms ease, box-shadow 420ms ease;
+      transition: border-color 320ms ease, box-shadow 320ms ease;
+      z-index: 1;
     }
 
     .solution-item:hover {
-      transform: translateY(-5px);
       border-color: rgba(185, 52, 46, 0.44);
-      box-shadow: 0 24px 48px rgba(15, 26, 46, 0.16);
+      box-shadow: 0 16px 34px rgba(15, 26, 46, 0.1);
     }
 
     .solution-item__meta {
@@ -243,6 +280,11 @@
       .solutions-stack {
         grid-template-columns: 1fr;
       }
+
+      .solutions-stack::before,
+      .solutions-stack::after {
+        display: none;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -251,7 +293,7 @@
       }
 
       .solution-item:hover {
-        transform: none;
+        box-shadow: 0 16px 34px rgba(15, 26, 46, 0.1);
       }
     }
 
