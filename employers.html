@@ -178,7 +178,7 @@
     .process-section .process-card {
       background: #fff;
       border-radius: 12px;
-      padding: clamp(var(--space-6), 2.3vw, var(--space-8));
+      overflow: hidden;
       position: relative;
       border: 1px solid rgba(15, 26, 46, 0.08);
       box-shadow:
@@ -197,6 +197,26 @@
         0 4px 10px rgba(15, 26, 46, 0.05),
         0 18px 44px rgba(15, 26, 46, 0.11),
         0 0 0 1px rgba(185, 52, 46, 0.08);
+    }
+
+    .process-section .process-card__media {
+      margin: 0;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(15, 26, 46, 0.08);
+    }
+
+    .process-section .process-card__media img {
+      width: 100%;
+      height: clamp(11rem, 18vw, 13rem);
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transform: scale(1.01);
+    }
+
+    .process-section .process-card__body {
+      padding: clamp(var(--space-5), 2vw, var(--space-7));
     }
 
     .process-section .process-card__step {
@@ -559,42 +579,6 @@
       color: #de5b54;
     }
 
-    .process-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-      gap: clamp(var(--space-6), 4vw, var(--space-12));
-      align-items: start;
-    }
-
-    .process-layout__visual {
-      position: sticky;
-      top: 6.2rem;
-      border-radius: 14px;
-      overflow: hidden;
-      border: 1px solid rgba(15, 26, 46, 0.12);
-      box-shadow:
-        0 6px 14px rgba(15, 26, 46, 0.08),
-        0 20px 50px rgba(15, 26, 46, 0.12);
-      background: #fff;
-    }
-
-    .process-layout__visual img {
-      width: 100%;
-      height: clamp(17rem, 36vw, 26rem);
-      object-fit: cover;
-      object-position: center;
-      display: block;
-    }
-
-    .process-layout__visual-caption {
-      margin: 0;
-      padding: var(--space-4) var(--space-5);
-      font-size: var(--text-sm);
-      line-height: 1.6;
-      color: var(--color-text-muted);
-      background: rgba(15, 26, 46, 0.02);
-    }
-
     .employers-split-note {
       background: #fff;
       border-top: 1px solid rgba(15, 26, 46, 0.08);
@@ -665,83 +649,9 @@
       max-width: 44ch;
     }
 
-    .employers-mosaic {
-      background: var(--color-bg);
-    }
-
-    .mosaic-grid {
-      display: grid;
-      grid-template-columns: 1.35fr 1fr 1fr;
-      gap: var(--space-5);
-      align-items: stretch;
-    }
-
-    .mosaic-card {
-      margin: 0;
-      overflow: hidden;
-      border: 1px solid rgba(15, 26, 46, 0.1);
-      box-shadow:
-        0 2px 8px rgba(15, 26, 46, 0.06),
-        0 14px 34px rgba(15, 26, 46, 0.08);
-      background: #fff;
-    }
-
-    .mosaic-card--primary {
-      border-radius: 16px 16px 4px 16px;
-    }
-
-    .mosaic-card--secondary {
-      border-radius: 10px;
-    }
-
-    .mosaic-card--tertiary {
-      border-radius: 4px 16px 16px 16px;
-    }
-
-    .mosaic-card img {
-      width: 100%;
-      height: clamp(13rem, 23vw, 17rem);
-      object-fit: cover;
-      object-position: center;
-      display: block;
-    }
-
     @media (max-width: 1024px) {
-      .process-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .process-layout__visual {
-        position: relative;
-        top: auto;
-      }
-
-      .process-layout__visual img {
-        height: clamp(14rem, 45vw, 22rem);
-      }
-
       .split-note {
         grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 820px) {
-      .mosaic-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .mosaic-card--primary {
-        grid-column: 1 / -1;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .mosaic-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .mosaic-card--primary {
-        grid-column: auto;
       }
     }
 
@@ -926,38 +836,52 @@
           <p class="section-intro">Our process is designed to reduce risk, improve alignment, and deliver better hiring outcomes through a consultative, research-driven search methodology.</p>
         </header>
 
-        <div class="process-layout">
         <div class="process-grid">
 
           <div class="process-card reveal">
-            <div class="process-card__step" aria-hidden="true">01</div>
-            <h3 class="process-card__title">Discovery &amp; Success Profile Development</h3>
-            <p class="process-card__text">We define what success looks like beyond a job description: business objectives, team structure, required expertise, leadership capabilities, cultural alignment, and motivators.</p>
+            <figure class="process-card__media">
+              <img src="./assets/images/hero-about.jpg" alt="Leadership meeting in a modern office" loading="lazy" decoding="async">
+            </figure>
+            <div class="process-card__body">
+              <div class="process-card__step" aria-hidden="true">01</div>
+              <h3 class="process-card__title">Discovery &amp; Success Profile Development</h3>
+              <p class="process-card__text">We define what success looks like beyond a job description: business objectives, team structure, required expertise, leadership capabilities, cultural alignment, and motivators.</p>
+            </div>
           </div>
 
           <div class="process-card reveal">
-            <div class="process-card__step" aria-hidden="true">02</div>
-            <h3 class="process-card__title">Market Mapping, Identification &amp; Engagement</h3>
-            <p class="process-card__text">We map where the right talent exists, execute targeted outreach, and engage passive high-performing candidates through established networks in Data, Technology, and Financial Services.</p>
+            <figure class="process-card__media">
+              <img src="./assets/images/hero-candidates.jpg" alt="Candidate interview discussion" loading="lazy" decoding="async">
+            </figure>
+            <div class="process-card__body">
+              <div class="process-card__step" aria-hidden="true">02</div>
+              <h3 class="process-card__title">Market Mapping, Identification &amp; Engagement</h3>
+              <p class="process-card__text">We map where the right talent exists, execute targeted outreach, and engage passive high-performing candidates through established networks in Data, Technology, and Financial Services.</p>
+            </div>
           </div>
 
           <div class="process-card reveal">
-            <div class="process-card__step" aria-hidden="true">03</div>
-            <h3 class="process-card__title">Evaluation, Calibration &amp; Alignment</h3>
-            <p class="process-card__text">We evaluate candidates on technical capability, leadership, communication, motivation, and long-term potential while continuously calibrating with your team based on feedback.</p>
+            <figure class="process-card__media">
+              <img src="./assets/images/hero-insights.jpg" alt="Business strategy conversation with data insights" loading="lazy" decoding="async">
+            </figure>
+            <div class="process-card__body">
+              <div class="process-card__step" aria-hidden="true">03</div>
+              <h3 class="process-card__title">Evaluation, Calibration &amp; Alignment</h3>
+              <p class="process-card__text">We evaluate candidates on technical capability, leadership, communication, motivation, and long-term potential while continuously calibrating with your team based on feedback.</p>
+            </div>
           </div>
 
           <div class="process-card reveal">
-            <div class="process-card__step" aria-hidden="true">04</div>
-            <h3 class="process-card__title">Delivery, Selection &amp; Ongoing Partnership</h3>
-            <p class="process-card__text">We present a curated slate and stay closely involved through interview coordination, offer strategy, acceptance, onboarding support, and post-placement follow-through.</p>
+            <figure class="process-card__media">
+              <img src="./assets/images/hero-jobs.jpg" alt="Hiring manager and recruiter reviewing final candidates" loading="lazy" decoding="async">
+            </figure>
+            <div class="process-card__body">
+              <div class="process-card__step" aria-hidden="true">04</div>
+              <h3 class="process-card__title">Delivery, Selection &amp; Ongoing Partnership</h3>
+              <p class="process-card__text">We present a curated slate and stay closely involved through interview coordination, offer strategy, acceptance, onboarding support, and post-placement follow-through.</p>
+            </div>
           </div>
 
-        </div>
-          <aside class="process-layout__visual reveal" aria-label="Strategic hiring process visual">
-            <img src="./assets/images/hero-employers.jpg" alt="Business leaders reviewing hiring strategy together" loading="lazy" decoding="async">
-            <p class="process-layout__visual-caption">Every step is calibrated to your hiring goals, market realities, and team culture to improve selection confidence.</p>
-          </aside>
         </div>
       </div>
     </section>
@@ -1084,25 +1008,6 @@
               <p class="partner-grid__text">Search delivery options aligned to role criticality, urgency, and organizational needs.</p>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-         IMAGE MOSAIC SECTION
-    ========================================== -->
-    <section class="section-padding employers-mosaic" aria-label="SourceAbility partnership visuals">
-      <div class="container container--narrow">
-        <div class="mosaic-grid">
-          <figure class="mosaic-card mosaic-card--primary reveal">
-            <img src="./assets/images/hero-contact.jpg" alt="Hiring manager discussion in a modern office" loading="lazy" decoding="async">
-          </figure>
-          <figure class="mosaic-card mosaic-card--secondary reveal">
-            <img src="./assets/images/article-recruiter-value.jpg" alt="Recruiting conversation in progress" loading="lazy" decoding="async">
-          </figure>
-          <figure class="mosaic-card mosaic-card--tertiary reveal">
-            <img src="./assets/images/article-job-search.jpg" alt="Professional evaluating role opportunities" loading="lazy" decoding="async">
-          </figure>
         </div>
       </div>
     </section>
