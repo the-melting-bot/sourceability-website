@@ -493,6 +493,258 @@
       }
     }
 
+    /* ── Scroll rhythm visuals (editorial image breaks) ── */
+    .employers-image-band {
+      position: relative;
+      min-height: clamp(13rem, 22vw, 18rem);
+      overflow: hidden;
+      background: var(--color-navy);
+      isolation: isolate;
+    }
+
+    .employers-image-band__bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 42%;
+      filter: brightness(0.8) contrast(1.04);
+      transform: scale(1.02);
+    }
+
+    .employers-image-band::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        110deg,
+        rgba(15, 26, 46, 0.74) 8%,
+        rgba(15, 26, 46, 0.5) 48%,
+        rgba(15, 26, 46, 0.72) 100%
+      );
+      z-index: 1;
+    }
+
+    .employers-image-band__content {
+      position: relative;
+      z-index: 2;
+      min-height: clamp(13rem, 22vw, 18rem);
+      display: flex;
+      align-items: center;
+      max-width: 56rem;
+    }
+
+    .employers-image-band__kicker {
+      font-size: var(--text-xs);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.72);
+      margin-bottom: var(--space-3);
+    }
+
+    .employers-image-band__title {
+      margin: 0;
+      color: #fff;
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 1.4rem + 2.2vw, 3rem);
+      line-height: 1.06;
+      font-style: normal;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+      text-wrap: balance;
+    }
+
+    .employers-image-band__title .text-accent {
+      color: #de5b54;
+    }
+
+    .process-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+      gap: clamp(var(--space-6), 4vw, var(--space-12));
+      align-items: start;
+    }
+
+    .process-layout__visual {
+      position: sticky;
+      top: 6.2rem;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(15, 26, 46, 0.12);
+      box-shadow:
+        0 6px 14px rgba(15, 26, 46, 0.08),
+        0 20px 50px rgba(15, 26, 46, 0.12);
+      background: #fff;
+    }
+
+    .process-layout__visual img {
+      width: 100%;
+      height: clamp(17rem, 36vw, 26rem);
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .process-layout__visual-caption {
+      margin: 0;
+      padding: var(--space-4) var(--space-5);
+      font-size: var(--text-sm);
+      line-height: 1.6;
+      color: var(--color-text-muted);
+      background: rgba(15, 26, 46, 0.02);
+    }
+
+    .employers-split-note {
+      background: #fff;
+      border-top: 1px solid rgba(15, 26, 46, 0.08);
+      border-bottom: 1px solid rgba(15, 26, 46, 0.08);
+    }
+
+    .split-note {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: clamp(var(--space-6), 4.5vw, var(--space-12));
+      align-items: center;
+    }
+
+    .split-note__media {
+      margin: 0;
+      position: relative;
+      border-radius: 18px 18px 3px 18px;
+      overflow: hidden;
+      border: 1px solid rgba(15, 26, 46, 0.1);
+      box-shadow:
+        0 4px 12px rgba(15, 26, 46, 0.08),
+        0 18px 40px rgba(15, 26, 46, 0.1);
+    }
+
+    .split-note__media img {
+      width: 100%;
+      height: clamp(15rem, 30vw, 23rem);
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .split-note__media::after {
+      content: '';
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 46%;
+      background: linear-gradient(180deg, transparent 0%, rgba(15, 26, 46, 0.32) 100%);
+      pointer-events: none;
+    }
+
+    .split-note__kicker {
+      margin: 0 0 var(--space-2);
+      color: var(--color-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: var(--text-xs);
+      font-weight: 600;
+    }
+
+    .split-note__title {
+      margin: 0 0 var(--space-4);
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 1.3rem + 1vw, 2.35rem);
+      line-height: 1.08;
+      letter-spacing: -0.015em;
+      color: var(--color-navy);
+      font-style: normal;
+      font-weight: 600;
+      text-wrap: balance;
+    }
+
+    .split-note__text {
+      margin: 0 0 var(--space-6);
+      font-size: var(--text-base);
+      line-height: 1.72;
+      color: var(--color-text-muted);
+      max-width: 44ch;
+    }
+
+    .employers-mosaic {
+      background: var(--color-bg);
+    }
+
+    .mosaic-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr 1fr;
+      gap: var(--space-5);
+      align-items: stretch;
+    }
+
+    .mosaic-card {
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid rgba(15, 26, 46, 0.1);
+      box-shadow:
+        0 2px 8px rgba(15, 26, 46, 0.06),
+        0 14px 34px rgba(15, 26, 46, 0.08);
+      background: #fff;
+    }
+
+    .mosaic-card--primary {
+      border-radius: 16px 16px 4px 16px;
+    }
+
+    .mosaic-card--secondary {
+      border-radius: 10px;
+    }
+
+    .mosaic-card--tertiary {
+      border-radius: 4px 16px 16px 16px;
+    }
+
+    .mosaic-card img {
+      width: 100%;
+      height: clamp(13rem, 23vw, 17rem);
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    @media (max-width: 1024px) {
+      .process-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .process-layout__visual {
+        position: relative;
+        top: auto;
+      }
+
+      .process-layout__visual img {
+        height: clamp(14rem, 45vw, 22rem);
+      }
+
+      .split-note {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .mosaic-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .mosaic-card--primary {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .mosaic-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .mosaic-card--primary {
+        grid-column: auto;
+      }
+    }
+
     /* ── CTA Section ── */
     .cta-duo {
       display: flex;
@@ -649,16 +901,32 @@
     </section>
 
     <!-- ==========================================
+         VISUAL BREAK BAND
+    ========================================== -->
+    <section class="employers-image-band" aria-label="High-impact hiring visual break">
+      <img class="employers-image-band__bg" src="./assets/images/hero-specialties.jpg" alt="" loading="lazy" decoding="async">
+      <div class="container">
+        <div class="employers-image-band__content reveal">
+          <div>
+            <p class="employers-image-band__kicker">Strategic Search Momentum</p>
+            <h2 class="employers-image-band__title">Aligned talent strategy creates faster hires and <span class="text-accent">stronger teams</span>.</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
          3. OUR PROCESS SECTION
     ========================================== -->
     <section class="section-padding bg-warm process-section" aria-labelledby="process-heading">
-      <div class="container container--narrow">
+      <div class="container">
 
         <header class="section-heading reveal" style="text-align:center;">
           <h2 class="section-heading__title" id="process-heading">A Structured, Strategic Approach</h2>
           <p class="section-intro">Our process is designed to reduce risk, improve alignment, and deliver better hiring outcomes through a consultative, research-driven search methodology.</p>
         </header>
 
+        <div class="process-layout">
         <div class="process-grid">
 
           <div class="process-card reveal">
@@ -685,6 +953,11 @@
             <p class="process-card__text">We present a curated slate and stay closely involved through interview coordination, offer strategy, acceptance, onboarding support, and post-placement follow-through.</p>
           </div>
 
+        </div>
+          <aside class="process-layout__visual reveal" aria-label="Strategic hiring process visual">
+            <img src="./assets/images/hero-employers.jpg" alt="Business leaders reviewing hiring strategy together" loading="lazy" decoding="async">
+            <p class="process-layout__visual-caption">Every step is calibrated to your hiring goals, market realities, and team culture to improve selection confidence.</p>
+          </aside>
         </div>
       </div>
     </section>
@@ -738,6 +1011,25 @@
             </div>
           </div>
 
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         EDITORIAL SPLIT SECTION
+    ========================================== -->
+    <section class="section-padding employers-split-note" aria-label="SourceAbility hiring partnership">
+      <div class="container container--narrow">
+        <div class="split-note">
+          <figure class="split-note__media reveal">
+            <img src="./assets/images/article-hiring-talent.jpg" alt="Hiring leaders collaborating in an office" loading="lazy" decoding="async">
+          </figure>
+          <div class="split-note__content reveal">
+            <p class="split-note__kicker">Built for retention</p>
+            <h2 class="split-note__title">Search delivery designed for long-term performance, not short-term placement.</h2>
+            <p class="split-note__text">From executive leadership through critical contributors, we align capability, culture, and business outcomes so every hire strengthens your team over time.</p>
+            <a href="contact.html" class="btn btn--primary">Talk with our team</a>
+          </div>
         </div>
       </div>
     </section>
@@ -797,7 +1089,26 @@
     </section>
 
     <!-- ==========================================
-         6. CTA SECTION
+         IMAGE MOSAIC SECTION
+    ========================================== -->
+    <section class="section-padding employers-mosaic" aria-label="SourceAbility partnership visuals">
+      <div class="container container--narrow">
+        <div class="mosaic-grid">
+          <figure class="mosaic-card mosaic-card--primary reveal">
+            <img src="./assets/images/hero-contact.jpg" alt="Hiring manager discussion in a modern office" loading="lazy" decoding="async">
+          </figure>
+          <figure class="mosaic-card mosaic-card--secondary reveal">
+            <img src="./assets/images/article-recruiter-value.jpg" alt="Recruiting conversation in progress" loading="lazy" decoding="async">
+          </figure>
+          <figure class="mosaic-card mosaic-card--tertiary reveal">
+            <img src="./assets/images/article-job-search.jpg" alt="Professional evaluating role opportunities" loading="lazy" decoding="async">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         7. CTA SECTION
     ========================================== -->
     <section class="section-padding bg-warm" aria-label="Let's build your team">
       <div class="container">
