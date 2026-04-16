@@ -109,9 +109,9 @@
       margin: 0 0 var(--space-4);
       padding: 0.4rem 0.95rem;
       border-radius: 999px;
-      background: rgba(185, 52, 46, 0.18);
-      border: 1px solid rgba(185, 52, 46, 0.36);
-      color: #f2b4af;
+      background: rgba(185, 52, 46, 0.16);
+      border: 1px solid rgba(185, 52, 46, 0.62);
+      color: #b9342e;
       font-size: 0.78rem;
       letter-spacing: 0.06em;
       text-transform: uppercase;
@@ -124,6 +124,10 @@
       font-size: clamp(2rem, 1.7rem + 1.15vw, 2.85rem);
       line-height: 1.08;
       letter-spacing: -0.02em;
+    }
+
+    .solutions-phase__title .text-accent {
+      color: var(--color-accent);
     }
 
     .solutions-phase__intro {
@@ -905,7 +909,7 @@
       <div class="container solutions-phase__inner">
         <header class="solutions-phase__head reveal">
           <p class="solutions-phase__eyebrow">Our Approach</p>
-          <h2 class="section-heading__title solutions-phase__title" id="solutions-heading">Search Solutions Designed Around Your Needs</h2>
+          <h2 class="section-heading__title solutions-phase__title" id="solutions-heading">Search <span class="text-accent">Solutions</span> Designed Around Your Needs</h2>
           <p class="solutions-phase__intro">Three delivery models tailored to role complexity, urgency, and business impact so each search moves with precision and accountability.</p>
         </header>
 
