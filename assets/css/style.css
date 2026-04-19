@@ -1848,8 +1848,8 @@
 
 /* Extra breathing room above the divider so CTA reads as its own band (vs. footer) */
 .cta-banner.section-padding {
-  padding-top: clamp(var(--space-10), 6vw, var(--space-20));
-  padding-bottom: clamp(var(--space-20), 10vw, 8rem);
+  padding-top: clamp(var(--space-8), 5vw, var(--space-16));
+  padding-bottom: clamp(var(--space-16), 8vw, var(--space-24));
 }
 
 .cta-banner::before {
