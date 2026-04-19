@@ -162,24 +162,28 @@
       opacity: 0.17;
     }
 
+    /*
+     * Card photos: Unsplash (https://unsplash.com/license) — free for commercial use, no watermark.
+     * 1 Team collaboration · 2 Modern office · 3 Business discussion · 4 Corporate · 5 Analytics workspace
+     */
     .offer-card--bg-1::before {
-      background-image: url('./assets/images/hero-candidates.jpg');
+      background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80');
     }
 
     .offer-card--bg-2::before {
-      background-image: url('./assets/images/hero-employers.jpg');
+      background-image: url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80');
     }
 
     .offer-card--bg-3::before {
-      background-image: url('./assets/images/article-job-search.jpg');
+      background-image: url('https://images.unsplash.com/photo-1542744173-8e7e5348bb0a?auto=format&fit=crop&w=1200&q=80');
     }
 
     .offer-card--bg-4::before {
-      background-image: url('./assets/images/hero-about.jpg');
+      background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80');
     }
 
     .offer-card--bg-5::before {
-      background-image: url('./assets/images/hero-jobs.jpg');
+      background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80');
     }
 
     .offer-card > * {
@@ -296,9 +300,46 @@
       justify-content: center;
       gap: var(--space-4);
     }
+
+    /* Candidates page: slightly richer button hover motion (respects reduced motion) */
+    @media (prefers-reduced-motion: no-preference) {
+      .page-candidates #main-content .btn {
+        transition:
+          transform 0.32s var(--ease-out),
+          box-shadow 0.32s var(--ease-out),
+          background-color 0.22s ease,
+          border-color 0.22s ease,
+          color 0.22s ease;
+      }
+
+      .page-candidates #main-content .btn:hover {
+        transform: translateY(-4px);
+      }
+
+      .page-candidates #main-content .btn:active {
+        transform: translateY(-1px);
+        transition-duration: 0.12s;
+      }
+
+      .page-candidates #main-content .btn.btn--primary:hover {
+        box-shadow:
+          0 6px 20px rgba(185, 52, 46, 0.28),
+          0 14px 36px rgba(185, 52, 46, 0.22);
+      }
+
+      .page-candidates #main-content .btn.btn--secondary:hover {
+        box-shadow:
+          0 6px 18px rgba(15, 26, 46, 0.08),
+          0 12px 32px rgba(185, 52, 46, 0.12);
+      }
+
+      .page-candidates #main-content .btn.btn--outline:hover {
+        box-shadow: 0 10px 32px rgba(0, 0, 0, 0.2);
+      }
+    }
   </style>
 </head>
-<body>
+<body class="page-candidates">
 
   <!-- ============================================
        MOBILE OVERLAY
