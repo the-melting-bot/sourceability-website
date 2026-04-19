@@ -140,6 +140,51 @@
       flex-direction: column;
       gap: var(--space-4);
       transition: box-shadow 0.3s var(--ease-out), transform 0.3s var(--ease-out);
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    /* Very faint photo per card — sits above base fill, below content */
+    .offer-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.12;
+      z-index: 0;
+      pointer-events: none;
+      transition: opacity 0.35s var(--ease-out);
+    }
+
+    .offer-card:hover::before {
+      opacity: 0.17;
+    }
+
+    .offer-card--bg-1::before {
+      background-image: url('./assets/images/hero-candidates.jpg');
+    }
+
+    .offer-card--bg-2::before {
+      background-image: url('./assets/images/hero-employers.jpg');
+    }
+
+    .offer-card--bg-3::before {
+      background-image: url('./assets/images/article-job-search.jpg');
+    }
+
+    .offer-card--bg-4::before {
+      background-image: url('./assets/images/hero-about.jpg');
+    }
+
+    .offer-card--bg-5::before {
+      background-image: url('./assets/images/hero-jobs.jpg');
+    }
+
+    .offer-card > * {
+      position: relative;
+      z-index: 1;
     }
 
     .offer-card:hover {
@@ -166,6 +211,7 @@
       font-weight: 600;
       color: var(--color-navy);
       margin: 0;
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
     }
 
     .offer-card__text {
@@ -173,6 +219,7 @@
       color: var(--color-text-muted);
       line-height: 1.7;
       margin: 0;
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.85);
     }
 
     /* How It Works — 3-step row */
@@ -345,12 +392,12 @@
       <div class="container container--narrow">
 
         <header class="section-heading reveal" style="text-align:center;">
-          <h2 class="section-heading__title" id="offer-heading">Career Support Designed Around You</h2>
+          <h2 class="section-heading__title" id="offer-heading">Career Support Designed Around <span class="text-accent">You</span></h2>
         </header>
 
         <div class="offer-grid">
 
-          <article class="offer-card reveal">
+          <article class="offer-card offer-card--bg-1 reveal">
             <div class="offer-card__icon" aria-hidden="true">
               <i data-lucide="briefcase" style="width:20px;height:20px;"></i>
             </div>
@@ -358,7 +405,7 @@
             <p class="offer-card__text">Clarify your goals and pursue opportunities aligned with your strengths, values, and long-term growth path.</p>
           </article>
 
-          <article class="offer-card reveal">
+          <article class="offer-card offer-card--bg-2 reveal">
             <div class="offer-card__icon" aria-hidden="true">
               <i data-lucide="shield" style="width:20px;height:20px;"></i>
             </div>
@@ -366,7 +413,7 @@
             <p class="offer-card__text">Access opportunities at organizations that value specialized talent, including roles not always posted publicly.</p>
           </article>
 
-          <article class="offer-card reveal">
+          <article class="offer-card offer-card--bg-3 reveal">
             <div class="offer-card__icon" aria-hidden="true">
               <i data-lucide="lock" style="width:20px;height:20px;"></i>
             </div>
@@ -374,7 +421,7 @@
             <p class="offer-card__text">Your job search stays private. We work discreetly to connect you with opportunities that match your goals.</p>
           </article>
 
-          <article class="offer-card reveal">
+          <article class="offer-card offer-card--bg-4 reveal">
             <div class="offer-card__icon" aria-hidden="true">
               <i data-lucide="user-check" style="width:20px;height:20px;"></i>
             </div>
@@ -382,7 +429,7 @@
             <p class="offer-card__text">Work with a dedicated recruiter who understands your skillset, career trajectory, and what motivates you.</p>
           </article>
 
-          <article class="offer-card reveal">
+          <article class="offer-card offer-card--bg-5 reveal">
             <div class="offer-card__icon" aria-hidden="true">
               <i data-lucide="trending-up" style="width:20px;height:20px;"></i>
             </div>
