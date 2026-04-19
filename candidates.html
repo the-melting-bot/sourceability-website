@@ -72,6 +72,146 @@
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 
+  <style>
+    /* ---- Job Seeker page-specific styles ---- */
+
+    /* 4-column value prop grid */
+    .offer-grid {
+      display: grid;
+      gap: var(--space-6);
+    }
+
+    @media (min-width: 640px) {
+      .offer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .offer-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .offer-card {
+      padding: var(--space-8);
+      border-radius: var(--radius-lg);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      transition: box-shadow 0.3s var(--ease-out), transform 0.3s var(--ease-out);
+    }
+
+    .offer-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-2px);
+    }
+
+    .offer-card__icon {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      background: var(--color-accent-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-accent);
+    }
+
+    .offer-card__title {
+      font-family: var(--font-display);
+      font-size: var(--text-base);
+      font-style: italic;
+      font-weight: 600;
+      color: var(--color-navy);
+      margin: 0;
+    }
+
+    .offer-card__text {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* How It Works — 3-step row */
+    .hiw-steps {
+      display: grid;
+      gap: var(--space-8);
+    }
+
+    @media (min-width: 768px) {
+      .hiw-steps {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .hiw-step {
+      text-align: center;
+      position: relative;
+    }
+
+    .hiw-step__badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: #fff;
+      font-family: var(--font-display);
+      font-size: var(--text-base);
+      font-style: italic;
+      font-weight: 600;
+      margin: 0 auto var(--space-4);
+      letter-spacing: 0.01em;
+    }
+
+    .hiw-step__title {
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      font-style: italic;
+      color: var(--color-navy);
+      margin-bottom: var(--space-2);
+    }
+
+    .hiw-step__text {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      max-width: 280px;
+      margin: 0 auto;
+    }
+
+    /* Open positions CTA block */
+    .positions-cta {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .positions-cta__lede {
+      font-size: var(--text-base);
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin-bottom: var(--space-8);
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 42rem;
+      text-align: center;
+    }
+
+    .positions-cta__actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--space-4);
+    }
+  </style>
 </head>
 <body>
 
@@ -157,6 +297,88 @@
         <p class="overline overline--light reveal">YOUR CAREER PARTNER</p>
         <h1 class="page-hero__title reveal">Advance Your Career with Purpose</h1>
         <p class="page-hero__desc reveal">Discover your next role in Data, AI, Technology, or Financial Services — with a recruiting partner who understands your skills and ambitions.</p>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         WHAT WE OFFER
+    ========================================== -->
+    <section class="section-padding" style="background:#fff;" aria-label="What we offer">
+      <div class="container container--narrow">
+
+        <div class="offer-grid">
+
+          <article class="offer-card reveal" aria-hidden="true">
+            <div class="offer-card__icon">
+              <i data-lucide="briefcase" style="width:20px;height:20px;"></i>
+            </div>
+          </article>
+
+          <article class="offer-card reveal" aria-hidden="true">
+            <div class="offer-card__icon">
+              <i data-lucide="shield" style="width:20px;height:20px;"></i>
+            </div>
+          </article>
+
+          <article class="offer-card reveal" aria-hidden="true">
+            <div class="offer-card__icon">
+              <i data-lucide="shield" style="width:20px;height:20px;"></i>
+            </div>
+          </article>
+
+          <article class="offer-card reveal" aria-hidden="true">
+            <div class="offer-card__icon">
+              <i data-lucide="user-check" style="width:20px;height:20px;"></i>
+            </div>
+          </article>
+
+          <article class="offer-card reveal" aria-hidden="true">
+            <div class="offer-card__icon">
+              <i data-lucide="trending-up" style="width:20px;height:20px;"></i>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         HOW IT WORKS
+    ========================================== -->
+    <section class="section-padding bg-warm" aria-label="How it works">
+      <div class="container container--narrow">
+
+        <div class="hiw-steps">
+
+          <article class="hiw-step reveal" aria-hidden="true">
+            <div class="hiw-step__badge">01</div>
+          </article>
+
+          <article class="hiw-step reveal" aria-hidden="true">
+            <div class="hiw-step__badge">02</div>
+          </article>
+
+          <article class="hiw-step reveal" aria-hidden="true">
+            <div class="hiw-step__badge">03</div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         OPEN POSITIONS CTA
+    ========================================== -->
+    <section class="section-padding" style="background:#fff;" aria-label="Current openings">
+      <div class="container container--narrow">
+
+        <div class="positions-cta reveal">
+          <div class="positions-cta__actions">
+            <a href="jobs.html" class="btn btn--primary btn--lg">Search Open Positions</a>
+            <a href="contact.html" class="btn btn--secondary btn--lg">Submit Your Resume</a>
+          </div>
+        </div>
+
       </div>
     </section>
 
