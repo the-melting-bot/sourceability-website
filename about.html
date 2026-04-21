@@ -81,60 +81,134 @@
       background: linear-gradient(180deg, #f9f8f6 0%, var(--color-surface-warm, #f5f3ef) 100%);
     }
 
-    .mission-split__panel {
-      padding: var(--space-8, 2rem);
-      border-radius: var(--radius-lg, 10px);
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.72) 100%);
-      border: 1px solid rgba(15, 26, 46, 0.07);
-      box-shadow: 0 4px 6px -1px rgba(15, 26, 46, 0.05), 0 2px 4px -2px rgba(15, 26, 46, 0.04);
-    }
-    @media (max-width: 768px) {
-      .mission-split__panel {
-        padding: var(--space-6, 1.5rem);
-      }
-    }
-
-    /* ── Mission Split ── */
-    .mission-split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-16, 4rem);
-      align-items: start;
-    }
-    @media (max-width: 768px) {
-      .mission-split {
-        grid-template-columns: 1fr;
-        gap: var(--space-10, 2.5rem);
-      }
-    }
-    .mission-split__col-title {
-      font-family: 'Instrument Serif', Georgia, serif;
-      font-size: clamp(1.5rem, 3vw, 2rem);
-      font-weight: 400;
-      color: var(--color-navy, #0f1a2e);
+    /* ── Values flip grid (legacy jobs-page “How we do what we do best”) ── */
+    .values-flip-section__title {
+      font-family: var(--font-body, 'DM Sans', sans-serif);
+      font-size: clamp(1rem, 0.88rem + 0.55vw, 1.25rem);
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--color-accent, #b9342e);
       margin: 0 0 var(--space-5, 1.25rem);
+      line-height: 1.3;
     }
-    .mission-split__text {
+    .values-flip-section__intro {
+      font-size: var(--text-base, 1rem);
       color: var(--color-text-muted, #5a6270);
       line-height: 1.75;
-      margin-bottom: var(--space-5, 1.25rem);
+      max-width: 52rem;
+      margin: 0 0 var(--space-10, 2.5rem);
     }
-    .quote-box {
-      padding: var(--space-5, 1.25rem) var(--space-6, 1.5rem);
-      margin-top: var(--space-6, 1.5rem);
-      border-radius: 0 10px 10px 0;
-      background: linear-gradient(180deg, #ffffff 0%, #fafaf8 100%);
-      border: 1px solid rgba(15, 26, 46, 0.07);
-      border-left: 4px solid #b9342e;
-      box-shadow: 0 4px 14px rgba(15, 26, 46, 0.06);
+    .values-flip-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-5, 1.25rem);
     }
-    .quote-box p {
-      font-family: 'Instrument Serif', Georgia, serif;
-      font-size: 1.15rem;
-      font-style: italic;
+    @media (max-width: 900px) {
+      .values-flip-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 520px) {
+      .values-flip-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .flip-card {
+      perspective: 1000px;
+      min-height: 11rem;
+      cursor: pointer;
+      border-radius: 10px;
+      outline: none;
+    }
+    .flip-card:focus-visible {
+      outline: 2px solid var(--color-accent, #b9342e);
+      outline-offset: 3px;
+    }
+    .flip-card__inner {
+      position: relative;
+      width: 100%;
+      min-height: 11rem;
+      transition: transform 0.65s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transform-style: preserve-3d;
+    }
+    .flip-card:hover .flip-card__inner,
+    .flip-card:focus-within .flip-card__inner {
+      transform: rotateY(180deg);
+    }
+    .flip-card--open .flip-card__inner {
+      transform: rotateY(180deg);
+    }
+    .flip-card__face {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-5, 1.25rem);
+      border-radius: 10px;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      border: 2px solid var(--color-accent, #b9342e);
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(15, 26, 46, 0.06);
+    }
+    .flip-card__face--front {
+      text-align: center;
+    }
+    .flip-card__label {
+      font-family: var(--font-body, 'DM Sans', sans-serif);
+      font-size: clamp(0.78rem, 0.72rem + 0.35vw, 0.95rem);
+      font-weight: 700;
+      letter-spacing: 0.055em;
+      text-transform: uppercase;
       color: var(--color-navy, #0f1a2e);
-      line-height: 1.6;
+      line-height: 1.35;
       margin: 0;
+    }
+    .flip-card__face--back {
+      transform: rotateY(180deg);
+      text-align: center;
+      background: linear-gradient(180deg, #fafbfc 0%, #ffffff 100%);
+    }
+    .flip-card__back-text {
+      font-family: var(--font-body, 'DM Sans', sans-serif);
+      font-size: var(--text-sm, 0.9rem);
+      color: var(--color-text-muted, #5a6270);
+      line-height: 1.65;
+      margin: 0;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .flip-card__inner {
+        transition: none !important;
+        transform: none !important;
+        display: flex;
+        flex-direction: column;
+        min-height: auto;
+        gap: 0;
+      }
+      .flip-card:hover .flip-card__inner,
+      .flip-card:focus-within .flip-card__inner,
+      .flip-card--open .flip-card__inner {
+        transform: none !important;
+      }
+      .flip-card {
+        min-height: auto;
+      }
+      .flip-card__face {
+        position: relative;
+        inset: auto;
+        transform: none !important;
+        backface-visibility: visible;
+        -webkit-backface-visibility: visible;
+        border-radius: 10px;
+      }
+      .flip-card__face--back {
+        border-top: 0;
+        margin-top: -2px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+      }
     }
 
     /* ── Why Niche cards ── */
@@ -390,41 +464,6 @@
       margin-bottom: var(--space-2, 0.5rem);
     }
 
-    /* Values grid: accent icon tiles (About page only uses this grid) */
-    .values-grid .value-item {
-      display: flex;
-      align-items: flex-start;
-      gap: var(--space-5, 1.25rem);
-      border-left: none;
-      padding: var(--space-5, 1.25rem) var(--space-4, 1rem);
-    }
-    .values-grid .value-item__icon {
-      flex-shrink: 0;
-      width: 52px;
-      height: 52px;
-      border-radius: 14px;
-      background: var(--color-accent, #b9342e);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow:
-        0 4px 14px rgba(185, 52, 46, 0.32),
-        0 2px 4px rgba(15, 26, 46, 0.06);
-    }
-    .values-grid .value-item__icon svg {
-      width: 24px;
-      height: 24px;
-    }
-    .values-grid .value-item__body {
-      flex: 1;
-      min-width: 0;
-    }
-    .values-grid .value-item__title {
-      font-weight: 600;
-      color: var(--color-navy, #0f1a2e);
-    }
-
     /* ── CTA Banner ── */
     .about-cta-banner {
       background-color: var(--color-navy, #0f1a2e);
@@ -564,27 +603,80 @@
     </section>
 
     <!-- ==========================================
-         MISSION SECTION
+         VALUES FLIP CARDS (legacy “How we do what we do best”)
     ========================================== -->
-    <section class="section-padding about-band--light" aria-labelledby="story-heading">
+    <section class="section-padding about-band--light values-flip-section" aria-labelledby="values-flip-heading">
       <div class="container container--narrow">
-        <div class="mission-split">
+        <h2 class="values-flip-section__title reveal" id="values-flip-heading">How we do what we do best</h2>
+        <p class="values-flip-section__intro reveal">SourceAbility was founded on a simple insight: as organizations increasingly depend on data to drive decisions, they need a recruiting partner who understands analytics, data science, and business intelligence. In every interaction, we conform to the values below—and our mission is to be the most trusted recruiting partner in this space, connecting exceptional talent with organizations that value data-driven excellence.</p>
 
-          <!-- Left: Our Story -->
-          <div class="reveal mission-split__panel">
-            <h2 class="mission-split__col-title" id="story-heading">Our Story</h2>
-            <p class="mission-split__text">SourceAbility was founded on a simple insight: as organizations increasingly depend on data to drive decisions, they need a recruiting partner who understands the unique talent landscape of analytics, data science, and business intelligence.</p>
-            <p class="mission-split__text">Traditional recruiting firms treat data roles as just another category. We saw the gap — and built a firm that lives and breathes the analytics ecosystem. Our recruiters understand the technologies, the career paths, and the market dynamics that shape this space.</p>
-          </div>
+        <div class="values-flip-grid">
 
-          <!-- Right: Our Mission -->
-          <div class="reveal mission-split__panel">
-            <h2 class="mission-split__col-title">Our Mission</h2>
-            <p class="mission-split__text">To be the most trusted and effective recruiting partner in the data and analytics industry, connecting exceptional talent with organizations that value data-driven excellence.</p>
-            <div class="quote-box">
-              <p>"We don't just fill roles. We build the data teams that transform organizations."</p>
+          <article class="flip-card reveal" tabindex="0" aria-labelledby="flip-integrity-label">
+            <div class="flip-card__inner">
+              <div class="flip-card__face flip-card__face--front">
+                <h3 class="flip-card__label" id="flip-integrity-label">Integrity</h3>
+              </div>
+              <div class="flip-card__face flip-card__face--back">
+                <p class="flip-card__back-text">We do the right thing, even when no one is watching. Honest counsel, transparency, and accountability guide every interaction.</p>
+              </div>
             </div>
-          </div>
+          </article>
+
+          <article class="flip-card reveal" tabindex="0" aria-labelledby="flip-commitment-label">
+            <div class="flip-card__inner">
+              <div class="flip-card__face flip-card__face--front">
+                <h3 class="flip-card__label" id="flip-commitment-label">Commitment</h3>
+              </div>
+              <div class="flip-card__face flip-card__face--back">
+                <p class="flip-card__back-text">We pursue the best outcome for every search with discipline and urgency, treating each engagement like a reflection of our name.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="flip-card reveal" tabindex="0" aria-labelledby="flip-respect-label">
+            <div class="flip-card__inner">
+              <div class="flip-card__face flip-card__face--front">
+                <h3 class="flip-card__label" id="flip-respect-label">Respect</h3>
+              </div>
+              <div class="flip-card__face flip-card__face--back">
+                <p class="flip-card__back-text">We treat every candidate and client with professionalism, dignity, and clear communication, regardless of the final decision.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="flip-card reveal" tabindex="0" aria-labelledby="flip-collaboration-label">
+            <div class="flip-card__inner">
+              <div class="flip-card__face flip-card__face--front">
+                <h3 class="flip-card__label" id="flip-collaboration-label">Collaboration</h3>
+              </div>
+              <div class="flip-card__face flip-card__face--back">
+                <p class="flip-card__back-text">Great hires happen through partnership. We operate as an extension of your team, aligning decisions around outcomes, not transactions.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="flip-card reveal" tabindex="0" aria-labelledby="flip-flexibility-label">
+            <div class="flip-card__inner">
+              <div class="flip-card__face flip-card__face--front">
+                <h3 class="flip-card__label" id="flip-flexibility-label">Flexibility</h3>
+              </div>
+              <div class="flip-card__face flip-card__face--back">
+                <p class="flip-card__back-text">Every organization is different. We adapt process, pace, and communication style to fit the realities of each business and role.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="flip-card reveal" tabindex="0" aria-labelledby="flip-social-label">
+            <div class="flip-card__inner">
+              <div class="flip-card__face flip-card__face--front">
+                <h3 class="flip-card__label" id="flip-social-label">Social Responsibility</h3>
+              </div>
+              <div class="flip-card__face flip-card__face--back">
+                <p class="flip-card__back-text">We support initiatives that expand access to careers in data and technology, helping create broader, more inclusive opportunity.</p>
+              </div>
+            </div>
+          </article>
 
         </div>
       </div>
@@ -700,62 +792,6 @@
           </li>
 
         </ol>
-      </div>
-    </section>
-
-    <!-- ==========================================
-         VALUES
-    ========================================== -->
-    <section class="section-padding about-band--warm" aria-labelledby="values-heading">
-      <div class="container container--narrow">
-        <header class="section-heading reveal">
-          <p class="overline">Our Values</p>
-          <h2 class="section-heading__title" id="values-heading">What Guides Us</h2>
-        </header>
-        <div class="values-grid reveal">
-          <div class="value-item">
-            <div class="value-item__icon" aria-hidden="true"><i data-lucide="shield-check"></i></div>
-            <div class="value-item__body">
-              <h3 class="value-item__title">Integrity</h3>
-              <p class="value-item__text">We do the right thing, even when no one is watching. Honest counsel, transparency, and accountability guide every interaction.</p>
-            </div>
-          </div>
-          <div class="value-item">
-            <div class="value-item__icon" aria-hidden="true"><i data-lucide="badge-check"></i></div>
-            <div class="value-item__body">
-              <h3 class="value-item__title">Commitment</h3>
-              <p class="value-item__text">We pursue the best outcome for every search with discipline and urgency, treating each engagement like a reflection of our name.</p>
-            </div>
-          </div>
-          <div class="value-item">
-            <div class="value-item__icon" aria-hidden="true"><i data-lucide="heart"></i></div>
-            <div class="value-item__body">
-              <h3 class="value-item__title">Respect</h3>
-              <p class="value-item__text">We treat every candidate and client with professionalism, dignity, and clear communication, regardless of the final decision.</p>
-            </div>
-          </div>
-          <div class="value-item">
-            <div class="value-item__icon" aria-hidden="true"><i data-lucide="users-round"></i></div>
-            <div class="value-item__body">
-              <h3 class="value-item__title">Collaboration</h3>
-              <p class="value-item__text">Great hires happen through partnership. We operate as an extension of your team, aligning decisions around outcomes, not transactions.</p>
-            </div>
-          </div>
-          <div class="value-item">
-            <div class="value-item__icon" aria-hidden="true"><i data-lucide="sliders-horizontal"></i></div>
-            <div class="value-item__body">
-              <h3 class="value-item__title">Flexibility</h3>
-              <p class="value-item__text">Every organization is different. We adapt process, pace, and communication style to fit the realities of each business and role.</p>
-            </div>
-          </div>
-          <div class="value-item">
-            <div class="value-item__icon" aria-hidden="true"><i data-lucide="globe"></i></div>
-            <div class="value-item__body">
-              <h3 class="value-item__title">Social Responsibility</h3>
-              <p class="value-item__text">We support initiatives that expand access to careers in data and technology, helping create broader, more inclusive opportunity.</p>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -876,6 +912,29 @@
 
   <!-- Initialize Lucide icons -->
   <script>lucide.createIcons();</script>
+
+  <!-- Flip cards: tap to toggle on touch / hover:none devices -->
+  <script>
+    (function () {
+      var mq = window.matchMedia('(hover: none)');
+      var cards = document.querySelectorAll('.flip-card');
+      if (!cards.length) return;
+      function syncOpenState() {
+        if (!mq.matches) cards.forEach(function (c) { c.classList.remove('flip-card--open'); });
+      }
+      mq.addEventListener('change', syncOpenState);
+      syncOpenState();
+      cards.forEach(function (card) {
+        card.addEventListener('click', function (e) {
+          if (!mq.matches) return;
+          e.preventDefault();
+          var open = card.classList.contains('flip-card--open');
+          cards.forEach(function (c) { c.classList.remove('flip-card--open'); });
+          if (!open) card.classList.add('flip-card--open');
+        });
+      });
+    })();
+  </script>
 
 </body>
 </html>
