@@ -73,6 +73,27 @@
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 
   <style>
+    /* Section bands — light editorial rhythm (inspired by common boutique-search layouts) */
+    .about-band--light {
+      background: linear-gradient(180deg, #f9fafb 0%, #ffffff 55%);
+    }
+    .about-band--warm {
+      background: linear-gradient(180deg, #f9f8f6 0%, var(--color-surface-warm, #f5f3ef) 100%);
+    }
+
+    .mission-split__panel {
+      padding: var(--space-8, 2rem);
+      border-radius: var(--radius-lg, 10px);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.72) 100%);
+      border: 1px solid rgba(15, 26, 46, 0.07);
+      box-shadow: 0 4px 6px -1px rgba(15, 26, 46, 0.05), 0 2px 4px -2px rgba(15, 26, 46, 0.04);
+    }
+    @media (max-width: 768px) {
+      .mission-split__panel {
+        padding: var(--space-6, 1.5rem);
+      }
+    }
+
     /* ── Mission Split ── */
     .mission-split {
       display: grid;
@@ -99,11 +120,13 @@
       margin-bottom: var(--space-5, 1.25rem);
     }
     .quote-box {
-      border-left: 4px solid #b9342e;
       padding: var(--space-5, 1.25rem) var(--space-6, 1.5rem);
-      background: #f5f3ef;
       margin-top: var(--space-6, 1.5rem);
-      border-radius: 0 4px 4px 0;
+      border-radius: 0 10px 10px 0;
+      background: linear-gradient(180deg, #ffffff 0%, #fafaf8 100%);
+      border: 1px solid rgba(15, 26, 46, 0.07);
+      border-left: 4px solid #b9342e;
+      box-shadow: 0 4px 14px rgba(15, 26, 46, 0.06);
     }
     .quote-box p {
       font-family: 'Instrument Serif', Georgia, serif;
@@ -132,11 +155,27 @@
       }
     }
     .why-card {
-      background: #fff;
-      border-radius: 8px;
+      background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
+      border-radius: 12px;
       padding: var(--space-8, 2rem);
+      border: 1px solid rgba(15, 26, 46, 0.08);
       border-top: 3px solid #b9342e;
-      box-shadow: 0 2px 12px rgba(15,26,46,0.07);
+      box-shadow:
+        0 4px 6px -1px rgba(15, 26, 46, 0.07),
+        0 2px 4px -2px rgba(15, 26, 46, 0.05);
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .why-card {
+        transition:
+          transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+          box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .why-card:hover {
+        transform: translateY(-4px);
+        box-shadow:
+          0 20px 25px -5px rgba(15, 26, 46, 0.08),
+          0 8px 10px -6px rgba(15, 26, 46, 0.06);
+      }
     }
     .why-card__number {
       font-family: 'Instrument Serif', Georgia, serif;
@@ -448,19 +487,19 @@
     <!-- ==========================================
          MISSION SECTION
     ========================================== -->
-    <section class="section-padding" style="background:#fff;" aria-labelledby="story-heading">
+    <section class="section-padding about-band--light" aria-labelledby="story-heading">
       <div class="container container--narrow">
         <div class="mission-split">
 
           <!-- Left: Our Story -->
-          <div class="reveal">
+          <div class="reveal mission-split__panel">
             <h2 class="mission-split__col-title" id="story-heading">Our Story</h2>
             <p class="mission-split__text">SourceAbility was founded on a simple insight: as organizations increasingly depend on data to drive decisions, they need a recruiting partner who understands the unique talent landscape of analytics, data science, and business intelligence.</p>
             <p class="mission-split__text">Traditional recruiting firms treat data roles as just another category. We saw the gap — and built a firm that lives and breathes the analytics ecosystem. Our recruiters understand the technologies, the career paths, and the market dynamics that shape this space.</p>
           </div>
 
           <!-- Right: Our Mission -->
-          <div class="reveal">
+          <div class="reveal mission-split__panel">
             <h2 class="mission-split__col-title">Our Mission</h2>
             <p class="mission-split__text">To be the most trusted and effective recruiting partner in the data and analytics industry, connecting exceptional talent with organizations that value data-driven excellence.</p>
             <div class="quote-box">
@@ -475,7 +514,7 @@
     <!-- ==========================================
          WHY NICHE SECTION
     ========================================== -->
-    <section class="section-padding bg-warm" aria-labelledby="why-heading">
+    <section class="section-padding about-band--warm" aria-labelledby="why-heading">
       <div class="container container--narrow">
 
         <header class="section-heading reveal">
@@ -510,7 +549,7 @@
     <!-- ==========================================
          HOW WE WORK (process — no placeholder bios)
     ========================================== -->
-    <section class="section-padding" style="background:#fff;" aria-labelledby="work-heading">
+    <section class="section-padding about-band--light" aria-labelledby="work-heading">
       <div class="container container--narrow">
 
         <header class="section-heading reveal">
@@ -576,7 +615,7 @@
     <!-- ==========================================
          VALUES
     ========================================== -->
-    <section class="section-padding" aria-labelledby="values-heading">
+    <section class="section-padding about-band--warm" aria-labelledby="values-heading">
       <div class="container container--narrow">
         <header class="section-heading reveal">
           <p class="overline">Our Values</p>
