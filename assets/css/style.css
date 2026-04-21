@@ -2179,43 +2179,7 @@
   }
 }
 
-/* --- ABOUT PAGE: STATS & VALUES --- */
-.about-stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-6);
-  text-align: center;
-}
-@media (max-width: 900px) {
-  .about-stats-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-@media (max-width: 600px) {
-  .about-stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-5);
-  }
-}
-.about-stat {
-  padding: var(--space-4);
-}
-.about-stat__number {
-  display: block;
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 1.5rem + 2vw, 3rem);
-  font-weight: 400;
-  color: var(--color-accent);
-  line-height: 1.1;
-  margin-bottom: var(--space-2);
-}
-.about-stat__label {
-  display: block;
-  font-size: var(--text-sm);
-  color: var(--color-text-muted);
-  line-height: 1.4;
-}
-
+/* --- ABOUT PAGE: VALUES --- */
 .values-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
