@@ -178,14 +178,25 @@
       }
     }
     .why-card__number {
-      font-family: 'Instrument Serif', Georgia, serif;
-      font-size: 2rem;
-      font-style: italic;
-      color: #b9342e;
-      opacity: 0.4;
-      display: block;
-      margin-bottom: var(--space-3, 0.75rem);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 52px;
+      height: 52px;
+      padding: 0 var(--space-3, 0.75rem);
+      margin-bottom: var(--space-4, 1rem);
+      border-radius: 14px;
+      background: var(--color-accent, #b9342e);
+      color: #fff;
+      font-family: var(--font-body, 'DM Sans', sans-serif);
+      font-size: 1.0625rem;
+      font-weight: 700;
+      font-style: normal;
+      letter-spacing: 0.04em;
       line-height: 1;
+      box-shadow:
+        0 4px 14px rgba(185, 52, 46, 0.32),
+        0 2px 4px rgba(15, 26, 46, 0.06);
     }
     .why-card__title {
       font-size: 1.05rem;
@@ -280,16 +291,21 @@
     }
     .about-work-step__icon {
       flex-shrink: 0;
-      width: 44px;
-      height: 44px;
+      width: 52px;
+      height: 52px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #b9342e;
+      border-radius: 14px;
+      background: var(--color-accent, #b9342e);
+      color: #fff;
+      box-shadow:
+        0 4px 14px rgba(185, 52, 46, 0.32),
+        0 2px 4px rgba(15, 26, 46, 0.06);
     }
     .about-work-step__icon svg {
-      width: 22px;
-      height: 22px;
+      width: 24px;
+      height: 24px;
     }
     .about-work-step__title {
       font-size: 1.1rem;
@@ -310,10 +326,6 @@
       box-shadow: 0 4px 24px rgba(15, 26, 46, 0.08);
       border: 1px solid rgba(15, 26, 46, 0.06);
     }
-    .about-work-step--card .about-work-step__icon {
-      background: #f5f3ef;
-      border-radius: 10px;
-    }
     /* Step 2: warm inset panel */
     .about-work-step--panel .about-work-step__body {
       background: #f5f3ef;
@@ -324,10 +336,6 @@
       font-size: clamp(1.15rem, 2.2vw, 1.35rem);
       font-weight: 400;
       font-style: italic;
-    }
-    .about-work-step--panel .about-work-step__icon {
-      background: rgba(255, 255, 255, 0.7);
-      border-radius: 50%;
     }
     /* Step 3: minimal strip */
     .about-work-step--strip .about-work-step__body {
@@ -340,10 +348,40 @@
     .about-work-step--strip .about-work-step__head {
       margin-bottom: var(--space-2, 0.5rem);
     }
-    .about-work-step--strip .about-work-step__icon {
-      background: transparent;
-      border-radius: 0;
-      opacity: 0.95;
+
+    /* Values grid: accent icon tiles (About page only uses this grid) */
+    .values-grid .value-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-5, 1.25rem);
+      border-left: none;
+      padding: var(--space-5, 1.25rem) var(--space-4, 1rem);
+    }
+    .values-grid .value-item__icon {
+      flex-shrink: 0;
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: var(--color-accent, #b9342e);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow:
+        0 4px 14px rgba(185, 52, 46, 0.32),
+        0 2px 4px rgba(15, 26, 46, 0.06);
+    }
+    .values-grid .value-item__icon svg {
+      width: 24px;
+      height: 24px;
+    }
+    .values-grid .value-item__body {
+      flex: 1;
+      min-width: 0;
+    }
+    .values-grid .value-item__title {
+      font-weight: 600;
+      color: var(--color-navy, #0f1a2e);
     }
 
     /* ── CTA Banner ── */
@@ -623,28 +661,46 @@
         </header>
         <div class="values-grid reveal">
           <div class="value-item">
-            <h3 class="value-item__title">Integrity</h3>
-            <p class="value-item__text">We do the right thing, even when no one is watching. Honest counsel, transparency, and accountability guide every interaction.</p>
+            <div class="value-item__icon" aria-hidden="true"><i data-lucide="shield-check"></i></div>
+            <div class="value-item__body">
+              <h3 class="value-item__title">Integrity</h3>
+              <p class="value-item__text">We do the right thing, even when no one is watching. Honest counsel, transparency, and accountability guide every interaction.</p>
+            </div>
           </div>
           <div class="value-item">
-            <h3 class="value-item__title">Commitment</h3>
-            <p class="value-item__text">We pursue the best outcome for every search with discipline and urgency, treating each engagement like a reflection of our name.</p>
+            <div class="value-item__icon" aria-hidden="true"><i data-lucide="badge-check"></i></div>
+            <div class="value-item__body">
+              <h3 class="value-item__title">Commitment</h3>
+              <p class="value-item__text">We pursue the best outcome for every search with discipline and urgency, treating each engagement like a reflection of our name.</p>
+            </div>
           </div>
           <div class="value-item">
-            <h3 class="value-item__title">Respect</h3>
-            <p class="value-item__text">We treat every candidate and client with professionalism, dignity, and clear communication, regardless of the final decision.</p>
+            <div class="value-item__icon" aria-hidden="true"><i data-lucide="heart"></i></div>
+            <div class="value-item__body">
+              <h3 class="value-item__title">Respect</h3>
+              <p class="value-item__text">We treat every candidate and client with professionalism, dignity, and clear communication, regardless of the final decision.</p>
+            </div>
           </div>
           <div class="value-item">
-            <h3 class="value-item__title">Collaboration</h3>
-            <p class="value-item__text">Great hires happen through partnership. We operate as an extension of your team, aligning decisions around outcomes, not transactions.</p>
+            <div class="value-item__icon" aria-hidden="true"><i data-lucide="users-round"></i></div>
+            <div class="value-item__body">
+              <h3 class="value-item__title">Collaboration</h3>
+              <p class="value-item__text">Great hires happen through partnership. We operate as an extension of your team, aligning decisions around outcomes, not transactions.</p>
+            </div>
           </div>
           <div class="value-item">
-            <h3 class="value-item__title">Flexibility</h3>
-            <p class="value-item__text">Every organization is different. We adapt process, pace, and communication style to fit the realities of each business and role.</p>
+            <div class="value-item__icon" aria-hidden="true"><i data-lucide="sliders-horizontal"></i></div>
+            <div class="value-item__body">
+              <h3 class="value-item__title">Flexibility</h3>
+              <p class="value-item__text">Every organization is different. We adapt process, pace, and communication style to fit the realities of each business and role.</p>
+            </div>
           </div>
           <div class="value-item">
-            <h3 class="value-item__title">Social Responsibility</h3>
-            <p class="value-item__text">We support initiatives that expand access to careers in data and technology, helping create broader, more inclusive opportunity.</p>
+            <div class="value-item__icon" aria-hidden="true"><i data-lucide="globe"></i></div>
+            <div class="value-item__body">
+              <h3 class="value-item__title">Social Responsibility</h3>
+              <p class="value-item__text">We support initiatives that expand access to careers in data and technology, helping create broader, more inclusive opportunity.</p>
+            </div>
           </div>
         </div>
       </div>
