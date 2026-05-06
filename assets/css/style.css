@@ -102,6 +102,11 @@
 }
 
 .text-accent { color: var(--color-accent); }
+.hero .text-accent,
+.page-hero .text-accent,
+.bg-navy .text-accent {
+  color: #ff7670;
+}
 .text-muted { color: var(--color-text-muted); }
 .text-faint { color: var(--color-text-faint); }
 .text-inverse { color: var(--color-text-inverse); }
@@ -576,7 +581,7 @@
 }
 
 .hero__specialization strong {
-  color: var(--color-accent);
+  color: #ff7670;
   font-weight: 700;
 }
 
@@ -3203,4 +3208,16 @@ p.salary-table-footer a {
   font-weight: 600;
   letter-spacing: -0.02em;
   color: #fff;
+}
+
+/* Footer Legal Links (ADA) */
+.footer-legal-link {
+  font-size: var(--text-xs);
+  color: rgba(255, 255, 255, 0.35);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-legal-link:hover,
+.footer-legal-link:focus-visible {
+  color: #ffffff;
 }
