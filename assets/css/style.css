@@ -3144,7 +3144,7 @@ p.salary-table-footer a {
 .no-fit-section__description {
   color: var(--color-text-muted);
   font-size: var(--text-base);
-  max-width: 48rem;
+  max-width: 60rem;
   margin-inline: auto;
   line-height: 1.65;
 }
