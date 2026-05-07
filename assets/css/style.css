@@ -3125,7 +3125,7 @@ p.salary-table-footer a {
   align-items: center;
   text-align: center;
   gap: var(--space-8);
-  max-width: 40rem;
+  max-width: 60rem;
   margin-inline: auto;
 }
 
@@ -3144,7 +3144,7 @@ p.salary-table-footer a {
 .no-fit-section__description {
   color: var(--color-text-muted);
   font-size: var(--text-base);
-  max-width: 60rem;
+  max-width: 100%;
   margin-inline: auto;
   line-height: 1.65;
 }
