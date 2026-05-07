@@ -409,7 +409,7 @@
       margin-top: 4px;
     }
 
-    /* --- SPOTLIGHT TESTIMONIALS SECTION --- */
+    /* --- DYNAMIC TIMELINE TESTIMONIALS SECTION --- */
     .premium-testimonials-v2 {
       padding: var(--space-12) 0;
       background-color: #f8fafc;
@@ -453,11 +453,25 @@
       margin-bottom: var(--space-8);
     }
 
-    /* Navigation Tabs */
+    /* Navigation Tabs & Timeline */
     .testim-nav {
       display: flex;
       flex-direction: column;
-      gap: var(--space-2);
+      gap: var(--space-4);
+      position: relative;
+      padding-left: 2rem; /* Space for timeline */
+    }
+
+    /* Vertical Timeline Track */
+    .testim-nav::before {
+      content: '';
+      position: absolute;
+      top: 1.5rem;
+      bottom: 1.5rem;
+      left: 8px; /* Track start */
+      width: 2px;
+      background-color: #e2e8f0;
+      z-index: 0;
     }
 
     .testim-nav__btn {
@@ -472,7 +486,29 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-left: 3px solid transparent;
+      overflow: hidden; /* Keep progress bar inside corners */
+    }
+
+    /* Timeline Dot */
+    .testim-nav__btn::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -23px; /* Perfectly centered on the 8px track when padded 32px */
+      transform: translate(-50%, -50%);
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background-color: #cbd5e0;
+      border: 3px solid #f8fafc;
+      z-index: 1;
+      transition: all 0.3s ease;
+    }
+
+    .testim-nav__btn.active::before {
+      background-color: var(--color-accent);
+      box-shadow: 0 0 0 4px rgba(200, 50, 50, 0.1); /* Subtle glowing accent */
+      transform: translate(-50%, -50%) scale(1.15);
     }
 
     .testim-nav__btn:hover {
@@ -481,7 +517,6 @@
 
     .testim-nav__btn.active {
       background: #ffffff;
-      border-left: 3px solid var(--color-accent);
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
     }
 
@@ -493,6 +528,8 @@
       letter-spacing: 1px;
       text-transform: uppercase;
       transition: color 0.3s ease;
+      position: relative;
+      z-index: 2;
     }
 
     .testim-nav__btn.active .testim-nav__name {
@@ -512,11 +549,35 @@
       opacity: 0;
       transform: translateX(-10px);
       transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      z-index: 2;
     }
 
     .testim-nav__btn.active::after {
       opacity: 1;
       transform: translateX(0);
+    }
+
+    /* Progress Bar */
+    .testim-progress-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      background-color: var(--color-accent);
+      width: 0%;
+      border-radius: 0 4px 4px 0;
+      z-index: 2;
+    }
+
+    @keyframes progress-fill {
+      0% { width: 0%; }
+      100% { width: 100%; }
+    }
+
+    /* Hover to pause */
+    .premium-testimonials-v2:hover .testim-progress-bar {
+      animation-play-state: paused !important;
     }
 
     /* Content Area */
@@ -526,7 +587,7 @@
       padding: 3.5rem 4rem;
       box-shadow: 0 20px 50px rgba(15, 26, 46, 0.08);
       position: relative;
-      display: grid; /* Grid stacking trick for equal height panes */
+      display: grid;
       align-items: center;
     }
 
@@ -562,7 +623,7 @@
       opacity: 0;
       pointer-events: none;
       transform: translateY(15px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
+      transition: opacity 0.4s ease-out, transform 0.4s ease-out;
       z-index: 0;
     }
 
@@ -837,27 +898,30 @@
     </section>
 
     <!-- ==========================================
-         CANDIDATE TESTIMONIALS (SPOTLIGHT)
+         CANDIDATE TESTIMONIALS (DYNAMIC TIMELINE)
     ========================================== -->
-    <section class="premium-testimonials-v2" aria-labelledby="testimonials-heading">
+    <section class="premium-testimonials-v2 testimonials-section" aria-labelledby="testimonials-heading">
       <div class="container container--narrow">
         
         <div class="testim-split">
           
-          <!-- Left Sidebar / Navigation -->
+          <!-- Left Sidebar / Navigation Timeline -->
           <div class="testim-split__sidebar reveal">
             <h2 class="section-heading__title" id="testimonials-heading">Candidate Testimonials</h2>
             <p class="testim-split__lede">Hear directly from the professionals we’ve partnered with to navigate their strategic career moves.</p>
             
             <div class="testim-nav" role="tablist" aria-label="Candidate Testimonials">
-              <button class="testim-nav__btn active" role="tab" aria-selected="true" data-index="0" aria-controls="testim-pane-0">
+              <button class="testim-nav__btn" role="tab" aria-selected="false" data-index="0" aria-controls="testim-pane-0">
                 <span class="testim-nav__name">Terence Flowers</span>
+                <div class="testim-progress-bar"></div>
               </button>
               <button class="testim-nav__btn" role="tab" aria-selected="false" data-index="1" aria-controls="testim-pane-1">
                 <span class="testim-nav__name">Ramon Sotos</span>
+                <div class="testim-progress-bar"></div>
               </button>
               <button class="testim-nav__btn" role="tab" aria-selected="false" data-index="2" aria-controls="testim-pane-2">
                 <span class="testim-nav__name">Stephen Schwartz</span>
+                <div class="testim-progress-bar"></div>
               </button>
             </div>
           </div>
@@ -867,7 +931,7 @@
             <div class="testim-display">
               <div class="testim-quote-mark" aria-hidden="true">&ldquo;</div>
               
-              <div class="testim-pane active" id="testim-pane-0" data-index="0" role="tabpanel">
+              <div class="testim-pane" id="testim-pane-0" data-index="0" role="tabpanel">
                 <p class="testim-pane__text">"Tanya is thoughtful, proactive, and highly professional. She took the time to understand my goals and presented opportunities that aligned with both my experience and long-term career direction."</p>
               </div>
               <div class="testim-pane" id="testim-pane-1" data-index="1" role="tabpanel">
@@ -883,34 +947,69 @@
         
       </div>
       
-      <!-- Interactive Script for Spotlight Testimonials -->
+      <!-- Interactive Script for Dynamic Timeline Testimonials -->
       <script>
         document.addEventListener('DOMContentLoaded', () => {
           const tabs = document.querySelectorAll('.testim-nav__btn');
           const panes = document.querySelectorAll('.testim-pane');
           
+          function activateTab(index) {
+            // Reset all tabs
+            tabs.forEach(t => {
+              t.classList.remove('active');
+              t.setAttribute('aria-selected', 'false');
+              // Clear progress bar animation to reset it
+              const bar = t.querySelector('.testim-progress-bar');
+              if (bar) {
+                bar.style.animation = 'none';
+                void bar.offsetWidth; // Trigger reflow to restart animation
+              }
+            });
+            
+            // Activate target tab
+            const targetTab = Array.from(tabs).find(t => t.getAttribute('data-index') === String(index));
+            if (targetTab) {
+              targetTab.classList.add('active');
+              targetTab.setAttribute('aria-selected', 'true');
+              const bar = targetTab.querySelector('.testim-progress-bar');
+              if (bar) {
+                // Set the 7-second auto-rotation animation
+                bar.style.animation = 'progress-fill 7s linear forwards';
+              }
+            }
+            
+            // Update content panes
+            panes.forEach(pane => {
+              if(pane.getAttribute('data-index') === String(index)) {
+                pane.classList.add('active');
+              } else {
+                pane.classList.remove('active');
+              }
+            });
+          }
+
+          // Manual Click Navigation
           tabs.forEach(tab => {
             tab.addEventListener('click', () => {
-              const index = tab.getAttribute('data-index');
-              
-              // Update tabs
-              tabs.forEach(t => {
-                t.classList.remove('active');
-                t.setAttribute('aria-selected', 'false');
-              });
-              tab.classList.add('active');
-              tab.setAttribute('aria-selected', 'true');
-              
-              // Update panes
-              panes.forEach(pane => {
-                if(pane.getAttribute('data-index') === index) {
-                  pane.classList.add('active');
-                } else {
-                  pane.classList.remove('active');
-                }
-              });
+              activateTab(tab.getAttribute('data-index'));
             });
           });
+
+          // Auto-Rotation via Animation End
+          // Using animationend ensures it perfectly respects the CSS hover-pause
+          tabs.forEach(tab => {
+            const bar = tab.querySelector('.testim-progress-bar');
+            if (bar) {
+              bar.addEventListener('animationend', () => {
+                let currentIndex = parseInt(tab.getAttribute('data-index'));
+                let nextIndex = (currentIndex + 1) % tabs.length;
+                activateTab(nextIndex);
+              });
+            }
+          });
+
+          // Initialize first tab
+          activateTab(0);
         });
       </script>
     </section>
