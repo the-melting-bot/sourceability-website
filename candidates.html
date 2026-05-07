@@ -737,11 +737,12 @@
       z-index: 1;
       
       /* The Shimmer Gradient */
-      background: linear-gradient(90deg, var(--color-navy) 0%, var(--color-navy) 40%, var(--color-accent) 50%, var(--color-navy) 60%, var(--color-navy) 100%);
+      background: linear-gradient(90deg, var(--color-navy) 0%, var(--color-navy) 38%, var(--color-accent) 46%, #ffb3b3 50%, var(--color-accent) 54%, var(--color-navy) 62%, var(--color-navy) 100%);
       background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       animation: shimmer 6s linear infinite;
+      filter: drop-shadow(0 0 6px rgba(220, 53, 69, 0.3));
     }
 
     @keyframes shimmer {
