@@ -409,32 +409,79 @@
       margin-top: 4px;
     }
 
-    /* Testimonial Cards */
-    .testimonial-card {
-      background: var(--color-surface) !important;
+    /* --- PREMIUM TESTIMONIALS SECTION --- */
+    .premium-testimonials {
+      padding: var(--space-12) 0;
+      background-color: #f8fafc;
     }
-    .testimonial-card::before {
-      display: none !important;
+    .premium-testimonials .section-heading__title {
+      font-family: var(--font-body);
+      font-weight: 700;
+      color: #1a202c;
+      font-style: normal;
+      letter-spacing: -0.01em;
     }
-    .testimonial-card__quote-icon {
-      color: var(--color-accent);
-      opacity: 0.6;
+    .pt-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
     }
-    .testimonial-card__text {
-      font-size: var(--text-base);
-      line-height: 1.7;
-      color: var(--color-text-muted);
+    @media (min-width: 1024px) {
+      .pt-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+    .pt-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      border-top: 3px solid var(--color-navy);
+      position: relative;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .pt-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    }
+    .pt-quote-mark {
+      position: absolute;
+      top: 1rem;
+      left: 1.5rem;
+      font-family: Georgia, serif;
+      font-size: 6rem;
+      color: #a0aec0;
+      opacity: 0.1;
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+      margin: 0;
+    }
+    .pt-text {
+      font-family: var(--font-body);
       font-style: italic;
+      color: #4a5568;
+      line-height: 1.6;
+      font-size: 1.05rem;
+      position: relative;
+      z-index: 1;
       flex-grow: 1;
-      margin-bottom: 0 !important;
+      margin: 0;
     }
-    .testimonial-card__name {
-      font-family: var(--font-display);
-      font-size: var(--text-base);
-      font-style: italic;
-      color: var(--color-navy);
+    .pt-author {
+      font-family: var(--font-body);
+      text-transform: uppercase;
+      letter-spacing: 1px;
       font-weight: 600;
-      margin: 0 !important;
+      font-size: 0.85rem;
+      color: #1a202c;
+      margin: 1.5rem 0 0 0;
+      position: relative;
+      z-index: 1;
+      font-style: normal;
     }
 
     /* CTA Banner actions layout */
@@ -690,34 +737,28 @@
     </section>
 
     <!-- ==========================================
-         CANDIDATE TESTIMONIALS
+         CANDIDATE TESTIMONIALS (PREMIUM)
     ========================================== -->
-    <section class="section-padding" style="background:#fff;" aria-labelledby="testimonials-heading">
+    <section class="premium-testimonials" aria-labelledby="testimonials-heading">
       <div class="container container--narrow">
-        <header class="section-heading reveal" style="text-align:center;">
+        <header class="section-heading reveal" style="text-align:center; margin-bottom: var(--space-8);">
           <h2 class="section-heading__title" id="testimonials-heading">Candidate Testimonials</h2>
         </header>
-        <div class="offer-grid grid-3-col">
-          <article class="offer-card reveal testimonial-card">
-            <div class="testimonial-card__quote-icon" aria-hidden="true"><i data-lucide="quote" style="width:24px;height:24px;"></i></div>
-            <p class="testimonial-card__text">"Tanya is thoughtful, proactive, and highly professional. She took the time to understand my goals and presented opportunities that aligned with both my experience and long-term career direction."</p>
-            <div class="testimonial-card__author">
-              <h3 class="testimonial-card__name">Terence Flowers</h3>
-            </div>
+        <div class="pt-grid">
+          <article class="pt-card reveal">
+            <div class="pt-quote-mark" aria-hidden="true">&ldquo;</div>
+            <p class="pt-text">"Tanya is thoughtful, proactive, and highly professional. She took the time to understand my goals and presented opportunities that aligned with both my experience and long-term career direction."</p>
+            <h3 class="pt-author">Terence Flowers</h3>
           </article>
-          <article class="offer-card reveal testimonial-card">
-            <div class="testimonial-card__quote-icon" aria-hidden="true"><i data-lucide="quote" style="width:24px;height:24px;"></i></div>
-            <p class="testimonial-card__text">"Communication throughout the process was outstanding. Tanya provided honest guidance, strong market insight, and made the entire experience feel highly personalized."</p>
-            <div class="testimonial-card__author">
-              <h3 class="testimonial-card__name">Ramon Sotos</h3>
-            </div>
+          <article class="pt-card reveal" style="transition-delay: 0.1s;">
+            <div class="pt-quote-mark" aria-hidden="true">&ldquo;</div>
+            <p class="pt-text">"Communication throughout the process was outstanding. Tanya provided honest guidance, strong market insight, and made the entire experience feel highly personalized."</p>
+            <h3 class="pt-author">Ramon Sotos</h3>
           </article>
-          <article class="offer-card reveal testimonial-card">
-            <div class="testimonial-card__quote-icon" aria-hidden="true"><i data-lucide="quote" style="width:24px;height:24px;"></i></div>
-            <p class="testimonial-card__text">"SourceAbility approached the process as a long-term relationship, not a transaction. The opportunity ultimately proved to be an exceptional fit."</p>
-            <div class="testimonial-card__author">
-              <h3 class="testimonial-card__name">Stephen Schwartz</h3>
-            </div>
+          <article class="pt-card reveal" style="transition-delay: 0.2s;">
+            <div class="pt-quote-mark" aria-hidden="true">&ldquo;</div>
+            <p class="pt-text">"SourceAbility approached the process as a long-term relationship, not a transaction. The opportunity ultimately proved to be an exceptional fit."</p>
+            <h3 class="pt-author">Stephen Schwartz</h3>
           </article>
         </div>
       </div>
