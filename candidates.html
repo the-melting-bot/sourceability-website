@@ -484,6 +484,18 @@
       margin-bottom: var(--space-8);
     }
 
+    /* Editorial Overline */
+    .testim-overline {
+      display: block;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.75rem;
+      color: var(--color-accent);
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+    }
+
     /* Navigation Tabs & Timeline */
     .testim-nav {
       display: flex;
@@ -501,7 +513,8 @@
       bottom: 1.5rem;
       left: 0;
       width: 1px;
-      background-color: #cbd5e0;
+      background-color: transparent;
+      background-image: linear-gradient(to bottom, transparent 0%, #cbd5e0 15%, #cbd5e0 85%, transparent 100%);
       z-index: 0;
     }
 
@@ -530,6 +543,33 @@
       background: #ffffff;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
       z-index: 2;
+      transform: translateX(4px);
+    }
+
+    
+    .testim-nav__info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .testim-nav__title {
+      font-size: 0.75rem;
+      color: #a0aec0;
+      font-weight: 500;
+      opacity: 0;
+      max-height: 0;
+      transform: translateY(-5px);
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      overflow: hidden;
+    }
+
+    .testim-nav__btn.active .testim-nav__title {
+      opacity: 1;
+      max-height: 20px;
+      transform: translateY(0);
     }
 
     .testim-nav__name {
@@ -991,20 +1031,30 @@
           
           <!-- Left Sidebar / Navigation Timeline -->
           <div class="testim-split__sidebar reveal">
-            <h2 class="section-heading__title" id="testimonials-heading">Candidate Testimonials</h2>
+            <span class="testim-overline">// SUCCESS STORIES</span>
+            <h2 class="section-heading__title" id="testimonials-heading" style="margin-top: 0;">Candidate Testimonials</h2>
             <p class="testim-split__lede">Hear directly from the professionals we’ve partnered with to navigate their strategic career moves.</p>
             
             <div class="testim-nav" role="tablist" aria-label="Candidate Testimonials">
               <button class="testim-nav__btn" role="tab" aria-selected="false" data-index="0" aria-controls="testim-pane-0">
-                <span class="testim-nav__name">Terence Flowers</span>
+                <div class="testim-nav__info">
+                  <span class="testim-nav__name">Terence Flowers</span>
+                  <span class="testim-nav__title">Data &amp; Technology</span>
+                </div>
                 <div class="testim-progress-bar"></div>
               </button>
               <button class="testim-nav__btn" role="tab" aria-selected="false" data-index="1" aria-controls="testim-pane-1">
-                <span class="testim-nav__name">Ramon Sotos</span>
+                <div class="testim-nav__info">
+                  <span class="testim-nav__name">Ramon Sotos</span>
+                  <span class="testim-nav__title">Financial Services</span>
+                </div>
                 <div class="testim-progress-bar"></div>
               </button>
               <button class="testim-nav__btn" role="tab" aria-selected="false" data-index="2" aria-controls="testim-pane-2">
-                <span class="testim-nav__name">Stephen Schwartz</span>
+                <div class="testim-nav__info">
+                  <span class="testim-nav__name">Stephen Schwartz</span>
+                  <span class="testim-nav__title">Executive Leadership</span>
+                </div>
                 <div class="testim-progress-bar"></div>
               </button>
             </div>
