@@ -2667,7 +2667,7 @@ p.salary-table-footer a {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.65);
   margin-bottom: var(--space-4);
 }
 
@@ -2733,7 +2733,7 @@ p.salary-table-footer a {
   justify-self: start;
   margin: 0;
   font-size: var(--text-xs);
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.65);
   min-width: 0;
 }
 
@@ -3213,7 +3213,7 @@ p.salary-table-footer a {
 /* Footer Legal Links (ADA) */
 .footer-legal-link {
   font-size: var(--text-xs);
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.65);
   text-decoration: none;
   transition: color 0.2s;
 }
