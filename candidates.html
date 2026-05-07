@@ -408,12 +408,17 @@
       text-align: center;
       padding: var(--space-6) var(--space-4);
       border-radius: 16px;
-      transition: transform 0.3s ease, background-color 0.3s ease;
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.7) 0%, rgba(248, 250, 252, 0.9) 100%);
+      border: 1px solid rgba(226, 232, 240, 0.5);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
+      transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
     }
 
     .criteria-item:hover {
-      background-color: #ffffff; /* very subtle hover state, not a persistent card */
-      transform: translateY(-2px);
+      background: linear-gradient(145deg, #ffffff 0%, #f1f5f9 100%);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(15, 26, 46, 0.04);
+      border-color: rgba(226, 232, 240, 0.8);
     }
 
     .criteria-icon {
@@ -819,7 +824,7 @@
         <header class="section-heading reveal" style="text-align:center;">
           <h2 class="section-heading__title" id="look-heading">What We Look For</h2>
           <p class="section-heading__lede" style="margin-inline: auto; margin-bottom: var(--space-4);">We partner with professionals who bring a strong track record of performance and take a thoughtful, long-term approach to their careers.</p>
-          <p style="font-size: var(--text-base); color: var(--color-text-muted); margin-bottom: var(--space-8);">While every situation is unique, the individuals we work with typically demonstrate:</p>
+          <p style="font-size: var(--text-base); color: var(--color-text-muted); margin-bottom: var(--space-8); margin-inline: auto; text-align: center; max-width: 42rem;">While every situation is unique, the individuals we work with typically demonstrate:</p>
         </header>
         <div class="reveal">
           <div class="criteria-grid">
