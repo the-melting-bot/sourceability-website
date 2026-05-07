@@ -555,7 +555,7 @@
 .hero__title-line--accent {
   font-size: clamp(2.1rem, 1.35rem + 3.2vw, 3.85rem);
   font-weight: 700;
-  color: var(--color-accent);
+  color: #e54238;
   text-shadow: 0 2px 28px rgba(0, 0, 0, 0.35);
 }
 
@@ -2658,7 +2658,7 @@ p.salary-table-footer a {
 .footer-brand p {
   font-size: var(--text-sm);
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.7);
   max-width: 300px;
 }
 
