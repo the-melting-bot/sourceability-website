@@ -356,6 +356,96 @@
         outline-color: var(--color-accent);
       }
     }
+  
+    /* Content Layout Utilities */
+    @media (min-width: 1024px) {
+      .grid-3-col {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: var(--space-6) !important;
+      }
+      .grid-4-col {
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        gap: var(--space-6) !important;
+      }
+      .grid-3-col .offer-card,
+      .grid-4-col .offer-card {
+        grid-column: auto !important;
+        max-width: none !important;
+      }
+      .hiw-steps--4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+      }
+    }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .grid-4-col {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      }
+      .hiw-steps--4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      }
+    }
+
+    /* List formatting for "What We Look For" */
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      max-width: 42rem;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+    }
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-4);
+      font-size: var(--text-lg);
+      color: var(--color-navy);
+      line-height: 1.5;
+    }
+    .feature-list__icon {
+      color: var(--color-accent);
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+
+    /* Testimonial Cards */
+    .testimonial-card {
+      background: var(--color-surface) !important;
+    }
+    .testimonial-card::before {
+      display: none !important;
+    }
+    .testimonial-card__quote-icon {
+      color: var(--color-accent);
+      opacity: 0.6;
+    }
+    .testimonial-card__text {
+      font-size: var(--text-base);
+      line-height: 1.7;
+      color: var(--color-text-muted);
+      font-style: italic;
+      flex-grow: 1;
+      margin-bottom: 0 !important;
+    }
+    .testimonial-card__name {
+      font-family: var(--font-display);
+      font-size: var(--text-base);
+      font-style: italic;
+      color: var(--color-navy);
+      font-weight: 600;
+      margin: 0 !important;
+    }
+
+    /* CTA Banner actions layout */
+    .cta-banner__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+      justify-content: center;
+      margin-top: var(--space-6);
+    }
+
   </style>
 </head>
 <body class="page-candidates">
@@ -430,8 +520,7 @@
   <!-- ============================================
        MAIN CONTENT
   ============================================ -->
-  <main id="main-content">
-
+    <main id="main-content">
     <!-- ==========================================
          PAGE HERO
     ========================================== -->
@@ -439,141 +528,219 @@
       <img src="./assets/images/hero-candidates.jpg" alt="" class="page-hero__bg" loading="eager" fetchpriority="high">
       <div class="page-hero__overlay" aria-hidden="true"></div>
       <div class="container container--narrow">
-        <p class="overline overline--light reveal">YOUR CAREER PARTNER</p>
-        <h1 class="page-hero__title reveal">Advance Your Career with Purpose</h1>
-        <p class="page-hero__desc reveal">Discover your next role in Data, AI, Technology, or Financial Services — with a recruiting partner who understands your skills and ambitions.</p>
+        <p class="overline overline--light reveal">JOB SEEKER PAGE</p>
+        <h1 class="page-hero__title reveal">Strategic Career Moves. Long-Term Impact.</h1>
+        <p class="page-hero__desc reveal">We partner with professionals across Data, Technology, and Financial Services to help them make thoughtful, career-defining moves - not simply job changes. Many of the professionals we work with are not actively seeking new opportunities, but are open to the right role when it aligns with their long-term career goals, leadership aspirations, and overall direction.</p>
+        <p class="page-hero__desc reveal" style="margin-top: var(--space-4);">We believe the right career move should support both immediate opportunity and long-term professional growth.</p>
       </div>
     </section>
 
     <!-- ==========================================
-         WHAT WE OFFER
+         WHO WE WORK WITH
     ========================================== -->
-    <section class="section-padding" style="background:#fff;" aria-labelledby="offer-heading">
+    <section class="section-padding bg-warm" aria-labelledby="who-heading">
       <div class="container container--narrow">
-
         <header class="section-heading reveal" style="text-align:center;">
-          <h2 class="section-heading__title" id="offer-heading">Career Support Designed Around <span class="text-accent">You</span></h2>
+          <h2 class="section-heading__title" id="who-heading">Who We Work With</h2>
+          <p class="section-heading__lede">We work with experienced professionals and leaders who bring depth of expertise, strong communication skills, and a track record of impact in:</p>
         </header>
-
-        <div class="offer-grid">
-
+        <div class="offer-grid grid-3-col">
           <article class="offer-card offer-card--bg-1 reveal">
-            <div class="offer-card__icon" aria-hidden="true">
-              <i data-lucide="briefcase" style="width:20px;height:20px;"></i>
-            </div>
-            <h3 class="offer-card__title">Advance Your Career with Purpose</h3>
-            <p class="offer-card__text">Clarify your goals and pursue opportunities aligned with your strengths, values, and long-term growth path.</p>
+            <div class="offer-card__icon" aria-hidden="true"><i data-lucide="database" style="width:20px;height:20px;"></i></div>
+            <h3 class="offer-card__title" style="font-style: normal; font-size: var(--text-lg);">Data &amp; AI</h3>
+            <p class="offer-card__text">Data Engineering, Analytics, Machine Learning, AI &amp; Automation</p>
           </article>
-
           <article class="offer-card offer-card--bg-2 reveal">
-            <div class="offer-card__icon" aria-hidden="true">
-              <i data-lucide="shield" style="width:20px;height:20px;"></i>
-            </div>
-            <h3 class="offer-card__title">Discover Interesting, Challenging Roles</h3>
-            <p class="offer-card__text">Access opportunities at organizations that value specialized talent, including roles not always posted publicly.</p>
+            <div class="offer-card__icon" aria-hidden="true"><i data-lucide="cpu" style="width:20px;height:20px;"></i></div>
+            <h3 class="offer-card__title" style="font-style: normal; font-size: var(--text-lg);">Technology</h3>
+            <p class="offer-card__text">Software Development, Engineering Leadership, Digital Platforms, Infrastructure &amp; Cloud</p>
           </article>
-
           <article class="offer-card offer-card--bg-3 reveal">
-            <div class="offer-card__icon" aria-hidden="true">
-              <i data-lucide="lock" style="width:20px;height:20px;"></i>
-            </div>
-            <h3 class="offer-card__title">Search Confidentially</h3>
-            <p class="offer-card__text">Your job search stays private. We work discreetly to connect you with opportunities that match your goals.</p>
+            <div class="offer-card__icon" aria-hidden="true"><i data-lucide="landmark" style="width:20px;height:20px;"></i></div>
+            <h3 class="offer-card__title" style="font-style: normal; font-size: var(--text-lg);">Financial Services</h3>
+            <p class="offer-card__text">Commercial &amp; Business Lending, Credit Union Leadership, Risk &amp; Operations</p>
           </article>
-
-          <article class="offer-card offer-card--bg-4 reveal">
-            <div class="offer-card__icon" aria-hidden="true">
-              <i data-lucide="user-check" style="width:20px;height:20px;"></i>
-            </div>
-            <h3 class="offer-card__title">Engage with a Talent Partner</h3>
-            <p class="offer-card__text">Work with a dedicated recruiter who understands your skillset, career trajectory, and what motivates you.</p>
-          </article>
-
-          <article class="offer-card offer-card--bg-5 reveal">
-            <div class="offer-card__icon" aria-hidden="true">
-              <i data-lucide="trending-up" style="width:20px;height:20px;"></i>
-            </div>
-            <h3 class="offer-card__title">Explore Open Positions</h3>
-            <p class="offer-card__text">Review current opportunities and connect quickly when a role matches your background and goals.</p>
-          </article>
-
+        </div>
+        <div class="reveal" style="text-align: center; margin-top: var(--space-8);">
+          <p style="font-size: var(--text-base); color: var(--color-text-muted); max-width: 48rem; margin: 0 auto;">Our focus is on individuals who are thoughtful about their next move and selective about the organizations they choose to join.</p>
         </div>
       </div>
     </section>
 
     <!-- ==========================================
-         HOW IT WORKS
+         WHAT WE LOOK FOR
     ========================================== -->
-    <section class="section-padding bg-warm" aria-labelledby="hiw-heading">
+    <section class="section-padding" style="background:#fff;" aria-labelledby="look-heading">
       <div class="container container--narrow">
-
         <header class="section-heading reveal" style="text-align:center;">
-          <h2 class="section-heading__title" id="hiw-heading">Your Path to the Right Role</h2>
+          <h2 class="section-heading__title" id="look-heading">What We Look For</h2>
+          <p class="section-heading__lede" style="margin-bottom: var(--space-4);">We partner with professionals who bring a strong track record of performance and take a thoughtful, long-term approach to their careers.</p>
+          <p style="font-size: var(--text-base); color: var(--color-text-muted); margin-bottom: var(--space-8);">While every situation is unique, the individuals we work with typically demonstrate:</p>
         </header>
+        <div class="reveal">
+          <ul class="feature-list">
+            <li>
+              <i data-lucide="check-circle-2" class="feature-list__icon" aria-hidden="true" style="width:20px;height:20px;"></i>
+              <span>Depth of experience within their field</span>
+            </li>
+            <li>
+              <i data-lucide="check-circle-2" class="feature-list__icon" aria-hidden="true" style="width:20px;height:20px;"></i>
+              <span>A consistent progression of responsibility and impact</span>
+            </li>
+            <li>
+              <i data-lucide="check-circle-2" class="feature-list__icon" aria-hidden="true" style="width:20px;height:20px;"></i>
+              <span>Strong communication and leadership capability</span>
+            </li>
+            <li>
+              <i data-lucide="check-circle-2" class="feature-list__icon" aria-hidden="true" style="width:20px;height:20px;"></i>
+              <span>A focus on long-term fit, not just short-term change</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-        <div class="hiw-steps">
+    <!-- ==========================================
+         WHY WORK WITH SOURCEABILITY
+    ========================================== -->
+    <section class="section-padding bg-warm" aria-labelledby="why-heading">
+      <div class="container container--narrow">
+        <header class="section-heading reveal" style="text-align:center;">
+          <h2 class="section-heading__title" id="why-heading">Why Work With SourceAbility</h2>
+        </header>
+        <div class="offer-grid grid-4-col">
+          <article class="offer-card offer-card--bg-4 reveal">
+            <div class="offer-card__icon" aria-hidden="true"><i data-lucide="shield" style="width:20px;height:20px;"></i></div>
+            <h3 class="offer-card__title" style="font-style: normal;">Confidential, Professional Representation</h3>
+            <p class="offer-card__text">We represent candidates thoughtfully and discreetly in the market. Your background, goals, and timing are handled with professionalism and care.</p>
+          </article>
+          <article class="offer-card offer-card--bg-5 reveal">
+            <div class="offer-card__icon" aria-hidden="true"><i data-lucide="eye-off" style="width:20px;height:20px;"></i></div>
+            <h3 class="offer-card__title" style="font-style: normal;">Access to Opportunities Not Publicly Posted</h3>
+            <p class="offer-card__text">Many of our searches are conducted on a confidential basis and are never advertised publicly. We provide access to opportunities that are not broadly available through traditional job boards.</p>
+          </article>
+          <article class="offer-card offer-card--bg-1 reveal">
+            <div class="offer-card__icon" aria-hidden="true"><i data-lucide="compass" style="width:20px;height:20px;"></i></div>
+            <h3 class="offer-card__title" style="font-style: normal;">Strategic Career Guidance</h3>
+            <p class="offer-card__text">We help candidates evaluate opportunities based on long-term alignment - role scope, leadership, culture, growth potential, and overall fit, not simply title or compensation.</p>
+          </article>
+          <article class="offer-card offer-card--bg-2 reveal">
+            <div class="offer-card__icon" aria-hidden="true"><i data-lucide="trending-up" style="width:20px;height:20px;"></i></div>
+            <h3 class="offer-card__title" style="font-style: normal;">Market Insight &amp; Honest Feedback</h3>
+            <p class="offer-card__text">We provide perspective on compensation, market demand, hiring trends, and how your experience is positioned within the current market.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
+    <!-- ==========================================
+         HOW WE WORK WITH YOU
+    ========================================== -->
+    <section class="section-padding" style="background:#fff;" aria-labelledby="hiw-heading">
+      <div class="container container--narrow">
+        <header class="section-heading reveal" style="text-align:center;">
+          <h2 class="section-heading__title" id="hiw-heading">How We Work With You</h2>
+          <p class="section-heading__lede">Our approach is relationship-driven and designed to support professionals over the long term, not simply during an active search.</p>
+        </header>
+        <div class="hiw-steps hiw-steps--4" style="margin-bottom: var(--space-8);">
           <article class="hiw-step reveal">
             <div class="hiw-step__badge" aria-hidden="true">01</div>
-            <h3 class="hiw-step__title">Connect</h3>
-            <p class="hiw-step__text">Reach out to our team or submit your resume. We'll learn about your experience, goals, and what matters most in your next role.</p>
+            <h3 class="hiw-step__title" style="font-style: normal; font-family: var(--font-body); font-weight: 600; font-size: var(--text-base);">Initial Conversation</h3>
+            <p class="hiw-step__text">We take the time to understand your background, career progression, accomplishments, motivations and what would make your next move meaningful.</p>
           </article>
-
           <article class="hiw-step reveal">
             <div class="hiw-step__badge" aria-hidden="true">02</div>
-            <h3 class="hiw-step__title">Match</h3>
-            <p class="hiw-step__text">We identify opportunities that align with your expertise and ambitions — then advocate on your behalf with hiring teams.</p>
+            <h3 class="hiw-step__title" style="font-style: normal; font-family: var(--font-body); font-weight: 600; font-size: var(--text-base);">Ongoing Relationship</h3>
+            <p class="hiw-step__text">We stay connected and share relevant opportunities and market insight as your career evolves.</p>
           </article>
-
           <article class="hiw-step reveal">
             <div class="hiw-step__badge" aria-hidden="true">03</div>
-            <h3 class="hiw-step__title">Advance</h3>
-            <p class="hiw-step__text">From interview prep to offer negotiation, we guide you through every step so you can make a confident career move.</p>
+            <h3 class="hiw-step__title" style="font-style: normal; font-family: var(--font-body); font-weight: 600; font-size: var(--text-base);">Targeted Introductions</h3>
+            <p class="hiw-step__text">We focus on opportunities that align with your experience, goals, and timing - not mass outreach or mismatched roles.</p>
           </article>
-
+          <article class="hiw-step reveal">
+            <div class="hiw-step__badge" aria-hidden="true">04</div>
+            <h3 class="hiw-step__title" style="font-style: normal; font-family: var(--font-body); font-weight: 600; font-size: var(--text-base);">Guidance Through the Process</h3>
+            <p class="hiw-step__text">From initial conversations through interviews, offer evaluation, and final decision-making, we provide perspective and support throughout the process.</p>
+          </article>
+        </div>
+        <div class="reveal" style="text-align: center;">
+          <p style="font-size: var(--text-base); color: var(--color-text-muted); max-width: 48rem; margin: 0 auto;">We also help candidates think strategically about career direction, market positioning, compensation, and long-term fit, ensuring each opportunity is evaluated thoughtfully, not transactionally.</p>
         </div>
       </div>
     </section>
 
     <!-- ==========================================
-         OPEN POSITIONS CTA
+         FEATURED OPPORTUNITIES
     ========================================== -->
-    <section class="section-padding" style="background:#fff;" aria-labelledby="positions-heading">
+    <section class="section-padding bg-warm" aria-labelledby="positions-heading">
       <div class="container container--narrow">
-
         <header class="section-heading reveal" style="text-align:center;">
-          <h2 class="section-heading__title" id="positions-heading">Explore Current Opportunities</h2>
+          <h2 class="section-heading__title" id="positions-heading">Featured Opportunities</h2>
         </header>
-
         <div class="positions-cta reveal">
-          <p class="positions-cta__lede">Browse active roles in Data Science, Analytics, AI, Technology, and Financial Services — and take the next step with a team that's in your corner.</p>
+          <p class="positions-cta__lede" style="margin-bottom: var(--space-2);">We maintain a select group of active searches across Data, Technology, and Financial Services.</p>
+          <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-8); font-style: italic; max-width: 42rem; margin-inline: auto;">Please note: Not all opportunities are listed publicly. Many of our searches are conducted on a confidential basis.</p>
           <div class="positions-cta__actions">
-            <a href="jobs.html" class="btn btn--primary btn--lg">Search Open Positions</a>
+            <a href="jobs.html" class="btn btn--primary btn--lg">View Current Opportunities</a>
             <a href="contact.html" class="btn btn--secondary btn--lg">Submit Your Resume</a>
           </div>
         </div>
-
       </div>
     </section>
 
     <!-- ==========================================
-         BOTTOM CTA
+         CANDIDATE TESTIMONIALS
+    ========================================== -->
+    <section class="section-padding" style="background:#fff;" aria-labelledby="testimonials-heading">
+      <div class="container container--narrow">
+        <header class="section-heading reveal" style="text-align:center;">
+          <h2 class="section-heading__title" id="testimonials-heading">Candidate Testimonials</h2>
+        </header>
+        <div class="offer-grid grid-3-col">
+          <article class="offer-card reveal testimonial-card">
+            <div class="testimonial-card__quote-icon" aria-hidden="true"><i data-lucide="quote" style="width:24px;height:24px;"></i></div>
+            <p class="testimonial-card__text">"Tanya is thoughtful, proactive, and highly professional. She took the time to understand my goals and presented opportunities that aligned with both my experience and long-term career direction."</p>
+            <div class="testimonial-card__author">
+              <h3 class="testimonial-card__name">Terence Flowers</h3>
+            </div>
+          </article>
+          <article class="offer-card reveal testimonial-card">
+            <div class="testimonial-card__quote-icon" aria-hidden="true"><i data-lucide="quote" style="width:24px;height:24px;"></i></div>
+            <p class="testimonial-card__text">"Communication throughout the process was outstanding. Tanya provided honest guidance, strong market insight, and made the entire experience feel highly personalized."</p>
+            <div class="testimonial-card__author">
+              <h3 class="testimonial-card__name">Ramon Sotos</h3>
+            </div>
+          </article>
+          <article class="offer-card reveal testimonial-card">
+            <div class="testimonial-card__quote-icon" aria-hidden="true"><i data-lucide="quote" style="width:24px;height:24px;"></i></div>
+            <p class="testimonial-card__text">"SourceAbility approached the process as a long-term relationship, not a transaction. The opportunity ultimately proved to be an exceptional fit."</p>
+            <div class="testimonial-card__author">
+              <h3 class="testimonial-card__name">Stephen Schwartz</h3>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         START THE CONVERSATION
     ========================================== -->
     <section class="cta-banner section-padding" aria-label="Call to action">
       <div class="container">
         <div class="cta-banner__inner cta-banner__inner--centered">
           <div class="reveal">
-            <h2 class="cta-banner__title">Ready to Take the Next Step?</h2>
-            <p class="cta-banner__text">Connect with our team and let's find the role that moves your career forward.</p>
+            <h2 class="cta-banner__title">Start the Conversation</h2>
+            <p class="cta-banner__text">We welcome conversations with professionals at all stages of their career journey, whether actively exploring opportunities or simply interested in staying connected to the market.</p>
           </div>
-          <div class="reveal">
-            <a href="jobs.html" class="btn btn--primary btn--lg">View Open Roles</a>
-            <a href="contact.html" class="btn btn--outline btn--lg">Talk to a Recruiter</a>
+          <div class="reveal cta-banner__actions">
+            <a href="contact.html" class="btn btn--primary btn--lg">Submit Resume</a>
+            <a href="https://www.linkedin.com/company/216155" target="_blank" rel="noopener noreferrer" class="btn btn--outline btn--lg">Connect on LinkedIn</a>
+            <a href="contact.html" class="btn btn--outline btn--lg">Contact Us</a>
           </div>
         </div>
       </div>
     </section>
-
   </main>
 
   <!-- ============================================
