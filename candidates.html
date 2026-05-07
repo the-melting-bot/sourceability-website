@@ -385,28 +385,54 @@
       }
     }
 
-    /* List formatting for "What We Look For" */
-    .feature-list {
-      list-style: none;
-      padding: 0;
+    /* Modern Grid for "What We Look For" */
+    .criteria-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+      max-width: 54rem;
       margin: 0 auto;
-      max-width: 42rem;
+    }
+
+    @media (min-width: 768px) {
+      .criteria-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-8);
+      }
+    }
+
+    .criteria-item {
       display: flex;
       flex-direction: column;
-      gap: var(--space-4);
+      align-items: center;
+      text-align: center;
+      padding: var(--space-6) var(--space-4);
+      border-radius: 16px;
+      transition: transform 0.3s ease, background-color 0.3s ease;
     }
-    .feature-list li {
+
+    .criteria-item:hover {
+      background-color: #ffffff; /* very subtle hover state, not a persistent card */
+      transform: translateY(-2px);
+    }
+
+    .criteria-icon {
       display: flex;
-      align-items: flex-start;
-      gap: var(--space-4);
-      font-size: var(--text-lg);
-      color: var(--color-navy);
-      line-height: 1.5;
-    }
-    .feature-list__icon {
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background-color: rgba(220, 53, 69, 0.06); /* Faint brand red */
       color: var(--color-accent);
-      flex-shrink: 0;
-      margin-top: 4px;
+      margin-bottom: var(--space-4);
+    }
+
+    .criteria-text {
+      font-size: 1.15rem;
+      color: var(--color-navy);
+      line-height: 1.6;
+      font-weight: 500;
     }
 
     /* --- DYNAMIC TIMELINE TESTIMONIALS SECTION --- */
@@ -796,24 +822,24 @@
           <p style="font-size: var(--text-base); color: var(--color-text-muted); margin-bottom: var(--space-8);">While every situation is unique, the individuals we work with typically demonstrate:</p>
         </header>
         <div class="reveal">
-          <ul class="feature-list">
-            <li>
-              <i data-lucide="check-circle-2" class="feature-list__icon" aria-hidden="true" style="width:20px;height:20px;"></i>
-              <span>Depth of experience within their field</span>
-            </li>
-            <li>
-              <i data-lucide="check-circle-2" class="feature-list__icon" aria-hidden="true" style="width:20px;height:20px;"></i>
-              <span>A consistent progression of responsibility and impact</span>
-            </li>
-            <li>
-              <i data-lucide="check-circle-2" class="feature-list__icon" aria-hidden="true" style="width:20px;height:20px;"></i>
-              <span>Strong communication and leadership capability</span>
-            </li>
-            <li>
-              <i data-lucide="check-circle-2" class="feature-list__icon" aria-hidden="true" style="width:20px;height:20px;"></i>
-              <span>A focus on long-term fit, not just short-term change</span>
-            </li>
-          </ul>
+          <div class="criteria-grid">
+            <div class="criteria-item">
+              <div class="criteria-icon"><i data-lucide="briefcase" aria-hidden="true" style="width:24px;height:24px;"></i></div>
+              <span class="criteria-text">Depth of experience within their field</span>
+            </div>
+            <div class="criteria-item">
+              <div class="criteria-icon"><i data-lucide="trending-up" aria-hidden="true" style="width:24px;height:24px;"></i></div>
+              <span class="criteria-text">A consistent progression of responsibility and impact</span>
+            </div>
+            <div class="criteria-item">
+              <div class="criteria-icon"><i data-lucide="users" aria-hidden="true" style="width:24px;height:24px;"></i></div>
+              <span class="criteria-text">Strong communication and leadership capability</span>
+            </div>
+            <div class="criteria-item">
+              <div class="criteria-icon"><i data-lucide="target" aria-hidden="true" style="width:24px;height:24px;"></i></div>
+              <span class="criteria-text">A focus on long-term fit, not just short-term change</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
