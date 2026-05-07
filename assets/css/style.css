@@ -3136,7 +3136,7 @@ p.salary-table-footer a {
 .no-fit-section__title {
   font-family: var(--font-display);
   font-size: var(--text-xl);
-  font-style: italic;
+  font-style: normal;
   color: var(--color-navy);
   margin-bottom: var(--space-3);
 }
