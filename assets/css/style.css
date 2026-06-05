@@ -3262,3 +3262,141 @@ p.salary-table-footer a {
 .footer-legal-link:focus-visible {
   color: #ffffff;
 }
+
+/* --- NEW CTA BANNER (LET'S BUILD YOUR TEAM) --- */
+.cta-banner-new {
+  background-color: #ffffff;
+  padding-block: clamp(var(--space-12), 8vw, var(--space-20));
+  overflow: hidden;
+  position: relative;
+}
+
+.cta-banner-new__container {
+  max-width: var(--content-wide);
+  margin-inline: auto;
+  padding-inline: var(--space-6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.cta-banner-new__images {
+  display: none; /* Hide on mobile/tablet */
+  align-items: center;
+  width: 35%;
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .cta-banner-new__images {
+    display: flex;
+  }
+}
+
+.cta-banner-new__images--left {
+  justify-content: flex-start;
+}
+
+.cta-banner-new__images--right {
+  justify-content: flex-end;
+}
+
+.cta-banner-new__circle {
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(15, 26, 46, 0.08);
+  border: 4px solid #ffffff;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, z-index 0.1s;
+  position: relative;
+  aspect-ratio: 1;
+}
+
+.cta-banner-new__circle:hover {
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+.cta-banner-new__circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Specific sizing to create organic hierarchy as in screenshot */
+.cta-banner-new__circle--outer-left {
+  width: clamp(120px, 11vw, 170px);
+  z-index: 1;
+}
+
+.cta-banner-new__circle--inner-left {
+  width: clamp(140px, 13vw, 190px);
+  margin-left: -3rem; /* Overlap */
+  z-index: 2;
+}
+
+.cta-banner-new__circle--inner-right {
+  width: clamp(140px, 13vw, 190px);
+  margin-right: -3rem; /* Overlap */
+  z-index: 2;
+}
+
+.cta-banner-new__circle--outer-right {
+  width: clamp(120px, 11vw, 170px);
+  z-index: 1;
+}
+
+/* Center Content Area */
+.cta-banner-new__content {
+  flex-grow: 1;
+  max-width: 480px;
+  text-align: center;
+  margin-inline: auto;
+  z-index: 5;
+}
+
+.cta-banner-new__title {
+  font-family: var(--font-body);
+  font-size: clamp(1.85rem, 1.5rem + 1.5vw, 2.5rem);
+  font-weight: 800;
+  color: var(--color-navy);
+  margin-bottom: var(--space-6);
+  position: relative;
+  display: inline-block;
+  line-height: 1.2;
+}
+
+/* Red Hand-Drawn Underline pseudo-element */
+.cta-banner-new__title::after {
+  content: '';
+  position: absolute;
+  bottom: -14px;
+  left: 10%;
+  width: 80%;
+  height: 8px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 10' preserveAspectRatio='none'%3E%3Cpath d='M3,7 Q50,2 97,7' stroke='%23b9342e' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.cta-banner-new__text {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.cta-banner-new__actions {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-6);
+}
+
+.cta-banner-new__actions .btn {
+  box-shadow: 0 4px 18px rgba(185, 52, 46, 0.35);
+  font-weight: 600;
+  padding: 0.875rem 2.5rem;
+  border-radius: var(--radius-md);
+}
