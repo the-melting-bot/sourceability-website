@@ -553,6 +553,7 @@
 }
 
 .hero__title-line--accent {
+  font-family: 'Instrument Sans', var(--font-body);
   font-size: clamp(2.1rem, 1.35rem + 3.2vw, 3.85rem);
   font-weight: 700;
   color: #e54238;
