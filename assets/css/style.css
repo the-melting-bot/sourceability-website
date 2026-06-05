@@ -9,7 +9,7 @@
 :root {
   /* Typography */
   --font-display: 'Instrument Serif', Georgia, serif;
-  --font-body: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'Inter', 'Helvetica Neue', Arial, sans-serif;
 
   /* Type Scale */
   --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
