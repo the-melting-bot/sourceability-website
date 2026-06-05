@@ -2697,6 +2697,7 @@ p.salary-table-footer a {
   display: inline-flex;
   align-items: center;
   padding: 1.25rem 1.25rem 1.25rem 0;
+  border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   z-index: 10;
 }
@@ -2721,19 +2722,6 @@ p.salary-table-footer a {
   height: 40px;
   width: auto;
   display: block;
-}
-
-/* Concave curve connecting vertical tab wall to horizontal footer ceiling */
-.footer-logo-tab::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 100%;
-  width: 20px;
-  height: 20px;
-  background-color: #ffffff;
-  border-bottom-right-radius: 20px;
-  pointer-events: none;
 }
 
 .footer-brand p {
