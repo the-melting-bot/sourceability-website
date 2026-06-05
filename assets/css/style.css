@@ -954,7 +954,8 @@
 .approach-cards__title {
   margin: 0 auto;
   text-align: center;
-  max-width: min(48rem, 100%);
+  max-width: min(60rem, 100%);
+  font-size: clamp(1.4rem, 1.1rem + 0.9vw, 2.05rem);
 }
 
 .approach-cards__lede {
