@@ -8,7 +8,7 @@
 /* --- DESIGN TOKENS --- */
 :root {
   /* Typography */
-  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-display: 'Inter', sans-serif;
   --font-body: 'Inter', 'Helvetica Neue', Arial, sans-serif;
 
   /* Type Scale */
@@ -2312,7 +2312,7 @@
 }
 
 .salary-table__role {
-  font-family: 'Instrument Serif', Georgia, serif;
+  font-family: var(--font-display);
   font-size: var(--text-base);
   font-weight: 400;
   color: var(--color-navy);
@@ -2519,7 +2519,7 @@ p.salary-table-footer a {
   margin-top: 2px;
 }
 .salary-disclaimer__title {
-  font-family: 'Instrument Serif', Georgia, serif;
+  font-family: var(--font-display);
   font-size: var(--text-lg);
   font-weight: 400;
   color: var(--color-navy);
