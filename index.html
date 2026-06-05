@@ -259,49 +259,83 @@
     </section>
 
     <!-- ==========================================
-         STATS SECTION
+         STATS TICKER SECTION
     ========================================== -->
-    <section class="stats-section" aria-label="Key statistics">
-      <div class="container container--narrow">
-        <header class="section-heading reveal" style="text-align:center; margin-bottom: var(--space-10);">
-          <h2 class="section-heading__title section-heading__title--light">Proven Results. Long-Term Partnerships.</h2>
-        </header>
-        <div class="stats-stack">
+    <section class="stats-ticker-section" aria-label="Key statistics">
+      <div class="stats-ticker-container">
+        <div class="stats-ticker__title-box">
+          <h2 class="stats-ticker__title">Proven Results. <span class="stats-ticker__title-break">Long-Term Partnerships.</span></h2>
+        </div>
+        
+        <div class="stats-ticker__divider" aria-hidden="true">
+          <i data-lucide="chevron-left" class="stats-ticker__chevron"></i>
+        </div>
 
-          <div class="stats-row stats-row--quad">
-            <div class="reveal">
-              <div class="stat__number" data-count="900" data-suffix="+">900+</div>
-              <p class="stat__label stat__label--readable">Successful Placements</p>
+        <div class="stats-ticker__marquee">
+          <div class="stats-ticker__track">
+            <!-- List 1 -->
+            <div class="stats-ticker__list">
+              <div class="stats-ticker__item">
+                <div class="stat__number" data-count="900" data-suffix="+">900+</div>
+                <div class="stats-ticker__item-label">Successful Placements</div>
+              </div>
+              <div class="stats-ticker__item">
+                <div class="stat__number" data-count="93" data-suffix="%">93%</div>
+                <div class="stats-ticker__item-label">Client Retention</div>
+              </div>
+              <div class="stats-ticker__item">
+                <div class="stat__number" data-count="87" data-suffix="%">87%</div>
+                <div class="stats-ticker__item-label">Candidate Retention Over 5 Years</div>
+              </div>
+              <div class="stats-ticker__item">
+                <div class="stat__number" data-count="72" data-suffix="%">72%</div>
+                <div class="stats-ticker__item-label">Hires Within 3 Candidates</div>
+              </div>
+              <div class="stats-ticker__item">
+                <div class="stat__number" data-count="42" data-suffix="%">42%</div>
+                <div class="stats-ticker__item-label">Single Submission Placements</div>
+              </div>
+              <div class="stats-ticker__item">
+                <div class="stat__number" data-count="65" data-suffix="%">65%</div>
+                <div class="stats-ticker__item-label">Placements from Passive Candidates</div>
+              </div>
+              <div class="stats-ticker__item">
+                <div class="stat__number" data-count="7" data-suffix="+">7+</div>
+                <div class="stats-ticker__item-label">Years Average Client Tenure</div>
+              </div>
             </div>
-            <div class="reveal">
-              <div class="stat__number" data-count="93" data-suffix="%">93%</div>
-              <p class="stat__label stat__label--readable">Client Retention</p>
-            </div>
-            <div class="reveal">
-              <div class="stat__number" data-count="87" data-suffix="%">87%</div>
-              <p class="stat__label stat__label--readable">Candidate Retention Over 5 Years</p>
-            </div>
-            <div class="reveal">
-              <div class="stat__number" data-count="72" data-suffix="%">72%</div>
-              <p class="stat__label stat__label--readable">of Clients Hire Within 3 Candidates</p>
+            <!-- List 2 (Duplicate for seamless marquee) -->
+            <div class="stats-ticker__list" aria-hidden="true">
+              <div class="stats-ticker__item">
+                <div class="stat__number" data-count="900" data-suffix="+">900+</div>
+                <div class="stats-ticker__item-label">Successful Placements</div>
+              </div>
+              <div class="stats-ticker__item">
+                <div class="stat__number" data-count="93" data-suffix="%">93%</div>
+                <div class="stats-ticker__item-label">Client Retention</div>
+              </div>
+              <div class="stats-ticker__item">
+                <div class="stat__number" data-count="87" data-suffix="%">87%</div>
+                <div class="stats-ticker__item-label">Candidate Retention Over 5 Years</div>
+              </div>
+              <div class="stats-ticker__item">
+                <div class="stat__number" data-count="72" data-suffix="%">72%</div>
+                <div class="stats-ticker__item-label">Hires Within 3 Candidates</div>
+              </div>
+              <div class="stats-ticker__item">
+                <div class="stat__number" data-count="42" data-suffix="%">42%</div>
+                <div class="stats-ticker__item-label">Single Submission Placements</div>
+              </div>
+              <div class="stats-ticker__item">
+                <div class="stat__number" data-count="65" data-suffix="%">65%</div>
+                <div class="stats-ticker__item-label">Placements from Passive Candidates</div>
+              </div>
+              <div class="stats-ticker__item">
+                <div class="stat__number" data-count="7" data-suffix="+">7+</div>
+                <div class="stats-ticker__item-label">Years Average Client Tenure</div>
+              </div>
             </div>
           </div>
-
-          <div class="stats-row stats-row--trio">
-            <div class="reveal">
-              <div class="stat__number" data-count="42" data-suffix="%">42%</div>
-              <p class="stat__label stat__label--readable">of Searches Filled with a Single Candidate Submission</p>
-            </div>
-            <div class="reveal">
-              <div class="stat__number" data-count="65" data-suffix="%">65%</div>
-              <p class="stat__label stat__label--readable">of Placements from Passive Candidates</p>
-            </div>
-            <div class="reveal">
-              <div class="stat__number" data-count="7" data-suffix="+">7+</div>
-              <p class="stat__label stat__label--readable">Years Average Client Relationship Tenure</p>
-            </div>
-          </div>
-
         </div>
       </div>
     </section>
