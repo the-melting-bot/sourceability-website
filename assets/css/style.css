@@ -2732,7 +2732,7 @@ p.salary-table-footer a {
   width: 20px;
   height: 20px;
   background-color: #ffffff;
-  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
   pointer-events: none;
 }
 
