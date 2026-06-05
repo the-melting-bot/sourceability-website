@@ -2696,7 +2696,7 @@ p.salary-table-footer a {
   background: #ffffff;
   display: inline-flex;
   align-items: center;
-  padding: 1.25rem 2.5rem 1.25rem 0;
+  padding: 1.25rem 1.25rem 1.25rem 0;
   border-bottom-right-radius: 20px;
   z-index: 10;
 }
