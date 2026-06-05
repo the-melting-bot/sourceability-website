@@ -2664,6 +2664,11 @@ p.salary-table-footer a {
   overflow: hidden; /* Prevent horizontal scrollbars from left-bleed tab */
 }
 
+/* Establish container as relative positioning boundary for absolute tab placement */
+.site-footer > .container {
+  position: relative;
+}
+
 .footer-grid {
   display: grid;
   gap: var(--space-8);
@@ -2683,16 +2688,17 @@ p.salary-table-footer a {
   }
 }
 
-/* White tab container for the logo, flush with the top of the footer */
+/* White tab container for the logo, absolutely positioned at top of footer */
 .footer-logo-tab {
-  position: relative;
+  position: absolute;
+  top: calc(-1 * clamp(var(--space-8), 3.5vw, var(--space-12)));
+  left: 0;
   background: #ffffff;
   display: inline-flex;
   align-items: center;
   padding: 1.25rem 2.5rem 1.25rem 0;
-  margin-top: calc(-1 * clamp(var(--space-8), 3.5vw, var(--space-12)));
-  margin-bottom: var(--space-6);
   border-bottom-right-radius: 20px;
+  z-index: 10;
 }
 
 /* Bleed to the left edge of the screen on desktop */
@@ -2735,6 +2741,7 @@ p.salary-table-footer a {
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.7);
   max-width: 320px;
+  margin-top: 3.5rem; /* Make room for absolutely positioned logo tab */
 }
 
 .footer-heading {
