@@ -3755,17 +3755,53 @@ p.salary-table-footer a {
   line-height: 1.2;
 }
 
-/* Red Hand-Drawn Underline pseudo-element */
-.cta-banner-new__title::after {
+/* Animated red underline on “Build Your Team.” (matches designer Elementor timing) */
+.cta-banner-new__mark {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.cta-banner-new__mark::after {
   content: '';
   position: absolute;
-  bottom: -14px;
-  left: 10%;
-  width: 80%;
-  height: 8px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 10' preserveAspectRatio='none'%3E%3Cpath d='M3,7 Q50,2 97,7' stroke='%23b9342e' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  left: 0;
+  right: 0;
+  bottom: -0.18em;
+  height: 0.28em;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 10' preserveAspectRatio='none'%3E%3Cpath d='M2,7 Q50,2 98,7' stroke='%23b9342e' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
   background-size: 100% 100%;
   background-repeat: no-repeat;
+  pointer-events: none;
+  will-change: clip-path;
+  /* 1.2s draw → hold → 1.2s erase L→R → ~8s pause (designer: 1200ms / 8000ms delay) */
+  animation: cta-mark-underline 13s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  clip-path: inset(0 100% 0 0);
+}
+
+@keyframes cta-mark-underline {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  9.2% {
+    clip-path: inset(0 0 0 0);
+  }
+  28% {
+    clip-path: inset(0 0 0 0);
+  }
+  37.2% {
+    clip-path: inset(0 0 0 100%);
+  }
+  100% {
+    clip-path: inset(0 0 0 100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-banner-new__mark::after {
+    animation: none;
+    clip-path: none;
+  }
 }
 
 .cta-banner-new__text {
