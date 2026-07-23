@@ -1252,7 +1252,7 @@
 .rep-searches__title {
   margin: 0;
   font-family: var(--font-body);
-  font-size: clamp(1.2rem, 1.05rem + 0.55vw, 1.45rem);
+  font-size: clamp(1.4rem, 1.2rem + 0.75vw, 1.75rem);
   font-weight: 700;
   color: var(--color-navy);
   line-height: 1.25;
