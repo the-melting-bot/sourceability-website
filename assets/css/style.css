@@ -1188,6 +1188,111 @@
   }
 }
 
+/* --- REPRESENTATIVE SEARCHES (home) --- */
+.rep-searches {
+  background: #fff;
+  padding-block: clamp(var(--space-12), 7vw, var(--space-20));
+}
+
+.rep-searches__heading {
+  margin: 0 0 clamp(var(--space-8), 4vw, var(--space-12));
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-accent);
+  line-height: 1.45;
+  max-width: 40rem;
+}
+
+.rep-searches__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .rep-searches__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(var(--space-6), 3vw, var(--space-10));
+  }
+}
+
+.rep-searches__card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+  min-height: 100%;
+  padding: var(--space-5) var(--space-5) var(--space-6) var(--space-6);
+  text-decoration: none;
+  color: inherit;
+  background: #fff;
+  border-left: 2px solid var(--color-accent);
+  border-top: 2px solid transparent;
+  border-right: 2px solid transparent;
+  transition:
+    border-color 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.rep-searches__card:hover,
+.rep-searches__card:focus-visible {
+  border-top-color: var(--color-accent);
+  border-right-color: transparent;
+  background: rgba(185, 52, 46, 0.02);
+  box-shadow: 0 10px 28px -18px rgba(15, 26, 46, 0.28);
+}
+
+.rep-searches__card:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.rep-searches__title {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: clamp(1.2rem, 1.05rem + 0.55vw, 1.45rem);
+  font-weight: 700;
+  color: var(--color-navy);
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+
+.rep-searches__text {
+  margin: 0;
+  flex: 1 1 auto;
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  color: var(--color-text-muted);
+}
+
+.rep-searches__link {
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-decoration-color: rgba(185, 52, 46, 0.4);
+  text-underline-offset: 0.28em;
+  transition:
+    color 0.25s ease,
+    text-decoration-color 0.25s ease;
+}
+
+.rep-searches__card:hover .rep-searches__link,
+.rep-searches__card:focus-visible .rep-searches__link {
+  color: var(--color-accent-hover);
+  text-decoration-color: var(--color-accent-hover);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rep-searches__card,
+  .rep-searches__link {
+    transition: none;
+  }
+}
+
 /* --- APPROACH SECTION (image cards, SSG-inspired hover) --- */
 .approach-section {
   position: relative;
