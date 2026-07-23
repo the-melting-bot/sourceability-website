@@ -3773,34 +3773,57 @@ p.salary-table-footer a {
   background-size: 100% 100%;
   background-repeat: no-repeat;
   pointer-events: none;
-  will-change: clip-path;
-  /* ~0.6s draw → hold → ~0.6s erase L→R → pause (4s loop) */
-  animation: cta-mark-underline 4s cubic-bezier(0.45, 0, 0.55, 1) infinite;
-  clip-path: inset(0 100% 0 0);
+  transform: scaleX(0);
+  transform-origin: left center;
+  /* Start only once the CTA is on-screen so the loop is visible */
+  animation: none;
+}
+
+.reveal.visible .cta-banner-new__mark::after {
+  animation-name: cta-mark-underline;
+  animation-duration: 4s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-fill-mode: none;
 }
 
 @keyframes cta-mark-underline {
+  /* Draw L→R */
   0% {
-    clip-path: inset(0 100% 0 0);
+    transform: scaleX(0);
+    transform-origin: left center;
   }
-  15% {
-    clip-path: inset(0 0 0 0);
+  22% {
+    transform: scaleX(1);
+    transform-origin: left center;
   }
-  45% {
-    clip-path: inset(0 0 0 0);
+  /* Hold */
+  48% {
+    transform: scaleX(1);
+    transform-origin: left center;
   }
-  60% {
-    clip-path: inset(0 0 0 100%);
+  /* Erase L→R */
+  48.1% {
+    transform: scaleX(1);
+    transform-origin: right center;
   }
+  70% {
+    transform: scaleX(0);
+    transform-origin: right center;
+  }
+  /* Short pause, then repeat */
   100% {
-    clip-path: inset(0 0 0 100%);
+    transform: scaleX(0);
+    transform-origin: left center;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .cta-banner-new__mark::after {
-    animation: none;
-    clip-path: none;
+  .cta-banner-new__mark::after,
+  .reveal.visible .cta-banner-new__mark::after {
+    animation: none !important;
+    transform: scaleX(1);
+    transform-origin: left center;
   }
 }
 
