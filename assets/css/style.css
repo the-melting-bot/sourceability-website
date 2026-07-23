@@ -3774,8 +3774,8 @@ p.salary-table-footer a {
   background-repeat: no-repeat;
   pointer-events: none;
   will-change: clip-path;
-  /* 1.2s draw → hold → 1.2s erase L→R → ~8s pause (designer: 1200ms / 8000ms delay) */
-  animation: cta-mark-underline 13s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  /* ~0.6s draw → hold → ~0.6s erase L→R → pause (4s loop) */
+  animation: cta-mark-underline 4s cubic-bezier(0.45, 0, 0.55, 1) infinite;
   clip-path: inset(0 100% 0 0);
 }
 
@@ -3783,13 +3783,13 @@ p.salary-table-footer a {
   0% {
     clip-path: inset(0 100% 0 0);
   }
-  9.2% {
+  15% {
     clip-path: inset(0 0 0 0);
   }
-  28% {
+  45% {
     clip-path: inset(0 0 0 0);
   }
-  37.2% {
+  60% {
     clip-path: inset(0 0 0 100%);
   }
   100% {
