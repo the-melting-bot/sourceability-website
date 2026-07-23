@@ -556,7 +556,7 @@
   font-family: 'Instrument Sans', var(--font-body);
   font-size: clamp(2.1rem, 1.35rem + 3.2vw, 3.85rem);
   font-weight: 700;
-  color: #e54238;
+  color: rgba(255, 255, 255, 0.96);
   text-shadow: 0 2px 28px rgba(0, 0, 0, 0.35);
 }
 
