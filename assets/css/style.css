@@ -1207,7 +1207,7 @@
 .rep-searches__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-6);
+  gap: var(--space-8);
 }
 
 @media (min-width: 768px) {
@@ -1234,6 +1234,14 @@
     border-color 0.35s cubic-bezier(0.22, 1, 0.36, 1),
     background-color 0.35s ease,
     box-shadow 0.35s ease;
+}
+
+/* Mobile / touch: keep the L-frame visible (no hover available) */
+@media (max-width: 767px), (hover: none) {
+  .rep-searches__card {
+    border-top-color: var(--color-accent);
+    background: rgba(185, 52, 46, 0.015);
+  }
 }
 
 .rep-searches__card:hover,
