@@ -1,6 +1,7 @@
 # https://www.sourceabilityinc.com/
 User-agent: *
 Allow: /
+Disallow: /salary-guide.html
 
 # Sitemap
 Sitemap: https://www.sourceabilityinc.com/sitemap.xml
