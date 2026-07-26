@@ -265,6 +265,11 @@
   color: #fff;
 }
 
+.header-top__social svg {
+  display: block;
+  flex-shrink: 0;
+}
+
 .header-main {
   display: flex;
   align-items: center;
