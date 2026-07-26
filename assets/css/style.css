@@ -558,12 +558,10 @@
 
 .hero__title-line--accent {
   font-family: var(--font-display);
-  font-size: clamp(1.35rem, 0.85rem + 2.4vw, 3.25rem);
+  font-size: clamp(2.1rem, 1.35rem + 3.2vw, 3.85rem);
   font-weight: 700;
-  color: var(--color-accent);
+  color: rgba(255, 255, 255, 0.96);
   text-shadow: 0 2px 28px rgba(0, 0, 0, 0.35);
-  white-space: nowrap;
-  max-width: 100%;
 }
 
 .hero__title-line--trail {
