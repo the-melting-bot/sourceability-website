@@ -562,10 +562,18 @@
   font-weight: 700;
   color: var(--color-accent);
   max-width: 100%;
-  line-height: 1.15;
+  line-height: 1.1;
   text-shadow:
     0 1px 2px rgba(0, 0, 0, 0.45),
     0 4px 18px rgba(0, 0, 0, 0.35);
+}
+
+.hero__title-markets {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.12em;
+  margin-block: 0.1em;
 }
 
 .hero__title-line--trail {
