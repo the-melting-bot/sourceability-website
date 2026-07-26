@@ -3,12 +3,12 @@
    Design tokens, components, and layout
    ============================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@500&display=swap');
 
 /* --- DESIGN TOKENS --- */
 :root {
-  /* Typography */
-  --font-display: 'Inter', sans-serif;
+  /* Typography — designer: Montserrat headings, Inter body */
+  --font-display: 'Montserrat', sans-serif;
   --font-body: 'Inter', 'Helvetica Neue', Arial, sans-serif;
 
   /* Type Scale */
@@ -557,7 +557,7 @@
 }
 
 .hero__title-line--accent {
-  font-family: 'Instrument Sans', var(--font-body);
+  font-family: var(--font-display);
   font-size: clamp(2.1rem, 1.35rem + 3.2vw, 3.85rem);
   font-weight: 700;
   color: rgba(255, 255, 255, 0.96);
@@ -997,7 +997,7 @@
 
 .home-spotlight__title {
   margin: 0;
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: clamp(1.65rem, 1.2rem + 1.6vw, 2.45rem);
   font-weight: 700;
   line-height: 1.15;
@@ -1093,7 +1093,7 @@
 }
 
 .home-spotlight__panel-title {
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: clamp(1.35rem, 1.1rem + 0.8vw, 1.75rem);
   font-weight: 700;
   line-height: 1.2;
@@ -1259,7 +1259,7 @@
 
 .rep-searches__title {
   margin: 0;
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: clamp(1.4rem, 1.2rem + 0.75vw, 1.75rem);
   font-weight: 700;
   color: var(--color-navy);
@@ -1648,7 +1648,7 @@
 }
 
 .specialty-card__title {
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: var(--text-base);
   font-weight: 600;
   color: var(--color-navy);
@@ -1845,7 +1845,7 @@
 }
 
 .stats-ticker__title {
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: clamp(1rem, 0.9rem + 0.3vw, 1.15rem);
   font-weight: 700;
   color: var(--color-navy);
@@ -1998,7 +1998,7 @@
 }
 
 .legal-prose h2 {
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: var(--text-base);
   font-weight: 600;
   font-style: normal;
@@ -3745,7 +3745,7 @@ p.salary-table-footer a {
 }
 
 .cta-banner-new__title {
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: clamp(1.85rem, 1.5rem + 1.5vw, 2.5rem);
   font-weight: 800;
   color: var(--color-navy);
