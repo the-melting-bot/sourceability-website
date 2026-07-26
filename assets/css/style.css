@@ -630,17 +630,17 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: min(12.75rem, 100%);
+  min-width: auto;
   flex: 0 1 auto;
-  max-width: 15.5rem;
-  padding: var(--space-4) var(--space-5);
+  max-width: none;
+  padding: 0.625rem 1.35rem;
   font-family: var(--font-body);
-  font-size: var(--text-base);
+  font-size: var(--text-sm);
   font-weight: 600;
   color: #fff;
   text-decoration: none;
   text-transform: none;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   border: 1px solid var(--color-accent);
   background: rgba(0, 0, 0, 0.42);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset;
@@ -659,9 +659,10 @@
 
 .hero__banner-btn--primary {
   background: var(--color-accent);
-  border: 2px solid var(--color-accent);
+  border: 1px solid var(--color-accent);
   color: #fff;
-  box-shadow: 0 4px 24px rgba(185, 52, 46, 0.4);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 18px rgba(185, 52, 46, 0.35);
 }
 
 .hero__banner-btn--primary:hover {
@@ -702,8 +703,9 @@
   }
 
   .hero__banner-btn {
-    min-width: 100%;
-    max-width: 100%;
+    min-width: auto;
+    max-width: none;
+    width: auto;
   }
 }
 
