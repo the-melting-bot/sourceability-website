@@ -210,6 +210,178 @@
       }
     }
 
+    /* Areas of Expertise — designer flip boxes */
+    .expertise-flip-section {
+      background: #fff;
+    }
+
+    .expertise-flip-section__grid {
+      display: grid;
+      gap: var(--space-2);
+      align-items: stretch;
+    }
+
+    @media (min-width: 1024px) {
+      .expertise-flip-section__grid {
+        grid-template-columns: minmax(0, 1.05fr) repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .expertise-flip-section__intro {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: var(--space-4) var(--space-2);
+    }
+
+    .expertise-flip-section__eyebrow {
+      font-family: var(--font-body);
+      font-size: clamp(1rem, 0.92rem + 0.35vw, 1.19rem);
+      font-weight: 500;
+      color: var(--color-accent);
+      margin: 0 0 var(--space-2);
+    }
+
+    .expertise-flip-section__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.65rem, 1.2rem + 1.5vw, 2rem);
+      font-weight: 700;
+      font-style: normal;
+      color: #101213;
+      line-height: 1.2;
+      margin: 0;
+      text-wrap: balance;
+    }
+
+    .expertise-flip-section__cards {
+      display: grid;
+      gap: var(--space-2);
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 640px) {
+      .expertise-flip-section__cards {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .expertise-flip-section__cards {
+        display: contents;
+      }
+    }
+
+    .expertise-flip {
+      min-height: 26rem;
+      height: 100%;
+      perspective: 1200px;
+    }
+
+    .expertise-flip__inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: inherit;
+      transform-style: preserve-3d;
+      transition: transform 0.65s cubic-bezier(0.4, 0.2, 0.2, 1);
+    }
+
+    .expertise-flip__face {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      overflow: hidden;
+    }
+
+    .expertise-flip__face--front {
+      background-size: cover;
+      background-position: center;
+      transform: rotateY(0deg);
+    }
+
+    .expertise-flip__face--back {
+      background: #101213;
+      transform: rotateY(180deg);
+    }
+
+    .expertise-flip__overlay {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
+      height: 100%;
+      padding: var(--space-6);
+      text-align: left;
+    }
+
+    .expertise-flip__face--front .expertise-flip__overlay {
+      background: rgba(16, 18, 19, 0.62);
+      filter: saturate(0);
+    }
+
+    .expertise-flip__face--back .expertise-flip__overlay {
+      justify-content: center;
+    }
+
+    .expertise-flip__label {
+      font-family: var(--font-body);
+      font-size: var(--text-lg);
+      font-weight: 400;
+      color: #fff;
+      line-height: 1.3;
+      margin: 0;
+    }
+
+    .expertise-flip__face--back .expertise-flip__label {
+      font-size: var(--text-xl);
+      margin-bottom: var(--space-4);
+    }
+
+    .expertise-flip__detail {
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      color: rgba(255, 255, 255, 0.92);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .expertise-flip:hover .expertise-flip__inner,
+    .expertise-flip:focus-within .expertise-flip__inner,
+    .expertise-flip.is-flipped .expertise-flip__inner {
+      transform: rotateY(180deg);
+    }
+
+    .expertise-flip-section__footer {
+      margin-top: var(--space-8);
+      text-align: center;
+    }
+
+    .expertise-flip-section__footer p {
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      color: var(--color-text-muted);
+      max-width: 48rem;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .expertise-flip__inner {
+        transition: none;
+      }
+
+      .expertise-flip__face--front {
+        display: none;
+      }
+
+      .expertise-flip__face--back {
+        position: relative;
+        inset: auto;
+        transform: none;
+        min-height: 16rem;
+      }
+    }
+
     /* Value prop grid — balanced rows (avoids 4+1 orphan); mirrors home approach-cards treatment */
     .offer-grid {
       display: grid;
@@ -1021,33 +1193,69 @@
     </section>
 
     <!-- ==========================================
-         WHO WE WORK WITH
+         AREAS OF EXPERTISE (designer flip boxes)
     ========================================== -->
-    <section class="section-padding bg-warm" aria-labelledby="who-heading">
+    <section class="section-padding expertise-flip-section" aria-labelledby="expertise-heading">
       <div class="container">
-        <header class="section-heading reveal">
-          <h2 class="section-heading__title" id="who-heading">Who We Work With</h2>
-          <p class="section-heading__lede">We work with experienced professionals and leaders who bring depth of expertise, strong communication skills, and a track record of impact in:</p>
-        </header>
-        <div class="offer-grid grid-3-col">
-          <article class="offer-card offer-card--bg-1 reveal">
-            <div class="offer-card__icon" aria-hidden="true"><i data-lucide="database" style="width:20px;height:20px;"></i></div>
-            <h3 class="offer-card__title">Data &amp; AI</h3>
-            <p class="offer-card__text">Data Engineering, Analytics, Machine Learning, AI &amp; Automation</p>
-          </article>
-          <article class="offer-card offer-card--bg-2 reveal">
-            <div class="offer-card__icon" aria-hidden="true"><i data-lucide="cpu" style="width:20px;height:20px;"></i></div>
-            <h3 class="offer-card__title">Technology</h3>
-            <p class="offer-card__text">Software Development, Engineering Leadership, Digital Platforms, Infrastructure &amp; Cloud</p>
-          </article>
-          <article class="offer-card offer-card--bg-3 reveal">
-            <div class="offer-card__icon" aria-hidden="true"><i data-lucide="landmark" style="width:20px;height:20px;"></i></div>
-            <h3 class="offer-card__title">Financial Services</h3>
-            <p class="offer-card__text">Commercial &amp; Business Lending, Credit Union Leadership, Risk &amp; Operations</p>
-          </article>
+        <div class="expertise-flip-section__grid">
+          <div class="expertise-flip-section__intro reveal">
+            <p class="expertise-flip-section__eyebrow">Areas of Expertise</p>
+            <h2 class="expertise-flip-section__title" id="expertise-heading">We work with experienced professionals and industry leaders with demonstrated success across:</h2>
+          </div>
+
+          <div class="expertise-flip-section__cards">
+            <article class="expertise-flip reveal" tabindex="0" aria-label="Data and AI expertise">
+              <div class="expertise-flip__inner">
+                <div class="expertise-flip__face expertise-flip__face--front" style="background-image: url('./assets/images/expertise-flip-data.png');">
+                  <div class="expertise-flip__overlay">
+                    <h3 class="expertise-flip__label">Data &amp; AI</h3>
+                  </div>
+                </div>
+                <div class="expertise-flip__face expertise-flip__face--back">
+                  <div class="expertise-flip__overlay">
+                    <h3 class="expertise-flip__label">Data &amp; AI</h3>
+                    <p class="expertise-flip__detail">Executive Leadership, Data Engineering, Data Analytics, Machine/Vision Learning, AI &amp; Automation and Sales</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="expertise-flip reveal" tabindex="0" aria-label="Technology expertise">
+              <div class="expertise-flip__inner">
+                <div class="expertise-flip__face expertise-flip__face--front" style="background-image: url('./assets/images/expertise-flip-tech.png');">
+                  <div class="expertise-flip__overlay">
+                    <h3 class="expertise-flip__label">Technology</h3>
+                  </div>
+                </div>
+                <div class="expertise-flip__face expertise-flip__face--back">
+                  <div class="expertise-flip__overlay">
+                    <h3 class="expertise-flip__label">Technology</h3>
+                    <p class="expertise-flip__detail">Executive Leadership, Digital Platforms, Software Engineering, Cloud, Infrastructure and Sales</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="expertise-flip reveal" tabindex="0" aria-label="Financial Services expertise">
+              <div class="expertise-flip__inner">
+                <div class="expertise-flip__face expertise-flip__face--front" style="background-image: url('./assets/images/expertise-flip-finserv.png');">
+                  <div class="expertise-flip__overlay">
+                    <h3 class="expertise-flip__label">Financial Services</h3>
+                  </div>
+                </div>
+                <div class="expertise-flip__face expertise-flip__face--back">
+                  <div class="expertise-flip__overlay">
+                    <h3 class="expertise-flip__label">Financial Services</h3>
+                    <p class="expertise-flip__detail">Commercial &amp; Business Lending, Credit Union Leadership, Risk Management, Professional Services, Consulting and Sales</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
-        <div class="reveal" style="text-align: center; margin-top: var(--space-8);">
-          <p style="font-size: var(--text-base); color: var(--color-text-muted); max-width: 48rem; margin: 0 auto;">Our focus is on individuals who are thoughtful about their next move and selective about the organizations they choose to join.</p>
+
+        <div class="expertise-flip-section__footer reveal">
+          <p>Our focus is on individuals who are thoughtful about their next move and selective about the organizations they choose to join.</p>
         </div>
       </div>
     </section>
@@ -1457,6 +1665,15 @@
        SCRIPTS
   ============================================ -->
   <script src="./assets/js/main.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.expertise-flip').forEach((card) => {
+        card.addEventListener('click', () => {
+          card.classList.toggle('is-flipped');
+        });
+      });
+    });
+  </script>
 
   <!-- Initialize Lucide icons -->
   <script>lucide.createIcons();</script>
