@@ -32,15 +32,15 @@
   <meta property="og:url" content="https://www.sourceabilityinc.com/candidates.html">
   <meta property="og:site_name" content="SourceAbility, Inc.">
   <meta property="og:locale" content="en_US">
-  <meta property="og:image" content="https://www.sourceabilityinc.com/assets/images/hero-candidates.jpg">
-  <meta property="og:image:alt" content="Data and analytics professionals exploring career opportunities">
+  <meta property="og:image" content="https://www.sourceabilityinc.com/assets/images/home-cta-deliver.jpg">
+  <meta property="og:image:alt" content="Professionals collaborating — SourceAbility job seeker hero">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@SourceAbility">
   <meta name="twitter:title" content="Job Seeker — Advance Your Career | SourceAbility">
   <meta name="twitter:description" content="Discover your next role in Data, AI, Technology, or Financial Services with SourceAbility — a recruiting partner who understands your skills and ambitions.">
-  <meta name="twitter:image" content="https://www.sourceabilityinc.com/assets/images/hero-candidates.jpg">
+  <meta name="twitter:image" content="https://www.sourceabilityinc.com/assets/images/home-cta-deliver.jpg">
 
   <!-- Schema Markup -->
   <script type="application/ld+json">
@@ -87,8 +87,113 @@
 
   <style>
     /* ---- Job Seeker page-specific styles ---- */
+    .page-candidates {
+      --font-display: 'Montserrat', sans-serif;
+      --font-body: 'Inter', sans-serif;
+    }
+
     .section-heading__title {
       font-style: normal !important;
+      font-family: var(--font-display);
+    }
+
+    /* Full-bleed hero — team image, copy on the right */
+    .candidates-hero {
+      display: flex;
+      align-items: center;
+      min-height: min(88vh, 760px);
+      padding: 10rem 0 5rem;
+    }
+
+    .candidates-hero .page-hero__bg {
+      opacity: 0.78;
+      object-position: 35% center;
+      filter: brightness(1.08) contrast(1.04) saturate(1.06);
+    }
+
+    .candidates-hero .page-hero__overlay {
+      background: linear-gradient(
+        90deg,
+        rgba(15, 26, 46, 0.18) 0%,
+        rgba(15, 26, 46, 0.42) 42%,
+        rgba(15, 26, 46, 0.78) 100%
+      );
+    }
+
+    .candidates-hero__container {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+    }
+
+    .candidates-hero__content {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+      max-width: min(34rem, 100%);
+      margin-left: auto;
+      text-align: left;
+    }
+
+    .candidates-hero__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.85rem, 1.25rem + 2.4vw, 2.85rem);
+      font-weight: 700;
+      font-style: normal;
+      color: #fff;
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      margin: 0 0 var(--space-5);
+      text-wrap: balance;
+    }
+
+    .candidates-hero__desc {
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      color: rgba(255, 255, 255, 0.88);
+      line-height: 1.65;
+      margin: 0 0 var(--space-4);
+    }
+
+    .candidates-hero__desc:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .candidates-hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+      margin-top: var(--space-6);
+    }
+
+    @media (max-width: 767px) {
+      .candidates-hero {
+        min-height: auto;
+        padding: 8.5rem 0 4rem;
+      }
+
+      .candidates-hero .page-hero__bg {
+        object-position: center 30%;
+        opacity: 0.62;
+      }
+
+      .candidates-hero .page-hero__overlay {
+        background: linear-gradient(
+          180deg,
+          rgba(15, 26, 46, 0.34) 0%,
+          rgba(15, 26, 46, 0.58) 55%,
+          rgba(15, 26, 46, 0.82) 100%
+        );
+      }
+
+      .candidates-hero__container {
+        justify-content: flex-start;
+      }
+
+      .candidates-hero__content {
+        max-width: 100%;
+        margin-left: 0;
+      }
     }
 
     /* Value prop grid — balanced rows (avoids 4+1 orphan); mirrors home approach-cards treatment */
@@ -883,14 +988,20 @@
     <!-- ==========================================
          PAGE HERO
     ========================================== -->
-    <section class="page-hero page-hero--candidates" aria-label="Job Seeker Hero">
-      <img src="./assets/images/hero-candidates.jpg" alt="" class="page-hero__bg" loading="eager" fetchpriority="high">
+    <section class="page-hero page-hero--candidates candidates-hero" aria-label="Job Seeker Hero">
+      <img src="./assets/images/home-cta-deliver.jpg" alt="Professionals collaborating around a table" class="page-hero__bg" loading="eager" fetchpriority="high">
       <div class="page-hero__overlay" aria-hidden="true"></div>
-      <div class="container">
-        <p class="overline overline--light reveal">JOB SEEKER PAGE</p>
-        <h1 class="page-hero__title reveal">Strategic Career Moves. Long-Term Impact.</h1>
-        <p class="page-hero__desc reveal">We partner with professionals across Data, Technology, and Financial Services to help them make thoughtful, career-defining moves - not simply job changes. Many of the professionals we work with are not actively seeking new opportunities, but are open to the right role when it aligns with their long-term career goals, leadership aspirations, and overall direction.</p>
-        <p class="page-hero__desc reveal" style="margin-top: var(--space-4);">We believe the right career move should support both immediate opportunity and long-term professional growth.</p>
+      <div class="container candidates-hero__container">
+        <div class="candidates-hero__content">
+          <h1 class="candidates-hero__title reveal">Strategic Career Moves. Long-Term Impact.</h1>
+          <p class="candidates-hero__desc reveal">We partner with professionals across Data &amp; AI, Technology, and Financial Services to help them make thoughtful, career-defining moves - not simply job changes.</p>
+          <p class="candidates-hero__desc reveal">Many of the professionals we work with are not actively seeking new opportunities, but are open to the right role when it aligns with their long-term career goals, leadership aspirations, and overall direction.</p>
+          <p class="candidates-hero__desc reveal">We believe the right career move should support both immediate opportunity and long-term professional growth.</p>
+          <div class="candidates-hero__actions reveal">
+            <a href="jobs.html" class="btn btn--primary btn--lg">Explore Opportunities</a>
+            <a href="contact.html" class="btn btn--secondary btn--lg">Start a Confidential Conversation</a>
+          </div>
+        </div>
       </div>
     </section>
 
