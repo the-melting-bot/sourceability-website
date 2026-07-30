@@ -259,7 +259,7 @@
       grid-template-columns: 1fr;
     }
 
-    @media (min-width: 640px) {
+    @media (min-width: 768px) {
       .expertise-flip-section__cards {
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
@@ -275,6 +275,25 @@
       min-height: 26rem;
       height: 100%;
       perspective: 1200px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 767px) {
+      .expertise-flip-section__intro {
+        padding: 0 0 var(--space-6);
+      }
+
+      .expertise-flip-section__grid {
+        gap: var(--space-4);
+      }
+
+      .expertise-flip-section__cards {
+        gap: var(--space-4);
+      }
+
+      .expertise-flip {
+        min-height: 22rem;
+      }
     }
 
     .expertise-flip__inner {
@@ -320,7 +339,9 @@
     }
 
     .expertise-flip__face--back .expertise-flip__overlay {
-      justify-content: center;
+      justify-content: flex-end;
+      gap: var(--space-3);
+      overflow-y: auto;
     }
 
     .expertise-flip__label {
@@ -333,8 +354,9 @@
     }
 
     .expertise-flip__face--back .expertise-flip__label {
-      font-size: var(--text-xl);
-      margin-bottom: var(--space-4);
+      font-size: clamp(1.15rem, 1rem + 0.5vw, 1.35rem);
+      line-height: 1.35;
+      margin-bottom: 0;
     }
 
     .expertise-flip__detail {
@@ -345,7 +367,54 @@
       margin: 0;
     }
 
-    .expertise-flip:hover .expertise-flip__inner,
+    .expertise-flip__cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      align-self: flex-start;
+      margin-top: var(--space-2);
+      padding: 0.625rem 1.15rem;
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      font-weight: 500;
+      color: #fff;
+      background: var(--color-accent);
+      border: none;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .expertise-flip__cta:hover {
+      background: var(--color-accent-hover);
+      box-shadow: 0 7px 10px rgba(185, 52, 46, 0.32);
+      transform: translateY(-1px);
+      color: #fff;
+    }
+
+    @media (max-width: 767px) {
+      .expertise-flip__overlay {
+        padding: var(--space-5);
+      }
+
+      .expertise-flip__face--back .expertise-flip__detail {
+        font-size: var(--text-xs);
+        line-height: 1.6;
+      }
+
+      .expertise-flip__cta {
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+      }
+    }
+
+    @media (hover: hover) {
+      .expertise-flip:hover .expertise-flip__inner {
+        transform: rotateY(180deg);
+      }
+    }
+
     .expertise-flip:focus-within .expertise-flip__inner,
     .expertise-flip.is-flipped .expertise-flip__inner {
       transform: rotateY(180deg);
@@ -1215,6 +1284,7 @@
                   <div class="expertise-flip__overlay">
                     <h3 class="expertise-flip__label">Data &amp; AI</h3>
                     <p class="expertise-flip__detail">Executive Leadership, Data Engineering, Data Analytics, Machine/Vision Learning, AI &amp; Automation and Sales</p>
+                    <a href="contact.html" class="expertise-flip__cta">Create Your Success Story</a>
                   </div>
                 </div>
               </div>
@@ -1231,6 +1301,7 @@
                   <div class="expertise-flip__overlay">
                     <h3 class="expertise-flip__label">Technology</h3>
                     <p class="expertise-flip__detail">Executive Leadership, Digital Platforms, Software Engineering, Cloud, Infrastructure and Sales</p>
+                    <a href="jobs.html" class="expertise-flip__cta">Start the Search</a>
                   </div>
                 </div>
               </div>
@@ -1247,6 +1318,7 @@
                   <div class="expertise-flip__overlay">
                     <h3 class="expertise-flip__label">Financial Services</h3>
                     <p class="expertise-flip__detail">Commercial &amp; Business Lending, Credit Union Leadership, Risk Management, Professional Services, Consulting and Sales</p>
+                    <a href="contact.html" class="expertise-flip__cta">Level Up Your Career</a>
                   </div>
                 </div>
               </div>
@@ -1668,8 +1740,16 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.expertise-flip').forEach((card) => {
-        card.addEventListener('click', () => {
+        card.addEventListener('click', (event) => {
+          if (event.target.closest('.expertise-flip__cta')) return;
           card.classList.toggle('is-flipped');
+        });
+
+        card.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            card.classList.toggle('is-flipped');
+          }
         });
       });
     });
