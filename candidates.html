@@ -893,7 +893,76 @@
 
     .page-candidates .cta-banner-new__actions--multi {
       flex-wrap: wrap;
-      gap: var(--space-4);
+      justify-content: center;
+      align-items: center;
+      gap: var(--space-3);
+    }
+
+    .page-candidates .cta-banner-new__actions--multi .btn.btn--secondary,
+    .page-candidates .cta-banner-new__actions--multi .btn.btn--outline-dark {
+      box-shadow: 0 2px 12px rgba(15, 26, 46, 0.08);
+    }
+
+    @media (max-width: 639px) {
+      .page-candidates .cta-banner-new {
+        padding-block: var(--space-10);
+      }
+
+      .page-candidates .cta-banner-new__container--no-images .cta-banner-new__content {
+        max-width: none;
+        padding-inline: var(--space-1);
+      }
+
+      .page-candidates .cta-banner-new__title {
+        font-size: clamp(1.45rem, 5.5vw, 1.85rem);
+        margin-bottom: var(--space-4);
+      }
+
+      .page-candidates .cta-banner-new__mark {
+        white-space: normal;
+      }
+
+      .page-candidates .cta-banner-new__text {
+        font-size: var(--text-sm);
+        margin-top: var(--space-3);
+        margin-bottom: var(--space-5);
+      }
+
+      .page-candidates .cta-banner-new__actions--multi {
+        flex-direction: column;
+        width: 100%;
+        gap: var(--space-3);
+      }
+
+      .page-candidates .cta-banner-new__actions--multi .btn {
+        width: 100%;
+        max-width: 18.5rem;
+        padding-inline: var(--space-4);
+      }
+
+      .page-candidates .testimonial-section--compact {
+        padding-block: var(--space-8);
+      }
+
+      .page-candidates .testimonial-section .section-heading {
+        margin-bottom: var(--space-6) !important;
+      }
+
+      .page-candidates .testimonial-carousel__quote {
+        font-size: var(--text-base);
+        padding-top: var(--space-2);
+      }
+    }
+
+    @media (min-width: 900px) {
+      .page-candidates .cta-banner-new__actions--multi {
+        flex-wrap: nowrap;
+        gap: var(--space-4);
+      }
+
+      .page-candidates .cta-banner-new__container--no-images .cta-banner-new__content {
+        max-width: 52rem;
+      }
     }
 
     /* Candidates page: stronger CTA motion — lift + slight overshoot + glow (respects reduced motion) */
@@ -923,7 +992,7 @@
       .page-candidates .cta-banner-new__actions .btn:active,
       .page-candidates .cta-banner-new__actions .btn.btn--primary:hover,
       .page-candidates .cta-banner-new__actions .btn.btn--secondary:hover,
-      .page-candidates .cta-banner-new__actions .btn.btn--outline:hover {
+      .page-candidates .cta-banner-new__actions .btn.btn--outline-dark:hover {
         transform: none;
         filter: none;
       }
@@ -1372,7 +1441,7 @@
             <div class="cta-banner-new__actions cta-banner-new__actions--multi">
               <a href="contact.html" class="btn btn--primary btn--lg">Submit Resume</a>
               <a href="https://www.linkedin.com/company/216155" target="_blank" rel="noopener noreferrer" class="btn btn--secondary btn--lg">Connect on LinkedIn</a>
-              <a href="contact.html" class="btn btn--outline btn--lg">Contact Us</a>
+              <a href="contact.html" class="btn btn--outline-dark btn--lg">Contact Us</a>
             </div>
           </div>
         </div>
