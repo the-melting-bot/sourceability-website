@@ -367,6 +367,153 @@
       }
     }
 
+    /* Why Partner + Our Approach — two-panel layout */
+    .partner-approach-section {
+      background: var(--color-warm, #f8f7f5);
+    }
+
+    .partner-approach-section__intro {
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      max-width: 52rem;
+      margin: 0 auto var(--space-10);
+      text-align: center;
+    }
+
+    .partner-approach-grid {
+      display: grid;
+      gap: var(--space-4);
+      align-items: stretch;
+    }
+
+    @media (min-width: 992px) {
+      .partner-approach-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .partner-approach-panel {
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: clamp(1.5rem, 3vw, 2.75rem);
+      box-shadow: 0 8px 28px rgba(15, 26, 46, 0.04);
+    }
+
+    .partner-approach-panel__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.35rem, 1.1rem + 0.8vw, 1.65rem);
+      font-weight: 700;
+      font-style: normal;
+      color: var(--color-navy);
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .partner-approach-panel__lede {
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: 1.65;
+      margin: var(--space-4) 0 0;
+    }
+
+    .partner-checklist {
+      list-style: none;
+      margin: var(--space-6) 0 0;
+      padding: 0;
+      display: grid;
+      gap: var(--space-4);
+    }
+
+    .partner-checklist__item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      color: #101213;
+      line-height: 1.45;
+    }
+
+    .partner-checklist__icon {
+      flex-shrink: 0;
+      width: 1.35rem;
+      height: 1.35rem;
+      color: var(--color-accent);
+      margin-top: 0.1rem;
+    }
+
+    .approach-steps {
+      display: grid;
+      gap: var(--space-6);
+      margin-top: var(--space-6);
+    }
+
+    .approach-step {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: var(--space-4);
+      align-items: start;
+      text-align: left;
+    }
+
+    .approach-step__badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: #fff;
+      font-family: var(--font-display);
+      font-size: var(--text-sm);
+      font-style: normal;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      flex-shrink: 0;
+    }
+
+    .approach-step__title {
+      font-family: var(--font-display);
+      font-size: var(--text-base);
+      font-weight: 600;
+      font-style: normal;
+      color: var(--color-navy);
+      margin: 0 0 var(--space-2);
+      line-height: 1.3;
+    }
+
+    .approach-step__text {
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    @media (max-width: 767px) {
+      .partner-approach-section__intro {
+        text-align: left;
+        margin-bottom: var(--space-8);
+      }
+
+      .partner-approach-panel {
+        padding: var(--space-6);
+      }
+
+      .partner-checklist__item {
+        font-size: var(--text-sm);
+      }
+
+      .approach-steps {
+        gap: var(--space-5);
+      }
+    }
+
     .expertise-flip-section__cards {
       display: grid;
       gap: var(--space-2);
@@ -1468,71 +1615,77 @@
     </section>
 
     <!-- ==========================================
-         WHY WORK WITH SOURCEABILITY
+         WHY PARTNER + OUR APPROACH
     ========================================== -->
-    <section class="section-padding bg-warm" aria-labelledby="why-heading">
+    <section class="section-padding partner-approach-section" aria-labelledby="partner-approach-heading">
       <div class="container">
-        <header class="section-heading reveal">
-          <h2 class="section-heading__title" id="why-heading">Why Work With SourceAbility</h2>
-        </header>
-        <div class="offer-grid grid-4-col">
-          <article class="offer-card offer-card--bg-4 reveal">
-            <div class="offer-card__icon" aria-hidden="true"><i data-lucide="shield" style="width:20px;height:20px;"></i></div>
-            <h3 class="offer-card__title">Confidential, Professional Representation</h3>
-            <p class="offer-card__text">We represent candidates thoughtfully and discreetly in the market. Your background, goals, and timing are handled with professionalism and care.</p>
-          </article>
-          <article class="offer-card offer-card--bg-5 reveal">
-            <div class="offer-card__icon" aria-hidden="true"><i data-lucide="eye-off" style="width:20px;height:20px;"></i></div>
-            <h3 class="offer-card__title">Access to Opportunities Not Publicly Posted</h3>
-            <p class="offer-card__text">Many of our searches are conducted on a confidential basis and are never advertised publicly. We provide access to opportunities that are not broadly available through traditional job boards.</p>
-          </article>
-          <article class="offer-card offer-card--bg-1 reveal">
-            <div class="offer-card__icon" aria-hidden="true"><i data-lucide="compass" style="width:20px;height:20px;"></i></div>
-            <h3 class="offer-card__title">Strategic Career Guidance</h3>
-            <p class="offer-card__text">We help candidates evaluate opportunities based on long-term alignment - role scope, leadership, culture, growth potential, and overall fit, not simply title or compensation.</p>
-          </article>
-          <article class="offer-card offer-card--bg-2 reveal">
-            <div class="offer-card__icon" aria-hidden="true"><i data-lucide="trending-up" style="width:20px;height:20px;"></i></div>
-            <h3 class="offer-card__title">Market Insight &amp; Honest Feedback</h3>
-            <p class="offer-card__text">We provide perspective on compensation, market demand, hiring trends, and how your experience is positioned within the current market.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+        <p class="partner-approach-section__intro reveal">Your next career move is one of the most important professional decisions you&rsquo;ll make. Whether you&rsquo;re actively exploring opportunities or simply open to the right conversation, we&rsquo;re committed to serving as a trusted recruiting partner throughout your career journey.</p>
 
-    <!-- ==========================================
-         HOW WE WORK WITH YOU
-    ========================================== -->
-    <section class="section-padding" style="background:#fff;" aria-labelledby="hiw-heading">
-      <div class="container">
-        <header class="section-heading reveal">
-          <h2 class="section-heading__title" id="hiw-heading">How We Work With You</h2>
-          <p class="section-heading__lede">Our approach is relationship-driven and designed to support professionals over the long term, not simply during an active search.</p>
-        </header>
-        <div class="hiw-steps hiw-steps--4" style="margin-bottom: var(--space-8);">
-          <article class="hiw-step reveal">
-            <div class="hiw-step__badge" aria-hidden="true">01</div>
-            <h3 class="hiw-step__title">Initial Conversation</h3>
-            <p class="hiw-step__text">We take the time to understand your background, career progression, accomplishments, motivations and what would make your next move meaningful.</p>
-          </article>
-          <article class="hiw-step reveal">
-            <div class="hiw-step__badge" aria-hidden="true">02</div>
-            <h3 class="hiw-step__title">Ongoing Relationship</h3>
-            <p class="hiw-step__text">We stay connected and share relevant opportunities and market insight as your career evolves.</p>
-          </article>
-          <article class="hiw-step reveal">
-            <div class="hiw-step__badge" aria-hidden="true">03</div>
-            <h3 class="hiw-step__title">Targeted Introductions</h3>
-            <p class="hiw-step__text">We focus on opportunities that align with your experience, goals, and timing - not mass outreach or mismatched roles.</p>
-          </article>
-          <article class="hiw-step reveal">
-            <div class="hiw-step__badge" aria-hidden="true">04</div>
-            <h3 class="hiw-step__title">Guidance Through the Process</h3>
-            <p class="hiw-step__text">From initial conversations through interviews, offer evaluation, and final decision-making, we provide perspective and support throughout the process.</p>
-          </article>
-        </div>
-        <div class="reveal" style="text-align: center;">
-          <p style="font-size: var(--text-base); color: var(--color-text-muted); max-width: 48rem; margin: 0 auto;">We also help candidates think strategically about career direction, market positioning, compensation, and long-term fit, ensuring each opportunity is evaluated thoughtfully, not transactionally.</p>
+        <div class="partner-approach-grid">
+          <div class="partner-approach-panel partner-approach-panel--why reveal">
+            <h2 class="partner-approach-panel__title" id="partner-approach-heading">Why Partner with SourceAbility</h2>
+            <ul class="partner-checklist">
+              <li class="partner-checklist__item">
+                <svg class="partner-checklist__icon" viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"/></svg>
+                Confidential Opportunities
+              </li>
+              <li class="partner-checklist__item">
+                <svg class="partner-checklist__icon" viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"/></svg>
+                Industry Expertise &amp; Market Insight
+              </li>
+              <li class="partner-checklist__item">
+                <svg class="partner-checklist__icon" viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"/></svg>
+                Personalized Career Guidance
+              </li>
+              <li class="partner-checklist__item">
+                <svg class="partner-checklist__icon" viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"/></svg>
+                Transparent Communication
+              </li>
+              <li class="partner-checklist__item">
+                <svg class="partner-checklist__icon" viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"/></svg>
+                Professional &amp; Confidential Representation
+              </li>
+              <li class="partner-checklist__item">
+                <svg class="partner-checklist__icon" viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"/></svg>
+                Interview &amp; Offer Support
+              </li>
+            </ul>
+          </div>
+
+          <div class="partner-approach-panel partner-approach-panel--approach reveal">
+            <h2 class="partner-approach-panel__title">Our Approach</h2>
+            <p class="partner-approach-panel__lede">Our approach is relationship-driven and designed to support professionals over the long term, not simply during an active search.</p>
+            <div class="approach-steps">
+              <article class="approach-step">
+                <div class="approach-step__badge" aria-hidden="true">01</div>
+                <div>
+                  <h3 class="approach-step__title">Initial Conversation</h3>
+                  <p class="approach-step__text">We take the time to understand your background, career progression, accomplishments, motivations and what would make your next move meaningful.</p>
+                </div>
+              </article>
+              <article class="approach-step">
+                <div class="approach-step__badge" aria-hidden="true">02</div>
+                <div>
+                  <h3 class="approach-step__title">Ongoing Relationship</h3>
+                  <p class="approach-step__text">We stay connected and share relevant opportunities and market insight as your career evolves.</p>
+                </div>
+              </article>
+              <article class="approach-step">
+                <div class="approach-step__badge" aria-hidden="true">03</div>
+                <div>
+                  <h3 class="approach-step__title">Targeted Introductions</h3>
+                  <p class="approach-step__text">We focus on opportunities that align with your experience, goals, and timing - not mass outreach or mismatched roles.</p>
+                </div>
+              </article>
+              <article class="approach-step">
+                <div class="approach-step__badge" aria-hidden="true">04</div>
+                <div>
+                  <h3 class="approach-step__title">Guidance Through the Process</h3>
+                  <p class="approach-step__text">From initial conversations through interviews, offer evaluation, and final decision-making, we provide perspective and support throughout the process.</p>
+                </div>
+              </article>
+            </div>
+          </div>
         </div>
       </div>
     </section>
