@@ -412,12 +412,24 @@
       margin: 0;
     }
 
+    .partner-approach-panel--approach .partner-approach-panel__title {
+      font-size: clamp(1.5rem, 1.15rem + 1vw, 1.9rem);
+    }
+
     .partner-approach-panel__lede {
       font-family: var(--font-body);
       font-size: var(--text-sm);
       color: var(--color-text-muted);
       line-height: 1.65;
       margin: var(--space-4) 0 0;
+    }
+
+    .partner-approach-panel__outro {
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: 1.65;
+      margin: var(--space-6) 0 0;
     }
 
     .partner-checklist {
@@ -464,16 +476,16 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 3rem;
-      height: 3rem;
+      width: 56px;
+      height: 56px;
       border-radius: 50%;
       background: var(--color-accent);
       color: #fff;
       font-family: var(--font-display);
-      font-size: var(--text-sm);
-      font-style: normal;
+      font-size: var(--text-base);
+      font-style: italic;
       font-weight: 600;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.01em;
       flex-shrink: 0;
     }
 
@@ -864,78 +876,23 @@
       text-shadow: 0 1px 0 rgba(255, 255, 255, 0.85);
     }
 
-    /* How It Works — 3-step row */
-    .hiw-steps {
-      display: grid;
-      gap: var(--space-8);
-    }
-
-    @media (min-width: 768px) {
-      .hiw-steps {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    .hiw-step {
-      text-align: center;
-      position: relative;
-    }
-
-    .hiw-step__badge {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: var(--color-accent);
+    /* Match homepage testimonial + CTA typography on candidates page */
+    .page-candidates .testimonial-carousel__quote {
+      font-style: normal;
+      font-weight: 500;
       color: #fff;
-      font-family: var(--font-display);
-      font-size: var(--text-base);
-      font-style: italic;
-      font-weight: 600;
-      margin: 0 auto var(--space-4);
-      letter-spacing: 0.01em;
     }
 
-    .hiw-step__title {
-      font-family: var(--font-display);
-      font-size: var(--text-lg);
-      font-style: italic;
-      color: var(--color-navy);
-      margin-bottom: var(--space-2);
-    }
-
-    .hiw-step__text {
-      font-size: var(--text-sm);
-      color: var(--color-text-muted);
-      line-height: 1.7;
-      max-width: 280px;
-      margin: 0 auto;
-    }
-
-    /* Open positions CTA block */
-    .positions-cta {
-      text-align: center;
-      max-width: 640px;
-      margin: 0 auto;
-    }
-
-    .positions-cta__lede {
-      font-size: var(--text-base);
-      color: var(--color-text-muted);
-      line-height: 1.7;
-      margin-bottom: var(--space-8);
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 42rem;
-      text-align: center;
-    }
-
-    .positions-cta__actions {
-      display: flex;
-      flex-wrap: wrap;
+    .page-candidates .cta-banner-new__container--no-images {
       justify-content: center;
+    }
+
+    .page-candidates .cta-banner-new__container--no-images .cta-banner-new__content {
+      max-width: 42rem;
+    }
+
+    .page-candidates .cta-banner-new__actions--multi {
+      flex-wrap: wrap;
       gap: var(--space-4);
     }
 
@@ -959,6 +916,20 @@
       .page-candidates #main-content .btn:active {
         transform: translateY(-2px) scale(1.01);
         transition-duration: 0.12s;
+      }
+
+      .page-candidates .cta-banner-new__actions .btn,
+      .page-candidates .cta-banner-new__actions .btn:hover,
+      .page-candidates .cta-banner-new__actions .btn:active,
+      .page-candidates .cta-banner-new__actions .btn.btn--primary:hover,
+      .page-candidates .cta-banner-new__actions .btn.btn--secondary:hover,
+      .page-candidates .cta-banner-new__actions .btn.btn--outline:hover {
+        transform: none;
+        filter: none;
+      }
+
+      .page-candidates .cta-banner-new__actions .btn.btn--primary:hover {
+        box-shadow: 0 4px 18px rgba(185, 52, 46, 0.35);
       }
 
       .page-candidates #main-content .btn.btn--primary:hover {
@@ -1075,354 +1046,6 @@
       color: var(--color-navy);
       line-height: 1.6;
       font-weight: 500;
-    }
-
-    /* --- DYNAMIC TIMELINE TESTIMONIALS SECTION --- */
-    .premium-testimonials-v2 {
-      padding: var(--space-12) 0;
-      background-color: #f8fafc;
-    }
-
-    .testim-split {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--space-8);
-    }
-
-    @media (min-width: 1024px) {
-      .testim-split {
-        grid-template-columns: 1fr 1.6fr;
-        align-items: center;
-        gap: var(--space-12);
-      }
-    }
-
-    /* Sidebar */
-    .testim-split__sidebar {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .testim-split__sidebar .section-heading__title {
-      font-family: var(--font-body);
-      font-weight: 700;
-      color: #1a202c;
-      font-style: normal;
-      letter-spacing: -0.01em;
-      margin-bottom: var(--space-4);
-      font-size: 3rem;
-      line-height: 1.1;
-      text-align: left;
-    }
-    
-    .testim-title-accent {
-      font-family: Georgia, serif;
-      font-style: normal;
-      font-weight: 400;
-      color: var(--color-accent);
-      display: block;
-    }
-
-    .testim-split__lede {
-      font-size: var(--text-base);
-      color: var(--color-text-muted);
-      line-height: 1.6;
-      margin-bottom: var(--space-8);
-    }
-
-    /* Editorial Overline */
-    .testim-overline {
-      display: block;
-      font-family: var(--font-body);
-      font-weight: 700;
-      font-size: 0.75rem;
-      color: var(--color-accent);
-      letter-spacing: 2px;
-      margin-bottom: 0.5rem;
-      text-transform: uppercase;
-    }
-
-    /* Navigation Tabs & Timeline */
-    .testim-nav {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      position: relative;
-      padding-left: 1.5rem; /* Space for timeline track */
-    }
-
-    /* Vertical Timeline Track */
-    .testim-nav::before {
-      content: '';
-      position: absolute;
-      top: 1.5rem;
-      bottom: 1.5rem;
-      left: 0;
-      width: 1px;
-      background-color: transparent;
-      background-image: linear-gradient(to bottom, transparent 0%, #cbd5e0 15%, #cbd5e0 85%, transparent 100%);
-      z-index: 0;
-    }
-
-    .testim-nav__btn {
-      background: transparent;
-      border: none;
-      text-align: left;
-      padding: 1.25rem 1.5rem;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      overflow: hidden;
-      margin-left: -1rem; /* Pull back to overlap track */
-      z-index: 1;
-    }
-
-    .testim-nav__btn:hover {
-      background: rgba(0, 0, 0, 0.02);
-    }
-
-    .testim-nav__btn.active {
-      background: #ffffff;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-      z-index: 2;
-      transform: translateX(4px);
-    }
-
-    
-    .testim-nav__info {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .testim-nav__title {
-      font-size: 0.75rem;
-      color: #a0aec0;
-      font-weight: 500;
-      opacity: 0;
-      max-height: 0;
-      transform: translateY(-5px);
-      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      overflow: hidden;
-    }
-
-    .testim-nav__btn.active .testim-nav__title {
-      opacity: 1;
-      max-height: 20px;
-      transform: translateY(0);
-    }
-
-    .testim-nav__name {
-      font-family: var(--font-body);
-      font-weight: 600;
-      font-size: 0.85rem;
-      color: #718096;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      transition: color 0.3s ease;
-      position: relative;
-      z-index: 2;
-    }
-
-    .testim-nav__btn.active .testim-nav__name {
-      color: var(--color-navy);
-    }
-
-    /* Arrow indicator */
-    .testim-nav__btn::after {
-      content: '';
-      display: inline-block;
-      width: 18px;
-      height: 18px;
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%231a202c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>');
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      opacity: 0;
-      transform: translateX(-10px);
-      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-      position: relative;
-      z-index: 2;
-    }
-
-    .testim-nav__btn.active::after {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    /* Progress Bar */
-    .testim-progress-bar {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 3px;
-      background-color: var(--color-accent);
-      width: 0%;
-      border-radius: 0 4px 4px 0;
-      z-index: 2;
-    }
-
-    @keyframes progress-fill {
-      0% { width: 0%; }
-      100% { width: 100%; }
-    }
-
-    /* Hover to pause */
-    .testimonials-section:hover .testim-progress-bar {
-      animation-play-state: paused !important;
-    }
-
-    /* Content Area */
-    .testim-display {
-      background: #ffffff;
-      border-radius: 20px;
-      padding: 3rem 3.5rem;
-      box-shadow: 0 15px 40px rgba(15, 26, 46, 0.06);
-      position: relative;
-      display: grid;
-      align-items: center;
-      overflow: hidden; /* Prevent massive quote mark from overflowing card bounds */
-    }
-
-    @media (max-width: 767px) {
-      .testim-display {
-        padding: 2.5rem 2rem;
-      }
-    }
-
-    /* Hollow Etch Parallax Background */
-    .testim-quote-mark {
-      position: absolute;
-      top: -40px;
-      left: -20px;
-      font-family: Georgia, serif;
-      font-size: 15rem;
-      color: transparent;
-      -webkit-text-stroke: 2px rgba(0, 0, 0, 0.04);
-      line-height: 1;
-      pointer-events: none;
-      user-select: none;
-      z-index: 0;
-    }
-
-    @media (max-width: 767px) {
-      .testim-quote-mark {
-        font-size: 10rem;
-        top: -20px;
-        left: -10px;
-      }
-    }
-
-    /* Pane Container */
-    .testim-pane {
-      grid-area: 1 / 1;
-      opacity: 0;
-      pointer-events: none;
-      z-index: 0;
-      /* Remove previous transforms on the parent */
-      transition: opacity 0.5s ease-out; 
-    }
-
-    .testim-pane.active {
-      opacity: 1;
-      pointer-events: auto;
-      z-index: 1;
-    }
-
-    /* Kinetic Stagger Reveal Basics */
-    .testim-pane .testim-hero,
-    .testim-pane .testim-pane__text,
-    .testim-pane .testim-meta {
-      opacity: 0;
-      transform: translateY(15px);
-      transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-
-    /* Staggered Timings for Active State */
-    .testim-pane.active .testim-hero {
-      opacity: 1;
-      transform: translateY(0);
-      transition-delay: 0s;
-    }
-
-    .testim-pane.active .testim-pane__text {
-      opacity: 1;
-      transform: translateY(0);
-      transition-delay: 0.1s;
-    }
-
-    .testim-pane.active .testim-meta {
-      opacity: 1;
-      transform: translateY(0);
-      transition-delay: 0.2s;
-    }
-
-    /* Executive Shimmer Typography */
-    .testim-hero {
-      font-family: var(--font-body);
-      font-weight: 700;
-      font-size: 1.25rem;
-      margin: 0 0 1rem 0;
-      line-height: 1.4;
-      position: relative;
-      z-index: 1;
-      
-      /* The Shimmer Gradient */
-      background: linear-gradient(90deg, var(--color-navy) 0%, var(--color-navy) 38%, var(--color-accent) 46%, #ffb3b3 50%, var(--color-accent) 54%, var(--color-navy) 62%, var(--color-navy) 100%);
-      background-size: 200% auto;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: shimmer 6s linear infinite;
-      filter: drop-shadow(0 0 6px rgba(220, 53, 69, 0.3));
-    }
-
-    @keyframes shimmer {
-      0% { background-position: 200% center; }
-      100% { background-position: 0% center; }
-    }
-
-    .testim-pane__text {
-      font-family: var(--font-body);
-      font-style: italic;
-      color: #4a5568;
-      line-height: 1.7;
-      font-size: 1.15rem;
-      margin: 0;
-      position: relative;
-      z-index: 1;
-    }
-
-    .testim-meta {
-      margin-top: 1.5rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .testim-badge {
-      display: inline-block;
-      border-radius: 9999px;
-      padding: 6px 14px;
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-weight: 600;
-      color: var(--color-navy);
-      background-color: #f1f5f9;
-    }
-    
-    /* CTA Banner actions layout */
-    .cta-banner__actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-4);
-      justify-content: center;
-      margin-top: var(--space-6);
     }
 
   </style>
@@ -1681,227 +1304,76 @@
                 <div class="approach-step__badge" aria-hidden="true">04</div>
                 <div>
                   <h3 class="approach-step__title">Guidance Through the Process</h3>
-                  <p class="approach-step__text">From initial conversations through interviews, offer evaluation, and final decision-making, we provide perspective and support throughout the process.</p>
+                  <p class="approach-step__text">From initial conversations through interviews, offer evaluation, and final decision-making, we provide transparent perspective and support throughout the process.</p>
                 </div>
               </article>
             </div>
+            <p class="partner-approach-panel__outro">We also help candidates think strategically about career direction, market positioning, compensation, and long-term fit, ensuring each opportunity is evaluated thoughtfully, not transactionally.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ==========================================
-         FEATURED OPPORTUNITIES
+         CANDIDATE TESTIMONIALS (carousel)
     ========================================== -->
-    <section class="section-padding bg-warm" aria-labelledby="positions-heading">
-      <div class="container">
-        <header class="section-heading reveal">
-          <h2 class="section-heading__title" id="positions-heading">Featured Opportunities</h2>
-        </header>
-        <div class="positions-cta reveal">
-          <p class="positions-cta__lede" style="margin-bottom: var(--space-2);">We maintain a select group of active searches across Data, Technology, and Financial Services.</p>
-          <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-8); font-style: italic; max-width: 42rem; margin-inline: auto;">Please note: Not all opportunities are listed publicly. Many of our searches are conducted on a confidential basis.</p>
-          <div class="positions-cta__actions">
-            <a href="jobs.html" class="btn btn--primary btn--lg">View Current Opportunities</a>
-            <a href="contact.html" class="btn btn--secondary btn--lg">Submit Your Resume</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-         CANDIDATE TESTIMONIALS (DYNAMIC TIMELINE)
-    ========================================== -->
-    <section class="premium-testimonials-v2 testimonials-section" aria-labelledby="testimonials-heading">
+    <section class="testimonial-section testimonial-section--compact" aria-label="Candidate testimonials">
       <div class="container container--narrow">
-        
-        <div class="testim-split">
-          
-          <!-- Left Sidebar / Navigation Timeline -->
-          <div class="testim-split__sidebar reveal">
-            <span class="testim-overline">// SUCCESS STORIES</span>
-            <h2 class="section-heading__title" id="testimonials-heading" style="margin-top: 0;">
-              Candidate <span class="testim-title-accent">Testimonials</span>
-            </h2>
-            <p class="testim-split__lede">Hear directly from the professionals we’ve partnered with to navigate their strategic career moves.</p>
-            
-            <div class="testim-nav" role="tablist" aria-label="Candidate Testimonials">
-              <button class="testim-nav__btn" role="tab" aria-selected="false" data-index="0" aria-controls="testim-pane-0">
-                <div class="testim-nav__info">
-                  <span class="testim-nav__name">Terence Flowers</span>
-                  <span class="testim-nav__title">Data &amp; Technology</span>
-                </div>
-                <div class="testim-progress-bar"></div>
-              </button>
-              <button class="testim-nav__btn" role="tab" aria-selected="false" data-index="1" aria-controls="testim-pane-1">
-                <div class="testim-nav__info">
-                  <span class="testim-nav__name">Ramon Sotos</span>
-                  <span class="testim-nav__title">Financial Services</span>
-                </div>
-                <div class="testim-progress-bar"></div>
-              </button>
-              <button class="testim-nav__btn" role="tab" aria-selected="false" data-index="2" aria-controls="testim-pane-2">
-                <div class="testim-nav__info">
-                  <span class="testim-nav__name">Stephen Schwartz</span>
-                  <span class="testim-nav__title">Executive Leadership</span>
-                </div>
-                <div class="testim-progress-bar"></div>
-              </button>
-            </div>
+        <header class="section-heading reveal" style="text-align:center; margin-bottom: var(--space-8);">
+          <h2 class="section-heading__title section-heading__title--light">Candidate Testimonials</h2>
+        </header>
+        <div
+          class="testimonial-carousel reveal"
+          data-testimonial-carousel
+          data-interval="6000"
+          aria-roledescription="carousel"
+        >
+          <div class="testimonial-carousel__viewport">
+            <blockquote class="testimonial-carousel__slide is-active" data-slide="0" aria-hidden="false">
+              <p class="testimonial-carousel__quote">My recruiter at SourceAbility was thoughtful, proactive, and highly professional. She took the time to understand my goals and presented opportunities that aligned with both my experience and long-term career direction.</p>
+              <footer class="testimonial-carousel__footer">
+                <p class="testimonial-carousel__author">Terence Flowers</p>
+              </footer>
+            </blockquote>
+
+            <blockquote class="testimonial-carousel__slide" data-slide="1" aria-hidden="true">
+              <p class="testimonial-carousel__quote">I&rsquo;m pleased with my new salary, team and position. Really glad I took the time to schedule that first call.</p>
+              <footer class="testimonial-carousel__footer">
+                <p class="testimonial-carousel__author">Chris Sirico</p>
+              </footer>
+            </blockquote>
+
+            <blockquote class="testimonial-carousel__slide" data-slide="2" aria-hidden="true">
+              <p class="testimonial-carousel__quote">SourceAbility is more focused on if the opportunity is good for the candidates and if the candidates are best fit for the companies. It&rsquo;s something they are passionate about and a responsibility they do not take lightly. It is such a great experience that I would always recommend them to anyone.</p>
+              <footer class="testimonial-carousel__footer">
+                <p class="testimonial-carousel__author">Lin Cheng</p>
+              </footer>
+            </blockquote>
           </div>
-          
-          <!-- Right Content / Spotlight Quote -->
-          <div class="testim-split__content reveal" style="transition-delay: 0.1s;">
-            <div class="testim-display">
-              <div class="testim-quote-mark" aria-hidden="true">&ldquo;</div>
-              
-              <div class="testim-pane" id="testim-pane-0" data-index="0" role="tabpanel">
-                <p class="testim-hero">"Thoughtful, Proactive, and Highly Professional."</p>
-                <p class="testim-pane__text">"She took the time to understand my goals and presented opportunities that aligned with both my experience and long-term career direction."</p>
-                <div class="testim-meta">
-                  <span class="testim-badge">Data &amp; Technology</span>
-                </div>
-              </div>
-              <div class="testim-pane" id="testim-pane-1" data-index="1" role="tabpanel">
-                <p class="testim-hero">"Outstanding Communication and Honest Guidance."</p>
-                <p class="testim-pane__text">"Tanya provided strong market insight, and made the entire experience feel highly personalized."</p>
-                <div class="testim-meta">
-                  <span class="testim-badge">Financial Services</span>
-                </div>
-              </div>
-              <div class="testim-pane" id="testim-pane-2" data-index="2" role="tabpanel">
-                <p class="testim-hero">"A Long-Term Relationship, Not a Transaction."</p>
-                <p class="testim-pane__text">"The opportunity ultimately proved to be an exceptional fit."</p>
-                <div class="testim-meta">
-                  <span class="testim-badge">Executive Leadership</span>
-                </div>
-              </div>
-            </div>
+
+          <div class="testimonial-carousel__nav" aria-label="Choose testimonial">
+            <button type="button" class="testimonial-carousel__dot is-active" aria-label="Testimonial 1 of 3" aria-current="true" data-slide-to="0"></button>
+            <button type="button" class="testimonial-carousel__dot" aria-label="Testimonial 2 of 3" data-slide-to="1"></button>
+            <button type="button" class="testimonial-carousel__dot" aria-label="Testimonial 3 of 3" data-slide-to="2"></button>
           </div>
-          
         </div>
-        
       </div>
-      
-      <!-- Interactive Script for Dynamic Timeline Testimonials -->
-      <script>
-        document.addEventListener('DOMContentLoaded', () => {
-          const tabs = document.querySelectorAll('.testim-nav__btn');
-          const panes = document.querySelectorAll('.testim-pane');
-          
-          function activateTab(index) {
-            // Reset all tabs
-            tabs.forEach(t => {
-              t.classList.remove('active');
-              t.setAttribute('aria-selected', 'false');
-              // Clear progress bar animation to reset it
-              const bar = t.querySelector('.testim-progress-bar');
-              if (bar) {
-                bar.style.animation = 'none';
-                void bar.offsetWidth; // Trigger reflow to restart animation
-              }
-            });
-            
-            // Activate target tab
-            const targetTab = Array.from(tabs).find(t => t.getAttribute('data-index') === String(index));
-            if (targetTab) {
-              targetTab.classList.add('active');
-              targetTab.setAttribute('aria-selected', 'true');
-              const bar = targetTab.querySelector('.testim-progress-bar');
-              if (bar) {
-                // Set the 4-second auto-rotation animation
-                bar.style.animation = 'progress-fill 4s linear forwards';
-              }
-            }
-            
-            // Update content panes
-            panes.forEach(pane => {
-              if(pane.getAttribute('data-index') === String(index)) {
-                pane.classList.add('active');
-              } else {
-                pane.classList.remove('active');
-              }
-            });
-          }
-
-          // Manual Click Navigation
-          tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-              activateTab(tab.getAttribute('data-index'));
-            });
-          });
-
-          // Auto-Rotation via Animation End
-          // Using animationend ensures it perfectly respects the CSS hover-pause
-          tabs.forEach(tab => {
-            const bar = tab.querySelector('.testim-progress-bar');
-            if (bar) {
-              bar.addEventListener('animationend', () => {
-                let currentIndex = parseInt(tab.getAttribute('data-index'));
-                let nextIndex = (currentIndex + 1) % tabs.length;
-                activateTab(nextIndex);
-              });
-            }
-          });
-          // Parallax Quote Mark Logic
-          const displayCard = document.querySelector('.testim-display');
-          const quoteMark = document.querySelector('.testim-quote-mark');
-          
-          if(displayCard && quoteMark) {
-            displayCard.addEventListener('mousemove', (e) => {
-              const rect = displayCard.getBoundingClientRect();
-              const centerX = rect.left + rect.width / 2;
-              const centerY = rect.top + rect.height / 2;
-              
-              // Calculate offset from center
-              const offsetX = e.clientX - centerX;
-              const offsetY = e.clientY - centerY;
-              
-              // Apply very subtle opposite movement
-              const translateX = offsetX * -0.02;
-              const translateY = offsetY * -0.02;
-              
-              quoteMark.style.transform = `translate(${translateX}px, ${translateY}px)`;
-            });
-            
-            // Reset position smoothly when mouse leaves
-            displayCard.addEventListener('mouseleave', () => {
-              quoteMark.style.transition = 'transform 0.5s ease-out';
-              quoteMark.style.transform = 'translate(0px, 0px)';
-              
-              // Remove transition after it completes to keep mousemove snappy
-              setTimeout(() => {
-                quoteMark.style.transition = 'none';
-              }, 500);
-            });
-            
-            // Ensure no transition during active mousemove
-            displayCard.addEventListener('mouseenter', () => {
-              quoteMark.style.transition = 'none';
-            });
-          }
-
-
-          // Initialize first tab
-          activateTab(0);
-        });
-      </script>
     </section>
 
     <!-- ==========================================
-         START THE CONVERSATION
+         READY TO START THE CONVERSATION
     ========================================== -->
-    <section class="cta-banner section-padding" aria-label="Call to action">
-      <div class="container">
-        <div class="cta-banner__inner cta-banner__inner--centered">
+    <section class="cta-banner-new" aria-label="Ready to Start the Conversation">
+      <div class="cta-banner-new__container cta-banner-new__container--no-images">
+        <div class="cta-banner-new__content">
           <div class="reveal">
-            <h2 class="cta-banner__title">Start the Conversation</h2>
-            <p class="cta-banner__text">We welcome conversations with professionals at all stages of their career journey, whether actively exploring opportunities or simply interested in staying connected to the market.</p>
-          </div>
-          <div class="reveal cta-banner__actions">
-            <a href="contact.html" class="btn btn--primary btn--lg">Submit Resume</a>
-            <a href="https://www.linkedin.com/company/216155" target="_blank" rel="noopener noreferrer" class="btn btn--outline btn--lg">Connect on LinkedIn</a>
-            <a href="contact.html" class="btn btn--outline btn--lg">Contact Us</a>
+            <h2 class="cta-banner-new__title">Ready to <span class="cta-banner-new__mark">Start the Conversation?</span></h2>
+            <p class="cta-banner-new__text">We welcome conversations with professionals at all stages of their career journey, whether actively exploring opportunities or simply interested in staying connected to the market. We would love to hear from you?</p>
+            <div class="cta-banner-new__actions cta-banner-new__actions--multi">
+              <a href="contact.html" class="btn btn--primary btn--lg">Submit Resume</a>
+              <a href="https://www.linkedin.com/company/216155" target="_blank" rel="noopener noreferrer" class="btn btn--secondary btn--lg">Connect on LinkedIn</a>
+              <a href="contact.html" class="btn btn--outline btn--lg">Contact Us</a>
+            </div>
           </div>
         </div>
       </div>
