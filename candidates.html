@@ -608,9 +608,27 @@
       font-family: var(--font-body);
       font-size: var(--text-base);
       color: var(--color-text-muted);
-      max-width: 48rem;
+      max-width: 42rem;
       margin: 0 auto;
       line-height: 1.65;
+    }
+
+    @media (min-width: 1024px) {
+      .expertise-flip-section__footer {
+        grid-column: 2 / -1;
+        margin-top: var(--space-6);
+      }
+    }
+
+    @media (max-width: 767px) {
+      .expertise-flip-section__footer {
+        margin-top: var(--space-6);
+        padding-inline: var(--space-2);
+      }
+
+      .expertise-flip-section__footer p {
+        font-size: var(--text-sm);
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1183,10 +1201,10 @@
               </div>
             </article>
           </div>
-        </div>
 
-        <div class="expertise-flip-section__footer reveal">
-          <p>Our focus is on individuals who are thoughtful about their next move and selective about the organizations they choose to join.</p>
+          <div class="expertise-flip-section__footer reveal">
+            <p>Our focus is on individuals who are thoughtful about their next move and selective about the organizations they choose to join.</p>
+          </div>
         </div>
       </div>
     </section>
