@@ -273,120 +273,6 @@
       text-wrap: balance;
     }
 
-    .expertise-criteria-carousel {
-      margin-top: var(--space-6);
-    }
-
-    .expertise-criteria-carousel__lede {
-      font-family: var(--font-body);
-      font-size: var(--text-base);
-      color: #101213;
-      line-height: 1.625;
-      margin: var(--space-5) 0 var(--space-5);
-    }
-
-    .expertise-criteria-carousel__progress {
-      height: 3px;
-      background: rgba(16, 18, 19, 0.12);
-      margin-bottom: var(--space-4);
-      overflow: hidden;
-    }
-
-    .expertise-criteria-carousel__progress-fill {
-      display: block;
-      height: 100%;
-      width: 0;
-      background: var(--color-accent);
-    }
-
-    .expertise-criteria-carousel__progress-fill.is-animating {
-      animation: expertise-criteria-progress 3s linear forwards;
-    }
-
-    @keyframes expertise-criteria-progress {
-      from { width: 0%; }
-      to { width: 100%; }
-    }
-
-    .expertise-criteria-carousel__viewport {
-      display: grid;
-      grid-template-columns: auto minmax(0, 1fr) auto;
-      align-items: center;
-      gap: var(--space-2);
-    }
-
-    .expertise-criteria-carousel__nav {
-      flex-shrink: 0;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 2rem;
-      height: 2rem;
-      padding: 0;
-      border: none;
-      background: transparent;
-      color: var(--color-accent);
-      cursor: pointer;
-    }
-
-    .expertise-criteria-carousel__nav:hover {
-      color: var(--color-accent-hover);
-    }
-
-    .expertise-criteria-carousel__nav:focus-visible {
-      outline: 2px solid var(--color-accent);
-      outline-offset: 2px;
-      border-radius: var(--radius-sm);
-    }
-
-    .expertise-criteria-carousel__slides {
-      min-height: 3.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .expertise-criteria-carousel__slide {
-      display: none;
-      font-family: var(--font-body);
-      font-size: var(--text-base);
-      font-weight: 400;
-      color: var(--color-accent);
-      line-height: 1.5;
-      text-align: center;
-      margin: 0;
-    }
-
-    .expertise-criteria-carousel__slide.is-active {
-      display: block;
-    }
-
-    @media (max-width: 767px) {
-      .expertise-criteria-carousel {
-        margin-top: var(--space-5);
-      }
-
-      .expertise-criteria-carousel__lede {
-        margin-top: var(--space-4);
-        font-size: var(--text-sm);
-      }
-
-      .expertise-criteria-carousel__slide {
-        font-size: var(--text-sm);
-      }
-
-      .expertise-criteria-carousel__slides {
-        min-height: 3rem;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .expertise-criteria-carousel__progress-fill.is-animating {
-        animation: none;
-        width: 100%;
-      }
-    }
-
     /* Why Partner + Our Approach — two-panel layout */
     .partner-approach-section {
       background: var(--color-warm, #f8f7f5);
@@ -1243,27 +1129,6 @@
           <div class="expertise-flip-section__intro reveal">
             <p class="expertise-flip-section__eyebrow">Areas of Expertise</p>
             <h2 class="expertise-flip-section__title" id="expertise-heading">We work with experienced professionals and industry leaders with demonstrated success across:</h2>
-
-            <div class="expertise-criteria-carousel" aria-roledescription="carousel" aria-label="Professional criteria">
-              <p class="expertise-criteria-carousel__lede">We partner with professionals who bring a strong track record of performance and take a thoughtful, long-term approach to their careers. While every situation is unique, the individuals we work with typically demonstrate:</p>
-              <div class="expertise-criteria-carousel__progress" aria-hidden="true">
-                <span class="expertise-criteria-carousel__progress-fill"></span>
-              </div>
-              <div class="expertise-criteria-carousel__viewport">
-                <button type="button" class="expertise-criteria-carousel__nav expertise-criteria-carousel__nav--prev" aria-label="Previous criteria">
-                  <svg width="20" height="20" viewBox="0 0 1000 1000" aria-hidden="true"><path fill="currentColor" d="M646 125C629 125 613 133 604 142L308 442C296 454 292 471 292 487 292 504 296 521 308 533L604 854C617 867 629 875 646 875 663 875 679 871 692 858 704 846 713 829 713 812 713 796 708 779 692 767L438 487 692 225C700 217 708 204 708 187 708 171 704 154 692 142 675 129 663 125 646 125Z"/></svg>
-                </button>
-                <div class="expertise-criteria-carousel__slides" aria-live="polite">
-                  <p class="expertise-criteria-carousel__slide is-active" data-index="0">Depth of experience within their field</p>
-                  <p class="expertise-criteria-carousel__slide" data-index="1">A consistent progression of responsibility and impact</p>
-                  <p class="expertise-criteria-carousel__slide" data-index="2">Strong communication and leadership capability</p>
-                  <p class="expertise-criteria-carousel__slide" data-index="3">A focus on long-term fit, not just short-term change</p>
-                </div>
-                <button type="button" class="expertise-criteria-carousel__nav expertise-criteria-carousel__nav--next" aria-label="Next criteria">
-                  <svg width="20" height="20" viewBox="0 0 1000 1000" aria-hidden="true"><path fill="currentColor" d="M696 533C708 521 713 504 713 487 713 471 708 454 696 446L400 146C388 133 375 125 354 125 338 125 325 129 313 142 300 154 292 171 292 187 292 204 296 221 308 233L563 492 304 771C292 783 288 800 288 817 288 833 296 850 308 863 321 871 338 875 354 875 371 875 388 867 400 854L696 533Z"/></svg>
-                </button>
-              </div>
-            </div>
           </div>
 
           <div class="expertise-flip-section__cards">
@@ -1569,57 +1434,6 @@
         });
       });
 
-      const criteriaCarousel = document.querySelector('.expertise-criteria-carousel');
-      if (criteriaCarousel) {
-        const slides = Array.from(criteriaCarousel.querySelectorAll('.expertise-criteria-carousel__slide'));
-        const progressFill = criteriaCarousel.querySelector('.expertise-criteria-carousel__progress-fill');
-        const prevBtn = criteriaCarousel.querySelector('.expertise-criteria-carousel__nav--prev');
-        const nextBtn = criteriaCarousel.querySelector('.expertise-criteria-carousel__nav--next');
-        const slideIntervalMs = 3000;
-        let activeIndex = 0;
-        let isPaused = false;
-        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-        function restartProgress() {
-          if (!progressFill || prefersReducedMotion || isPaused) return;
-          progressFill.classList.remove('is-animating');
-          void progressFill.offsetWidth;
-          progressFill.classList.add('is-animating');
-        }
-
-        function showSlide(index) {
-          activeIndex = (index + slides.length) % slides.length;
-          slides.forEach((slide, i) => {
-            slide.classList.toggle('is-active', i === activeIndex);
-          });
-          restartProgress();
-        }
-
-        prevBtn?.addEventListener('click', () => {
-          showSlide(activeIndex - 1);
-        });
-
-        nextBtn?.addEventListener('click', () => {
-          showSlide(activeIndex + 1);
-        });
-
-        criteriaCarousel.addEventListener('mouseenter', () => {
-          isPaused = true;
-          progressFill?.classList.remove('is-animating');
-        });
-
-        criteriaCarousel.addEventListener('mouseleave', () => {
-          isPaused = false;
-          restartProgress();
-        });
-
-        progressFill?.addEventListener('animationend', () => {
-          if (prefersReducedMotion || isPaused) return;
-          showSlide(activeIndex + 1);
-        });
-
-        showSlide(0);
-      }
     });
   </script>
 
