@@ -1286,6 +1286,8 @@
   line-height: 1.25;
   letter-spacing: -0.015em;
   text-wrap: balance;
+  /* Reserve room for optional second-line specialty note so body copy aligns across columns */
+  min-height: calc(1.25em + 0.2em + (0.62em * 1.35));
 }
 
 .rep-searches__title-note {
