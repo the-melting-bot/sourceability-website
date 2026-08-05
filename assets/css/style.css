@@ -1294,7 +1294,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.2em;
+  gap: 0;
   width: 100%;
 }
 
@@ -1304,7 +1304,7 @@
   font-size: clamp(1.4rem, 1.2rem + 0.75vw, 1.75rem);
   font-weight: 700;
   color: var(--color-navy);
-  line-height: 1.25;
+  line-height: 1.15;
   letter-spacing: -0.015em;
   text-wrap: balance;
 }
@@ -1317,7 +1317,7 @@
   font-size: clamp(0.875rem, 0.75rem + 0.45vw, 1.1rem);
   letter-spacing: -0.015em;
   white-space: nowrap;
-  line-height: 1.35;
+  line-height: 1.2;
 }
 
 .rep-searches__text {
