@@ -457,19 +457,14 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.85;
-  filter: brightness(1.24) contrast(1.05) saturate(1.04);
+  opacity: 1;
+  filter: none;
 }
 
 .hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(15, 26, 46, 0.12) 0%,
-    rgba(15, 26, 46, 0.24) 60%,
-    rgba(15, 26, 46, 0.38) 100%
-  );
+  background: rgba(0, 0, 0, 0.42);
 }
 
 .hero__content {
@@ -555,15 +550,16 @@
 }
 
 .hero__title-line--lead {
-  font-size: clamp(1.15rem, 0.95rem + 0.85vw, 1.55rem);
+  font-size: 1.1875rem; /* 19px — designer subheading */
   font-weight: 500;
   color: rgba(255, 255, 255, 0.94);
   max-width: min(52rem, 100%);
+  line-height: 1.45;
 }
 
 .hero__title-line--accent {
   font-family: var(--font-display);
-  font-size: clamp(1.85rem, 1.2rem + 2.8vw, 3.5rem);
+  font-size: clamp(2.25rem, 1.4rem + 3.5vw, 3.4375rem); /* up to 55px — designer heading */
   font-weight: 700;
   color: var(--color-accent);
   max-width: 100%;
@@ -579,6 +575,16 @@
   align-items: flex-start;
   gap: 0.12em;
   margin-block: 0.1em;
+}
+
+.hero__title-line--body {
+  font-size: 1.1875rem; /* 19px — designer body */
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.94);
+  max-width: min(52rem, 100%);
+  line-height: 3.4375rem; /* 55px — designer body line height */
+  margin-top: var(--space-2);
+  text-wrap: pretty;
 }
 
 .hero__title-line--trail {
@@ -809,19 +815,18 @@
   }
 }
 
-/* Mobile: homepage hero video — even brighter for small screens */
+/* Mobile: homepage hero — keep black overlay for readability */
 @media (max-width: 767px) {
   .hero__video {
-    opacity: 0.90;
-    filter: brightness(1.28) contrast(1.05) saturate(1.04);
+    opacity: 1;
+    filter: none;
   }
   .hero__overlay {
-    background: linear-gradient(
-      180deg,
-      rgba(15, 26, 46, 0.08) 0%,
-      rgba(15, 26, 46, 0.18) 60%,
-      rgba(15, 26, 46, 0.30) 100%
-    );
+    background: rgba(0, 0, 0, 0.48);
+  }
+
+  .hero__title-line--body {
+    line-height: 1.75; /* keep readable spacing when 55px LH is too tall on narrow screens */
   }
 }
 
@@ -1027,8 +1032,8 @@
 
 .home-spotlight__text {
   margin: 0;
-  font-size: var(--text-sm);
-  line-height: 1.7;
+  font-size: 1.1875rem; /* 19px */
+  line-height: 1.75;
   color: rgba(255, 255, 255, 0.72);
   max-width: 34rem;
 }
@@ -1318,7 +1323,7 @@
   margin: 0;
   flex: 1 1 auto;
   font-size: var(--text-sm);
-  line-height: 1.7;
+  line-height: 1.85;
   color: var(--color-text-muted);
 }
 
@@ -3075,8 +3080,8 @@ p.salary-table-footer a {
 
 /* --- FOOTER --- */
 .site-footer {
-  /* Stepped from CTA navy so the two blocks read as separate regions */
-  background: var(--color-navy-mid);
+  /* Match testimonial navy so footer and testimonials read as one brand band */
+  background: var(--color-navy);
   color: rgba(255, 255, 255, 0.7);
   padding-top: clamp(var(--space-8), 3.5vw, var(--space-12));
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
