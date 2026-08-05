@@ -3898,6 +3898,10 @@ p.salary-table-footer a {
   margin-bottom: var(--space-6);
 }
 
+.page-home .cta-banner-new__text {
+  font-size: var(--text-base);
+}
+
 .cta-banner-new__actions {
   display: flex;
   justify-content: center;
