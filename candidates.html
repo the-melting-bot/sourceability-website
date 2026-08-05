@@ -300,6 +300,38 @@
       box-shadow: 0 8px 28px rgba(15, 26, 46, 0.04);
     }
 
+    .partner-approach-panel--why {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .partner-approach-panel__graphic {
+      margin-top: auto;
+      padding-top: clamp(var(--space-8), 4vw, var(--space-12));
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .partner-approach-panel__graphic svg {
+      width: min(100%, 17.5rem);
+      height: auto;
+      opacity: 0.72;
+    }
+
+    @media (max-width: 991px) {
+      .partner-approach-panel__graphic {
+        padding-top: var(--space-8);
+      }
+
+      .partner-approach-panel__graphic svg {
+        width: min(100%, 14rem);
+        opacity: 0.6;
+      }
+    }
+
     .partner-approach-panel__title {
       font-family: var(--font-display);
       font-size: clamp(1.35rem, 1.1rem + 0.8vw, 1.65rem);
@@ -1266,6 +1298,22 @@
                 Interview &amp; Offer Support
               </li>
             </ul>
+
+            <div class="partner-approach-panel__graphic" aria-hidden="true">
+              <svg viewBox="0 0 280 160" fill="none" xmlns="http://www.w3.org/2000/svg" role="presentation">
+                <path d="M36 118C68 78 104 52 140 52C176 52 212 78 244 118" stroke="#0f1a2e" stroke-width="1.5" stroke-opacity="0.18" stroke-linecap="round"/>
+                <path d="M52 128C78 98 108 78 140 78C172 78 202 98 228 128" stroke="#0f1a2e" stroke-width="1.25" stroke-opacity="0.14" stroke-linecap="round"/>
+                <path d="M70 138C92 116 116 104 140 104C164 104 188 116 210 138" stroke="#af272f" stroke-width="1.5" stroke-opacity="0.28" stroke-linecap="round"/>
+                <circle cx="36" cy="118" r="5.5" fill="#0f1a2e" fill-opacity="0.16"/>
+                <circle cx="140" cy="52" r="7" fill="#af272f" fill-opacity="0.22"/>
+                <circle cx="244" cy="118" r="5.5" fill="#0f1a2e" fill-opacity="0.16"/>
+                <circle cx="88" cy="92" r="3.5" fill="#0f1a2e" fill-opacity="0.2"/>
+                <circle cx="192" cy="92" r="3.5" fill="#0f1a2e" fill-opacity="0.2"/>
+                <circle cx="140" cy="104" r="4.5" fill="#af272f" fill-opacity="0.32"/>
+                <path d="M140 52V104" stroke="#af272f" stroke-width="1.25" stroke-opacity="0.22" stroke-dasharray="3 4"/>
+                <path d="M88 92L140 104L192 92" stroke="#0f1a2e" stroke-width="1" stroke-opacity="0.14"/>
+              </svg>
+            </div>
           </div>
 
           <div class="partner-approach-panel partner-approach-panel--approach reveal">
