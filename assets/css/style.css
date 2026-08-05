@@ -1289,11 +1289,15 @@
 }
 
 .rep-searches__title-note {
+  display: block;
   font-family: inherit;
   font-weight: inherit;
   color: inherit;
-  font-size: 0.68em;
-  letter-spacing: -0.01em;
+  font-size: 0.62em;
+  letter-spacing: -0.015em;
+  white-space: nowrap;
+  line-height: 1.35;
+  margin-top: 0.2em;
 }
 
 .rep-searches__text {
