@@ -550,7 +550,7 @@
 }
 
 .hero__title-line--lead {
-  font-size: 1.1875rem; /* 19px — designer subheading */
+  font-size: clamp(1.45rem, 1.2rem + 1vw, 1.75rem); /* ~2 steps up from 19px */
   font-weight: 500;
   color: rgba(255, 255, 255, 0.94);
   max-width: min(52rem, 100%);
@@ -578,11 +578,11 @@
 }
 
 .hero__title-line--body {
-  font-size: 1.1875rem; /* 19px — designer body */
+  font-size: clamp(1.45rem, 1.2rem + 1vw, 1.75rem); /* match white subheading, 2 steps up */
   font-weight: 500;
   color: rgba(255, 255, 255, 0.94);
   max-width: min(52rem, 100%);
-  line-height: 3.4375rem; /* 55px — designer body line height */
+  line-height: 1.5;
   margin-top: var(--space-2);
   text-wrap: pretty;
 }
@@ -823,10 +823,6 @@
   }
   .hero__overlay {
     background: rgba(0, 0, 0, 0.48);
-  }
-
-  .hero__title-line--body {
-    line-height: 1.75; /* keep readable spacing when 55px LH is too tall on narrow screens */
   }
 }
 
