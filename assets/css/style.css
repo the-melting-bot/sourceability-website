@@ -1277,14 +1277,6 @@
   outline-offset: 3px;
 }
 
-.rep-searches__heading-block {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--space-2);
-  width: 100%;
-}
-
 .rep-searches__title {
   margin: 0;
   font-family: var(--font-display);
@@ -1293,15 +1285,15 @@
   color: var(--color-navy);
   line-height: 1.25;
   letter-spacing: -0.015em;
+  text-wrap: balance;
 }
 
-.rep-searches__subtitle {
-  margin: 0;
-  font-family: var(--font-body);
-  font-size: var(--text-sm);
-  font-weight: 500;
-  color: var(--color-text-muted);
-  line-height: 1.45;
+.rep-searches__title-note {
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+  font-size: 0.68em;
+  letter-spacing: -0.01em;
 }
 
 .rep-searches__text {
