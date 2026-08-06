@@ -273,9 +273,26 @@
     }
 
     .contact-converse__form .form-input,
+    .contact-converse__form .form-select,
     .contact-converse__form .form-textarea {
       background: #fff;
       border-color: rgba(15, 26, 46, 0.12);
+      color: var(--color-text);
+    }
+
+    .contact-converse__form .form-input::placeholder,
+    .contact-converse__form .form-textarea::placeholder {
+      color: var(--color-text-faint);
+      opacity: 1;
+    }
+
+    /* Match empty select to placeholder shade */
+    .contact-converse__form .form-select:invalid {
+      color: var(--color-text-faint);
+    }
+
+    .contact-converse__form .form-select:valid {
+      color: var(--color-text);
     }
 
     .contact-converse__form .form-textarea {
