@@ -245,6 +245,11 @@
 
       try {
         const formData = new FormData(contactForm);
+        const firstName = (formData.get('first_name') || '').toString().trim();
+        const lastName = (formData.get('last_name') || '').toString().trim();
+        const combinedName = [firstName, lastName].filter(Boolean).join(' ');
+        if (combinedName) formData.set('name', combinedName);
+
         const resumeInput = contactForm.querySelector('input[type="file"][name="attachment"]');
         if (resumeInput && (!resumeInput.files || resumeInput.files.length === 0)) {
           formData.delete('attachment');
