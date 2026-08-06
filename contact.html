@@ -89,15 +89,21 @@
 
   <!-- Contact Option 1 layout -->
   <style>
-    body {
-      background: var(--color-surface-warm);
+    html,
+    body,
+    #main-content {
+      background-color: var(--color-surface-warm) !important;
     }
 
     .contact-converse {
-      background: var(--color-surface-warm);
+      background-color: var(--color-surface-warm);
+      width: 100%;
+      max-width: none;
+      margin: 0;
       position: relative;
-      overflow: hidden;
-      padding-block: clamp(3.5rem, 7vw, 5.5rem) clamp(2.5rem, 5vw, 4rem);
+      /* Clear fixed site header (top bar + main nav) */
+      padding-top: clamp(8.5rem, 14vw, 10.5rem);
+      padding-bottom: clamp(2.5rem, 5vw, 4rem);
     }
 
     .contact-converse__shell {
@@ -292,7 +298,8 @@
 
     @media (max-width: 639px) {
       .contact-converse {
-        padding-block: clamp(2.75rem, 10vw, 3.5rem) var(--space-10);
+        padding-top: clamp(7.5rem, 22vw, 9rem);
+        padding-bottom: var(--space-10);
       }
 
       .contact-converse__title {
