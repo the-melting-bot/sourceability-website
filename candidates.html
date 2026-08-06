@@ -288,54 +288,37 @@
 
     @media (min-width: 992px) {
       .partner-approach-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
       }
     }
 
     .why-partner {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: 1fr;
       overflow: hidden;
       background: var(--color-navy);
       border-radius: var(--radius-lg);
       box-shadow: 0 12px 36px rgba(15, 26, 46, 0.18);
       height: 100%;
+      min-height: 100%;
     }
 
-    .why-partner__media {
-      position: relative;
-      height: 9.5rem;
-      flex-shrink: 0;
-      background: #0a1220;
-    }
-
-    .why-partner__media img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 28%;
-    }
-
-    .why-partner__media::after {
-      content: '';
-      position: absolute;
-      inset: auto 0 0;
-      height: 55%;
-      background: linear-gradient(180deg, transparent 0%, var(--color-navy) 100%);
-      pointer-events: none;
+    @media (min-width: 700px) {
+      .why-partner {
+        grid-template-columns: minmax(0, 1.15fr) minmax(9.5rem, 0.85fr);
+      }
     }
 
     .why-partner__content {
       display: flex;
       flex-direction: column;
-      flex: 1;
-      padding: clamp(1.25rem, 2.5vw, 2rem) clamp(1.5rem, 3vw, 2.5rem) clamp(1.5rem, 3vw, 2.5rem);
+      padding: clamp(1.35rem, 2.8vw, 2.25rem);
+      min-width: 0;
     }
 
     .why-partner__title {
       font-family: var(--font-display);
-      font-size: clamp(1.35rem, 1.1rem + 0.8vw, 1.65rem);
+      font-size: clamp(1.3rem, 1.05rem + 0.7vw, 1.55rem);
       font-weight: 700;
       color: #fff;
       line-height: 1.2;
@@ -347,38 +330,46 @@
       font-size: var(--text-sm);
       color: rgba(255, 255, 255, 0.78);
       line-height: 1.65;
-      margin: var(--space-4) 0 0;
+      margin: var(--space-3) 0 0;
     }
 
     .partner-checklist {
       list-style: none;
-      margin: var(--space-6) 0 0;
+      margin: var(--space-5) 0 0;
       padding: 0;
       display: grid;
       gap: var(--space-3);
     }
 
+    @media (min-width: 520px) {
+      .partner-checklist {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: var(--space-4);
+        row-gap: var(--space-3);
+      }
+    }
+
     .partner-checklist__item {
       display: flex;
       align-items: flex-start;
-      gap: var(--space-3);
+      gap: 0.65rem;
       font-family: var(--font-body);
-      font-size: var(--text-sm);
+      font-size: 0.8125rem;
       color: rgba(255, 255, 255, 0.92);
-      line-height: 1.45;
+      line-height: 1.4;
     }
 
     .partner-checklist__icon {
       flex-shrink: 0;
-      width: 1.25rem;
-      height: 1.25rem;
+      width: 1.15rem;
+      height: 1.15rem;
       color: var(--color-accent);
-      margin-top: 0.1rem;
+      margin-top: 0.05rem;
     }
 
     .why-partner__cta {
       margin-top: auto;
-      padding-top: var(--space-6);
+      padding-top: var(--space-5);
       display: flex;
       flex-wrap: wrap;
       align-items: center;
@@ -387,21 +378,67 @@
 
     .why-partner__cta-note {
       margin: 0;
-      max-width: 14rem;
+      max-width: 13rem;
       font-family: var(--font-body);
-      font-size: var(--text-sm);
+      font-size: 0.8125rem;
       color: rgba(255, 255, 255, 0.78);
-      line-height: 1.45;
+      line-height: 1.4;
     }
 
     .why-partner__cta-note span {
       display: block;
       margin-bottom: 0.15rem;
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--color-accent);
+    }
+
+    .why-partner__media {
+      position: relative;
+      min-height: 12rem;
+      background: #0a1220;
+    }
+
+    .why-partner__media img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 22%;
+    }
+
+    @media (min-width: 700px) {
+      .why-partner__media {
+        min-height: 100%;
+      }
+
+      .why-partner__media::before {
+        content: '';
+        position: absolute;
+        inset: 0 auto 0 0;
+        width: 42%;
+        background: linear-gradient(90deg, var(--color-navy) 0%, transparent 100%);
+        pointer-events: none;
+        z-index: 1;
+      }
+    }
+
+    @media (max-width: 699px) {
+      .why-partner__media {
+        order: -1;
+        min-height: 10rem;
+      }
+
+      .why-partner__media::after {
+        content: '';
+        position: absolute;
+        inset: auto 0 0;
+        height: 50%;
+        background: linear-gradient(180deg, transparent 0%, var(--color-navy) 100%);
+        pointer-events: none;
+      }
     }
 
     .partner-approach-panel {
@@ -495,10 +532,6 @@
 
       .why-partner__content {
         padding: var(--space-5) var(--space-6) var(--space-6);
-      }
-
-      .why-partner__media {
-        height: 8.5rem;
       }
 
       .approach-steps {
@@ -1331,9 +1364,6 @@
       <div class="container">
         <div class="partner-approach-grid">
           <div class="why-partner reveal">
-            <div class="why-partner__media">
-              <img src="./assets/images/team_collab_2.png" alt="SourceAbility team collaborating in the office" width="900" height="700" loading="lazy" decoding="async">
-            </div>
             <div class="why-partner__content">
               <h2 class="why-partner__title" id="partner-approach-heading">Why Partner with SourceAbility</h2>
               <p class="why-partner__lede">Your next career move is one of the most important professional decisions you&rsquo;ll ever make.</p>
@@ -1344,19 +1374,19 @@
                 </li>
                 <li class="partner-checklist__item">
                   <svg class="partner-checklist__icon" viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"/></svg>
-                  Industry Expertise &amp; Market Insight
-                </li>
-                <li class="partner-checklist__item">
-                  <svg class="partner-checklist__icon" viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"/></svg>
-                  Personalized Career Guidance
-                </li>
-                <li class="partner-checklist__item">
-                  <svg class="partner-checklist__icon" viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"/></svg>
                   Transparent Communication
                 </li>
                 <li class="partner-checklist__item">
                   <svg class="partner-checklist__icon" viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"/></svg>
+                  Industry Expertise &amp; Market Insight
+                </li>
+                <li class="partner-checklist__item">
+                  <svg class="partner-checklist__icon" viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"/></svg>
                   Professional &amp; Confidential Representation
+                </li>
+                <li class="partner-checklist__item">
+                  <svg class="partner-checklist__icon" viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"/></svg>
+                  Personalized Career Guidance
                 </li>
                 <li class="partner-checklist__item">
                   <svg class="partner-checklist__icon" viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"/></svg>
@@ -1368,6 +1398,9 @@
                 <a href="about.html" class="btn btn--primary">About Us</a>
                 <p class="why-partner__cta-note"><span>Since 2008</span> Get to know the people behind every search.</p>
               </div>
+            </div>
+            <div class="why-partner__media">
+              <img src="./assets/images/team_collab_2.png" alt="Professionals collaborating over a laptop" width="900" height="700" loading="lazy" decoding="async">
             </div>
           </div>
 
