@@ -459,8 +459,14 @@
 
                 <div class="form-row">
                   <div class="form-group">
-                    <label class="form-label" for="contact-company">Company</label>
-                    <input class="form-input" type="text" id="contact-company" name="company" autocomplete="organization" placeholder="Company">
+                    <label class="form-label" for="contact-about">Contact us about:</label>
+                    <select class="form-select" id="contact-about" name="contact_about" required>
+                      <option value="" selected disabled>Contact us about:</option>
+                      <option value="Hiring Talent">Hiring Talent</option>
+                      <option value="Finding a job">Finding a job</option>
+                      <option value="General email">General email</option>
+                      <option value="Contacting a recruiter">Contacting a recruiter</option>
+                    </select>
                   </div>
                 </div>
 
