@@ -93,27 +93,28 @@
       background: var(--color-warm, #f8f7f5);
       position: relative;
       overflow: hidden;
+      padding-block: clamp(2rem, 5vw, 4rem);
     }
 
     .contact-converse__shell {
       position: relative;
       z-index: 1;
-      max-width: 68rem;
-      margin-inline: auto;
-      padding: clamp(2rem, 4vw, 3rem);
-      border-radius: var(--radius-lg);
-      background: rgba(255, 255, 255, 0.35);
-      border: 1px solid rgba(15, 26, 46, 0.06);
+      width: 100%;
+      max-width: none;
+      margin: 0;
+      padding: clamp(1.5rem, 3.5vw, 3rem) clamp(1rem, 3vw, 2.5rem);
+      border-radius: 0;
+      background: transparent;
+      border: 0;
     }
 
     .contact-converse__shell::before {
       content: '';
       position: absolute;
       inset: 0;
-      border-radius: inherit;
       background:
-        radial-gradient(circle at 92% 18%, rgba(175, 39, 47, 0.08), transparent 28%),
-        radial-gradient(circle at 96% 72%, rgba(15, 26, 46, 0.05), transparent 26%);
+        radial-gradient(circle at 92% 12%, rgba(175, 39, 47, 0.07), transparent 30%),
+        radial-gradient(circle at 98% 78%, rgba(15, 26, 46, 0.05), transparent 28%);
       pointer-events: none;
       z-index: 0;
     }
@@ -125,7 +126,7 @@
 
     .contact-converse__header {
       text-align: center;
-      max-width: 42rem;
+      max-width: 46rem;
       margin: 0 auto clamp(2rem, 4vw, 3rem);
     }
 
@@ -154,11 +155,12 @@
       display: grid;
       gap: clamp(1.75rem, 3vw, 2.75rem);
       align-items: start;
+      width: 100%;
     }
 
     @media (min-width: 900px) {
       .contact-converse__grid {
-        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.25fr);
+        grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.35fr);
         gap: clamp(2rem, 4vw, 3.5rem);
       }
     }
@@ -239,7 +241,9 @@
       border: 1px solid var(--color-border);
       border-radius: var(--radius-lg);
       box-shadow: 0 10px 32px rgba(15, 26, 46, 0.06);
-      padding: clamp(1.25rem, 2.5vw, 1.75rem);
+      padding: clamp(1.25rem, 2.5vw, 2rem);
+      width: 100%;
+      min-width: 0;
     }
 
     .contact-converse__form .form-row {
@@ -256,6 +260,7 @@
 
     .contact-converse__form .form-group {
       margin-bottom: 0;
+      min-width: 0;
     }
 
     .contact-converse__form .form-label {
@@ -288,9 +293,30 @@
       width: 100%;
     }
 
-    @media (max-width: 767px) {
+    @media (max-width: 899px) {
+      .contact-converse__channels {
+        border-right: 0;
+        padding-right: 0;
+        padding-bottom: var(--space-2);
+        border-bottom: 1px solid rgba(15, 26, 46, 0.1);
+      }
+    }
+
+    @media (max-width: 639px) {
+      .contact-converse {
+        padding-block: var(--space-8);
+      }
+
       .contact-converse__shell {
-        padding: var(--space-6);
+        padding-inline: var(--page-gutter);
+      }
+
+      .contact-converse__title {
+        font-size: clamp(1.6rem, 8vw, 2rem);
+      }
+
+      .contact-converse__card {
+        padding: var(--space-5);
       }
     }
   </style>
@@ -371,26 +397,13 @@
   <main id="main-content">
 
     <!-- ==========================================
-         PAGE HERO
-    ========================================== -->
-    <section class="page-hero page-hero--contact" aria-label="Contact page hero">
-      <img src="./assets/images/hero-contact.jpg" alt="" class="page-hero__bg" loading="eager" fetchpriority="high">
-      <div class="page-hero__overlay" aria-hidden="true"></div>
-      <div class="container">
-        <p class="overline overline--light reveal">Get in Touch</p>
-        <h1 class="page-hero__title reveal">Contact SourceAbility</h1>
-        <p class="page-hero__desc reveal">Reach our team in Charlotte, NC — we&rsquo;re ready to help with hiring needs or your next career move.</p>
-      </div>
-    </section>
-
-    <!-- ==========================================
          CONTACT SECTION (Option 1)
     ========================================== -->
-    <section class="section-padding contact-converse" aria-labelledby="contact-heading">
+    <section class="contact-converse" aria-labelledby="contact-heading">
       <div class="container">
         <div class="contact-converse__shell">
           <header class="contact-converse__header reveal">
-            <h2 class="contact-converse__title" id="contact-heading">Let&rsquo;s Start <span>the Conversation</span></h2>
+            <h1 class="contact-converse__title" id="contact-heading">Let&rsquo;s Start <span>the Conversation</span></h1>
             <p class="contact-converse__lede">Whether you&rsquo;re hiring exceptional talent or exploring your next career opportunity, we&rsquo;d welcome the opportunity to learn more about your needs and discuss how SourceAbility can help.</p>
           </header>
 
