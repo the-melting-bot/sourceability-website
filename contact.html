@@ -89,11 +89,15 @@
 
   <!-- Contact Option 1 layout -->
   <style>
+    body {
+      background: var(--color-surface-warm);
+    }
+
     .contact-converse {
-      background: var(--color-warm, #f8f7f5);
+      background: var(--color-surface-warm);
       position: relative;
       overflow: hidden;
-      padding-block: clamp(2rem, 5vw, 4rem);
+      padding-block: clamp(3.5rem, 7vw, 5.5rem) clamp(2.5rem, 5vw, 4rem);
     }
 
     .contact-converse__shell {
@@ -102,32 +106,16 @@
       width: 100%;
       max-width: none;
       margin: 0;
-      padding: clamp(1.5rem, 3.5vw, 3rem) clamp(1rem, 3vw, 2.5rem);
+      padding: 0;
       border-radius: 0;
       background: transparent;
       border: 0;
     }
 
-    .contact-converse__shell::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 92% 12%, rgba(175, 39, 47, 0.07), transparent 30%),
-        radial-gradient(circle at 98% 78%, rgba(15, 26, 46, 0.05), transparent 28%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .contact-converse__shell > * {
-      position: relative;
-      z-index: 1;
-    }
-
     .contact-converse__header {
       text-align: center;
       max-width: 46rem;
-      margin: 0 auto clamp(2rem, 4vw, 3rem);
+      margin: 0 auto clamp(2.5rem, 5vw, 3.5rem);
     }
 
     .contact-converse__title {
@@ -304,11 +292,7 @@
 
     @media (max-width: 639px) {
       .contact-converse {
-        padding-block: var(--space-8);
-      }
-
-      .contact-converse__shell {
-        padding-inline: var(--page-gutter);
+        padding-block: clamp(2.75rem, 10vw, 3.5rem) var(--space-10);
       }
 
       .contact-converse__title {
