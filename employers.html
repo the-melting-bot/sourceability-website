@@ -910,6 +910,137 @@
       line-height: 1.76;
       margin: 0 0 var(--space-8);
     }
+
+    /* Employers hero — reverse of candidates: photo left, red panel right */
+    .employers-hero-split {
+      padding-top: 7.5rem;
+      background: #fff;
+    }
+
+    .employers-hero-split__grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.15fr);
+      min-height: min(34rem, 72vh);
+    }
+
+    .employers-hero-split__media {
+      position: relative;
+      min-height: 18rem;
+      overflow: hidden;
+      background: #0a1220;
+    }
+
+    .employers-hero-split__media img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: inherit;
+      object-fit: cover;
+      object-position: center center;
+    }
+
+    .employers-hero-split__panel {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: #af272f;
+      padding: clamp(2rem, 4.5vw, 3.875rem);
+    }
+
+    .employers-hero-split__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.65rem, 1.15rem + 1.6vw, 2rem);
+      font-weight: 700;
+      font-style: normal;
+      color: #fff;
+      line-height: 1.2;
+      margin: 0 0 var(--space-4);
+      text-wrap: balance;
+    }
+
+    .employers-hero-split__lede {
+      font-family: var(--font-body);
+      font-size: clamp(1rem, 0.92rem + 0.35vw, 1.19rem);
+      font-weight: 500;
+      color: #fff;
+      line-height: 1.45;
+      margin: 0 0 var(--space-5);
+    }
+
+    .employers-hero-split__desc {
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      color: #fff;
+      line-height: 1.625;
+      margin: 0;
+    }
+
+    .employers-hero-split__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+      margin-top: var(--space-6);
+    }
+
+    .employers-hero-split__panel .btn--primary {
+      background: #101213;
+      border-color: #101213;
+      color: #fff;
+    }
+
+    .employers-hero-split__panel .btn--primary:hover {
+      background: #000;
+      border-color: #000;
+      color: #fff;
+    }
+
+    .employers-hero-split__panel .btn--secondary {
+      background: #fff;
+      color: var(--color-accent);
+      border: 2px solid #fff;
+    }
+
+    .employers-hero-split__panel .btn--secondary:hover {
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--color-accent-hover);
+      border-color: #fff;
+    }
+
+    @media (max-width: 767px) {
+      .employers-hero-split {
+        padding-top: 6.5rem;
+      }
+
+      .employers-hero-split__grid {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .employers-hero-split__media {
+        min-height: 16rem;
+        order: -1;
+      }
+
+      .employers-hero-split__panel {
+        padding: var(--space-8) var(--space-6);
+      }
+
+      .employers-hero-split__actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--space-3);
+        margin-top: var(--space-5);
+      }
+
+      .employers-hero-split__actions .btn {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        white-space: normal;
+        line-height: 1.35;
+        padding: 0.875rem var(--space-4);
+      }
+    }
   </style>
 </head>
 <body>
@@ -988,14 +1119,22 @@
   <main id="main-content">
 
     <!-- ==========================================
-         1. PAGE HERO
+         1. PAGE HERO (candidates split, reversed)
     ========================================== -->
-    <section class="page-hero page-hero--employers" aria-label="Strategic Hiring">
-      <img src="./assets/images/hero-employers.jpg" alt="" class="page-hero__bg" loading="eager" fetchpriority="high">
-      <div class="page-hero__overlay" aria-hidden="true"></div>
-      <div class="container">
-        <h1 class="page-hero__title reveal">Strategic Hiring. Specialized Talent. Proven Results.</h1>
-        <p class="page-hero__desc reveal">We partner with organizations to deliver high-impact talent across Data, AI, Technology, and Financial Services from executive leadership to critical individual contributors. Our approach is tailored to the level, complexity, and urgency of each hire.</p>
+    <section class="employers-hero-split" aria-label="Strategic Hiring">
+      <div class="employers-hero-split__grid">
+        <div class="employers-hero-split__media reveal">
+          <img src="./assets/images/hero-employers-meeting.png" alt="Hiring managers meeting with a candidate in a modern office" loading="eager" fetchpriority="high" width="960" height="640">
+        </div>
+        <div class="employers-hero-split__panel">
+          <h1 class="employers-hero-split__title reveal">Strategic Hiring.</h1>
+          <p class="employers-hero-split__lede reveal">Specialized Talent. Proven Results.</p>
+          <p class="employers-hero-split__desc reveal">Hiring exceptional talent requires more than posting a position and hoping the right candidate applies. We partner with organizations to identify and engage professionals who have the right combination of technical expertise, leadership, and cultural fit to contribute to your company&rsquo;s long-term success.</p>
+          <div class="employers-hero-split__actions reveal">
+            <a href="contact.html" class="btn btn--primary btn--lg">Schedule a Call</a>
+            <a href="contact.html" class="btn btn--secondary btn--lg">Contact Us</a>
+          </div>
+        </div>
       </div>
     </section>
 
