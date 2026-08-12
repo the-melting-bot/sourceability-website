@@ -94,7 +94,8 @@
 
     .search-solutions__head {
       max-width: 52rem;
-      margin: 0 0 var(--space-8);
+      margin: 0 auto var(--space-8);
+      text-align: center;
     }
 
     .search-solutions__title {
@@ -224,6 +225,27 @@
       font-size: 0.88rem;
     }
 
+    .solution-flip__list-label {
+      margin: 0;
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .solution-flip__list {
+      margin: 0;
+      padding: 0 0 0 1.1rem;
+      display: grid;
+      gap: 0.35rem;
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.86);
+      line-height: 1.45;
+    }
+
     .solution-flip__cta {
       display: inline-flex;
       align-items: center;
@@ -321,97 +343,384 @@
       }
     }
 
-    /* ── Process Steps – premium card grouping ── */
-    .process-section .section-heading {
+    /* ── Challenges + How We Help ── */
+    .challenges-help-section {
+      background: var(--color-warm, #f8f7f5);
+    }
+
+    .challenges-help-grid {
+      display: grid;
+      gap: var(--space-4);
+      align-items: stretch;
+    }
+
+    @media (min-width: 992px) {
+      .challenges-help-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .challenges-help-panel {
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: clamp(1.5rem, 3vw, 2.75rem);
+      box-shadow: 0 8px 28px rgba(15, 26, 46, 0.04);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .challenges-help-panel__eyebrow {
+      margin: 0 0 var(--space-2);
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+    }
+
+    .challenges-help-panel__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.35rem, 1.1rem + 0.8vw, 1.65rem);
+      font-weight: 700;
+      font-style: normal;
+      color: var(--color-navy);
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .challenges-help-panel__lede,
+    .challenges-help-panel__outro {
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: 1.65;
+      margin: var(--space-4) 0 0;
+    }
+
+    .challenges-help-list {
+      list-style: none;
+      margin: var(--space-6) 0 0;
+      padding: 0;
+      display: grid;
+      gap: var(--space-4);
+    }
+
+    .challenges-help-list__item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      color: #101213;
+      line-height: 1.45;
+    }
+
+    .challenges-help-list__icon {
+      flex-shrink: 0;
+      width: 1.35rem;
+      height: 1.35rem;
+      color: var(--color-accent);
+      margin-top: 0.12rem;
+    }
+
+    .challenges-help-list__item strong {
+      font-weight: 700;
+      color: var(--color-navy);
+    }
+
+    /* ── Statement band ── */
+    .hiring-statement {
+      background: var(--color-navy);
+      color: #fff;
+      text-align: center;
+      padding: clamp(2.5rem, 5vw, 4rem) 0;
+    }
+
+    .hiring-statement__title {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.55rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      text-wrap: balance;
+    }
+
+    .hiring-statement__title span {
+      display: block;
+      margin-top: 0.35rem;
+      color: #de5b54;
+    }
+
+    /* ── Our Approach ── */
+    .employers-approach {
+      background: #fff;
+    }
+
+    .employers-approach__head {
+      max-width: 46rem;
+      margin: 0 auto var(--space-8);
       text-align: center;
     }
 
-    .process-section .section-intro {
-      max-width: 48rem;
-      margin-inline: auto;
+    .employers-approach__eyebrow {
+      margin: 0 0 var(--space-3);
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+    }
+
+    .employers-approach__title {
+      margin: 0 0 var(--space-4);
+      font-family: var(--font-display);
+      font-size: clamp(1.7rem, 1.35rem + 1.1vw, 2.2rem);
+      font-weight: 700;
+      color: var(--color-navy);
+      line-height: 1.15;
+    }
+
+    .employers-approach__intro,
+    .employers-approach__lede {
+      margin: 0;
+      font-family: var(--font-body);
+      font-size: var(--text-base);
       color: var(--color-text-muted);
       line-height: 1.7;
     }
 
-    .process-section .process-grid {
+    .employers-approach__lede {
+      margin-top: var(--space-4);
+    }
+
+    .employers-approach__panel {
+      max-width: 48rem;
+      margin: 0 auto;
+      background: var(--color-warm, #f8f7f5);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: clamp(1.5rem, 3vw, 2.5rem);
+      box-shadow: 0 8px 28px rgba(15, 26, 46, 0.04);
+    }
+
+    .approach-steps {
+      position: relative;
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: var(--space-8);
-      margin-top: var(--space-12);
-    }
-
-    .process-section .process-card {
-      background: #fff;
-      border-radius: 12px;
-      overflow: hidden;
-      position: relative;
-      border: 1px solid rgba(15, 26, 46, 0.08);
-      box-shadow:
-        0 2px 8px rgba(15, 26, 46, 0.04),
-        0 14px 34px rgba(15, 26, 46, 0.08);
-      transition:
-        transform 420ms var(--ease-out),
-        box-shadow 650ms ease,
-        border-color 650ms ease;
-    }
-
-    .process-section .process-card:hover {
-      transform: translateY(-4px) scale(1.012);
-      border-color: rgba(175, 39, 47, 0.18);
-      box-shadow:
-        0 6px 12px rgba(15, 26, 46, 0.06),
-        0 22px 48px rgba(15, 26, 46, 0.12),
-        0 0 0 1px rgba(175, 39, 47, 0.08);
-    }
-
-    .process-section .process-card__media {
+      gap: var(--space-6);
       margin: 0;
+      padding-left: 0;
+    }
+
+    .approach-step {
       position: relative;
-      overflow: hidden;
-      border-bottom: 1px solid rgba(15, 26, 46, 0.08);
-    }
-
-    .process-section .process-card__media img {
-      width: 100%;
-      height: clamp(11rem, 18vw, 13rem);
-      object-fit: cover;
-      object-position: center;
-      display: block;
-      transform: scale(1.01);
-    }
-
-    .process-section .process-card__body {
-      padding: clamp(var(--space-5), 2vw, var(--space-7)) clamp(var(--space-5), 2.5vw, var(--space-8));
-    }
-
-    .process-section .process-card__title {
-      font-family: var(--font-display);
-      font-size: clamp(1.28rem, 1.15rem + 0.36vw, 1.55rem);
-      font-weight: 600;
-      color: var(--color-navy);
-      margin: 0 0 var(--space-4);
-      line-height: 1.16;
-      letter-spacing: -0.012em;
-      text-align: center;
-      text-wrap: balance;
-    }
-
-    .process-section .process-card__title .text-accent {
-      color: var(--color-accent);
-    }
-
-    .process-section .process-card__text {
-      font-size: clamp(1rem, 0.96rem + 0.18vw, 1.08rem);
-      color: var(--color-text-muted);
-      line-height: 1.66;
-      margin: 0;
-      max-width: none;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: var(--space-4);
+      align-items: start;
       text-align: left;
     }
 
+    .approach-step:not(:last-child)::before {
+      content: '';
+      position: absolute;
+      left: 27px;
+      top: 56px;
+      bottom: calc(var(--space-6) * -1);
+      width: 2px;
+      background: rgba(175, 39, 47, 0.28);
+    }
+
+    .approach-step__badge {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: #fff;
+      font-family: var(--font-display);
+      font-size: var(--text-base);
+      font-style: italic;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      flex-shrink: 0;
+    }
+
+    .approach-step__title {
+      font-family: var(--font-display);
+      font-size: var(--text-base);
+      font-weight: 600;
+      font-style: normal;
+      color: var(--color-navy);
+      margin: 0 0 var(--space-2);
+      line-height: 1.3;
+    }
+
+    .approach-step__text {
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    /* ── By the Numbers ── */
+    .by-the-numbers {
+      background: var(--color-warm, #f8f7f5);
+    }
+
+    .by-the-numbers__head {
+      text-align: center;
+      margin: 0 auto var(--space-8);
+      max-width: 40rem;
+    }
+
+    .by-the-numbers__title {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(1.7rem, 1.35rem + 1.1vw, 2.2rem);
+      font-weight: 700;
+      color: var(--color-navy);
+      line-height: 1.15;
+    }
+
+    .by-the-numbers__grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: var(--space-4);
+    }
+
+    .stat-card {
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-5) var(--space-4);
+      text-align: center;
+      box-shadow: 0 8px 28px rgba(15, 26, 46, 0.04);
+    }
+
+    .stat-card__value {
+      display: block;
+      font-family: var(--font-display);
+      font-size: clamp(1.7rem, 1.4rem + 0.8vw, 2.15rem);
+      font-weight: 700;
+      color: var(--color-accent);
+      line-height: 1;
+      margin-bottom: var(--space-3);
+    }
+
+    .stat-card__label {
+      margin: 0;
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      color: var(--color-text-muted);
+      line-height: 1.45;
+    }
+
+    @media (max-width: 1100px) {
+      .by-the-numbers__grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
     @media (max-width: 700px) {
-      .process-section .process-grid {
-        grid-template-columns: 1fr;
+      .by-the-numbers__grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .stat-card:last-child {
+        grid-column: 1 / -1;
+        max-width: 18rem;
+        margin-inline: auto;
+        width: 100%;
+      }
+
+      .approach-steps {
+        gap: var(--space-5);
+      }
+
+      .approach-step:not(:last-child)::before {
+        bottom: calc(var(--space-5) * -1);
+      }
+    }
+
+    /* ── Employers CTA ── */
+    .page-employers .cta-banner-new__container--no-images {
+      justify-content: center;
+    }
+
+    .page-employers .cta-banner-new__container--no-images .cta-banner-new__content {
+      max-width: 48rem;
+      width: 100%;
+      text-align: center;
+    }
+
+    .page-employers .cta-banner-new__content > .reveal {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+
+    .page-employers .cta-banner-new__title {
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin-inline: auto;
+      font-size: clamp(2.05rem, 1.65rem + 1.7vw, 2.85rem);
+    }
+
+    .page-employers .cta-banner-new__text {
+      display: block;
+      width: 100%;
+      max-width: 38rem;
+      margin-inline: auto;
+      text-align: center;
+      font-size: var(--text-base);
+    }
+
+    .page-employers .cta-banner-new__actions--multi {
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: var(--space-3);
+      margin-inline: auto;
+    }
+
+    .page-employers .cta-banner-new__actions--multi .btn {
+      flex: 0 1 auto;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .page-employers .cta-banner-new__actions--multi .btn.btn--secondary,
+    .page-employers .cta-banner-new__actions--multi .btn.btn--outline-dark {
+      box-shadow: 0 2px 12px rgba(15, 26, 46, 0.08);
+    }
+
+    @media (max-width: 639px) {
+      .page-employers .cta-banner-new__title {
+        font-size: clamp(1.6rem, 5.8vw, 2.05rem);
+      }
+
+      .page-employers .cta-banner-new__actions--multi {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .page-employers .cta-banner-new__actions--multi .btn {
+        width: 100%;
+        max-width: 18.5rem;
       }
     }
 
@@ -507,10 +816,27 @@
       margin: 0;
     }
 
+    .roles-support-section .differentiator__link {
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .roles-support-section .differentiator__link:hover {
+      color: var(--color-accent-hover);
+    }
+
     @media (max-width: 940px) {
       .roles-support-section .differentiator {
         grid-template-columns: auto 1fr;
         align-items: flex-start;
+      }
+
+      .roles-support-section .differentiator__link {
+        grid-column: 2;
       }
     }
 
@@ -526,359 +852,6 @@
         left: 0.2rem;
         top: 2.35rem;
       }
-    }
-
-    /* ── Why Organizations Partner – card grid with dotted backdrop ── */
-    .partner-grid-section .section-heading {
-      position: relative;
-      padding-left: clamp(0rem, 4.5vw, 5.5rem);
-      margin-bottom: var(--space-10);
-    }
-
-    .partner-grid-section .partner-grid__blot {
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      width: clamp(5.5rem, 8vw, 7.6rem);
-      aspect-ratio: 1 / 1;
-      border-radius: 50%;
-      border: 1px solid rgba(46, 80, 178, 0.2);
-      opacity: 0.58;
-      background:
-        radial-gradient(circle at center, rgba(47, 72, 170, 0.03) 0%, rgba(47, 72, 170, 0.01) 62%, transparent 64%),
-        repeating-radial-gradient(circle at center, rgba(47, 72, 170, 0.32) 0 1px, transparent 1px 6px);
-      filter: blur(0.1px);
-      pointer-events: none;
-    }
-
-    .partner-grid-section .section-heading__title {
-      margin-top: 0;
-      font-family: var(--font-body);
-      font-style: normal;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-    }
-
-    .partner-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: var(--space-6) var(--space-8);
-    }
-
-    .partner-grid__item {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: var(--space-4);
-      align-items: start;
-      padding: var(--space-4);
-      border-radius: var(--radius-md);
-      border: 1px solid rgba(15, 26, 46, 0.08);
-      background: #fff;
-      transition:
-        transform 380ms var(--ease-out),
-        border-color 550ms ease,
-        box-shadow 550ms ease;
-    }
-
-    .partner-grid__item:hover {
-      transform: translateY(-2px);
-      border-color: rgba(175, 39, 47, 0.2);
-      box-shadow:
-        0 4px 10px rgba(15, 26, 46, 0.05),
-        0 14px 36px rgba(15, 26, 46, 0.1),
-        0 0 0 1px rgba(175, 39, 47, 0.08);
-    }
-
-    .partner-grid__icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      background: rgba(175, 39, 47, 0.1);
-      border: 1px solid rgba(175, 39, 47, 0.24);
-      color: var(--color-accent);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      animation: iconDrift 2.5s ease-in-out infinite;
-    }
-
-    .partner-grid__icon i {
-      width: 20px;
-      height: 20px;
-    }
-
-    .partner-grid__item:nth-child(2) .partner-grid__icon {
-      animation-delay: 0.25s;
-    }
-
-    .partner-grid__item:nth-child(3) .partner-grid__icon {
-      animation-delay: 0.5s;
-    }
-
-    .partner-grid__item:nth-child(4) .partner-grid__icon {
-      animation-delay: 0.75s;
-    }
-
-    .partner-grid__title {
-      font-family: var(--font-display);
-      font-size: clamp(1.35rem, 1.15rem + 0.45vw, 1.7rem);
-      font-weight: 500;
-      color: var(--color-navy);
-      line-height: 1.12;
-      letter-spacing: -0.01em;
-      margin: 0 0 var(--space-2);
-    }
-
-    .partner-grid__text {
-      font-size: var(--text-base);
-      color: var(--color-text-muted);
-      line-height: 1.65;
-      margin: 0 0 var(--space-2);
-      max-width: none;
-    }
-
-    @keyframes iconDrift {
-      0%,
-      100% {
-        transform: translateY(0) scale(1);
-        box-shadow: 0 0 0 0 rgba(175, 39, 47, 0.2);
-      }
-      50% {
-        transform: translateY(-3px) scale(1.03);
-        box-shadow: 0 0 0 9px rgba(175, 39, 47, 0);
-      }
-    }
-
-    @media (max-width: 920px) {
-      .partner-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .partner-grid-section .section-heading {
-        padding-left: 3.6rem;
-      }
-
-      .partner-grid-section .partner-grid__blot {
-        display: block;
-        width: 3rem;
-        opacity: 0.38;
-        left: 0.2rem;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .partner-grid__icon {
-        animation: none;
-      }
-    }
-
-    /* ── Scroll rhythm visuals (editorial image breaks) ── */
-    .employers-image-band {
-      position: relative;
-      min-height: clamp(13rem, 22vw, 18rem);
-      overflow: hidden;
-      background: var(--color-navy);
-      isolation: isolate;
-    }
-
-    .employers-image-band__bg {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 42%;
-      filter: brightness(0.8) contrast(1.04);
-      transform: scale(1.02);
-    }
-
-    .employers-image-band::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        110deg,
-        rgba(15, 26, 46, 0.74) 8%,
-        rgba(15, 26, 46, 0.5) 48%,
-        rgba(15, 26, 46, 0.72) 100%
-      );
-      z-index: 1;
-    }
-
-    .employers-image-band__content {
-      position: relative;
-      z-index: 2;
-      min-height: clamp(13rem, 22vw, 18rem);
-      display: flex;
-      align-items: center;
-      max-width: 56rem;
-    }
-
-    .employers-image-band__kicker {
-      font-size: var(--text-xs);
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.72);
-      margin-bottom: var(--space-3);
-    }
-
-    .employers-image-band__title {
-      margin: 0;
-      color: #fff;
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 1.4rem + 2.2vw, 3rem);
-      line-height: 1.06;
-      font-style: normal;
-      font-weight: 600;
-      letter-spacing: -0.015em;
-      text-wrap: balance;
-    }
-
-    .employers-image-band__title .text-accent {
-      color: #de5b54;
-    }
-
-    .employers-story-band {
-      position: relative;
-      min-height: clamp(14rem, 23vw, 19rem);
-      overflow: hidden;
-      background: var(--color-navy);
-      isolation: isolate;
-    }
-
-    .employers-story-band__bg {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 45%;
-      filter: brightness(0.74) contrast(1.04);
-      transform: scale(1.02);
-    }
-
-    .employers-story-band::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        106deg,
-        rgba(15, 26, 46, 0.76) 8%,
-        rgba(15, 26, 46, 0.58) 52%,
-        rgba(15, 26, 46, 0.78) 100%
-      );
-      z-index: 1;
-    }
-
-    .employers-story-band__content {
-      position: relative;
-      z-index: 2;
-      min-height: clamp(14rem, 23vw, 19rem);
-      display: flex;
-      align-items: center;
-      max-width: 57rem;
-    }
-
-    .employers-story-band__kicker {
-      margin: 0 0 var(--space-3);
-      color: rgba(255, 255, 255, 0.75);
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-size: var(--text-xs);
-      font-weight: 600;
-    }
-
-    .employers-story-band__title {
-      margin: 0 0 var(--space-4);
-      font-family: var(--font-display);
-      font-size: clamp(1.95rem, 1.4rem + 1.7vw, 2.9rem);
-      line-height: 1.06;
-      letter-spacing: -0.016em;
-      color: #fff;
-      font-style: normal;
-      font-weight: 600;
-      text-wrap: balance;
-      max-width: 27ch;
-    }
-
-    .employers-story-band__title .text-accent {
-      color: #de5b54;
-    }
-
-    .employers-story-band__text {
-      margin: 0;
-      font-size: clamp(1.04rem, 0.98rem + 0.2vw, 1.16rem);
-      line-height: 1.68;
-      color: rgba(255, 255, 255, 0.88);
-      max-width: 52ch;
-    }
-
-    /* ── CTA Section ── */
-    .cta-duo {
-      display: flex;
-      gap: var(--space-4);
-      flex-wrap: wrap;
-    }
-
-    .results-band {
-      position: relative;
-      background: #f3f0e8;
-      isolation: isolate;
-      overflow: hidden;
-      border: 0;
-      margin: 0;
-    }
-
-    .results-band__bg {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      opacity: 0.42;
-      filter: saturate(0.98) contrast(1.05);
-      transform: scale(1.03);
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    .results-band::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        180deg,
-        rgba(243, 240, 232, 0.72) 0%,
-        rgba(243, 240, 232, 0.76) 52%,
-        rgba(243, 240, 232, 0.74) 100%
-      );
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    .results-band__content {
-      position: relative;
-      z-index: 2;
-      max-width: 42rem;
-      margin: 0 auto;
-      text-align: center;
-      padding-block: clamp(var(--space-8), 6vw, var(--space-12));
-    }
-
-    .results-band__title {
-      margin: 0 0 var(--space-4);
-    }
-
-    .results-band__text {
-      font-size: clamp(1rem, 0.96rem + 0.14vw, 1.08rem);
-      color: var(--color-text-muted);
-      line-height: 1.76;
-      margin: 0 0 var(--space-8);
     }
 
     /* Employers hero — reverse of candidates: photo left, red panel right */
@@ -1025,7 +998,7 @@
     }
   </style>
 </head>
-<body>
+<body class="page-employers">
 
   <!-- ============================================
        MOBILE OVERLAY
@@ -1113,8 +1086,7 @@
           <p class="employers-hero-split__lede reveal">Specialized Talent. Proven Results.</p>
           <p class="employers-hero-split__desc reveal">Hiring exceptional talent requires more than posting a position and hoping the right candidate applies. We partner with organizations to identify and engage professionals who have the right combination of technical expertise, leadership, and cultural fit to contribute to your company&rsquo;s long-term success.</p>
           <div class="employers-hero-split__actions reveal">
-            <a href="contact.html" class="btn btn--primary btn--lg">Schedule a Call</a>
-            <a href="contact.html" class="btn btn--secondary btn--lg">Contact Us</a>
+            <a href="contact.html" class="btn btn--primary btn--lg">Let&rsquo;s Talk</a>
           </div>
         </div>
       </div>
@@ -1143,7 +1115,12 @@
                 <div class="solution-flip__overlay">
                   <h3 class="solution-flip__label">Retained Executive Search</h3>
                   <p class="solution-flip__detail">Through comprehensive market mapping, targeted outreach, and rigorous evaluation, we identify leaders who can drive transformation, innovation, and long-term growth.</p>
-                  <p class="solution-flip__suited">Typical engagements include C-suite and VP-level roles, Data, AI, and Technology Senior Leadership, and strategic, confidential hires with significant business impact.</p>
+                  <p class="solution-flip__list-label">Typical engagements include</p>
+                  <ul class="solution-flip__list">
+                    <li>C-suite and VP-level roles</li>
+                    <li>Data, AI, and Technology Senior Leadership</li>
+                    <li>Strategic, confidential hires with significant business impact</li>
+                  </ul>
                   <a href="contact.html" class="solution-flip__cta">Start the search</a>
                 </div>
               </div>
@@ -1162,7 +1139,12 @@
                 <div class="solution-flip__overlay">
                   <h3 class="solution-flip__label">Engaged Professional Search</h3>
                   <p class="solution-flip__detail">Whether structured as success-based or hybrid search engagements, we focus on quality, speed, and alignment—delivering candidates who can contribute immediately and scale with your organization.</p>
-                  <p class="solution-flip__suited">Typical roles include data, analytics, and engineering professionals; technology and IT roles; and commercial, lending, risk, and functional mid-management leadership.</p>
+                  <p class="solution-flip__list-label">Typical roles include</p>
+                  <ul class="solution-flip__list">
+                    <li>Data, analytics, and engineering professionals</li>
+                    <li>Technology and IT roles</li>
+                    <li>Commercial, lending, risk and functional mid-management leadership</li>
+                  </ul>
                   <a href="contact.html" class="solution-flip__cta">Start the search</a>
                 </div>
               </div>
@@ -1181,7 +1163,12 @@
                 <div class="solution-flip__overlay">
                   <h3 class="solution-flip__label">Project &amp; Interim Search</h3>
                   <p class="solution-flip__detail">This model is ideal when speed, specialization, or market scarcity requires a highly targeted and responsive strategy.</p>
-                  <p class="solution-flip__suited">Best suited for consultants with emerging skill sets (AI, advanced analytics, platform engineering), urgent or business-critical short-term hires, and project-based staffing or interim needs.</p>
+                  <p class="solution-flip__list-label">Best suited for</p>
+                  <ul class="solution-flip__list">
+                    <li>Consultants with emerging skill sets (AI, advanced analytics, platform engineering)</li>
+                    <li>Urgent or business-critical short-term hires</li>
+                    <li>Project-based, staffing or interim needs</li>
+                  </ul>
                   <a href="contact.html" class="solution-flip__cta">Start the search</a>
                 </div>
               </div>
@@ -1192,79 +1179,135 @@
     </section>
 
     <!-- ==========================================
-         VISUAL BREAK BAND
+         COMMON HIRING CHALLENGES + HOW WE HELP
     ========================================== -->
-    <section class="employers-image-band" aria-label="High-impact hiring visual break">
-      <img class="employers-image-band__bg" src="./assets/images/hero-specialties.jpg" alt="" loading="lazy" decoding="async">
+    <section class="section-padding challenges-help-section" aria-labelledby="challenges-heading">
       <div class="container">
-        <div class="employers-image-band__content reveal">
-          <div>
-            <p class="employers-image-band__kicker">Strategic Search Momentum</p>
-            <h2 class="employers-image-band__title">Aligned talent strategy creates faster hires and <span class="text-accent">stronger teams</span>.</h2>
+        <div class="challenges-help-grid">
+          <div class="challenges-help-panel reveal">
+            <p class="challenges-help-panel__eyebrow">The market reality</p>
+            <h2 class="challenges-help-panel__title" id="challenges-heading">Common Hiring Challenges</h2>
+            <p class="challenges-help-panel__lede">The strongest candidates usually aren&rsquo;t looking for a new job. They&rsquo;re busy leading teams, solving complex problems, and delivering results. That&rsquo;s why hiring exceptional talent often requires more than reviewing applicants. It requires a proactive search strategy that engages professionals who weren&rsquo;t planning to make a career move.</p>
+            <p class="challenges-help-panel__lede">Other common hiring challenges include:</p>
+            <ul class="challenges-help-list">
+              <li class="challenges-help-list__item">
+                <svg class="challenges-help-list__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 19V5M4 19h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M8 15v-3M12 15V8M16 15v-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                Limited access to passive talent
+              </li>
+              <li class="challenges-help-list__item">
+                <svg class="challenges-help-list__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="8" r="3.2" stroke="currentColor" stroke-width="1.6"/><path d="M5.5 19c1.4-3 3.7-4.5 6.5-4.5S16.1 16 17.5 19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                Finding the right fit
+              </li>
+              <li class="challenges-help-list__item">
+                <svg class="challenges-help-list__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M12 8v4l2.5 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Longer hiring cycles
+              </li>
+              <li class="challenges-help-list__item">
+                <svg class="challenges-help-list__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="6" y="11" width="12" height="9" rx="1.6" stroke="currentColor" stroke-width="1.6"/><path d="M9 11V8.2a3 3 0 0 1 6 0V11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                Confidential hiring needs
+              </li>
+              <li class="challenges-help-list__item">
+                <svg class="challenges-help-list__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 15.5V8.8A2.8 2.8 0 0 1 7.8 6h4.9A2.8 2.8 0 0 1 15.5 8.8v2.4A2.8 2.8 0 0 1 12.7 14H9.2L5 16.8v-1.3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                Limited internal recruiting resources
+              </li>
+              <li class="challenges-help-list__item">
+                <svg class="challenges-help-list__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v5c0 4.4-2.9 7.6-7 9-4.1-1.4-7-4.6-7-9V6l7-3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                Competition for exceptional talent
+              </li>
+            </ul>
+          </div>
+
+          <div class="challenges-help-panel reveal">
+            <p class="challenges-help-panel__eyebrow">How We Help</p>
+            <h2 class="challenges-help-panel__title">A Strategic Approach to Better Hiring</h2>
+            <p class="challenges-help-panel__lede">Hiring exceptional talent requires more than identifying qualified candidates. It requires a search process designed to solve the challenges organizations face in today&rsquo;s market.</p>
+            <p class="challenges-help-panel__lede">Our approach helps clients:</p>
+            <ul class="challenges-help-list">
+              <li class="challenges-help-list__item">
+                <svg class="challenges-help-list__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.6"/><path d="M16 16l4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                <span><strong>Reach passive talent</strong> through targeted research, market mapping, and personalized outreach.</span>
+              </li>
+              <li class="challenges-help-list__item">
+                <svg class="challenges-help-list__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v5c0 4.4-2.9 7.6-7 9-4.1-1.4-7-4.6-7-9V6l7-3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9.5 12.2l1.7 1.7 3.5-3.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span><strong>Improve hiring quality</strong> by evaluating technical expertise, leadership capabilities, and long-term organizational fit.</span>
+              </li>
+              <li class="challenges-help-list__item">
+                <svg class="challenges-help-list__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v5c0 4.4-2.9 7.6-7 9-4.1-1.4-7-4.6-7-9V6l7-3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                <span><strong>Reduce hiring risk</strong> through structured evaluation, ongoing client communication and collaboration, and informed hiring decisions.</span>
+              </li>
+              <li class="challenges-help-list__item">
+                <svg class="challenges-help-list__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="6" y="11" width="12" height="9" rx="1.6" stroke="currentColor" stroke-width="1.6"/><path d="M9 11V8.2a3 3 0 0 1 6 0V11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                <span><strong>Support confidential searches</strong> with a discreet, consultative approach.</span>
+              </li>
+              <li class="challenges-help-list__item">
+                <svg class="challenges-help-list__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 19V8.5A2.5 2.5 0 0 1 10.5 6h3A2.5 2.5 0 0 1 16 8.5V19M8 19H5.8A1.8 1.8 0 0 1 4 17.2V13a2 2 0 0 1 2-2h2M16 19h2.2A1.8 1.8 0 0 0 20 17.2V13a2 2 0 0 0-2-2h-2" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                <span><strong>Extend internal recruiting capacity</strong> by serving as an extension of your leadership and HR teams throughout the search process.</span>
+              </li>
+            </ul>
+            <p class="challenges-help-panel__outro">We don&rsquo;t simply fill open positions. We help organizations make hiring decisions that support long-term success.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ==========================================
-         3. OUR PROCESS SECTION
+         HIRING STATEMENT
     ========================================== -->
-    <section class="section-padding bg-warm process-section" aria-labelledby="process-heading">
-      <div class="container">
+    <section class="hiring-statement" aria-label="Hiring the right person matters">
+      <div class="container reveal">
+        <h2 class="hiring-statement__title">Hiring the Right Person Matters.<span>How you Find them Matters Just as Much.</span></h2>
+      </div>
+    </section>
 
-        <header class="section-heading reveal" style="text-align:center;">
-          <h2 class="section-heading__title" id="process-heading">A Structured, Strategic Approach</h2>
-          <p class="section-intro">Our process is designed to reduce risk, improve alignment, and deliver better hiring outcomes through a consultative, research-driven search methodology.</p>
+    <!-- ==========================================
+         OUR APPROACH
+    ========================================== -->
+    <section class="section-padding employers-approach" aria-labelledby="approach-heading">
+      <div class="container">
+        <header class="employers-approach__head reveal">
+          <p class="employers-approach__eyebrow">Our Approach</p>
+          <h2 class="employers-approach__title" id="approach-heading">A Structured, Strategic Approach</h2>
+          <p class="employers-approach__intro">Our process is designed to reduce risk, improve alignment, and deliver better hiring outcomes.</p>
+          <p class="employers-approach__lede">Every search we conduct is built on a consultative, research-driven process designed to deliver consistent, high-quality results. We don&rsquo;t rely on job postings or inbound applicants. We execute targeted searches aligned to your specific business needs.</p>
         </header>
 
-        <div class="process-grid">
-
-          <div class="process-card reveal">
-            <figure class="process-card__media">
-              <img src="./assets/images/hero-about.jpg" alt="Leadership meeting in a modern office" loading="lazy" decoding="async">
-            </figure>
-            <div class="process-card__body">
-              <h3 class="process-card__title">Discovery &amp; Success Profile <span class="text-accent">Development</span></h3>
-              <p class="process-card__text">We define what success looks like beyond a job description: business objectives, team structure, required expertise, leadership capabilities, cultural alignment, and motivators.</p>
-            </div>
+        <div class="employers-approach__panel reveal">
+          <div class="approach-steps">
+            <article class="approach-step">
+              <div class="approach-step__badge" aria-hidden="true">01</div>
+              <div>
+                <h3 class="approach-step__title">Discovery &amp; Success Profile Development</h3>
+                <p class="approach-step__text">We begin by developing a detailed Success Profile - going beyond a job description to define what success truly looks like in the role. This foundation ensures we are aligned not just on qualifications but on outcomes.</p>
+              </div>
+            </article>
+            <article class="approach-step">
+              <div class="approach-step__badge" aria-hidden="true">02</div>
+              <div>
+                <h3 class="approach-step__title">Market Mapping, Candidate Identification &amp; Engagement</h3>
+                <p class="approach-step__text">We conduct comprehensive research and market mapping to identify where the right talent exists and then conduct personalized outreach that resonates with top talent. This allows us to access candidates who are not actively in the market but open to the right opportunity.</p>
+              </div>
+            </article>
+            <article class="approach-step">
+              <div class="approach-step__badge" aria-hidden="true">03</div>
+              <div>
+                <h3 class="approach-step__title">Evaluation, Calibration &amp; Alignment</h3>
+                <p class="approach-step__text">We apply a rigorous evaluation process to ensure candidates meet technical, leadership, and organizational requirements. We continuously calibrate with you throughout the process, refining criteria based on feedback to ensure alignment.</p>
+              </div>
+            </article>
+            <article class="approach-step">
+              <div class="approach-step__badge" aria-hidden="true">04</div>
+              <div>
+                <h3 class="approach-step__title">Delivery, Selection &amp; Ongoing Partnership</h3>
+                <p class="approach-step__text">We present a curated slate of highly qualified candidates, each evaluated against the Success Profile and role requirements. We partner closely with you through interviews, offer negotiation, onboarding and beyond. Our involvement doesn&rsquo;t end at placement - we remain engaged to support long-term success.</p>
+              </div>
+            </article>
           </div>
-
-          <div class="process-card reveal">
-            <figure class="process-card__media">
-              <img src="./assets/images/hero-candidates.jpg" alt="Candidate interview discussion" loading="lazy" decoding="async">
-            </figure>
-            <div class="process-card__body">
-              <h3 class="process-card__title">Market Mapping, Identification &amp; <span class="text-accent">Engagement</span></h3>
-              <p class="process-card__text">We map where the right talent exists, execute targeted outreach, and engage passive high-performing candidates through established networks in Data, Technology, and Financial Services.</p>
-            </div>
-          </div>
-
-          <div class="process-card reveal">
-            <figure class="process-card__media">
-              <img src="./assets/images/hero-insights.jpg" alt="Business strategy conversation with data insights" loading="lazy" decoding="async">
-            </figure>
-            <div class="process-card__body">
-              <h3 class="process-card__title">Evaluation, Calibration &amp; <span class="text-accent">Alignment</span></h3>
-              <p class="process-card__text">We evaluate candidates on technical capability, leadership, communication, motivation, and long-term potential while continuously calibrating with your team based on feedback.</p>
-            </div>
-          </div>
-
-          <div class="process-card reveal">
-            <figure class="process-card__media">
-              <img src="./assets/images/hero-jobs.jpg" alt="Hiring manager and recruiter reviewing final candidates" loading="lazy" decoding="async">
-            </figure>
-            <div class="process-card__body">
-              <h3 class="process-card__title">Delivery, Selection &amp; Ongoing <span class="text-accent">Partnership</span></h3>
-              <p class="process-card__text">We present a curated slate and stay closely involved through interview coordination, offer strategy, acceptance, onboarding support, and post-placement follow-through.</p>
-            </div>
-          </div>
-
         </div>
       </div>
     </section>
 
     <!-- ==========================================
-         4. WHY CLIENTS PARTNER SECTION
+         REPRESENTATIVE SEARCHES
     ========================================== -->
     <section class="section-padding roles-support-section" style="background:#fff;" aria-labelledby="why-heading">
       <div class="container container--narrow">
@@ -1272,8 +1315,8 @@
         <header class="section-heading reveal roles-support-head">
           <div class="roles-support__blot" aria-hidden="true"></div>
           <p class="overline">Roles We Support</p>
-          <h2 class="section-heading__title" id="why-heading">Representative Searches Across <span class="text-accent">Core Markets</span></h2>
-          <p class="section-intro">We partner with organizations to deliver specialized talent across Data, Technology, and Financial Services. Representative searches include, but are not limited to:</p>
+          <h2 class="section-heading__title" id="why-heading">Representative Searches</h2>
+          <p class="section-intro">Representative searches include, but are not limited to:</p>
         </header>
 
         <div class="differentiators-list">
@@ -1286,6 +1329,7 @@
               <h3 class="differentiator__title">Data &amp; AI</h3>
               <p class="differentiator__text">Data Engineer, Analytics Engineer, Data Analyst/BI Developer, Machine Learning Engineer, and AI/Applied Scientist roles.</p>
             </div>
+            <a href="specialties.html#industry-data" class="differentiator__link">Learn More</a>
           </div>
 
           <hr class="differentiator__divider" aria-hidden="true">
@@ -1298,6 +1342,7 @@
               <h3 class="differentiator__title">Technology</h3>
               <p class="differentiator__text">Software Engineer/Developer, Cloud Engineer/Architect, DevOps/Platform Engineer, Product Manager, and IT/Infrastructure leadership roles.</p>
             </div>
+            <a href="specialties.html#industry-technology" class="differentiator__link">Learn More</a>
           </div>
 
           <hr class="differentiator__divider" aria-hidden="true">
@@ -1307,9 +1352,10 @@
               <i data-lucide="bar-chart-2"></i>
             </div>
             <div class="differentiator__content">
-              <h3 class="differentiator__title">Financial Services (Credit Unions &amp; Lending)</h3>
+              <h3 class="differentiator__title">Financial Services</h3>
               <p class="differentiator__text">Chief Lending Officer, VP/SVP Commercial Lending, Commercial Relationship Manager, Credit Analyst/Underwriter, Treasury Management Officer, and Business Banking leadership.</p>
             </div>
+            <a href="specialties.html#industry-fs" class="differentiator__link">Learn More</a>
           </div>
 
         </div>
@@ -1317,87 +1363,53 @@
     </section>
 
     <!-- ==========================================
-         EDITORIAL SPLIT SECTION
+         BY THE NUMBERS
     ========================================== -->
-    <section class="employers-story-band" aria-label="SourceAbility hiring partnership">
-      <img class="employers-story-band__bg" src="./assets/images/article-hiring-talent.jpg" alt="" loading="lazy" decoding="async">
+    <section class="section-padding by-the-numbers" aria-labelledby="numbers-heading">
       <div class="container">
-        <div class="employers-story-band__content reveal">
-          <div>
-            <p class="employers-story-band__kicker">Built for retention</p>
-            <h2 class="employers-story-band__title">Search delivery designed for long-term performance, not short-term <span class="text-accent">placement</span>.</h2>
-            <p class="employers-story-band__text">From executive leadership through critical contributors, we align capability, culture, and business outcomes so every hire strengthens your team over time.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-         5. WHY ORGANIZATIONS PARTNER
-    ========================================== -->
-    <section class="section-padding bg-warm partner-grid-section" aria-labelledby="partner-heading">
-      <div class="container container--narrow">
-        <header class="section-heading reveal">
-          <div class="partner-grid__blot" aria-hidden="true"></div>
-          <h2 class="section-heading__title" id="partner-heading">Why Organizations Partner With <span class="text-accent">SourceAbility</span></h2>
+        <header class="by-the-numbers__head reveal">
+          <h2 class="by-the-numbers__title" id="numbers-heading">By the Numbers</h2>
         </header>
-
-        <div class="partner-grid">
-          <div class="partner-grid__item reveal">
-            <div class="partner-grid__icon" aria-hidden="true">
-              <i data-lucide="layers"></i>
-            </div>
-            <div class="partner-grid__content">
-              <h3 class="partner-grid__title">Deep market expertise</h3>
-              <p class="partner-grid__text">Specialized recruiting focus across Data, AI, Technology, and Financial Services.</p>
-            </div>
-          </div>
-
-          <div class="partner-grid__item reveal">
-            <div class="partner-grid__icon" aria-hidden="true">
-              <i data-lucide="users"></i>
-            </div>
-            <div class="partner-grid__content">
-              <h3 class="partner-grid__title">Leadership and contributor delivery</h3>
-              <p class="partner-grid__text">Proven ability to place both executive leaders and high-impact individual contributors.</p>
-            </div>
-          </div>
-
-          <div class="partner-grid__item reveal">
-            <div class="partner-grid__icon" aria-hidden="true">
-              <i data-lucide="handshake"></i>
-            </div>
-            <div class="partner-grid__content">
-              <h3 class="partner-grid__title">Consultative, relationship-driven process</h3>
-              <p class="partner-grid__text">A transparent partnership model focused on long-term hiring success and business outcomes.</p>
-            </div>
-          </div>
-
-          <div class="partner-grid__item reveal">
-            <div class="partner-grid__icon" aria-hidden="true">
-              <i data-lucide="sliders-horizontal"></i>
-            </div>
-            <div class="partner-grid__content">
-              <h3 class="partner-grid__title">Flexible engagement models</h3>
-              <p class="partner-grid__text">Search delivery options aligned to role criticality, urgency, and organizational needs.</p>
-            </div>
-          </div>
+        <div class="by-the-numbers__grid">
+          <article class="stat-card reveal">
+            <span class="stat-card__value">20+</span>
+            <p class="stat-card__label">years recruiting experience</p>
+          </article>
+          <article class="stat-card reveal">
+            <span class="stat-card__value">93%</span>
+            <p class="stat-card__label">client retention</p>
+          </article>
+          <article class="stat-card reveal">
+            <span class="stat-card__value">87%</span>
+            <p class="stat-card__label">of our candidates are still with same client after 5 years</p>
+          </article>
+          <article class="stat-card reveal">
+            <span class="stat-card__value">83%</span>
+            <p class="stat-card__label">placements from passive candidates</p>
+          </article>
+          <article class="stat-card reveal">
+            <span class="stat-card__value">72%</span>
+            <p class="stat-card__label">of hires from 3 candidate submissions</p>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- ==========================================
-         7. CTA SECTION
+         LET'S START THE CONVERSATION
     ========================================== -->
-    <section class="results-band" aria-label="Let's build your team">
-      <img class="results-band__bg" src="./assets/images/article-recruiter-value.jpg" alt="" loading="lazy" decoding="async">
-      <div class="container">
-        <div class="results-band__content">
-          <h2 class="section-heading__title results-band__title reveal">Results That Matter</h2>
-          <p class="results-band__text reveal">20+ years of specialized recruiting experience, consistent delivery of highly qualified candidates in under 60 days, 93% client retention, and 87% candidate retention over 5+ years.</p>
-          <div class="cta-duo reveal" style="justify-content:center;">
-            <a href="contact.html" class="btn btn--primary btn--lg">Engage SourceAbility</a>
-            <a href="contact.html" class="btn btn--secondary btn--lg">Schedule a Call</a>
+    <section class="cta-banner-new" aria-label="Let's Start the Conversation">
+      <div class="cta-banner-new__container cta-banner-new__container--no-images">
+        <div class="cta-banner-new__content">
+          <div class="reveal">
+            <h2 class="cta-banner-new__title">Let&rsquo;s <span class="cta-banner-new__mark">Start the Conversation?</span></h2>
+            <p class="cta-banner-new__text">Whether you&rsquo;re hiring today, planning for future growth, or simply looking for a trusted recruiting partner, we&rsquo;d welcome the opportunity to learn more about your organization and discuss how we can help.</p>
+            <div class="cta-banner-new__actions cta-banner-new__actions--multi">
+              <a href="https://calendly.com/tanyacalkins" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg">Schedule a Meeting</a>
+              <a href="https://www.linkedin.com/in/tanyacalkins" target="_blank" rel="noopener noreferrer" class="btn btn--secondary btn--lg">Connect on LinkedIn</a>
+              <a href="mailto:sales@sourceabilityinc.com" class="btn btn--outline-dark btn--lg">Email Us</a>
+              <a href="tel:8664129178" class="btn btn--outline-dark btn--lg">Call Us</a>
+            </div>
           </div>
         </div>
       </div>
