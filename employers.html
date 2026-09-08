@@ -467,22 +467,42 @@
     .approach-roles__grid {
       display: grid;
       gap: clamp(2.75rem, 5vw, 4rem);
-      align-items: start;
     }
 
     @media (min-width: 1080px) {
       .approach-roles__grid {
         grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-        gap: clamp(2rem, 3vw, 3.25rem);
+        grid-template-rows: auto 1fr;
+        column-gap: clamp(2rem, 3vw, 3.25rem);
+        row-gap: 0;
+        align-items: stretch;
       }
-    }
 
-    .approach-roles__col--roles {
-      background: var(--color-accent);
-      border-radius: var(--radius-lg);
-      padding: clamp(1.5rem, 2.8vw, 2.35rem);
-      box-shadow: 0 8px 28px rgba(15, 26, 46, 0.08);
-      color: #fff;
+      .approach-roles__col {
+        display: contents;
+      }
+
+      .approach-roles__col--approach .employers-approach__head {
+        grid-column: 1;
+        grid-row: 1;
+      }
+
+      .approach-roles__col--roles .employers-approach__head {
+        grid-column: 2;
+        grid-row: 1;
+      }
+
+      .employers-approach__panel {
+        grid-column: 1;
+        grid-row: 2;
+        height: 100%;
+      }
+
+      .roles-support-panel {
+        grid-column: 2;
+        grid-row: 2;
+        height: 100%;
+      }
     }
 
     .employers-approach__head {
@@ -739,36 +759,27 @@
     /* ── Roles We Support – competitor-inspired readable list ── */
     .roles-support-head {
       position: relative;
-      margin-bottom: var(--space-6);
     }
 
     .roles-support__blot {
       display: none;
     }
 
-    .approach-roles .section-heading {
-      margin-bottom: 0;
-    }
-
-    .approach-roles .section-heading__title {
-      font-family: var(--font-display);
-      font-size: clamp(1.55rem, 1.25rem + 0.9vw, 2rem);
-      font-style: normal;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-top: 0;
+    .roles-support-panel {
+      background: var(--color-accent);
+      border-radius: var(--radius-lg);
+      padding: clamp(1.5rem, 2.8vw, 2.35rem);
+      box-shadow: 0 8px 28px rgba(15, 26, 46, 0.08);
       color: #fff;
-    }
-
-    .approach-roles .section-intro {
-      margin-top: var(--space-3);
-      font-size: var(--text-sm);
-      color: rgba(255, 255, 255, 0.88);
+      display: flex;
+      flex-direction: column;
     }
 
     .roles-support-section .differentiators-list {
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
       gap: var(--space-5);
       margin-top: 0;
     }
@@ -1291,11 +1302,12 @@
           </div>
 
           <div class="approach-roles__col approach-roles__col--roles roles-support-section" aria-labelledby="why-heading">
-            <header class="section-heading reveal roles-support-head">
-              <h2 class="section-heading__title" id="why-heading">Representative Searches</h2>
-              <p class="section-intro">Representative searches include, but are not limited to:</p>
+            <header class="employers-approach__head reveal roles-support-head">
+              <h2 class="employers-approach__title" id="why-heading">Representative Searches</h2>
+              <p class="employers-approach__intro">Representative searches include, but are not limited to:</p>
             </header>
 
+            <div class="roles-support-panel reveal">
             <div class="differentiators-list">
               <div class="differentiator reveal">
                 <div class="differentiator__icon" aria-hidden="true">
@@ -1333,6 +1345,7 @@
                   <a href="specialties.html" class="differentiator__link">Learn More</a>
                 </div>
               </div>
+            </div>
             </div>
           </div>
         </div>
