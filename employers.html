@@ -792,23 +792,21 @@
       padding: var(--space-2) 0;
     }
 
-    .roles-support-section .differentiator__icon {
-      flex-shrink: 0;
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      background: rgba(255, 255, 255, 0.14);
-      border: 1px solid rgba(255, 255, 255, 0.28);
-      display: flex;
+    .roles-support-section .differentiator__badge {
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      color: #fff;
-      animation: iconDrift 2.5s ease-in-out infinite;
-    }
-
-    .roles-support-section .differentiator__icon i {
-      width: 20px;
-      height: 20px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #fff;
+      color: var(--color-accent);
+      font-family: var(--font-display);
+      font-size: var(--text-base);
+      font-style: italic;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      flex-shrink: 0;
     }
 
     .roles-support-section .differentiator__content {
@@ -1310,9 +1308,7 @@
             <div class="roles-support-panel reveal">
             <div class="differentiators-list">
               <div class="differentiator reveal">
-                <div class="differentiator__icon" aria-hidden="true">
-                  <i data-lucide="cpu"></i>
-                </div>
+                <div class="differentiator__badge" aria-hidden="true">01</div>
                 <div class="differentiator__content">
                   <h3 class="differentiator__title">Data &amp; AI</h3>
                   <p class="differentiator__text">Data Engineer, Analytics Engineer, Data Analyst/BI Developer, Machine Learning Engineer, and AI/Applied Scientist roles.</p>
@@ -1323,9 +1319,7 @@
               <hr class="differentiator__divider" aria-hidden="true">
 
               <div class="differentiator reveal">
-                <div class="differentiator__icon" aria-hidden="true">
-                  <i data-lucide="code-2"></i>
-                </div>
+                <div class="differentiator__badge" aria-hidden="true">02</div>
                 <div class="differentiator__content">
                   <h3 class="differentiator__title">Technology</h3>
                   <p class="differentiator__text">Software Engineer/Developer, Cloud Engineer/Architect, DevOps/Platform Engineer, Product Manager, and IT/Infrastructure leadership roles.</p>
@@ -1336,9 +1330,7 @@
               <hr class="differentiator__divider" aria-hidden="true">
 
               <div class="differentiator reveal">
-                <div class="differentiator__icon" aria-hidden="true">
-                  <i data-lucide="landmark"></i>
-                </div>
+                <div class="differentiator__badge" aria-hidden="true">03</div>
                 <div class="differentiator__content">
                   <h3 class="differentiator__title">Financial Services</h3>
                   <p class="differentiator__text">Chief Lending Officer, VP/SVP Commercial Lending, Commercial Relationship Manager, Credit Analyst/Underwriter, Treasury Management Officer, and Business Banking leadership.</p>
