@@ -110,11 +110,15 @@
 
     .search-solutions__intro {
       margin: 0;
-      color: #bf2e1a;
+      color: var(--color-text-muted);
       font-family: var(--font-body);
       font-size: clamp(1.05rem, 0.98rem + 0.25vw, 1.1875rem);
       font-weight: 500;
       line-height: 1.55;
+    }
+
+    .search-solutions__intro-lead {
+      color: #bf2e1a;
     }
 
     .search-solutions__cards {
@@ -1094,7 +1098,7 @@
       <div class="container">
         <header class="search-solutions__head reveal">
           <h2 class="search-solutions__title" id="solutions-heading">Search Solutions</h2>
-          <p class="search-solutions__intro">Every search is different. That is why we offer flexible search solutions designed around the complexity, urgency and business impact of each hiring need.</p>
+          <p class="search-solutions__intro"><span class="search-solutions__intro-lead">Every search is different.</span> That is why we offer flexible search solutions designed around the complexity, urgency and business impact of each hiring need.</p>
         </header>
 
         <div class="search-solutions__cards">
