@@ -753,6 +753,108 @@
       box-shadow: 0 4px 16px rgba(175, 39, 47, 0.18);
     }
 
+    .call-dialog {
+      width: min(26rem, calc(100vw - 2rem));
+      margin: auto;
+      padding: 0;
+      border: none;
+      border-radius: var(--radius-xl);
+      background: #fff;
+      color: var(--color-navy);
+      box-shadow: 0 24px 64px rgba(15, 26, 46, 0.28);
+    }
+
+    .call-dialog::backdrop {
+      background: rgba(15, 26, 46, 0.55);
+    }
+
+    .call-dialog__inner {
+      padding: 1.75rem 1.75rem 1.5rem;
+    }
+
+    .call-dialog__head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .call-dialog__title {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .call-dialog__close {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.25rem;
+      height: 2.25rem;
+      margin: -0.35rem -0.35rem 0 0;
+      padding: 0;
+      border: none;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--color-navy);
+      cursor: pointer;
+    }
+
+    .call-dialog__close:hover,
+    .call-dialog__close:focus-visible {
+      background: var(--color-accent-light);
+      color: var(--color-accent);
+    }
+
+    .call-dialog__lede {
+      margin: 0 0 1.15rem;
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+    }
+
+    .call-dialog__numbers {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .call-dialog__number {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      padding: 1rem 1.15rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      background: var(--color-bg);
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .call-dialog__number:hover,
+    .call-dialog__number:focus-visible {
+      border-color: var(--color-accent);
+      background: #fff;
+    }
+
+    .call-dialog__label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+    }
+
+    .call-dialog__value {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--color-accent);
+    }
+
     @media (max-width: 639px) {
       .page-employers .cta-banner-new__title {
         font-size: clamp(1.6rem, 5.8vw, 2.05rem);
@@ -1380,8 +1482,8 @@
             <div class="cta-banner-new__actions cta-banner-new__actions--multi">
               <a href="https://calendly.com/tanyacalkins" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg">Schedule a Meeting</a>
               <a href="https://www.linkedin.com/in/tanyacalkins" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg">Connect on LinkedIn</a>
-              <a href="mailto:sales@sourceabilityinc.com" class="btn btn--primary btn--lg">Email Us</a>
-              <a href="tel:8664129178" class="btn btn--primary btn--lg">Call Us</a>
+              <a href="contact.html#contact-form" class="btn btn--primary btn--lg">Email Us</a>
+              <a href="tel:+18664129178" class="btn btn--primary btn--lg js-call-us" data-call-dialog="call-us-dialog" aria-haspopup="dialog" aria-controls="call-us-dialog">Call Us</a>
             </div>
           </div>
         </div>
@@ -1470,6 +1572,28 @@
     </div>
   </footer>
 
+  <dialog class="call-dialog" id="call-us-dialog" aria-labelledby="call-us-dialog-title">
+    <div class="call-dialog__inner">
+      <div class="call-dialog__head">
+        <h2 class="call-dialog__title" id="call-us-dialog-title">Call Us</h2>
+        <button type="button" class="call-dialog__close" data-call-dialog-close aria-label="Close">
+          <i data-lucide="x" style="width:20px;height:20px;"></i>
+        </button>
+      </div>
+      <p class="call-dialog__lede">Choose a number to call, or write it down and dial from your phone.</p>
+      <div class="call-dialog__numbers">
+        <a class="call-dialog__number" href="tel:+18664129178">
+          <span class="call-dialog__label">Toll-Free</span>
+          <span class="call-dialog__value">866-412-9178</span>
+        </a>
+        <a class="call-dialog__number" href="tel:+17048378200">
+          <span class="call-dialog__label">Office</span>
+          <span class="call-dialog__value">704-837-8200</span>
+        </a>
+      </div>
+    </div>
+  </dialog>
+
   <!-- ============================================
        SCRIPTS
   ============================================ -->
@@ -1489,6 +1613,26 @@
           }
         });
       });
+
+      const callBtn = document.querySelector('.js-call-us');
+      const callDialog = document.getElementById('call-us-dialog');
+      if (callBtn && callDialog) {
+        const isDesktop = () => window.matchMedia('(min-width: 640px)').matches;
+
+        callBtn.addEventListener('click', (event) => {
+          if (!isDesktop()) return;
+          event.preventDefault();
+          callDialog.showModal();
+        });
+
+        callDialog.querySelectorAll('[data-call-dialog-close]').forEach((closeBtn) => {
+          closeBtn.addEventListener('click', () => callDialog.close());
+        });
+
+        callDialog.addEventListener('click', (event) => {
+          if (event.target === callDialog) callDialog.close();
+        });
+      }
     });
   </script>
 
