@@ -690,7 +690,7 @@
     }
 
     .page-employers .cta-banner-new__container--no-images .cta-banner-new__content {
-      max-width: 48rem;
+      max-width: 72rem;
       width: 100%;
       text-align: center;
     }
@@ -721,18 +721,21 @@
 
     .page-employers .cta-banner-new__actions--multi {
       display: flex;
-      width: 100%;
-      flex-wrap: wrap;
+      width: max-content;
+      max-width: 100%;
+      flex-wrap: nowrap;
       justify-content: center;
       align-items: center;
-      gap: var(--space-3);
+      gap: 0.75rem;
       margin-inline: auto;
     }
 
     .page-employers .cta-banner-new__actions--multi .btn {
-      flex: 0 1 auto;
+      flex: 0 0 auto;
       justify-content: center;
       text-align: center;
+      padding: 0.8rem 1.25rem;
+      font-size: var(--text-sm);
     }
 
     .page-employers .cta-banner-new__actions--multi .btn.btn--secondary,
