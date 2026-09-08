@@ -736,11 +736,21 @@
       text-align: center;
       padding: 0.8rem 1.25rem;
       font-size: var(--text-sm);
+      background: var(--color-accent);
+      color: #fff;
+      border: 2px solid var(--color-accent);
+      box-shadow: 0 2px 12px rgba(175, 39, 47, 0.18);
     }
 
-    .page-employers .cta-banner-new__actions--multi .btn.btn--secondary,
-    .page-employers .cta-banner-new__actions--multi .btn.btn--outline-dark {
-      box-shadow: 0 2px 12px rgba(15, 26, 46, 0.08);
+    .page-employers .cta-banner-new__actions--multi .btn:hover,
+    .page-employers .cta-banner-new__actions--multi .btn:focus-visible,
+    .page-employers .cta-banner-new__actions--multi .btn.btn--primary:hover,
+    .page-employers .cta-banner-new__actions--multi .btn.btn--primary:focus-visible {
+      background: #fff;
+      color: var(--color-accent);
+      border-color: var(--color-accent);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(175, 39, 47, 0.18);
     }
 
     @media (max-width: 639px) {
@@ -1369,9 +1379,9 @@
             <p class="cta-banner-new__text">Whether you&rsquo;re hiring today, planning for future growth, or simply looking for a trusted recruiting partner, we&rsquo;d welcome the opportunity to learn more about your organization and discuss how we can help.</p>
             <div class="cta-banner-new__actions cta-banner-new__actions--multi">
               <a href="https://calendly.com/tanyacalkins" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg">Schedule a Meeting</a>
-              <a href="https://www.linkedin.com/in/tanyacalkins" target="_blank" rel="noopener noreferrer" class="btn btn--secondary btn--lg">Connect on LinkedIn</a>
-              <a href="mailto:sales@sourceabilityinc.com" class="btn btn--outline-dark btn--lg">Email Us</a>
-              <a href="tel:8664129178" class="btn btn--outline-dark btn--lg">Call Us</a>
+              <a href="https://www.linkedin.com/in/tanyacalkins" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg">Connect on LinkedIn</a>
+              <a href="mailto:sales@sourceabilityinc.com" class="btn btn--primary btn--lg">Email Us</a>
+              <a href="tel:8664129178" class="btn btn--primary btn--lg">Call Us</a>
             </div>
           </div>
         </div>
