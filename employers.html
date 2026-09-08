@@ -776,29 +776,28 @@
     }
 
     .roles-support-section .differentiators-list {
-      position: relative;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       flex: 1;
-      gap: var(--space-5);
+      gap: var(--space-6);
       margin-top: 0;
-      padding-left: 1.15rem;
-    }
-
-    .roles-support-section .differentiators-list::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0.2rem;
-      bottom: 0.15rem;
-      width: 5px;
-      background: #fff;
-      border-radius: 999px;
     }
 
     .roles-support-section .differentiator {
-      padding: var(--space-1) 0;
+      position: relative;
+      padding: 0 0 0 1.15rem;
+    }
+
+    .roles-support-section .differentiator::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 5px;
+      background: #fff;
+      border-radius: 999px;
     }
 
     .roles-support-section .differentiator__title {
