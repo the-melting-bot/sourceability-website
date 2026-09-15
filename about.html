@@ -230,7 +230,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: 28rem;
+      min-height: 22rem;
       border-radius: var(--radius-lg);
       background: var(--color-navy);
       color: #fff;
@@ -288,63 +288,103 @@
       margin-bottom: 0;
     }
 
-    .about-quote {
-      background: var(--color-navy);
-      color: #fff;
-      text-align: center;
-      padding: clamp(2.75rem, 5.5vw, 4.5rem) 0;
-    }
-
-    .about-quote__inner {
-      max-width: 46rem;
-      margin: 0 auto;
-    }
-
-    .about-quote__eyebrow {
-      margin: 0 0 var(--space-4);
+    .about-kicker {
+      margin: 0 0 var(--space-2);
       font-family: var(--font-body);
       font-size: 0.78rem;
       font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.7);
+      color: var(--color-accent);
     }
 
-    .about-quote__text {
-      margin: 0;
+    .about-story {
+      background: #fff;
+      padding: clamp(2.75rem, 5.5vw, 4.75rem) 0 0;
+    }
+
+    .about-story__inner {
+      max-width: 52rem;
+      margin: 0 auto;
+    }
+
+    .about-story__title {
+      margin: 0 0 var(--space-3);
       font-family: var(--font-display);
-      font-size: clamp(1.2rem, 1rem + 0.85vw, 1.7rem);
-      font-weight: 600;
-      line-height: 1.45;
+      font-size: clamp(1.65rem, 1.35rem + 0.9vw, 2.05rem);
+      font-weight: 700;
+      color: #101213;
       letter-spacing: -0.02em;
-      text-wrap: pretty;
+      line-height: 1.2;
     }
 
-    .about-quote__attr {
+    .about-story__rule {
       display: block;
-      margin-top: var(--space-5);
+      width: 4.5rem;
+      height: 3px;
+      margin: 0 0 var(--space-5);
+      background: var(--color-accent);
+    }
+
+    .about-story__text {
+      margin: 0 0 var(--space-4);
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      line-height: 1.7;
+      color: var(--color-text-muted);
+    }
+
+    .about-story__text:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: clamp(2rem, 4vw, 2.75rem);
+      border-top: 3px solid var(--color-accent);
+    }
+
+    .about-stat {
+      padding: var(--space-6) var(--space-5);
+      text-align: center;
+    }
+
+    .about-stat + .about-stat {
+      border-left: 1px solid rgba(16, 18, 19, 0.12);
+    }
+
+    .about-stat__value {
+      margin: 0 0 0.35rem;
+      font-family: var(--font-display);
+      font-size: clamp(1.05rem, 0.95rem + 0.3vw, 1.2rem);
+      font-weight: 700;
+      color: var(--color-accent);
+      line-height: 1.3;
+    }
+
+    .about-stat__label {
+      margin: 0;
       font-family: var(--font-body);
       font-size: var(--text-sm);
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      color: var(--color-accent);
+      line-height: 1.5;
+      color: #101213;
     }
 
     .about-values {
       background: #fff;
-      padding: clamp(2.75rem, 5.5vw, 5rem) 0;
+      padding: clamp(2.75rem, 5.5vw, 4.75rem) 0;
     }
 
-    .about-values__head {
-      max-width: 40rem;
-      margin: 0 auto clamp(2rem, 4vw, 3rem);
-      text-align: center;
+    .about-values__inner {
+      max-width: 52rem;
+      margin: 0 auto;
     }
 
     .about-values__title {
-      margin: 0;
+      margin: 0 0 clamp(1.75rem, 3vw, 2.5rem);
       font-family: var(--font-display);
-      font-size: clamp(1.85rem, 1.55rem + 0.9vw, 2.35rem);
+      font-size: clamp(1.65rem, 1.35rem + 0.9vw, 2.05rem);
       font-weight: 700;
       color: #101213;
       letter-spacing: -0.02em;
@@ -352,30 +392,39 @@
 
     .about-values__grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: var(--space-5);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: clamp(2rem, 5vw, 4rem);
+      row-gap: 0;
     }
 
     .about-value {
-      position: relative;
-      padding: 0 0 0 1.15rem;
+      display: grid;
+      grid-template-columns: 2.35rem minmax(0, 1fr);
+      gap: 0.85rem;
+      align-items: start;
+      padding: 1.15rem 0;
+      border-bottom: 1px solid rgba(16, 18, 19, 0.1);
     }
 
-    .about-value::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0.2rem;
-      bottom: 0.2rem;
-      width: 4px;
-      background: var(--color-accent);
+    .about-value__num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.1rem;
+      height: 2.1rem;
       border-radius: 999px;
+      background: var(--color-accent);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
     }
 
     .about-value__title {
-      margin: 0 0 var(--space-2);
+      margin: 0 0 0.25rem;
       font-family: var(--font-display);
-      font-size: clamp(1.1rem, 1rem + 0.25vw, 1.25rem);
+      font-size: 1.15rem;
       font-weight: 700;
       color: #101213;
       letter-spacing: -0.01em;
@@ -385,119 +434,82 @@
       margin: 0;
       font-family: var(--font-body);
       font-size: var(--text-sm);
-      line-height: 1.65;
+      line-height: 1.55;
       color: var(--color-text-muted);
     }
 
-    .about-difference {
-      background: var(--color-surface-warm, #f5f3ef);
-      padding: clamp(2.75rem, 5.5vw, 5rem) 0;
+    .about-close {
+      background: #fff;
+      padding: 0 0 clamp(2.75rem, 5.5vw, 4.75rem);
     }
 
-    .about-difference__inner {
-      max-width: 46rem;
+    .about-close__grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+      max-width: 52rem;
       margin: 0 auto;
-      text-align: center;
+      min-height: 18rem;
     }
 
-    .about-difference__title {
-      margin: 0 0 var(--space-6);
-      font-family: var(--font-display);
-      font-size: clamp(1.85rem, 1.55rem + 0.9vw, 2.35rem);
-      font-weight: 700;
-      color: #101213;
-      letter-spacing: -0.02em;
-    }
-
-    .about-difference__text {
-      margin: 0 0 var(--space-4);
-      font-family: var(--font-body);
-      font-size: var(--text-base);
-      line-height: 1.7;
-      color: var(--color-text-muted);
-    }
-
-    .about-difference__close {
-      margin: var(--space-5) 0 0;
-      font-family: var(--font-display);
-      font-size: clamp(1.15rem, 1.05rem + 0.35vw, 1.4rem);
-      font-weight: 700;
-      line-height: 1.4;
-      color: var(--color-accent);
-    }
-
-    .page-about .cta-banner-new__container--no-images {
-      justify-content: center;
-    }
-
-    .page-about .cta-banner-new__container--no-images .cta-banner-new__content {
-      max-width: 46rem;
-      width: 100%;
-      text-align: center;
-    }
-
-    .page-about .cta-banner-new__content > .reveal {
+    .about-close__difference,
+    .about-close__cta {
+      padding: clamp(1.75rem, 3.5vw, 2.5rem);
       display: flex;
       flex-direction: column;
-      align-items: center;
-      width: 100%;
-    }
-
-    .page-about .cta-banner-new__title {
-      display: block;
-      width: 100%;
-      text-align: center;
-      margin-inline: auto;
-      font-size: clamp(2.05rem, 1.65rem + 1.7vw, 2.85rem);
-    }
-
-    .page-about .cta-banner-new__text {
-      display: block;
-      width: 100%;
-      max-width: 40rem;
-      margin-inline: auto;
-      text-align: center;
-      font-size: var(--text-base);
-    }
-
-    .page-about .cta-banner-new__actions--multi {
-      display: flex;
-      width: max-content;
-      max-width: 100%;
-      flex-wrap: nowrap;
       justify-content: center;
-      align-items: center;
-      gap: 0.75rem;
-      margin-inline: auto;
     }
 
-    .page-about .cta-banner-new__actions--multi .btn {
-      flex: 0 0 auto;
-      justify-content: center;
-      text-align: center;
-      padding: 0.8rem 1.25rem;
-      font-size: var(--text-sm);
+    .about-close__difference {
+      background: #101213;
+      color: #fff;
+    }
+
+    .about-close__cta {
       background: var(--color-accent);
       color: #fff;
-      border: 2px solid var(--color-accent);
-      box-shadow: 0 2px 12px rgba(175, 39, 47, 0.18);
     }
 
-    .page-about .cta-banner-new__actions--multi .btn:hover,
-    .page-about .cta-banner-new__actions--multi .btn:focus-visible,
-    .page-about .cta-banner-new__actions--multi .btn.btn--primary:hover,
-    .page-about .cta-banner-new__actions--multi .btn.btn--primary:focus-visible {
+    .about-close__kicker {
+      margin: 0 0 var(--space-3);
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .about-close__title {
+      margin: 0 0 var(--space-4);
+      font-family: var(--font-display);
+      font-size: clamp(1.35rem, 1.15rem + 0.6vw, 1.7rem);
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      color: #fff;
+    }
+
+    .about-close__text {
+      margin: 0;
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.86);
+    }
+
+    .about-close__cta .btn {
+      align-self: flex-start;
+      margin-top: var(--space-5);
       background: #fff;
       color: var(--color-accent);
-      border-color: var(--color-accent);
-      transform: translateY(-1px);
-      box-shadow: 0 4px 16px rgba(175, 39, 47, 0.18);
+      border: 2px solid #fff;
     }
 
-    @media (max-width: 1023px) {
-      .about-values__grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
+    .about-close__cta .btn:hover,
+    .about-close__cta .btn:focus-visible {
+      background: transparent;
+      color: #fff;
+      border-color: #fff;
     }
 
     @media (max-width: 767px) {
@@ -506,7 +518,10 @@
       }
 
       .about-hero-split__grid,
-      .about-tanya__grid {
+      .about-tanya__grid,
+      .about-stats,
+      .about-values__grid,
+      .about-close__grid {
         grid-template-columns: 1fr;
         min-height: auto;
       }
@@ -521,25 +536,17 @@
       }
 
       .about-tanya__photo {
-        min-height: 18rem;
+        min-height: 16rem;
       }
 
-      .about-values__grid {
-        grid-template-columns: 1fr;
+      .about-stat + .about-stat {
+        border-left: none;
+        border-top: 1px solid rgba(16, 18, 19, 0.12);
       }
 
-      .page-about .cta-banner-new__title {
-        font-size: clamp(1.6rem, 5.8vw, 2.05rem);
-      }
-
-      .page-about .cta-banner-new__actions--multi {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .page-about .cta-banner-new__actions--multi .btn {
+      .about-close__cta .btn {
         width: 100%;
-        max-width: 18.5rem;
+        justify-content: center;
       }
     }
   </style>
@@ -659,86 +666,103 @@
               <p class="reveal">Earlier in my career, I worked in a traditional staffing environment where success was often measured by numbers, activity, and volume. While I gained valuable experience, I also saw how easily the people behind those numbers could get lost in the process.</p>
               <p class="reveal">I wanted to step back from that transactional approach and create a company where relationships came first&mdash;where I could take the time to understand an organization&rsquo;s goals, learn what truly matters to a candidate, and remain personally involved throughout the process.</p>
               <p class="reveal">That vision became SourceAbility.</p>
-              <p class="reveal">Throughout more than 20 years in recruiting, I have had the opportunity to build lasting relationships with clients and professionals across Data, Technology, and Financial Services. Many of those relationships have continued through multiple hires, career moves, and stages of organizational growth.</p>
-              <p class="reveal">One of the most rewarding parts of my work is seeing the difference the right opportunity can make in someone&rsquo;s life. That may mean helping a professional join an organization where they can thrive, take an important step forward in their career, move into leadership, or significantly increase their earning potential.</p>
-              <p class="reveal">It is equally rewarding to reconnect with a client a year or two after a placement and hear how much that person has contributed to the organization. Those are the moments that remind me why this work matters: the right career move can change someone&rsquo;s future, and the right hire can strengthen an organization for years to come.</p>
-              <p class="reveal">That is the kind of experience I wanted SourceAbility to provide when I founded the company, and it continues to guide how I work today.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="about-quote" aria-labelledby="why-i-do-heading">
+    <section class="about-story" aria-labelledby="story-heading">
       <div class="container">
-        <div class="about-quote__inner reveal">
-          <p class="about-quote__eyebrow" id="why-i-do-heading">Why I Do What I Do</p>
-          <blockquote class="about-quote__text">
-            <p>&ldquo;I enjoy working with organizations and individuals where relationships matter, reputations matter, and decisions have a long-term impact.</p>
-            <p>The best hiring outcomes come from looking beyond a r&eacute;sum&eacute; or job description. They require a clear understanding of the organization&rsquo;s goals, the candidate&rsquo;s capabilities and motivations, and what long-term success should look like for both.&rdquo;</p>
-            <cite class="about-quote__attr">&mdash; Tanya Calkins</cite>
-          </blockquote>
+        <div class="about-story__inner">
+          <p class="about-kicker reveal">My Story</p>
+          <h2 class="about-story__title reveal" id="story-heading">Relationships that continue through careers and stages of growth</h2>
+          <span class="about-story__rule reveal" aria-hidden="true"></span>
+          <p class="about-story__text reveal">Throughout more than 20 years in recruiting, I have built lasting relationships with clients and professionals across Data, Technology, and Financial Services. Many have continued through multiple hires, career moves, and stages of organizational growth.</p>
+          <p class="about-story__text reveal">One of the most rewarding parts of my work is helping someone join an organization where they can thrive, take a meaningful step forward, move into leadership, or increase their earning potential. It is equally rewarding to hear a year or two later how much that person has contributed to the organization.</p>
+          <div class="about-stats reveal">
+            <article class="about-stat">
+              <p class="about-stat__value">Founded in 2008</p>
+              <p class="about-stat__label">Two decades of relationship-driven recruiting</p>
+            </article>
+            <article class="about-stat">
+              <p class="about-stat__value">5 of 7 still there</p>
+              <p class="about-stat__label">Professionals placed with one early client remain 20 years later</p>
+            </article>
+            <article class="about-stat">
+              <p class="about-stat__value">Direct partnership</p>
+              <p class="about-stat__label">Clients work with the person leading the search</p>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="about-values" aria-labelledby="values-heading">
       <div class="container">
-        <header class="about-values__head reveal">
-          <h2 class="about-values__title" id="values-heading">What We Value</h2>
-        </header>
-        <div class="about-values__grid">
-          <article class="about-value reveal">
-            <h3 class="about-value__title">Integrity</h3>
-            <p class="about-value__text">We believe trust is earned through honesty, sound judgment, and doing what is right&mdash;even when the conversation is difficult. We represent every client, candidate, and opportunity accurately and professionally.</p>
-          </article>
-          <article class="about-value reveal">
-            <h3 class="about-value__title">Partnership</h3>
-            <p class="about-value__text">We approach recruiting as a partnership, not a transaction. We take the time to understand each organization&rsquo;s business, culture, hiring challenges, and long-term objectives before beginning the search.</p>
-          </article>
-          <article class="about-value reveal">
-            <h3 class="about-value__title">Transparency</h3>
-            <p class="about-value__text">Clear, candid communication is essential to a successful search. We provide honest feedback, realistic market insight, and consistent communication throughout the process.</p>
-          </article>
-          <article class="about-value reveal">
-            <h3 class="about-value__title">Quality Over Quantity</h3>
-            <p class="about-value__text">We do not measure success by the number of r&eacute;sum&eacute;s presented. Our focus is identifying and delivering well-qualified candidates whose experience, motivation, leadership capability, and career goals align with the opportunity.</p>
-          </article>
-          <article class="about-value reveal">
-            <h3 class="about-value__title">Commitment</h3>
-            <p class="about-value__text">We bring a strong work ethic, personal accountability, and persistence to every engagement. When we accept a search, we are committed to representing the opportunity thoughtfully and seeing the process through.</p>
-          </article>
-          <article class="about-value reveal">
-            <h3 class="about-value__title">Respect</h3>
-            <p class="about-value__text">Every person deserves to be treated fairly, professionally, and with consideration. We respect our clients&rsquo; time, protect candidate confidentiality, and recognize the importance of every hiring and career decision.</p>
-          </article>
+        <div class="about-values__inner">
+          <p class="about-kicker reveal">What We Value</p>
+          <h2 class="about-values__title reveal" id="values-heading">How we work matters</h2>
+          <div class="about-values__grid">
+            <article class="about-value reveal">
+              <span class="about-value__num" aria-hidden="true">01</span>
+              <div>
+                <h3 class="about-value__title">Integrity</h3>
+                <p class="about-value__text">Honesty, sound judgment, and doing what is right.</p>
+              </div>
+            </article>
+            <article class="about-value reveal">
+              <span class="about-value__num" aria-hidden="true">02</span>
+              <div>
+                <h3 class="about-value__title">Partnership</h3>
+                <p class="about-value__text">A relationship, not a transaction.</p>
+              </div>
+            </article>
+            <article class="about-value reveal">
+              <span class="about-value__num" aria-hidden="true">03</span>
+              <div>
+                <h3 class="about-value__title">Transparency</h3>
+                <p class="about-value__text">Candid feedback and consistent communication.</p>
+              </div>
+            </article>
+            <article class="about-value reveal">
+              <span class="about-value__num" aria-hidden="true">04</span>
+              <div>
+                <h3 class="about-value__title">Quality Over Quantity</h3>
+                <p class="about-value__text">Every introduction should be well considered.</p>
+              </div>
+            </article>
+            <article class="about-value reveal">
+              <span class="about-value__num" aria-hidden="true">05</span>
+              <div>
+                <h3 class="about-value__title">Commitment</h3>
+                <p class="about-value__text">Personal accountability, persistence, and follow-through.</p>
+              </div>
+            </article>
+            <article class="about-value reveal">
+              <span class="about-value__num" aria-hidden="true">06</span>
+              <div>
+                <h3 class="about-value__title">Respect</h3>
+                <p class="about-value__text">Fair and professional treatment in every interaction.</p>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="about-difference" aria-labelledby="difference-heading">
+    <section class="about-close" aria-label="The SourceAbility Difference">
       <div class="container">
-        <div class="about-difference__inner">
-          <h2 class="about-difference__title reveal" id="difference-heading">The SourceAbility Difference</h2>
-          <p class="about-difference__text reveal">SourceAbility offers the experience and market reach of a long-established search firm with the personal attention and flexibility of a boutique partner.</p>
-          <p class="about-difference__text reveal">Our clients work directly with the person leading the search. Our candidates receive honest communication and thoughtful representation. Every engagement is approached with care because our reputation&mdash;and yours&mdash;is reflected in every interaction.</p>
-          <p class="about-difference__text reveal">We strive to be professional but approachable, strategic but practical, and structured while remaining flexible enough to respond to the needs of each search.</p>
-          <p class="about-difference__close reveal">Because when relationships matter, how you conduct the search matters too.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta-banner-new" aria-label="Let's Build the Right Team">
-      <div class="cta-banner-new__container cta-banner-new__container--no-images">
-        <div class="cta-banner-new__content">
-          <div class="reveal">
-            <h2 class="cta-banner-new__title">Let&rsquo;s <span class="cta-banner-new__mark">Build the Right Team</span></h2>
-            <p class="cta-banner-new__text">Whether you are hiring for a specialized position, strengthening an existing team, or preparing for an important leadership transition, SourceAbility can help you reach and evaluate the talent your organization needs.</p>
-            <div class="cta-banner-new__actions cta-banner-new__actions--multi">
-              <a href="employers.html" class="btn btn--primary btn--lg">For Employers</a>
-              <a href="candidates.html" class="btn btn--primary btn--lg">For Candidates</a>
-              <a href="contact.html" class="btn btn--primary btn--lg">Contact</a>
-            </div>
+        <div class="about-close__grid">
+          <div class="about-close__difference reveal">
+            <p class="about-close__kicker">The SourceAbility Difference</p>
+            <h2 class="about-close__title">Market reach with boutique attention</h2>
+            <p class="about-close__text">We are professional but approachable, strategic but practical, and structured while remaining flexible enough to respond to each search. Because when relationships matter, how you conduct the search matters too.</p>
+          </div>
+          <div class="about-close__cta reveal">
+            <p class="about-close__kicker">Let&rsquo;s Build the Right Team</p>
+            <h2 class="about-close__title">Ready to discuss your next hire?</h2>
+            <a href="contact.html" class="btn btn--primary btn--lg">Start a Conversation</a>
           </div>
         </div>
       </div>
