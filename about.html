@@ -191,19 +191,40 @@
     }
 
     .about-intro {
-      background: #fff;
-      padding: clamp(2.5rem, 5vw, 4.5rem) 0;
+      background: var(--color-surface-warm, #f5f3ef);
+      padding: clamp(2.75rem, 5.5vw, 5rem) 0;
     }
 
-    .about-intro__inner {
-      max-width: 46rem;
-      margin: 0 auto;
+    .about-intro__grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: clamp(1.75rem, 4vw, 3.5rem);
+      align-items: start;
+      margin-bottom: clamp(2rem, 4vw, 2.75rem);
+    }
+
+    .about-intro__title {
+      margin: 0 0 var(--space-3);
+      font-family: var(--font-display);
+      font-size: clamp(1.65rem, 1.35rem + 0.9vw, 2.15rem);
+      font-weight: 700;
+      color: #101213;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      text-wrap: balance;
+    }
+
+    .about-intro__rule {
+      display: block;
+      width: 4.5rem;
+      height: 3px;
+      background: var(--color-accent);
     }
 
     .about-intro__text {
-      margin: 0 0 var(--space-5);
+      margin: 0 0 var(--space-4);
       font-family: var(--font-body);
-      font-size: clamp(1.05rem, 0.98rem + 0.25vw, 1.1875rem);
+      font-size: clamp(1.02rem, 0.96rem + 0.2vw, 1.125rem);
       font-weight: 500;
       line-height: 1.7;
       color: var(--color-text-muted);
@@ -211,6 +232,45 @@
 
     .about-intro__text:last-child {
       margin-bottom: 0;
+    }
+
+    .about-intro__text-lead {
+      color: var(--color-accent);
+      font-weight: 700;
+    }
+
+    .about-intro__pillars {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(1rem, 2vw, 1.5rem);
+    }
+
+    .about-intro__pillar {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+      padding: var(--space-5) var(--space-5) var(--space-6) var(--space-6);
+      background: #fff;
+      border-left: 3px solid var(--color-accent);
+      box-shadow: 0 8px 28px rgba(15, 26, 46, 0.04);
+    }
+
+    .about-intro__pillar-title {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #101213;
+      letter-spacing: -0.01em;
+      line-height: 1.25;
+    }
+
+    .about-intro__pillar-text {
+      margin: 0;
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      line-height: 1.6;
+      color: var(--color-text-muted);
     }
 
     .about-tanya {
@@ -518,6 +578,8 @@
       }
 
       .about-hero-split__grid,
+      .about-intro__grid,
+      .about-intro__pillars,
       .about-tanya__grid,
       .about-stats,
       .about-values__grid,
@@ -642,11 +704,32 @@
       </div>
     </section>
 
-    <section class="about-intro" aria-label="Our work">
+    <section class="about-intro" aria-labelledby="about-intro-heading">
       <div class="container">
-        <div class="about-intro__inner">
-          <p class="about-intro__text reveal">For more than 20 years, we have helped organizations identify and attract professionals who bring the expertise, leadership capability, and long-term alignment needed to make a meaningful impact.</p>
-          <p class="about-intro__text reveal">Our work is relationship-driven, highly personalized, and grounded in a simple belief: successful recruiting is not about presenting the most candidates. It is about understanding what an organization truly needs and finding the right person to help move it forward.</p>
+        <div class="about-intro__grid">
+          <div class="about-intro__head">
+            <p class="about-kicker reveal">Our Work</p>
+            <h2 class="about-intro__title reveal" id="about-intro-heading">The right person, not the most candidates</h2>
+            <span class="about-intro__rule reveal" aria-hidden="true"></span>
+          </div>
+          <div class="about-intro__copy">
+            <p class="about-intro__text reveal">For more than 20 years, we have helped organizations identify and attract professionals who bring the expertise, leadership capability, and long-term alignment needed to make a meaningful impact.</p>
+            <p class="about-intro__text reveal"><span class="about-intro__text-lead">Our work is relationship-driven, highly personalized,</span> and grounded in a simple belief: successful recruiting is not about presenting the most candidates. It is about understanding what an organization truly needs and finding the right person to help move it forward.</p>
+          </div>
+        </div>
+        <div class="about-intro__pillars">
+          <article class="about-intro__pillar reveal">
+            <h3 class="about-intro__pillar-title">20+ years of impact</h3>
+            <p class="about-intro__pillar-text">Identifying professionals with the expertise and leadership capability to make a meaningful difference.</p>
+          </article>
+          <article class="about-intro__pillar reveal">
+            <h3 class="about-intro__pillar-title">Relationship-driven</h3>
+            <p class="about-intro__pillar-text">Highly personalized searches built on trust, judgment, and long-term alignment.</p>
+          </article>
+          <article class="about-intro__pillar reveal">
+            <h3 class="about-intro__pillar-title">Quality over volume</h3>
+            <p class="about-intro__pillar-text">Understanding what an organization truly needs&mdash;then finding the right person to move it forward.</p>
+          </article>
         </div>
       </div>
     </section>
