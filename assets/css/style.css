@@ -1135,21 +1135,26 @@
   padding-bottom: 2px;
   font-size: var(--text-sm);
   font-weight: 600;
-  color: #f0b090;
+  color: var(--color-accent);
   letter-spacing: 0.01em;
-  text-decoration: underline;
-  text-decoration-color: rgba(240, 176, 144, 0.55);
-  text-underline-offset: 0.28em;
-  text-decoration-thickness: 1.5px;
+  text-decoration: none;
   transition:
     color 0.25s ease,
-    text-decoration-color 0.25s ease,
     gap 0.25s ease;
+}
+
+.home-spotlight__panel-cta-text {
+  text-decoration: underline;
+  text-decoration-color: rgba(175, 39, 47, 0.55);
+  text-underline-offset: 0.28em;
+  text-decoration-thickness: 1.5px;
+  transition: text-decoration-color 0.25s ease;
 }
 
 .home-spotlight__panel-cta::after {
   content: '→';
   margin-left: 0.4em;
+  text-decoration: none;
   transition: transform 0.25s ease;
 }
 
@@ -1171,8 +1176,12 @@
 
 .home-spotlight__panel:hover .home-spotlight__panel-cta,
 .home-spotlight__panel:focus-visible .home-spotlight__panel-cta {
-  color: #ffd2b8;
-  text-decoration-color: rgba(255, 210, 184, 0.95);
+  color: var(--color-accent-hover);
+}
+
+.home-spotlight__panel:hover .home-spotlight__panel-cta-text,
+.home-spotlight__panel:focus-visible .home-spotlight__panel-cta-text {
+  text-decoration-color: var(--color-accent-hover);
 }
 
 .home-spotlight__panel:hover .home-spotlight__panel-cta::after,
@@ -1181,7 +1190,7 @@
 }
 
 .home-spotlight__panel:focus-visible {
-  outline: 2px solid #e8a07a;
+  outline: 2px solid var(--color-accent);
   outline-offset: 2px;
 }
 
