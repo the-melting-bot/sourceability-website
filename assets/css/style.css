@@ -3655,6 +3655,13 @@ p.salary-table-footer a {
 }
 
 /* --- HOME PAGE ONLY: bold display headings, no italics; red stays accent-only --- */
+.page-home .hero__title-line--accent {
+  color: #ef4a54;
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.3),
+    0 0 28px rgba(239, 74, 84, 0.28);
+}
+
 .page-home .section-heading__title {
   font-style: normal;
   font-weight: 600;
