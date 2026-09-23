@@ -3887,13 +3887,13 @@ p.salary-table-footer a {
 
 .cta-banner-new__title {
   font-family: var(--font-display);
-  font-size: clamp(1.85rem, 1.5rem + 1.5vw, 2.5rem);
+  font-size: var(--text-base);
   font-weight: 800;
   color: var(--color-navy);
   margin-bottom: var(--space-6);
   position: relative;
   display: inline-block;
-  line-height: 1.2;
+  line-height: 1.55;
 }
 
 /* Animated red underline on “Build Your Team.” (matches designer Elementor timing) */
@@ -3969,15 +3969,20 @@ p.salary-table-footer a {
 }
 
 .cta-banner-new__text {
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   color: var(--color-text-muted);
-  line-height: 1.6;
+  line-height: 1.55;
   margin-top: var(--space-4);
   margin-bottom: var(--space-6);
 }
 
-.page-home .cta-banner-new__text {
-  font-size: var(--text-base);
+.cta-banner-new__container--no-images {
+  justify-content: center;
+}
+
+.cta-banner-new__container--no-images .cta-banner-new__content {
+  max-width: 72rem;
+  width: 100%;
 }
 
 .cta-banner-new__actions {
@@ -3986,9 +3991,61 @@ p.salary-table-footer a {
   margin-top: var(--space-6);
 }
 
-.cta-banner-new__actions .btn {
-  box-shadow: 0 4px 18px rgba(175, 39, 47, 0.35);
+.cta-banner-new__actions--multi {
+  display: flex;
+  width: max-content;
+  max-width: 100%;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  margin-inline: auto;
+}
+
+.cta-banner-new__actions--multi .btn {
+  flex: 0 0 auto;
+  justify-content: center;
+  text-align: center;
+  padding: 0.8rem 1.25rem;
+  font-size: var(--text-sm);
+}
+
+.cta-banner-new__actions .btn,
+.cta-banner-new__actions .btn.btn--primary,
+.cta-banner-new__actions .btn.btn--secondary,
+.cta-banner-new__actions .btn.btn--outline-dark {
+  background: var(--color-accent);
+  color: #fff;
+  border: 2px solid var(--color-accent);
+  box-shadow: 0 2px 12px rgba(175, 39, 47, 0.18);
   font-weight: 600;
-  padding: 0.875rem 2.5rem;
   border-radius: var(--radius-md);
+}
+
+.cta-banner-new__actions .btn:hover,
+.cta-banner-new__actions .btn:focus-visible,
+.cta-banner-new__actions .btn.btn--primary:hover,
+.cta-banner-new__actions .btn.btn--primary:focus-visible,
+.cta-banner-new__actions .btn.btn--secondary:hover,
+.cta-banner-new__actions .btn.btn--secondary:focus-visible,
+.cta-banner-new__actions .btn.btn--outline-dark:hover,
+.cta-banner-new__actions .btn.btn--outline-dark:focus-visible {
+  background: #fff;
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(175, 39, 47, 0.18);
+  filter: none;
+}
+
+@media (max-width: 639px) {
+  .cta-banner-new__actions--multi {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-banner-new__actions--multi .btn {
+    width: 100%;
+    max-width: 18.5rem;
+  }
 }

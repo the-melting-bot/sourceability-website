@@ -929,7 +929,6 @@
       width: 100%;
       text-align: center;
       margin-inline: auto;
-      font-size: clamp(2.05rem, 1.65rem + 1.7vw, 2.85rem);
     }
 
     .page-candidates .cta-banner-new__mark {
@@ -942,7 +941,6 @@
       max-width: 36rem;
       margin-inline: auto;
       text-align: center;
-      font-size: var(--text-base);
     }
 
     .page-candidates .cta-banner-new__actions--multi {
@@ -961,11 +959,6 @@
       text-align: center;
     }
 
-    .page-candidates .cta-banner-new__actions--multi .btn.btn--secondary,
-    .page-candidates .cta-banner-new__actions--multi .btn.btn--outline-dark {
-      box-shadow: 0 2px 12px rgba(15, 26, 46, 0.08);
-    }
-
     @media (max-width: 639px) {
       .page-candidates .cta-banner-new {
         padding-block: var(--space-10);
@@ -977,7 +970,6 @@
       }
 
       .page-candidates .cta-banner-new__title {
-        font-size: clamp(1.6rem, 5.8vw, 2.05rem);
         margin-bottom: var(--space-4);
       }
 
@@ -986,7 +978,6 @@
       }
 
       .page-candidates .cta-banner-new__text {
-        font-size: var(--text-base);
         margin-top: var(--space-3);
         margin-bottom: var(--space-5);
       }
@@ -1052,18 +1043,10 @@
         transition-duration: 0.12s;
       }
 
-      .page-candidates .cta-banner-new__actions .btn,
-      .page-candidates .cta-banner-new__actions .btn:hover,
-      .page-candidates .cta-banner-new__actions .btn:active,
-      .page-candidates .cta-banner-new__actions .btn.btn--primary:hover,
-      .page-candidates .cta-banner-new__actions .btn.btn--secondary:hover,
-      .page-candidates .cta-banner-new__actions .btn.btn--outline-dark:hover {
-        transform: none;
+      .page-candidates #main-content .cta-banner-new__actions .btn:hover,
+      .page-candidates #main-content .cta-banner-new__actions .btn:active {
+        transform: translateY(-1px);
         filter: none;
-      }
-
-      .page-candidates .cta-banner-new__actions .btn.btn--primary:hover {
-        box-shadow: 0 4px 18px rgba(175, 39, 47, 0.35);
       }
 
       .page-candidates #main-content .btn.btn--primary:hover {
@@ -1493,8 +1476,8 @@
             <p class="cta-banner-new__text">We welcome conversations with professionals at all stages of their career journey, whether actively exploring opportunities or simply interested in staying connected to the market. We would love to hear from you?</p>
             <div class="cta-banner-new__actions cta-banner-new__actions--multi">
               <a href="contact.html" class="btn btn--primary btn--lg">Submit Resume</a>
-              <a href="https://www.linkedin.com/company/216155" target="_blank" rel="noopener noreferrer" class="btn btn--secondary btn--lg">Connect on LinkedIn</a>
-              <a href="contact.html" class="btn btn--outline-dark btn--lg">Contact Us</a>
+              <a href="https://www.linkedin.com/company/216155" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg">Connect on LinkedIn</a>
+              <a href="contact.html" class="btn btn--primary btn--lg">Contact Us</a>
             </div>
           </div>
         </div>
