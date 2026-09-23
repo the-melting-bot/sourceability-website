@@ -1600,11 +1600,25 @@
   <script src="./assets/js/main.js" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      const solutionFlipHover = window.matchMedia('(hover: hover) and (pointer: fine)');
+
       document.querySelectorAll('.solution-flip').forEach((card) => {
         card.addEventListener('click', (event) => {
           if (event.target.closest('.solution-flip__cta')) return;
+          if (solutionFlipHover.matches) return;
           card.classList.toggle('is-flipped');
         });
+
+        card.addEventListener('mouseleave', () => {
+          card.classList.remove('is-flipped');
+          if (card === document.activeElement) card.blur();
+        });
+
+        if (solutionFlipHover.matches) {
+          card.addEventListener('mousedown', (event) => {
+            if (!event.target.closest('.solution-flip__cta')) event.preventDefault();
+          });
+        }
 
         card.addEventListener('keydown', (event) => {
           if (event.key === 'Enter' || event.key === ' ') {
