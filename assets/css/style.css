@@ -1225,12 +1225,14 @@
 
 .rep-searches__heading {
   margin: 0 0 clamp(var(--space-8), 4vw, var(--space-12));
-  font-family: var(--font-body);
-  font-size: var(--text-sm);
-  font-weight: 600;
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 1.2rem + 0.75vw, 1.75rem);
+  font-weight: 700;
   color: var(--color-accent);
-  line-height: 1.45;
-  max-width: 40rem;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  max-width: min(52rem, 100%);
+  text-wrap: balance;
 }
 
 .rep-searches__grid {
