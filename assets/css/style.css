@@ -1135,9 +1135,10 @@
   padding-bottom: 2px;
   font-size: var(--text-sm);
   font-weight: 600;
-  color: var(--color-accent);
+  color: #f36a74;
   letter-spacing: 0.01em;
   text-decoration: none;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.55);
   transition:
     color 0.25s ease,
     gap 0.25s ease;
@@ -1145,7 +1146,7 @@
 
 .home-spotlight__panel-cta-text {
   text-decoration: underline;
-  text-decoration-color: rgba(175, 39, 47, 0.55);
+  text-decoration-color: rgba(243, 106, 116, 0.85);
   text-underline-offset: 0.28em;
   text-decoration-thickness: 1.5px;
   transition: text-decoration-color 0.25s ease;
@@ -1176,12 +1177,12 @@
 
 .home-spotlight__panel:hover .home-spotlight__panel-cta,
 .home-spotlight__panel:focus-visible .home-spotlight__panel-cta {
-  color: var(--color-accent-hover);
+  color: #ff8a92;
 }
 
 .home-spotlight__panel:hover .home-spotlight__panel-cta-text,
 .home-spotlight__panel:focus-visible .home-spotlight__panel-cta-text {
-  text-decoration-color: var(--color-accent-hover);
+  text-decoration-color: #ff8a92;
 }
 
 .home-spotlight__panel:hover .home-spotlight__panel-cta::after,
