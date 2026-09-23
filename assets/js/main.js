@@ -167,10 +167,68 @@
   if (testimonialCarousel) {
     const slides = testimonialCarousel.querySelectorAll('.testimonial-carousel__slide');
     const dots = testimonialCarousel.querySelectorAll('.testimonial-carousel__dot');
+    const viewport = testimonialCarousel.querySelector('.testimonial-carousel__viewport');
+    const nav = testimonialCarousel.querySelector('.testimonial-carousel__nav');
     const intervalMs = parseInt(testimonialCarousel.dataset.interval || '6000', 10);
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     let activeIndex = 0;
     let timerId = null;
+
+    function chevronSvg(direction) {
+      const path = direction === 'prev' ? 'M15 18l-6-6 6-6' : 'M9 18l6-6-6-6';
+      return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="${path}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+    }
+
+    if (viewport && nav && slides.length > 1) {
+      const controls = document.createElement('div');
+      controls.className = 'testimonial-carousel__controls';
+
+      const stage = document.createElement('div');
+      stage.className = 'testimonial-carousel__stage';
+
+      const prevBtn = document.createElement('button');
+      prevBtn.type = 'button';
+      prevBtn.className = 'testimonial-carousel__arrow testimonial-carousel__arrow--prev';
+      prevBtn.setAttribute('aria-label', 'Previous testimonial');
+      prevBtn.innerHTML = chevronSvg('prev');
+
+      const nextBtn = document.createElement('button');
+      nextBtn.type = 'button';
+      nextBtn.className = 'testimonial-carousel__arrow testimonial-carousel__arrow--next';
+      nextBtn.setAttribute('aria-label', 'Next testimonial');
+      nextBtn.innerHTML = chevronSvg('next');
+
+      stage.appendChild(viewport);
+      stage.appendChild(nav);
+      controls.appendChild(prevBtn);
+      controls.appendChild(stage);
+      controls.appendChild(nextBtn);
+      testimonialCarousel.appendChild(controls);
+
+      function prev() {
+        goTo(activeIndex - 1);
+      }
+
+      function onManualNav(fn) {
+        fn();
+        stopAuto();
+        startAuto();
+      }
+
+      prevBtn.addEventListener('click', () => onManualNav(prev));
+      nextBtn.addEventListener('click', () => onManualNav(next));
+
+      testimonialCarousel.setAttribute('tabindex', '0');
+      testimonialCarousel.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+          e.preventDefault();
+          onManualNav(prev);
+        } else if (e.key === 'ArrowRight') {
+          e.preventDefault();
+          onManualNav(next);
+        }
+      });
+    }
 
     function goTo(i) {
       const idx = ((i % slides.length) + slides.length) % slides.length;
