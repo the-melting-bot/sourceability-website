@@ -93,19 +93,7 @@
       min-height: clamp(20rem, 38vw, 26rem);
       padding-top: 6.5rem;
       overflow: visible;
-      background: var(--color-navy);
-    }
-
-    .specialties-hero__media {
-      position: absolute;
-      inset: 0;
-    }
-
-    .specialties-hero__media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 40%;
+      background: var(--color-accent);
     }
 
     .specialties-hero__wrap {
@@ -222,7 +210,7 @@
       border-radius: 15px;
       padding: 4.25rem 1.75rem 6.5rem;
       box-shadow: 0 2px 12px rgba(15, 26, 46, 0.04);
-      overflow: hidden;
+      overflow: visible;
       transition:
         box-shadow 0.35s ease,
         transform 0.35s ease,
@@ -326,13 +314,57 @@
     }
 
     .specialty-card__title {
-      margin: 0 0 var(--space-4);
+      margin: 0 0 var(--space-3);
       font-family: var(--font-display);
       font-size: clamp(1.05rem, 0.95rem + 0.35vw, 1.2rem);
       font-weight: 700;
       font-style: normal;
       color: var(--color-navy);
       line-height: 1.25;
+    }
+
+    .specialty-card__tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.4rem;
+      margin: 0 0 var(--space-4);
+      padding: 0;
+      list-style: none;
+    }
+
+    .specialty-card__tags li {
+      padding: 0.28rem 0.65rem;
+      border-radius: 999px;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--color-navy);
+      background: rgba(15, 26, 46, 0.06);
+      border: 1px solid rgba(15, 26, 46, 0.08);
+      transition:
+        background 0.35s ease,
+        border-color 0.35s ease,
+        color 0.35s ease;
+    }
+
+    .specialty-card:nth-child(odd) .specialty-card__tags li {
+      color: var(--color-accent);
+      background: rgba(175, 39, 47, 0.07);
+      border-color: rgba(175, 39, 47, 0.14);
+    }
+
+    .specialty-card:hover .specialty-card__tags li,
+    .specialty-card:focus-visible .specialty-card__tags li {
+      background: rgba(15, 26, 46, 0.1);
+      border-color: rgba(15, 26, 46, 0.14);
+    }
+
+    .specialty-card:nth-child(odd):hover .specialty-card__tags li,
+    .specialty-card:nth-child(odd):focus-visible .specialty-card__tags li {
+      background: rgba(175, 39, 47, 0.12);
+      border-color: rgba(175, 39, 47, 0.22);
     }
 
     .specialty-card__desc {
@@ -572,9 +604,6 @@
          PAGE HERO — overlapping card (Iris-inspired)
     ========================================== -->
     <section class="specialties-hero" aria-label="Expertise hero">
-      <div class="specialties-hero__media" aria-hidden="true">
-        <img src="./assets/images/hero-specialties.jpg" alt="" loading="eager" fetchpriority="high">
-      </div>
       <div class="container specialties-hero__wrap">
         <div class="specialties-hero__card reveal">
           <p class="overline">Our Areas of Expertise</p>
@@ -601,6 +630,11 @@
               <i data-lucide="chart-column-increasing"></i>
             </div>
             <h3 class="specialty-card__title">Data / Analytics</h3>
+            <ul class="specialty-card__tags" aria-label="Focus areas">
+              <li>Data Engineering</li>
+              <li>BI</li>
+              <li>Insights</li>
+            </ul>
             <p class="specialty-card__desc">We partner with organizations building modern analytics capabilities&mdash;from data engineering and BI to insights teams that drive smarter decisions.</p>
             <span class="specialty-card__link">Learn More <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></span>
           </a>
@@ -610,6 +644,11 @@
               <i data-lucide="brain"></i>
             </div>
             <h3 class="specialty-card__title">Artificial Intelligence (A.I)</h3>
+            <ul class="specialty-card__tags" aria-label="Focus areas">
+              <li>Machine Learning</li>
+              <li>Applied AI</li>
+              <li>LLMs</li>
+            </ul>
             <p class="specialty-card__desc">From applied machine learning to production AI systems, we connect teams with specialists who turn innovation into measurable business outcomes.</p>
             <span class="specialty-card__link">Learn More <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></span>
           </a>
@@ -619,6 +658,11 @@
               <i data-lucide="cloud-cog"></i>
             </div>
             <h3 class="specialty-card__title">Information Technology (IT)</h3>
+            <ul class="specialty-card__tags" aria-label="Focus areas">
+              <li>Cloud</li>
+              <li>Infrastructure</li>
+              <li>Platform</li>
+            </ul>
             <p class="specialty-card__desc">Software, cloud, infrastructure, and platform talent for environments where reliability, scale, and technical leadership go hand in hand.</p>
             <span class="specialty-card__link">Learn More <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></span>
           </a>
@@ -628,6 +672,11 @@
               <i data-lucide="circle-dollar-sign"></i>
             </div>
             <h3 class="specialty-card__title">Commercial Lending</h3>
+            <ul class="specialty-card__tags" aria-label="Focus areas">
+              <li>Credit</li>
+              <li>Relationship Mgmt</li>
+              <li>Treasury</li>
+            </ul>
             <p class="specialty-card__desc">Leadership and specialist roles across commercial lending&mdash;from relationship management and credit to treasury and business banking.</p>
             <span class="specialty-card__link">Learn More <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></span>
           </a>
@@ -637,6 +686,11 @@
               <i data-lucide="landmark"></i>
             </div>
             <h3 class="specialty-card__title">Credit Unions</h3>
+            <ul class="specialty-card__tags" aria-label="Focus areas">
+              <li>Leadership</li>
+              <li>Digital</li>
+              <li>Community Banking</li>
+            </ul>
             <p class="specialty-card__desc">Member-focused institutions need leaders who understand community banking, digital transformation, and the mission-driven credit union model.</p>
             <span class="specialty-card__link">Learn More <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></span>
           </a>
@@ -646,6 +700,11 @@
               <i data-lucide="lightbulb"></i>
             </div>
             <h3 class="specialty-card__title">Because Clients Asked</h3>
+            <ul class="specialty-card__tags" aria-label="Focus areas">
+              <li>Custom Search</li>
+              <li>Network</li>
+              <li>Flexible</li>
+            </ul>
             <p class="specialty-card__desc">When hiring needs fall outside our core pillars, we leverage our network to deliver&mdash;because the right introduction often starts with a conversation.</p>
             <span class="specialty-card__link">Learn More <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></span>
           </a>
