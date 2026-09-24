@@ -194,7 +194,6 @@
       gap: 5.5rem 1.25rem;
       max-width: 72rem;
       margin-inline: auto;
-      counter-reset: specialty;
     }
 
     .specialty-card {
@@ -228,21 +227,6 @@
       transition: opacity 0.35s ease;
     }
 
-    .specialty-card::after {
-      content: counter(specialty, decimal-leading-zero);
-      counter-increment: specialty;
-      position: absolute;
-      top: 0.85rem;
-      right: 1rem;
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 1.5rem + 1vw, 2.75rem);
-      font-weight: 700;
-      line-height: 1;
-      color: rgba(15, 26, 46, 0.06);
-      pointer-events: none;
-      transition: color 0.35s ease;
-    }
-
     .specialty-card:hover,
     .specialty-card:focus-visible {
       background: linear-gradient(180deg, #ffffff 0%, #fef6f6 100%);
@@ -254,11 +238,6 @@
     .specialty-card:hover::before,
     .specialty-card:focus-visible::before {
       opacity: 1;
-    }
-
-    .specialty-card:hover::after,
-    .specialty-card:focus-visible::after {
-      color: rgba(175, 39, 47, 0.12);
     }
 
     .specialty-card__icon {
