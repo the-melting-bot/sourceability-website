@@ -215,20 +215,47 @@
       justify-content: center;
       width: 6.5rem;
       height: 6.5rem;
+      border: 2px solid var(--color-accent);
       border-radius: 50%;
-      background: transparent;
-      transition: transform 0.35s ease;
+      background: radial-gradient(circle at 50% 38%, #f3f5f8 0%, #ffffff 68%);
+      box-shadow: 0 10px 28px rgba(15, 26, 46, 0.1);
+      transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
     }
 
-    .specialty-card__icon img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
+    .specialty-card__icon svg {
+      width: 3.15rem;
+      height: 3.15rem;
+      overflow: visible;
+    }
+
+    .specialty-card__icon .icon-navy {
+      fill: var(--color-navy);
+      stroke: var(--color-navy);
+    }
+
+    .specialty-card__icon .icon-accent {
+      fill: var(--color-accent);
+      stroke: var(--color-accent);
     }
 
     .specialty-card:hover .specialty-card__icon,
     .specialty-card:focus-visible .specialty-card__icon {
-      transform: translateX(-50%) scale(1.07);
+      transform: translateX(-50%) scale(1.06);
+      background: var(--color-navy);
+      border-color: var(--color-navy);
+      box-shadow: 0 14px 32px rgba(15, 26, 46, 0.18);
+    }
+
+    .specialty-card:hover .specialty-card__icon .icon-navy,
+    .specialty-card:hover .specialty-card__icon .icon-accent,
+    .specialty-card:focus-visible .specialty-card__icon .icon-navy,
+    .specialty-card:focus-visible .specialty-card__icon .icon-accent {
+      fill: #fff;
+      stroke: #fff;
     }
 
     .specialty-card__title {
@@ -475,12 +502,89 @@
     ========================================== -->
     <section class="specialties-grid-section" aria-labelledby="specialties-heading">
       <h2 id="specialties-heading" class="sr-only">Our specialties</h2>
+
+      <!-- Inline icon sprite (keeps hover colors crisp, no PNG edges) -->
+      <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+        <symbol id="icon-data-analytics" viewBox="0 0 80 80">
+          <rect class="icon-navy" x="14" y="44" width="8" height="18" rx="1.5"/>
+          <rect class="icon-accent" x="26" y="36" width="8" height="26" rx="1.5"/>
+          <rect class="icon-navy" x="38" y="40" width="8" height="22" rx="1.5"/>
+          <rect class="icon-navy" x="50" y="30" width="8" height="32" rx="1.5"/>
+          <polyline class="icon-navy" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" points="18,50 30,42 42,46 54,34"/>
+          <circle class="icon-accent" cx="18" cy="50" r="3"/>
+          <circle class="icon-accent" cx="30" cy="42" r="3"/>
+          <circle class="icon-accent" cx="42" cy="46" r="3"/>
+          <circle class="icon-accent" cx="54" cy="34" r="3"/>
+          <circle class="icon-navy" fill="none" stroke-width="2.2" cx="58" cy="54" r="7"/>
+          <line class="icon-navy" stroke-width="2.2" stroke-linecap="round" x1="63" y1="59" x2="68" y2="64"/>
+          <rect class="icon-accent" x="55" y="51" width="2.5" height="5" rx=".5"/>
+          <rect class="icon-navy" x="58.5" y="51" width="2.5" height="5" rx=".5"/>
+          <rect class="icon-accent" x="62" y="51" width="2.5" height="5" rx=".5"/>
+        </symbol>
+        <symbol id="icon-ai" viewBox="0 0 80 80">
+          <path class="icon-navy" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M48 18c-10 0-18 8-18 18 0 6 3 11 7 14v8h8v-4c2 .6 4 1 10 1 10 0 18-8 18-18S58 18 48 18Z"/>
+          <path class="icon-navy" fill="none" stroke-width="2" stroke-linecap="round" d="M34 58h12"/>
+          <circle class="icon-accent" cx="40" cy="34" r="3"/>
+          <circle class="icon-accent" cx="52" cy="30" r="3"/>
+          <circle class="icon-accent" cx="56" cy="42" r="3"/>
+          <circle class="icon-navy" cx="44" cy="44" r="2.5"/>
+          <path class="icon-navy" fill="none" stroke-width="1.8" stroke-linecap="round" d="M40 34h8M52 30l-4 10M56 42l-12-2M44 44l-4-10"/>
+        </symbol>
+        <symbol id="icon-it" viewBox="0 0 80 80">
+          <path class="icon-navy" d="M24 24h32c3 0 5 2 5 5v8c0 3-2 5-5 5H24c-3 0-5-2-5-5v-8c0-3 2-5 5-5Z"/>
+          <circle class="icon-accent" cx="40" cy="33" r="2.5"/>
+          <line class="icon-navy" stroke-width="1.8" stroke-linecap="round" x1="40" y1="35.5" x2="40" y2="42"/>
+          <circle class="icon-navy" fill="none" stroke-width="1.8" cx="32" cy="31" r="1.5"/>
+          <circle class="icon-navy" fill="none" stroke-width="1.8" cx="48" cy="31" r="1.5"/>
+          <path class="icon-navy" fill="none" stroke-width="2" stroke-linecap="round" d="M30 42h20"/>
+          <path class="icon-navy" d="M22 54h36l-2 6H24l-2-6Z"/>
+          <path class="icon-navy" d="M30 60h20v3H30z"/>
+          <circle class="icon-accent" fill="none" stroke-width="2" cx="40" cy="52" r="5"/>
+          <circle class="icon-accent" cx="40" cy="52" r="2"/>
+        </symbol>
+        <symbol id="icon-commercial-lending" viewBox="0 0 80 80">
+          <path class="icon-navy" fill="none" stroke-width="2.2" stroke-linejoin="round" d="M24 18h28l6 6v38H24V18Z"/>
+          <path class="icon-navy" fill="none" stroke-width="2.2" stroke-linejoin="round" d="M52 18v6h6"/>
+          <path class="icon-navy" stroke-width="2.4" stroke-linecap="round" d="M30 30h16M30 38h12M30 46h14"/>
+          <path class="icon-accent" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" d="M30 58c8-10 14-12 22-18"/>
+          <path class="icon-accent" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" d="M52 40l6-6"/>
+          <rect class="icon-navy" x="30" y="52" width="5" height="8" rx="1"/>
+          <rect class="icon-accent" x="37" y="48" width="5" height="12" rx="1"/>
+          <rect class="icon-navy" x="44" y="44" width="5" height="16" rx="1"/>
+        </symbol>
+        <symbol id="icon-credit-unions" viewBox="0 0 80 80">
+          <path class="icon-navy" d="M22 34 40 22l18 12v6H22v-6Z"/>
+          <rect class="icon-accent" x="22" y="38" width="36" height="2.5" rx="1"/>
+          <rect class="icon-navy" x="28" y="40" width="5" height="18" rx="1"/>
+          <rect class="icon-navy" x="37.5" y="40" width="5" height="18" rx="1"/>
+          <rect class="icon-navy" x="47" y="40" width="5" height="18" rx="1"/>
+          <rect class="icon-navy" x="24" y="58" width="32" height="4" rx="1"/>
+          <circle class="icon-navy" cx="32" cy="52" r="5"/>
+          <path class="icon-navy" d="M27 58c0-4 2.2-6 5-6s5 2 5 6"/>
+          <circle class="icon-accent" cx="40" cy="50" r="5.5"/>
+          <path class="icon-accent" d="M34.5 58c0-4.5 2.5-7 5.5-7s5.5 2.5 5.5 7"/>
+          <circle class="icon-navy" cx="48" cy="52" r="5"/>
+          <path class="icon-navy" d="M43 58c0-4 2.2-6 5-6s5 2 5 6"/>
+        </symbol>
+        <symbol id="icon-because-clients-asked" viewBox="0 0 80 80">
+          <path class="icon-navy" fill="none" stroke-width="2.2" stroke-linecap="round" d="M26 22c0-6 5-10 11-10s11 4 11 10c0 5-3 8-6 10l-1 8h-8l-1-8c-3-2-6-5-6-10Z"/>
+          <path class="icon-navy" fill="none" stroke-width="2" stroke-linecap="round" d="M33 48h10"/>
+          <line class="icon-accent" stroke-width="2" stroke-linecap="round" x1="24" y1="16" x2="24" y2="12"/>
+          <line class="icon-accent" stroke-width="2" stroke-linecap="round" x1="37" y1="10" x2="37" y2="6"/>
+          <line class="icon-accent" stroke-width="2" stroke-linecap="round" x1="50" y1="16" x2="50" y2="12"/>
+          <circle class="icon-navy" fill="none" stroke-width="2" cx="54" cy="48" r="11"/>
+          <circle class="icon-accent" fill="none" stroke-width="2" cx="54" cy="48" r="4"/>
+          <circle class="icon-navy" cx="54" cy="48" r="2"/>
+          <path class="icon-navy" fill="none" stroke-width="2" stroke-linecap="round" d="M54 37v4M54 55v4M43 48h4M61 48h4M46.2 41.2l2.8 2.8M59 53.8l2.8 2.8M59 42.2l-2.8 2.8M46.2 54.8l2.8-2.8"/>
+        </symbol>
+      </svg>
+
       <div class="container">
         <div class="specialties-grid">
 
           <a href="contact.html" class="specialty-card reveal">
             <div class="specialty-card__icon" aria-hidden="true">
-              <img src="./assets/images/specialties/data-analytics.png" alt="" width="104" height="104" loading="lazy">
+              <svg viewBox="0 0 80 80"><use href="#icon-data-analytics"/></svg>
             </div>
             <h3 class="specialty-card__title">Data / Analytics</h3>
             <p class="specialty-card__desc">We partner with organizations building modern analytics capabilities&mdash;from data engineering and BI to insights teams that drive smarter decisions.</p>
@@ -489,7 +593,7 @@
 
           <a href="contact.html" class="specialty-card reveal">
             <div class="specialty-card__icon" aria-hidden="true">
-              <img src="./assets/images/specialties/ai.png" alt="" width="104" height="104" loading="lazy">
+              <svg viewBox="0 0 80 80"><use href="#icon-ai"/></svg>
             </div>
             <h3 class="specialty-card__title">Artificial Intelligence (A.I)</h3>
             <p class="specialty-card__desc">From applied machine learning to production AI systems, we connect teams with specialists who turn innovation into measurable business outcomes.</p>
@@ -498,7 +602,7 @@
 
           <a href="contact.html" class="specialty-card reveal">
             <div class="specialty-card__icon" aria-hidden="true">
-              <img src="./assets/images/specialties/it.png" alt="" width="104" height="104" loading="lazy">
+              <svg viewBox="0 0 80 80"><use href="#icon-it"/></svg>
             </div>
             <h3 class="specialty-card__title">Information Technology (IT)</h3>
             <p class="specialty-card__desc">Software, cloud, infrastructure, and platform talent for environments where reliability, scale, and technical leadership go hand in hand.</p>
@@ -507,7 +611,7 @@
 
           <a href="contact.html" class="specialty-card reveal">
             <div class="specialty-card__icon" aria-hidden="true">
-              <img src="./assets/images/specialties/commercial-lending.png" alt="" width="104" height="104" loading="lazy">
+              <svg viewBox="0 0 80 80"><use href="#icon-commercial-lending"/></svg>
             </div>
             <h3 class="specialty-card__title">Commercial Lending</h3>
             <p class="specialty-card__desc">Leadership and specialist roles across commercial lending&mdash;from relationship management and credit to treasury and business banking.</p>
@@ -516,7 +620,7 @@
 
           <a href="contact.html" class="specialty-card reveal">
             <div class="specialty-card__icon" aria-hidden="true">
-              <img src="./assets/images/specialties/credit-unions.png" alt="" width="104" height="104" loading="lazy">
+              <svg viewBox="0 0 80 80"><use href="#icon-credit-unions"/></svg>
             </div>
             <h3 class="specialty-card__title">Credit Unions</h3>
             <p class="specialty-card__desc">Member-focused institutions need leaders who understand community banking, digital transformation, and the mission-driven credit union model.</p>
@@ -525,7 +629,7 @@
 
           <a href="contact.html" class="specialty-card reveal">
             <div class="specialty-card__icon" aria-hidden="true">
-              <img src="./assets/images/specialties/because-clients-asked.png" alt="" width="104" height="104" loading="lazy">
+              <svg viewBox="0 0 80 80"><use href="#icon-because-clients-asked"/></svg>
             </div>
             <h3 class="specialty-card__title">Because Clients Asked</h3>
             <p class="specialty-card__desc">When hiring needs fall outside our core pillars, we leverage our network to deliver&mdash;because the right introduction often starts with a conversation.</p>
