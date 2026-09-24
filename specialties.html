@@ -168,38 +168,59 @@
       opacity: 0.85;
     }
 
-    /* ---- Specialty cards bento grid ---- */
+    /* ---- Specialty cards grid ---- */
     .specialties-grid-section {
       background:
         radial-gradient(circle at 12% 8%, rgba(175, 39, 47, 0.05) 0%, transparent 42%),
         radial-gradient(circle at 88% 92%, rgba(15, 26, 46, 0.05) 0%, transparent 42%),
         var(--color-bg);
-      padding-top: calc(var(--space-16) + 2rem);
+      padding-top: calc(var(--space-16) + 3.5rem);
       padding-bottom: var(--space-20);
     }
 
+    .specialties-grid-intro {
+      max-width: 42rem;
+      margin: 0 auto var(--space-12);
+      text-align: center;
+    }
+
+    .specialties-grid-intro .overline {
+      margin-bottom: var(--space-3);
+    }
+
+    .specialties-grid-intro__title {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(1.35rem, 1.1rem + 0.9vw, 1.85rem);
+      font-weight: 700;
+      font-style: normal;
+      color: var(--color-navy);
+      line-height: 1.25;
+      text-wrap: balance;
+    }
+
     .specialties-grid {
-      display: grid;
-      grid-template-columns: repeat(12, minmax(0, 1fr));
-      grid-auto-rows: minmax(11rem, auto);
-      gap: 1.15rem;
-      max-width: 76rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 5.5rem 1.25rem;
+      max-width: 72rem;
       margin-inline: auto;
+      counter-reset: specialty;
     }
 
     .specialty-card {
       position: relative;
-      display: flex;
-      flex-direction: column;
-      min-width: 0;
-      min-height: 100%;
+      flex: 1 1 calc(33.333% - 1.25rem);
+      min-width: min(100%, 17.5rem);
+      max-width: 22rem;
+      text-align: center;
       text-decoration: none;
       color: inherit;
-      text-align: center;
       background: linear-gradient(180deg, #ffffff 0%, #fdfbfb 100%);
-      border: 1px solid rgba(175, 39, 47, 0.12);
-      border-radius: 18px;
-      padding: 1.65rem 1.5rem 5.25rem;
+      border: 1px solid rgba(175, 39, 47, 0.1);
+      border-radius: 15px;
+      padding: 4.25rem 1.75rem 6.5rem;
       box-shadow: 0 2px 12px rgba(15, 26, 46, 0.04);
       overflow: hidden;
       transition:
@@ -219,12 +240,27 @@
       transition: opacity 0.35s ease;
     }
 
+    .specialty-card::after {
+      content: counter(specialty, decimal-leading-zero);
+      counter-increment: specialty;
+      position: absolute;
+      top: 0.85rem;
+      right: 1rem;
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 1.5rem + 1vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1;
+      color: rgba(15, 26, 46, 0.06);
+      pointer-events: none;
+      transition: color 0.35s ease;
+    }
+
     .specialty-card:hover,
     .specialty-card:focus-visible {
       background: linear-gradient(180deg, #ffffff 0%, #fef6f6 100%);
       border-color: rgba(175, 39, 47, 0.28);
-      box-shadow: 0 16px 40px rgba(15, 26, 46, 0.1);
-      transform: translateY(-3px);
+      box-shadow: 0 14px 36px rgba(15, 26, 46, 0.1);
+      transform: translateY(-4px);
     }
 
     .specialty-card:hover::before,
@@ -232,62 +268,27 @@
       opacity: 1;
     }
 
-    .specialty-card--featured {
-      grid-column: 1 / 8;
-      grid-row: 1 / 3;
-      text-align: left;
-      padding: clamp(1.75rem, 3vw, 2.5rem);
-      padding-bottom: 5.5rem;
-      background: linear-gradient(145deg, #0f1a2e 0%, #162236 52%, #1c2d48 100%);
-      border-color: rgba(255, 255, 255, 0.08);
-      box-shadow: 0 18px 48px rgba(15, 26, 46, 0.18);
+    .specialty-card:hover::after,
+    .specialty-card:focus-visible::after {
+      color: rgba(175, 39, 47, 0.12);
     }
-
-    .specialty-card--featured::before {
-      background: linear-gradient(90deg, var(--color-accent), rgba(255, 255, 255, 0.45));
-    }
-
-    .specialty-card--featured::after {
-      content: '';
-      position: absolute;
-      right: -2rem;
-      bottom: -2rem;
-      width: 12rem;
-      height: 12rem;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(175, 39, 47, 0.22) 0%, transparent 68%);
-      pointer-events: none;
-    }
-
-    .specialty-card--featured:hover,
-    .specialty-card--featured:focus-visible {
-      background: linear-gradient(145deg, #121f35 0%, #1a2a42 52%, #21314c 100%);
-      border-color: rgba(255, 255, 255, 0.14);
-      box-shadow: 0 22px 52px rgba(15, 26, 46, 0.24);
-    }
-
-    .specialty-card--bento-ai { grid-column: 8 / 13; grid-row: 1; }
-    .specialty-card--bento-it { grid-column: 8 / 13; grid-row: 2; }
-    .specialty-card--bento-lending { grid-column: 1 / 5; grid-row: 3; }
-    .specialty-card--bento-credit { grid-column: 5 / 9; grid-row: 3; }
-    .specialty-card--bento-asked { grid-column: 9 / 13; grid-row: 3; }
 
     .specialty-card__icon {
-      position: relative;
-      z-index: 1;
+      position: absolute;
+      top: -3.35rem;
+      left: 50%;
+      transform: translateX(-50%);
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-shrink: 0;
-      width: 4.25rem;
-      height: 4.25rem;
-      margin: 0 auto 1.1rem;
+      width: 6.5rem;
+      height: 6.5rem;
       border: 2px solid var(--color-accent);
       border-radius: 50%;
       background:
         radial-gradient(circle at 50% 32%, rgba(175, 39, 47, 0.14) 0%, rgba(175, 39, 47, 0) 42%),
         radial-gradient(circle at 50% 68%, rgba(15, 26, 46, 0.06) 0%, #ffffff 58%);
-      box-shadow: 0 8px 22px rgba(15, 26, 46, 0.08);
+      box-shadow: 0 10px 28px rgba(15, 26, 46, 0.1);
       transition:
         transform 0.35s ease,
         background 0.35s ease,
@@ -295,44 +296,28 @@
         box-shadow 0.35s ease;
     }
 
-    .specialty-card--featured .specialty-card__icon {
-      width: 5rem;
-      height: 5rem;
-      margin: 0 0 1.35rem;
-      border-color: rgba(255, 255, 255, 0.35);
+    .specialty-card:nth-child(even) .specialty-card__icon {
+      border-color: var(--color-navy);
       background:
-        radial-gradient(circle at 50% 32%, rgba(175, 39, 47, 0.35) 0%, rgba(175, 39, 47, 0) 48%),
-        rgba(255, 255, 255, 0.08);
-      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+        radial-gradient(circle at 50% 32%, rgba(15, 26, 46, 0.1) 0%, rgba(15, 26, 46, 0) 42%),
+        radial-gradient(circle at 50% 68%, rgba(175, 39, 47, 0.06) 0%, #ffffff 58%);
     }
 
     .specialty-card__icon svg {
-      width: 2.15rem;
-      height: 2.15rem;
+      width: 2.85rem;
+      height: 2.85rem;
       stroke: var(--color-navy);
       stroke-width: 1.65;
       fill: none;
       transition: stroke 0.35s ease;
     }
 
-    .specialty-card--featured .specialty-card__icon svg {
-      width: 2.45rem;
-      height: 2.45rem;
-      stroke: #fff;
-    }
-
     .specialty-card:hover .specialty-card__icon,
     .specialty-card:focus-visible .specialty-card__icon {
-      transform: scale(1.06);
+      transform: translateX(-50%) scale(1.06);
       background: var(--color-navy);
       border-color: var(--color-navy);
-      box-shadow: 0 12px 28px rgba(15, 26, 46, 0.2);
-    }
-
-    .specialty-card--featured:hover .specialty-card__icon,
-    .specialty-card--featured:focus-visible .specialty-card__icon {
-      background: var(--color-accent);
-      border-color: var(--color-accent);
+      box-shadow: 0 14px 32px rgba(15, 26, 46, 0.22);
     }
 
     .specialty-card:hover .specialty-card__icon svg,
@@ -341,52 +326,34 @@
     }
 
     .specialty-card__title {
-      position: relative;
-      z-index: 1;
-      margin: 0 0 var(--space-3);
+      margin: 0 0 var(--space-4);
       font-family: var(--font-display);
-      font-size: clamp(1.02rem, 0.94rem + 0.3vw, 1.18rem);
+      font-size: clamp(1.05rem, 0.95rem + 0.35vw, 1.2rem);
       font-weight: 700;
       font-style: normal;
       color: var(--color-navy);
       line-height: 1.25;
     }
 
-    .specialty-card--featured .specialty-card__title {
-      font-size: clamp(1.35rem, 1.1rem + 0.8vw, 1.85rem);
-      color: #fff;
-      max-width: 16ch;
-    }
-
     .specialty-card__desc {
-      position: relative;
-      z-index: 1;
       margin: 0 auto;
-      max-width: 30ch;
+      max-width: 26ch;
       font-size: var(--text-sm);
       color: var(--color-text-muted);
       line-height: 1.65;
     }
 
-    .specialty-card--featured .specialty-card__desc {
-      margin: 0;
-      max-width: 44ch;
-      font-size: clamp(0.95rem, 0.9rem + 0.2vw, 1.05rem);
-      color: rgba(255, 255, 255, 0.8);
-    }
-
     .specialty-card__link {
       position: absolute;
-      z-index: 1;
       left: 50%;
-      bottom: 1.35rem;
+      bottom: 1.85rem;
       transform: translateX(-50%);
       display: inline-flex;
       align-items: center;
       gap: 0.35rem;
-      min-width: 9.25rem;
+      min-width: 9.5rem;
       justify-content: center;
-      padding: 0.58rem 1.1rem;
+      padding: 0.625rem 1.15rem;
       border: 2px solid transparent;
       border-radius: 999px;
       font-size: var(--text-sm);
@@ -398,13 +365,6 @@
         background 0.35s ease;
     }
 
-    .specialty-card--featured .specialty-card__link {
-      left: clamp(1.75rem, 3vw, 2.5rem);
-      transform: none;
-      color: #fff;
-      border-color: rgba(255, 255, 255, 0.28);
-    }
-
     .specialty-card:hover .specialty-card__link,
     .specialty-card:focus-visible .specialty-card__link {
       border-color: var(--color-accent);
@@ -412,46 +372,16 @@
       color: #fff;
     }
 
-    .specialty-card--featured:hover .specialty-card__link,
-    .specialty-card--featured:focus-visible .specialty-card__link {
-      border-color: var(--color-accent);
-      background: var(--color-accent);
-      color: #fff;
-    }
-
-    .specialties-grid .reveal:nth-child(1) { transition-delay: 0ms; }
-    .specialties-grid .reveal:nth-child(2) { transition-delay: 70ms; }
-    .specialties-grid .reveal:nth-child(3) { transition-delay: 140ms; }
-    .specialties-grid .reveal:nth-child(4) { transition-delay: 210ms; }
-    .specialties-grid .reveal:nth-child(5) { transition-delay: 280ms; }
-    .specialties-grid .reveal:nth-child(6) { transition-delay: 350ms; }
+    .specialties-grid .specialty-card.reveal:nth-child(1) { transition-delay: 0ms; }
+    .specialties-grid .specialty-card.reveal:nth-child(2) { transition-delay: 70ms; }
+    .specialties-grid .specialty-card.reveal:nth-child(3) { transition-delay: 140ms; }
+    .specialties-grid .specialty-card.reveal:nth-child(4) { transition-delay: 210ms; }
+    .specialties-grid .specialty-card.reveal:nth-child(5) { transition-delay: 280ms; }
+    .specialties-grid .specialty-card.reveal:nth-child(6) { transition-delay: 350ms; }
 
     @media (max-width: 960px) {
-      .specialties-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        grid-auto-rows: auto;
-        gap: 1rem;
-      }
-
-      .specialty-card--featured,
-      .specialty-card--bento-ai,
-      .specialty-card--bento-it,
-      .specialty-card--bento-lending,
-      .specialty-card--bento-credit,
-      .specialty-card--bento-asked {
-        grid-column: auto;
-        grid-row: auto;
-      }
-
-      .specialty-card--featured {
-        grid-column: 1 / -1;
-      }
-
-      .specialty-card--bento-asked {
-        grid-column: 1 / -1;
-      }
-
-      .specialty-card--featured .specialty-card__title {
+      .specialty-card {
+        flex: 1 1 calc(50% - 1.25rem);
         max-width: none;
       }
     }
@@ -462,56 +392,20 @@
       }
 
       .specialties-grid-section {
-        padding-top: calc(var(--space-12) + 2rem);
+        padding-top: calc(var(--space-12) + 2.5rem);
+      }
+
+      .specialties-grid-intro {
+        margin-bottom: var(--space-10);
       }
 
       .specialties-grid {
-        grid-template-columns: 1fr;
-        gap: 0.85rem;
+        gap: 4.75rem 1rem;
       }
 
       .specialty-card {
-        padding: 1.35rem 1.25rem 4.75rem;
-      }
-
-      .specialty-card--featured {
-        padding: 1.5rem 1.35rem 4.85rem;
-        text-align: center;
-      }
-
-      .specialty-card--featured .specialty-card__icon {
-        margin-inline: auto;
-      }
-
-      .specialty-card--featured .specialty-card__desc {
-        max-width: none;
-      }
-
-      .specialty-card--featured .specialty-card__link {
-        left: 50%;
-        transform: translateX(-50%);
-      }
-
-      .specialty-card__icon {
-        width: 3.85rem;
-        height: 3.85rem;
-        margin-bottom: 0.9rem;
-      }
-
-      .specialty-card__icon svg {
-        width: 1.95rem;
-        height: 1.95rem;
-      }
-
-      .specialty-card__desc {
-        max-width: none;
-        font-size: 0.9375rem;
-      }
-
-      .specialty-card__link {
-        bottom: 1.1rem;
-        min-width: 8.75rem;
-        padding-inline: 1rem;
+        flex: 1 1 100%;
+        max-width: 22rem;
       }
     }
 
@@ -527,7 +421,7 @@
         transform: none;
       }
 
-      .specialties-grid .reveal {
+      .specialties-grid .specialty-card.reveal {
         transition-delay: 0ms !important;
       }
     }
@@ -694,12 +588,15 @@
          SPECIALTY CARDS
     ========================================== -->
     <section class="specialties-grid-section" aria-labelledby="specialties-heading">
-      <h2 id="specialties-heading" class="sr-only">Our specialties</h2>
-
       <div class="container">
+        <div class="specialties-grid-intro reveal">
+          <p class="overline">What We Recruit For</p>
+          <h2 id="specialties-heading" class="specialties-grid-intro__title">Deep expertise across the roles that shape modern financial services and technology.</h2>
+        </div>
+
         <div class="specialties-grid">
 
-          <a href="contact.html" class="specialty-card specialty-card--featured reveal">
+          <a href="contact.html" class="specialty-card reveal">
             <div class="specialty-card__icon" aria-hidden="true">
               <i data-lucide="chart-column-increasing"></i>
             </div>
@@ -708,7 +605,7 @@
             <span class="specialty-card__link">Learn More <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></span>
           </a>
 
-          <a href="contact.html" class="specialty-card specialty-card--bento-ai reveal">
+          <a href="contact.html" class="specialty-card reveal">
             <div class="specialty-card__icon" aria-hidden="true">
               <i data-lucide="brain"></i>
             </div>
@@ -717,7 +614,7 @@
             <span class="specialty-card__link">Learn More <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></span>
           </a>
 
-          <a href="contact.html" class="specialty-card specialty-card--bento-it reveal">
+          <a href="contact.html" class="specialty-card reveal">
             <div class="specialty-card__icon" aria-hidden="true">
               <i data-lucide="cloud-cog"></i>
             </div>
@@ -726,7 +623,7 @@
             <span class="specialty-card__link">Learn More <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></span>
           </a>
 
-          <a href="contact.html" class="specialty-card specialty-card--bento-lending reveal">
+          <a href="contact.html" class="specialty-card reveal">
             <div class="specialty-card__icon" aria-hidden="true">
               <i data-lucide="circle-dollar-sign"></i>
             </div>
@@ -735,7 +632,7 @@
             <span class="specialty-card__link">Learn More <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></span>
           </a>
 
-          <a href="contact.html" class="specialty-card specialty-card--bento-credit reveal">
+          <a href="contact.html" class="specialty-card reveal">
             <div class="specialty-card__icon" aria-hidden="true">
               <i data-lucide="landmark"></i>
             </div>
@@ -744,7 +641,7 @@
             <span class="specialty-card__link">Learn More <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></span>
           </a>
 
-          <a href="contact.html" class="specialty-card specialty-card--bento-asked reveal">
+          <a href="contact.html" class="specialty-card reveal">
             <div class="specialty-card__icon" aria-hidden="true">
               <i data-lucide="lightbulb"></i>
             </div>
