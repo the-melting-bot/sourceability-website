@@ -87,204 +87,232 @@
 
   <!-- Expertise Page Styles -->
   <style>
-    /* ---- Section heading block ---- */
-    .expertise-section-head {
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto var(--space-16);
+    /* ---- Iris-inspired hero with overlapping card ---- */
+    .specialties-hero {
+      position: relative;
+      min-height: clamp(20rem, 38vw, 26rem);
+      padding-top: 6.5rem;
+      overflow: visible;
+      background: var(--color-navy);
     }
 
-    .expertise-section-head .overline {
+    .specialties-hero__media {
+      position: absolute;
+      inset: 0;
+    }
+
+    .specialties-hero__media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+    }
+
+    .specialties-hero__wrap {
+      position: relative;
+      z-index: 2;
+      min-height: clamp(14rem, 28vw, 20rem);
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 0;
+    }
+
+    .specialties-hero__card {
+      position: relative;
+      background: #fff;
+      border-radius: var(--radius-xl);
+      padding: clamp(1.75rem, 3.5vw, 2.75rem);
+      max-width: 44rem;
+      margin-bottom: -3.25rem;
+      box-shadow: 0 16px 48px rgba(15, 26, 46, 0.14);
+      overflow: hidden;
+    }
+
+    .specialties-hero__card .overline {
       margin-bottom: var(--space-4);
     }
 
-    .expertise-section-head h2 {
+    .specialties-hero__title {
+      margin: 0;
       font-family: var(--font-display);
-      font-style: italic;
-      font-size: var(--text-xl);
+      font-size: clamp(1.75rem, 1.25rem + 1.6vw, 2.65rem);
+      font-weight: 700;
+      font-style: normal;
       color: var(--color-navy);
-      margin-bottom: var(--space-5);
-      line-height: 1.2;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      text-wrap: balance;
+      max-width: 20ch;
     }
 
-    .expertise-section-head p {
-      font-size: var(--text-base);
-      color: var(--color-text-muted);
-      line-height: 1.7;
+    .specialties-hero__accent {
+      position: absolute;
+      right: -1.25rem;
+      bottom: -1.25rem;
+      width: 7.5rem;
+      height: 7.5rem;
+      border: 2px solid var(--color-accent);
+      border-radius: 50%;
+      opacity: 0.35;
+      pointer-events: none;
     }
 
-    /* ---- Industry Cards Grid ---- */
-    .industry-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-6);
+    .specialties-hero__accent::before {
+      content: '';
+      position: absolute;
+      inset: 1.1rem;
+      border-radius: 50%;
+      background-image: radial-gradient(var(--color-accent) 18%, transparent 19%);
+      background-size: 0.55rem 0.55rem;
+      background-position: center;
+      opacity: 0.85;
     }
 
-    @media (max-width: 960px) {
-      .industry-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+    /* ---- Specialty cards grid (Iris-inspired) ---- */
+    .specialties-grid-section {
+      background: var(--color-bg);
+      padding-top: calc(var(--space-16) + 3.5rem);
+      padding-bottom: var(--space-20);
     }
 
-    @media (max-width: 580px) {
-      .industry-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* Span the last card on an odd-count row to center it */
-    .industry-grid .industry-card:last-child:nth-child(3n+1) {
-      grid-column: 1 / -1;
-      max-width: 340px;
-      margin-inline: auto;
-      width: 100%;
-    }
-
-    .industry-card {
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-xl);
-      padding: var(--space-8) var(--space-8) var(--space-10);
+    .specialties-grid {
       display: flex;
-      flex-direction: column;
-      gap: var(--space-5);
-      box-shadow: var(--shadow-sm);
-      transition: box-shadow 260ms ease, transform 260ms ease, border-color 260ms ease;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 5.5rem 1.25rem;
+      max-width: 72rem;
+      margin-inline: auto;
     }
 
-    .industry-card:hover {
-      box-shadow: var(--shadow-lg);
-      transform: translateY(-3px);
-      border-color: rgba(175, 39, 47, 0.2);
+    .specialty-card {
+      position: relative;
+      flex: 1 1 calc(33.333% - 1.25rem);
+      min-width: min(100%, 17.5rem);
+      max-width: 22rem;
+      text-align: center;
+      text-decoration: none;
+      color: inherit;
+      background: #fff;
+      border-radius: 15px;
+      padding: 4.25rem 1.75rem 6.5rem;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0);
+      transition: box-shadow 0.35s ease, transform 0.35s ease;
     }
 
-    .industry-card__icon {
+    .specialty-card:hover,
+    .specialty-card:focus-visible {
+      box-shadow: 0 0 24px rgba(15, 26, 46, 0.1);
+      transform: translateY(-4px);
+    }
+
+    .specialty-card__icon {
+      position: absolute;
+      top: -3.1rem;
+      left: 50%;
+      transform: translateX(-50%);
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 52px;
-      height: 52px;
-      border-radius: var(--radius-lg);
-      background: var(--color-accent-light);
+      width: 6.25rem;
+      height: 6.25rem;
+      border: 2px solid var(--color-accent);
+      border-radius: 50%;
+      background: #fff;
       color: var(--color-accent);
-      flex-shrink: 0;
+      transition: background-color 0.35s ease, border-color 0.35s ease, color 0.35s ease;
     }
 
-    .industry-card__icon svg {
-      width: 24px;
-      height: 24px;
+    .specialty-card__icon svg {
+      width: 2rem;
+      height: 2rem;
     }
 
-    .industry-card__title {
+    .specialty-card:hover .specialty-card__icon,
+    .specialty-card:focus-visible .specialty-card__icon {
+      background: var(--color-navy);
+      border-color: var(--color-navy);
+      color: #fff;
+    }
+
+    .specialty-card__title {
+      margin: 0 0 var(--space-4);
       font-family: var(--font-display);
-      font-style: italic;
-      font-size: var(--text-lg);
+      font-size: clamp(1.05rem, 0.95rem + 0.35vw, 1.2rem);
+      font-weight: 700;
+      font-style: normal;
       color: var(--color-navy);
       line-height: 1.25;
-      margin: 0;
     }
 
-    .industry-card__desc {
+    .specialty-card__desc {
+      margin: 0 auto;
+      max-width: 26ch;
       font-size: var(--text-sm);
       color: var(--color-text-muted);
-      line-height: 1.7;
-      margin: 0;
-      flex: 1;
+      line-height: 1.65;
     }
 
-    /* ---- Functional Roles Section ---- */
-    .roles-section {
-      background: var(--color-surface-warm);
-    }
-
-    .functional-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0;
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-xl);
-      overflow: hidden;
-      background: var(--color-surface);
-    }
-
-    @media (max-width: 860px) {
-      .functional-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 520px) {
-      .functional-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .functional-role {
-      display: flex;
+    .specialty-card__link {
+      position: absolute;
+      left: 50%;
+      bottom: 1.85rem;
+      transform: translateX(-50%);
+      display: inline-flex;
       align-items: center;
-      gap: var(--space-4);
-      padding: var(--space-6) var(--space-8);
-      border-bottom: 1px solid var(--color-border);
-      border-right: 1px solid var(--color-border);
-      transition: background 200ms ease;
-    }
-
-    .functional-role:hover {
-      background: var(--color-surface-warm);
-    }
-
-    /* Remove right border on last column */
-    .functional-role:nth-child(3n) {
-      border-right: none;
-    }
-
-    /* Remove bottom border on last row items */
-    .functional-role:nth-last-child(-n+3) {
-      border-bottom: none;
-    }
-
-    @media (max-width: 860px) {
-      .functional-role:nth-child(3n) {
-        border-right: 1px solid var(--color-border);
-      }
-      .functional-role:nth-child(2n) {
-        border-right: none;
-      }
-      .functional-role:nth-last-child(-n+3) {
-        border-bottom: 1px solid var(--color-border);
-      }
-      .functional-role:nth-last-child(-n+2) {
-        border-bottom: none;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .functional-role {
-        border-right: none !important;
-      }
-      .functional-role:last-child {
-        border-bottom: none !important;
-      }
-      .functional-role:nth-last-child(-n+2) {
-        border-bottom: 1px solid var(--color-border);
-      }
-    }
-
-    .functional-role__dot {
-      flex-shrink: 0;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--color-accent);
-      opacity: 0.7;
-    }
-
-    .functional-role__name {
-      font-family: var(--font-body);
+      gap: 0.35rem;
+      min-width: 9.5rem;
+      justify-content: center;
+      padding: 0.625rem 1.15rem;
+      border: 2px solid transparent;
+      border-radius: 999px;
       font-size: var(--text-sm);
-      font-weight: 500;
-      color: var(--color-text);
-      line-height: 1.4;
+      font-weight: 600;
+      color: var(--color-accent);
+      transition: border-color 0.35s ease, color 0.35s ease;
+    }
+
+    .specialty-card:hover .specialty-card__link,
+    .specialty-card:focus-visible .specialty-card__link {
+      border-color: var(--color-accent);
+    }
+
+    @media (max-width: 960px) {
+      .specialty-card {
+        flex: 1 1 calc(50% - 1.25rem);
+        max-width: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .specialties-hero__card {
+        margin-bottom: -2rem;
+      }
+
+      .specialties-grid-section {
+        padding-top: calc(var(--space-12) + 2.5rem);
+      }
+
+      .specialties-grid {
+        gap: 4.75rem 1rem;
+      }
+
+      .specialty-card {
+        flex: 1 1 100%;
+        max-width: 22rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .specialty-card,
+      .specialty-card__icon,
+      .specialty-card__link {
+        transition: none;
+      }
+
+      .specialty-card:hover,
+      .specialty-card:focus-visible {
+        transform: none;
+      }
     }
 
     /* ---- Expertise CTA ---- */
@@ -352,58 +380,9 @@
       border-color: var(--color-navy);
     }
 
-    /* Divider line */
-    .section-divider {
-      width: 48px;
-      height: 3px;
-      background: var(--color-accent);
-      border-radius: 2px;
-      margin: var(--space-5) auto 0;
-    }
-
-    /* Representative roles — three columns */
-    .expertise-roles-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-10);
-      align-items: start;
-    }
-
-    @media (max-width: 900px) {
-      .expertise-roles-grid {
-        grid-template-columns: 1fr;
-        gap: var(--space-8);
-      }
-    }
-
-    .expertise-roles-column h3 {
-      font-family: var(--font-display);
-      font-style: italic;
-      font-size: var(--text-lg);
-      color: var(--color-navy);
-      margin: 0 0 var(--space-4);
-      line-height: 1.25;
-    }
-
-    .expertise-roles-column ul {
-      margin: 0;
-      padding-left: 1.15rem;
-      font-size: var(--text-sm);
-      color: var(--color-text-muted);
-      line-height: 1.75;
-    }
-
-    .expertise-roles-column li {
-      margin-bottom: var(--space-2);
-    }
-
-    .expertise-roles-column li:last-child {
-      margin-bottom: 0;
-    }
-
   </style>
 </head>
-<body>
+<body class="page-specialties">
 
   <!-- ============================================
        MOBILE OVERLAY
@@ -479,106 +458,83 @@
   <main id="main-content">
 
     <!-- ==========================================
-         PAGE HERO
+         PAGE HERO — overlapping card (Iris-inspired)
     ========================================== -->
-    <section class="page-hero page-hero--specialties" aria-label="Expertise hero">
-      <img src="./assets/images/hero-specialties.jpg" alt="" class="page-hero__bg" loading="eager" fetchpriority="high">
-      <div class="page-hero__overlay" aria-hidden="true"></div>
-      <div class="container">
-        <p class="overline overline--light reveal">Our Expertise</p>
-        <h1 class="page-hero__title reveal">Industries &amp; Roles</h1>
-        <p class="page-hero__desc reveal">We specialize in high-impact hiring across Data &amp; AI, Technology, and Financial Services (including credit unions and lending)&mdash;from executive leadership to critical individual contributors.</p>
+    <section class="specialties-hero" aria-label="Expertise hero">
+      <div class="specialties-hero__media" aria-hidden="true">
+        <img src="./assets/images/hero-specialties.jpg" alt="" loading="eager" fetchpriority="high">
+      </div>
+      <div class="container specialties-hero__wrap">
+        <div class="specialties-hero__card reveal">
+          <p class="overline">Our Areas of Expertise</p>
+          <h1 class="specialties-hero__title">Looking for what&rsquo;s next, before you are.</h1>
+          <div class="specialties-hero__accent" aria-hidden="true"></div>
+        </div>
       </div>
     </section>
 
     <!-- ==========================================
-         INDUSTRIES SECTION
+         SPECIALTY CARDS
     ========================================== -->
-    <section class="section-padding bg-surface" aria-labelledby="industries-heading">
+    <section class="specialties-grid-section" aria-labelledby="specialties-heading">
+      <h2 id="specialties-heading" class="sr-only">Our specialties</h2>
       <div class="container">
+        <div class="specialties-grid">
 
-        <div class="expertise-section-head reveal">
-          <p class="overline">Core Markets</p>
-          <h2 id="industries-heading">Where We Focus</h2>
-          <p>Our firm concentrates on three interconnected markets where specialized talent is in highest demand&mdash;and where deep relationships drive better outcomes.</p>
-          <div class="section-divider" aria-hidden="true"></div>
-        </div>
-
-        <div class="industry-grid">
-
-          <div class="industry-card reveal" role="article" aria-labelledby="industry-data">
-            <div class="industry-card__icon" aria-hidden="true">
-              <i data-lucide="database"></i>
+          <a href="contact.html" class="specialty-card reveal">
+            <div class="specialty-card__icon" aria-hidden="true">
+              <i data-lucide="bar-chart-3"></i>
             </div>
-            <h3 class="industry-card__title" id="industry-data">Data &amp; AI</h3>
-            <p class="industry-card__desc">Organizations building analytics, machine learning, and intelligent products&mdash;from modern data platforms to applied AI in production.</p>
-          </div>
+            <h3 class="specialty-card__title">Data / Analytics</h3>
+            <p class="specialty-card__desc">We partner with organizations building modern analytics capabilities&mdash;from data engineering and BI to insights teams that drive smarter decisions.</p>
+            <span class="specialty-card__link">Learn More <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></span>
+          </a>
 
-          <div class="industry-card reveal" role="article" aria-labelledby="industry-technology">
-            <div class="industry-card__icon" aria-hidden="true">
-              <i data-lucide="cpu"></i>
+          <a href="contact.html" class="specialty-card reveal">
+            <div class="specialty-card__icon" aria-hidden="true">
+              <i data-lucide="brain"></i>
             </div>
-            <h3 class="industry-card__title" id="industry-technology">Technology</h3>
-            <p class="industry-card__desc">Software, cloud, platform, and infrastructure environments where engineering excellence and product leadership matter most.</p>
-          </div>
+            <h3 class="specialty-card__title">Artificial Intelligence (A.I)</h3>
+            <p class="specialty-card__desc">From applied machine learning to production AI systems, we connect teams with specialists who turn innovation into measurable business outcomes.</p>
+            <span class="specialty-card__link">Learn More <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></span>
+          </a>
 
-          <div class="industry-card reveal" role="article" aria-labelledby="industry-fs">
-            <div class="industry-card__icon" aria-hidden="true">
+          <a href="contact.html" class="specialty-card reveal">
+            <div class="specialty-card__icon" aria-hidden="true">
+              <i data-lucide="monitor-smartphone"></i>
+            </div>
+            <h3 class="specialty-card__title">Information Technology (IT)</h3>
+            <p class="specialty-card__desc">Software, cloud, infrastructure, and platform talent for environments where reliability, scale, and technical leadership go hand in hand.</p>
+            <span class="specialty-card__link">Learn More <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></span>
+          </a>
+
+          <a href="contact.html" class="specialty-card reveal">
+            <div class="specialty-card__icon" aria-hidden="true">
               <i data-lucide="landmark"></i>
             </div>
-            <h3 class="industry-card__title" id="industry-fs">Financial Services (Credit Unions &amp; Lending)</h3>
-            <p class="industry-card__desc">Credit unions, lending institutions, and financial organizations where commercial, credit, and technology leadership must align with member and business priorities.</p>
-          </div>
+            <h3 class="specialty-card__title">Commercial Lending</h3>
+            <p class="specialty-card__desc">Leadership and specialist roles across commercial lending&mdash;from relationship management and credit to treasury and business banking.</p>
+            <span class="specialty-card__link">Learn More <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></span>
+          </a>
 
-        </div>
-      </div>
-    </section>
+          <a href="contact.html" class="specialty-card reveal">
+            <div class="specialty-card__icon" aria-hidden="true">
+              <i data-lucide="heart-handshake"></i>
+            </div>
+            <h3 class="specialty-card__title">Credit Unions</h3>
+            <p class="specialty-card__desc">Member-focused institutions need leaders who understand community banking, digital transformation, and the mission-driven credit union model.</p>
+            <span class="specialty-card__link">Learn More <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></span>
+          </a>
 
-    <!-- ==========================================
-         FUNCTIONAL AREAS SECTION
-    ========================================== -->
-    <section class="section-padding roles-section" aria-labelledby="roles-heading">
-      <div class="container">
+          <a href="contact.html" class="specialty-card reveal">
+            <div class="specialty-card__icon" aria-hidden="true">
+              <i data-lucide="messages-square"></i>
+            </div>
+            <h3 class="specialty-card__title">Because Clients Asked</h3>
+            <p class="specialty-card__desc">When hiring needs fall outside our core pillars, we leverage our network to deliver&mdash;because the right introduction often starts with a conversation.</p>
+            <span class="specialty-card__link">Learn More <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></span>
+          </a>
 
-        <div class="expertise-section-head reveal">
-          <p class="overline">Roles We Support</p>
-          <h2 id="roles-heading">Representative Searches</h2>
-          <p>We partner with organizations to deliver specialized talent across a range of critical roles. Representative searches include, but are not limited to:</p>
-          <div class="section-divider" aria-hidden="true"></div>
-        </div>
-
-        <div class="expertise-roles-grid reveal" aria-label="Representative roles by market">
-          <div class="expertise-roles-column">
-            <h3>Data &amp; AI</h3>
-            <ul>
-              <li>Data Engineer</li>
-              <li>Analytics Engineer</li>
-              <li>Data Analyst / BI Developer</li>
-              <li>Machine Learning Engineer</li>
-              <li>AI / Applied Scientist</li>
-            </ul>
-          </div>
-          <div class="expertise-roles-column">
-            <h3>Technology</h3>
-            <ul>
-              <li>Software Engineer / Developer</li>
-              <li>Cloud Engineer / Architect</li>
-              <li>DevOps / Platform Engineer</li>
-              <li>Product Manager</li>
-              <li>IT &amp; Infrastructure Leadership</li>
-            </ul>
-          </div>
-          <div class="expertise-roles-column">
-            <h3>Financial Services (Credit Unions &amp; Lending)</h3>
-            <ul>
-              <li>Chief Lending Officer (CLO)</li>
-              <li>VP / SVP Commercial Lending</li>
-              <li>Commercial Relationship Manager</li>
-              <li>Credit Analyst / Underwriter</li>
-              <li>Treasury Management Officer</li>
-              <li>Business Banking Leader</li>
-            </ul>
-          </div>
         </div>
       </div>
     </section>
