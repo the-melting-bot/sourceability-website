@@ -207,31 +207,28 @@
 
     .specialty-card__icon {
       position: absolute;
-      top: -3.1rem;
+      top: -3.35rem;
       left: 50%;
       transform: translateX(-50%);
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 6.25rem;
-      height: 6.25rem;
-      border: 2px solid var(--color-accent);
+      width: 6.5rem;
+      height: 6.5rem;
       border-radius: 50%;
-      background: #fff;
-      color: var(--color-accent);
-      transition: background-color 0.35s ease, border-color 0.35s ease, color 0.35s ease;
+      background: transparent;
+      transition: transform 0.35s ease;
     }
 
-    .specialty-card__icon svg {
-      width: 2rem;
-      height: 2rem;
+    .specialty-card__icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
 
     .specialty-card:hover .specialty-card__icon,
     .specialty-card:focus-visible .specialty-card__icon {
-      background: var(--color-navy);
-      border-color: var(--color-navy);
-      color: #fff;
+      transform: translateX(-50%) scale(1.07);
     }
 
     .specialty-card__title {
@@ -483,7 +480,7 @@
 
           <a href="contact.html" class="specialty-card reveal">
             <div class="specialty-card__icon" aria-hidden="true">
-              <i data-lucide="bar-chart-3"></i>
+              <img src="./assets/images/specialties/data-analytics.png" alt="" width="104" height="104" loading="lazy">
             </div>
             <h3 class="specialty-card__title">Data / Analytics</h3>
             <p class="specialty-card__desc">We partner with organizations building modern analytics capabilities&mdash;from data engineering and BI to insights teams that drive smarter decisions.</p>
@@ -492,7 +489,7 @@
 
           <a href="contact.html" class="specialty-card reveal">
             <div class="specialty-card__icon" aria-hidden="true">
-              <i data-lucide="brain"></i>
+              <img src="./assets/images/specialties/ai.png" alt="" width="104" height="104" loading="lazy">
             </div>
             <h3 class="specialty-card__title">Artificial Intelligence (A.I)</h3>
             <p class="specialty-card__desc">From applied machine learning to production AI systems, we connect teams with specialists who turn innovation into measurable business outcomes.</p>
@@ -501,7 +498,7 @@
 
           <a href="contact.html" class="specialty-card reveal">
             <div class="specialty-card__icon" aria-hidden="true">
-              <i data-lucide="monitor-smartphone"></i>
+              <img src="./assets/images/specialties/it.png" alt="" width="104" height="104" loading="lazy">
             </div>
             <h3 class="specialty-card__title">Information Technology (IT)</h3>
             <p class="specialty-card__desc">Software, cloud, infrastructure, and platform talent for environments where reliability, scale, and technical leadership go hand in hand.</p>
@@ -510,7 +507,7 @@
 
           <a href="contact.html" class="specialty-card reveal">
             <div class="specialty-card__icon" aria-hidden="true">
-              <i data-lucide="landmark"></i>
+              <img src="./assets/images/specialties/commercial-lending.png" alt="" width="104" height="104" loading="lazy">
             </div>
             <h3 class="specialty-card__title">Commercial Lending</h3>
             <p class="specialty-card__desc">Leadership and specialist roles across commercial lending&mdash;from relationship management and credit to treasury and business banking.</p>
@@ -519,7 +516,7 @@
 
           <a href="contact.html" class="specialty-card reveal">
             <div class="specialty-card__icon" aria-hidden="true">
-              <i data-lucide="heart-handshake"></i>
+              <img src="./assets/images/specialties/credit-unions.png" alt="" width="104" height="104" loading="lazy">
             </div>
             <h3 class="specialty-card__title">Credit Unions</h3>
             <p class="specialty-card__desc">Member-focused institutions need leaders who understand community banking, digital transformation, and the mission-driven credit union model.</p>
@@ -528,7 +525,7 @@
 
           <a href="contact.html" class="specialty-card reveal">
             <div class="specialty-card__icon" aria-hidden="true">
-              <i data-lucide="messages-square"></i>
+              <img src="./assets/images/specialties/because-clients-asked.png" alt="" width="104" height="104" loading="lazy">
             </div>
             <h3 class="specialty-card__title">Because Clients Asked</h3>
             <p class="specialty-card__desc">When hiring needs fall outside our core pillars, we leverage our network to deliver&mdash;because the right introduction often starts with a conversation.</p>
