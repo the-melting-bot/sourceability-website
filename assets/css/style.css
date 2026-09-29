@@ -3976,6 +3976,11 @@ p.salary-table-footer a {
   margin-bottom: var(--space-6);
 }
 
+.cta-banner-new__text-closing {
+  display: block;
+  margin-top: var(--space-4);
+}
+
 .cta-banner-new__container--no-images {
   justify-content: center;
 }
