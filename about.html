@@ -304,11 +304,18 @@
     }
 
     .about-tanya__aside-lead {
+      display: flex;
+      flex: 1 1 auto;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
       width: 100%;
+      min-height: 0;
+      text-align: center;
     }
 
     .about-tanya__why {
-      margin: 0 0 var(--space-5);
+      margin: var(--space-5) 0 0;
       font-family: var(--font-display);
       font-size: clamp(1.65rem, 1.35rem + 0.9vw, 2.05rem);
       font-weight: 700;
@@ -316,6 +323,7 @@
       letter-spacing: -0.02em;
       line-height: 1.2;
       text-wrap: balance;
+      flex-shrink: 0;
     }
 
     .about-tanya__photo {
@@ -323,21 +331,24 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      width: min(11rem, 42vw);
-      height: min(11rem, 42vw);
-      flex-shrink: 0;
+      flex: 1 1 auto;
+      width: min(100%, 22rem);
+      height: auto;
+      min-height: 14rem;
+      max-height: min(26rem, 48vh);
+      aspect-ratio: 1;
       margin-inline: auto;
       border-radius: 50%;
       background: var(--color-navy);
       color: #fff;
       text-align: center;
-      padding: var(--space-4);
+      padding: var(--space-6);
       box-shadow: 0 12px 32px rgba(15, 26, 46, 0.18);
     }
 
     .about-tanya__initials {
       font-family: var(--font-display);
-      font-size: clamp(2rem, 5vw, 2.75rem);
+      font-size: clamp(3rem, 6vw, 4.5rem);
       font-weight: 700;
       letter-spacing: -0.04em;
       line-height: 1;
@@ -345,9 +356,9 @@
     }
 
     .about-tanya__photo-note {
-      margin: 0.45rem 0 0;
+      margin: 0.65rem 0 0;
       font-family: var(--font-body);
-      font-size: 0.62rem;
+      font-size: 0.72rem;
       letter-spacing: 0.06em;
       text-transform: uppercase;
       color: rgba(255, 255, 255, 0.62);
@@ -604,6 +615,14 @@
         height: auto;
       }
 
+      .about-tanya__photo {
+        flex: 0 0 auto;
+        width: min(16rem, 72vw);
+        height: min(16rem, 72vw);
+        max-height: none;
+        min-height: 0;
+      }
+
       .about-tanya__quote {
         margin-top: var(--space-6);
         padding-top: 0;
@@ -743,11 +762,11 @@
         <div class="about-tanya__grid">
           <aside class="about-tanya__aside" aria-labelledby="tanya-why-heading">
             <div class="about-tanya__aside-lead">
-              <h3 class="about-tanya__why reveal" id="tanya-why-heading">Why I Do What I Do</h3>
               <div class="about-tanya__photo reveal" aria-hidden="true">
                 <span class="about-tanya__initials">TC</span>
                 <p class="about-tanya__photo-note">Photo coming soon</p>
               </div>
+              <h3 class="about-tanya__why reveal" id="tanya-why-heading">Why I Do What I Do</h3>
             </div>
             <blockquote class="about-tanya__quote reveal">
               <p>&ldquo;I enjoy working with organizations and individuals where relationships matter, reputations matter, and decisions have a long-term impact.</p>
