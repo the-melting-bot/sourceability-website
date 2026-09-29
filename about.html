@@ -285,22 +285,19 @@
 
     .about-tanya__aside-lead {
       display: flex;
-      flex: 0 0 auto;
+      flex: 1 1 auto;
       flex-direction: column;
-      align-items: center;
+      align-items: stretch;
       justify-content: flex-start;
       width: 100%;
+      min-height: 0;
     }
 
     .about-tanya__aside-text {
-      flex: 1 1 auto;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
+      flex: 0 0 auto;
       width: 100%;
       margin-top: auto;
       padding-top: clamp(1.25rem, 2.5vw, 2rem);
-      min-height: 0;
     }
 
     .about-tanya__why {
@@ -320,9 +317,9 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      flex: 0 0 auto;
-      width: min(100%, clamp(14rem, 38vw, 19rem));
-      aspect-ratio: 1;
+      flex: 1 1 auto;
+      width: 100%;
+      min-height: clamp(17rem, 38vh, 26rem);
       border-radius: var(--radius-lg);
       background: var(--color-navy);
       color: #fff;
@@ -333,7 +330,7 @@
 
     .about-tanya__initials {
       font-family: var(--font-display);
-      font-size: clamp(2.75rem, 5vw, 3.75rem);
+      font-size: clamp(3rem, 6vw, 4.25rem);
       font-weight: 700;
       letter-spacing: -0.04em;
       line-height: 1;
@@ -603,11 +600,17 @@
         height: auto;
       }
 
+      .about-tanya__aside-lead {
+        flex: none;
+      }
+
+      .about-tanya__photo {
+        min-height: 14rem;
+      }
+
       .about-tanya__aside-text {
         margin-top: var(--space-6);
         padding-top: 0;
-        flex: none;
-        justify-content: flex-start;
       }
 
       .about-close__cta .btn {
