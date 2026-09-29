@@ -307,7 +307,7 @@
       display: flex;
       flex: 1 1 auto;
       flex-direction: column;
-      align-items: center;
+      align-items: stretch;
       justify-content: flex-start;
       width: 100%;
       min-height: 0;
@@ -332,13 +332,10 @@
       align-items: center;
       justify-content: center;
       flex: 1 1 auto;
-      width: min(100%, 22rem);
-      height: auto;
+      width: 100%;
       min-height: 14rem;
-      max-height: min(26rem, 48vh);
       aspect-ratio: 1;
-      margin-inline: auto;
-      border-radius: 50%;
+      border-radius: var(--radius-lg);
       background: var(--color-navy);
       color: #fff;
       text-align: center;
@@ -617,10 +614,8 @@
 
       .about-tanya__photo {
         flex: 0 0 auto;
-        width: min(16rem, 72vw);
-        height: min(16rem, 72vw);
-        max-height: none;
-        min-height: 0;
+        width: 100%;
+        min-height: 12rem;
       }
 
       .about-tanya__quote {
