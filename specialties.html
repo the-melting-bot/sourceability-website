@@ -418,17 +418,44 @@
       }
     }
 
-    @media (max-width: 640px) {
-      .specialties-grid-section {
-        padding-top: var(--space-12);
-      }
-
+    @media (max-width: 767px) {
       .specialties-grid-intro {
         margin-bottom: var(--space-10);
+        padding-inline: var(--space-2);
       }
 
       .specialties-grid {
-        gap: 4.75rem 1rem;
+        gap: var(--space-6);
+      }
+
+      .specialty-card {
+        padding: 1.65rem 1.35rem 5.75rem;
+      }
+
+      .specialty-card__icon {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        width: 5.25rem;
+        height: 5.25rem;
+        margin: 0 auto var(--space-4);
+      }
+
+      .specialty-card__icon svg {
+        width: 2.35rem;
+        height: 2.35rem;
+      }
+
+      .specialty-card:hover .specialty-card__icon,
+      .specialty-card:focus-visible .specialty-card__icon {
+        transform: scale(1.06);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .specialties-grid-section {
+        padding-top: var(--space-12);
       }
 
       .specialty-card {
