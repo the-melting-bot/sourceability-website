@@ -32,7 +32,7 @@
   <meta property="og:url" content="https://www.sourceabilityinc.com/jobs.html">
   <meta property="og:site_name" content="SourceAbility, Inc.">
   <meta property="og:locale" content="en_US">
-  <meta property="og:image" content="https://www.sourceabilityinc.com/assets/images/hero-jobs.jpg">
+  <meta property="og:image" content="https://www.sourceabilityinc.com/assets/images/hero-jobs-team.jpg">
   <meta property="og:image:alt" content="Search open data and analytics job opportunities with SourceAbility">
 
   <!-- Twitter -->
@@ -40,7 +40,7 @@
   <meta name="twitter:site" content="@SourceAbility">
   <meta name="twitter:title" content="Search Jobs — Data &amp; Analytics Positions | SourceAbility">
   <meta name="twitter:description" content="Browse open positions in data science, analytics, AI, business intelligence, and more. SourceAbility connects top talent with leading employers.">
-  <meta name="twitter:image" content="https://www.sourceabilityinc.com/assets/images/hero-jobs.jpg">
+  <meta name="twitter:image" content="https://www.sourceabilityinc.com/assets/images/hero-jobs-team.jpg">
 
   <!-- Schema Markup -->
   <script type="application/ld+json">
@@ -84,6 +84,91 @@
 
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <style>
+    /* Search Jobs hero — red panel left, picture right (matches Candidates) */
+    .jobs-hero-split {
+      padding-top: 7.5rem;
+      background: #fff;
+    }
+
+    .jobs-hero-split__grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.95fr);
+      min-height: min(34rem, 72vh);
+    }
+
+    .jobs-hero-split__media {
+      position: relative;
+      min-height: 18rem;
+      overflow: hidden;
+    }
+
+    .jobs-hero-split__media img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: inherit;
+      object-fit: cover;
+      object-position: center 35%;
+    }
+
+    .jobs-hero-split__panel {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: #af272f;
+      padding: clamp(2rem, 4.5vw, 3.875rem);
+    }
+
+    .jobs-hero-split__eyebrow {
+      margin: 0 0 var(--space-3);
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .jobs-hero-split__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.65rem, 1.15rem + 1.6vw, 2rem);
+      font-weight: 700;
+      font-style: normal;
+      color: #fff;
+      line-height: 1.2;
+      margin: 0 0 var(--space-4);
+      text-wrap: balance;
+    }
+
+    .jobs-hero-split__desc {
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      color: #fff;
+      line-height: 1.625;
+      margin: 0;
+    }
+
+    @media (max-width: 767px) {
+      .jobs-hero-split {
+        padding-top: 6.5rem;
+      }
+
+      .jobs-hero-split__grid {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .jobs-hero-split__media {
+        min-height: 16rem;
+      }
+
+      .jobs-hero-split__panel {
+        padding: var(--space-8) var(--space-6);
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -163,14 +248,15 @@
     <!-- ==========================================
          PAGE HERO
     ========================================== -->
-    <section class="page-hero page-hero--jobs" aria-label="Page hero">
-      <img src="./assets/images/hero-jobs.jpg" alt="" class="page-hero__bg" loading="eager" fetchpriority="high">
-      <div class="page-hero__overlay" aria-hidden="true"></div>
-      <div class="container">
-        <div class="page-hero__content">
-          <p class="overline overline--light reveal">Current Opportunities</p>
-          <h1 class="page-hero__title reveal">Search Jobs</h1>
-          <p class="page-hero__desc reveal">Explore current opportunities across Data, AI, Technology, and Financial Services roles.</p>
+    <section class="jobs-hero-split" aria-label="Search Jobs hero">
+      <div class="jobs-hero-split__grid">
+        <div class="jobs-hero-split__panel">
+          <p class="jobs-hero-split__eyebrow reveal">Current Opportunities</p>
+          <h1 class="jobs-hero-split__title reveal">Search Jobs</h1>
+          <p class="jobs-hero-split__desc reveal">Explore current opportunities across Data, AI, Technology, and Financial Services roles.</p>
+        </div>
+        <div class="jobs-hero-split__media reveal">
+          <img src="./assets/images/hero-jobs-team.jpg" alt="Professionals networking at a career event" loading="eager" fetchpriority="high" width="1920" height="1280">
         </div>
       </div>
     </section>

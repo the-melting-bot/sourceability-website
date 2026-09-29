@@ -32,7 +32,7 @@
   <meta property="og:url" content="https://www.sourceabilityinc.com/specialties.html">
   <meta property="og:site_name" content="SourceAbility, Inc.">
   <meta property="og:locale" content="en_US">
-  <meta property="og:image" content="https://www.sourceabilityinc.com/assets/images/hero-specialties.jpg">
+  <meta property="og:image" content="https://www.sourceabilityinc.com/assets/images/hero-expertise.jpg">
   <meta property="og:image:alt" content="SourceAbility expertise across Data, AI, Technology, and Financial Services">
 
   <!-- Twitter -->
@@ -40,7 +40,7 @@
   <meta name="twitter:site" content="@SourceAbility">
   <meta name="twitter:title" content="Expertise — Industries &amp; Roles | SourceAbility">
   <meta name="twitter:description" content="SourceAbility focuses on Data &amp; AI, Technology, and Financial Services. Explore representative industries and roles.">
-  <meta name="twitter:image" content="https://www.sourceabilityinc.com/assets/images/hero-specialties.jpg">
+  <meta name="twitter:image" content="https://www.sourceabilityinc.com/assets/images/hero-expertise.jpg">
 
   <!-- Schema Markup -->
   <script type="application/ld+json">
@@ -87,73 +87,74 @@
 
   <!-- Expertise Page Styles -->
   <style>
-    /* ---- Iris-inspired hero with overlapping card ---- */
-    .specialties-hero {
-      position: relative;
-      min-height: clamp(20rem, 38vw, 26rem);
-      padding-top: 6.5rem;
-      overflow: visible;
-      background: var(--color-accent);
-    }
-
-    .specialties-hero__wrap {
-      position: relative;
-      z-index: 2;
-      min-height: clamp(14rem, 28vw, 20rem);
-      display: flex;
-      align-items: flex-end;
-      padding-bottom: 0;
-    }
-
-    .specialties-hero__card {
-      position: relative;
+    /* Expertise hero — picture left, red panel right (matches Employers) */
+    .specialties-hero-split {
+      padding-top: 7.5rem;
       background: #fff;
-      border-radius: var(--radius-xl);
-      padding: clamp(1.75rem, 3.5vw, 2.75rem);
-      max-width: 44rem;
-      margin-bottom: -3.25rem;
-      box-shadow: 0 16px 48px rgba(15, 26, 46, 0.14);
+    }
+
+    .specialties-hero-split__grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.15fr);
+      min-height: min(34rem, 72vh);
+    }
+
+    .specialties-hero-split__media {
+      position: relative;
+      min-height: 18rem;
       overflow: hidden;
+      background: #1a1f26;
     }
 
-    .specialties-hero__card .overline {
-      margin-bottom: var(--space-4);
-    }
-
-    .specialties-hero__title {
-      margin: 0;
-      font-family: var(--font-display);
-      font-size: clamp(1.75rem, 1.25rem + 1.6vw, 2.65rem);
-      font-weight: 700;
-      font-style: normal;
-      color: var(--color-navy);
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-      text-wrap: balance;
-      max-width: 28ch;
-    }
-
-    .specialties-hero__accent {
-      position: absolute;
-      right: -1.25rem;
-      bottom: -1.25rem;
-      width: 7.5rem;
-      height: 7.5rem;
-      border: 2px solid var(--color-accent);
-      border-radius: 50%;
-      opacity: 0.35;
-      pointer-events: none;
-    }
-
-    .specialties-hero__accent::before {
+    .specialties-hero-split__media::before {
       content: '';
       position: absolute;
-      inset: 1.1rem;
-      border-radius: 50%;
-      background-image: radial-gradient(var(--color-accent) 18%, transparent 19%);
-      background-size: 0.55rem 0.55rem;
-      background-position: center;
-      opacity: 0.85;
+      inset: -8%;
+      background: url('./assets/images/hero-expertise.jpg') center / cover no-repeat;
+      filter: blur(18px) saturate(1.08) brightness(0.92);
+      transform: scale(1.08);
+      z-index: 0;
+    }
+
+    .specialties-hero-split__media img {
+      position: relative;
+      z-index: 1;
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: inherit;
+      object-fit: cover;
+      object-position: center 35%;
+    }
+
+    .specialties-hero-split__panel {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: #af272f;
+      padding: clamp(2rem, 4.5vw, 3.875rem);
+    }
+
+    .specialties-hero-split__eyebrow {
+      margin: 0 0 var(--space-3);
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .specialties-hero-split__title {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(1.45rem, 1rem + 1.4vw, 2.15rem);
+      font-weight: 700;
+      font-style: normal;
+      color: #fff;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      text-wrap: balance;
     }
 
     /* ---- Specialty cards grid ---- */
@@ -162,7 +163,7 @@
         radial-gradient(circle at 12% 8%, rgba(175, 39, 47, 0.05) 0%, transparent 42%),
         radial-gradient(circle at 88% 92%, rgba(15, 26, 46, 0.05) 0%, transparent 42%),
         var(--color-bg);
-      padding-top: calc(var(--space-16) + 3.5rem);
+      padding-top: var(--space-16);
       padding-bottom: var(--space-20);
     }
 
@@ -397,13 +398,29 @@
       }
     }
 
-    @media (max-width: 640px) {
-      .specialties-hero__card {
-        margin-bottom: -2rem;
+    @media (max-width: 767px) {
+      .specialties-hero-split {
+        padding-top: 6.5rem;
       }
 
+      .specialties-hero-split__grid {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .specialties-hero-split__media {
+        min-height: 16rem;
+        order: -1;
+      }
+
+      .specialties-hero-split__panel {
+        padding: var(--space-8) var(--space-6);
+      }
+    }
+
+    @media (max-width: 640px) {
       .specialties-grid-section {
-        padding-top: calc(var(--space-12) + 2.5rem);
+        padding-top: var(--space-12);
       }
 
       .specialties-grid-intro {
@@ -573,12 +590,14 @@
     <!-- ==========================================
          PAGE HERO — overlapping card (Iris-inspired)
     ========================================== -->
-    <section class="specialties-hero" aria-label="Expertise hero">
-      <div class="container specialties-hero__wrap">
-        <div class="specialties-hero__card reveal">
-          <p class="overline">Our Areas of Expertise</p>
-          <h1 class="specialties-hero__title">ACTIONABLE INSIGHTS. UNLIMITED POSSIBILITIES.</h1>
-          <div class="specialties-hero__accent" aria-hidden="true"></div>
+    <section class="specialties-hero-split" aria-label="Expertise hero">
+      <div class="specialties-hero-split__grid">
+        <div class="specialties-hero-split__media reveal">
+          <img src="./assets/images/hero-expertise.jpg" alt="Two professionals walking together in an urban business district" loading="eager" fetchpriority="high" width="1920" height="1280">
+        </div>
+        <div class="specialties-hero-split__panel">
+          <p class="specialties-hero-split__eyebrow reveal">Our Areas of Expertise</p>
+          <h1 class="specialties-hero-split__title reveal">ACTIONABLE INSIGHTS. UNLIMITED POSSIBILITIES.</h1>
         </div>
       </div>
     </section>
