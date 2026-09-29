@@ -311,19 +311,25 @@
       justify-content: flex-start;
       width: 100%;
       min-height: 0;
-      text-align: center;
+    }
+
+    .about-tanya__aside-text {
+      flex-shrink: 0;
+      width: 100%;
+      margin-top: auto;
+      padding-top: clamp(1.75rem, 3.5vw, 2.75rem);
     }
 
     .about-tanya__why {
-      margin: var(--space-5) 0 0;
+      margin: 0 0 var(--space-2);
       font-family: var(--font-display);
-      font-size: clamp(1.65rem, 1.35rem + 0.9vw, 2.05rem);
+      font-size: clamp(1.1rem, 1rem + 0.35vw, 1.3rem);
       font-weight: 700;
       color: #101213;
-      letter-spacing: -0.02em;
-      line-height: 1.2;
+      letter-spacing: -0.01em;
+      line-height: 1.25;
       text-wrap: balance;
-      flex-shrink: 0;
+      text-align: left;
     }
 
     .about-tanya__photo {
@@ -363,9 +369,8 @@
     }
 
     .about-tanya__quote {
-      margin: var(--space-6) 0 0;
-      margin-top: auto;
-      padding: var(--space-6) 0 0;
+      margin: 0;
+      padding: 0;
       border: none;
       font-family: var(--font-body);
       font-size: var(--text-base);
@@ -618,10 +623,8 @@
         min-height: 12rem;
       }
 
-      .about-tanya__quote {
-        margin-top: var(--space-6);
-        padding-top: 0;
-        text-align: left;
+      .about-tanya__aside-text {
+        padding-top: var(--space-6);
       }
 
       .about-close__cta .btn {
@@ -761,13 +764,15 @@
                 <span class="about-tanya__initials">TC</span>
                 <p class="about-tanya__photo-note">Photo coming soon</p>
               </div>
-              <h3 class="about-tanya__why reveal" id="tanya-why-heading">Why I Do What I Do</h3>
             </div>
-            <blockquote class="about-tanya__quote reveal">
-              <p>&ldquo;I enjoy working with organizations and individuals where relationships matter, reputations matter, and decisions have a long-term impact.</p>
-              <p>The best hiring outcomes come from looking beyond a r&eacute;sum&eacute; or job description. They require a clear understanding of the organization&rsquo;s goals, the candidate&rsquo;s capabilities and motivations, and what long-term success should look like for both.&rdquo;</p>
-              <cite>&mdash; Tanya Calkins</cite>
-            </blockquote>
+            <div class="about-tanya__aside-text">
+              <h3 class="about-tanya__why reveal" id="tanya-why-heading">Why I Do What I Do</h3>
+              <blockquote class="about-tanya__quote reveal">
+                <p>&ldquo;I enjoy working with organizations and individuals where relationships matter, reputations matter, and decisions have a long-term impact.</p>
+                <p>The best hiring outcomes come from looking beyond a r&eacute;sum&eacute; or job description. They require a clear understanding of the organization&rsquo;s goals, the candidate&rsquo;s capabilities and motivations, and what long-term success should look like for both.&rdquo;</p>
+                <cite>&mdash; Tanya Calkins</cite>
+              </blockquote>
+            </div>
           </aside>
           <div class="about-tanya__copy">
             <h2 class="about-tanya__title reveal" id="tanya-heading">Hi, I&rsquo;m Tanya.</h2>
