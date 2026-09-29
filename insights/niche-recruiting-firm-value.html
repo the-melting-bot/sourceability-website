@@ -435,15 +435,18 @@
     </article>
 
     <!-- CTA BANNER -->
-    <section class="cta-banner section-padding" aria-label="Call to action">
-      <div class="container">
-        <div class="cta-banner__inner">
+    <section class="cta-banner-new" aria-label="Let's Start the Conversation">
+      <div class="cta-banner-new__container cta-banner-new__container--no-images">
+        <div class="cta-banner-new__content">
           <div class="reveal">
-            <h2 class="cta-banner__title">Need Help Finding Analytics Talent?</h2>
-            <p class="cta-banner__text">Our team is ready to help you build a world-class data organization.<span class="cta-banner-new__text-closing">We would love to hear from you!</span></p>
-          </div>
-          <div class="reveal">
-            <a href="../contact.html" class="btn btn--primary btn--lg">Contact Us</a>
+            <h2 class="cta-banner-new__title">Let&rsquo;s <span class="cta-banner-new__mark">Start the Conversation</span></h2>
+            <p class="cta-banner-new__text">Whether you&rsquo;re hiring today, planning for future growth, or simply looking for a trusted recruiting partner, we&rsquo;d welcome the opportunity to learn more about your organization and discuss how we can help.<span class="cta-banner-new__text-closing">We would love to hear from you!</span></p>
+            <div class="cta-banner-new__actions cta-banner-new__actions--multi">
+              <a href="https://calendly.com/tanyacalkins" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg">Schedule a Meeting</a>
+              <a href="https://www.linkedin.com/in/tanyacalkins" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg">Connect on LinkedIn</a>
+              <a href="../contact.html#contact-form" class="btn btn--primary btn--lg">Email Us</a>
+              <a href="tel:+18664129178" class="btn btn--primary btn--lg js-call-us" data-call-dialog="call-us-dialog" aria-haspopup="dialog" aria-controls="call-us-dialog">Call Us</a>
+            </div>
           </div>
         </div>
       </div>
@@ -516,7 +519,29 @@
     </div>
   </footer>
 
-  <script src="../assets/js/main.js" defer></script>
+    <dialog class="call-dialog" id="call-us-dialog" aria-labelledby="call-us-dialog-title">
+    <div class="call-dialog__inner">
+      <div class="call-dialog__head">
+        <h2 class="call-dialog__title" id="call-us-dialog-title">Call Us</h2>
+        <button type="button" class="call-dialog__close" data-call-dialog-close aria-label="Close">
+          <i data-lucide="x" style="width:20px;height:20px;"></i>
+        </button>
+      </div>
+      <p class="call-dialog__lede">Choose a number to call, or write it down and dial from your phone.</p>
+      <div class="call-dialog__numbers">
+        <a class="call-dialog__number" href="tel:+18664129178">
+          <span class="call-dialog__label">Toll-Free</span>
+          <span class="call-dialog__value">866-412-9178</span>
+        </a>
+        <a class="call-dialog__number" href="tel:+17048378200">
+          <span class="call-dialog__label">Office</span>
+          <span class="call-dialog__value">704-837-8200</span>
+        </a>
+      </div>
+    </div>
+  </dialog>
+
+<script src="../assets/js/main.js" defer></script>
   <script>lucide.createIcons();</script>
 
 </body>

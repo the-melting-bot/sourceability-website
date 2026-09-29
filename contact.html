@@ -601,7 +601,29 @@
   <!-- ============================================
        SCRIPTS
   ============================================ -->
-  <script src="./assets/js/main.js" defer></script>
+    <dialog class="call-dialog" id="call-us-dialog" aria-labelledby="call-us-dialog-title">
+    <div class="call-dialog__inner">
+      <div class="call-dialog__head">
+        <h2 class="call-dialog__title" id="call-us-dialog-title">Call Us</h2>
+        <button type="button" class="call-dialog__close" data-call-dialog-close aria-label="Close">
+          <i data-lucide="x" style="width:20px;height:20px;"></i>
+        </button>
+      </div>
+      <p class="call-dialog__lede">Choose a number to call, or write it down and dial from your phone.</p>
+      <div class="call-dialog__numbers">
+        <a class="call-dialog__number" href="tel:+18664129178">
+          <span class="call-dialog__label">Toll-Free</span>
+          <span class="call-dialog__value">866-412-9178</span>
+        </a>
+        <a class="call-dialog__number" href="tel:+17048378200">
+          <span class="call-dialog__label">Office</span>
+          <span class="call-dialog__value">704-837-8200</span>
+        </a>
+      </div>
+    </div>
+  </dialog>
+
+<script src="./assets/js/main.js" defer></script>
 
   <!-- Initialize Lucide icons -->
   <script>lucide.createIcons();</script>

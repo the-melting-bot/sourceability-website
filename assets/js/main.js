@@ -599,6 +599,31 @@
     loadHomeJobs();
   }
 
+  // --- Call Us dialog (desktop CTA) ---
+  document.querySelectorAll('.js-call-us').forEach((callBtn) => {
+    const dialogId = callBtn.getAttribute('data-call-dialog') || 'call-us-dialog';
+    const callDialog = document.getElementById(dialogId);
+    if (!callDialog) return;
+
+    const isDesktop = () => window.matchMedia('(min-width: 640px)').matches;
+
+    callBtn.addEventListener('click', (event) => {
+      if (!isDesktop()) return;
+      event.preventDefault();
+      callDialog.showModal();
+    });
+  });
+
+  const callDialog = document.getElementById('call-us-dialog');
+  if (callDialog) {
+    callDialog.querySelectorAll('[data-call-dialog-close]').forEach((closeBtn) => {
+      closeBtn.addEventListener('click', () => callDialog.close());
+    });
+    callDialog.addEventListener('click', (event) => {
+      if (event.target === callDialog) callDialog.close();
+    });
+  }
+
   // --- ACTIVE NAV LINK ---
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(link => {

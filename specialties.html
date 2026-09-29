@@ -481,61 +481,6 @@
       }
     }
 
-    /* ---- Expertise CTA ---- */
-    .expertise-cta {
-      background: var(--color-surface);
-    }
-
-    .expertise-cta__inner {
-      max-width: 640px;
-      width: 100%;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .expertise-cta__inner > .reveal:first-of-type {
-      width: 100%;
-    }
-
-    .expertise-cta__title {
-      font-family: var(--font-display);
-      font-style: italic;
-      font-size: var(--text-xl);
-      color: var(--color-navy);
-      margin-bottom: var(--space-5);
-      line-height: 1.2;
-    }
-
-    .expertise-cta__desc {
-      font-size: var(--text-base);
-      color: var(--color-text-muted);
-      line-height: 1.7;
-      margin-bottom: var(--space-10);
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 42rem;
-    }
-
-    /* Full-width row centers the shrink-wrapped button cluster (avoids text-align quirks) */
-    .expertise-cta__buttons-row {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      box-sizing: border-box;
-    }
-
-    .expertise-cta__actions {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: var(--space-4);
-      box-sizing: border-box;
-      max-width: 100%;
-    }
-
     /* Stronger outline on light background (global outline-dark uses very light border) */
   </style>
 </head>
@@ -812,18 +757,17 @@
     <!-- ==========================================
          CTA SECTION
     ========================================== -->
-    <section class="section-padding expertise-cta" aria-label="Contact call to action">
-      <div class="container">
-        <div class="expertise-cta__inner">
+    <section class="cta-banner-new" aria-label="Let's Start the Conversation">
+      <div class="cta-banner-new__container cta-banner-new__container--no-images">
+        <div class="cta-banner-new__content">
           <div class="reveal">
-            <h2 class="expertise-cta__title">Let&rsquo;s Talk About Your Search</h2>
-            <p class="expertise-cta__desc">Whether you are hiring specialized talent or exploring your next move, we bring the network and market depth to help you move with confidence.<span class="cta-banner-new__text-closing">We would love to hear from you!</span></p>
-          </div>
-          <div class="expertise-cta__buttons-row">
-            <div class="expertise-cta__actions cta-banner-new__actions cta-banner-new__actions--multi reveal">
-              <a href="employers.html" class="btn btn--primary btn--lg">For Employer</a>
-              <a href="candidates.html" class="btn btn--primary btn--lg">For Candidates</a>
-              <a href="contact.html" class="btn btn--primary btn--lg">Contact</a>
+            <h2 class="cta-banner-new__title">Let&rsquo;s <span class="cta-banner-new__mark">Start the Conversation</span></h2>
+            <p class="cta-banner-new__text">Whether you&rsquo;re hiring today, planning for future growth, or simply looking for a trusted recruiting partner, we&rsquo;d welcome the opportunity to learn more about your organization and discuss how we can help.<span class="cta-banner-new__text-closing">We would love to hear from you!</span></p>
+            <div class="cta-banner-new__actions cta-banner-new__actions--multi">
+              <a href="https://calendly.com/tanyacalkins" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg">Schedule a Meeting</a>
+              <a href="https://www.linkedin.com/in/tanyacalkins" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg">Connect on LinkedIn</a>
+              <a href="contact.html#contact-form" class="btn btn--primary btn--lg">Email Us</a>
+              <a href="tel:+18664129178" class="btn btn--primary btn--lg js-call-us" data-call-dialog="call-us-dialog" aria-haspopup="dialog" aria-controls="call-us-dialog">Call Us</a>
             </div>
           </div>
         </div>
@@ -915,7 +859,29 @@
   <!-- ============================================
        SCRIPTS
   ============================================ -->
-  <script src="./assets/js/main.js" defer></script>
+    <dialog class="call-dialog" id="call-us-dialog" aria-labelledby="call-us-dialog-title">
+    <div class="call-dialog__inner">
+      <div class="call-dialog__head">
+        <h2 class="call-dialog__title" id="call-us-dialog-title">Call Us</h2>
+        <button type="button" class="call-dialog__close" data-call-dialog-close aria-label="Close">
+          <i data-lucide="x" style="width:20px;height:20px;"></i>
+        </button>
+      </div>
+      <p class="call-dialog__lede">Choose a number to call, or write it down and dial from your phone.</p>
+      <div class="call-dialog__numbers">
+        <a class="call-dialog__number" href="tel:+18664129178">
+          <span class="call-dialog__label">Toll-Free</span>
+          <span class="call-dialog__value">866-412-9178</span>
+        </a>
+        <a class="call-dialog__number" href="tel:+17048378200">
+          <span class="call-dialog__label">Office</span>
+          <span class="call-dialog__value">704-837-8200</span>
+        </a>
+      </div>
+    </div>
+  </dialog>
+
+<script src="./assets/js/main.js" defer></script>
 
   <!-- Initialize Lucide icons -->
   <script>lucide.createIcons();</script>
