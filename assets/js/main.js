@@ -398,7 +398,69 @@
       const numEls = item.getElementsByTagNameNS(CRELATE_NS, 'jobNumber');
       if (numEls.length) jobNumber = numEls[0].textContent.trim();
 
-      return { title, link, pubDate, location, jobNumber };
+      return { title, link, pubDate, location, jobNumber, description };
+    });
+  }
+
+  function decodeRssDescription(raw) {
+    if (!raw) return '';
+    const textarea = document.createElement('textarea');
+    textarea.innerHTML = raw;
+    return textarea.value;
+  }
+
+  function sanitizeJobDescriptionHtml(html) {
+    if (!html) return '';
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    doc.querySelectorAll('script, style, iframe, object, embed, form, link, meta').forEach((el) => {
+      el.remove();
+    });
+    doc.body.querySelectorAll('*').forEach((el) => {
+      Array.from(el.attributes).forEach((attr) => {
+        const name = attr.name.toLowerCase();
+        if (name.startsWith('on') || name === 'style') {
+          el.removeAttribute(attr.name);
+        }
+      });
+      if (el.tagName === 'A') {
+        el.setAttribute('rel', 'noopener noreferrer');
+        el.setAttribute('target', '_blank');
+      }
+    });
+    return doc.body.innerHTML.trim();
+  }
+
+  function initJobCardExpand() {
+    const list = document.getElementById('jobs-list');
+    if (!list || list.dataset.expandBound === '1') return;
+    list.dataset.expandBound = '1';
+
+    list.addEventListener('click', (event) => {
+      const toggle = event.target.closest('.job-card__toggle');
+      if (!toggle) return;
+
+      const card = toggle.closest('.job-card--expandable');
+      if (!card) return;
+
+      const details = card.querySelector('.job-card__details');
+      if (!details) return;
+
+      const willExpand = toggle.getAttribute('aria-expanded') !== 'true';
+
+      if (willExpand) {
+        list.querySelectorAll('.job-card--expandable').forEach((other) => {
+          if (other === card) return;
+          other.classList.remove('job-card--expanded');
+          const otherToggle = other.querySelector('.job-card__toggle');
+          const otherDetails = other.querySelector('.job-card__details');
+          if (otherToggle) otherToggle.setAttribute('aria-expanded', 'false');
+          if (otherDetails) otherDetails.hidden = true;
+        });
+      }
+
+      toggle.setAttribute('aria-expanded', willExpand ? 'true' : 'false');
+      details.hidden = !willExpand;
+      card.classList.toggle('job-card--expanded', willExpand);
     });
   }
 
@@ -444,22 +506,39 @@
         const title = escapeHtml(job.title);
         const link = escapeHtml(job.link);
         const loc = escapeHtml(job.location);
+        const descriptionHtml = sanitizeJobDescriptionHtml(decodeRssDescription(job.description));
+        const hasDescription = Boolean(descriptionHtml);
 
         html += `
-          <div class="job-card reveal visible">
-            <div class="job-card__info">
-              <div class="job-card__title">${title}</div>
-              <div class="job-card__meta">
-                ${loc ? `<span>${loc}</span>` : ''}
-                ${dateStr ? `<span>Posted ${dateStr}</span>` : ''}
-              </div>
+          <article class="job-card job-card--expandable reveal visible">
+            <div class="job-card__header">
+              <button type="button" class="job-card__toggle" aria-expanded="false"${hasDescription ? '' : ' disabled'}>
+                <span class="job-card__info">
+                  <span class="job-card__title">${title}</span>
+                  <span class="job-card__meta">
+                    ${loc ? `<span>${loc}</span>` : ''}
+                    ${dateStr ? `<span>Posted ${dateStr}</span>` : ''}
+                  </span>
+                </span>
+                ${hasDescription ? `
+                <span class="job-card__expand-label">
+                  View description
+                  <i data-lucide="chevron-down" class="job-card__chevron" aria-hidden="true"></i>
+                </span>` : ''}
+              </button>
+              <a href="${link}" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--primary job-card__apply">Apply Now</a>
             </div>
-            <a href="${link}" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--primary">Apply Now</a>
-          </div>
+            ${hasDescription ? `
+            <div class="job-card__details" hidden>
+              <div class="job-card__description">${descriptionHtml}</div>
+            </div>` : ''}
+          </article>
         `;
       });
 
       jobsList.innerHTML = html;
+      initJobCardExpand();
+      if (typeof lucide !== 'undefined') lucide.createIcons();
     } catch (err) {
       console.log('RSS feed unavailable, showing fallback.', err);
       if (jobsLoading) jobsLoading.style.display = 'none';
