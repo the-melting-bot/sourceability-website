@@ -275,14 +275,14 @@
 
     .about-tanya {
       background: var(--color-surface-warm, #f5f3ef);
-      padding: clamp(2.75rem, 5.5vw, 5rem) 0;
+      padding: clamp(2.75rem, 5.5vw, 5rem) 0 clamp(2.5rem, 5vw, 4rem);
     }
 
     .about-tanya__grid {
       display: grid;
       grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
       gap: clamp(1.75rem, 3.5vw, 3.5rem);
-      align-items: start;
+      align-items: stretch;
     }
 
     .about-tanya__photo {
@@ -348,6 +348,19 @@
       margin-bottom: 0;
     }
 
+    .about-tanya__chapter {
+      margin-top: clamp(2rem, 4vw, 2.75rem);
+    }
+
+    .about-tanya__chapter .about-story__title {
+      margin-top: 0;
+    }
+
+    .about-tanya__stats {
+      max-width: 52rem;
+      margin: clamp(2rem, 4vw, 2.75rem) auto 0;
+    }
+
     .about-kicker {
       margin: 0 0 var(--space-2);
       font-family: var(--font-body);
@@ -356,16 +369,6 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--color-accent);
-    }
-
-    .about-story {
-      background: #fff;
-      padding: clamp(2.75rem, 5.5vw, 4.75rem) 0 0;
-    }
-
-    .about-story__inner {
-      max-width: 52rem;
-      margin: 0 auto;
     }
 
     .about-story__title {
@@ -401,7 +404,6 @@
     .about-stats {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      margin-top: clamp(2rem, 4vw, 2.75rem);
       border-top: 3px solid var(--color-accent);
     }
 
@@ -750,33 +752,28 @@
               <p class="reveal">I wanted to step back from that transactional approach and create a company where relationships came first&mdash;where I could take the time to understand an organization&rsquo;s goals, learn what truly matters to a candidate, and remain personally involved throughout the process.</p>
               <p class="reveal">That vision became SourceAbility.</p>
             </div>
+            <div class="about-tanya__chapter">
+              <p class="about-kicker reveal">My Story</p>
+              <h3 class="about-story__title reveal" id="story-heading">Relationships that continue through careers and stages of growth</h3>
+              <span class="about-story__rule reveal" aria-hidden="true"></span>
+              <p class="about-story__text reveal">Throughout more than 20 years in recruiting, I have built lasting relationships with clients and professionals across Data, Technology, and Financial Services. Many have continued through multiple hires, career moves, and stages of organizational growth.</p>
+              <p class="about-story__text reveal">One of the most rewarding parts of my work is helping someone join an organization where they can thrive, take a meaningful step forward, move into leadership, or increase their earning potential. It is equally rewarding to hear a year or two later how much that person has contributed to the organization.</p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="about-story" aria-labelledby="story-heading">
-      <div class="container">
-        <div class="about-story__inner">
-          <p class="about-kicker reveal">My Story</p>
-          <h2 class="about-story__title reveal" id="story-heading">Relationships that continue through careers and stages of growth</h2>
-          <span class="about-story__rule reveal" aria-hidden="true"></span>
-          <p class="about-story__text reveal">Throughout more than 20 years in recruiting, I have built lasting relationships with clients and professionals across Data, Technology, and Financial Services. Many have continued through multiple hires, career moves, and stages of organizational growth.</p>
-          <p class="about-story__text reveal">One of the most rewarding parts of my work is helping someone join an organization where they can thrive, take a meaningful step forward, move into leadership, or increase their earning potential. It is equally rewarding to hear a year or two later how much that person has contributed to the organization.</p>
-          <div class="about-stats reveal">
-            <article class="about-stat">
-              <p class="about-stat__value">Founded in 2006</p>
-              <p class="about-stat__label">Two decades of relationship-driven recruiting</p>
-            </article>
-            <article class="about-stat">
-              <p class="about-stat__value">5 of 7 still there</p>
-              <p class="about-stat__label">Professionals placed with one early client remain 20 years later</p>
-            </article>
-            <article class="about-stat">
-              <p class="about-stat__value">Direct partnership</p>
-              <p class="about-stat__label">Clients work with the person leading the search</p>
-            </article>
-          </div>
+        <div class="about-tanya__stats about-stats reveal">
+          <article class="about-stat">
+            <p class="about-stat__value">Founded in 2006</p>
+            <p class="about-stat__label">Two decades of relationship-driven recruiting</p>
+          </article>
+          <article class="about-stat">
+            <p class="about-stat__value">5 of 7 still there</p>
+            <p class="about-stat__label">Professionals placed with one early client remain 20 years later</p>
+          </article>
+          <article class="about-stat">
+            <p class="about-stat__value">Direct partnership</p>
+            <p class="about-stat__label">Clients work with the person leading the search</p>
+          </article>
         </div>
       </div>
     </section>
