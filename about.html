@@ -547,18 +547,29 @@
     .about-close {
       background: #101213;
       padding: 0;
+      width: 100%;
+      max-width: 100%;
     }
 
     .about-close__difference {
       width: 100%;
       max-width: none;
       margin: 0;
-      padding: clamp(2.75rem, 5vw, 4rem) clamp(1.75rem, 6vw, 5rem);
+      padding: clamp(2.75rem, 5vw, 4.25rem) clamp(1.75rem, 6vw, 5rem);
       display: flex;
       flex-direction: column;
+      gap: clamp(1.75rem, 3.5vw, 2.75rem);
       justify-content: center;
       background: #101213;
       color: #fff;
+      box-sizing: border-box;
+    }
+
+    .about-close__body {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(1.25rem, 3vw, 2.5rem);
+      width: 100%;
     }
 
     .about-close__kicker {
@@ -572,25 +583,34 @@
     }
 
     .about-close__title {
-      margin: 0 0 var(--space-4);
+      margin: 0;
       font-family: var(--font-display);
-      font-size: clamp(1.35rem, 1.15rem + 0.6vw, 1.7rem);
+      font-size: clamp(1.65rem, 1.25rem + 1.75vw, 2.85rem);
       font-weight: 700;
-      line-height: 1.25;
+      line-height: 1.2;
       letter-spacing: -0.02em;
       color: #fff;
+      max-width: none;
+      width: 100%;
+      text-wrap: balance;
     }
 
     .about-close__text {
-      margin: 0 0 var(--space-4);
+      margin: 0;
       font-family: var(--font-body);
-      font-size: var(--text-sm);
+      font-size: clamp(0.95rem, 0.88rem + 0.2vw, 1.0625rem);
       line-height: 1.65;
       color: rgba(255, 255, 255, 0.86);
     }
 
-    .about-close__text:last-child {
-      margin-bottom: 0;
+    @media (max-width: 1023px) {
+      .about-close__body {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .about-close__body .about-close__text:last-child {
+        grid-column: 1 / -1;
+      }
     }
 
     @media (max-width: 767px) {
@@ -604,6 +624,10 @@
       .about-values__grid {
         grid-template-columns: 1fr;
         min-height: auto;
+      }
+
+      .about-close__body {
+        grid-template-columns: 1fr;
       }
 
       .about-hero-split__media {
@@ -851,12 +875,16 @@
     </section>
 
     <section class="about-close" aria-label="The SourceAbility Difference">
-      <div class="about-close__difference reveal">
-        <p class="about-close__kicker">The SourceAbility Difference</p>
-        <h2 class="about-close__title">SourceAbility offers the experience and market reach of a long-established search firm with the personal attention and flexibility of a boutique partner.</h2>
-        <p class="about-close__text">Our clients work directly with the person leading the search. Our candidates receive honest communication and thoughtful representation. Every engagement is approached with care because our reputation&mdash;and yours&mdash;is reflected in every interaction.</p>
-        <p class="about-close__text">We strive to be professional but approachable, strategic but practical, and structured while remaining flexible enough to respond to the needs of each search.</p>
-        <p class="about-close__text">Because when relationships matter, how you conduct the search matters too.</p>
+      <div class="about-close__difference">
+        <div class="about-close__lead reveal">
+          <p class="about-close__kicker">The SourceAbility Difference</p>
+          <h2 class="about-close__title">SourceAbility offers the experience and market reach of a long-established search firm with the personal attention and flexibility of a boutique partner.</h2>
+        </div>
+        <div class="about-close__body">
+          <p class="about-close__text reveal">Our clients work directly with the person leading the search. Our candidates receive honest communication and thoughtful representation. Every engagement is approached with care because our reputation&mdash;and yours&mdash;is reflected in every interaction.</p>
+          <p class="about-close__text reveal">We strive to be professional but approachable, strategic but practical, and structured while remaining flexible enough to respond to the needs of each search.</p>
+          <p class="about-close__text reveal">Because when relationships matter, how you conduct the search matters too.</p>
+        </div>
       </div>
     </section>
 
