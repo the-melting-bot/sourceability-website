@@ -319,6 +319,40 @@
       width: 100%;
       margin-top: auto;
       padding-top: clamp(1.25rem, 2.5vw, 2rem);
+      position: relative;
+      isolation: isolate;
+      padding-left: clamp(0.35rem, 1.5vw, 0.75rem);
+      padding-right: clamp(0.35rem, 1.5vw, 0.75rem);
+    }
+
+    .about-tanya__aside-text > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-tanya__aside-text::before,
+    .about-tanya__aside-text::after {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3.75rem, 9vw, 7rem);
+      font-weight: 700;
+      line-height: 1;
+      color: rgba(175, 39, 47, 0.13);
+      position: absolute;
+      z-index: 0;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .about-tanya__aside-text::before {
+      content: "\201C";
+      top: clamp(0.85rem, 2vw, 1.35rem);
+      left: clamp(-0.35rem, -0.5vw, 0);
+    }
+
+    .about-tanya__aside-text::after {
+      content: "\201D";
+      right: clamp(-0.25rem, -0.35vw, 0.1rem);
+      bottom: 0;
     }
 
     .about-tanya__why {
