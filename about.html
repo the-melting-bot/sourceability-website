@@ -370,13 +370,46 @@
 
     .about-tanya__quote {
       margin: 0;
-      padding: 0;
+      padding: 0 clamp(1.35rem, 3.5vw, 2rem) 0 0;
       border: none;
       font-family: var(--font-body);
       font-size: var(--text-base);
       line-height: 1.7;
       color: var(--color-text-muted);
       width: 100%;
+      position: relative;
+      isolation: isolate;
+      overflow: visible;
+    }
+
+    .about-tanya__quote > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-tanya__quote::before,
+    .about-tanya__quote::after {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3.75rem, 9vw, 7rem);
+      font-weight: 700;
+      line-height: 1;
+      color: rgba(175, 39, 47, 0.13);
+      position: absolute;
+      z-index: 0;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .about-tanya__quote::before {
+      content: "\201C";
+      top: -0.2rem;
+      left: clamp(-3.25rem, -8vw, -1.85rem);
+    }
+
+    .about-tanya__quote::after {
+      content: "\201D";
+      right: clamp(-0.85rem, -1.5vw, -0.15rem);
+      bottom: clamp(2.05rem, 4.2vw, 2.65rem);
     }
 
     .about-tanya__quote p {
