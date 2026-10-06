@@ -511,34 +511,19 @@
     }
 
     .about-close {
-      background: #fff;
+      background: #101213;
       padding: 0;
     }
 
-    .about-close__grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+    .about-close__difference {
       width: 100%;
       max-width: none;
       margin: 0;
-      min-height: 18rem;
-    }
-
-    .about-close__difference,
-    .about-close__cta {
-      padding: clamp(2rem, 4vw, 3rem) clamp(1.75rem, 6vw, 5rem);
+      padding: clamp(2.75rem, 5vw, 4rem) clamp(1.75rem, 6vw, 5rem);
       display: flex;
       flex-direction: column;
       justify-content: center;
-    }
-
-    .about-close__difference {
       background: #101213;
-      color: #fff;
-    }
-
-    .about-close__cta {
-      background: var(--color-accent);
       color: #fff;
     }
 
@@ -574,21 +559,6 @@
       margin-bottom: 0;
     }
 
-    .about-close__cta .btn {
-      align-self: flex-start;
-      margin-top: var(--space-5);
-      background: #fff;
-      color: var(--color-accent);
-      border: 2px solid #fff;
-    }
-
-    .about-close__cta .btn:hover,
-    .about-close__cta .btn:focus-visible {
-      background: transparent;
-      color: #fff;
-      border-color: #fff;
-    }
-
     @media (max-width: 767px) {
       .about-hero-split {
         padding-top: 6.5rem;
@@ -597,8 +567,7 @@
       .about-hero-split__grid,
       .about-intro__grid,
       .about-tanya__grid,
-      .about-values__grid,
-      .about-close__grid {
+      .about-values__grid {
         grid-template-columns: 1fr;
         min-height: auto;
       }
@@ -639,10 +608,6 @@
         padding-top: 0;
       }
 
-      .about-close__cta .btn {
-        width: 100%;
-        justify-content: center;
-      }
     }
   </style>
 </head>
@@ -852,19 +817,12 @@
     </section>
 
     <section class="about-close" aria-label="The SourceAbility Difference">
-      <div class="about-close__grid">
-        <div class="about-close__difference reveal">
-          <p class="about-close__kicker">The SourceAbility Difference</p>
-          <h2 class="about-close__title">SourceAbility offers the experience and market reach of a long-established search firm with the personal attention and flexibility of a boutique partner.</h2>
-          <p class="about-close__text">Our clients work directly with the person leading the search. Our candidates receive honest communication and thoughtful representation. Every engagement is approached with care because our reputation&mdash;and yours&mdash;is reflected in every interaction.</p>
-          <p class="about-close__text">We strive to be professional but approachable, strategic but practical, and structured while remaining flexible enough to respond to the needs of each search.</p>
-          <p class="about-close__text">Because when relationships matter, how you conduct the search matters too.</p>
-        </div>
-        <div class="about-close__cta reveal">
-          <p class="about-close__kicker">Let&rsquo;s Build the Right Team</p>
-          <h2 class="about-close__title">Ready to discuss your next hire?</h2>
-          <a href="contact.html" class="btn btn--primary btn--lg">Start a Conversation</a>
-        </div>
+      <div class="about-close__difference reveal">
+        <p class="about-close__kicker">The SourceAbility Difference</p>
+        <h2 class="about-close__title">SourceAbility offers the experience and market reach of a long-established search firm with the personal attention and flexibility of a boutique partner.</h2>
+        <p class="about-close__text">Our clients work directly with the person leading the search. Our candidates receive honest communication and thoughtful representation. Every engagement is approached with care because our reputation&mdash;and yours&mdash;is reflected in every interaction.</p>
+        <p class="about-close__text">We strive to be professional but approachable, strategic but practical, and structured while remaining flexible enough to respond to the needs of each search.</p>
+        <p class="about-close__text">Because when relationships matter, how you conduct the search matters too.</p>
       </div>
     </section>
 
