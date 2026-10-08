@@ -201,28 +201,28 @@
     }
 
     .specialties-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 5.5rem 1.25rem;
-      max-width: 72rem;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(1.25rem, 2.5vw, 1.75rem);
+      max-width: 76rem;
       margin-inline: auto;
+      align-items: stretch;
     }
 
     .specialty-card {
       position: relative;
-      flex: 1 1 calc(33.333% - 1.25rem);
-      min-width: min(100%, 17.5rem);
-      max-width: 22rem;
-      text-align: center;
-      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      min-height: 100%;
+      text-align: left;
       color: inherit;
       background: linear-gradient(180deg, #ffffff 0%, #fdfbfb 100%);
       border: 1px solid rgba(175, 39, 47, 0.1);
       border-radius: 15px;
-      padding: 4.25rem 1.75rem 6.5rem;
+      padding: clamp(1.35rem, 2.5vw, 1.75rem);
       box-shadow: 0 2px 12px rgba(15, 26, 46, 0.04);
-      overflow: visible;
+      overflow: hidden;
       transition:
         box-shadow 0.35s ease,
         transform 0.35s ease,
@@ -240,35 +240,31 @@
       transition: opacity 0.35s ease;
     }
 
-    .specialty-card:hover,
-    .specialty-card:focus-visible {
+    .specialty-card:hover {
       background: linear-gradient(180deg, #ffffff 0%, #fef6f6 100%);
       border-color: rgba(175, 39, 47, 0.28);
       box-shadow: 0 14px 36px rgba(15, 26, 46, 0.1);
-      transform: translateY(-4px);
+      transform: translateY(-3px);
     }
 
-    .specialty-card:hover::before,
-    .specialty-card:focus-visible::before {
+    .specialty-card:hover::before {
       opacity: 1;
     }
 
     .specialty-card__icon {
-      position: absolute;
-      top: -3.35rem;
-      left: 50%;
-      transform: translateX(-50%);
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 6.5rem;
-      height: 6.5rem;
+      width: 3.25rem;
+      height: 3.25rem;
+      flex-shrink: 0;
+      margin: 0 0 var(--space-3);
       border: 2px solid var(--color-accent);
       border-radius: 50%;
       background:
         radial-gradient(circle at 50% 32%, rgba(175, 39, 47, 0.14) 0%, rgba(175, 39, 47, 0) 42%),
-        radial-gradient(circle at 50% 68%, rgba(15, 26, 46, 0.06) 0%, #ffffff 58%);
-      box-shadow: 0 10px 28px rgba(15, 26, 46, 0.1);
+        #fff;
+      box-shadow: 0 6px 16px rgba(15, 26, 46, 0.08);
       transition:
         transform 0.35s ease,
         background 0.35s ease,
@@ -284,116 +280,124 @@
     }
 
     .specialty-card__icon svg {
-      width: 2.85rem;
-      height: 2.85rem;
+      width: 1.45rem;
+      height: 1.45rem;
       stroke: var(--color-navy);
       stroke-width: 1.65;
       fill: none;
       transition: stroke 0.35s ease;
     }
 
-    .specialty-card:hover .specialty-card__icon,
-    .specialty-card:focus-visible .specialty-card__icon {
-      transform: translateX(-50%) scale(1.06);
+    .specialty-card:hover .specialty-card__icon {
+      transform: scale(1.04);
       background: var(--color-navy);
       border-color: var(--color-navy);
-      box-shadow: 0 14px 32px rgba(15, 26, 46, 0.22);
     }
 
-    .specialty-card:hover .specialty-card__icon svg,
-    .specialty-card:focus-visible .specialty-card__icon svg {
+    .specialty-card:hover .specialty-card__icon svg {
       stroke: #fff;
     }
 
     .specialty-card__title {
       margin: 0 0 var(--space-3);
       font-family: var(--font-display);
-      font-size: clamp(1.05rem, 0.95rem + 0.35vw, 1.2rem);
+      font-size: clamp(1.02rem, 0.92rem + 0.35vw, 1.15rem);
       font-weight: 700;
       font-style: normal;
       color: var(--color-navy);
       line-height: 1.25;
-    }
-
-    .specialty-card__tags {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.4rem;
-      margin: 0 0 var(--space-4);
-      padding: 0;
-      list-style: none;
-    }
-
-    .specialty-card__tags li {
-      padding: 0.28rem 0.65rem;
-      border-radius: 999px;
-      font-size: 0.6875rem;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-      color: var(--color-navy);
-      background: rgba(15, 26, 46, 0.06);
-      border: 1px solid rgba(15, 26, 46, 0.08);
-      transition:
-        background 0.35s ease,
-        border-color 0.35s ease,
-        color 0.35s ease;
-    }
-
-    .specialty-card:nth-child(odd) .specialty-card__tags li {
-      color: var(--color-accent);
-      background: rgba(175, 39, 47, 0.07);
-      border-color: rgba(175, 39, 47, 0.14);
-    }
-
-    .specialty-card:hover .specialty-card__tags li,
-    .specialty-card:focus-visible .specialty-card__tags li {
-      background: rgba(15, 26, 46, 0.1);
-      border-color: rgba(15, 26, 46, 0.14);
-    }
-
-    .specialty-card:nth-child(odd):hover .specialty-card__tags li,
-    .specialty-card:nth-child(odd):focus-visible .specialty-card__tags li {
-      background: rgba(175, 39, 47, 0.12);
-      border-color: rgba(175, 39, 47, 0.22);
+      text-wrap: balance;
     }
 
     .specialty-card__desc {
-      margin: 0 auto;
-      max-width: 26ch;
-      font-size: var(--text-sm);
+      margin: 0 0 var(--space-3);
+      max-width: none;
+      font-size: 0.875rem;
       color: var(--color-text-muted);
       line-height: 1.65;
     }
 
-    .specialty-card__link {
-      position: absolute;
-      left: 50%;
-      bottom: 1.85rem;
-      transform: translateX(-50%);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      min-width: 9.5rem;
-      justify-content: center;
-      padding: 0.625rem 1.15rem;
-      border: 2px solid transparent;
-      border-radius: 999px;
-      font-size: var(--text-sm);
-      font-weight: 600;
-      color: var(--color-accent);
-      transition:
-        border-color 0.35s ease,
-        color 0.35s ease,
-        background 0.35s ease;
+    .specialty-card__desc:last-child {
+      margin-bottom: 0;
     }
 
-    .specialty-card:hover .specialty-card__link,
-    .specialty-card:focus-visible .specialty-card__link {
-      border-color: var(--color-accent);
-      background: var(--color-accent);
-      color: #fff;
+    .specialty-card__roles {
+      margin-top: auto;
+      padding-top: var(--space-4);
+      border-top: 1px solid rgba(15, 26, 46, 0.08);
+    }
+
+    .specialty-card__roles-label {
+      margin: 0 0 0.45rem;
+      font-family: var(--font-body);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+    }
+
+    .specialty-card__roles-list {
+      margin: 0;
+      font-size: 0.8125rem;
+      line-height: 1.55;
+      color: var(--color-text-muted);
+    }
+
+    .specialties-approach {
+      background: var(--color-surface-warm, #f5f3ef);
+      padding: clamp(2.75rem, 5.5vw, 4.25rem) 0;
+      border-top: 1px solid rgba(15, 26, 46, 0.06);
+    }
+
+    .specialties-approach__inner {
+      max-width: 44rem;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .specialties-approach__title {
+      margin: 0 0 var(--space-4);
+      font-family: var(--font-display);
+      font-size: clamp(1.35rem, 1.1rem + 0.85vw, 1.85rem);
+      font-weight: 700;
+      font-style: normal;
+      color: var(--color-navy);
+      line-height: 1.25;
+      text-wrap: balance;
+    }
+
+    .specialties-approach__text {
+      margin: 0 0 var(--space-4);
+      font-size: var(--text-base);
+      line-height: 1.7;
+      color: var(--color-text-muted);
+    }
+
+    .specialties-approach__text:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .specialties-approach__cta {
+      margin-top: clamp(2rem, 4vw, 2.75rem);
+      padding-top: clamp(1.75rem, 3vw, 2.25rem);
+      border-top: 1px solid rgba(15, 26, 46, 0.1);
+    }
+
+    .specialties-approach__cta-title {
+      margin: 0 0 var(--space-4);
+      font-family: var(--font-display);
+      font-size: clamp(1.15rem, 1rem + 0.5vw, 1.4rem);
+      font-weight: 700;
+      color: var(--color-navy);
+      line-height: 1.25;
+    }
+
+    .specialties-approach__cta-text {
+      margin: 0 0 var(--space-6);
+      font-size: var(--text-base);
+      line-height: 1.7;
+      color: var(--color-text-muted);
     }
 
     .specialties-grid .specialty-card.reveal:nth-child(1) { transition-delay: 0ms; }
@@ -403,10 +407,9 @@
     .specialties-grid .specialty-card.reveal:nth-child(5) { transition-delay: 280ms; }
     .specialties-grid .specialty-card.reveal:nth-child(6) { transition-delay: 350ms; }
 
-    @media (max-width: 960px) {
-      .specialty-card {
-        flex: 1 1 calc(50% - 1.25rem);
-        max-width: none;
+    @media (max-width: 1024px) {
+      .specialties-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
@@ -437,31 +440,9 @@
       }
 
       .specialties-grid {
-        gap: var(--space-6);
-      }
-
-      .specialty-card {
-        padding: 1.65rem 1.35rem 5.75rem;
-      }
-
-      .specialty-card__icon {
-        position: relative;
-        top: auto;
-        left: auto;
-        transform: none;
-        width: 5.25rem;
-        height: 5.25rem;
-        margin: 0 auto var(--space-4);
-      }
-
-      .specialty-card__icon svg {
-        width: 2.35rem;
-        height: 2.35rem;
-      }
-
-      .specialty-card:hover .specialty-card__icon,
-      .specialty-card:focus-visible .specialty-card__icon {
-        transform: scale(1.06);
+        grid-template-columns: 1fr;
+        gap: var(--space-5);
+        max-width: 26rem;
       }
     }
 
@@ -469,22 +450,15 @@
       .specialties-grid-section {
         padding-top: var(--space-12);
       }
-
-      .specialty-card {
-        flex: 1 1 100%;
-        max-width: 22rem;
-      }
     }
 
     @media (prefers-reduced-motion: reduce) {
       .specialty-card,
-      .specialty-card__icon,
-      .specialty-card__link {
+      .specialty-card__icon {
         transition: none;
       }
 
-      .specialty-card:hover,
-      .specialty-card:focus-visible {
+      .specialty-card:hover {
         transform: none;
       }
 
@@ -599,90 +573,93 @@
 
         <div class="specialties-grid">
 
-          <a href="contact.html" class="specialty-card reveal">
+          <article class="specialty-card reveal">
             <div class="specialty-card__icon" aria-hidden="true">
               <i data-lucide="chart-column-increasing"></i>
             </div>
-            <h3 class="specialty-card__title">Data / Analytics</h3>
-            <ul class="specialty-card__tags" aria-label="Focus areas">
-              <li>Data Engineering</li>
-              <li>BI</li>
-              <li>Insights</li>
-            </ul>
-            <p class="specialty-card__desc">We partner with organizations building modern analytics capabilities&mdash;from data engineering and BI to insights teams that drive smarter decisions.</p>
-            <span class="specialty-card__link">Learn More <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></span>
-          </a>
+            <h3 class="specialty-card__title">Data &amp; Analytics</h3>
+            <p class="specialty-card__desc">We help organizations build the leadership and technical capabilities to turn data into better decisions&mdash;from enterprise data strategy and governance to engineering, analytics, and business intelligence.</p>
+            <div class="specialty-card__roles">
+              <p class="specialty-card__roles-label">Representative roles</p>
+              <p class="specialty-card__roles-list">Chief Data Officer; VP or Director of Data &amp; Analytics; Data Governance Leader; Analytics Manager; Data Engineer; Data Analyst; BI Developer.</p>
+            </div>
+          </article>
 
-          <a href="contact.html" class="specialty-card reveal">
+          <article class="specialty-card reveal">
             <div class="specialty-card__icon" aria-hidden="true">
               <i data-lucide="brain"></i>
             </div>
-            <h3 class="specialty-card__title">Artificial Intelligence (A.I)</h3>
-            <ul class="specialty-card__tags" aria-label="Focus areas">
-              <li>Machine Learning</li>
-              <li>Applied AI</li>
-              <li>LLMs</li>
-            </ul>
-            <p class="specialty-card__desc">From applied machine learning to production AI systems, we connect teams with specialists who turn innovation into measurable business outcomes.</p>
-            <span class="specialty-card__link">Learn More <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></span>
-          </a>
+            <h3 class="specialty-card__title">Artificial Intelligence</h3>
+            <p class="specialty-card__desc">We connect organizations with leaders who shape AI strategy and specialists who develop, implement, and support practical AI solutions.</p>
+            <div class="specialty-card__roles">
+              <p class="specialty-card__roles-label">Representative roles</p>
+              <p class="specialty-card__roles-list">Chief AI Officer; VP or Director of AI; AI/ML Engineering Manager; AI Engineer; Machine Learning Engineer; Data Scientist; AI Implementation Specialist.</p>
+            </div>
+          </article>
 
-          <a href="contact.html" class="specialty-card reveal">
+          <article class="specialty-card reveal">
             <div class="specialty-card__icon" aria-hidden="true">
               <i data-lucide="cloud-cog"></i>
             </div>
             <h3 class="specialty-card__title">Technology &amp; Software</h3>
-            <ul class="specialty-card__tags" aria-label="Focus areas">
-              <li>Cloud</li>
-              <li>Infrastructure</li>
-              <li>Platform</li>
-            </ul>
-            <p class="specialty-card__desc">Software, cloud, infrastructure, and platform talent for environments where reliability, scale, and technical leadership go hand in hand.</p>
-            <span class="specialty-card__link">Learn More <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></span>
-          </a>
+            <p class="specialty-card__desc">We recruit the leaders and professionals who build, integrate, secure, and support technology&mdash;from executive oversight to software delivery, cloud platforms, and infrastructure.</p>
+            <div class="specialty-card__roles">
+              <p class="specialty-card__roles-label">Representative roles</p>
+              <p class="specialty-card__roles-list">CIO; CTO; VP or Director of Technology; VP or Director of Software Engineering; Engineering Manager; Software Developer; Cloud Engineer; Systems Engineer.</p>
+            </div>
+          </article>
 
-          <a href="contact.html" class="specialty-card reveal">
+          <article class="specialty-card reveal">
             <div class="specialty-card__icon" aria-hidden="true">
               <i data-lucide="circle-dollar-sign"></i>
             </div>
             <h3 class="specialty-card__title">Commercial Lending</h3>
-            <ul class="specialty-card__tags" aria-label="Focus areas">
-              <li>Credit</li>
-              <li>Relationship Mgmt</li>
-              <li>Treasury</li>
-            </ul>
-            <p class="specialty-card__desc">Leadership and specialist roles across commercial lending&mdash;from relationship management and credit to treasury and business banking.</p>
-            <span class="specialty-card__link">Learn More <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></span>
-          </a>
+            <p class="specialty-card__desc">We help banks and credit unions hire experienced leaders and producers who grow business relationships, strengthen lending teams, and support sound credit decisions.</p>
+            <div class="specialty-card__roles">
+              <p class="specialty-card__roles-label">Representative roles</p>
+              <p class="specialty-card__roles-list">Chief Lending Officer; Head of Commercial Banking; VP or Director of Business Lending; Market President; Commercial Lending Manager; Commercial Lender; Commercial Underwriter; Credit Analyst.</p>
+            </div>
+          </article>
 
-          <a href="contact.html" class="specialty-card reveal">
+          <article class="specialty-card reveal">
             <div class="specialty-card__icon" aria-hidden="true">
               <i data-lucide="landmark"></i>
             </div>
             <h3 class="specialty-card__title">Credit Unions</h3>
-            <ul class="specialty-card__tags" aria-label="Focus areas">
-              <li>Leadership</li>
-              <li>Digital</li>
-              <li>Community Banking</li>
-            </ul>
-            <p class="specialty-card__desc">Member-focused institutions need leaders who understand community banking, digital transformation, and the mission-driven credit union model.</p>
-            <span class="specialty-card__link">Learn More <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></span>
-          </a>
+            <p class="specialty-card__desc">We partner with credit unions to recruit leaders and specialized professionals who understand member service, organizational growth, and the demands of a regulated financial institution.</p>
+            <div class="specialty-card__roles">
+              <p class="specialty-card__roles-label">Representative roles</p>
+              <p class="specialty-card__roles-list">CEO; CIO; Chief Lending Officer; VP or Director of Digital Banking, Payments, or Risk; Department Manager; Payments Specialist; Compliance Analyst; Lending Professional.</p>
+            </div>
+          </article>
 
-          <a href="contact.html" class="specialty-card reveal">
+          <article class="specialty-card specialty-card--additional reveal">
             <div class="specialty-card__icon" aria-hidden="true">
               <i data-lucide="lightbulb"></i>
             </div>
-            <h3 class="specialty-card__title">Because Clients Asked</h3>
-            <ul class="specialty-card__tags" aria-label="Focus areas">
-              <li>Custom Search</li>
-              <li>Network</li>
-              <li>Flexible</li>
-            </ul>
-            <p class="specialty-card__desc">When hiring needs fall outside our core pillars, we leverage our network to deliver&mdash;because the right introduction often starts with a conversation.</p>
-            <span class="specialty-card__link">Learn More <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></span>
-          </a>
+            <h3 class="specialty-card__title">Additional Specialties</h3>
+            <p class="specialty-card__desc">Our client relationships often lead to searches beyond our core specialties. We welcome a conversation about your needs and will be candid about our relevant experience and ability to help.</p>
+            <p class="specialty-card__desc">We consider executive, management, and individual contributor searches based on the function, industry, and expertise required.</p>
+          </article>
 
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         APPROACH + HIRING CTA (before results)
+    ========================================== -->
+    <section class="specialties-approach" aria-labelledby="specialties-approach-heading">
+      <div class="container">
+        <div class="specialties-approach__inner reveal">
+          <h2 class="specialties-approach__title" id="specialties-approach-heading">Specialized Knowledge. Thoughtful Evaluation. Stronger Matches.</h2>
+          <p class="specialties-approach__text">An executive search requires understanding an organization&rsquo;s direction, leadership needs, and business priorities. A specialized professional search requires understanding the expertise and capabilities needed to deliver.</p>
+          <p class="specialties-approach__text">At every level, we look beyond titles and r&eacute;sum&eacute;s to understand what success requires&mdash;and who can make a meaningful contribution.</p>
+          <div class="specialties-approach__cta">
+            <h3 class="specialties-approach__cta-title">Let&rsquo;s Find the Talent You Need.</h3>
+            <p class="specialties-approach__cta-text">Whether you&rsquo;re hiring an executive to lead a function, a manager to strengthen a team, or a specialist with critical expertise, we&rsquo;d welcome a conversation about your goals.</p>
+            <a href="contact.html" class="btn btn--primary btn--lg">Discuss Your Hiring Needs</a>
+          </div>
         </div>
       </div>
     </section>
