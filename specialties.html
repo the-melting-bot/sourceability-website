@@ -171,10 +171,12 @@
 
     /* ---- Specialty cards grid ---- */
     .specialties-grid-section {
-      background:
-        radial-gradient(circle at 12% 8%, rgba(175, 39, 47, 0.05) 0%, transparent 42%),
-        radial-gradient(circle at 88% 92%, rgba(15, 26, 46, 0.05) 0%, transparent 42%),
-        var(--color-bg);
+      background-color: var(--color-bg);
+      background-image:
+        radial-gradient(circle at 12% 8%, rgba(175, 39, 47, 0.06) 0%, transparent 42%),
+        radial-gradient(circle at 88% 92%, rgba(15, 26, 46, 0.06) 0%, transparent 42%),
+        radial-gradient(circle, rgba(15, 26, 46, 0.045) 1px, transparent 1px);
+      background-size: auto, auto, 22px 22px;
       padding-top: var(--space-16);
       padding-bottom: var(--space-20);
     }
@@ -218,17 +220,67 @@
       grid-template-rows: subgrid;
       text-align: left;
       color: inherit;
-      background: linear-gradient(180deg, #ffffff 0%, #fdfbfb 100%);
-      border: 1px solid rgba(175, 39, 47, 0.1);
+      background: linear-gradient(165deg, #ffffff 0%, #fdfbfb 55%, rgba(175, 39, 47, 0.025) 100%);
+      border: 1px solid rgba(175, 39, 47, 0.12);
       border-radius: 15px;
       padding: clamp(1.35rem, 2.5vw, 1.75rem);
-      box-shadow: 0 2px 12px rgba(15, 26, 46, 0.04);
+      box-shadow:
+        0 2px 12px rgba(15, 26, 46, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.85);
       overflow: hidden;
+      isolation: isolate;
       transition:
         box-shadow 0.35s ease,
         transform 0.35s ease,
         border-color 0.35s ease,
         background 0.35s ease;
+    }
+
+    .specialty-card:nth-child(3n + 2) {
+      background: linear-gradient(165deg, #ffffff 0%, #f8f9fc 58%, rgba(15, 26, 46, 0.03) 100%);
+      border-color: rgba(15, 26, 46, 0.1);
+    }
+
+    .specialty-card__watermark {
+      position: absolute;
+      top: 0.35rem;
+      right: 0.15rem;
+      width: clamp(4.5rem, 12vw, 5.75rem);
+      height: clamp(4.5rem, 12vw, 5.75rem);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.07;
+      transform: rotate(-8deg);
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+
+    .specialty-card__watermark svg {
+      width: 100%;
+      height: 100%;
+      stroke: var(--color-navy);
+      stroke-width: 1.15;
+      fill: none;
+    }
+
+    .specialty-card:nth-child(even) .specialty-card__watermark svg {
+      stroke: var(--color-accent);
+    }
+
+    .specialty-card:hover .specialty-card__watermark {
+      opacity: 0.1;
+      transform: rotate(-4deg) scale(1.03);
+    }
+
+    .specialty-card__icon,
+    .specialty-card__title,
+    .specialty-card__copy,
+    .specialty-card__roles,
+    .specialty-card__cta-row {
+      position: relative;
+      z-index: 1;
     }
 
     .specialty-card::before {
@@ -237,8 +289,9 @@
       inset: 0 0 auto;
       height: 3px;
       background: linear-gradient(90deg, var(--color-accent), rgba(175, 39, 47, 0.35));
-      opacity: 0;
+      opacity: 0.45;
       transition: opacity 0.35s ease;
+      z-index: 2;
     }
 
     .specialty-card:hover {
@@ -359,7 +412,8 @@
       .specialty-card__icon,
       .specialty-card__title,
       .specialty-card__copy,
-      .specialty-card__roles {
+      .specialty-card__roles,
+      .specialty-card__cta-row {
         grid-row: auto;
       }
 
@@ -390,11 +444,65 @@
       color: var(--color-accent);
     }
 
-    .specialty-card__roles-list {
+    .specialty-card__roles-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 0.45rem;
       margin: 0;
-      font-size: 0.8125rem;
-      line-height: 1.55;
-      color: var(--color-text-muted);
+      padding: 0;
+      list-style: none;
+    }
+
+    .specialty-card__roles-chips li {
+      font-size: 0.6875rem;
+      font-weight: 500;
+      line-height: 1.35;
+      letter-spacing: 0.01em;
+      padding: 0.28rem 0.55rem;
+      border-radius: 999px;
+      color: var(--color-navy);
+      background: rgba(15, 26, 46, 0.05);
+      border: 1px solid rgba(15, 26, 46, 0.08);
+      transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease;
+    }
+
+    .specialty-card:hover .specialty-card__roles-chips li {
+      background: rgba(175, 39, 47, 0.07);
+      border-color: rgba(175, 39, 47, 0.16);
+    }
+
+    .specialty-card--additional {
+      background: linear-gradient(155deg, #fafbfc 0%, #ffffff 45%, rgba(15, 26, 46, 0.04) 100%);
+      border-style: dashed;
+      border-color: rgba(15, 26, 46, 0.2);
+    }
+
+    .specialty-card--additional::before {
+      background: linear-gradient(90deg, var(--color-navy), rgba(15, 26, 46, 0.35));
+      opacity: 0.55;
+    }
+
+    .specialty-card--additional:hover {
+      background: linear-gradient(155deg, #ffffff 0%, #f6f8fb 50%, rgba(15, 26, 46, 0.06) 100%);
+      border-color: rgba(15, 26, 46, 0.32);
+    }
+
+    .specialty-card__cta-row {
+      grid-row: 4;
+      align-self: start;
+      margin-top: 0.65rem;
+      padding-top: 0.85rem;
+      border-top: 1px dashed rgba(15, 26, 46, 0.14);
+    }
+
+    .specialty-card__cta {
+      display: inline-flex;
+      width: 100%;
+      justify-content: center;
+      text-align: center;
     }
 
     .specialties-approach {
@@ -526,12 +634,17 @@
 
     @media (prefers-reduced-motion: reduce) {
       .specialty-card,
-      .specialty-card__icon {
+      .specialty-card__icon,
+      .specialty-card__watermark {
         transition: none;
       }
 
       .specialty-card:hover {
         transform: none;
+      }
+
+      .specialty-card:hover .specialty-card__watermark {
+        transform: rotate(-8deg);
       }
 
       .specialties-grid .specialty-card.reveal {
@@ -646,92 +759,147 @@
         <div class="specialties-grid">
 
           <article class="specialty-card reveal">
+            <div class="specialty-card__watermark" aria-hidden="true">
+              <i data-lucide="chart-column-increasing"></i>
+            </div>
             <div class="specialty-card__icon" aria-hidden="true">
               <i data-lucide="chart-column-increasing"></i>
             </div>
             <h3 class="specialty-card__title">Data &amp; Analytics</h3>
             <div class="specialty-card__copy">
-                <p class="specialty-card__desc">We help organizations build the leadership and technical capabilities to turn data into better decisions&mdash;from enterprise data strategy and governance to engineering, analytics, and business intelligence.</p>
-
+              <p class="specialty-card__desc">We help organizations build the leadership and technical capabilities to turn data into better decisions&mdash;from enterprise data strategy and governance to engineering, analytics, and business intelligence.</p>
             </div>
             <div class="specialty-card__roles">
-                <p class="specialty-card__roles-label">Representative roles</p>
-                <p class="specialty-card__roles-list">Chief Data Officer; VP or Director of Data &amp; Analytics; Data Governance Leader; Analytics Manager; Data Engineer; Data Analyst; BI Developer.</p>
+              <p class="specialty-card__roles-label">Representative roles</p>
+              <ul class="specialty-card__roles-chips">
+                <li>Chief Data Officer</li>
+                <li>VP or Director of Data &amp; Analytics</li>
+                <li>Data Governance Leader</li>
+                <li>Analytics Manager</li>
+                <li>Data Engineer</li>
+                <li>Data Analyst</li>
+                <li>BI Developer</li>
+              </ul>
             </div>
           </article>
 
           <article class="specialty-card reveal">
+            <div class="specialty-card__watermark" aria-hidden="true">
+              <i data-lucide="brain"></i>
+            </div>
             <div class="specialty-card__icon" aria-hidden="true">
               <i data-lucide="brain"></i>
             </div>
             <h3 class="specialty-card__title">Artificial Intelligence</h3>
             <div class="specialty-card__copy">
-                <p class="specialty-card__desc">We connect organizations with leaders who shape AI strategy and specialists who develop, implement, and support practical AI solutions.</p>
-
+              <p class="specialty-card__desc">We connect organizations with leaders who shape AI strategy and specialists who develop, implement, and support practical AI solutions.</p>
             </div>
             <div class="specialty-card__roles">
-                <p class="specialty-card__roles-label">Representative roles</p>
-                <p class="specialty-card__roles-list">Chief AI Officer; VP or Director of AI; AI/ML Engineering Manager; AI Engineer; Machine Learning Engineer; Data Scientist; AI Implementation Specialist.</p>
+              <p class="specialty-card__roles-label">Representative roles</p>
+              <ul class="specialty-card__roles-chips">
+                <li>Chief AI Officer</li>
+                <li>VP or Director of AI</li>
+                <li>AI/ML Engineering Manager</li>
+                <li>AI Engineer</li>
+                <li>Machine Learning Engineer</li>
+                <li>Data Scientist</li>
+                <li>AI Implementation Specialist</li>
+              </ul>
             </div>
           </article>
 
           <article class="specialty-card reveal">
+            <div class="specialty-card__watermark" aria-hidden="true">
+              <i data-lucide="cloud-cog"></i>
+            </div>
             <div class="specialty-card__icon" aria-hidden="true">
               <i data-lucide="cloud-cog"></i>
             </div>
             <h3 class="specialty-card__title">Technology &amp; Software</h3>
             <div class="specialty-card__copy">
-                <p class="specialty-card__desc">We recruit the leaders and professionals who build, integrate, secure, and support technology&mdash;from executive oversight to software delivery, cloud platforms, and infrastructure.</p>
-
+              <p class="specialty-card__desc">We recruit the leaders and professionals who build, integrate, secure, and support technology&mdash;from executive oversight to software delivery, cloud platforms, and infrastructure.</p>
             </div>
             <div class="specialty-card__roles">
-                <p class="specialty-card__roles-label">Representative roles</p>
-                <p class="specialty-card__roles-list">CIO; CTO; VP or Director of Technology; VP or Director of Software Engineering; Engineering Manager; Software Developer; Cloud Engineer; Systems Engineer.</p>
+              <p class="specialty-card__roles-label">Representative roles</p>
+              <ul class="specialty-card__roles-chips">
+                <li>CIO</li>
+                <li>CTO</li>
+                <li>VP or Director of Technology</li>
+                <li>VP or Director of Software Engineering</li>
+                <li>Engineering Manager</li>
+                <li>Software Developer</li>
+                <li>Cloud Engineer</li>
+                <li>Systems Engineer</li>
+              </ul>
             </div>
           </article>
 
           <article class="specialty-card reveal">
+            <div class="specialty-card__watermark" aria-hidden="true">
+              <i data-lucide="circle-dollar-sign"></i>
+            </div>
             <div class="specialty-card__icon" aria-hidden="true">
               <i data-lucide="circle-dollar-sign"></i>
             </div>
             <h3 class="specialty-card__title">Commercial Lending</h3>
             <div class="specialty-card__copy">
-                <p class="specialty-card__desc">We help banks and credit unions hire experienced leaders and producers who grow business relationships, strengthen lending teams, and support sound credit decisions.</p>
-
+              <p class="specialty-card__desc">We help banks and credit unions hire experienced leaders and producers who grow business relationships, strengthen lending teams, and support sound credit decisions.</p>
             </div>
             <div class="specialty-card__roles">
-                <p class="specialty-card__roles-label">Representative roles</p>
-                <p class="specialty-card__roles-list">Chief Lending Officer; Head of Commercial Banking; VP or Director of Business Lending; Market President; Commercial Lending Manager; Commercial Lender; Commercial Underwriter; Credit Analyst.</p>
+              <p class="specialty-card__roles-label">Representative roles</p>
+              <ul class="specialty-card__roles-chips">
+                <li>Chief Lending Officer</li>
+                <li>Head of Commercial Banking</li>
+                <li>VP or Director of Business Lending</li>
+                <li>Market President</li>
+                <li>Commercial Lending Manager</li>
+                <li>Commercial Lender</li>
+                <li>Commercial Underwriter</li>
+                <li>Credit Analyst</li>
+              </ul>
             </div>
           </article>
 
           <article class="specialty-card reveal">
+            <div class="specialty-card__watermark" aria-hidden="true">
+              <i data-lucide="landmark"></i>
+            </div>
             <div class="specialty-card__icon" aria-hidden="true">
               <i data-lucide="landmark"></i>
             </div>
             <h3 class="specialty-card__title">Credit Unions</h3>
             <div class="specialty-card__copy">
-                <p class="specialty-card__desc">We partner with credit unions to recruit leaders and specialized professionals who understand member service, organizational growth, and the demands of a regulated financial institution.</p>
-
+              <p class="specialty-card__desc">We partner with credit unions to recruit leaders and specialized professionals who understand member service, organizational growth, and the demands of a regulated financial institution.</p>
             </div>
             <div class="specialty-card__roles">
-                <p class="specialty-card__roles-label">Representative roles</p>
-                <p class="specialty-card__roles-list">CEO; CIO; Chief Lending Officer; VP or Director of Digital Banking, Payments, or Risk; Department Manager; Payments Specialist; Compliance Analyst; Lending Professional.</p>
+              <p class="specialty-card__roles-label">Representative roles</p>
+              <ul class="specialty-card__roles-chips">
+                <li>CEO</li>
+                <li>CIO</li>
+                <li>Chief Lending Officer</li>
+                <li>VP or Director of Digital Banking, Payments, or Risk</li>
+                <li>Department Manager</li>
+                <li>Payments Specialist</li>
+                <li>Compliance Analyst</li>
+                <li>Lending Professional</li>
+              </ul>
             </div>
           </article>
 
           <article class="specialty-card specialty-card--additional reveal">
+            <div class="specialty-card__watermark" aria-hidden="true">
+              <i data-lucide="lightbulb"></i>
+            </div>
             <div class="specialty-card__icon" aria-hidden="true">
               <i data-lucide="lightbulb"></i>
             </div>
             <h3 class="specialty-card__title">Additional Specialties</h3>
             <div class="specialty-card__copy">
-                <p class="specialty-card__desc">Our client relationships often lead to searches beyond our core specialties. We welcome a conversation about your needs and will be candid about our relevant experience and ability to help.</p>
-                <p class="specialty-card__desc">We consider executive, management, and individual contributor searches based on the function, industry, and expertise required.</p>
+              <p class="specialty-card__desc">Our client relationships often lead to searches beyond our core specialties. We welcome a conversation about your needs and will be candid about our relevant experience and ability to help.</p>
+              <p class="specialty-card__desc">We consider executive, management, and individual contributor searches based on the function, industry, and expertise required.</p>
             </div>
-            <div class="specialty-card__roles specialty-card__roles--empty" aria-hidden="true">
-              <p class="specialty-card__roles-label">Representative roles</p>
-              <p class="specialty-card__roles-list">&nbsp;</p>
+            <div class="specialty-card__cta-row">
+              <a href="contact.html" class="specialty-card__cta btn btn--primary btn--sm">Discuss Your Needs</a>
             </div>
           </article>
 
