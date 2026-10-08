@@ -18,7 +18,7 @@
 
   <!-- SEO -->
   <title>Search Jobs — Data &amp; Analytics Positions | SourceAbility</title>
-  <meta name="description" content="Browse open positions in data science, analytics, AI, business intelligence, and more. SourceAbility connects top talent with leading employers.">
+  <meta name="description" content="Explore current openings across Data &amp; AI, Technology, and Financial Services—from individual contributor roles to executive leadership. Share your resume or schedule a conversation with SourceAbility.">
   <link rel="canonical" href="https://www.sourceabilityinc.com/jobs.html">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0f1a2e">
@@ -150,6 +150,53 @@
       margin: 0;
     }
 
+    .jobs-intro__overline {
+      display: block;
+      margin-bottom: var(--space-4);
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+    }
+
+    .jobs-intro__text {
+      margin: 0 0 var(--space-4);
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      line-height: 1.7;
+      color: var(--color-text-muted);
+      max-width: 48rem;
+    }
+
+    .jobs-intro__text:last-child {
+      margin-bottom: 0;
+    }
+
+    .jobs-page-cta .cta-banner-new__text-closing {
+      display: block;
+      margin-top: var(--space-4);
+    }
+
+    .jobs-page-cta .cta-banner-new__actions--dual {
+      gap: 0.75rem;
+    }
+
+    .jobs-page-cta .cta-banner-new__actions .btn.btn--jobs-secondary {
+      background: #fff;
+      color: var(--color-accent);
+      border: 2px solid var(--color-accent);
+      box-shadow: 0 2px 12px rgba(175, 39, 47, 0.12);
+    }
+
+    .jobs-page-cta .cta-banner-new__actions .btn.btn--jobs-secondary:hover,
+    .jobs-page-cta .cta-banner-new__actions .btn.btn--jobs-secondary:focus-visible {
+      background: var(--color-accent);
+      color: #fff;
+      border-color: var(--color-accent);
+    }
+
     @media (max-width: 767px) {
       .jobs-hero-split {
         padding-top: 6.5rem;
@@ -251,8 +298,8 @@
     <section class="jobs-hero-split" aria-label="Search Jobs hero">
       <div class="jobs-hero-split__grid">
         <div class="jobs-hero-split__panel">
-          <h1 class="jobs-hero-split__title reveal">Search Jobs</h1>
-          <p class="jobs-hero-split__desc reveal">Explore current opportunities across Data, AI, Technology, and Financial Services roles.</p>
+          <h1 class="jobs-hero-split__title reveal">Your Next Opportunity Starts Here. Explore the Possibilities.</h1>
+          <p class="jobs-hero-split__desc reveal">Explore current openings across Data &amp; AI, Technology, and Financial Services, from specialized individual contributor roles to executive leadership.</p>
         </div>
         <div class="jobs-hero-split__media reveal">
           <img src="./assets/images/hero-jobs-team.jpg" alt="Professionals networking at a career event" loading="eager" fetchpriority="high" width="1920" height="1280">
@@ -266,11 +313,10 @@
     <section class="section-padding" aria-labelledby="jobs-heading" style="background:#fff;">
       <div class="container">
 
-        <header class="section-heading reveal" style="margin-bottom: var(--space-8);">
-          <span class="overline" style="color: var(--color-accent); margin-bottom: 1rem; display: block;">Featured Opportunities</span>
-          <h2 class="section-heading__title" style="margin-top: 0; margin-bottom: var(--space-4); font-style: normal;">Select Opportunities Across Data, Technology & Financial Services</h2>
-          <p class="section-heading__lede" style="margin-bottom: var(--space-4); max-width: 48rem;">We partner with organizations seeking high-impact professionals across Data, Technology, AI, and Financial Services. The opportunities below represent a select group of active searches. Many of our searches are conducted on a confidential basis and are not publicly listed.</p>
-          <p style="font-size: var(--text-base); color: var(--color-text-muted); max-width: 48rem;">If you do not see a role that aligns with your background, we still welcome the opportunity to connect.</p>
+        <header class="jobs-intro reveal" style="margin-bottom: var(--space-8);">
+          <span class="jobs-intro__overline" id="jobs-heading">Current Opportunities</span>
+          <p class="jobs-intro__text">A new role should offer more than a different title. It should align with your strengths, your goals, and what matters to you in your next chapter.</p>
+          <p class="jobs-intro__text">Explore the opportunities below. Some of our searches are confidential and are not publicly listed, so we welcome a conversation even if you don&rsquo;t see a position that fits.</p>
         </header>
 
         <!-- Loading state -->
@@ -305,18 +351,15 @@
     <!-- ==========================================
          CTA BANNER
     ========================================== -->
-    <section class="cta-banner-new" aria-labelledby="jobs-no-fit-heading">
+    <section class="cta-banner-new jobs-page-cta" aria-labelledby="jobs-no-fit-heading">
       <div class="cta-banner-new__container cta-banner-new__container--no-images">
         <div class="cta-banner-new__content">
           <div class="reveal">
             <h2 class="cta-banner-new__title" id="jobs-no-fit-heading">Not Seeing the <span class="cta-banner-new__mark">Right Opportunity?</span></h2>
-            <p class="cta-banner-new__text">Whether you&rsquo;re hiring today, planning for future growth, or simply looking for a trusted recruiting partner, we&rsquo;d welcome the opportunity to learn more about your organization and discuss how we can help.<span class="cta-banner-new__text-closing">We would love to hear from you!</span></p>
-            <div class="cta-banner-new__actions cta-banner-new__actions--multi">
-              <a href="contact.html#contact-form" class="btn btn--primary btn--lg">Submit Resume</a>
-              <a href="https://www.linkedin.com/in/tanyacalkins" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg">Connect on LinkedIn</a>
-              <a href="contact.html#contact-form" class="btn btn--primary btn--lg">Email Us</a>
-              <a href="tel:+18664129178" class="btn btn--primary btn--lg js-call-us" data-call-dialog="call-us-dialog" aria-haspopup="dialog" aria-controls="call-us-dialog">Call Us</a>
-              <a href="https://calendly.com/tanyacalkins" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg">Schedule a Meeting</a>
+            <p class="cta-banner-new__text">Whether you&rsquo;re actively looking or simply open to the right opportunity, we&rsquo;d like to learn more about you, your experience, your interests, and what would make a career move worthwhile.<span class="cta-banner-new__text-closing">Share your resume or schedule a conversation so we can consider you for opportunities that align with your background and goals.</span></p>
+            <div class="cta-banner-new__actions cta-banner-new__actions--multi cta-banner-new__actions--dual">
+              <a href="contact.html#contact-form" class="btn btn--primary btn--lg">Share Your Resume</a>
+              <a href="https://calendly.com/tanyacalkins" target="_blank" rel="noopener noreferrer" class="btn btn--jobs-secondary btn--lg">Schedule a Conversation</a>
             </div>
           </div>
         </div>
