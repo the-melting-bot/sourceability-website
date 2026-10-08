@@ -146,15 +146,27 @@
     }
 
     .specialties-hero-split__title {
-      margin: 0;
+      margin: 0 0 var(--space-4);
       font-family: var(--font-display);
-      font-size: clamp(1.45rem, 1rem + 1.4vw, 2.15rem);
+      font-size: clamp(1.65rem, 1.15rem + 1.6vw, 2rem);
       font-weight: 700;
       font-style: normal;
       color: #fff;
-      line-height: 1.15;
-      letter-spacing: -0.01em;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
       text-wrap: balance;
+    }
+
+    .specialties-hero-split__desc {
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      color: #fff;
+      line-height: 1.625;
+      margin: 0 0 var(--space-4);
+    }
+
+    .specialties-hero-split__desc:last-child {
+      margin-bottom: 0;
     }
 
     /* ---- Specialty cards grid ---- */
@@ -568,7 +580,9 @@
           <img src="./assets/images/hero-expertise.jpg" alt="Two professionals walking together in an urban business district" loading="eager" fetchpriority="high" width="1920" height="1280">
         </div>
         <div class="specialties-hero-split__panel">
-          <h1 class="specialties-hero-split__title reveal">ACTIONABLE INSIGHTS. UNLIMITED POSSIBILITIES.</h1>
+          <h1 class="specialties-hero-split__title reveal">Executive Leadership. Specialized Talent. Lasting Impact.</h1>
+          <p class="specialties-hero-split__desc reveal">We connect organizations with leaders and professionals across Data &amp; AI, Technology, and Financial Services. Recruiting requires an understanding of the work, the business, and the people who make it successful.</p>
+          <p class="specialties-hero-split__desc reveal">We help organizations hire across three levels: executive leadership, management, and specialized individual contributors. We recruit the talent that moves your business forward.</p>
         </div>
       </div>
     </section>
