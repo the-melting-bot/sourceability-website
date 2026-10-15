@@ -539,26 +539,34 @@
       margin-bottom: 0;
     }
 
-    .specialties-approach__cta {
-      margin-top: clamp(2rem, 4vw, 2.75rem);
-      padding-top: clamp(1.75rem, 3vw, 2.25rem);
-      border-top: 1px solid rgba(15, 26, 46, 0.1);
+    .specialties-hiring-cta {
+      background:
+        radial-gradient(circle at 18% 22%, rgba(175, 39, 47, 0.18) 0%, transparent 48%),
+        var(--color-navy);
+      padding: clamp(2.75rem, 5.5vw, 4.25rem) 0;
     }
 
-    .specialties-approach__cta-title {
+    .specialties-hiring-cta__inner {
+      max-width: 44rem;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .specialties-hiring-cta__title {
       margin: 0 0 var(--space-4);
       font-family: var(--font-display);
       font-size: clamp(1.15rem, 1rem + 0.5vw, 1.4rem);
       font-weight: 700;
-      color: var(--color-navy);
+      color: #fff;
       line-height: 1.25;
+      text-wrap: balance;
     }
 
-    .specialties-approach__cta-text {
+    .specialties-hiring-cta__text {
       margin: 0 0 var(--space-6);
       font-size: var(--text-base);
       line-height: 1.7;
-      color: var(--color-text-muted);
+      color: rgba(255, 255, 255, 0.82);
     }
 
     .specialties-grid .specialty-card.reveal:nth-child(1) { transition-delay: 0ms; }
@@ -916,11 +924,16 @@
           <h2 class="specialties-approach__title" id="specialties-approach-heading">Specialized Knowledge. Thoughtful Evaluation. Stronger Matches.</h2>
           <p class="specialties-approach__text">An executive search requires understanding an organization&rsquo;s direction, leadership needs, and business priorities. A specialized professional search requires understanding the expertise and capabilities needed to deliver.</p>
           <p class="specialties-approach__text">At every level, we look beyond titles and r&eacute;sum&eacute;s to understand what success requires&mdash;and who can make a meaningful contribution.</p>
-          <div class="specialties-approach__cta">
-            <h3 class="specialties-approach__cta-title">Let&rsquo;s Find the Talent You Need.</h3>
-            <p class="specialties-approach__cta-text">Whether you&rsquo;re hiring an executive to lead a function, a manager to strengthen a team, or a specialist with critical expertise, we&rsquo;d welcome a conversation about your goals.</p>
-            <a href="contact.html" class="btn btn--primary btn--lg">Discuss Your Hiring Needs</a>
-          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="specialties-hiring-cta" aria-labelledby="specialties-hiring-cta-heading">
+      <div class="container">
+        <div class="specialties-hiring-cta__inner reveal">
+          <h2 class="specialties-hiring-cta__title" id="specialties-hiring-cta-heading">Let&rsquo;s Find the Talent You Need.</h2>
+          <p class="specialties-hiring-cta__text">Whether you&rsquo;re hiring an executive to lead a function, a manager to strengthen a team, or a specialist with critical expertise, we&rsquo;d welcome a conversation about your goals.</p>
+          <a href="contact.html" class="btn btn--primary btn--lg">Discuss Your Hiring Needs</a>
         </div>
       </div>
     </section>
