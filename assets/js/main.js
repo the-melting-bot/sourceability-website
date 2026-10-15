@@ -6,40 +6,34 @@
 (function () {
   'use strict';
 
-  // --- SCROLL-AWARE HEADER ---
+  // --- SCROLL-AWARE HEADER (always visible; shadow when scrolled) ---
   const header = document.querySelector('.site-header');
-  let lastScroll = 0;
   let ticking = false;
 
   function onScroll() {
-    const currentScroll = window.scrollY;
+    if (!header) {
+      ticking = false;
+      return;
+    }
 
-    if (currentScroll > 60) {
+    if (window.scrollY > 60) {
       header.classList.add('site-header--scrolled');
     } else {
       header.classList.remove('site-header--scrolled');
     }
 
-    if (currentScroll > 300) {
-      if (currentScroll > lastScroll + 5) {
-        header.classList.add('site-header--hidden');
-      } else if (currentScroll < lastScroll - 5) {
-        header.classList.remove('site-header--hidden');
-      }
-    } else {
-      header.classList.remove('site-header--hidden');
-    }
-
-    lastScroll = currentScroll;
+    header.classList.remove('site-header--hidden');
     ticking = false;
   }
 
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      requestAnimationFrame(onScroll);
-      ticking = true;
-    }
-  }, { passive: true });
+  if (header) {
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(onScroll);
+        ticking = true;
+      }
+    }, { passive: true });
+  }
 
   // --- MOBILE NAV ---
   const mobileToggle = document.querySelector('.mobile-toggle');

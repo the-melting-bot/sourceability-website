@@ -232,10 +232,6 @@
   box-shadow: var(--shadow-md);
 }
 
-.site-header--hidden {
-  transform: translateY(-100%);
-}
-
 .header-top {
   background: var(--color-navy);
   padding: var(--space-2) 0;
