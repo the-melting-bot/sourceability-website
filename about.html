@@ -388,7 +388,7 @@
     }
 
     .about-tanya__quote::before,
-    .about-tanya__quote::after {
+    .about-tanya__quote p:last-of-type::after {
       font-family: Georgia, "Times New Roman", serif;
       font-size: clamp(3.75rem, 9vw, 7rem);
       font-weight: 700;
@@ -406,19 +406,20 @@
       left: clamp(-3.25rem, -8vw, -1.85rem);
     }
 
-    .about-tanya__quote::after {
-      content: "\201D";
-      right: clamp(-0.85rem, -1.5vw, -0.15rem);
-      bottom: clamp(3rem, 6.75vw, 4.1rem);
-      line-height: 0.42;
-    }
-
     .about-tanya__quote p {
       margin: 0 0 var(--space-4);
     }
 
     .about-tanya__quote p:last-of-type {
+      position: relative;
       margin-bottom: var(--space-5);
+      overflow: visible;
+    }
+
+    .about-tanya__quote p:last-of-type::after {
+      content: "\201D";
+      right: clamp(-0.85rem, -1.5vw, -0.15rem);
+      bottom: 0;
     }
 
     .about-tanya__quote cite {
