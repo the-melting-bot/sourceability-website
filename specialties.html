@@ -171,48 +171,35 @@
 
     /* ---- Specialty cards grid ---- */
     .specialties-grid-section {
-      padding: 0;
-    }
-
-    .specialties-grid-section__intro-band {
-      background:
-        radial-gradient(circle at 12% 18%, rgba(175, 39, 47, 0.2) 0%, transparent 48%),
-        var(--color-navy);
-      padding: clamp(2.5rem, 5vw, 3.75rem) 0;
+      background-color: var(--color-bg);
+      background-image:
+        radial-gradient(circle at 12% 8%, rgba(175, 39, 47, 0.06) 0%, transparent 42%),
+        radial-gradient(circle at 88% 92%, rgba(15, 26, 46, 0.06) 0%, transparent 42%),
+        radial-gradient(circle, rgba(15, 26, 46, 0.045) 1px, transparent 1px);
+      background-size: auto, auto, 22px 22px;
+      padding-top: var(--space-16);
+      padding-bottom: var(--space-20);
     }
 
     .specialties-grid-intro {
       max-width: 42rem;
-      margin: 0 auto;
+      margin: 0 auto calc(3.35rem + var(--space-20));
       text-align: center;
     }
 
+    .specialties-grid-intro .overline {
+      margin-bottom: var(--space-3);
+    }
+
     .specialties-grid-intro__title {
-      margin: 0 0 var(--space-4);
+      margin: 0;
       font-family: var(--font-display);
       font-size: clamp(1.35rem, 1.1rem + 0.9vw, 1.85rem);
       font-weight: 700;
       font-style: normal;
-      color: #fff;
+      color: var(--color-navy);
       line-height: 1.25;
       text-wrap: balance;
-    }
-
-    .specialties-grid-intro__lead {
-      margin: 0;
-      font-size: var(--text-base);
-      line-height: 1.65;
-      color: rgba(255, 255, 255, 0.82);
-    }
-
-    .specialties-grid-section__cards {
-      background-color: var(--color-bg);
-      background-image:
-        radial-gradient(circle at 12% 8%, rgba(175, 39, 47, 0.05) 0%, transparent 42%),
-        radial-gradient(circle at 88% 92%, rgba(15, 26, 46, 0.05) 0%, transparent 42%),
-        radial-gradient(circle, rgba(15, 26, 46, 0.04) 1px, transparent 1px);
-      background-size: auto, auto, 22px 22px;
-      padding: clamp(2.5rem, 5vw, 4rem) 0 var(--space-20);
     }
 
     .specialties-grid {
@@ -518,123 +505,60 @@
       text-align: center;
     }
 
-    .specialty-card__cta-row--text {
-      border-top-style: dashed;
-    }
-
-    .specialty-card__cta-note {
-      margin: 0;
-      font-size: 0.8125rem;
-      line-height: 1.55;
-      color: var(--color-text-muted);
-    }
-
-    .specialty-card__cta-note a {
-      font-weight: 600;
-      color: var(--color-accent);
-      text-decoration: none;
-    }
-
-    .specialty-card__cta-note a:hover {
-      text-decoration: underline;
-    }
-
-    .specialties-impact {
-      background: #101213;
-      color: #fff;
+    .specialties-approach {
+      background: var(--color-surface-warm, #f5f3ef);
       padding: clamp(2.75rem, 5.5vw, 4.25rem) 0;
+      border-top: 1px solid rgba(15, 26, 46, 0.06);
     }
 
-    .specialties-impact__inner {
-      max-width: 76rem;
-      margin: 0 auto;
-    }
-
-    .specialties-impact__intro {
+    .specialties-approach__inner {
       max-width: 44rem;
-      margin: 0 auto clamp(2rem, 4vw, 2.75rem);
+      margin: 0 auto;
       text-align: center;
     }
 
-    .specialties-impact__title {
+    .specialties-approach__title {
       margin: 0 0 var(--space-4);
       font-family: var(--font-display);
       font-size: clamp(1.35rem, 1.1rem + 0.85vw, 1.85rem);
       font-weight: 700;
-      color: #fff;
+      font-style: normal;
+      color: var(--color-navy);
       line-height: 1.25;
       text-wrap: balance;
     }
 
-    .specialties-impact__text {
+    .specialties-approach__text {
       margin: 0 0 var(--space-4);
       font-size: var(--text-base);
       line-height: 1.7;
-      color: rgba(255, 255, 255, 0.78);
+      color: var(--color-text-muted);
     }
 
-    .specialties-impact__text:last-of-type {
+    .specialties-approach__text:last-of-type {
       margin-bottom: 0;
     }
 
-    .specialties-impact__results-kicker {
+    .specialties-approach__cta {
+      margin-top: clamp(2rem, 4vw, 2.75rem);
+      padding-top: clamp(1.75rem, 3vw, 2.25rem);
+      border-top: 1px solid rgba(15, 26, 46, 0.1);
+    }
+
+    .specialties-approach__cta-title {
       margin: 0 0 var(--space-4);
       font-family: var(--font-display);
-      font-size: clamp(1.05rem, 0.95rem + 0.35vw, 1.25rem);
+      font-size: clamp(1.15rem, 1rem + 0.5vw, 1.4rem);
       font-weight: 700;
-      color: rgba(255, 255, 255, 0.92);
-      text-align: center;
-      text-wrap: balance;
+      color: var(--color-navy);
+      line-height: 1.25;
     }
 
-    .specialties-impact__stats {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: clamp(0.75rem, 2vw, 1.15rem);
-      margin-bottom: clamp(2rem, 4vw, 2.75rem);
-    }
-
-    .specialties-impact__stat {
-      padding: clamp(1rem, 2vw, 1.25rem);
-      border-radius: var(--radius-md);
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      text-align: center;
-    }
-
-    .specialties-impact__stat-value {
-      margin: 0 0 0.35rem;
-      font-family: var(--font-display);
-      font-size: clamp(1.45rem, 1.15rem + 0.9vw, 1.85rem);
-      font-weight: 700;
-      color: #fff;
-      line-height: 1.1;
-    }
-
-    .specialties-impact__stat-label {
-      margin: 0;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.6);
-      line-height: 1.35;
-    }
-
-    .specialties-impact__cta {
-      text-align: center;
-    }
-
-    @media (max-width: 1024px) {
-      .specialties-impact__stats {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 480px) {
-      .specialties-impact__stats {
-        grid-template-columns: 1fr;
-      }
+    .specialties-approach__cta-text {
+      margin: 0 0 var(--space-6);
+      font-size: var(--text-base);
+      line-height: 1.7;
+      color: var(--color-text-muted);
     }
 
     .specialties-grid .specialty-card.reveal:nth-child(1) { transition-delay: 0ms; }
@@ -826,16 +750,12 @@
          SPECIALTY CARDS
     ========================================== -->
     <section class="specialties-grid-section" aria-labelledby="specialties-heading">
-      <div class="specialties-grid-section__intro-band">
-        <div class="container">
-          <div class="specialties-grid-intro reveal">
-            <h2 id="specialties-heading" class="specialties-grid-intro__title">What We Recruit For</h2>
-            <p class="specialties-grid-intro__lead">Deep expertise across the roles that shape modern financial services and technology.</p>
-          </div>
+      <div class="container">
+        <div class="specialties-grid-intro reveal">
+          <p class="overline">What We Recruit For</p>
+          <h2 id="specialties-heading" class="specialties-grid-intro__title">Deep expertise across the roles that shape modern financial services and technology.</h2>
         </div>
-      </div>
-      <div class="specialties-grid-section__cards">
-        <div class="container">
+
         <div class="specialties-grid">
 
           <article class="specialty-card reveal">
@@ -978,60 +898,108 @@
               <p class="specialty-card__desc">Our client relationships often lead to searches beyond our core specialties. We welcome a conversation about your needs and will be candid about our relevant experience and ability to help.</p>
               <p class="specialty-card__desc">We consider executive, management, and individual contributor searches based on the function, industry, and expertise required.</p>
             </div>
-            <div class="specialty-card__cta-row specialty-card__cta-row--text">
-              <p class="specialty-card__cta-note"><a href="contact.html">Contact us</a> to discuss searches beyond our core specialties.</p>
+            <div class="specialty-card__cta-row">
+              <a href="contact.html" class="specialty-card__cta btn btn--primary btn--sm">Discuss Your Needs</a>
             </div>
           </article>
 
-        </div>
         </div>
       </div>
     </section>
 
     <!-- ==========================================
-         APPROACH + PROVEN RESULTS (combined)
+         APPROACH + HIRING CTA (before results)
     ========================================== -->
-    <section class="specialties-impact" aria-labelledby="specialties-approach-heading">
+    <section class="specialties-approach" aria-labelledby="specialties-approach-heading">
       <div class="container">
-        <div class="specialties-impact__inner">
-          <div class="specialties-impact__intro reveal">
-            <h2 class="specialties-impact__title" id="specialties-approach-heading">Specialized Knowledge. Thoughtful Evaluation. Stronger Matches.</h2>
-            <p class="specialties-impact__text">An executive search requires understanding an organization&rsquo;s direction, leadership needs, and business priorities. A specialized professional search requires understanding the expertise and capabilities needed to deliver.</p>
-            <p class="specialties-impact__text">At every level, we look beyond titles and r&eacute;sum&eacute;s to understand what success requires&mdash;and who can make a meaningful contribution.</p>
-          </div>
-          <p class="specialties-impact__results-kicker reveal">Proven Results. Long-Term Partnerships.</p>
-          <div class="specialties-impact__stats reveal" aria-label="Key statistics">
-            <article class="specialties-impact__stat">
-              <p class="specialties-impact__stat-value">900+</p>
-              <p class="specialties-impact__stat-label">Successful Placements</p>
-            </article>
-            <article class="specialties-impact__stat">
-              <p class="specialties-impact__stat-value">93%</p>
-              <p class="specialties-impact__stat-label">Client Retention</p>
-            </article>
-            <article class="specialties-impact__stat">
-              <p class="specialties-impact__stat-value">87%</p>
-              <p class="specialties-impact__stat-label">Candidate Retention Over 5 Years</p>
-            </article>
-            <article class="specialties-impact__stat">
-              <p class="specialties-impact__stat-value">72%</p>
-              <p class="specialties-impact__stat-label">Hires Within 3 Candidates</p>
-            </article>
-            <article class="specialties-impact__stat">
-              <p class="specialties-impact__stat-value">42%</p>
-              <p class="specialties-impact__stat-label">Single Submission Placements</p>
-            </article>
-            <article class="specialties-impact__stat">
-              <p class="specialties-impact__stat-value">83%</p>
-              <p class="specialties-impact__stat-label">Placements from Passive Candidates</p>
-            </article>
-            <article class="specialties-impact__stat">
-              <p class="specialties-impact__stat-value">7+</p>
-              <p class="specialties-impact__stat-label">Years Average Client Tenure</p>
-            </article>
-          </div>
-          <div class="specialties-impact__cta reveal">
+        <div class="specialties-approach__inner reveal">
+          <h2 class="specialties-approach__title" id="specialties-approach-heading">Specialized Knowledge. Thoughtful Evaluation. Stronger Matches.</h2>
+          <p class="specialties-approach__text">An executive search requires understanding an organization&rsquo;s direction, leadership needs, and business priorities. A specialized professional search requires understanding the expertise and capabilities needed to deliver.</p>
+          <p class="specialties-approach__text">At every level, we look beyond titles and r&eacute;sum&eacute;s to understand what success requires&mdash;and who can make a meaningful contribution.</p>
+          <div class="specialties-approach__cta">
+            <h3 class="specialties-approach__cta-title">Let&rsquo;s Find the Talent You Need.</h3>
+            <p class="specialties-approach__cta-text">Whether you&rsquo;re hiring an executive to lead a function, a manager to strengthen a team, or a specialist with critical expertise, we&rsquo;d welcome a conversation about your goals.</p>
             <a href="contact.html" class="btn btn--primary btn--lg">Discuss Your Hiring Needs</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         STATS TICKER SECTION
+    ========================================== -->
+    <section class="stats-ticker-section" aria-label="Key statistics">
+      <div class="stats-ticker-container">
+        <div class="stats-ticker__title-box">
+          <h2 class="stats-ticker__title">Proven Results. <span class="stats-ticker__title-break">Long-Term Partnerships.</span></h2>
+        </div>
+
+        <div class="stats-ticker__divider" aria-hidden="true">
+          <i data-lucide="chevron-left" class="stats-ticker__chevron"></i>
+        </div>
+
+        <div class="stats-ticker__marquee">
+          <div class="stats-ticker__track">
+            <div class="stats-ticker__list">
+              <div class="stats-ticker__item">
+                <div class="stat__number">900+</div>
+                <div class="stats-ticker__item-label"><span>Successful</span><span>Placements</span></div>
+              </div>
+              <div class="stats-ticker__item">
+                <div class="stat__number">93%</div>
+                <div class="stats-ticker__item-label"><span>Client</span><span>Retention</span></div>
+              </div>
+              <div class="stats-ticker__item">
+                <div class="stat__number">87%</div>
+                <div class="stats-ticker__item-label"><span>Candidate Retention</span><span>Over 5 Years</span></div>
+              </div>
+              <div class="stats-ticker__item">
+                <div class="stat__number">72%</div>
+                <div class="stats-ticker__item-label"><span>Hires Within</span><span>3 Candidates</span></div>
+              </div>
+              <div class="stats-ticker__item">
+                <div class="stat__number">42%</div>
+                <div class="stats-ticker__item-label"><span>Single Submission</span><span>Placements</span></div>
+              </div>
+              <div class="stats-ticker__item">
+                <div class="stat__number">83%</div>
+                <div class="stats-ticker__item-label"><span>Placements from</span><span>Passive Candidates</span></div>
+              </div>
+              <div class="stats-ticker__item">
+                <div class="stat__number">7+</div>
+                <div class="stats-ticker__item-label"><span>Years Average</span><span>Client Tenure</span></div>
+              </div>
+            </div>
+            <div class="stats-ticker__list" aria-hidden="true">
+              <div class="stats-ticker__item">
+                <div class="stat__number">900+</div>
+                <div class="stats-ticker__item-label"><span>Successful</span><span>Placements</span></div>
+              </div>
+              <div class="stats-ticker__item">
+                <div class="stat__number">93%</div>
+                <div class="stats-ticker__item-label"><span>Client</span><span>Retention</span></div>
+              </div>
+              <div class="stats-ticker__item">
+                <div class="stat__number">87%</div>
+                <div class="stats-ticker__item-label"><span>Candidate Retention</span><span>Over 5 Years</span></div>
+              </div>
+              <div class="stats-ticker__item">
+                <div class="stat__number">72%</div>
+                <div class="stats-ticker__item-label"><span>Hires Within</span><span>3 Candidates</span></div>
+              </div>
+              <div class="stats-ticker__item">
+                <div class="stat__number">42%</div>
+                <div class="stats-ticker__item-label"><span>Single Submission</span><span>Placements</span></div>
+              </div>
+              <div class="stats-ticker__item">
+                <div class="stat__number">83%</div>
+                <div class="stats-ticker__item-label"><span>Placements from</span><span>Passive Candidates</span></div>
+              </div>
+              <div class="stats-ticker__item">
+                <div class="stat__number">7+</div>
+                <div class="stats-ticker__item-label"><span>Years Average</span><span>Client Tenure</span></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
