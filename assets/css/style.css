@@ -317,7 +317,6 @@
 .nav-link--active {
   color: var(--color-accent);
   font-weight: 700;
-  background: rgba(175, 39, 47, 0.08);
 }
 
 .nav-link--cta {
