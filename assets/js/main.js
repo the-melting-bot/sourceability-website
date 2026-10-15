@@ -35,6 +35,30 @@
     }, { passive: true });
   }
 
+  // --- ACTIVE NAV (current page) ---
+  function initActiveNav() {
+    const pathParts = window.location.pathname.split('/').filter(Boolean);
+    const file = pathParts[pathParts.length - 1] || 'index.html';
+    const inInsightsArticle = pathParts.includes('insights') && file.endsWith('.html') && file !== 'insights.html';
+    const currentFile = inInsightsArticle ? 'insights.html' : file;
+
+    document.querySelectorAll('.main-nav .nav-link, .mobile-nav .mobile-nav-link').forEach((link) => {
+      link.classList.remove('nav-link--active', 'mobile-nav-link--active');
+      const href = link.getAttribute('href');
+      if (!href || href.startsWith('http') || href.startsWith('tel:') || href.startsWith('mailto:')) return;
+
+      const linkFile = href.split('/').pop().split('#')[0] || 'index.html';
+      if (linkFile !== currentFile) return;
+
+      link.classList.add('nav-link--active');
+      if (link.classList.contains('mobile-nav-link')) {
+        link.classList.add('mobile-nav-link--active');
+      }
+    });
+  }
+
+  initActiveNav();
+
   // --- MOBILE NAV ---
   const mobileToggle = document.querySelector('.mobile-toggle');
   const mobileNav = document.querySelector('.mobile-nav');
