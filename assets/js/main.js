@@ -430,6 +430,97 @@
     return doc.body.innerHTML.trim();
   }
 
+  function buildJobShareMessage(title) {
+    return `I thought you might be interested in this opportunity with SourceAbility: ${title}`;
+  }
+
+  function linkedInShareUrl(url) {
+    return `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
+  }
+
+  function mailtoShareUrl(title, url) {
+    const subject = encodeURIComponent(`${title} — SourceAbility`);
+    const body = encodeURIComponent(`${buildJobShareMessage(title)}\n\n${url}`);
+    return `mailto:?subject=${subject}&body=${body}`;
+  }
+
+  function closeJobShareMenus(exceptMenu) {
+    document.querySelectorAll('.job-card__share-menu').forEach((menu) => {
+      if (menu === exceptMenu) return;
+      menu.hidden = true;
+      const btn = menu.closest('.job-card__share')?.querySelector('.job-card__share-btn');
+      if (btn) btn.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  function initJobShare() {
+    const list = document.getElementById('jobs-list');
+    if (!list || list.dataset.shareBound === '1') return;
+    list.dataset.shareBound = '1';
+
+    list.addEventListener('click', async (event) => {
+      const copyBtn = event.target.closest('[data-share-action="copy"]');
+      if (copyBtn) {
+        event.preventDefault();
+        const wrap = copyBtn.closest('.job-card__share');
+        const shareBtn = wrap?.querySelector('.job-card__share-btn');
+        const url = shareBtn?.dataset.shareUrl || '';
+        if (!url) return;
+        try {
+          await navigator.clipboard.writeText(url);
+          const label = copyBtn.textContent;
+          copyBtn.textContent = 'Link copied!';
+          window.setTimeout(() => {
+            copyBtn.textContent = label;
+          }, 2000);
+        } catch (e) {
+          window.prompt('Copy this link:', url);
+        }
+        closeJobShareMenus();
+        return;
+      }
+
+      const shareToggle = event.target.closest('.job-card__share-btn');
+      if (!shareToggle) return;
+
+      event.preventDefault();
+      const title = shareToggle.dataset.shareTitle || 'Job opening';
+      const url = shareToggle.dataset.shareUrl || '';
+      if (!url) return;
+
+      const menu = shareToggle.closest('.job-card__share')?.querySelector('.job-card__share-menu');
+      const canNativeShare = typeof navigator.share === 'function';
+
+      if (canNativeShare && window.matchMedia('(max-width: 767px)').matches) {
+        try {
+          await navigator.share({
+            title: `${title} — SourceAbility`,
+            text: buildJobShareMessage(title),
+            url
+          });
+        } catch (err) {
+          if (err?.name === 'AbortError') return;
+        }
+        return;
+      }
+
+      if (!menu) return;
+      const willOpen = menu.hidden;
+      closeJobShareMenus(willOpen ? menu : null);
+      menu.hidden = !willOpen;
+      shareToggle.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    });
+
+    document.addEventListener('click', (event) => {
+      if (event.target.closest('.job-card__share')) return;
+      closeJobShareMenus();
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeJobShareMenus();
+    });
+  }
+
   function initJobCardExpand() {
     const list = document.getElementById('jobs-list');
     if (!list || list.dataset.expandBound === '1') return;
@@ -526,7 +617,28 @@
                   <i data-lucide="chevron-down" class="job-card__chevron" aria-hidden="true"></i>
                 </span>` : ''}
               </button>
-              <a href="${link}" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--primary job-card__apply">Apply Now</a>
+              <div class="job-card__actions">
+                <div class="job-card__share">
+                  <button
+                    type="button"
+                    class="btn btn--sm btn--outline-dark job-card__share-btn"
+                    aria-label="Share ${title}"
+                    aria-expanded="false"
+                    aria-haspopup="true"
+                    data-share-title="${title}"
+                    data-share-url="${link}"
+                  >
+                    <i data-lucide="share-2" class="job-card__share-icon" aria-hidden="true"></i>
+                    Share
+                  </button>
+                  <div class="job-card__share-menu" hidden role="menu" aria-label="Share options">
+                    <button type="button" class="job-card__share-menu-item" role="menuitem" data-share-action="copy">Copy link</button>
+                    <a class="job-card__share-menu-item" role="menuitem" href="${escapeHtml(mailtoShareUrl(job.title, job.link))}">Email</a>
+                    <a class="job-card__share-menu-item" role="menuitem" href="${escapeHtml(linkedInShareUrl(job.link))}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                  </div>
+                </div>
+                <a href="${link}" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--primary job-card__apply">Apply Now</a>
+              </div>
             </div>
             ${hasDescription ? `
             <div class="job-card__details" hidden>
@@ -538,6 +650,7 @@
 
       jobsList.innerHTML = html;
       initJobCardExpand();
+      initJobShare();
       if (typeof lucide !== 'undefined') lucide.createIcons();
     } catch (err) {
       console.log('RSS feed unavailable, showing fallback.', err);
