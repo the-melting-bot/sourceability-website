@@ -4347,6 +4347,24 @@ p.salary-table-footer a {
   filter: none;
 }
 
+.cta-banner-new__actions--dual {
+  gap: 0.85rem;
+}
+
+.cta-banner-new__actions--dual .btn.btn--secondary {
+  background: #fff;
+  color: var(--color-accent);
+  border: 2px solid var(--color-accent);
+  box-shadow: 0 2px 10px rgba(15, 26, 46, 0.06);
+}
+
+.cta-banner-new__actions--dual .btn.btn--secondary:hover,
+.cta-banner-new__actions--dual .btn.btn--secondary:focus-visible {
+  background: var(--color-navy);
+  color: #fff;
+  border-color: var(--color-navy);
+}
+
 @media (max-width: 639px) {
   .cta-banner-new__actions--multi {
     flex-direction: column;

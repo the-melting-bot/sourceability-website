@@ -82,7 +82,7 @@
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="./assets/css/base.css">
-  <link rel="stylesheet" href="./assets/css/style.css?v=1.0.6">
+  <link rel="stylesheet" href="./assets/css/style.css?v=1.0.10">
 
   <!-- GSAP -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
@@ -279,97 +279,54 @@
       padding: clamp(1.5rem, 3vw, 2.25rem) 0 clamp(2.5rem, 5vw, 4rem);
     }
 
-    .about-tanya__grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: clamp(2rem, 4vw, 3.5rem);
-      align-items: stretch;
-    }
-
-    .about-tanya__aside,
-    .about-tanya__copy {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      height: 100%;
-    }
-
-    .about-tanya__aside {
-      align-items: flex-start;
-      text-align: left;
-    }
-
-    .about-tanya__copy {
-      align-items: stretch;
-      text-align: left;
-    }
-
-    .about-tanya__aside-lead {
-      display: flex;
-      flex: 1 1 auto;
-      flex-direction: column;
-      align-items: stretch;
-      justify-content: flex-start;
-      width: 100%;
-      min-height: 0;
-    }
-
-    .about-tanya__aside-text {
-      flex: 0 0 auto;
-      width: 100%;
-      margin-top: auto;
-      padding-top: clamp(1.25rem, 2.5vw, 2rem);
-    }
-
-    .about-tanya__why {
-      margin: 0 0 var(--space-2);
-      font-family: var(--font-display);
-      font-size: clamp(1.1rem, 1rem + 0.35vw, 1.3rem);
-      font-weight: 700;
-      color: #101213;
-      letter-spacing: -0.01em;
-      line-height: 1.25;
-      text-wrap: balance;
-      text-align: left;
-    }
-
-    .about-tanya__photo {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      flex: 1 1 auto;
-      width: 100%;
-      min-height: clamp(17rem, 38vh, 26rem);
-      border-radius: var(--radius-lg);
+    .about-relationship-band {
       background: var(--color-navy);
-      color: #fff;
+      padding: clamp(2rem, 4vw, 2.75rem) 0;
+    }
+
+    .about-relationship-band__text {
+      margin: 0 auto;
+      max-width: 44rem;
       text-align: center;
-      padding: var(--space-6);
-      box-shadow: 0 12px 32px rgba(15, 26, 46, 0.18);
-    }
-
-    .about-tanya__initials {
       font-family: var(--font-display);
-      font-size: clamp(3rem, 6vw, 4.25rem);
-      font-weight: 700;
-      letter-spacing: -0.04em;
-      line-height: 1;
+      font-size: clamp(1.15rem, 1rem + 0.55vw, 1.45rem);
+      font-weight: 600;
+      line-height: 1.45;
       color: #fff;
+      text-wrap: balance;
     }
 
-    .about-tanya__photo-note {
-      margin: 0.65rem 0 0;
-      font-family: var(--font-body);
-      font-size: 0.72rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.62);
-      line-height: 1.3;
+    .about-tanya__container {
+      max-width: 52rem;
+    }
+
+    .about-tanya__layout {
+      display: grid;
+      grid-template-columns: minmax(0, 11.5rem) minmax(0, 1fr);
+      gap: clamp(1.5rem, 3.5vw, 2.5rem);
+      align-items: start;
+    }
+
+    .about-tanya__figure {
+      margin: 0;
+    }
+
+    .about-tanya__portrait {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center 22%;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 12px 32px rgba(15, 26, 46, 0.16);
+    }
+
+    .about-tanya__content {
+      min-width: 0;
     }
 
     .about-tanya__quote {
-      margin: 0;
+      margin: 0 0 var(--space-6);
       padding: 0 clamp(1.35rem, 3.5vw, 2rem) 0 0;
       border: none;
       font-family: var(--font-body);
@@ -380,6 +337,14 @@
       position: relative;
       isolation: isolate;
       overflow: visible;
+    }
+
+    .about-tanya__quote--featured {
+      font-family: var(--font-display);
+      font-size: clamp(1.05rem, 0.95rem + 0.45vw, 1.25rem);
+      font-weight: 600;
+      line-height: 1.55;
+      color: #101213;
     }
 
     .about-tanya__quote > * {
@@ -461,9 +426,15 @@
       margin-bottom: 0;
     }
 
-    .about-tanya__story p.about-tanya__story-tagline {
-      color: var(--color-accent);
+    .about-tanya__story p.about-tanya__story-callout {
+      margin: var(--space-5) 0;
+      padding: 0.85rem 1rem;
+      border-left: 3px solid var(--color-accent);
+      background: rgba(175, 39, 47, 0.06);
+      font-family: var(--font-display);
+      font-size: clamp(1.05rem, 1rem + 0.25vw, 1.2rem);
       font-weight: 700;
+      color: var(--color-navy);
     }
 
     .about-kicker {
@@ -503,27 +474,9 @@
     }
 
     .about-value {
-      display: grid;
-      grid-template-columns: 2.35rem minmax(0, 1fr);
-      gap: 0.85rem;
-      align-items: start;
-      padding: 1.15rem 0;
+      padding: 1.15rem 0 1.15rem 1rem;
       border-bottom: 1px solid rgba(16, 18, 19, 0.1);
-    }
-
-    .about-value__num {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 2.1rem;
-      height: 2.1rem;
-      border-radius: 999px;
-      background: var(--color-accent);
-      color: #fff;
-      font-family: var(--font-body);
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.02em;
+      border-left: 3px solid rgba(175, 39, 47, 0.35);
     }
 
     .about-value__title {
@@ -571,20 +524,10 @@
       width: 100%;
     }
 
-    .about-close__kicker {
-      margin: 0 0 var(--space-3);
-      font-family: var(--font-body);
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.72);
-    }
-
     .about-close__title {
-      margin: 0;
+      margin: 0 0 var(--space-4);
       font-family: var(--font-display);
-      font-size: clamp(1.65rem, 1.25rem + 1.75vw, 2.85rem);
+      font-size: clamp(1.65rem, 1.25rem + 1.1vw, 2.35rem);
       font-weight: 700;
       line-height: 1.2;
       letter-spacing: -0.02em;
@@ -592,6 +535,15 @@
       max-width: none;
       width: 100%;
       text-wrap: balance;
+    }
+
+    .about-close__lead-text {
+      margin: 0;
+      max-width: 42rem;
+      font-family: var(--font-body);
+      font-size: clamp(1rem, 0.92rem + 0.25vw, 1.125rem);
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.82);
     }
 
     .about-close__text {
@@ -619,7 +571,7 @@
 
       .about-hero-split__grid,
       .about-intro__grid,
-      .about-tanya__grid,
+      .about-tanya__layout,
       .about-values__grid {
         grid-template-columns: 1fr;
         min-height: auto;
@@ -638,31 +590,9 @@
         padding: var(--space-8) var(--space-6);
       }
 
-      .about-tanya__aside {
-        margin-bottom: var(--space-4);
-        height: auto;
-      }
-
-      .about-tanya__copy {
-        height: auto;
-      }
-
-      .about-tanya__aside,
-      .about-tanya__copy {
-        height: auto;
-      }
-
-      .about-tanya__aside-lead {
-        flex: none;
-      }
-
-      .about-tanya__photo {
-        min-height: 14rem;
-      }
-
-      .about-tanya__aside-text {
-        margin-top: var(--space-6);
-        padding-top: 0;
+      .about-tanya__figure {
+        max-width: 14rem;
+        margin-inline: auto;
       }
 
     }
@@ -769,47 +699,37 @@
           </div>
           <div class="about-intro__copy">
             <p class="about-intro__text reveal">For more than 20 years, we have helped organizations identify and attract professionals who bring the expertise, leadership capability, and long-term alignment needed to make a meaningful impact.</p>
-            <p class="about-intro__text reveal"><span class="about-intro__text-lead">Our work is relationship-driven, highly personalized,</span> and grounded in a simple belief: successful recruiting is not about presenting the most candidates. It is about understanding what an organization truly needs and finding the right person to help move it forward.</p>
+            <p class="about-intro__text reveal">Successful recruiting is not about presenting the most candidates. It is about understanding what an organization truly needs and finding the right person to help move it forward.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="about-section-divider">
-      <div class="about-section-divider__inner">
-        <span class="about-section-divider__line" aria-hidden="true"></span>
-        <p class="about-section-divider__label">Our Founder</p>
-        <span class="about-section-divider__line" aria-hidden="true"></span>
+    <section class="about-relationship-band" aria-label="Relationship-driven recruiting">
+      <div class="container">
+        <p class="about-relationship-band__text reveal">Our work is relationship-driven, highly personalized, and grounded in a simple belief: the best outcomes come from understanding people, priorities, and what long-term success should look like.</p>
       </div>
-    </div>
+    </section>
 
     <section class="about-tanya" aria-labelledby="tanya-heading">
-      <div class="container">
-        <div class="about-tanya__grid">
-          <aside class="about-tanya__aside" aria-labelledby="tanya-why-heading">
-            <div class="about-tanya__aside-lead">
-              <div class="about-tanya__photo reveal" aria-hidden="true">
-                <span class="about-tanya__initials">TC</span>
-                <p class="about-tanya__photo-note">Photo coming soon</p>
-              </div>
-            </div>
-            <div class="about-tanya__aside-text">
-              <h3 class="about-tanya__why reveal" id="tanya-why-heading">Why I Do What I Do</h3>
-              <blockquote class="about-tanya__quote reveal">
-                <p>&ldquo;I enjoy working with organizations and individuals where relationships matter, reputations matter, and decisions have a long-term impact.</p>
-                <p>The best hiring outcomes come from looking beyond a r&eacute;sum&eacute; or job description. They require a clear understanding of the organization&rsquo;s goals, the candidate&rsquo;s capabilities and motivations, and what long-term success should look like for both.&rdquo;</p>
-                <cite>&mdash; Tanya Calkins</cite>
-              </blockquote>
-            </div>
-          </aside>
-          <div class="about-tanya__copy">
+      <div class="container about-tanya__container">
+        <div class="about-tanya__layout">
+          <figure class="about-tanya__figure reveal">
+            <img class="about-tanya__portrait" src="./assets/images/hero-about.jpg" alt="Tanya Calkins, Founder and President of SourceAbility" width="400" height="500" loading="lazy">
+          </figure>
+          <div class="about-tanya__content">
             <h2 class="about-tanya__title reveal" id="tanya-heading">Hi, I&rsquo;m Tanya.</h2>
             <p class="about-tanya__role reveal">Founder &amp; President of SourceAbility</p>
+            <blockquote class="about-tanya__quote about-tanya__quote--featured reveal">
+              <p>I enjoy working with organizations and individuals where relationships matter, reputations matter, and decisions have a long-term impact.</p>
+              <p>The best hiring outcomes come from looking beyond a r&eacute;sum&eacute; or job description. They require a clear understanding of the organization&rsquo;s goals, the candidate&rsquo;s capabilities and motivations, and what long-term success should look like for both.</p>
+              <cite>&mdash; Tanya Calkins</cite>
+            </blockquote>
             <div class="about-tanya__story">
               <p class="reveal">I founded SourceAbility because I wanted recruiting to feel more personal and meaningful&mdash;for both the organizations hiring and the professionals considering a career move.</p>
               <p class="reveal">Earlier in my career, I worked in a traditional staffing environment where success was often measured by numbers, activity, and volume. While I gained valuable experience, I also saw how easily the people behind those numbers could get lost in the process.</p>
               <p class="reveal">I wanted to step back from that transactional approach and create a company where relationships came first&mdash;where I could take the time to understand an organization&rsquo;s goals, learn what truly matters to a candidate, and remain personally involved throughout the process.</p>
-              <p class="reveal about-tanya__story-tagline">That vision became SourceAbility.</p>
+              <p class="reveal about-tanya__story-callout">That vision became SourceAbility.</p>
               <p class="reveal">Throughout more than 20 years in recruiting, I have built lasting relationships with clients and professionals across Data, Technology, and Financial Services. Many have continued through multiple hires, career moves, and stages of organizational growth.</p>
               <p class="reveal">One of the most rewarding parts of my work is helping someone join an organization where they can thrive, take a meaningful step forward, move into leadership, or increase their earning potential.</p>
               <p class="reveal">It is equally rewarding to reconnect with a client a year or two after a placement and hear how much that person has contributed to the organization. Those are the moments that remind me why this work matters: the right career move can change someone&rsquo;s future, and the right hire can strengthen an organization for years to come.</p>
@@ -827,42 +747,36 @@
           <h2 class="about-values__title reveal" id="values-heading">How we work matters</h2>
           <div class="about-values__grid">
             <article class="about-value reveal">
-              <span class="about-value__num" aria-hidden="true">01</span>
               <div>
                 <h3 class="about-value__title">Integrity</h3>
                 <p class="about-value__text">Honesty, sound judgment, and doing what is right.</p>
               </div>
             </article>
             <article class="about-value reveal">
-              <span class="about-value__num" aria-hidden="true">02</span>
               <div>
                 <h3 class="about-value__title">Partnership</h3>
                 <p class="about-value__text">A relationship, not a transaction.</p>
               </div>
             </article>
             <article class="about-value reveal">
-              <span class="about-value__num" aria-hidden="true">03</span>
               <div>
                 <h3 class="about-value__title">Transparency</h3>
                 <p class="about-value__text">Candid feedback and consistent communication.</p>
               </div>
             </article>
             <article class="about-value reveal">
-              <span class="about-value__num" aria-hidden="true">04</span>
               <div>
                 <h3 class="about-value__title">Quality Over Quantity</h3>
                 <p class="about-value__text">Every introduction should be well considered.</p>
               </div>
             </article>
             <article class="about-value reveal">
-              <span class="about-value__num" aria-hidden="true">05</span>
               <div>
                 <h3 class="about-value__title">Commitment</h3>
                 <p class="about-value__text">Personal accountability, persistence, and follow-through.</p>
               </div>
             </article>
             <article class="about-value reveal">
-              <span class="about-value__num" aria-hidden="true">06</span>
               <div>
                 <h3 class="about-value__title">Respect</h3>
                 <p class="about-value__text">Fair and professional treatment in every interaction.</p>
@@ -876,8 +790,8 @@
     <section class="about-close" aria-label="The SourceAbility Difference">
       <div class="about-close__difference">
         <div class="about-close__lead reveal">
-          <p class="about-close__kicker">The SourceAbility Difference</p>
-          <h2 class="about-close__title">SourceAbility offers the experience and market reach of a long-established search firm with the personal attention and flexibility of a boutique partner.</h2>
+          <h2 class="about-close__title">The SourceAbility Difference</h2>
+          <p class="about-close__lead-text">SourceAbility offers the experience and market reach of a long-established search firm with the personal attention and flexibility of a boutique partner.</p>
         </div>
         <div class="about-close__body">
           <p class="about-close__text reveal">Our clients work directly with the person leading the search. Our candidates receive honest communication and thoughtful representation. Every engagement is approached with care because our reputation&mdash;and yours&mdash;is reflected in every interaction.</p>
@@ -893,11 +807,9 @@
           <div class="reveal">
             <h2 class="cta-banner-new__title">Let&rsquo;s <span class="cta-banner-new__mark">Start the Conversation</span></h2>
             <p class="cta-banner-new__text">Whether you&rsquo;re hiring today, planning for future growth, or simply looking for a trusted recruiting partner, we&rsquo;d welcome the opportunity to learn more about your organization and discuss how we can help.<span class="cta-banner-new__text-closing">We would love to hear from you!</span></p>
-            <div class="cta-banner-new__actions cta-banner-new__actions--multi">
+            <div class="cta-banner-new__actions cta-banner-new__actions--multi cta-banner-new__actions--dual">
               <a href="https://calendly.com/tanyacalkins" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg">Schedule a Meeting</a>
-              <a href="https://www.linkedin.com/in/tanyacalkins" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg">Connect on LinkedIn</a>
-              <a href="contact.html#contact-form" class="btn btn--primary btn--lg">Email Us</a>
-              <a href="tel:+18664129178" class="btn btn--primary btn--lg js-call-us" data-call-dialog="call-us-dialog" aria-haspopup="dialog" aria-controls="call-us-dialog">Call Us</a>
+              <a href="contact.html#contact-form" class="btn btn--secondary btn--lg">Email Us</a>
             </div>
           </div>
         </div>
