@@ -484,6 +484,7 @@
       if (!shareToggle) return;
 
       event.preventDefault();
+      event.stopPropagation();
       const title = shareToggle.dataset.shareTitle || 'Job opening';
       const url = shareToggle.dataset.shareUrl || '';
       if (!url) return;
@@ -527,6 +528,8 @@
     list.dataset.expandBound = '1';
 
     list.addEventListener('click', (event) => {
+      if (event.target.closest('.job-card__share, .job-card__apply')) return;
+
       const toggle = event.target.closest('.job-card__toggle');
       if (!toggle) return;
 
@@ -621,20 +624,31 @@
                 <div class="job-card__share">
                   <button
                     type="button"
-                    class="btn btn--sm btn--outline-dark job-card__share-btn"
+                    class="btn btn--sm job-card__share-btn"
                     aria-label="Share ${title}"
                     aria-expanded="false"
                     aria-haspopup="true"
                     data-share-title="${title}"
                     data-share-url="${link}"
                   >
-                    <i data-lucide="share-2" class="job-card__share-icon" aria-hidden="true"></i>
+                    <span class="job-card__share-icon-wrap" aria-hidden="true">
+                      <i data-lucide="share-2" class="job-card__share-icon"></i>
+                    </span>
                     Share
                   </button>
                   <div class="job-card__share-menu" hidden role="menu" aria-label="Share options">
-                    <button type="button" class="job-card__share-menu-item" role="menuitem" data-share-action="copy">Copy link</button>
-                    <a class="job-card__share-menu-item" role="menuitem" href="${escapeHtml(mailtoShareUrl(job.title, job.link))}">Email</a>
-                    <a class="job-card__share-menu-item" role="menuitem" href="${escapeHtml(linkedInShareUrl(job.link))}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <button type="button" class="job-card__share-menu-item" role="menuitem" data-share-action="copy">
+                      <i data-lucide="link-2" aria-hidden="true"></i>
+                      Copy link
+                    </button>
+                    <a class="job-card__share-menu-item" role="menuitem" href="${escapeHtml(mailtoShareUrl(job.title, job.link))}">
+                      <i data-lucide="mail" aria-hidden="true"></i>
+                      Email
+                    </a>
+                    <a class="job-card__share-menu-item" role="menuitem" href="${escapeHtml(linkedInShareUrl(job.link))}" target="_blank" rel="noopener noreferrer">
+                      <i data-lucide="linkedin" aria-hidden="true"></i>
+                      LinkedIn
+                    </a>
                   </div>
                 </div>
                 <a href="${link}" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--primary job-card__apply">Apply Now</a>
