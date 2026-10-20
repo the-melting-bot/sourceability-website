@@ -1445,12 +1445,16 @@
 }
 
 @media (min-width: 768px) {
+  .rep-searches__title {
+    line-height: 1.05;
+  }
+
   .rep-searches__title-note {
-    margin-top: 0.1rem;
+    margin-top: -0.7rem;
     white-space: nowrap;
     font-size: clamp(0.65rem, 0.54rem + 0.42vw, 1rem);
     letter-spacing: -0.02em;
-    line-height: 1.15;
+    line-height: 1.1;
     overflow-wrap: normal;
   }
 }
