@@ -1363,6 +1363,11 @@
 
   .rep-searches__title-note {
     margin-top: 0.35rem;
+    white-space: nowrap;
+    font-size: clamp(0.58rem, 0.48rem + 0.38vw, 0.72rem);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    overflow-wrap: normal;
   }
 
   .rep-searches__text {
@@ -1441,11 +1446,11 @@
   font-family: var(--font-display);
   font-weight: 700;
   color: var(--color-navy);
-  font-size: clamp(0.875rem, 0.75rem + 0.45vw, 1.1rem);
+  font-size: clamp(0.8rem, 0.72rem + 0.35vw, 0.95rem);
   letter-spacing: -0.015em;
   white-space: normal;
-  line-height: 1.2;
-  overflow-wrap: anywhere;
+  line-height: 1.25;
+  overflow-wrap: break-word;
 }
 
 .rep-searches__title-note--spacer {
