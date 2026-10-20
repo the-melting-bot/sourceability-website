@@ -1446,11 +1446,11 @@
 
 @media (min-width: 768px) {
   .rep-searches__title-note {
-    margin-top: 0.35rem;
+    margin-top: 0.1rem;
     white-space: nowrap;
-    font-size: clamp(0.58rem, 0.48rem + 0.38vw, 0.72rem);
+    font-size: clamp(0.65rem, 0.54rem + 0.42vw, 1rem);
     letter-spacing: -0.02em;
-    line-height: 1.2;
+    line-height: 1.15;
     overflow-wrap: normal;
   }
 }
