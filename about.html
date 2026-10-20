@@ -80,7 +80,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-  <!-- Stylesheets (about founder block v3) -->
+  <!-- Stylesheets (about founder block v4) -->
   <link rel="stylesheet" href="./assets/css/base.css">
   <link rel="stylesheet" href="./assets/css/style.css?v=1.0.21">
 
@@ -563,44 +563,42 @@
     }
 
     .about-tanya__story-after p:first-child {
-      padding-top: clamp(0.15rem, 0.5vw, 0.35rem);
+      padding-top: clamp(1rem, 2.1vw, 1.35rem);
     }
 
     .about-tanya__vision {
-      display: grid;
+      display: flex;
+      flex-direction: column;
       width: 100%;
-      margin: clamp(1.35rem, 2.8vw, 2rem) 0 0;
-      padding: clamp(0.85rem, 1.8vw, 1.25rem) 0 0;
+      margin: clamp(1.25rem, 2.5vw, 1.85rem) 0 0;
+      padding: 0;
       border: 0;
-      row-gap: clamp(0.7rem, 1.25vw, 0.9rem);
     }
 
     .about-tanya__story .about-tanya__story-tagline {
-      grid-column: 1;
-      justify-self: end;
       margin: 0;
-      padding: 0;
+      padding: clamp(1rem, 2.1vw, 1.35rem) 0;
       border: 0;
       max-width: 100%;
       font-family: var(--font-body);
-      font-size: clamp(0.98rem, 0.9rem + 0.2vw, 1.06rem);
-      font-weight: 600;
-      color: #5a6066;
-      text-align: right;
+      font-size: clamp(1rem, 0.92rem + 0.28vw, 1.125rem);
+      font-weight: 700;
+      color: var(--color-accent);
+      text-align: left;
       line-height: 1.45;
     }
 
     .about-tanya__story-tagline-brand {
-      font-weight: 700;
-      color: #101213;
+      font-weight: inherit;
+      color: inherit;
     }
 
     .about-tanya__story-rule {
-      grid-column: 1;
       display: block;
+      flex: 0 0 auto;
       width: 100%;
       height: 1px;
-      margin: 0 0 clamp(1.35rem, 2.5vw, 1.75rem);
+      margin: 0;
       padding: 0;
       border: 0;
       background: rgba(16, 18, 19, 0.12);
@@ -969,6 +967,7 @@
               <p class="reveal">Earlier in my career, I worked in a traditional staffing environment where success was often measured by numbers, activity, and volume. While I gained valuable experience, I also saw how easily the people behind those numbers could get lost in the process.</p>
               <p class="reveal">I wanted to step back from that transactional approach and create a company where relationships came first&mdash;where I could take the time to understand an organization&rsquo;s goals, learn what truly matters to a candidate, and remain personally involved throughout the process.</p>
               <div class="about-tanya__vision reveal">
+                <hr class="about-tanya__story-rule" aria-hidden="true">
                 <p class="about-tanya__story-tagline">That vision became <span class="about-tanya__story-tagline-brand">SourceAbility</span>.</p>
                 <hr class="about-tanya__story-rule" aria-hidden="true">
               </div>
