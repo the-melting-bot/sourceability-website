@@ -1350,17 +1350,18 @@
     grid-template-rows: repeat(5, auto);
     gap: clamp(var(--space-6), 3vw, var(--space-10));
     align-items: stretch;
+    justify-items: stretch;
   }
 
   .rep-searches__card {
     display: grid;
     grid-row: span 5;
     grid-template-rows: subgrid;
+    justify-self: stretch;
     gap: var(--space-4);
   }
 
   .rep-searches__title-note {
-    white-space: normal;
     margin-top: 0.35rem;
   }
 
@@ -1442,8 +1443,9 @@
   color: var(--color-navy);
   font-size: clamp(0.875rem, 0.75rem + 0.45vw, 1.1rem);
   letter-spacing: -0.015em;
-  white-space: nowrap;
+  white-space: normal;
   line-height: 1.2;
+  overflow-wrap: anywhere;
 }
 
 .rep-searches__title-note--spacer {
