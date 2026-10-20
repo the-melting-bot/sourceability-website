@@ -276,60 +276,88 @@
 
     .about-tanya {
       background: #f9f7f2;
-      padding: clamp(2rem, 4vw, 3rem) 0 clamp(2.5rem, 5vw, 4rem);
+      padding: clamp(2.75rem, 5vw, 4.25rem) 0 clamp(3rem, 6vw, 4.75rem);
+    }
+
+    .about-tanya .container {
+      max-width: 72rem;
+      padding-inline: clamp(1.75rem, 5.5vw, 4.5rem);
+    }
+
+    .about-tanya__frame {
+      display: grid;
+      grid-template-columns: minmax(0, 17.5rem) minmax(0, 1fr);
+      column-gap: clamp(2.75rem, 5vw, 4.75rem);
+      row-gap: clamp(2rem, 3.5vw, 2.75rem);
+      align-items: start;
     }
 
     .about-tanya__masthead {
+      grid-column: 1 / -1;
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 17.5rem) minmax(0, 1fr);
+      column-gap: clamp(2.75rem, 5vw, 4.75rem);
       align-items: end;
-      gap: clamp(0.75rem, 2vw, 1.5rem);
-      padding-bottom: clamp(1rem, 2vw, 1.35rem);
-      margin-bottom: clamp(1.75rem, 3.5vw, 2.75rem);
-      border-bottom: 1px solid rgba(16, 18, 19, 0.12);
+      padding-bottom: clamp(1.15rem, 2vw, 1.5rem);
+      margin-bottom: clamp(0.35rem, 1vw, 0.65rem);
+      border-bottom: 1px solid rgba(16, 18, 19, 0.11);
     }
 
     .about-tanya__kicker {
       margin: 0;
+      grid-column: 1;
       font-family: var(--font-body);
-      font-size: clamp(0.68rem, 0.62rem + 0.2vw, 0.78rem);
+      font-size: clamp(0.65rem, 0.6rem + 0.15vw, 0.72rem);
       font-weight: 700;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--color-accent);
-      line-height: 1.35;
+      line-height: 1.45;
+      max-width: 9rem;
+    }
+
+    .about-tanya__masthead-main {
+      grid-column: 2;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: clamp(1rem, 3vw, 2.5rem);
+      min-width: 0;
     }
 
     .about-tanya__masthead .about-tanya__title {
       margin: 0;
+      flex: 1 1 auto;
+      min-width: 0;
       font-family: var(--font-display);
-      font-size: clamp(2.15rem, 1.5rem + 2.5vw, 3.35rem);
+      font-size: clamp(2.35rem, 1.65rem + 2.2vw, 3.25rem);
       font-weight: 700;
       color: #101213;
       letter-spacing: -0.03em;
-      line-height: 1.08;
-      text-align: center;
+      line-height: 1.05;
+      text-align: left;
     }
 
     .about-tanya__masthead .about-tanya__role {
       margin: 0;
+      flex: 0 0 auto;
+      max-width: 11.5rem;
       font-family: var(--font-body);
-      font-size: clamp(0.62rem, 0.58rem + 0.18vw, 0.72rem);
+      font-size: clamp(0.58rem, 0.54rem + 0.12vw, 0.66rem);
       font-weight: 700;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.11em;
       text-transform: uppercase;
       color: var(--color-accent);
-      line-height: 1.4;
+      line-height: 1.45;
       text-align: right;
-      justify-self: end;
-      max-width: 14rem;
     }
 
-    .about-tanya__grid {
-      display: grid;
-      grid-template-columns: minmax(0, 21rem) minmax(0, 1fr);
-      gap: clamp(2rem, 4vw, 4rem);
-      align-items: start;
+    .about-tanya__aside {
+      grid-column: 1;
+    }
+
+    .about-tanya__copy {
+      grid-column: 2;
     }
 
     .about-tanya__aside,
@@ -379,13 +407,14 @@
       justify-content: center;
       position: relative;
       width: 100%;
+      max-width: 17.5rem;
       aspect-ratio: 1;
       border-radius: 0;
       background: var(--color-navy);
       color: #fff;
       text-align: center;
       padding: var(--space-6);
-      box-shadow: 0 10px 28px rgba(15, 26, 46, 0.14);
+      box-shadow: none;
       overflow: hidden;
     }
 
@@ -443,12 +472,12 @@
 
     .about-tanya__quote {
       margin: 0;
-      padding: 0.35rem clamp(0.5rem, 2vw, 1rem) 0 0;
+      padding: 0.15rem 0 0;
       border: none;
-      font-family: var(--font-body);
-      font-size: clamp(0.95rem, 0.9rem + 0.15vw, 1.05rem);
-      line-height: 1.65;
-      color: #5c6166;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(0.92rem, 0.86rem + 0.18vw, 1.02rem);
+      line-height: 1.68;
+      color: #646a70;
       width: 100%;
       position: relative;
       isolation: isolate;
@@ -466,7 +495,7 @@
       font-size: clamp(3.25rem, 8vw, 5.5rem);
       font-weight: 700;
       line-height: 1;
-      color: rgba(175, 39, 47, 0.22);
+      color: rgba(175, 39, 47, 0.18);
       font-style: normal;
       position: absolute;
       z-index: 0;
@@ -476,8 +505,8 @@
 
     .about-tanya__quote::before {
       content: "\201C";
-      top: -0.2rem;
-      left: clamp(-3.25rem, -8vw, -1.85rem);
+      top: -0.35rem;
+      left: -0.15rem;
     }
 
     .about-tanya__quote p {
@@ -493,38 +522,48 @@
 
     .about-tanya__quote p:last-of-type::after {
       content: "\201D";
-      right: clamp(-0.85rem, -1.5vw, -0.15rem);
+      right: 0.1rem;
       bottom: 0;
       display: block;
       height: 0;
       line-height: 0;
       overflow: visible;
-      transform: translateY(clamp(1rem, 0.35em + 0.65rem, 1.45rem));
+      transform: translateY(clamp(0.85rem, 0.3em + 0.55rem, 1.25rem));
     }
 
     .about-tanya__quote cite {
       display: block;
-      margin-top: var(--space-4);
+      margin-top: var(--space-5);
+      font-family: var(--font-body);
       font-style: normal;
       font-weight: 700;
-      font-size: var(--text-sm);
+      font-size: clamp(0.88rem, 0.84rem + 0.12vw, 0.95rem);
       color: #101213;
-      text-align: right;
+      text-align: left;
     }
 
     .about-tanya__story p {
-      margin: 0 0 var(--space-5);
+      margin: 0 0 clamp(1.15rem, 2vw, 1.45rem);
       font-family: var(--font-body);
-      font-size: clamp(0.95rem, 0.9rem + 0.12vw, 1.0625rem);
-      line-height: 1.7;
-      color: #5c6166;
+      font-size: clamp(0.94rem, 0.88rem + 0.15vw, 1.05rem);
+      line-height: 1.75;
+      color: #5a6066;
     }
 
     .about-tanya__story p.about-tanya__story-lead {
-      font-size: clamp(1.05rem, 0.95rem + 0.35vw, 1.2rem);
-      line-height: 1.65;
+      margin-bottom: clamp(1.25rem, 2.2vw, 1.6rem);
+      font-size: clamp(1.02rem, 0.94rem + 0.28vw, 1.125rem);
+      line-height: 1.72;
       color: #101213;
-      font-weight: 400;
+      font-weight: 500;
+    }
+
+    .about-tanya__story-after p {
+      margin-top: 0;
+    }
+
+    .about-tanya__story-after p:first-child {
+      padding-top: clamp(0.15rem, 0.5vw, 0.35rem);
     }
 
     .about-tanya__story p:last-child {
@@ -532,27 +571,26 @@
     }
 
     .about-tanya__vision {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      align-items: center;
-      gap: clamp(0.75rem, 2vw, 1.25rem);
-      margin: clamp(1.5rem, 3vw, 2rem) 0;
-    }
-
-    .about-tanya__vision-line {
-      display: block;
-      height: 1px;
-      background: rgba(16, 18, 19, 0.14);
+      margin: clamp(0.35rem, 1vw, 0.65rem) 0 0;
     }
 
     .about-tanya__story-tagline {
-      margin: 0;
+      margin: 0 0 clamp(0.85rem, 1.5vw, 1.05rem);
       font-family: var(--font-body);
-      font-size: clamp(1rem, 0.92rem + 0.25vw, 1.125rem);
+      font-size: clamp(0.98rem, 0.9rem + 0.22vw, 1.08rem);
       font-weight: 700;
       color: var(--color-accent);
-      text-align: center;
-      white-space: nowrap;
+      text-align: right;
+    }
+
+    .about-tanya__story-rule {
+      display: block;
+      width: 100%;
+      height: 1px;
+      margin: 0 0 clamp(1.35rem, 2.5vw, 1.75rem);
+      padding: 0;
+      border: 0;
+      background: rgba(16, 18, 19, 0.13);
     }
 
     .about-kicker {
@@ -708,43 +746,35 @@
 
       .about-hero-split__grid,
       .about-intro__grid,
-      .about-tanya__grid,
+      .about-tanya__frame,
+      .about-tanya__masthead,
       .about-values__grid {
         grid-template-columns: 1fr;
         min-height: auto;
       }
 
-      .about-tanya__masthead {
-        grid-template-columns: 1fr;
-        align-items: start;
-        text-align: left;
-      }
-
-      .about-tanya__masthead .about-tanya__title {
-        text-align: left;
-      }
-
-      .about-tanya__masthead .about-tanya__role {
-        text-align: left;
-        justify-self: start;
-        max-width: none;
-      }
-
-      .about-tanya__vision {
-        grid-template-columns: 1fr;
+      .about-tanya__masthead-main {
+        flex-direction: column;
+        align-items: flex-start;
         gap: var(--space-3);
       }
 
-      .about-tanya__vision-line {
-        display: none;
+      .about-tanya__masthead .about-tanya__role {
+        max-width: none;
+        text-align: left;
+      }
+
+      .about-tanya__aside,
+      .about-tanya__copy {
+        grid-column: 1;
+      }
+
+      .about-tanya__photo {
+        max-width: none;
       }
 
       .about-tanya__story-tagline {
-        white-space: normal;
         text-align: left;
-        padding: var(--space-4) 0;
-        border-top: 1px solid rgba(16, 18, 19, 0.14);
-        border-bottom: 1px solid rgba(16, 18, 19, 0.14);
       }
 
       .about-close__body {
@@ -899,12 +929,14 @@
 
     <section class="about-tanya" aria-labelledby="tanya-heading">
       <div class="container">
+        <div class="about-tanya__frame">
         <header class="about-tanya__masthead">
           <p class="about-tanya__kicker reveal">A Personal Approach</p>
-          <h2 class="about-tanya__title reveal" id="tanya-heading">Hi, I&rsquo;m Tanya.</h2>
-          <p class="about-tanya__role reveal">Founder &amp; President of SourceAbility</p>
+          <div class="about-tanya__masthead-main">
+            <h2 class="about-tanya__title reveal" id="tanya-heading">Hi, I&rsquo;m Tanya.</h2>
+            <p class="about-tanya__role reveal">Founder &amp; President of<br>SourceAbility</p>
+          </div>
         </header>
-        <div class="about-tanya__grid">
           <aside class="about-tanya__aside" aria-labelledby="tanya-why-heading">
             <div class="about-tanya__aside-lead">
               <div class="about-tanya__photo reveal" aria-hidden="true">
@@ -928,14 +960,13 @@
               <p class="reveal">Earlier in my career, I worked in a traditional staffing environment where success was often measured by numbers, activity, and volume. While I gained valuable experience, I also saw how easily the people behind those numbers could get lost in the process.</p>
               <p class="reveal">I wanted to step back from that transactional approach and create a company where relationships came first&mdash;where I could take the time to understand an organization&rsquo;s goals, learn what truly matters to a candidate, and remain personally involved throughout the process.</p>
               <div class="about-tanya__vision reveal">
-                <span class="about-tanya__vision-line" aria-hidden="true"></span>
                 <p class="about-tanya__story-tagline">That vision became SourceAbility.</p>
-                <span class="about-tanya__vision-line" aria-hidden="true"></span>
+                <hr class="about-tanya__story-rule" aria-hidden="true">
               </div>
-              <p class="reveal">Throughout more than 20 years in recruiting, I have built lasting relationships with clients and professionals across Data, Technology, and Financial Services. Many have continued through multiple hires, career moves, and stages of organizational growth.</p>
-              <p class="reveal">One of the most rewarding parts of my work is helping someone join an organization where they can thrive, take a meaningful step forward, move into leadership, or increase their earning potential.</p>
-              <p class="reveal">It is equally rewarding to reconnect with a client a year or two after a placement and hear how much that person has contributed to the organization. Those are the moments that remind me why this work matters: the right career move can change someone&rsquo;s future, and the right hire can strengthen an organization for years to come.</p>
-              <p class="reveal">That is the kind of experience I wanted SourceAbility to provide when I founded the company, and it continues to guide how I work today.</p>
+              <div class="about-tanya__story-after">
+                <p class="reveal">Throughout more than 20 years in recruiting, I have built lasting relationships with clients and professionals across Data, Technology, and Financial Services. Many have continued through multiple hires, career moves, and stages of organizational growth.</p>
+                <p class="reveal">One of the most rewarding parts of my work is helping someone join an organization where they can thrive, take a meaningful step forward, move into leadership, or increase their earning potential.</p>
+              </div>
             </div>
           </div>
         </div>
