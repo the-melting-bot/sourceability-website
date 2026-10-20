@@ -275,15 +275,61 @@
     }
 
     .about-tanya {
-      background: var(--color-surface-warm, #f5f3ef);
-      padding: clamp(1.5rem, 3vw, 2.25rem) 0 clamp(2.5rem, 5vw, 4rem);
+      background: #f9f7f2;
+      padding: clamp(2rem, 4vw, 3rem) 0 clamp(2.5rem, 5vw, 4rem);
+    }
+
+    .about-tanya__masthead {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr) minmax(0, 1fr);
+      align-items: end;
+      gap: clamp(0.75rem, 2vw, 1.5rem);
+      padding-bottom: clamp(1rem, 2vw, 1.35rem);
+      margin-bottom: clamp(1.75rem, 3.5vw, 2.75rem);
+      border-bottom: 1px solid rgba(16, 18, 19, 0.12);
+    }
+
+    .about-tanya__kicker {
+      margin: 0;
+      font-family: var(--font-body);
+      font-size: clamp(0.68rem, 0.62rem + 0.2vw, 0.78rem);
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      line-height: 1.35;
+    }
+
+    .about-tanya__masthead .about-tanya__title {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(2.15rem, 1.5rem + 2.5vw, 3.35rem);
+      font-weight: 700;
+      color: #101213;
+      letter-spacing: -0.03em;
+      line-height: 1.08;
+      text-align: center;
+    }
+
+    .about-tanya__masthead .about-tanya__role {
+      margin: 0;
+      font-family: var(--font-body);
+      font-size: clamp(0.62rem, 0.58rem + 0.18vw, 0.72rem);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      line-height: 1.4;
+      text-align: right;
+      justify-self: end;
+      max-width: 14rem;
     }
 
     .about-tanya__grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: clamp(2rem, 4vw, 3.5rem);
-      align-items: stretch;
+      grid-template-columns: minmax(0, 21rem) minmax(0, 1fr);
+      gap: clamp(2rem, 4vw, 4rem);
+      align-items: start;
     }
 
     .about-tanya__aside,
@@ -305,20 +351,14 @@
     }
 
     .about-tanya__aside-lead {
-      display: flex;
-      flex: 1 1 auto;
-      flex-direction: column;
-      align-items: stretch;
-      justify-content: flex-start;
+      display: block;
       width: 100%;
-      min-height: 0;
     }
 
     .about-tanya__aside-text {
-      flex: 0 0 auto;
       width: 100%;
-      margin-top: auto;
-      padding-top: clamp(1.25rem, 2.5vw, 2rem);
+      margin-top: clamp(1.25rem, 2.5vw, 1.75rem);
+      padding-top: 0;
     }
 
     .about-tanya__why {
@@ -335,47 +375,80 @@
 
     .about-tanya__photo {
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      flex: 1 1 auto;
+      position: relative;
       width: 100%;
-      min-height: clamp(17rem, 38vh, 26rem);
-      border-radius: var(--radius-lg);
+      aspect-ratio: 1;
+      border-radius: 0;
       background: var(--color-navy);
       color: #fff;
       text-align: center;
       padding: var(--space-6);
-      box-shadow: 0 12px 32px rgba(15, 26, 46, 0.18);
+      box-shadow: 0 10px 28px rgba(15, 26, 46, 0.14);
+      overflow: hidden;
+    }
+
+    .about-tanya__photo-ring {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: clamp(6.5rem, 52%, 9.5rem);
+      aspect-ratio: 1;
+      border: 2px solid rgba(255, 255, 255, 0.28);
+      border-radius: 50%;
     }
 
     .about-tanya__initials {
       font-family: var(--font-display);
-      font-size: clamp(3rem, 6vw, 4.25rem);
+      font-size: clamp(2.5rem, 5vw, 3.75rem);
       font-weight: 700;
       letter-spacing: -0.04em;
       line-height: 1;
       color: #fff;
     }
 
-    .about-tanya__photo-note {
-      margin: 0.65rem 0 0;
-      font-family: var(--font-body);
-      font-size: 0.72rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.62);
-      line-height: 1.3;
+    .about-tanya__photo-deco {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 42%;
+      height: 42%;
+      pointer-events: none;
+    }
+
+    .about-tanya__photo-deco::before,
+    .about-tanya__photo-deco::after {
+      content: "";
+      position: absolute;
+      right: 1.15rem;
+      bottom: 1.15rem;
+      width: 3.25rem;
+      height: 2px;
+      background: var(--color-accent);
+      transform-origin: 100% 100%;
+    }
+
+    .about-tanya__photo-deco::before {
+      transform: rotate(-45deg);
+    }
+
+    .about-tanya__photo-deco::after {
+      width: 2.35rem;
+      bottom: 1.85rem;
+      right: 1.15rem;
+      transform: rotate(-45deg);
+      opacity: 0.85;
     }
 
     .about-tanya__quote {
       margin: 0;
-      padding: 0 clamp(1.35rem, 3.5vw, 2rem) 0 0;
+      padding: 0.35rem clamp(0.5rem, 2vw, 1rem) 0 0;
       border: none;
       font-family: var(--font-body);
-      font-size: var(--text-base);
-      line-height: 1.7;
-      color: var(--color-text-muted);
+      font-size: clamp(0.95rem, 0.9rem + 0.15vw, 1.05rem);
+      line-height: 1.65;
+      color: #5c6166;
       width: 100%;
       position: relative;
       isolation: isolate;
@@ -390,10 +463,11 @@
     .about-tanya__quote::before,
     .about-tanya__quote p:last-of-type::after {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(3.75rem, 9vw, 7rem);
+      font-size: clamp(3.25rem, 8vw, 5.5rem);
       font-weight: 700;
       line-height: 1;
-      color: rgba(175, 39, 47, 0.13);
+      color: rgba(175, 39, 47, 0.22);
+      font-style: normal;
       position: absolute;
       z-index: 0;
       pointer-events: none;
@@ -408,6 +482,7 @@
 
     .about-tanya__quote p {
       margin: 0 0 var(--space-4);
+      font-style: italic;
     }
 
     .about-tanya__quote p:last-of-type {
@@ -429,48 +504,55 @@
 
     .about-tanya__quote cite {
       display: block;
+      margin-top: var(--space-4);
       font-style: normal;
-      font-weight: 600;
+      font-weight: 700;
       font-size: var(--text-sm);
       color: #101213;
-    }
-
-    .about-tanya__title {
-      margin: 0 0 0.35rem;
-      padding-top: 0;
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 1.6rem + 1.4vw, 2.75rem);
-      font-weight: 700;
-      color: #101213;
-      letter-spacing: -0.02em;
-      line-height: 1.15;
-    }
-
-    .about-tanya__role {
-      margin: 0 0 var(--space-6);
-      font-family: var(--font-body);
-      font-size: var(--text-sm);
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--color-accent);
+      text-align: right;
     }
 
     .about-tanya__story p {
-      margin: 0 0 var(--space-4);
+      margin: 0 0 var(--space-5);
       font-family: var(--font-body);
-      font-size: var(--text-base);
+      font-size: clamp(0.95rem, 0.9rem + 0.12vw, 1.0625rem);
       line-height: 1.7;
-      color: var(--color-text-muted);
+      color: #5c6166;
+    }
+
+    .about-tanya__story p.about-tanya__story-lead {
+      font-size: clamp(1.05rem, 0.95rem + 0.35vw, 1.2rem);
+      line-height: 1.65;
+      color: #101213;
+      font-weight: 400;
     }
 
     .about-tanya__story p:last-child {
       margin-bottom: 0;
     }
 
-    .about-tanya__story p.about-tanya__story-tagline {
-      color: var(--color-accent);
+    .about-tanya__vision {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: clamp(0.75rem, 2vw, 1.25rem);
+      margin: clamp(1.5rem, 3vw, 2rem) 0;
+    }
+
+    .about-tanya__vision-line {
+      display: block;
+      height: 1px;
+      background: rgba(16, 18, 19, 0.14);
+    }
+
+    .about-tanya__story-tagline {
+      margin: 0;
+      font-family: var(--font-body);
+      font-size: clamp(1rem, 0.92rem + 0.25vw, 1.125rem);
       font-weight: 700;
+      color: var(--color-accent);
+      text-align: center;
+      white-space: nowrap;
     }
 
     .about-kicker {
@@ -632,6 +714,39 @@
         min-height: auto;
       }
 
+      .about-tanya__masthead {
+        grid-template-columns: 1fr;
+        align-items: start;
+        text-align: left;
+      }
+
+      .about-tanya__masthead .about-tanya__title {
+        text-align: left;
+      }
+
+      .about-tanya__masthead .about-tanya__role {
+        text-align: left;
+        justify-self: start;
+        max-width: none;
+      }
+
+      .about-tanya__vision {
+        grid-template-columns: 1fr;
+        gap: var(--space-3);
+      }
+
+      .about-tanya__vision-line {
+        display: none;
+      }
+
+      .about-tanya__story-tagline {
+        white-space: normal;
+        text-align: left;
+        padding: var(--space-4) 0;
+        border-top: 1px solid rgba(16, 18, 19, 0.14);
+        border-bottom: 1px solid rgba(16, 18, 19, 0.14);
+      }
+
       .about-close__body {
         grid-template-columns: 1fr;
       }
@@ -782,41 +897,41 @@
       </div>
     </section>
 
-    <div class="about-section-divider">
-      <div class="about-section-divider__inner">
-        <span class="about-section-divider__line" aria-hidden="true"></span>
-        <p class="about-section-divider__label">Our Founder</p>
-        <span class="about-section-divider__line" aria-hidden="true"></span>
-      </div>
-    </div>
-
     <section class="about-tanya" aria-labelledby="tanya-heading">
       <div class="container">
+        <header class="about-tanya__masthead">
+          <p class="about-tanya__kicker reveal">A Personal Approach</p>
+          <h2 class="about-tanya__title reveal" id="tanya-heading">Hi, I&rsquo;m Tanya.</h2>
+          <p class="about-tanya__role reveal">Founder &amp; President of SourceAbility</p>
+        </header>
         <div class="about-tanya__grid">
           <aside class="about-tanya__aside" aria-labelledby="tanya-why-heading">
             <div class="about-tanya__aside-lead">
               <div class="about-tanya__photo reveal" aria-hidden="true">
-                <span class="about-tanya__initials">TC</span>
-                <p class="about-tanya__photo-note">Photo coming soon</p>
+                <span class="about-tanya__photo-ring">
+                  <span class="about-tanya__initials">TC</span>
+                </span>
+                <span class="about-tanya__photo-deco" aria-hidden="true"></span>
               </div>
             </div>
             <div class="about-tanya__aside-text">
               <h3 class="about-tanya__why reveal" id="tanya-why-heading">Why I Do What I Do</h3>
               <blockquote class="about-tanya__quote reveal">
-                <p>&ldquo;I enjoy working with organizations and individuals where relationships matter, reputations matter, and decisions have a long-term impact.</p>
-                <p>The best hiring outcomes come from looking beyond a r&eacute;sum&eacute; or job description. They require a clear understanding of the organization&rsquo;s goals, the candidate&rsquo;s capabilities and motivations, and what long-term success should look like for both.&rdquo;</p>
+                <p>I enjoy working with organizations and individuals where relationships matter, reputations matter, and decisions have a long-term impact.</p>
                 <cite>&mdash; Tanya Calkins</cite>
               </blockquote>
             </div>
           </aside>
           <div class="about-tanya__copy">
-            <h2 class="about-tanya__title reveal" id="tanya-heading">Hi, I&rsquo;m Tanya.</h2>
-            <p class="about-tanya__role reveal">Founder &amp; President of SourceAbility</p>
             <div class="about-tanya__story">
-              <p class="reveal">I founded SourceAbility because I wanted recruiting to feel more personal and meaningful&mdash;for both the organizations hiring and the professionals considering a career move.</p>
+              <p class="reveal about-tanya__story-lead">I founded SourceAbility because I wanted recruiting to feel more personal and meaningful&mdash;for both the organizations hiring and the professionals considering a career move.</p>
               <p class="reveal">Earlier in my career, I worked in a traditional staffing environment where success was often measured by numbers, activity, and volume. While I gained valuable experience, I also saw how easily the people behind those numbers could get lost in the process.</p>
               <p class="reveal">I wanted to step back from that transactional approach and create a company where relationships came first&mdash;where I could take the time to understand an organization&rsquo;s goals, learn what truly matters to a candidate, and remain personally involved throughout the process.</p>
-              <p class="reveal about-tanya__story-tagline">That vision became SourceAbility.</p>
+              <div class="about-tanya__vision reveal">
+                <span class="about-tanya__vision-line" aria-hidden="true"></span>
+                <p class="about-tanya__story-tagline">That vision became SourceAbility.</p>
+                <span class="about-tanya__vision-line" aria-hidden="true"></span>
+              </div>
               <p class="reveal">Throughout more than 20 years in recruiting, I have built lasting relationships with clients and professionals across Data, Technology, and Financial Services. Many have continued through multiple hires, career moves, and stages of organizational growth.</p>
               <p class="reveal">One of the most rewarding parts of my work is helping someone join an organization where they can thrive, take a meaningful step forward, move into leadership, or increase their earning potential.</p>
               <p class="reveal">It is equally rewarding to reconnect with a client a year or two after a placement and hear how much that person has contributed to the organization. Those are the moments that remind me why this work matters: the right career move can change someone&rsquo;s future, and the right hire can strengthen an organization for years to come.</p>
