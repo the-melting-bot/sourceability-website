@@ -80,7 +80,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-  <!-- Stylesheets (about founder block v4) -->
+  <!-- Stylesheets (about founder block v5) -->
   <link rel="stylesheet" href="./assets/css/base.css">
   <link rel="stylesheet" href="./assets/css/style.css?v=1.0.21">
 
@@ -275,13 +275,18 @@
     }
 
     .about-tanya {
-      background: #f9f7f2;
-      padding: clamp(2.75rem, 5vw, 4.25rem) 0 clamp(3rem, 6vw, 4.75rem);
+      background: var(--color-navy);
+      padding: clamp(2.5rem, 5vw, 4rem) var(--page-gutter);
     }
 
     .about-tanya .container {
       max-width: 72rem;
-      padding-inline: clamp(1.75rem, 5.5vw, 4.5rem);
+      padding-inline: 0;
+    }
+
+    .about-tanya__panel {
+      background: #f9f7f2;
+      padding: clamp(2.75rem, 5vw, 4.25rem) clamp(1.75rem, 5.5vw, 4.5rem);
     }
 
     .about-tanya__frame {
@@ -936,6 +941,7 @@
 
     <section class="about-tanya" aria-labelledby="tanya-heading">
       <div class="container">
+        <div class="about-tanya__panel">
         <div class="about-tanya__frame">
         <header class="about-tanya__masthead">
           <p class="about-tanya__kicker reveal">A Personal Approach</p>
@@ -977,6 +983,7 @@
               </div>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </section>
