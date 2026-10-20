@@ -1295,12 +1295,17 @@
 }
 
 .rep-searches__card {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   gap: var(--space-4);
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
   min-height: 100%;
+  box-sizing: border-box;
   padding: var(--space-5) var(--space-5) var(--space-6) var(--space-6);
   text-decoration: none;
   color: inherit;
@@ -1314,6 +1319,29 @@
     padding-left 0.35s cubic-bezier(0.22, 1, 0.36, 1),
     background-color 0.35s ease,
     box-shadow 0.35s ease;
+}
+
+.rep-searches__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.rep-searches__title,
+.rep-searches__title-note,
+.rep-searches__text {
+  width: 100%;
+  max-width: 100%;
 }
 
 @media (min-width: 768px) {
@@ -1360,19 +1388,26 @@
 /* Mobile / touch: keep the L-frame visible (no hover available) */
 @media (max-width: 767px), (hover: none) {
   .rep-searches__card {
-    border-top-color: var(--color-accent);
     background: rgba(175, 39, 47, 0.015);
+  }
+
+  .rep-searches__card::before {
+    transform: scaleX(1);
   }
 }
 
 .rep-searches__card:hover,
 .rep-searches__card:focus-visible {
-  border-top-color: var(--color-accent);
   border-left-width: 4px;
   padding-left: calc(var(--space-6) - 2px);
   border-right-color: transparent;
   background: rgba(175, 39, 47, 0.02);
   box-shadow: 0 10px 28px -18px rgba(15, 26, 46, 0.28);
+}
+
+.rep-searches__card:hover::before,
+.rep-searches__card:focus-visible::before {
+  transform: scaleX(1);
 }
 
 .rep-searches__card:focus-visible {
@@ -1461,6 +1496,15 @@
   .rep-searches__card,
   .rep-searches__link {
     transition: none;
+  }
+
+  .rep-searches__card::before {
+    transition: none;
+  }
+
+  .rep-searches__card:hover::before,
+  .rep-searches__card:focus-visible::before {
+    transform: scaleX(1);
   }
 }
 
