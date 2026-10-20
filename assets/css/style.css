@@ -1349,6 +1349,19 @@
   color: var(--color-text-muted);
 }
 
+.rep-searches__role-line {
+  margin-bottom: var(--space-3);
+}
+
+.rep-searches__role-line:last-of-type {
+  margin-bottom: 0;
+}
+
+.rep-searches__role-line strong {
+  color: var(--color-navy);
+  font-weight: 700;
+}
+
 .rep-searches__link {
   margin-top: var(--space-2);
   font-size: var(--text-sm);
@@ -2265,7 +2278,13 @@
   font-size: var(--text-sm);
   font-weight: 600;
   color: rgba(255, 255, 255, 0.95);
-  margin: 0 0 var(--space-1);
+  margin: 0;
+  line-height: 1.45;
+}
+
+.testimonial-section--candidates {
+  padding-top: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .testimonial-carousel__role {

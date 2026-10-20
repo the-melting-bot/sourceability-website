@@ -6,6 +6,13 @@
 (function () {
   'use strict';
 
+  /** Update when SourceAbility branded Calendly is live (replaces personal booking URL in markup). */
+  var SA_CALENDLY_URL = 'https://calendly.com/tanyacalkins';
+
+  document.querySelectorAll('a[href*="calendly.com/tanyacalkins"]').forEach(function (anchor) {
+    anchor.setAttribute('href', SA_CALENDLY_URL);
+  });
+
   // --- SCROLL-AWARE HEADER (always visible; shadow when scrolled) ---
   const header = document.querySelector('.site-header');
   let ticking = false;
@@ -179,10 +186,8 @@
     statNumbers.forEach(el => counterObserver.observe(el));
   }
 
-  // --- TESTIMONIAL CAROUSEL (home) ---
-  const testimonialCarousel = document.querySelector('[data-testimonial-carousel]');
-
-  if (testimonialCarousel) {
+  // --- TESTIMONIAL CAROUSEL ---
+  function initTestimonialCarousel(testimonialCarousel) {
     const slides = testimonialCarousel.querySelectorAll('.testimonial-carousel__slide');
     const dots = testimonialCarousel.querySelectorAll('.testimonial-carousel__dot');
     const viewport = testimonialCarousel.querySelector('.testimonial-carousel__viewport');
@@ -262,7 +267,7 @@
         else dot.removeAttribute('aria-current');
       });
       activeIndex = idx;
-      testimonialCarousel.setAttribute('aria-label', `Client testimonials, ${idx + 1} of ${slides.length}`);
+      testimonialCarousel.setAttribute('aria-label', `Testimonials, ${idx + 1} of ${slides.length}`);
     }
 
     function next() {
@@ -301,6 +306,8 @@
     goTo(0);
     startAuto();
   }
+
+  document.querySelectorAll('[data-testimonial-carousel]').forEach(initTestimonialCarousel);
 
   // --- CONTACT FORM (Web3Forms) ---
   const contactForm = document.getElementById('contact-form');
