@@ -80,9 +80,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-  <!-- Stylesheets -->
+  <!-- Stylesheets (about founder block v3) -->
   <link rel="stylesheet" href="./assets/css/base.css">
-  <link rel="stylesheet" href="./assets/css/style.css?v=1.0.6">
+  <link rel="stylesheet" href="./assets/css/style.css?v=1.0.21">
 
   <!-- GSAP -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
@@ -542,7 +542,7 @@
       text-align: left;
     }
 
-    .about-tanya__story p {
+    .about-tanya__story > p {
       margin: 0 0 clamp(1.15rem, 2vw, 1.45rem);
       font-family: var(--font-body);
       font-size: clamp(0.94rem, 0.88rem + 0.15vw, 1.05rem);
@@ -550,7 +550,7 @@
       color: #5a6066;
     }
 
-    .about-tanya__story p.about-tanya__story-lead {
+    .about-tanya__story > p.about-tanya__story-lead {
       margin-bottom: clamp(1.25rem, 2.2vw, 1.6rem);
       font-size: clamp(1.02rem, 0.94rem + 0.28vw, 1.125rem);
       line-height: 1.72;
@@ -566,34 +566,37 @@
       padding-top: clamp(0.15rem, 0.5vw, 0.35rem);
     }
 
-    .about-tanya__story p:last-child {
-      margin-bottom: 0;
-    }
-
     .about-tanya__vision {
+      display: grid;
+      width: 100%;
       margin: clamp(1.35rem, 2.8vw, 2rem) 0 0;
       padding: clamp(0.85rem, 1.8vw, 1.25rem) 0 0;
       border: 0;
+      row-gap: clamp(0.7rem, 1.25vw, 0.9rem);
     }
 
-    .about-tanya__story-tagline {
-      margin: 0 0 clamp(0.7rem, 1.25vw, 0.9rem);
+    .about-tanya__story .about-tanya__story-tagline {
+      grid-column: 1;
+      justify-self: end;
+      margin: 0;
       padding: 0;
       border: 0;
+      max-width: 100%;
       font-family: var(--font-body);
       font-size: clamp(0.98rem, 0.9rem + 0.2vw, 1.06rem);
       font-weight: 600;
-      color: #555b61;
+      color: #5a6066;
       text-align: right;
       line-height: 1.45;
     }
 
     .about-tanya__story-tagline-brand {
       font-weight: 700;
-      color: #454b51;
+      color: #101213;
     }
 
     .about-tanya__story-rule {
+      grid-column: 1;
       display: block;
       width: 100%;
       height: 1px;
