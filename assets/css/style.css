@@ -1361,15 +1361,6 @@
     gap: var(--space-4);
   }
 
-  .rep-searches__title-note {
-    margin-top: 0.35rem;
-    white-space: nowrap;
-    font-size: clamp(0.58rem, 0.48rem + 0.38vw, 0.72rem);
-    letter-spacing: -0.02em;
-    line-height: 1.2;
-    overflow-wrap: normal;
-  }
-
   .rep-searches__text {
     flex: unset;
   }
@@ -1451,6 +1442,17 @@
   white-space: normal;
   line-height: 1.25;
   overflow-wrap: break-word;
+}
+
+@media (min-width: 768px) {
+  .rep-searches__title-note {
+    margin-top: 0.35rem;
+    white-space: nowrap;
+    font-size: clamp(0.58rem, 0.48rem + 0.38vw, 0.72rem);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    overflow-wrap: normal;
+  }
 }
 
 .rep-searches__title-note--spacer {
