@@ -539,6 +539,40 @@
   line-height: 1.55;
 }
 
+.page-home .hero__intro {
+  position: relative;
+  width: 100%;
+  max-width: min(52rem, 100%);
+  margin: 0 0 clamp(1rem, 2.5vw, 1.35rem);
+  padding: 0.85rem 0 0.85rem clamp(1rem, 2.5vw, 1.25rem);
+  border-left: 3px solid rgba(175, 39, 47, 0.92);
+  background: linear-gradient(90deg, rgba(8, 12, 22, 0.55) 0%, rgba(8, 12, 22, 0.08) 72%, transparent 100%);
+  border-radius: 0 6px 6px 0;
+  box-shadow: 0 12px 40px -28px rgba(0, 0, 0, 0.65);
+}
+
+.page-home .hero__since {
+  margin: 0 0 0.4rem;
+  font-family: var(--font-body);
+  font-size: clamp(0.68rem, 0.62rem + 0.22vw, 0.78rem);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.35;
+}
+
+.page-home .hero__kicker {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 1.1rem + 0.85vw, 1.65rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: rgba(255, 255, 255, 0.96);
+  text-wrap: balance;
+}
+
 /* Home hero: Lazio-style stacked headline — lead / loud accent / trail */
 .hero__title--banner {
   display: flex;
@@ -549,6 +583,14 @@
   max-width: 100%;
   width: 100%;
   text-align: left;
+}
+
+.page-home .hero__title--banner {
+  gap: var(--space-3);
+}
+
+.page-home .hero__title-markets {
+  margin-top: 0.05em;
 }
 
 .hero__title-line {
