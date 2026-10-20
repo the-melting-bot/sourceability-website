@@ -620,7 +620,10 @@
     }
 
     .about-values {
-      background: var(--color-surface-warm, #f5f3ef);
+      background:
+        radial-gradient(ellipse 85% 60% at 100% 0%, rgba(175, 39, 47, 0.06), transparent 55%),
+        radial-gradient(ellipse 70% 50% at 0% 100%, rgba(15, 26, 46, 0.05), transparent 50%),
+        linear-gradient(180deg, #f0ece4 0%, var(--color-surface-warm, #f5f3ef) 42%, #f8f6f2 100%);
       padding: clamp(3rem, 6vw, 5.25rem) 0;
       border-top: 1px solid rgba(16, 18, 19, 0.06);
     }
@@ -664,24 +667,87 @@
     }
 
     .about-value {
+      position: relative;
+      isolation: isolate;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       gap: var(--space-4);
       min-height: 100%;
-      padding: clamp(1.35rem, 2.2vw, 1.85rem);
-      background: #fff;
-      border: 1px solid rgba(16, 18, 19, 0.08);
+      overflow: hidden;
+      padding: clamp(1.45rem, 2.3vw, 1.95rem);
+      padding-top: calc(clamp(1.45rem, 2.3vw, 1.95rem) + 0.2rem);
+      background: linear-gradient(155deg, #ffffff 0%, #fbfaf8 52%, #f3f0ea 100%);
+      border: 1px solid rgba(15, 26, 46, 0.09);
       border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-sm);
-      transition: box-shadow 0.25s var(--ease-out), transform 0.25s var(--ease-out);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.95),
+        0 10px 26px rgba(15, 26, 46, 0.08);
+      transition:
+        box-shadow 0.28s var(--ease-out),
+        transform 0.28s var(--ease-out),
+        border-color 0.28s var(--ease-out);
+    }
+
+    .about-value::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--color-accent) 0%, rgba(175, 39, 47, 0.22) 100%);
+      z-index: 2;
+    }
+
+    .about-value::after {
+      content: "";
+      position: absolute;
+      inset: auto -20% -35% auto;
+      width: 62%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(175, 39, 47, 0.07) 0%, transparent 68%);
+      pointer-events: none;
+      z-index: 0;
     }
 
     @media (hover: hover) {
       .about-value:hover {
-        box-shadow: var(--shadow-md);
-        transform: translateY(-2px);
+        transform: translateY(-3px);
+        border-color: rgba(175, 39, 47, 0.18);
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.95),
+          0 16px 34px rgba(15, 26, 46, 0.11);
       }
+
+      .about-value:hover .about-value__watermark {
+        opacity: 0.16;
+        transform: rotate(-6deg) scale(1.03);
+      }
+    }
+
+    .about-value__watermark {
+      position: absolute;
+      right: -0.25rem;
+      bottom: -0.85rem;
+      z-index: 0;
+      color: var(--color-accent);
+      opacity: 0.1;
+      pointer-events: none;
+      line-height: 0;
+      transform: rotate(-10deg);
+      transition: opacity 0.28s var(--ease-out), transform 0.28s var(--ease-out);
+    }
+
+    .about-value__watermark svg {
+      width: clamp(4.75rem, 7.5vw, 6.25rem);
+      height: clamp(4.75rem, 7.5vw, 6.25rem);
+      stroke-width: 1.35;
+    }
+
+    .about-value__icon,
+    .about-value__body {
+      position: relative;
+      z-index: 1;
     }
 
     .about-value__icon {
@@ -691,9 +757,10 @@
       width: 2.85rem;
       height: 2.85rem;
       border-radius: 999px;
-      background: var(--color-accent);
+      background: linear-gradient(145deg, #c5343d 0%, var(--color-accent) 48%, #8f2229 100%);
       color: #fff;
       flex-shrink: 0;
+      box-shadow: 0 7px 16px rgba(175, 39, 47, 0.28);
     }
 
     .about-value__icon svg {
@@ -1045,6 +1112,7 @@
           </header>
           <div class="about-values__grid">
             <article class="about-value reveal">
+              <span class="about-value__watermark" aria-hidden="true"><i data-lucide="shield-check"></i></span>
               <span class="about-value__icon" aria-hidden="true"><i data-lucide="shield-check"></i></span>
               <div class="about-value__body">
                 <h3 class="about-value__title">Integrity</h3>
@@ -1052,6 +1120,7 @@
               </div>
             </article>
             <article class="about-value reveal">
+              <span class="about-value__watermark" aria-hidden="true"><i data-lucide="handshake"></i></span>
               <span class="about-value__icon" aria-hidden="true"><i data-lucide="handshake"></i></span>
               <div class="about-value__body">
                 <h3 class="about-value__title">Partnership</h3>
@@ -1059,6 +1128,7 @@
               </div>
             </article>
             <article class="about-value reveal">
+              <span class="about-value__watermark" aria-hidden="true"><i data-lucide="eye"></i></span>
               <span class="about-value__icon" aria-hidden="true"><i data-lucide="eye"></i></span>
               <div class="about-value__body">
                 <h3 class="about-value__title">Transparency</h3>
@@ -1066,6 +1136,7 @@
               </div>
             </article>
             <article class="about-value reveal">
+              <span class="about-value__watermark" aria-hidden="true"><i data-lucide="gem"></i></span>
               <span class="about-value__icon" aria-hidden="true"><i data-lucide="gem"></i></span>
               <div class="about-value__body">
                 <h3 class="about-value__title">Quality Over Quantity</h3>
@@ -1073,6 +1144,7 @@
               </div>
             </article>
             <article class="about-value reveal">
+              <span class="about-value__watermark" aria-hidden="true"><i data-lucide="badge-check"></i></span>
               <span class="about-value__icon" aria-hidden="true"><i data-lucide="badge-check"></i></span>
               <div class="about-value__body">
                 <h3 class="about-value__title">Commitment</h3>
@@ -1080,6 +1152,7 @@
               </div>
             </article>
             <article class="about-value reveal">
+              <span class="about-value__watermark" aria-hidden="true"><i data-lucide="heart-handshake"></i></span>
               <span class="about-value__icon" aria-hidden="true"><i data-lucide="heart-handshake"></i></span>
               <div class="about-value__body">
                 <h3 class="about-value__title">Respect</h3>
