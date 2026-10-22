@@ -484,53 +484,30 @@
       line-height: 1.68;
       color: #646a70;
       width: 100%;
-      position: relative;
-      isolation: isolate;
-      overflow: visible;
-    }
-
-    .about-tanya__quote > * {
-      position: relative;
-      z-index: 1;
-    }
-
-    .about-tanya__quote::before,
-    .about-tanya__quote p:last-of-type::after {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(3rem, 7.5vw, 5rem);
-      font-weight: 700;
-      line-height: 1;
-      color: rgba(175, 39, 47, 0.16);
-      font-style: normal;
-      position: absolute;
-      pointer-events: none;
-      user-select: none;
-    }
-
-    .about-tanya__quote::before {
-      content: "\201C";
-      z-index: 0;
-      top: -0.95rem;
-      left: 0;
     }
 
     .about-tanya__quote p {
-      margin: 0 0 var(--space-4);
+      margin: 0 0 var(--space-5);
       font-style: italic;
     }
 
-    .about-tanya__quote p:last-of-type {
-      position: relative;
-      margin-bottom: var(--space-5);
-      z-index: 1;
+    .about-tanya__quote-mark {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.75rem, 3.8vw, 2.65rem);
+      font-weight: 700;
+      font-style: normal;
+      line-height: 0;
+      color: rgba(175, 39, 47, 0.22);
     }
 
-    .about-tanya__quote p:last-of-type::after {
-      content: "\201D";
-      z-index: -1;
-      right: 0;
-      bottom: 0;
-      transform: translateY(28%);
+    .about-tanya__quote-mark--open {
+      vertical-align: -0.22em;
+      margin-right: 0.08em;
+    }
+
+    .about-tanya__quote-mark--close {
+      vertical-align: -0.28em;
+      margin-left: 0.06em;
     }
 
     .about-tanya__quote cite {
@@ -1073,7 +1050,7 @@
             <div class="about-tanya__aside-text">
               <h3 class="about-tanya__why reveal" id="tanya-why-heading">Why I Do What I Do</h3>
               <blockquote class="about-tanya__quote reveal">
-                <p>I enjoy working with organizations and individuals where relationships matter, reputations matter, and decisions have a long-term impact.</p>
+                <p><span class="about-tanya__quote-mark about-tanya__quote-mark--open" aria-hidden="true">&ldquo;</span>I enjoy working with organizations and individuals where relationships matter, reputations matter, and decisions have a long-term impact.<span class="about-tanya__quote-mark about-tanya__quote-mark--close" aria-hidden="true">&rdquo;</span></p>
                 <cite>&mdash; Tanya Calkins</cite>
               </blockquote>
             </div>
