@@ -347,92 +347,189 @@
       }
     }
 
-    /* ── Challenges + How We Help ── */
+    /* ── Challenges + How We Help (paired cards) ── */
     .challenges-help-section {
-      background: var(--color-warm, #f8f7f5);
+      background: #f4f3f1;
     }
 
-    .challenges-help-grid {
+    .challenges-help-headers,
+    .challenges-help-pair,
+    .challenges-help-outro-row {
       display: grid;
-      gap: var(--space-4);
+      grid-template-columns: minmax(0, 1fr) 2.25rem minmax(0, 1fr);
+      column-gap: clamp(0.65rem, 1.5vw, 1.15rem);
+    }
+
+    .challenges-help-pair {
       align-items: stretch;
     }
 
-    @media (min-width: 992px) {
-      .challenges-help-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
+    .challenges-help-headers {
+      margin-bottom: clamp(1rem, 2vw, 1.35rem);
+      align-items: end;
     }
 
-    .challenges-help-panel {
-      background: #fff;
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-lg);
-      padding: clamp(1.5rem, 3vw, 2.75rem);
-      box-shadow: 0 8px 28px rgba(15, 26, 46, 0.04);
-      height: 100%;
-      display: flex;
-      flex-direction: column;
+    .challenges-help-header--help {
+      grid-column: 3;
     }
 
-    .challenges-help-panel__eyebrow {
+    .challenges-help-header__eyebrow {
       margin: 0 0 var(--space-2);
       font-family: var(--font-body);
-      font-size: 0.72rem;
+      font-size: 0.68rem;
       font-weight: 700;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--color-accent);
     }
 
-    .challenges-help-panel__title {
-      font-family: var(--font-display);
-      font-size: clamp(1.35rem, 1.1rem + 0.8vw, 1.65rem);
-      font-weight: 700;
-      font-style: normal;
-      color: var(--color-navy);
-      line-height: 1.2;
+    .challenges-help-header__title {
       margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(1.35rem, 1.05rem + 0.95vw, 1.85rem);
+      font-weight: 700;
+      color: var(--color-navy);
+      line-height: 1.18;
+      letter-spacing: -0.02em;
+      text-wrap: balance;
     }
 
-    .challenges-help-panel__lede,
-    .challenges-help-panel__outro {
-      font-family: var(--font-body);
-      font-size: var(--text-sm);
-      color: var(--color-text-muted);
-      line-height: 1.65;
-      margin: var(--space-4) 0 0;
+    .challenges-help-pairs {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(0.65rem, 1.2vw, 0.85rem);
     }
 
-    .challenges-help-list {
-      list-style: none;
-      margin: var(--space-6) 0 0;
-      padding: 0;
-      display: grid;
-      gap: var(--space-4);
-    }
-
-    .challenges-help-list__item {
+    .challenges-help-card {
       display: flex;
       align-items: flex-start;
-      gap: var(--space-3);
-      font-family: var(--font-body);
-      font-size: var(--text-base);
-      color: #101213;
-      line-height: 1.45;
+      gap: 0.85rem;
+      background: #fff;
+      border: 1px solid rgba(16, 18, 19, 0.06);
+      border-radius: var(--radius-lg);
+      padding: clamp(0.95rem, 1.6vw, 1.15rem) clamp(1rem, 1.8vw, 1.2rem);
+      box-shadow: 0 6px 22px rgba(15, 26, 46, 0.07);
+      min-height: 100%;
     }
 
-    .challenges-help-list__icon {
+    .challenges-help-card__icon {
       flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.15rem;
+      height: 2.15rem;
+      color: var(--color-accent);
+    }
+
+    .challenges-help-card__icon svg {
+      width: 1.65rem;
+      height: 1.65rem;
+      stroke-width: 1.85;
+    }
+
+    .challenges-help-card__check {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.15rem;
+      height: 2.15rem;
+      border-radius: 999px;
+      background: var(--color-accent);
+      color: #fff;
+    }
+
+    .challenges-help-card__check svg {
+      width: 1.15rem;
+      height: 1.15rem;
+      stroke-width: 2.75;
+    }
+
+    .challenges-help-card__content {
+      min-width: 0;
+    }
+
+    .challenges-help-card__title {
+      margin: 0 0 0.35rem;
+      font-family: var(--font-body);
+      font-size: clamp(0.92rem, 0.86rem + 0.15vw, 0.98rem);
+      font-weight: 700;
+      color: #101213;
+      line-height: 1.35;
+    }
+
+    .challenges-help-card__index {
+      color: var(--color-accent);
+      font-weight: 700;
+    }
+
+    .challenges-help-card__text {
+      margin: 0;
+      font-family: var(--font-body);
+      font-size: clamp(0.84rem, 0.8rem + 0.12vw, 0.92rem);
+      color: var(--color-text-muted);
+      line-height: 1.55;
+    }
+
+    .challenges-help-card__text .challenges-help-card__lead {
+      font-weight: 700;
+      color: #101213;
+    }
+
+    .challenges-help-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-self: center;
+      color: rgba(16, 18, 19, 0.28);
+    }
+
+    .challenges-help-arrow svg {
       width: 1.35rem;
       height: 1.35rem;
-      color: var(--color-accent);
-      margin-top: 0.12rem;
+      stroke-width: 2;
     }
 
-    .challenges-help-list__item strong {
-      font-weight: 700;
+    .challenges-help-outro-row {
+      margin-top: clamp(1.15rem, 2vw, 1.5rem);
+      align-items: start;
+    }
+
+    .challenges-help-outro {
+      grid-column: 3;
+      margin: 0;
+      font-family: var(--font-body);
+      font-size: clamp(0.92rem, 0.86rem + 0.15vw, 1rem);
+      font-weight: 600;
       color: var(--color-navy);
+      line-height: 1.55;
+    }
+
+    @media (max-width: 991px) {
+      .challenges-help-headers,
+      .challenges-help-pair,
+      .challenges-help-outro-row {
+        grid-template-columns: 1fr;
+      }
+
+      .challenges-help-header--help {
+        grid-column: 1;
+        margin-top: var(--space-6);
+      }
+
+      .challenges-help-arrow {
+        display: none;
+      }
+
+      .challenges-help-pair {
+        gap: 0.55rem;
+      }
+
+      .challenges-help-outro {
+        grid-column: 1;
+        margin-top: var(--space-4);
+      }
     }
 
     /* ── Statement band ── */
@@ -1091,69 +1188,126 @@
     ========================================== -->
     <section class="section-padding challenges-help-section" aria-labelledby="challenges-heading">
       <div class="container">
-        <div class="challenges-help-grid">
-          <div class="challenges-help-panel reveal">
-            <p class="challenges-help-panel__eyebrow">The market reality</p>
-            <h2 class="challenges-help-panel__title" id="challenges-heading">Common Hiring Challenges</h2>
-            <p class="challenges-help-panel__lede">The strongest candidates usually aren&rsquo;t looking for a new job. They&rsquo;re busy leading teams, solving complex problems, and delivering results. That&rsquo;s why hiring exceptional talent often requires more than reviewing applicants. It requires a proactive search strategy that engages professionals who weren&rsquo;t planning to make a career move.</p>
-            <p class="challenges-help-panel__lede">Other common hiring challenges include:</p>
-            <ul class="challenges-help-list">
-              <li class="challenges-help-list__item">
-                <svg class="challenges-help-list__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 19V5M4 19h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M8 15v-3M12 15V8M16 15v-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-                Limited access to passive talent
-              </li>
-              <li class="challenges-help-list__item">
-                <svg class="challenges-help-list__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="8" r="3.2" stroke="currentColor" stroke-width="1.6"/><path d="M5.5 19c1.4-3 3.7-4.5 6.5-4.5S16.1 16 17.5 19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-                Finding the right fit
-              </li>
-              <li class="challenges-help-list__item">
-                <svg class="challenges-help-list__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M12 8v4l2.5 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                Longer hiring cycles
-              </li>
-              <li class="challenges-help-list__item">
-                <svg class="challenges-help-list__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="6" y="11" width="12" height="9" rx="1.6" stroke="currentColor" stroke-width="1.6"/><path d="M9 11V8.2a3 3 0 0 1 6 0V11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-                Confidential hiring needs
-              </li>
-              <li class="challenges-help-list__item">
-                <svg class="challenges-help-list__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 15.5V8.8A2.8 2.8 0 0 1 7.8 6h4.9A2.8 2.8 0 0 1 15.5 8.8v2.4A2.8 2.8 0 0 1 12.7 14H9.2L5 16.8v-1.3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-                Limited internal recruiting resources
-              </li>
-              <li class="challenges-help-list__item">
-                <svg class="challenges-help-list__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v5c0 4.4-2.9 7.6-7 9-4.1-1.4-7-4.6-7-9V6l7-3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-                Competition for exceptional talent
-              </li>
-            </ul>
+        <div class="challenges-help-headers reveal">
+          <header class="challenges-help-header">
+            <p class="challenges-help-header__eyebrow">The challenges</p>
+            <h2 class="challenges-help-header__title" id="challenges-heading">Common Hiring Challenges</h2>
+          </header>
+          <div class="challenges-help-arrow-spacer" aria-hidden="true"></div>
+          <header class="challenges-help-header challenges-help-header--help">
+            <p class="challenges-help-header__eyebrow">How we help</p>
+            <h2 class="challenges-help-header__title">A Strategic Approach to Better Hiring</h2>
+          </header>
+        </div>
+
+        <div class="challenges-help-pairs">
+          <div class="challenges-help-pair reveal">
+            <article class="challenges-help-card">
+              <span class="challenges-help-card__icon" aria-hidden="true"><i data-lucide="user-search"></i></span>
+              <div class="challenges-help-card__content">
+                <h3 class="challenges-help-card__title"><span class="challenges-help-card__index">1.</span> Limited access to passive talent</h3>
+                <p class="challenges-help-card__text">The best people aren&rsquo;t applying. You&rsquo;re competing for the same active candidates everyone else sees.</p>
+              </div>
+            </article>
+            <div class="challenges-help-arrow" aria-hidden="true"><i data-lucide="arrow-right"></i></div>
+            <article class="challenges-help-card">
+              <span class="challenges-help-card__check" aria-hidden="true"><i data-lucide="check"></i></span>
+              <div class="challenges-help-card__content">
+                <p class="challenges-help-card__text"><span class="challenges-help-card__lead">1. We reach passive talent</span> &mdash; Targeted research, market mapping, and personalized outreach engage high-caliber people who aren&rsquo;t actively looking.</p>
+              </div>
+            </article>
           </div>
 
-          <div class="challenges-help-panel reveal">
-            <p class="challenges-help-panel__eyebrow">How We Help</p>
-            <h2 class="challenges-help-panel__title">A Strategic Approach to Better Hiring</h2>
-            <p class="challenges-help-panel__lede">Hiring exceptional talent requires more than identifying qualified candidates. It requires a search process designed to solve the challenges organizations face in today&rsquo;s market.</p>
-            <p class="challenges-help-panel__lede">Our approach helps clients:</p>
-            <ul class="challenges-help-list">
-              <li class="challenges-help-list__item">
-                <svg class="challenges-help-list__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.6"/><path d="M16 16l4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-                <span><strong>Reach passive talent</strong> through targeted research, market mapping, and personalized outreach.</span>
-              </li>
-              <li class="challenges-help-list__item">
-                <svg class="challenges-help-list__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v5c0 4.4-2.9 7.6-7 9-4.1-1.4-7-4.6-7-9V6l7-3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9.5 12.2l1.7 1.7 3.5-3.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span><strong>Improve hiring quality</strong> by evaluating technical expertise, leadership capabilities, and long-term organizational fit.</span>
-              </li>
-              <li class="challenges-help-list__item">
-                <svg class="challenges-help-list__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v5c0 4.4-2.9 7.6-7 9-4.1-1.4-7-4.6-7-9V6l7-3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-                <span><strong>Reduce hiring risk</strong> through structured evaluation, ongoing client communication and collaboration, and informed hiring decisions.</span>
-              </li>
-              <li class="challenges-help-list__item">
-                <svg class="challenges-help-list__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="6" y="11" width="12" height="9" rx="1.6" stroke="currentColor" stroke-width="1.6"/><path d="M9 11V8.2a3 3 0 0 1 6 0V11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-                <span><strong>Support confidential searches</strong> with a discreet, consultative approach.</span>
-              </li>
-              <li class="challenges-help-list__item">
-                <svg class="challenges-help-list__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 19V8.5A2.5 2.5 0 0 1 10.5 6h3A2.5 2.5 0 0 1 16 8.5V19M8 19H5.8A1.8 1.8 0 0 1 4 17.2V13a2 2 0 0 1 2-2h2M16 19h2.2A1.8 1.8 0 0 0 20 17.2V13a2 2 0 0 0-2-2h-2" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-                <span><strong>Extend internal recruiting capacity</strong> by serving as an extension of your leadership and HR teams throughout the search process.</span>
-              </li>
-            </ul>
-            <p class="challenges-help-panel__outro">We don&rsquo;t simply fill open positions. We help organizations make hiring decisions that support long-term success.</p>
+          <div class="challenges-help-pair reveal">
+            <article class="challenges-help-card">
+              <span class="challenges-help-card__icon" aria-hidden="true"><i data-lucide="puzzle"></i></span>
+              <div class="challenges-help-card__content">
+                <h3 class="challenges-help-card__title"><span class="challenges-help-card__index">2.</span> Finding the right fit</h3>
+                <p class="challenges-help-card__text">A candidate who looks right on paper but doesn&rsquo;t align culturally often underperforms or leaves within 12&ndash;18 months.</p>
+              </div>
+            </article>
+            <div class="challenges-help-arrow" aria-hidden="true"><i data-lucide="arrow-right"></i></div>
+            <article class="challenges-help-card">
+              <span class="challenges-help-card__check" aria-hidden="true"><i data-lucide="check"></i></span>
+              <div class="challenges-help-card__content">
+                <p class="challenges-help-card__text"><span class="challenges-help-card__lead">2. We improve quality and long-term fit</span> &mdash; We build a Success Profile and rigorously evaluate technical skill, leadership, and cultural alignment.</p>
+              </div>
+            </article>
           </div>
+
+          <div class="challenges-help-pair reveal">
+            <article class="challenges-help-card">
+              <span class="challenges-help-card__icon" aria-hidden="true"><i data-lucide="clock"></i></span>
+              <div class="challenges-help-card__content">
+                <h3 class="challenges-help-card__title"><span class="challenges-help-card__index">3.</span> Longer hiring cycles</h3>
+                <p class="challenges-help-card__text">Every extra week a critical role sits open costs productivity and increases pressure on the team.</p>
+              </div>
+            </article>
+            <div class="challenges-help-arrow" aria-hidden="true"><i data-lucide="arrow-right"></i></div>
+            <article class="challenges-help-card">
+              <span class="challenges-help-card__check" aria-hidden="true"><i data-lucide="check"></i></span>
+              <div class="challenges-help-card__content">
+                <p class="challenges-help-card__text"><span class="challenges-help-card__lead">3. We shorten cycles while reducing risk</span> &mdash; A structured, collaborative process with continuous calibration keeps searches moving without sacrificing quality.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="challenges-help-pair reveal">
+            <article class="challenges-help-card">
+              <span class="challenges-help-card__icon" aria-hidden="true"><i data-lucide="lock"></i></span>
+              <div class="challenges-help-card__content">
+                <h3 class="challenges-help-card__title"><span class="challenges-help-card__index">4.</span> Confidential hiring needs</h3>
+                <p class="challenges-help-card__text">Broad searches can signal change too early or alert competitors. Discretion is hard with traditional methods.</p>
+              </div>
+            </article>
+            <div class="challenges-help-arrow" aria-hidden="true"><i data-lucide="arrow-right"></i></div>
+            <article class="challenges-help-card">
+              <span class="challenges-help-card__check" aria-hidden="true"><i data-lucide="check"></i></span>
+              <div class="challenges-help-card__content">
+                <p class="challenges-help-card__text"><span class="challenges-help-card__lead">4. We protect confidential searches</span> &mdash; Discreet by design &mdash; no public postings required, outreach handled with care and judgment.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="challenges-help-pair reveal">
+            <article class="challenges-help-card">
+              <span class="challenges-help-card__icon" aria-hidden="true"><i data-lucide="briefcase"></i></span>
+              <div class="challenges-help-card__content">
+                <h3 class="challenges-help-card__title"><span class="challenges-help-card__index">5.</span> Limited internal recruiting resources</h3>
+                <p class="challenges-help-card__text">Specialized searches stretch your team and still may not reach the right passive candidates.</p>
+              </div>
+            </article>
+            <div class="challenges-help-arrow" aria-hidden="true"><i data-lucide="arrow-right"></i></div>
+            <article class="challenges-help-card">
+              <span class="challenges-help-card__check" aria-hidden="true"><i data-lucide="check"></i></span>
+              <div class="challenges-help-card__content">
+                <p class="challenges-help-card__text"><span class="challenges-help-card__lead">5. We extend your internal capacity</span> &mdash; We act as an extension of your leadership and HR teams so your people stay focused on the business.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="challenges-help-pair reveal">
+            <article class="challenges-help-card">
+              <span class="challenges-help-card__icon" aria-hidden="true"><i data-lucide="shield-check"></i></span>
+              <div class="challenges-help-card__content">
+                <h3 class="challenges-help-card__title"><span class="challenges-help-card__index">6.</span> Competition for exceptional talent</h3>
+                <p class="challenges-help-card__text">Top professionals are fielding multiple offers. Without a proactive approach, you lose them.</p>
+              </div>
+            </article>
+            <div class="challenges-help-arrow" aria-hidden="true"><i data-lucide="arrow-right"></i></div>
+            <article class="challenges-help-card">
+              <span class="challenges-help-card__check" aria-hidden="true"><i data-lucide="check"></i></span>
+              <div class="challenges-help-card__content">
+                <p class="challenges-help-card__text"><span class="challenges-help-card__lead">6. We compete effectively for top talent</span> &mdash; Deep specialization in Data &amp; AI, Technology, and Financial Services helps you win the people others can&rsquo;t reach.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="challenges-help-outro-row reveal">
+          <div aria-hidden="true"></div>
+          <div aria-hidden="true"></div>
+          <p class="challenges-help-outro">We don&rsquo;t simply fill open positions. We help organizations make hiring decisions that support long-term success.</p>
         </div>
       </div>
     </section>
