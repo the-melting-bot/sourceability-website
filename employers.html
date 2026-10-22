@@ -845,7 +845,7 @@
 
     .employers-hero-split__grid {
       display: grid;
-      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.15fr);
+      grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.18fr);
       min-height: min(34rem, 72vh);
     }
 
@@ -883,6 +883,8 @@
       justify-content: center;
       background: #af272f;
       padding: clamp(2rem, 4.5vw, 3.875rem);
+      container-type: inline-size;
+      container-name: employers-hero-panel;
     }
 
     .employers-hero-split__title {
@@ -893,7 +895,14 @@
       color: #fff;
       line-height: 1.2;
       margin: 0 0 var(--space-4);
-      text-wrap: balance;
+      text-wrap: pretty;
+    }
+
+    @container employers-hero-panel (min-width: 36rem) {
+      .employers-hero-split__title {
+        font-size: clamp(1.75rem, 4.35cqi, 2.375rem);
+        white-space: nowrap;
+      }
     }
 
     .employers-hero-split__desc {
@@ -956,6 +965,11 @@
 
       .employers-hero-split__panel {
         padding: var(--space-8) var(--space-6);
+      }
+
+      .employers-hero-split__title {
+        white-space: normal;
+        font-size: clamp(1.875rem, 1.35rem + 1.75vw, 2.375rem);
       }
 
       .employers-hero-split__actions {
