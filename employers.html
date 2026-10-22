@@ -353,8 +353,7 @@
     }
 
     .challenges-help-headers,
-    .challenges-help-pair,
-    .challenges-help-outro-row {
+    .challenges-help-pair {
       display: grid;
       grid-template-columns: minmax(0, 1fr) 2.25rem minmax(0, 1fr);
       column-gap: clamp(0.65rem, 1.5vw, 1.15rem);
@@ -491,25 +490,9 @@
       stroke-width: 2;
     }
 
-    .challenges-help-outro-row {
-      margin-top: clamp(1.15rem, 2vw, 1.5rem);
-      align-items: start;
-    }
-
-    .challenges-help-outro {
-      grid-column: 3;
-      margin: 0;
-      font-family: var(--font-body);
-      font-size: clamp(0.92rem, 0.86rem + 0.15vw, 1rem);
-      font-weight: 600;
-      color: var(--color-navy);
-      line-height: 1.55;
-    }
-
     @media (max-width: 991px) {
       .challenges-help-headers,
-      .challenges-help-pair,
-      .challenges-help-outro-row {
+      .challenges-help-pair {
         grid-template-columns: 1fr;
       }
 
@@ -524,11 +507,6 @@
 
       .challenges-help-pair {
         gap: 0.55rem;
-      }
-
-      .challenges-help-outro {
-        grid-column: 1;
-        margin-top: var(--space-4);
       }
     }
 
@@ -1302,12 +1280,6 @@
               </div>
             </article>
           </div>
-        </div>
-
-        <div class="challenges-help-outro-row reveal">
-          <div aria-hidden="true"></div>
-          <div aria-hidden="true"></div>
-          <p class="challenges-help-outro">We don&rsquo;t simply fill open positions. We help organizations make hiring decisions that support long-term success.</p>
         </div>
       </div>
     </section>
