@@ -495,41 +495,42 @@
     }
 
     .about-tanya__quote::before,
-    .about-tanya__quote::after {
+    .about-tanya__quote p:last-of-type::after {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(3.25rem, 8vw, 5.5rem);
+      font-size: clamp(3rem, 7.5vw, 5rem);
       font-weight: 700;
       line-height: 1;
-      color: rgba(175, 39, 47, 0.18);
+      color: rgba(175, 39, 47, 0.16);
       font-style: normal;
       position: absolute;
-      z-index: 0;
       pointer-events: none;
       user-select: none;
     }
 
     .about-tanya__quote::before {
       content: "\201C";
-      top: 0;
+      z-index: 0;
+      top: -0.95rem;
       left: 0;
-    }
-
-    .about-tanya__quote::after {
-      content: "\201D";
-      top: auto;
-      right: 0;
-      bottom: 2.65rem;
     }
 
     .about-tanya__quote p {
       margin: 0 0 var(--space-4);
       font-style: italic;
-      padding-top: clamp(1.85rem, 3.2vw, 2.45rem);
-      padding-bottom: clamp(1.35rem, 2.4vw, 1.85rem);
     }
 
     .about-tanya__quote p:last-of-type {
+      position: relative;
       margin-bottom: var(--space-5);
+      z-index: 1;
+    }
+
+    .about-tanya__quote p:last-of-type::after {
+      content: "\201D";
+      z-index: -1;
+      right: 0;
+      bottom: 0;
+      transform: translateY(28%);
     }
 
     .about-tanya__quote cite {
