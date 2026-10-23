@@ -1,6 +1,6 @@
-# SourceAbility, Inc. — Website
+# SourceAbility, Inc. - Website
 
-Professional website for SourceAbility, Inc. — specialized hiring across Data, AI, Technology, and Financial Services.
+Professional website for SourceAbility, Inc. - specialized hiring across Data, AI, Technology, and Financial Services.
 
 ## Stack
 - HTML, CSS, JavaScript
