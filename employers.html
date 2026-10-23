@@ -181,12 +181,22 @@
     }
 
     .solution-flip__face--front .solution-flip__overlay {
+      display: grid;
+      grid-template-rows: 1fr auto auto;
+      justify-content: stretch;
+      align-content: end;
       background: linear-gradient(
         180deg,
         rgba(16, 18, 19, 0.08) 0%,
         rgba(16, 18, 19, 0.28) 42%,
         rgba(16, 18, 19, 0.72) 100%
       );
+    }
+
+    .solution-flip__face--front .solution-flip__label {
+      grid-row: 2;
+      min-height: calc(2 * 1.25em);
+      align-self: start;
     }
 
     .solution-flip__face--back .solution-flip__overlay {
@@ -214,9 +224,12 @@
     }
 
     .solution-flip__face--front .solution-flip__summary {
+      grid-row: 3;
+      min-height: calc(5 * 1.6em);
       max-width: 22rem;
       font-size: clamp(0.92rem, 0.88rem + 0.15vw, 1rem);
       color: rgba(255, 255, 255, 0.9);
+      align-self: start;
     }
 
     .solution-flip__face--back .solution-flip__detail {
@@ -411,38 +424,60 @@
       min-height: 100%;
     }
 
-    .challenges-help-card__icon {
+    .challenges-help-card__marker {
+      position: relative;
       flex-shrink: 0;
+      width: 34px;
+      height: 34px;
+    }
+
+    .challenges-help-card__marker-circle {
+      box-sizing: border-box;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 2.15rem;
-      height: 2.15rem;
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      border: 1.5px solid var(--color-slate);
+    }
+
+    .challenges-help-card__marker--problem .challenges-help-card__marker-circle {
+      border-color: var(--color-slate);
+      color: var(--color-slate);
+    }
+
+    .challenges-help-card__marker--solved .challenges-help-card__marker-circle {
+      border-color: var(--color-accent);
       color: var(--color-accent);
     }
 
-    .challenges-help-card__icon svg {
-      width: 1.65rem;
-      height: 1.65rem;
+    .challenges-help-card__marker-circle svg {
+      width: 18px;
+      height: 18px;
       stroke-width: 1.85;
     }
 
-    .challenges-help-card__check {
-      flex-shrink: 0;
+    .challenges-help-card__marker-badge {
+      position: absolute;
+      right: -3px;
+      bottom: -3px;
+      box-sizing: border-box;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 2.15rem;
-      height: 2.15rem;
+      width: 17px;
+      height: 17px;
       border-radius: 999px;
       background: var(--color-accent);
       color: #fff;
+      border: 1.5px solid #fff;
     }
 
-    .challenges-help-card__check svg {
-      width: 1.15rem;
-      height: 1.15rem;
-      stroke-width: 2.75;
+    .challenges-help-card__marker-badge svg {
+      width: 10px;
+      height: 10px;
+      stroke-width: 3;
     }
 
     .challenges-help-card__content {
@@ -464,11 +499,6 @@
       font-size: clamp(0.84rem, 0.8rem + 0.12vw, 0.92rem);
       color: var(--color-text-muted);
       line-height: 1.55;
-    }
-
-    .challenges-help-card__text .challenges-help-card__lead {
-      font-weight: 700;
-      color: #101213;
     }
 
     .challenges-help-arrow {
@@ -497,7 +527,9 @@
       }
 
       .challenges-help-arrow {
-        display: none;
+        display: flex;
+        align-self: center;
+        transform: rotate(90deg);
       }
 
       .challenges-help-pair {
@@ -785,6 +817,9 @@
     .roles-support-section .differentiator {
       position: relative;
       padding: 0 0 0 1.15rem;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
     }
 
     .roles-support-section .differentiator::before {
@@ -808,12 +843,41 @@
       letter-spacing: -0.01em;
     }
 
+    .roles-support-section .differentiator__focus {
+      margin: 0 0 var(--space-2);
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.94);
+      font-size: clamp(0.8rem, 0.72rem + 0.35vw, 0.95rem);
+      letter-spacing: -0.015em;
+      line-height: 1.25;
+      overflow-wrap: break-word;
+    }
+
+    @media (min-width: 768px) {
+      .roles-support-section .differentiator__focus {
+        margin-top: -0.15rem;
+        white-space: nowrap;
+        font-size: clamp(0.65rem, 0.54rem + 0.42vw, 0.88rem);
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+        overflow-wrap: normal;
+      }
+    }
+
     .roles-support-section .differentiator__text {
       font-size: var(--text-sm);
       color: rgba(255, 255, 255, 0.88);
       line-height: 1.65;
       margin: 0 0 var(--space-2);
       max-width: none;
+      flex: 1 1 auto;
+    }
+
+    @media (min-width: 768px) {
+      .roles-support-section .differentiator__text {
+        min-height: calc(2 * 1.65em);
+      }
     }
 
     .roles-support-section .differentiator__divider {
@@ -1099,20 +1163,21 @@
               <div class="solution-flip__face solution-flip__face--front" style="background-image: url('./assets/images/search-solution-executive.webp');">
                 <div class="solution-flip__overlay">
                   <h3 class="solution-flip__label">Retained Executive Search</h3>
-                  <p class="solution-flip__summary">For senior leadership and business-critical roles, we deliver a retained search approach focused on precision, depth, and discretion.</p>
+                  <p class="solution-flip__summary">For senior leadership and business-critical roles, we run a dedicated, exclusive search focused on precision, depth, and discretion.</p>
                 </div>
               </div>
               <div class="solution-flip__face solution-flip__face--back">
                 <div class="solution-flip__overlay">
                   <h3 class="solution-flip__label">Retained Executive Search</h3>
-                  <p class="solution-flip__detail">Through comprehensive market mapping, targeted outreach, and rigorous evaluation, we identify leaders who can drive transformation, innovation, and long-term growth.</p>
-                  <p class="solution-flip__list-label">Typical engagements include</p>
+                  <p class="solution-flip__detail">We map the market, approach leaders who aren't looking, and evaluate each one against a Success Profile built with you, so every candidate you meet reflects what the role needs to deliver. Your search stays confidential from start to finish.</p>
+                  <p class="solution-flip__detail"><strong>How it's billed:</strong> Paid in stages for a fully dedicated search.</p>
+                  <p class="solution-flip__list-label">Best suited for</p>
                   <ul class="solution-flip__list">
                     <li>C-suite and VP-level roles</li>
-                    <li>Data, AI, and Technology Senior Leadership</li>
-                    <li>Strategic, confidential hires with significant business impact</li>
+                    <li>Senior leaders in Data, AI, Technology, and Financial Services</li>
+                    <li>Confidential hires with significant business impact</li>
                   </ul>
-                  <a href="contact.html" class="solution-flip__cta">Start the search</a>
+                  <a href="contact.html" class="solution-flip__cta">Start a search</a>
                 </div>
               </div>
             </div>
@@ -1123,20 +1188,21 @@
               <div class="solution-flip__face solution-flip__face--front" style="background-image: url('./assets/images/search-solution-professional.webp');">
                 <div class="solution-flip__overlay">
                   <h3 class="solution-flip__label">Engaged Professional Search</h3>
-                  <p class="solution-flip__summary">For high-impact individual contributors and mid-level leadership, we provide a flexible and efficient search approach tailored to your hiring needs.</p>
+                  <p class="solution-flip__summary">For high-impact individual contributors and mid-level leaders, we offer a flexible, efficient search tailored to your hiring needs.</p>
                 </div>
               </div>
               <div class="solution-flip__face solution-flip__face--back">
                 <div class="solution-flip__overlay">
                   <h3 class="solution-flip__label">Engaged Professional Search</h3>
-                  <p class="solution-flip__detail">Whether structured as success-based or hybrid search engagements, we focus on quality, speed, and alignment—delivering candidates who can contribute immediately and scale with your organization.</p>
-                  <p class="solution-flip__list-label">Typical roles include</p>
+                  <p class="solution-flip__detail">We focus on quality, speed, and alignment - delivering candidates who can contribute right away and grow with your organization.</p>
+                  <p class="solution-flip__detail"><strong>How it's billed:</strong> A smaller upfront fee that commits our team.</p>
+                  <p class="solution-flip__list-label">Best suited for</p>
                   <ul class="solution-flip__list">
                     <li>Data, analytics, and engineering professionals</li>
                     <li>Technology and IT roles</li>
-                    <li>Commercial, lending, risk and functional mid-management leadership</li>
+                    <li>Financial services roles in commercial banking, lending, and risk</li>
                   </ul>
-                  <a href="contact.html" class="solution-flip__cta">Start the search</a>
+                  <a href="contact.html" class="solution-flip__cta">Start a search</a>
                 </div>
               </div>
             </div>
@@ -1147,20 +1213,21 @@
               <div class="solution-flip__face solution-flip__face--front" style="background-image: url('./assets/images/search-solution-interim.webp');">
                 <div class="solution-flip__overlay">
                   <h3 class="solution-flip__label">Project &amp; Interim Search</h3>
-                  <p class="solution-flip__summary">For project-based, interim, or short-term roles, we offer a short-term contract approach that combines dedicated search rigor with flexibility.</p>
+                  <p class="solution-flip__summary">For project-based, interim, or short-term needs, we find specialized professionals on a contract basis, with the same search rigor and the flexibility to move quickly.</p>
                 </div>
               </div>
               <div class="solution-flip__face solution-flip__face--back">
                 <div class="solution-flip__overlay">
                   <h3 class="solution-flip__label">Project &amp; Interim Search</h3>
-                  <p class="solution-flip__detail">This model is ideal when speed, specialization, or market scarcity requires a highly targeted and responsive strategy.</p>
+                  <p class="solution-flip__detail">This model works best when speed, specialized skills, or a scarce talent market call for a targeted, responsive approach.</p>
+                  <p class="solution-flip__detail"><strong>How it's billed:</strong> Hourly or contingent, whichever fits the work.</p>
                   <p class="solution-flip__list-label">Best suited for</p>
                   <ul class="solution-flip__list">
                     <li>Consultants with emerging skill sets (AI, advanced analytics, platform engineering)</li>
-                    <li>Urgent or business-critical short-term hires</li>
-                    <li>Project-based, staffing or interim needs</li>
+                    <li>Urgent, business-critical short-term hires</li>
+                    <li>Interim coverage during leadership transitions or special initiatives</li>
                   </ul>
-                  <a href="contact.html" class="solution-flip__cta">Start the search</a>
+                  <a href="contact.html" class="solution-flip__cta">Start a search</a>
                 </div>
               </div>
             </div>
@@ -1189,7 +1256,9 @@
         <div class="challenges-help-pairs">
           <div class="challenges-help-pair reveal">
             <article class="challenges-help-card">
-              <span class="challenges-help-card__icon" aria-hidden="true"><i data-lucide="user-search"></i></span>
+              <span class="challenges-help-card__marker challenges-help-card__marker--problem" aria-hidden="true">
+                <span class="challenges-help-card__marker-circle"><i data-lucide="user-search"></i></span>
+              </span>
               <div class="challenges-help-card__content">
                 <h3 class="challenges-help-card__title">Limited access to passive talent</h3>
                 <p class="challenges-help-card__text">The best people aren&rsquo;t applying. You&rsquo;re competing for the same active candidates everyone else sees.</p>
@@ -1197,16 +1266,22 @@
             </article>
             <div class="challenges-help-arrow" aria-hidden="true"><i data-lucide="arrow-right"></i></div>
             <article class="challenges-help-card">
-              <span class="challenges-help-card__check" aria-hidden="true"><i data-lucide="check"></i></span>
+              <span class="challenges-help-card__marker challenges-help-card__marker--solved" aria-hidden="true">
+                <span class="challenges-help-card__marker-circle"><i data-lucide="user-search"></i></span>
+                <span class="challenges-help-card__marker-badge" aria-hidden="true"><i data-lucide="check"></i></span>
+              </span>
               <div class="challenges-help-card__content">
-                <p class="challenges-help-card__text"><span class="challenges-help-card__lead">We reach passive talent</span> &mdash; Targeted research, market mapping, and personalized outreach engage high-caliber people who aren&rsquo;t actively looking.</p>
+                <h3 class="challenges-help-card__title">We reach passive talent</h3>
+                <p class="challenges-help-card__text">Targeted research, market mapping, and personalized outreach engage high-caliber people who aren&rsquo;t actively looking.</p>
               </div>
             </article>
           </div>
 
           <div class="challenges-help-pair reveal">
             <article class="challenges-help-card">
-              <span class="challenges-help-card__icon" aria-hidden="true"><i data-lucide="puzzle"></i></span>
+              <span class="challenges-help-card__marker challenges-help-card__marker--problem" aria-hidden="true">
+                <span class="challenges-help-card__marker-circle"><i data-lucide="puzzle"></i></span>
+              </span>
               <div class="challenges-help-card__content">
                 <h3 class="challenges-help-card__title">Finding the right fit</h3>
                 <p class="challenges-help-card__text">A candidate who looks right on paper but doesn&rsquo;t align culturally often underperforms or leaves within 12&ndash;18 months.</p>
@@ -1214,16 +1289,22 @@
             </article>
             <div class="challenges-help-arrow" aria-hidden="true"><i data-lucide="arrow-right"></i></div>
             <article class="challenges-help-card">
-              <span class="challenges-help-card__check" aria-hidden="true"><i data-lucide="check"></i></span>
+              <span class="challenges-help-card__marker challenges-help-card__marker--solved" aria-hidden="true">
+                <span class="challenges-help-card__marker-circle"><i data-lucide="puzzle"></i></span>
+                <span class="challenges-help-card__marker-badge" aria-hidden="true"><i data-lucide="check"></i></span>
+              </span>
               <div class="challenges-help-card__content">
-                <p class="challenges-help-card__text"><span class="challenges-help-card__lead">We improve quality and long-term fit</span> &mdash; We build a Success Profile and rigorously evaluate technical skill, leadership, and cultural alignment.</p>
+                <h3 class="challenges-help-card__title">We improve quality and long-term fit</h3>
+                <p class="challenges-help-card__text">We build a Success Profile and rigorously evaluate technical skill, leadership, and cultural alignment.</p>
               </div>
             </article>
           </div>
 
           <div class="challenges-help-pair reveal">
             <article class="challenges-help-card">
-              <span class="challenges-help-card__icon" aria-hidden="true"><i data-lucide="clock"></i></span>
+              <span class="challenges-help-card__marker challenges-help-card__marker--problem" aria-hidden="true">
+                <span class="challenges-help-card__marker-circle"><i data-lucide="clock"></i></span>
+              </span>
               <div class="challenges-help-card__content">
                 <h3 class="challenges-help-card__title">Longer hiring cycles</h3>
                 <p class="challenges-help-card__text">Every extra week a critical role sits open costs productivity and increases pressure on the team.</p>
@@ -1231,16 +1312,22 @@
             </article>
             <div class="challenges-help-arrow" aria-hidden="true"><i data-lucide="arrow-right"></i></div>
             <article class="challenges-help-card">
-              <span class="challenges-help-card__check" aria-hidden="true"><i data-lucide="check"></i></span>
+              <span class="challenges-help-card__marker challenges-help-card__marker--solved" aria-hidden="true">
+                <span class="challenges-help-card__marker-circle"><i data-lucide="clock"></i></span>
+                <span class="challenges-help-card__marker-badge" aria-hidden="true"><i data-lucide="check"></i></span>
+              </span>
               <div class="challenges-help-card__content">
-                <p class="challenges-help-card__text"><span class="challenges-help-card__lead">We shorten cycles while reducing risk</span> &mdash; A structured, collaborative process with continuous calibration keeps searches moving without sacrificing quality.</p>
+                <h3 class="challenges-help-card__title">We shorten cycles while reducing risk</h3>
+                <p class="challenges-help-card__text">A structured, collaborative process with continuous calibration keeps searches moving without sacrificing quality.</p>
               </div>
             </article>
           </div>
 
           <div class="challenges-help-pair reveal">
             <article class="challenges-help-card">
-              <span class="challenges-help-card__icon" aria-hidden="true"><i data-lucide="lock"></i></span>
+              <span class="challenges-help-card__marker challenges-help-card__marker--problem" aria-hidden="true">
+                <span class="challenges-help-card__marker-circle"><i data-lucide="lock"></i></span>
+              </span>
               <div class="challenges-help-card__content">
                 <h3 class="challenges-help-card__title">Confidential hiring needs</h3>
                 <p class="challenges-help-card__text">Broad searches can signal change too early or alert competitors. Discretion is hard with traditional methods.</p>
@@ -1248,16 +1335,22 @@
             </article>
             <div class="challenges-help-arrow" aria-hidden="true"><i data-lucide="arrow-right"></i></div>
             <article class="challenges-help-card">
-              <span class="challenges-help-card__check" aria-hidden="true"><i data-lucide="check"></i></span>
+              <span class="challenges-help-card__marker challenges-help-card__marker--solved" aria-hidden="true">
+                <span class="challenges-help-card__marker-circle"><i data-lucide="lock"></i></span>
+                <span class="challenges-help-card__marker-badge" aria-hidden="true"><i data-lucide="check"></i></span>
+              </span>
               <div class="challenges-help-card__content">
-                <p class="challenges-help-card__text"><span class="challenges-help-card__lead">We protect confidential searches</span> &mdash; Discreet by design &mdash; no public postings required, outreach handled with care and judgment.</p>
+                <h3 class="challenges-help-card__title">We protect confidential searches</h3>
+                <p class="challenges-help-card__text">Discreet by design, with no public postings required and outreach handled with care and judgment.</p>
               </div>
             </article>
           </div>
 
           <div class="challenges-help-pair reveal">
             <article class="challenges-help-card">
-              <span class="challenges-help-card__icon" aria-hidden="true"><i data-lucide="briefcase"></i></span>
+              <span class="challenges-help-card__marker challenges-help-card__marker--problem" aria-hidden="true">
+                <span class="challenges-help-card__marker-circle"><i data-lucide="briefcase"></i></span>
+              </span>
               <div class="challenges-help-card__content">
                 <h3 class="challenges-help-card__title">Limited internal recruiting resources</h3>
                 <p class="challenges-help-card__text">Specialized searches stretch your team and still may not reach the right passive candidates.</p>
@@ -1265,16 +1358,22 @@
             </article>
             <div class="challenges-help-arrow" aria-hidden="true"><i data-lucide="arrow-right"></i></div>
             <article class="challenges-help-card">
-              <span class="challenges-help-card__check" aria-hidden="true"><i data-lucide="check"></i></span>
+              <span class="challenges-help-card__marker challenges-help-card__marker--solved" aria-hidden="true">
+                <span class="challenges-help-card__marker-circle"><i data-lucide="briefcase"></i></span>
+                <span class="challenges-help-card__marker-badge" aria-hidden="true"><i data-lucide="check"></i></span>
+              </span>
               <div class="challenges-help-card__content">
-                <p class="challenges-help-card__text"><span class="challenges-help-card__lead">We extend your internal capacity</span> &mdash; We act as an extension of your leadership and HR teams so your people stay focused on the business.</p>
+                <h3 class="challenges-help-card__title">We extend your internal capacity</h3>
+                <p class="challenges-help-card__text">We act as an extension of your leadership and HR teams so your people stay focused on the business.</p>
               </div>
             </article>
           </div>
 
           <div class="challenges-help-pair reveal">
             <article class="challenges-help-card">
-              <span class="challenges-help-card__icon" aria-hidden="true"><i data-lucide="shield-check"></i></span>
+              <span class="challenges-help-card__marker challenges-help-card__marker--problem" aria-hidden="true">
+                <span class="challenges-help-card__marker-circle"><i data-lucide="shield-check"></i></span>
+              </span>
               <div class="challenges-help-card__content">
                 <h3 class="challenges-help-card__title">Competition for exceptional talent</h3>
                 <p class="challenges-help-card__text">Top professionals are fielding multiple offers. Without a proactive approach, you lose them.</p>
@@ -1282,9 +1381,13 @@
             </article>
             <div class="challenges-help-arrow" aria-hidden="true"><i data-lucide="arrow-right"></i></div>
             <article class="challenges-help-card">
-              <span class="challenges-help-card__check" aria-hidden="true"><i data-lucide="check"></i></span>
+              <span class="challenges-help-card__marker challenges-help-card__marker--solved" aria-hidden="true">
+                <span class="challenges-help-card__marker-circle"><i data-lucide="shield-check"></i></span>
+                <span class="challenges-help-card__marker-badge" aria-hidden="true"><i data-lucide="check"></i></span>
+              </span>
               <div class="challenges-help-card__content">
-                <p class="challenges-help-card__text"><span class="challenges-help-card__lead">We compete effectively for top talent</span> &mdash; Deep specialization in Data &amp; AI, Technology, and Financial Services helps you win the people others can&rsquo;t reach.</p>
+                <h3 class="challenges-help-card__title">We compete effectively for top talent</h3>
+                <p class="challenges-help-card__text">Deep specialization in Data &amp; AI, Technology, and Financial Services helps you win the people others can&rsquo;t reach.</p>
               </div>
             </article>
           </div>
@@ -1350,23 +1453,25 @@
 
           <div class="approach-roles__col approach-roles__col--roles roles-support-section" aria-labelledby="why-heading">
             <header class="employers-approach__head reveal roles-support-head">
-              <h2 class="employers-approach__title" id="why-heading">Representative Searches</h2>
-              <p class="employers-approach__intro">Representative searches include, but are not limited to:</p>
+              <h2 class="employers-approach__title" id="why-heading">Roles We Recruit For</h2>
+              <p class="employers-approach__intro">Roles we recruit for:</p>
             </header>
 
             <div class="roles-support-panel reveal">
             <div class="differentiators-list">
               <div class="differentiator reveal">
                   <h3 class="differentiator__title">Data &amp; AI</h3>
-                  <p class="differentiator__text">Data Engineer, Analytics Engineer, Data Analyst/BI Developer, Machine Learning Engineer, and AI/Applied Scientist roles.</p>
+                  <p class="differentiator__focus">Data Engineering | BI | AI &amp; Machine Learning</p>
+                  <p class="differentiator__text">C-level to Manager leadership, plus Data Engineer, Data Scientist, and Machine Learning Engineer roles.</p>
                   <a href="specialties.html" class="differentiator__link">Learn More</a>
               </div>
 
               <hr class="differentiator__divider" aria-hidden="true">
 
               <div class="differentiator reveal">
-                  <h3 class="differentiator__title">Technology</h3>
-                  <p class="differentiator__text">Software Engineer/Developer, Cloud Engineer/Architect, DevOps/Platform Engineer, Product Manager, and IT/Infrastructure leadership roles.</p>
+                  <h3 class="differentiator__title">Technology &amp; Software</h3>
+                  <p class="differentiator__focus">Software Engineering | Cloud | IT Operations &amp; Support</p>
+                  <p class="differentiator__text">C-level to Manager leadership, plus Software Engineer, Full Stack Developer, and Cloud Engineer roles.</p>
                   <a href="specialties.html" class="differentiator__link">Learn More</a>
               </div>
 
@@ -1374,7 +1479,8 @@
 
               <div class="differentiator reveal">
                   <h3 class="differentiator__title">Financial Services</h3>
-                  <p class="differentiator__text">Chief Lending Officer, VP/SVP Commercial Lending, Commercial Relationship Manager, Credit Analyst/Underwriter, Treasury Management Officer, and Business Banking leadership.</p>
+                  <p class="differentiator__focus">Credit Unions | Commercial Lending | Risk Management</p>
+                  <p class="differentiator__text">C-level to Manager leadership, plus Commercial Lender, Model Risk Consultant, and Fraud Analyst roles.</p>
                   <a href="specialties.html" class="differentiator__link">Learn More</a>
               </div>
             </div>
