@@ -4430,6 +4430,58 @@ p.salary-table-footer a {
   text-align: center;
 }
 
+.cta-banner-new__resume-note {
+  margin: var(--space-4) 0 0;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  line-height: 1.55;
+  color: var(--color-text-muted);
+}
+
+.cta-banner-new__resume-note-br {
+  display: none;
+}
+
+.cta-banner-new__resume-link {
+  display: inline-block;
+  min-height: 44px;
+  padding: 0.625rem 0.35rem;
+  margin: -0.625rem -0.35rem;
+  color: var(--color-accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  transition: color 0.18s ease;
+}
+
+.cta-banner-new__resume-link:hover {
+  color: var(--color-accent-hover);
+}
+
+.cta-banner-new__resume-link:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+@media (max-width: 768px) {
+  .cta-banner-new__resume-note {
+    font-size: 0.9375rem;
+  }
+
+  .cta-banner-new__resume-note-br {
+    display: block;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-banner-new__resume-link {
+    transition: none;
+  }
+}
+
 .cta-banner-new__container--no-images {
   justify-content: center;
 }
