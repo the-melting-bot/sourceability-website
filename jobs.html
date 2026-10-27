@@ -393,57 +393,22 @@
       color: rgba(255, 255, 255, 0.95);
     }
 
-    .jobs-recruiter__phone-row {
-      display: flex;
-      align-items: center;
-      gap: var(--space-3);
-      margin-bottom: var(--space-4);
+    .jobs-page-cta .cta-banner-new__actions--dual {
+      gap: 0.75rem;
     }
 
-    .jobs-recruiter__phone-icon {
-      flex-shrink: 0;
-      width: 44px;
-      height: 44px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      border: 1.5px solid var(--color-accent);
+    .jobs-page-cta .cta-banner-new__actions .btn.btn--jobs-secondary {
+      background: #fff;
       color: var(--color-accent);
+      border: 2px solid var(--color-accent);
+      box-shadow: 0 2px 12px rgba(175, 39, 47, 0.12);
     }
 
-    .jobs-recruiter__phone-link {
-      font-family: var(--font-display);
-      font-size: clamp(1.05rem, 1rem + 0.35vw, 1.2rem);
-      font-weight: 600;
-      color: var(--color-navy);
-      text-decoration: none;
-      min-height: 44px;
-      display: inline-flex;
-      align-items: center;
-    }
-
-    .jobs-recruiter__phone-link:focus-visible {
-      outline: 2px solid var(--color-accent);
-      outline-offset: 3px;
-      border-radius: var(--radius-sm);
-    }
-
-    .jobs-recruiter__schedule {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      min-height: 44px;
-    }
-
-    .jobs-recruiter__closing {
-      margin: var(--space-4) 0 0;
-      text-align: center;
-      font-family: var(--font-body);
-      font-size: max(0.9375rem, 15px);
-      font-weight: 600;
-      color: var(--color-navy);
+    .jobs-page-cta .cta-banner-new__actions .btn.btn--jobs-secondary:hover,
+    .jobs-page-cta .cta-banner-new__actions .btn.btn--jobs-secondary:focus-visible {
+      background: var(--color-accent);
+      color: #fff;
+      border-color: var(--color-accent);
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -584,26 +549,10 @@
             <!-- Jobs list — filled by main.js -->
             <div id="jobs-list" class="jobs-list" aria-live="polite" aria-label="Job listings"></div>
 
-            <!-- Fallback card -->
-            <div id="jobs-fallback" style="display:none;">
-              <div class="jobs-fallback-card reveal">
-                <div class="jobs-fallback-card__inner">
-                  <div class="jobs-fallback-card__icon" aria-hidden="true">
-                    <i data-lucide="briefcase" style="width:32px;height:32px;"></i>
-                  </div>
-                  <h2 class="jobs-fallback-card__title">Our Current Positions Are Available on Our Dedicated Job Portal</h2>
-                  <p class="jobs-fallback-card__text">Browse all open roles in data science, analytics, business intelligence, AI, and more. New positions are added regularly.</p>
-                  <a href="https://jobs.crelate.com/portal/sourceabilityinc" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg jobs-fallback-card__cta">
-                    View All Positions on Our Portal
-                    <i data-lucide="arrow-up-right" style="width:16px;height:16px;margin-left:6px;"></i>
-                  </a>
-                  <p class="jobs-fallback-card__phone">Or call us at <a href="tel:8664129178">866-412-9178</a></p>
-                </div>
-              </div>
-            </div>
+            <div id="jobs-fallback" style="display:none;" aria-hidden="true"></div>
           </div>
 
-          <aside class="jobs-layout__sidebar" aria-label="Join our network and contact options">
+          <aside class="jobs-layout__sidebar" aria-label="Join our network">
             <div class="jobs-sidebar-card jobs-sidebar-card--navy" id="join-network">
               <h2 class="jobs-sidebar-card__title">Join our network</h2>
               <p class="jobs-sidebar-card__text">Share your resume and we&rsquo;ll consider you for roles that fit, including ones that are never posted.</p>
@@ -637,21 +586,28 @@
               </form>
               <div id="jobs-network-success" class="jobs-sidebar-form__success" role="status" aria-live="polite" hidden>Thank you. We received your resume and will be in touch.</div>
             </div>
-
-            <div class="jobs-sidebar-card jobs-sidebar-card--light">
-              <h2 class="jobs-sidebar-card__title">Talk to a recruiter</h2>
-              <div class="jobs-recruiter__phone-row">
-                <span class="jobs-recruiter__phone-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" stroke-linejoin="round"/></svg>
-                </span>
-                <a class="jobs-recruiter__phone-link" href="tel:+18664129178">866-412-9178</a>
-              </div>
-              <a href="https://calendly.com/tanyacalkins" target="_blank" rel="noopener noreferrer" class="btn btn--secondary btn--lg jobs-recruiter__schedule">Schedule a Conversation</a>
-              <p class="jobs-recruiter__closing">We&rsquo;d love to hear from you!</p>
-            </div>
           </aside>
         </div>
 
+      </div>
+    </section>
+
+    <!-- ==========================================
+         NOT SEEING THE RIGHT OPPORTUNITY?
+    ========================================== -->
+    <section class="cta-banner-new jobs-page-cta" aria-labelledby="jobs-no-fit-heading">
+      <div class="cta-banner-new__container cta-banner-new__container--no-images">
+        <div class="cta-banner-new__content">
+          <div class="reveal">
+            <h2 class="cta-banner-new__title" id="jobs-no-fit-heading">Not Seeing the <span class="cta-banner-new__mark">Right Opportunity?</span></h2>
+            <p class="cta-banner-new__text">Whether you&rsquo;re actively looking or simply open to the right opportunity, we&rsquo;d like to learn more about you, your experience, your interests, and what would make a career move worthwhile. Share your resume or schedule a conversation so we can consider you for opportunities that align with your background and goals.</p>
+            <p class="cta-banner-new__text cta-banner-new__closing-line">We would love to hear from you!</p>
+            <div class="cta-banner-new__actions cta-banner-new__actions--multi cta-banner-new__actions--dual">
+              <a href="#join-network" class="btn btn--primary btn--lg">Share Your Resume</a>
+              <a href="https://calendly.com/tanyacalkins" target="_blank" rel="noopener noreferrer" class="btn btn--jobs-secondary btn--lg">Schedule a Conversation</a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
