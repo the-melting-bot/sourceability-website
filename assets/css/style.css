@@ -4420,6 +4420,16 @@ p.salary-table-footer a {
   margin-top: var(--space-4);
 }
 
+.cta-banner-new__text:has(+ .cta-banner-new__closing-line) {
+  margin-bottom: 0;
+}
+
+.cta-banner-new__closing-line {
+  margin-top: 1.125em;
+  margin-bottom: var(--space-6);
+  text-align: center;
+}
+
 .cta-banner-new__container--no-images {
   justify-content: center;
 }
