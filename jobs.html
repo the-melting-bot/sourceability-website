@@ -174,26 +174,282 @@
       margin-bottom: 0;
     }
 
-    #resume {
+    .jobs-hero-split__desc a {
+      color: #fff;
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 0.18em;
+    }
+
+    .jobs-hero-split__desc a:hover,
+    .jobs-hero-split__desc a:focus-visible {
+      color: #fff;
+      opacity: 0.92;
+    }
+
+    .jobs-hero-split__desc a:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 3px;
+      border-radius: var(--radius-sm);
+    }
+
+    .jobs-layout {
+      display: grid;
+      gap: clamp(1.75rem, 3vw, 2.5rem);
+      align-items: start;
+    }
+
+    @media (min-width: 960px) {
+      .jobs-layout {
+        grid-template-columns: 58fr 42fr;
+      }
+
+      .jobs-layout__sidebar {
+        position: sticky;
+        top: calc(7rem + 1.5rem);
+      }
+    }
+
+    @media (max-height: 700px) {
+      .jobs-layout__sidebar {
+        position: static;
+      }
+    }
+
+    .jobs-layout__main {
+      min-width: 0;
+    }
+
+    .jobs-list {
+      max-width: 100%;
+    }
+
+    #join-network {
       scroll-margin-top: 7rem;
     }
 
-    .jobs-page-cta .cta-banner-new__actions--dual {
-      gap: 0.75rem;
+    .jobs-sidebar-card {
+      border-radius: var(--radius-lg);
+      padding: clamp(1.25rem, 2.5vw, 1.5rem);
     }
 
-    .jobs-page-cta .cta-banner-new__actions .btn.btn--jobs-secondary {
-      background: #fff;
-      color: var(--color-accent);
-      border: 2px solid var(--color-accent);
-      box-shadow: 0 2px 12px rgba(175, 39, 47, 0.12);
+    .jobs-sidebar-card + .jobs-sidebar-card {
+      margin-top: var(--space-4);
     }
 
-    .jobs-page-cta .cta-banner-new__actions .btn.btn--jobs-secondary:hover,
-    .jobs-page-cta .cta-banner-new__actions .btn.btn--jobs-secondary:focus-visible {
-      background: var(--color-accent);
+    .jobs-sidebar-card--navy {
+      background: var(--color-navy);
+      color: var(--color-text-inverse);
+    }
+
+    .jobs-sidebar-card--light {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      color: var(--color-navy);
+    }
+
+    .jobs-sidebar-card__title {
+      margin: 0 0 var(--space-3);
+      font-family: var(--font-display);
+      font-size: clamp(1.125rem, 1rem + 0.5vw, 1.35rem);
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    .jobs-sidebar-card--navy .jobs-sidebar-card__title {
       color: #fff;
-      border-color: var(--color-accent);
+    }
+
+    .jobs-sidebar-card__text {
+      margin: 0 0 var(--space-5);
+      font-family: var(--font-body);
+      font-size: max(0.9375rem, 15px);
+      line-height: 1.6;
+    }
+
+    .jobs-sidebar-card--navy .jobs-sidebar-card__text {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .jobs-sidebar-card--light .jobs-sidebar-card__text {
+      color: var(--color-text-muted);
+    }
+
+    .jobs-sidebar-form__group {
+      margin-bottom: var(--space-4);
+    }
+
+    .jobs-sidebar-form__label {
+      display: block;
+      margin-bottom: var(--space-2);
+      font-family: var(--font-body);
+      font-size: max(0.9375rem, 15px);
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.95);
+    }
+
+    .jobs-sidebar-form__input,
+    .jobs-sidebar-form__file {
+      display: block;
+      width: 100%;
+      min-height: 44px;
+      padding: 0.625rem 0.75rem;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.4;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.38);
+      border-radius: var(--radius-md);
+      box-sizing: border-box;
+    }
+
+    .jobs-sidebar-form__file {
+      padding: 0.5rem 0.75rem;
+    }
+
+    .jobs-sidebar-form__input:focus-visible,
+    .jobs-sidebar-form__file:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 2px;
+      border-color: rgba(255, 255, 255, 0.65);
+    }
+
+    .jobs-sidebar-form__filename {
+      display: block;
+      margin-top: var(--space-2);
+      font-size: var(--text-sm);
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .jobs-sidebar-form__hint {
+      margin: var(--space-2) 0 0;
+      font-size: var(--text-sm);
+      color: rgba(255, 255, 255, 0.75);
+      line-height: 1.4;
+    }
+
+    .jobs-sidebar-form__submit {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 44px;
+      margin-top: var(--space-2);
+      padding: 0.75rem 1.25rem;
+      font-family: var(--font-display);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--color-navy);
+      background: #fff;
+      border: none;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: background 0.18s ease, color 0.18s ease;
+    }
+
+    .jobs-sidebar-form__submit:hover {
+      background: rgba(255, 255, 255, 0.92);
+    }
+
+    .jobs-sidebar-form__submit:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 3px;
+    }
+
+    .jobs-sidebar-form__fineprint {
+      margin: var(--space-4) 0 0;
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      line-height: 1.45;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .jobs-sidebar-form__fineprint a {
+      color: #fff;
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 0.15em;
+    }
+
+    .jobs-sidebar-form__error {
+      display: none;
+      margin-top: var(--space-3);
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      color: #ffd4d4;
+      line-height: 1.45;
+    }
+
+    .jobs-sidebar-form__error.is-visible {
+      display: block;
+    }
+
+    .jobs-sidebar-form__success {
+      font-family: var(--font-body);
+      font-size: max(0.9375rem, 15px);
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.95);
+    }
+
+    .jobs-recruiter__phone-row {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      margin-bottom: var(--space-4);
+    }
+
+    .jobs-recruiter__phone-icon {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      border: 1.5px solid var(--color-accent);
+      color: var(--color-accent);
+    }
+
+    .jobs-recruiter__phone-link {
+      font-family: var(--font-display);
+      font-size: clamp(1.05rem, 1rem + 0.35vw, 1.2rem);
+      font-weight: 600;
+      color: var(--color-navy);
+      text-decoration: none;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .jobs-recruiter__phone-link:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 3px;
+      border-radius: var(--radius-sm);
+    }
+
+    .jobs-recruiter__schedule {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 44px;
+    }
+
+    .jobs-recruiter__closing {
+      margin: var(--space-4) 0 0;
+      text-align: center;
+      font-family: var(--font-body);
+      font-size: max(0.9375rem, 15px);
+      font-weight: 600;
+      color: var(--color-navy);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .jobs-sidebar-form__submit {
+        transition: none;
+      }
     }
 
     @media (max-width: 767px) {
@@ -298,7 +554,7 @@
       <div class="jobs-hero-split__grid">
         <div class="jobs-hero-split__panel">
           <h1 class="jobs-hero-split__title reveal">Current Openings</h1>
-          <p class="jobs-hero-split__desc reveal">Browse open roles. Don&rsquo;t see the right fit? Join our network.</p>
+          <p class="jobs-hero-split__desc reveal">Browse open roles. Don&rsquo;t see the right fit? <a href="#join-network">Join our network</a>.</p>
         </div>
         <div class="jobs-hero-split__media reveal">
           <img src="./assets/images/hero-jobs-team.jpg" alt="Professionals networking at a career event" loading="eager" fetchpriority="high" width="1920" height="1280">
@@ -318,50 +574,84 @@
           <p class="jobs-intro__text">Explore the opportunities below. Some of our searches are confidential and are not publicly listed, so we welcome a conversation even if you don&rsquo;t see a position that fits.</p>
         </header>
 
-        <!-- Loading state -->
-        <div id="jobs-loading" style="text-align:center;padding:var(--space-10) 0;color:var(--color-text-muted);">
-          <p>Loading positions&hellip;</p>
-        </div>
+        <div class="jobs-layout">
+          <div class="jobs-layout__main">
+            <!-- Loading state -->
+            <div id="jobs-loading" style="text-align:center;padding:var(--space-10) 0;color:var(--color-text-muted);">
+              <p>Loading positions&hellip;</p>
+            </div>
 
-        <!-- Jobs list — filled by main.js -->
-        <div id="jobs-list" class="jobs-list" aria-live="polite" aria-label="Job listings"></div>
+            <!-- Jobs list — filled by main.js -->
+            <div id="jobs-list" class="jobs-list" aria-live="polite" aria-label="Job listings"></div>
 
-        <!-- Fallback card -->
-        <div id="jobs-fallback" style="display:none;">
-          <div class="jobs-fallback-card reveal">
-            <div class="jobs-fallback-card__inner">
-              <div class="jobs-fallback-card__icon" aria-hidden="true">
-                <i data-lucide="briefcase" style="width:32px;height:32px;"></i>
+            <!-- Fallback card -->
+            <div id="jobs-fallback" style="display:none;">
+              <div class="jobs-fallback-card reveal">
+                <div class="jobs-fallback-card__inner">
+                  <div class="jobs-fallback-card__icon" aria-hidden="true">
+                    <i data-lucide="briefcase" style="width:32px;height:32px;"></i>
+                  </div>
+                  <h2 class="jobs-fallback-card__title">Our Current Positions Are Available on Our Dedicated Job Portal</h2>
+                  <p class="jobs-fallback-card__text">Browse all open roles in data science, analytics, business intelligence, AI, and more. New positions are added regularly.</p>
+                  <a href="https://jobs.crelate.com/portal/sourceabilityinc" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg jobs-fallback-card__cta">
+                    View All Positions on Our Portal
+                    <i data-lucide="arrow-up-right" style="width:16px;height:16px;margin-left:6px;"></i>
+                  </a>
+                  <p class="jobs-fallback-card__phone">Or call us at <a href="tel:8664129178">866-412-9178</a></p>
+                </div>
               </div>
-              <h2 class="jobs-fallback-card__title">Our Current Positions Are Available on Our Dedicated Job Portal</h2>
-              <p class="jobs-fallback-card__text">Browse all open roles in data science, analytics, business intelligence, AI, and more. New positions are added regularly.</p>
-              <a href="https://jobs.crelate.com/portal/sourceabilityinc" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg jobs-fallback-card__cta">
-                View All Positions on Our Portal
-                <i data-lucide="arrow-up-right" style="width:16px;height:16px;margin-left:6px;"></i>
-              </a>
-              <p class="jobs-fallback-card__phone">Or call us at <a href="tel:8664129178">866-412-9178</a></p>
             </div>
           </div>
-        </div>
 
-      </div>
-    </section>
+          <aside class="jobs-layout__sidebar" aria-label="Join our network and contact options">
+            <div class="jobs-sidebar-card jobs-sidebar-card--navy" id="join-network">
+              <h2 class="jobs-sidebar-card__title">Join our network</h2>
+              <p class="jobs-sidebar-card__text">Share your resume and we&rsquo;ll consider you for roles that fit, including ones that are never posted.</p>
+              <form id="jobs-network-form" class="jobs-sidebar-form" method="POST" enctype="multipart/form-data" novalidate>
+                <input type="hidden" name="access_key" value="6ce1053c-d0d4-401c-a09d-1a2b2353cd3e">
+                <input type="hidden" name="subject" value="Join our network resume - Search Jobs page">
+                <input type="hidden" name="from_name" value="SourceAbility Website">
+                <input type="hidden" name="source" value="jobs-page-resume">
+                <input type="hidden" name="contact_about" value="Finding a Job">
+                <input type="hidden" name="message" value="Resume submitted via Join our network on the Search Jobs page.">
+                <input type="checkbox" name="botcheck" class="sr-only" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
 
-    <!-- ==========================================
-         CTA BANNER
-    ========================================== -->
-    <section class="cta-banner-new jobs-page-cta" id="resume" aria-labelledby="jobs-no-fit-heading">
-      <div class="cta-banner-new__container cta-banner-new__container--no-images">
-        <div class="cta-banner-new__content">
-          <div class="reveal">
-            <h2 class="cta-banner-new__title" id="jobs-no-fit-heading">Not Seeing the <span class="cta-banner-new__mark">Right Opportunity?</span></h2>
-            <p class="cta-banner-new__text">Whether you&rsquo;re actively looking or simply open to the right opportunity, we&rsquo;d like to learn more about you, your experience, your interests, and what would make a career move worthwhile. Share your resume or schedule a conversation so we can consider you for opportunities that align with your background and goals.<span class="cta-banner-new__text-closing">We would love to hear from you!</span></p>
-            <div class="cta-banner-new__actions cta-banner-new__actions--multi cta-banner-new__actions--dual">
-              <a href="contact.html#contact-form" class="btn btn--primary btn--lg">Share Your Resume</a>
-              <a href="https://calendly.com/tanyacalkins" target="_blank" rel="noopener noreferrer" class="btn btn--jobs-secondary btn--lg">Schedule a Conversation</a>
+                <div class="jobs-sidebar-form__group">
+                  <label class="jobs-sidebar-form__label" for="jobs-network-name">Name</label>
+                  <input class="jobs-sidebar-form__input" type="text" id="jobs-network-name" name="name" autocomplete="name" required aria-describedby="jobs-network-error">
+                </div>
+                <div class="jobs-sidebar-form__group">
+                  <label class="jobs-sidebar-form__label" for="jobs-network-email">Email</label>
+                  <input class="jobs-sidebar-form__input" type="email" id="jobs-network-email" name="email" autocomplete="email" required aria-describedby="jobs-network-error">
+                </div>
+                <div class="jobs-sidebar-form__group">
+                  <label class="jobs-sidebar-form__label" for="jobs-network-resume">Resume</label>
+                  <input class="jobs-sidebar-form__file" type="file" id="jobs-network-resume" name="attachment" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required aria-describedby="jobs-network-resume-hint jobs-network-error">
+                  <span class="jobs-sidebar-form__filename" id="jobs-network-filename" aria-live="polite"></span>
+                  <p class="jobs-sidebar-form__hint" id="jobs-network-resume-hint">Accepted file types: .pdf, .doc, or .docx. Maximum size: 5 MB.</p>
+                </div>
+
+                <button type="submit" class="jobs-sidebar-form__submit">Share Your Resume</button>
+                <div id="jobs-network-error" class="jobs-sidebar-form__error" role="alert" aria-live="polite"></div>
+                <p class="jobs-sidebar-form__fineprint">Your information is kept confidential. See our <a href="privacy.html">Privacy Policy</a>.</p>
+              </form>
+              <div id="jobs-network-success" class="jobs-sidebar-form__success" role="status" aria-live="polite" hidden>Thank you. We received your resume and will be in touch.</div>
             </div>
-          </div>
+
+            <div class="jobs-sidebar-card jobs-sidebar-card--light">
+              <h2 class="jobs-sidebar-card__title">Talk to a recruiter</h2>
+              <div class="jobs-recruiter__phone-row">
+                <span class="jobs-recruiter__phone-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" stroke-linejoin="round"/></svg>
+                </span>
+                <a class="jobs-recruiter__phone-link" href="tel:+18664129178">866-412-9178</a>
+              </div>
+              <a href="https://calendly.com/tanyacalkins" target="_blank" rel="noopener noreferrer" class="btn btn--secondary btn--lg jobs-recruiter__schedule">Schedule a Conversation</a>
+              <p class="jobs-recruiter__closing">We&rsquo;d love to hear from you!</p>
+            </div>
+          </aside>
         </div>
+
       </div>
     </section>
 

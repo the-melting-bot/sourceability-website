@@ -378,6 +378,92 @@
     });
   }
 
+  const jobsNetworkForm = document.getElementById('jobs-network-form');
+
+  if (jobsNetworkForm) {
+    const jobsResumeInput = document.getElementById('jobs-network-resume');
+    const jobsFilenameEl = document.getElementById('jobs-network-filename');
+
+    if (jobsResumeInput && jobsFilenameEl) {
+      jobsResumeInput.addEventListener('change', () => {
+        const file = jobsResumeInput.files && jobsResumeInput.files[0];
+        jobsFilenameEl.textContent = file ? `Selected: ${file.name}` : '';
+      });
+    }
+
+    jobsNetworkForm.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const submitBtn = jobsNetworkForm.querySelector('button[type="submit"]');
+      const successEl = document.getElementById('jobs-network-success');
+      const errorEl = document.getElementById('jobs-network-error');
+      const defaultBtnText = submitBtn ? submitBtn.textContent : 'Share Your Resume';
+
+      const showError = (message) => {
+        if (!errorEl) return;
+        errorEl.textContent = message;
+        errorEl.classList.add('is-visible');
+      };
+
+      const clearError = () => {
+        if (!errorEl) return;
+        errorEl.textContent = '';
+        errorEl.classList.remove('is-visible');
+      };
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+      }
+      clearError();
+      if (successEl) successEl.hidden = true;
+
+      try {
+        const resumeInput = jobsNetworkForm.querySelector('input[type="file"][name="attachment"]');
+        if (!resumeInput || !resumeInput.files || resumeInput.files.length === 0) {
+          showError('Please attach your resume.');
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = defaultBtnText;
+          }
+          return;
+        }
+
+        const maxBytes = 5 * 1024 * 1024;
+        if (resumeInput.files[0].size > maxBytes) {
+          showError('Resume must be 5 MB or smaller. Please choose a smaller file or call us directly.');
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = defaultBtnText;
+          }
+          return;
+        }
+
+        const formData = new FormData(jobsNetworkForm);
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          jobsNetworkForm.hidden = true;
+          if (successEl) successEl.hidden = false;
+        } else {
+          showError('Something went wrong. Please try again or call us directly.');
+        }
+      } catch (err) {
+        showError('Network error. Please try again or call us directly.');
+      }
+
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = defaultBtnText;
+      }
+    });
+  }
+
   // --- CRELATE RSS (Vercel /api/crelate-rss — server-side, no browser CORS) ---
   function escapeHtml(s) {
     if (s == null) return '';
