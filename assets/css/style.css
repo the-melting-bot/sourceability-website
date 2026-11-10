@@ -573,6 +573,11 @@
   text-wrap: balance;
 }
 
+.page-home .hero__intro .hero__kicker::after {
+  content: " for:";
+  font-weight: 600;
+}
+
 /* Home hero: Lazio-style stacked headline — lead / loud accent / trail */
 .hero__title--banner {
   display: flex;
@@ -2386,21 +2391,7 @@
   line-height: 1.45;
   margin: 0 0 var(--space-4);
   position: relative;
-  padding-top: var(--space-3);
-}
-
-.testimonial-carousel__quote::before {
-  content: '\201C';
-  font-size: 2.5rem;
-  color: var(--color-accent);
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0.2;
-  font-family: var(--font-display);
-  line-height: 1;
-  pointer-events: none;
+  padding-top: 0;
 }
 
 .testimonial-carousel__footer {
@@ -3645,11 +3636,11 @@ p.salary-table-footer a {
   z-index: 10;
 }
 
-/* Bleed to the left edge of the screen on desktop */
+/* Align logo with container content on desktop (no viewport bleed) */
 @media (min-width: 1024px) {
   .footer-logo-tab {
-    padding-left: 100vw;
-    margin-left: -100vw;
+    padding-left: 1.25rem;
+    margin-left: 0;
   }
 }
 
@@ -3747,6 +3738,30 @@ p.salary-table-footer a {
   font-size: var(--text-xs);
   color: rgba(255, 255, 255, 0.65);
   min-width: 0;
+}
+
+.footer-bottom__location-wrap {
+  display: inline;
+  white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+  .footer-bottom__copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.2rem;
+  }
+
+  .footer-bottom__location-wrap {
+    display: block;
+    white-space: normal;
+  }
+
+  .footer-bottom__sep {
+    display: none;
+  }
 }
 
 .footer-bottom__credit {
