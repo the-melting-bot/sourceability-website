@@ -541,6 +541,21 @@
       flex: 1 1 12rem;
     }
 
+    .partner-about-strip {
+      background: var(--color-warm, #f8f7f5);
+      padding-block: 30px;
+    }
+
+    @media (max-width: 640px) {
+      .partner-about-strip {
+        padding-block: clamp(1.5rem, 4vw, 30px);
+      }
+
+      .partner-about-strip .container {
+        padding-inline: 1.25rem;
+      }
+    }
+
     .partner-about-row__eyebrow {
       margin: 0 0 var(--space-2);
       font-family: var(--font-body);
@@ -548,7 +563,7 @@
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--color-stat-number-rose);
+      color: var(--color-accent);
     }
 
     .partner-about-row__line {
@@ -557,7 +572,7 @@
       font-size: var(--text-base);
       font-weight: 600;
       line-height: 1.35;
-      color: #fff;
+      color: var(--color-navy);
     }
 
     .partner-about-row__btn {
@@ -572,21 +587,21 @@
       font-weight: 600;
       text-decoration: none;
       border-radius: var(--radius-md);
-      border: 1.5px solid #fff;
-      color: #fff;
+      border: 1.5px solid var(--color-navy);
+      color: var(--color-navy);
       background: transparent;
       transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
     }
 
     .partner-about-row__btn:hover,
     .partner-about-row__btn:focus-visible {
-      background: #fff;
-      color: var(--color-navy);
-      border-color: #fff;
+      background: var(--color-navy);
+      color: #fff;
+      border-color: var(--color-navy);
     }
 
     .partner-about-row__btn:focus-visible {
-      outline: 2px solid #fff;
+      outline: 2px solid var(--color-navy);
       outline-offset: 3px;
     }
 
@@ -594,11 +609,12 @@
       .partner-about-row {
         flex-direction: column;
         align-items: flex-start;
+        gap: var(--space-5);
       }
 
       .partner-about-row__btn {
-        width: 100%;
-        max-width: 20rem;
+        width: auto;
+        max-width: none;
       }
     }
 
@@ -1453,18 +1469,25 @@
             </ol>
             <hr class="partner-band__divider">
             <p class="partner-band__outro">We also help candidates think strategically about career direction, market positioning, compensation, and long-term fit, ensuring each opportunity is evaluated thoughtfully, not transactionally.</p>
-            <hr class="partner-band__divider">
-            <div class="partner-about-row">
-              <div class="partner-about-row__text">
-                <p class="partner-about-row__eyebrow">Since 2006</p>
-                <p class="partner-about-row__line">Get to know the people behind every search.</p>
-              </div>
-              <a href="about.html" class="partner-about-row__btn">About Us</a>
-            </div>
           </div>
         </div>
       </section>
     </div>
+
+    <!-- ==========================================
+         ABOUT US (light strip)
+    ========================================== -->
+    <section class="partner-about-strip" aria-label="About SourceAbility">
+      <div class="container">
+        <div class="partner-about-row reveal">
+          <div class="partner-about-row__text">
+            <p class="partner-about-row__eyebrow">Since 2006</p>
+            <p class="partner-about-row__line">Get to know the people behind every search.</p>
+          </div>
+          <a href="about.html" class="partner-about-row__btn">About Us</a>
+        </div>
+      </div>
+    </section>
 
     <!-- ==========================================
          CANDIDATE TESTIMONIALS (carousel)
